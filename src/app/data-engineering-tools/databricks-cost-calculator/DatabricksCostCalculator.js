@@ -15,215 +15,73 @@ import {
   TrendingDown,
 } from "lucide-react";
 
-const CREDIT_RATES = {
-  XS: { credits: 1, label: "X-Small (1 credit/hr)" },
-  S: { credits: 2, label: "Small (2 credits/hr)" },
-  M: { credits: 4, label: "Medium (4 credits/hr)" },
-  L: { credits: 8, label: "Large (8 credits/hr)" },
-  XL: { credits: 16, label: "X-Large (16 credits/hr)" },
-  "2XL": { credits: 32, label: "2X-Large (32 credits/hr)" },
-  "3XL": { credits: 64, label: "3X-Large (64 credits/hr)" },
-  "4XL": { credits: 128, label: "4X-Large (128 credits/hr)" },
+const WORKLOAD_TYPES = {
+  jobsCompute: { dbu: 0.15, label: "Jobs Compute", desc: "Batch ETL & scheduled jobs" },
+  allPurpose: { dbu: 0.55, label: "All-Purpose Compute", desc: "Interactive notebooks & dev" },
+  sqlClassic: { dbu: 0.22, label: "SQL Classic", desc: "SQL warehouse queries" },
+  sqlPro: { dbu: 0.55, label: "SQL Pro", desc: "SQL warehouse with advanced features" },
+  sqlServerless: { dbu: 0.7, label: "SQL Serverless", desc: "Serverless SQL warehouse" },
+  deltaLiveTables: { dbu: 0.2, label: "Delta Live Tables", desc: "Streaming & batch pipelines" },
+  modelServing: { dbu: 0.07, label: "Model Serving", desc: "ML model endpoints" },
 };
 
-const WAREHOUSE_SIZES = Object.keys(CREDIT_RATES);
-
-const STORAGE_COST_PER_TB = 23;
-
-const EDITIONS = ["standard", "enterprise", "businessCritical"];
-const EDITION_LABELS = {
-  standard: "Standard",
-  enterprise: "Enterprise",
-  businessCritical: "Business Critical",
+const CLUSTER_SIZES = {
+  small: { nodes: 2, label: "Small", desc: "2 worker nodes" },
+  medium: { nodes: 4, label: "Medium", desc: "4 worker nodes" },
+  large: { nodes: 8, label: "Large", desc: "8 worker nodes" },
+  xlarge: { nodes: 16, label: "X-Large", desc: "16 worker nodes" },
+  "2xlarge": { nodes: 32, label: "2X-Large", desc: "32 worker nodes" },
+  "4xlarge": { nodes: 64, label: "4X-Large", desc: "64 worker nodes" },
 };
 
-const US = { standard: 2.0, enterprise: 3.0, businessCritical: 4.0 };
-const CA = { standard: 2.25, enterprise: 3.5, businessCritical: 4.5 };
-const EU = { standard: 2.3, enterprise: 3.5, businessCritical: 4.6 };
-const EU_H = { standard: 2.5, enterprise: 3.7, businessCritical: 4.95 };
-const AP = { standard: 2.5, enterprise: 3.7, businessCritical: 4.95 };
-const AP_H = { standard: 2.8, enterprise: 4.0, businessCritical: 5.3 };
-const ME = { standard: 2.8, enterprise: 4.1, businessCritical: 5.5 };
-const AF = { standard: 2.8, enterprise: 4.1, businessCritical: 5.5 };
-const SA = { standard: 2.5, enterprise: 3.7, businessCritical: 4.95 };
+const CLUSTER_SIZE_KEYS = Object.keys(CLUSTER_SIZES);
 
-const r = (id, label, group, prices, storage = 23) => ({
-  id,
-  label,
-  group,
-  prices,
-  storage,
-});
+const PROVIDERS = ["AWS", "Azure", "GCP"];
 
-const REGIONS = {
-  AWS: [
-    r("aws-af-cape-town", "Africa (Cape Town)", "Africa", AF, 28),
-    r("aws-ap-mumbai", "AP Mumbai", "Asia", AP, 25),
-    r("aws-ap-northeast-1", "AP Northeast 1 (Tokyo)", "Asia", AP_H, 27),
-    r("aws-ap-singapore", "AP Singapore", "Asia", AP, 25),
-    r("aws-ap-jakarta", "Asia Pacific (Jakarta)", "Asia", AP, 25),
-    r("aws-ap-malaysia", "Asia Pacific (Malaysia)", "Asia", AP, 25),
-    r("aws-ap-osaka", "Asia Pacific (Osaka)", "Asia", AP_H, 27),
-    r("aws-ap-seoul", "Asia Pacific (Seoul)", "Asia", AP, 25),
-    r("aws-ap-thailand", "Asia Pacific (Thailand)", "Asia", AP, 25),
-    r("aws-me-uae", "Middle East (UAE)", "Asia", ME, 28),
-    r("aws-eu-paris", "EU (Paris)", "Europe", EU, 25),
-    r("aws-eu-zurich", "EU (Zurich)", "Europe", EU_H, 28),
-    r("aws-eu-dublin", "EU Dublin", "Europe", EU, 25),
-    r("aws-eu-frankfurt", "EU Frankfurt", "Europe", EU_H, 25),
-    r("aws-eu-london", "Europe (London)", "Europe", EU, 25),
-    r("aws-eu-stockholm", "Europe (Stockholm)", "Europe", EU, 25),
-    r("aws-ca-central", "Canada Central", "North America", CA, 25),
-    r("aws-us-east-1", "US East (Northern Virginia)", "North America", US),
-    r("aws-us-east-1-gov", "US East 1 Commercial Gov", "North America", US),
-    r("aws-us-east-2", "US East 2 (Ohio)", "North America", US),
-    r(
-      "aws-us-gov-east-1-fh",
-      "US Gov East 1 (Fedramp High Plus)",
-      "North America",
-      US,
-    ),
-    r("aws-us-gov-west-1", "US Gov West 1", "North America", US),
-    r("aws-us-gov-west-1-dod", "US Gov West 1 (DoD)", "North America", US),
-    r(
-      "aws-us-gov-west-1-fh",
-      "US Gov West 1 (Fedramp High Plus)",
-      "North America",
-      US,
-    ),
-    r(
-      "aws-us-west-gov-or",
-      "US West (Commercial Gov - Oregon)",
-      "North America",
-      US,
-    ),
-    r("aws-us-west-2", "US West (Oregon)", "North America", US),
-    r("aws-ap-sydney", "AP Sydney", "Oceania", AP, 25),
-    r("aws-ap-nz", "Asia Pacific (New Zealand)", "Oceania", AP, 25),
-    r(
-      "aws-sa-east-1",
-      "South America East 1 (São Paulo)",
-      "South America",
-      SA,
-      28,
-    ),
-  ],
-  Azure: [
-    r("azure-central-india", "Central India (Pune)", "Asia", AP, 25),
-    r("azure-japan-east", "Japan East (Tokyo)", "Asia", AP_H, 27),
-    r("azure-korea-central", "Korea Central", "Asia", AP, 25),
-    r("azure-southeast-asia", "Southeast Asia (Singapore)", "Asia", AP, 25),
-    r("azure-uae-north", "UAE North (Dubai)", "Asia", ME, 28),
-    r("azure-north-europe", "North Europe (Ireland)", "Europe", EU, 25),
-    r("azure-sweden-central", "Sweden Central", "Europe", EU, 25),
-    r("azure-switzerland-north", "Switzerland North", "Europe", EU_H, 28),
-    r("azure-uk-south", "UK South (London)", "Europe", EU, 25),
-    r("azure-west-europe", "West Europe (Netherlands)", "Europe", EU, 25),
-    r(
-      "azure-canada-central",
-      "Canada Central (Toronto)",
-      "North America",
-      CA,
-      25,
-    ),
-    r("azure-central-us", "Central US (Iowa)", "North America", US),
-    r("azure-east-us", "East US", "North America", US),
-    r("azure-east-us-2", "East US 2 (Virginia)", "North America", US),
-    r("azure-mexico-central", "Mexico Central", "North America", CA, 25),
-    r(
-      "azure-south-central-us",
-      "South Central US (Texas)",
-      "North America",
-      US,
-    ),
-    r("azure-us-gov-virginia", "US Gov Virginia", "North America", US),
-    r(
-      "azure-us-gov-virginia-fh",
-      "US Gov Virginia (Fed Ramp High Plus)",
-      "North America",
-      US,
-    ),
-    r("azure-west-us-2", "West US 2 (Washington)", "North America", US),
-    r(
-      "azure-australia-east",
-      "Australia East (New South Wales)",
-      "Oceania",
-      AP,
-      25,
-    ),
-  ],
-  GCP: [
-    r("gcp-me-central-2", "Middle East Central 2 (Dammam)", "Asia", ME, 28),
-    r("gcp-europe-west2", "Europe West 2 (London)", "Europe", EU, 25),
-    r("gcp-europe-west3", "Europe West 3 (Frankfurt)", "Europe", EU_H, 25),
-    r("gcp-europe-west4", "Europe West 4 (Netherlands)", "Europe", EU, 25),
-    r("gcp-us-central1", "US Central 1 (Iowa)", "North America", US),
-    r("gcp-us-east4", "US East 4 (N. Virginia)", "North America", US),
-    r(
-      "gcp-australia-se2",
-      "Australia Southeast 2 (Melbourne)",
-      "Oceania",
-      AP,
-      25,
-    ),
-  ],
+const INFRA_COST_PER_NODE_HR = {
+  AWS: 0.34,
+  Azure: 0.36,
+  GCP: 0.32,
 };
-
-const PROVIDERS = Object.keys(REGIONS);
 
 const FAQ_DATA = [
   {
-    q: "Is Snowflake expensive?",
-    a: "Snowflake uses consumption-based pricing, so your costs depend on how much compute and storage you use. Well-optimized environments can remain cost-effective, while inefficient warehouse usage can quickly increase monthly spending.",
+    q: "Is Databricks expensive?",
+    a: "Databricks pricing depends on your workload, cluster configuration, and cloud infrastructure. Efficiently managed environments can remain cost-effective, while oversized clusters and inefficient jobs can significantly increase monthly costs.",
   },
   {
-    q: "How is Snowflake billing actually calculated?",
-    a: "Snowflake charges separately for compute and storage. Compute is measured in credits consumed by virtual warehouses, while storage costs are based on the amount of data stored each month.",
+    q: "How are Databricks costs calculated?",
+    a: "Databricks charges based on DBU consumption, while your cloud provider separately bills for the underlying compute, storage, and networking resources. Your total monthly cost combines both charges.",
   },
   {
-    q: "How accurate is this Snowflake cost calculator?",
-    a: "This calculator provides an estimate based on the information you enter. Your actual bill may differ depending on workload behavior, query performance, cloud services, and your negotiated Snowflake pricing.",
+    q: "How accurate is this Databricks cost calculator?",
+    a: "This calculator provides a reliable estimate based on the information you enter. Actual costs may vary depending on autoscaling, workload patterns, infrastructure pricing, and your Databricks pricing agreement.",
   },
   {
-    q: "What is the difference between a Snowflake cost calculator and a Snowflake cost estimator?",
-    a: "Both estimate your expected Snowflake spending using similar inputs. A calculator typically generates an instant estimate, while an estimator refers to the same forecasting process.",
+    q: "Does Databricks cost the same on Azure, AWS, and Google Cloud?",
+    a: "No. While DBU pricing follows Databricks pricing tiers, infrastructure costs differ across cloud providers. As a result, your Databricks cost on Azure, AWS, or Google Cloud may vary for similar workloads.",
   },
   {
-    q: "How much can Snowflake costs realistically be reduced?",
-    a: "Many organizations reduce costs by optimizing warehouse sizes, enabling auto-suspend, improving query performance, and eliminating unnecessary compute usage. The biggest savings usually come from improving how Snowflake resources are used rather than reducing workloads.",
+    q: "How can I reduce Databricks costs?",
+    a: "The biggest savings usually come from right-sizing clusters, enabling autoscaling, shutting down idle resources, optimizing Spark jobs, and regularly reviewing DBU consumption to eliminate unnecessary compute usage.",
   },
 ];
 
-const SnowflakeCostCalculator = () => {
+const DatabricksCostCalculator = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     provider: "",
-    region: "",
-    edition: "enterprise",
-    warehouseSize: "",
+    workloadType: "",
+    clusterSize: "",
     hoursPerDay: 8,
     daysPerWeek: 5,
-    warehouseCount: 2,
-    storageTB: 5,
-    autoSuspendMinutes: 5,
+    clusterCount: 2,
+    autoTerminationMinutes: 10,
   });
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [result, setResult] = useState(null);
-
-  const selectedRegion =
-    formData.provider && formData.region
-      ? REGIONS[formData.provider]?.find((r) => r.id === formData.region)
-      : null;
-
-  const creditPrice = selectedRegion
-    ? selectedRegion.prices[formData.edition]
-    : 0;
-
-  const storagePricePerTB = selectedRegion
-    ? selectedRegion.storage
-    : STORAGE_COST_PER_TB;
 
   const isValidEmail = (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
 
@@ -236,26 +94,34 @@ const SnowflakeCostCalculator = () => {
     setIsSubmitting(true);
 
     const {
-      warehouseSize,
+      provider,
+      workloadType,
+      clusterSize,
       hoursPerDay,
       daysPerWeek,
-      warehouseCount,
-      storageTB,
-      autoSuspendMinutes,
-      provider,
-      edition,
+      clusterCount,
+      autoTerminationMinutes,
     } = formData;
-    const creditsPerHour = CREDIT_RATES[warehouseSize].credits;
+
+    const dbuRate = WORKLOAD_TYPES[workloadType].dbu;
+    const nodes = CLUSTER_SIZES[clusterSize].nodes;
     const monthlyHours = hoursPerDay * daysPerWeek * 4.33;
-    const totalCredits = creditsPerHour * monthlyHours * warehouseCount;
-    const computeCost = totalCredits * creditPrice;
-    const storageCost = storageTB * storagePricePerTB;
-    const monthlyCost = computeCost + storageCost;
+
+    const dbuPerHour = nodes * dbuRate;
+    const totalDBUs = dbuPerHour * monthlyHours * clusterCount;
+    const dbuCost = totalDBUs;
+
+    const infraCostPerHour = nodes * INFRA_COST_PER_NODE_HR[provider];
+    const infraCost = infraCostPerHour * monthlyHours * clusterCount;
+
+    const monthlyCost = dbuCost + infraCost;
 
     const idleWastePercent =
-      autoSuspendMinutes > 5 ? Math.min(35, (autoSuspendMinutes - 5) * 3) : 0;
+      autoTerminationMinutes > 10
+        ? Math.min(30, (autoTerminationMinutes - 10) * 2)
+        : 0;
     const oversizeWaste =
-      ["XL", "2XL", "3XL", "4XL"].includes(warehouseSize) && hoursPerDay < 6
+      ["xlarge", "2xlarge", "4xlarge"].includes(clusterSize) && hoursPerDay < 6
         ? 20
         : 0;
     const totalWastePercent = Math.min(50, idleWastePercent + oversizeWaste);
@@ -267,18 +133,15 @@ const SnowflakeCostCalculator = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: email.trim(),
-          page: "/data-engineering-tools/snowflake-cost-calculator/",
+          page: "/data-engineering-tools/databricks-cost-calculator/",
           toolFormData: {
             Provider: provider,
-            Region: selectedRegion?.label,
-            Edition: EDITION_LABELS[edition],
-            "Credit Price": `$${creditPrice.toFixed(2)}`,
-            "Warehouse Size": warehouseSize,
+            "Workload Type": WORKLOAD_TYPES[workloadType].label,
+            "Cluster Size": CLUSTER_SIZES[clusterSize].label,
             "Hours/Day": hoursPerDay,
             "Days/Week": daysPerWeek,
-            Warehouses: warehouseCount,
-            "Storage (TB)": storageTB,
-            "Auto-Suspend": `${autoSuspendMinutes} min`,
+            Clusters: clusterCount,
+            "Auto-Termination": `${autoTerminationMinutes} min`,
             "Est. Monthly Cost": `$${Math.round(monthlyCost).toLocaleString()}`,
             "Est. Waste %": `${totalWastePercent}%`,
           },
@@ -292,9 +155,9 @@ const SnowflakeCostCalculator = () => {
     setResult({
       monthlyCost: Math.round(monthlyCost),
       annualCost: Math.round(monthlyCost * 12),
-      computeCost: Math.round(computeCost),
-      storageCost: Math.round(storageCost),
-      creditsPerMonth: Math.round(totalCredits),
+      dbuCost: Math.round(dbuCost),
+      infraCost: Math.round(infraCost),
+      totalDBUs: Math.round(totalDBUs),
       wastedSpend: Math.round(wastedSpend),
       wastedAnnual: Math.round(wastedSpend * 12),
       totalWastePercent,
@@ -302,109 +165,104 @@ const SnowflakeCostCalculator = () => {
   };
 
   const canProceed = () => {
-    if (step === 0 && (!formData.provider || !formData.region)) return false;
-    if (step === 1 && !formData.warehouseSize) return false;
+    if (step === 0 && !formData.provider) return false;
+    if (step === 1 && !formData.workloadType) return false;
+    if (step === 2 && !formData.clusterSize) return false;
     return true;
   };
 
   const steps = [
     {
-      label: "Provider & Region",
+      label: "Provider",
       content: (
         <div className="space-y-5">
           <h3 className="text-xl font-semibold text-navyBlue">
-            Where does your Snowflake run?
+            Where does your Databricks run?
           </h3>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Cloud Provider *
-            </label>
-            <div className="grid grid-cols-3 gap-3">
-              {PROVIDERS.map((p) => (
-                <button
-                  key={p}
-                  onClick={() =>
-                    setFormData({ ...formData, provider: p, region: "" })
-                  }
-                  className={`p-3 rounded-lg border-2 text-center font-medium transition-all ${
-                    formData.provider === p
-                      ? "border-themeColor bg-blue-50 text-themeColor"
-                      : "border-gray-200 hover:border-themeColor/40 text-navyBlue"
-                  }`}
-                >
-                  {p}
-                </button>
-              ))}
-            </div>
-          </div>
-          {formData.provider && (
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Region *
-              </label>
-              <select
-                value={formData.region}
-                onChange={(e) =>
-                  setFormData({ ...formData, region: e.target.value })
-                }
-                className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 text-sm font-medium bg-white focus:outline-none focus:border-themeColor cursor-pointer"
+          <p className="text-gray-500 text-sm">
+            Select your cloud provider. Infrastructure costs vary by provider.
+          </p>
+          <div className="grid grid-cols-3 gap-3">
+            {PROVIDERS.map((p) => (
+              <button
+                key={p}
+                onClick={() => setFormData({ ...formData, provider: p })}
+                className={`p-4 rounded-lg border-2 text-center font-medium transition-all ${
+                  formData.provider === p
+                    ? "border-themeColor bg-blue-50 text-themeColor"
+                    : "border-gray-200 hover:border-themeColor/40 text-navyBlue"
+                }`}
               >
-                <option value="">Select a region</option>
-                {Object.entries(
-                  REGIONS[formData.provider].reduce((groups, reg) => {
-                    (groups[reg.group] = groups[reg.group] || []).push(reg);
-                    return groups;
-                  }, {}),
-                ).map(([group, regions]) => (
-                  <optgroup key={group} label={group}>
-                    {regions.map((reg) => (
-                      <option key={reg.id} value={reg.id}>
-                        {reg.label}
-                      </option>
-                    ))}
-                  </optgroup>
-                ))}
-              </select>
-              {selectedRegion && (
-                <p className="text-xs text-gray-400 mt-2">
-                  Credit pricing for this region: Standard $
-                  {selectedRegion.prices.standard.toFixed(2)} &middot;
-                  Enterprise ${selectedRegion.prices.enterprise.toFixed(2)}{" "}
-                  &middot; Business Critical $
-                  {selectedRegion.prices.businessCritical.toFixed(2)}
-                </p>
-              )}
-            </div>
-          )}
+                {p}
+              </button>
+            ))}
+          </div>
         </div>
       ),
     },
     {
-      label: "Warehouse",
+      label: "Workload",
       content: (
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-navyBlue">
-            What is your primary warehouse size?
+            What type of workload do you run?
           </h3>
           <p className="text-gray-500 text-sm">
-            Select the Snowflake warehouse size you use most often.
+            Different workloads consume DBUs at different rates.
           </p>
-          <div className="grid grid-cols-4 gap-3">
-            {WAREHOUSE_SIZES.map((size) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {Object.entries(WORKLOAD_TYPES).map(([key, wl]) => (
               <button
-                key={size}
+                key={key}
                 onClick={() =>
-                  setFormData({ ...formData, warehouseSize: size })
+                  setFormData({ ...formData, workloadType: key })
+                }
+                className={`p-3 rounded-lg border-2 text-left transition-all ${
+                  formData.workloadType === key
+                    ? "border-themeColor bg-blue-50"
+                    : "border-gray-200 hover:border-themeColor/40"
+                }`}
+              >
+                <span className={`block font-medium ${formData.workloadType === key ? "text-themeColor" : "text-navyBlue"}`}>
+                  {wl.label}
+                </span>
+                <span className="block text-xs text-gray-400 mt-0.5">
+                  {wl.desc} &middot; {wl.dbu} DBU/hr per node
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ),
+    },
+    {
+      label: "Cluster",
+      content: (
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold text-navyBlue">
+            What cluster size do you typically use?
+          </h3>
+          <p className="text-gray-500 text-sm">
+            Larger clusters consume more DBUs and infrastructure per hour.
+          </p>
+          <div className="grid grid-cols-3 gap-3">
+            {CLUSTER_SIZE_KEYS.map((key) => (
+              <button
+                key={key}
+                onClick={() =>
+                  setFormData({ ...formData, clusterSize: key })
                 }
                 className={`p-3 rounded-lg border-2 text-center transition-all ${
-                  formData.warehouseSize === size
+                  formData.clusterSize === key
                     ? "border-themeColor bg-blue-50 text-themeColor font-semibold"
                     : "border-gray-200 hover:border-themeColor/40 text-navyBlue"
                 }`}
               >
-                <span className="block font-medium">{size}</span>
+                <span className="block font-medium">
+                  {CLUSTER_SIZES[key].label}
+                </span>
                 <span className="block text-xs text-gray-400 mt-1">
-                  {CREDIT_RATES[size].credits} cr/hr
+                  {CLUSTER_SIZES[key].desc}
                 </span>
               </button>
             ))}
@@ -471,20 +329,20 @@ const SnowflakeCostCalculator = () => {
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Number of warehouses:{" "}
+              Number of clusters:{" "}
               <span className="text-themeColor font-bold">
-                {formData.warehouseCount}
+                {formData.clusterCount}
               </span>
             </label>
             <input
               type="range"
               min="1"
               max="20"
-              value={formData.warehouseCount}
+              value={formData.clusterCount}
               onChange={(e) =>
                 setFormData({
                   ...formData,
-                  warehouseCount: parseInt(e.target.value),
+                  clusterCount: parseInt(e.target.value),
                 })
               }
               className="w-full accent-themeColor"
@@ -498,77 +356,25 @@ const SnowflakeCostCalculator = () => {
       ),
     },
     {
-      label: "Storage & Config",
+      label: "Auto-Termination",
       content: (
         <div className="space-y-6">
           <h3 className="text-xl font-semibold text-navyBlue">
-            Storage, edition &amp; auto-suspend
+            Auto-termination setting
           </h3>
+          <p className="text-gray-500 text-sm">
+            How long before idle clusters are terminated? Lower saves more.
+          </p>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Snowflake Edition
-            </label>
             <div className="grid grid-cols-3 gap-3">
-              {EDITIONS.map((ed) => (
-                <button
-                  key={ed}
-                  onClick={() => setFormData({ ...formData, edition: ed })}
-                  className={`p-3 rounded-lg border-2 text-center transition-all ${
-                    formData.edition === ed
-                      ? "border-themeColor bg-blue-50 text-themeColor font-semibold"
-                      : "border-gray-200 hover:border-themeColor/40 text-navyBlue"
-                  }`}
-                >
-                  <span className="block text-sm font-medium">
-                    {EDITION_LABELS[ed]}
-                  </span>
-                  {selectedRegion && (
-                    <span className="block text-xs text-gray-400 mt-1">
-                      ${selectedRegion.prices[ed].toFixed(2)}/credit
-                    </span>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Storage (TB):{" "}
-              <span className="text-themeColor font-bold">
-                {formData.storageTB} TB
-              </span>
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="200"
-              value={formData.storageTB}
-              onChange={(e) =>
-                setFormData({
-                  ...formData,
-                  storageTB: parseInt(e.target.value),
-                })
-              }
-              className="w-full accent-themeColor"
-            />
-            <div className="flex justify-between text-xs text-gray-400">
-              <span>0 TB</span>
-              <span>200 TB</span>
-            </div>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Auto-suspend
-            </label>
-            <div className="grid grid-cols-3 gap-3">
-              {[1, 5, 10, 15, 30, 60].map((mins) => (
+              {[5, 10, 15, 30, 60, 120].map((mins) => (
                 <button
                   key={mins}
                   onClick={() =>
-                    setFormData({ ...formData, autoSuspendMinutes: mins })
+                    setFormData({ ...formData, autoTerminationMinutes: mins })
                   }
                   className={`p-3 rounded-lg border-2 text-center transition-all ${
-                    formData.autoSuspendMinutes === mins
+                    formData.autoTerminationMinutes === mins
                       ? "border-themeColor bg-blue-50 text-themeColor font-semibold"
                       : "border-gray-200 hover:border-themeColor/40 text-navyBlue"
                   }`}
@@ -577,10 +383,6 @@ const SnowflakeCostCalculator = () => {
                 </button>
               ))}
             </div>
-            <p className="text-xs text-gray-400 mt-2">
-              How many minutes before idle warehouses shut down? Lower is better
-              for cost.
-            </p>
           </div>
         </div>
       ),
@@ -590,8 +392,11 @@ const SnowflakeCostCalculator = () => {
       content: (
         <div className="space-y-4">
           <h3 className="text-xl font-semibold text-navyBlue">
-            Enter your work email to see your Snowflake cost breakdown.
+            Where should we send your estimate?
           </h3>
+          <p className="text-gray-500 text-sm">
+            Enter your work email to see your Databricks cost breakdown.
+          </p>
           <input
             type="email"
             value={email}
@@ -609,6 +414,9 @@ const SnowflakeCostCalculator = () => {
           {emailError && (
             <p className="text-red-500 text-xs mt-1.5">{emailError}</p>
           )}
+          <p className="text-xs text-gray-400">
+            We&apos;ll only use this to send your estimate. No spam.
+          </p>
         </div>
       ),
     },
@@ -645,12 +453,13 @@ const SnowflakeCostCalculator = () => {
           <Heading
             type="h1"
             className="text-white !font-extrabold max-w-[720px]"
-            text="Snowflake Cost Calculator"
+            text="Databricks Cost Calculator"
           />
 
           <p className="text-gray-400 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
-            Estimate your monthly Snowflake spend by warehouse size, runtime,
-            and storage. Then see how much of it you could cut.
+            Estimate your monthly Databricks costs based on compute usage, DBUs,
+            runtime, and cloud provider pricing. Then find opportunities to
+            optimize your Databricks spend.
           </p>
 
           <div className="flex flex-wrap gap-5 mt-8 pt-6 border-t border-white/10">
@@ -687,7 +496,7 @@ const SnowflakeCostCalculator = () => {
             </Link>
             <span className="mx-1.5">/</span>
             <span className="text-gray-600 font-medium">
-              Snowflake Cost Calculator
+              Databricks Cost Calculator
             </span>
           </nav>
         </div>
@@ -698,7 +507,6 @@ const SnowflakeCostCalculator = () => {
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           {!result ? (
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg shadow-gray-200/60 overflow-hidden">
-              {/* Header */}
               <div className="bg-navyBlue px-6 md:px-10 py-5">
                 <div className="flex items-center justify-between">
                   <div>
@@ -722,10 +530,8 @@ const SnowflakeCostCalculator = () => {
                 </div>
               </div>
 
-              {/* Step content */}
               <div className="px-6 md:px-10 py-8">{steps[step].content}</div>
 
-              {/* Navigation */}
               <div className="flex justify-between items-center px-6 md:px-10 py-5 bg-gray-50 border-t border-gray-100">
                 <button
                   onClick={() => setStep(step - 1)}
@@ -759,7 +565,7 @@ const SnowflakeCostCalculator = () => {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-navyBlue">
-                  Your Snowflake Cost Estimate
+                  Your Databricks Cost Estimate
                 </h2>
                 <button
                   onClick={() => {
@@ -770,8 +576,8 @@ const SnowflakeCostCalculator = () => {
                     setFormData({
                       ...formData,
                       provider: "",
-                      region: "",
-                      warehouseSize: "",
+                      workloadType: "",
+                      clusterSize: "",
                     });
                   }}
                   className="text-themeColor font-medium text-sm hover:underline flex items-center gap-1"
@@ -817,9 +623,7 @@ const SnowflakeCostCalculator = () => {
                   <div className="flex items-center gap-2 mb-3">
                     <div
                       className={`w-9 h-9 rounded-lg flex items-center justify-center ${
-                        result.totalWastePercent > 15
-                          ? "bg-red-50"
-                          : "bg-green-50"
+                        result.totalWastePercent > 15 ? "bg-red-50" : "bg-green-50"
                       }`}
                     >
                       {result.totalWastePercent > 15 ? (
@@ -834,9 +638,7 @@ const SnowflakeCostCalculator = () => {
                   </div>
                   <p
                     className={`text-4xl font-extrabold tracking-tight ${
-                      result.totalWastePercent > 15
-                        ? "text-red-600"
-                        : "text-green-600"
+                      result.totalWastePercent > 15 ? "text-red-600" : "text-green-600"
                     }`}
                   >
                     ${result.wastedSpend.toLocaleString()}/mo
@@ -857,45 +659,44 @@ const SnowflakeCostCalculator = () => {
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <span className="text-sm font-semibold text-navyBlue">
-                        Compute
+                        DBU Cost
                       </span>
                       <p className="text-[11px] text-gray-400 mt-0.5">
-                        Warehouse size &times; active hours &times; count.
-                        Usually the largest line item.
+                        Databricks Units consumed based on workload type and
+                        cluster size.
                       </p>
                     </div>
                     <span className="text-sm font-bold text-navyBlue whitespace-nowrap">
-                      ${result.computeCost.toLocaleString()}/mo
+                      ${result.dbuCost.toLocaleString()}/mo
                     </span>
                   </div>
                   <div className="border-t border-gray-100" />
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <span className="text-sm font-semibold text-navyBlue">
-                        Storage
+                        Infrastructure
                       </span>
                       <p className="text-[11px] text-gray-400 mt-0.5">
-                        ~$23/TB/month on-demand for all data stored in
-                        Snowflake.
+                        Cloud provider compute costs for the underlying VM
+                        instances.
                       </p>
                     </div>
                     <span className="text-sm font-bold text-navyBlue whitespace-nowrap">
-                      ${result.storageCost.toLocaleString()}/mo
+                      ${result.infraCost.toLocaleString()}/mo
                     </span>
                   </div>
                   <div className="border-t border-gray-100" />
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <span className="text-sm font-semibold text-navyBlue">
-                        Credits / month
+                        Total DBUs / month
                       </span>
                       <p className="text-[11px] text-gray-400 mt-0.5">
-                        Total credits across all warehouses. Credits &times;
-                        price = compute cost.
+                        Total Databricks Units consumed across all clusters.
                       </p>
                     </div>
                     <span className="text-sm font-bold text-navyBlue whitespace-nowrap">
-                      {result.creditsPerMonth.toLocaleString()}
+                      {result.totalDBUs.toLocaleString()}
                     </span>
                   </div>
                 </div>
@@ -910,13 +711,13 @@ const SnowflakeCostCalculator = () => {
                     </div>
                     <div>
                       <p className="font-bold text-amber-900">
-                        You could save ${result.wastedAnnual.toLocaleString()}
-                        /year
+                        You could save $
+                        {result.wastedAnnual.toLocaleString()}/year
                       </p>
                       <p className="text-sm text-amber-700 mt-1 leading-relaxed">
-                        Common fixes: lower auto-suspend to 1&ndash;5 min,
-                        right-size warehouses, schedule off-hours suspension. We
-                        can audit your setup in a free 30-min session.
+                        Common fixes: enable auto-termination, right-size
+                        clusters, use Jobs Compute instead of All-Purpose for
+                        production workloads, and optimize Spark jobs.
                       </p>
                     </div>
                   </div>
@@ -934,19 +735,21 @@ const SnowflakeCostCalculator = () => {
                 />
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white mb-2">
-                    That Snowflake bill higher than you expected?
+                    Paying more for Databricks than you planned?
                   </h3>
                   <p className="text-white/60 text-[15px] max-w-3xl leading-relaxed">
-                    Our Snowflake Cost Optimization Audit identifies where your
-                    compute spend is going and highlights practical ways to
-                    reduce unnecessary costs without affecting performance.
+                    Our Databricks Cost Optimization Audit helps you identify
+                    inefficient clusters, unnecessary DBU consumption, and hidden
+                    infrastructure costs so you can lower your monthly cloud
+                    bill.
                   </p>
                   <div className="flex flex-wrap gap-3 mt-6">
                     <button
                       onClick={async () => {
                         const cal = await getCalApi({});
                         cal("modal", {
-                          calLink: "vikas-singh-bril/30-min-product-eng-review",
+                          calLink:
+                            "vikas-singh-bril/30-min-product-eng-review",
                           config: { theme: "light" },
                         });
                       }}
@@ -960,9 +763,9 @@ const SnowflakeCostCalculator = () => {
               </div>
 
               <p className="text-xs text-gray-400 text-center pt-1">
-                Estimates only. Actual Snowflake billing depends on query
-                patterns, auto-suspend settings, cloud services usage, and your
-                contract pricing.
+                Estimates only. Actual Databricks billing depends on workload
+                patterns, autoscaling, cloud provider pricing, and your contract
+                terms.
               </p>
             </div>
           )}
@@ -976,24 +779,24 @@ const SnowflakeCostCalculator = () => {
             <Heading
               type="h2"
               className="!font-extrabold text-gray-900 mb-4"
-              text="How the Snowflake Cost Calculator Works"
+              text="How the Databricks Cost Calculator Works"
             />
             <p className="text-[16.5px] text-gray-500 leading-relaxed">
-              This Snowflake cost calculator estimates your monthly warehouse
-              costs using the same core factors that drive Snowflake pricing.
-              Warehouse size, daily runtime, the number of warehouses, storage,
-              and your credit price all contribute to your overall monthly
-              spend. Adjusting these values gives you a quick estimate of what
-              your Snowflake environment could cost before your next invoice
-              arrives.
+              This Databricks cost calculator estimates your monthly spending
+              using the key factors that influence Databricks pricing. Compute
+              usage is measured in Databricks Units (DBUs), which vary depending
+              on your workload, cluster type, and cloud provider. The calculator
+              combines DBU consumption with infrastructure costs and runtime to
+              generate a practical monthly estimate.
             </p>
             <p className="text-[16.5px] text-gray-500 leading-relaxed mt-4">
-              While this Snowflake cost estimator provides a reliable estimate,
-              actual costs can vary based on workload patterns, auto-suspend
-              settings, cloud services usage, data transfer, and query
-              efficiency. The goal is to help data teams understand where costs
-              originate and provide a starting point for better budgeting and
-              Snowflake cost optimization.
+              Like any Databricks cost estimator, the result is an estimate
+              rather than an exact bill. Your actual costs may vary depending on
+              autoscaling, cluster utilization, workload efficiency, storage,
+              networking, and the pricing model used by your cloud provider.
+              Whether you&apos;re running on AWS or calculating Databricks cost
+              on Azure, this calculator provides a useful starting point for
+              planning and budgeting.
             </p>
           </div>
 
@@ -1001,33 +804,33 @@ const SnowflakeCostCalculator = () => {
             <Heading
               type="h2"
               className="!font-extrabold text-gray-900 mb-4"
-              text="Where Snowflake Costs Usually Leak"
+              text="What Usually Increases Databricks Costs"
             />
             <p className="text-[16.5px] text-gray-500 leading-relaxed mb-6">
-              When we review Snowflake environments, the same cost issues appear
-              again and again.
+              When we review Databricks environments, these are the most common
+              reasons costs grow faster than expected.
             </p>
             <ul className="space-y-0">
               {[
                 {
-                  title: "Oversized warehouses",
-                  text: "Large warehouses often run workloads that could perform just as well on smaller compute sizes, consuming more credits than necessary.",
+                  title: "Oversized clusters",
+                  text: "Running larger clusters than a workload requires increases DBU consumption without delivering meaningful performance improvements.",
                 },
                 {
-                  title: "Warehouses left running",
-                  text: "Idle warehouses continue using credits if auto-suspend is not configured correctly. This is one of the easiest ways to reduce monthly costs.",
+                  title: "Clusters left running",
+                  text: "Interactive and development clusters that remain active when idle continue generating unnecessary costs.",
                 },
                 {
-                  title: "Inefficient queries",
-                  text: "Queries that scan unnecessary data increase compute time and warehouse usage, especially as datasets continue to grow.",
+                  title: "Low cluster utilization",
+                  text: "Underutilized clusters waste compute resources and increase infrastructure spending.",
                 },
                 {
-                  title: "Poor warehouse management",
-                  text: "Running multiple warehouses for inconsistent workloads can lead to low utilization and unnecessary compute costs.",
+                  title: "Poor workload scheduling",
+                  text: "Running jobs during peak hours or failing to consolidate workloads can increase both DBU and cloud infrastructure costs.",
                 },
                 {
-                  title: "Always-on development environments",
-                  text: "Development and testing warehouses are frequently left running after working hours, quietly increasing monthly spend.",
+                  title: "Inefficient Spark jobs",
+                  text: "Poorly optimized Spark workloads take longer to complete, consuming more compute resources and increasing monthly spend.",
                 },
               ].map((item, i) => (
                 <li
@@ -1080,7 +883,7 @@ const SnowflakeCostCalculator = () => {
               className="mt-4"
               style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
             >
-              Everything you need to know about Snowflake costs and how to
+              Everything you need to know about Databricks costs and how to
               estimate them.
             </p>
           </div>
@@ -1088,7 +891,7 @@ const SnowflakeCostCalculator = () => {
             {FAQ_DATA.map((item, i) => (
               <GradientFAQAccordion
                 key={i + 1}
-                id={`snowflake-faq-${i + 1}`}
+                id={`databricks-faq-${i + 1}`}
                 question={item.q}
                 answer={item.a}
               />
@@ -1102,17 +905,18 @@ const SnowflakeCostCalculator = () => {
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           <div className="bg-[#f2f9fe] border border-gray-200 rounded-2xl py-14 px-6 md:px-12 text-center">
             <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor block mb-4">
-              SNOWFLAKE COST OPTIMIZATION
+              DATABRICKS COST OPTIMIZATION
             </span>
             <Heading
               type="h2"
               className="!font-extrabold text-gray-900 mb-3"
-              text="See Exactly Where Your Snowflake Spend Is Going"
+              text="Take Control of Your Databricks Spending"
             />
             <p className="text-[17px] text-gray-500 max-w-[560px] mx-auto">
-              Your monthly invoice shows how much you spent, but not why. Our
-              Snowflake Cost Optimization Audit uncovers hidden cost drivers and
-              gives you a clear plan to reduce your Snowflake bill.
+              Your monthly bill only shows the total cost. Our Databricks Cost
+              Optimization Audit helps you understand what&apos;s driving DBU
+              consumption and where you can reduce cloud spending without
+              sacrificing performance.
             </p>
             <div className="flex justify-center gap-4 flex-wrap mt-7">
               <button
@@ -1142,4 +946,4 @@ const SnowflakeCostCalculator = () => {
   );
 };
 
-export default SnowflakeCostCalculator;
+export default DatabricksCostCalculator;
