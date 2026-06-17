@@ -269,6 +269,21 @@ const AIReadinessAudit = () => {
             questions about your data, processes, and technology to receive your
             AI readiness score and practical recommendations.
           </p>
+          <div className="mt-8">
+            <a
+              href="#calculator"
+              className="w-fit c-button c-btn-primary c-btn-medium inline-flex items-center gap-2 hover:!text-colorWhite"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("calculator")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Start Audit <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
           <div className="flex flex-wrap gap-5 mt-8 pt-6 border-t border-white/10">
             {[
               "No signup required",
@@ -310,7 +325,7 @@ const AIReadinessAudit = () => {
       </div>
 
       {/* Audit */}
-      <section className="bg-[#f8f9ff] py-12 md:py-16">
+      <section id="calculator" className="bg-[#f8f9ff] py-12 md:py-16">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           {!result ? (
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg shadow-gray-200/60 overflow-hidden">
@@ -606,13 +621,12 @@ const AIReadinessAudit = () => {
                 />
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white mb-2">
-                    Thinking about implementing AI but not sure you&apos;re
-                    ready?
+                    Ready to put AI to work?
                   </h3>
                   <p className="text-white/60 text-[15px] max-w-3xl leading-relaxed">
-                    Our AI Readiness Workshop helps you identify gaps in your
-                    data, infrastructure, and processes so you can build an AI
-                    strategy with confidence.
+                    A strong AI strategy starts with the right foundation.
+                    We&apos;ll review your results, identify the biggest gaps,
+                    and show you what to fix first.
                   </p>
                   <div className="flex flex-wrap gap-3 mt-6">
                     <button
@@ -625,7 +639,7 @@ const AIReadinessAudit = () => {
                       }}
                       className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border"
                     >
-                      <span>Book an AI Readiness Workshop</span>
+                      <span>Talk AI</span>
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </button>
                   </div>
@@ -781,13 +795,11 @@ const AIReadinessAudit = () => {
             <Heading
               type="h2"
               className="!font-extrabold text-gray-900 mb-3"
-              text="Build Your AI Strategy on a Solid Foundation"
+              text="Your Score Is Just the Start."
             />
             <p className="text-[17px] text-gray-500 max-w-[560px] mx-auto">
-              A successful AI project starts long before the first model is
-              deployed. Our AI Readiness Workshop helps you identify gaps,
-              prioritize improvements, and create a roadmap for successful AI
-              adoption.
+              Our AI experts help you turn audit results into a practical
+              roadmap for successful AI adoption.
             </p>
             <div className="flex justify-center gap-4 flex-wrap mt-7">
               <button
@@ -800,7 +812,7 @@ const AIReadinessAudit = () => {
                 }}
                 className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border hover:!text-themeColor"
               >
-                <span>Book an AI Readiness Workshop</span>
+                <span>View Roadmap</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
               </button>
               <Link

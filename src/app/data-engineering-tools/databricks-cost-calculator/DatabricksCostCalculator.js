@@ -482,6 +482,21 @@ const DatabricksCostCalculator = () => {
             optimize your Databricks spend.
           </p>
 
+          <div className="mt-8">
+            <a
+              href="#calculator"
+              className="w-fit c-button c-btn-primary c-btn-medium inline-flex items-center gap-2 hover:!text-colorWhite"
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById("calculator")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Start Calculator <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
           <div className="flex flex-wrap gap-5 mt-8 pt-6 border-t border-white/10">
             {[
               "No signup required",
@@ -523,7 +538,7 @@ const DatabricksCostCalculator = () => {
       </div>
 
       {/* Calculator */}
-      <section className="bg-[#f8f9ff] py-12 md:py-16">
+      <section id="calculator" className="bg-[#f8f9ff] py-12 md:py-16">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           {!result ? (
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg shadow-gray-200/60 overflow-hidden">
@@ -936,10 +951,8 @@ const DatabricksCostCalculator = () => {
               text="Take Control of Your Databricks Spending"
             />
             <p className="text-[17px] text-gray-500 max-w-[560px] mx-auto">
-              Your monthly bill only shows the total cost. Our Databricks Cost
-              Optimization Audit helps you understand what&apos;s driving DBU
-              consumption and where you can reduce cloud spending without
-              sacrificing performance.
+              We&apos;ll show you where DBUs and infrastructure costs are adding
+              up and where you can optimize your environment.
             </p>
             <div className="flex justify-center gap-4 flex-wrap mt-7">
               <button
@@ -952,7 +965,7 @@ const DatabricksCostCalculator = () => {
                 }}
                 className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border hover:!text-themeColor"
               >
-                <span>Get a Cost Audit</span>
+                <span>Reduce Spend</span>
                 <ArrowRight className="w-4 h-4 ml-1" />
               </button>
               <Link
