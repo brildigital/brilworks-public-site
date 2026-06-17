@@ -2,6 +2,7 @@
 import React from "react";
 import Heading from "../components/HTMLComponents/Heading";
 import ButtonV2 from "../components/Common/ButtonV2";
+import GradientFAQAccordion from "../components/Common/GradientFAQAccordion";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -81,7 +82,6 @@ const stats = [
   { value: "6", label: "Free Tools" },
   { value: "2 min", label: "Average Completion" },
   { value: "100%", label: "Free Forever" },
-  { value: "0", label: "Signups Required" },
 ];
 
 const DataEngineeringTools = () => {
@@ -161,7 +161,7 @@ const DataEngineeringTools = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
+          <div className="grid grid-cols-3 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
             {stats.map((stat, i) => (
               <div key={i} className="bg-white/[0.03] p-5 text-center">
                 <div className="text-2xl md:text-[28px] font-extrabold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-1">
@@ -274,46 +274,81 @@ const DataEngineeringTools = () => {
               label="Book Free Consultation"
               className="hover:!text-colorWhite"
             />
-            <Link
+            {/* <Link
               href="/data-engineering/"
               className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
             >
               Our Data Engineering Services
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
 
-      {/* Bottom CTA */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
-          <div className="bg-[#f2f9fe] border border-gray-200 rounded-2xl py-14 px-6 md:px-12 text-center">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor block mb-4">
-              READY TO OPTIMIZE?
+      {/* FAQ */}
+      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div
+            className="text-center mx-auto mb-14"
+            style={{ maxWidth: 720 }}
+          >
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              Common Questions
             </span>
-            <Heading
-              type="h2"
-              className="!font-extrabold text-gray-900 mb-3"
-              text="Turn Your Insights Into Action"
-            />
-            <p className="text-[17px] text-gray-500 mb-7 max-w-[520px] mx-auto">
-              You&apos;ve assessed your data stack. Now let Brilworks help you
-              optimize costs, modernize pipelines, and unlock AI &mdash; with a
-              dedicated team of data engineers.
-            </p>
-            <div className="flex justify-center gap-4 flex-wrap">
-              <ButtonV2
-                redirect="/contact-us/"
-                label="Book a Free Consultation"
-                className="hover:!text-colorWhite"
-                icon={<ArrowRight className="w-4 h-4" />}
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div className="mx-auto" style={{ maxWidth: 860 }}>
+            {[
+              {
+                q: "Are these data engineering tools free to use?",
+                a: "Yes. All of our data engineering tools are completely free and do not require a subscription. You can estimate costs, compare platforms, and assess your data readiness without creating an account.",
+              },
+              {
+                q: "Who are these tools designed for?",
+                a: "These tools are built for data engineers, analytics engineers, solution architects, CTOs, engineering managers, and technical leaders who are planning cloud migrations, optimizing data platforms, or evaluating AI initiatives.",
+              },
+              {
+                q: "How accurate are the results?",
+                a: "The results are designed to provide practical planning estimates based on the information you enter. While they should not replace a detailed technical assessment, they offer a reliable starting point for budgeting, planning, and technology decisions.",
+              },
+              {
+                q: "Do I need to sign up to use these tools?",
+                a: "No. Every tool can be used instantly without registration. Simply enter your information, receive your results, and explore recommendations in minutes.",
+              },
+              {
+                q: "Which tools are available?",
+                a: "Our collection includes a Snowflake Cost Calculator, Databricks Cost Calculator, AI Readiness Audit, Data Migration Cost Estimator, Data Quality Assessment, and a Snowflake vs Databricks Advisor. We regularly add new tools to help engineering teams make better technology decisions.",
+              },
+              {
+                q: "Can these tools help me choose the right data platform?",
+                a: "Yes. The tools are designed to simplify common data engineering decisions, including estimating cloud costs, comparing platforms, assessing AI readiness, evaluating data quality, and planning migration projects.",
+              },
+            ].map((item, i) => (
+              <GradientFAQAccordion
+                key={i + 1}
+                id={`de-faq-${i + 1}`}
+                question={item.q}
+                answer={item.a}
               />
-              <ButtonV2
-                redirect="/data-engineering/"
-                label="Explore Data Engineering"
-                variant="secondary"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </section>
