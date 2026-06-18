@@ -52,7 +52,7 @@ const tools = [
       "Select current stack (Teradata, SQL Server, Hadoop), data volume, and team size. Get a complexity rating, rough timeline, and common failure risks.",
     icon: Shuffle,
     color: "from-orange-500 to-amber-500",
-    link: "/data-engineering-tools/migration-complexity-cost-calculator/",
+    link: "/data-engineering-tools/data-migration-cost-calculator/",
     keyword: "data migration calculator",
     tags: ["MIGRATION", "PLANNING"],
   },

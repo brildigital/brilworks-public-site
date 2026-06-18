@@ -1060,6 +1060,18 @@ export const sitemapData = [
     lastmod: "2026-06-17T00:00:00.000Z",
   },
   {
+    loc: "https://www.brilworks.com/data-engineering-tools/data-migration-cost-calculator/",
+    lastmod: "2026-06-18T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-tools/data-quality-assessment/",
+    lastmod: "2026-06-18T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-tools/snowflake-vs-databricks-advisor/",
+    lastmod: "2026-06-18T00:00:00.000Z",
+  },
+  {
     loc: "https://www.brilworks.com/product-engineering-development-services/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },
