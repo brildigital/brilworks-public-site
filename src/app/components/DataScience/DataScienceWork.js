@@ -1,41 +1,45 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const cases = [
   {
     tag: "Data Engineering",
-    thumb: "data",
-    title: "Cut warehouse spend without touching the dashboards",
-    body: "A retail client's Snowflake bill climbed every month. We re-partitioned the heaviest tables and moved cold data to object storage. Nothing the analysts touched changed.",
-    metric: "38% warehouse cost reduction, from re-partitioning and tiering storage",
-  },
-  {
-    tag: "AI Agent",
-    thumb: "ai",
-    title: "A support agent that stopped guessing",
-    body: "The first version hallucinated order statuses. We grounded it in a live data feed instead of a nightly export, so it answers from what's true right now.",
-    metric: "71% escalation drop, after grounding the agent in real-time data",
-  },
-  {
-    tag: "Data → Agent · full arc",
-    thumb: "arc",
-    title: "From spreadsheet chaos to a reporting agent",
-    body: "A logistics ops team ran on 40 spreadsheets. We built the pipeline and warehouse first, then put an agent on top that answers questions in plain language.",
-    metric: "Weekly report time: 2 days to 4 minutes",
+    image: "/images/v2/data_engineering_hero.webp",
+    title: "Turned a failing nightly pipeline into a 90 minute job",
+    body: "A fintech analytics platform rebuilt its data pipeline without downtime. Incremental processing and a redesigned workflow cut costs, reduced alerts, and delivered fresh data before the workday.",
+    metric:
+      "4× faster pipeline, 60% lower warehouse cost, and ~1 off-hours page per month",
+    link: "/case-studies/fintech-pipeline-optimization/",
   },
   {
     tag: "Data Engineering",
-    thumb: "data",
-    title: "A migration that didn't lose a single row",
-    body: "Legacy on-prem database to a managed lakehouse. We ran both in parallel for three weeks and reconciled row counts daily before cutting over.",
-    metric: "0 rows lost, verified by daily reconciliation",
+    image: "/images/v2/ai_agent_hero.webp",
+    title: "When every team has a different answer",
+    body: "An omnichannel retailer struggled with disconnected data across twelve systems. We unified every source into a centralized analytics platform with automated pipelines and consistent metrics.",
+    metric:
+      "85% less reporting time, 5× faster dashboards, and one source of truth",
+    link: "/case-studies/ecommerce-analytics-platform/",
+  },
+  {
+    tag: "Data Quality",
+    image: "/images/v2/data_agent_hero.webp",
+    title: "The dashboard said revenue dropped 40%",
+    body: "A growing SaaS company couldn’t trust its analytics because broken pipelines and missing records kept slipping through. We added data quality checks and observability across the entire pipeline.",
+    metric:
+      "90% fewer bad data incidents and issue detection in under 15 minutes",
+    link: "/case-studies/saas-data-quality/",
+  },
+  {
+    tag: "Customer Data Platform",
+    image: "/images/v2/data_eng_hero_2.webp",
+    title: "Eleven systems. Zero agreement.",
+    body: "Customer information lived across eleven different systems. We built a unified customer platform that gave every team one consistent view of accounts, revenue, and engagement.",
+    metric:
+      "11 systems unified into one platform with 95% less manual reconciliation",
+    link: "/case-studies/customer-data-platform/",
   },
 ];
-
-const thumbStyles = {
-  data: "bg-gradient-to-br from-[#1a2342] to-[#0B1020]",
-  ai: "bg-gradient-to-br from-[#0d3b2e] to-[#0B1020]",
-  arc: "bg-gradient-to-br from-[#1a2342] via-[#0d2e2e] to-[#0B1020]",
-};
 
 const DataScienceWork = () => {
   return (
@@ -53,43 +57,47 @@ const DataScienceWork = () => {
             Three builds, one through-line.
           </h2>
           <p className="font-Figtree text-[#525a6b] text-[16px] leading-[1.55] max-w-[62ch]">
-            A pure-data rebuild, an agent shipped into production, and one project that ran the whole arc end to end. Every metric says how we got there.
+            A pure-data rebuild, an agent shipped into production, and one
+            project that ran the whole arc end to end. Every metric says how we
+            got there.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-5">
           {cases.map((c, i) => (
-            <div
+            <Link
+              href={c.link}
               key={i}
-              className="border border-[#e4e8f0] rounded-2xl overflow-hidden bg-white hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(11,16,32,0.4)] transition-all duration-300 reveal"
+              className="border border-[#e4e8f0] rounded-2xl overflow-hidden bg-white hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(11,16,32,0.4)] transition-all duration-300 reveal block"
             >
               {/* Thumbnail */}
-              <div className={`h-[140px] flex items-end p-4 relative overflow-hidden ${thumbStyles[c.thumb]}`}>
-                <div
-                  className="absolute inset-0 opacity-50"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)",
-                    backgroundSize: "22px 22px",
-                  }}
-                ></div>
-                <span className="relative z-[2] font-mono text-[10.5px] font-semibold tracking-[0.08em] uppercase bg-white/10 border border-white/20 rounded-full px-[11px] py-[5px] text-white">
+              <div className="h-[160px] sm:h-[190px] md:h-[220px] relative overflow-hidden">
+                <Image
+                  src={c.image}
+                  alt={c.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" /> */}
+                <span className="absolute bottom-4 left-4 z-[2] font-mono text-[10.5px] font-semibold tracking-[0.08em] uppercase bg-gray-400 border border-gray-400 rounded-full px-[11px] py-[5px] text-white backdrop-blur-sm">
                   {c.tag}
                 </span>
               </div>
-
               {/* Body */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <h3 className="font-Figtree font-semibold text-[18px] text-[#0B1020] tracking-[-0.01em] mb-2">
                   {c.title}
                 </h3>
-                <p className="font-Figtree text-[14px] text-[#525a6b] leading-[1.55] mb-4">{c.body}</p>
-                <div className="flex items-center gap-2 pt-4 border-t border-[#e4e8f0] font-mono text-[12.5px] font-semibold text-[#0B1020]">
+                <p className="font-Figtree text-[14px] text-[#525a6b] leading-[1.55] mb-4">
+                  {c.body}
+                </p>
+                <div className="flex gap-2 pt-4 border-t border-[#e4e8f0] font-mono text-[12.5px] font-semibold text-[#0B1020]">
                   <span className="text-[#0d9e6a]">↓</span>
                   {c.metric}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

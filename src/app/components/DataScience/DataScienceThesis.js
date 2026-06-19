@@ -5,7 +5,7 @@ const arcNodes = [
     idx: "RAW DATA",
     title: "Ingest",
     desc: "Pull from every source: apps, APIs, files, legacy databases. Without losing a row.",
-    progress: 25,
+    progress: 50,
     isGreen: false,
   },
   {
@@ -18,15 +18,15 @@ const arcNodes = [
   {
     idx: "MODELED",
     title: "Warehouse",
-    desc: "One source of truth your team can query. And your models can too.",
-    progress: 75,
+    desc: "One source of truth your team can query. Powers analytics, reporting, and AI with trusted data.",
+    progress: 50,
     isGreen: false,
   },
   {
     idx: "RUNNING",
     title: "Agents",
-    desc: "AI that acts on clean data, so the answers hold up in production.",
-    progress: 100,
+    desc: "AI that acts on clean, trusted data. Automates work and delivers answers that hold up in production.",
+    progress: 50,
     isGreen: true,
   },
 ];
@@ -51,7 +51,10 @@ const DataScienceThesis = () => {
             className="font-Figtree text-[#525a6b] leading-[1.5]"
             style={{ fontSize: "clamp(16px, 2vw, 20px)", maxWidth: "58ch" }}
           >
-            Most teams skip straight to the agent. Then it hallucinates, because the data underneath is stale, duplicated, or nobody trusts it. We build the path in the order it has to be built. Foundation first. Agent last.
+            Most teams skip straight to the agent. Then it hallucinates, because
+            the data underneath is stale, duplicated, or nobody trusts it. We
+            build the path in the order it has to be built. Foundation first.
+            Agent last.
           </p>
         </div>
 
