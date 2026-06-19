@@ -104,7 +104,7 @@ export async function sendDataToSlack(payload) {
                     ? `LeadSourceFunnel: ${lead_source_funnel}`
                     : ""
                 }\n${
-                  page.includes("/tools/")
+                  page.includes("/tools/") || toolFormData
                     ? `ToolFormData:-\n\n ${dynamicFormDataText}\n`
                     : ""
                 }`,
