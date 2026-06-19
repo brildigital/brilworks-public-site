@@ -1072,6 +1072,22 @@ export const sitemapData = [
     lastmod: "2026-06-18T00:00:00.000Z",
   },
   {
+    loc: "https://www.brilworks.com/case-studies/fintech-pipeline-optimization/",
+    lastmod: "2026-06-19T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/case-studies/ecommerce-analytics-platform/",
+    lastmod: "2026-06-19T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/case-studies/saas-data-quality/",
+    lastmod: "2026-06-19T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/case-studies/customer-data-platform/",
+    lastmod: "2026-06-19T00:00:00.000Z",
+  },
+  {
     loc: "https://www.brilworks.com/product-engineering-development-services/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },

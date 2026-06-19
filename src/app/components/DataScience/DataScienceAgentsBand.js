@@ -1,17 +1,71 @@
 import React from "react";
+import {
+  Headphones,
+  UserCheck,
+  FileText,
+  Workflow,
+  Code2,
+  Tag,
+  ArrowRight,
+} from "lucide-react";
 
-const agents = [
+const ICON_MAP = {
+  support: Headphones,
+  lead: UserCheck,
+  document: FileText,
+  workflow: Workflow,
+  coding: Code2,
+  whitelabel: Tag,
+};
+
+const aiSolutions = [
   {
+    iconKey: "support",
+    proof: "Handles 80% of queries automatically",
     title: "Customer Support Agent",
-    desc: "Answers from a live order feed. Stopped guessing once we grounded it in real data.",
+    description:
+      "24/7 support on WhatsApp, website chat, and email. Your AI handles the routine — humans get the complex 20%.",
+    link: "/ai-tools/ai-chatbot-knowledge-base/",
   },
   {
-    title: "Reporting Agent",
-    desc: "Takes plain-language questions against the warehouse. Replaced 40 spreadsheets.",
+    iconKey: "lead",
+    proof: "Responds to leads in under 2 minutes",
+    title: "Lead Qualification Agent",
+    description:
+      "New leads get a response before your competitor does. AI qualifies, scores, and books calls automatically.",
+    link: "/ai-tools/ai-chatbot-conversational-solution/",
   },
   {
+    iconKey: "document",
+    proof: "Processes invoices in 5 seconds",
     title: "Document Processing Agent",
-    desc: "Pulls structured data out of messy PDFs and writes it straight to the pipeline.",
+    description:
+      "Invoices, contracts, receipts — extracted and pushed into your CRM or spreadsheet without human input.",
+    link: "/ai-tools/ai-document-compliance-review/",
+  },
+  {
+    iconKey: "workflow",
+    proof: "Eliminates 20+ hrs/week of manual work",
+    title: "Workflow Automation Agent",
+    description:
+      "Multi-step business processes on autopilot. Reporting, data entry, CRM updates, email sequences.",
+    link: "/ai-tools/ai-insights-and-automation/",
+  },
+  {
+    iconKey: "coding",
+    proof: "One client cut dev time by 50%",
+    title: "AI Coding Accelerator",
+    description:
+      "Custom AI skills baked into your dev workflow. Ship features faster without growing the team.",
+    link: "/ai-agents/tech/",
+  },
+  {
+    iconKey: "whitelabel",
+    proof: "Your brand. Your margin.",
+    title: "White-Label for Agencies",
+    description:
+      "Your clients want AI. You can't build it. We can. You brand it, you bill it, you keep the margin.",
+    link: "/ai-tools/pre-build-solutions/",
   },
 ];
 
@@ -35,35 +89,51 @@ const DataScienceAgentsBand = () => {
             className="font-Figtree font-extrabold tracking-[-0.02em] leading-[1.06] text-white mb-3"
             style={{ fontSize: "clamp(28px, 4vw, 46px)", maxWidth: "16ch" }}
           >
-            30+ AI agents.{" "}
-            <span className="text-[#34d399]">Running live.</span> Right now.
+            30+ AI agents. <span className="text-[#34d399]">Running live.</span>{" "}
+            Right now.
           </h2>
           <p
             className="font-Figtree text-white/60 leading-[1.55]"
             style={{ fontSize: "17px", maxWidth: "48ch" }}
           >
-            They run because the data underneath them is clean. Most teams hire an AI agent development company and skip that part. We build the pipeline before the agent.
+            They run because the data underneath them is clean. Most teams hire
+            an AI agent development company and skip that part. We build the
+            pipeline before the agent.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4">
-          {agents.map((agent, i) => (
-            <div
-              key={i}
-              className="border border-white/[0.08] rounded-2xl p-[22px] bg-white/[0.025] hover:-translate-y-1 hover:border-[#34d399]/40 transition-all duration-300 reveal"
-            >
-              <div className="flex items-center gap-[7px] font-mono text-[11px] font-semibold text-[#34d399] tracking-[0.06em] mb-3">
-                <span className="w-[7px] h-[7px] rounded-full bg-[#34d399] hero-blink shrink-0"></span>
-                LIVE IN PRODUCTION
-              </div>
-              <h3 className="font-Figtree font-semibold text-[16px] text-white tracking-[-0.01em] mb-2">
-                {agent.title}
-              </h3>
-              <p className="font-Figtree text-[13px] text-white/60 leading-[1.55] m-0">
-                {agent.desc}
-              </p>
-            </div>
-          ))}
+          {aiSolutions.map((agent, i) => {
+            const Icon = ICON_MAP[agent.iconKey];
+            return (
+              <a
+                key={i}
+                href={agent.link}
+                className="border border-white/[0.08] rounded-2xl p-[22px] bg-white/[0.025] hover:-translate-y-1 hover:border-[#34d399]/40 transition-all duration-300 reveal flex flex-col"
+              >
+                <div className="flex items-center justify-start gap-4 mb-3">
+                  {Icon && (
+                    <div className="w-9 h-9 rounded-lg bg-[#34d399]/10 flex items-center justify-center">
+                      <Icon className="w-[18px] h-[18px] text-[#34d399]" />
+                    </div>
+                  )}
+                  <div className="flex items-center gap-[7px] font-mono text-[11px] font-semibold text-[#34d399] tracking-[0.06em]">
+                    <span className="w-[7px] h-[7px] rounded-full bg-[#34d399] hero-blink shrink-0"></span>
+                    {agent.proof}
+                  </div>
+                </div>
+                <h3 className="font-Figtree font-semibold text-[16px] text-white tracking-[-0.01em] mb-2">
+                  {agent.title}
+                </h3>
+                <p className="font-Figtree text-[13px] text-white/60 leading-[1.55] m-0 mb-3">
+                  {agent.description}
+                </p>
+                <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#34d399] group-hover:gap-2 transition-all mt-auto">
+                  Explore Agent <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
