@@ -1328,7 +1328,14 @@ export const sitemapData = [
     loc: "https://www.brilworks.com/ai-agent-development-services/",
     lastmod: "2026-05-01T00:00:00.000Z",
   },
-
+  {
+    loc: "https://www.brilworks.com/snowflake-partner/",
+    lastmod: "2026-06-22T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/databricks-partner/",
+    lastmod: "2026-06-22T00:00:00.000Z",
+  },
   {
     loc: "https://www.brilworks.com/privacy-policy/",
     lastmod: "2025-05-15T12:04:49.528Z",
