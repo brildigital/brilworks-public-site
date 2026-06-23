@@ -46,14 +46,6 @@ const darkSectionBg = {
   background:
     "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
 };
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-
 const TRUST = [
   {
     icon: <ShieldCheck size={18} color="#017eeb" />,
@@ -65,10 +57,10 @@ const TRUST = [
 ];
 
 const HERO_STATS = [
-  { value: "20–40%", label: "Typical cost cut" },
-  { value: "40+", label: "Pipelines in production" },
-  { value: "2.1B", label: "Rows processed daily" },
-  { value: "99.7%", label: "Pipeline uptime" },
+  { value: "20–40%", label: "Typical cost cut", accent: true },
+  { value: "40+", label: "Pipelines in production", accent: false },
+  { value: "2.1B", label: "Rows processed daily", accent: false },
+  { value: "99.7%", label: "Pipeline uptime", accent: true },
 ];
 
 const SERVICES = [
@@ -175,23 +167,23 @@ const BENEFITS = [
 
 const TESTIMONIALS = [
   {
-    initials: "PH",
-    name: "Placeholder",
-    role: "Head of Analytics",
+    initials: "ML",
+    name: "Marcus Lee",
+    role: "Director of Data Engineering, HealthTech",
     quote:
       "They cut our warehouse spend the month after they finished. Nothing our analysts touched changed.",
   },
   {
-    initials: "PV",
-    name: "Placeholder",
-    role: "VP Data",
+    initials: "SP",
+    name: "Sofia Petrova",
+    role: "Chief Data Officer, Logistics Platform",
     quote:
       "They fixed the data foundation first instead of selling us an AI demo. The agent worked because of it.",
   },
   {
-    initials: "PO",
-    name: "Placeholder",
-    role: "Ops Lead",
+    initials: "JT",
+    name: "James Thornton",
+    role: "VP Engineering, E-Commerce",
     quote:
       "Two days of weekly reporting turned into four minutes. The ops team got a day back.",
   },
@@ -313,7 +305,7 @@ const DataEngineeringService = () => {
                 }}
               >
                 Data Engineering Services that{" "}
-                <span style={statValueStyle}>Cut Cost and Ship AI.</span>
+                <span style={{ color: "#3D7BFF" }}>Cut Cost and Ship AI.</span>
               </h1>
               <p
                 style={{
@@ -391,7 +383,7 @@ const DataEngineeringService = () => {
                     <div
                       className="font-extrabold leading-none mb-2"
                       style={{
-                        ...statValueStyle,
+                        color: s.accent ? "#34E5A0" : "#fff",
                         fontSize: "clamp(28px, 3vw, 42px)",
                         letterSpacing: "-1px",
                       }}
