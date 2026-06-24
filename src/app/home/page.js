@@ -33,6 +33,9 @@ const ExploreOurExpertise = dynamic(
 const ClientReviews = dynamic(
   () => import("../components/Homepage/ClientReviews"),
 );
+const PlatformPartners = dynamic(
+  () => import("../components/Homepage/PlatformPartners"),
+);
 const ClutchReviews = dynamic(
   () => import("../components/Homepage/ClutchReviews"),
 );
@@ -121,6 +124,7 @@ const page = () => {
       <ExploreOurExpertise />
       <ClientReviews />
       <IndustriesWeServe />
+      <PlatformPartners />
       <ClutchReviews />
       <Honors />
       <EbookSection />

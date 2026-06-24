@@ -408,6 +408,15 @@ input[type="number"] {
   }
 }
 
+@keyframes partnerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .faq-bottom .accordion-body {
   color: var(--color_black);
   font-size: 1.2rem;

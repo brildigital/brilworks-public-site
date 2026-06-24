@@ -189,6 +189,7 @@ const TESTIMONIALS = [
   },
 ];
 
+
 const HONORS = [
   {
     label: "Snowflake Partner",
