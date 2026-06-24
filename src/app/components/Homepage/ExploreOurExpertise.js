@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Smartphone, Globe, Cloud, Users } from "lucide-react";
+import { Smartphone, Globe, Cloud, Users, Database } from "lucide-react";
 import Link from "next/link";
 
 const serviceIcons = {
@@ -8,6 +8,7 @@ const serviceIcons = {
   web: <Globe size={28} color="#1A5CCC" strokeWidth={1.75} />,
   cloud: <Cloud size={28} color="#0891b2" strokeWidth={1.75} />,
   team: <Users size={28} color="#16a34a" strokeWidth={1.75} />,
+  data: <Database size={28} color="#017eeb" strokeWidth={1.75} />,
 };
 
 const serviceCards = [
@@ -34,6 +35,14 @@ const serviceCards = [
       "AWS architecture, CI/CD pipelines, Kubernetes — reliability at scale.",
     tags: ["AWS", "Kubernetes", "DevOps"],
     link: "/aws-consulting-services/",
+  },
+  {
+    iconKey: "data",
+    title: "Data Engineering",
+    description:
+      "Pipelines, warehouses, and cost optimization on Snowflake & Databricks.",
+    tags: ["Snowflake", "Databricks", "dbt"],
+    link: "/data-engineering-services/",
   },
   {
     iconKey: "team",
@@ -64,7 +73,7 @@ const ExploreOurExpertise = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {serviceCards.map((card, index) => (
             <Link
               href={card.link}
