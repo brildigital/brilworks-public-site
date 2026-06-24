@@ -67,7 +67,7 @@ const BlogContactForm = () => {
             token,
             previousPage,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -161,7 +161,7 @@ const BlogContactForm = () => {
           id="submit"
           name="btnSubmit"
           type="submit"
-          className="w-full hover:text-themeColor"
+          className="w-full hover:text-themeColor bg-themeColor"
           icon={isSubmitting ? <Loader /> : ""}
           label={isSubmitting ? "Submitting" : "Submit"}
           disabled={isSubmitting}

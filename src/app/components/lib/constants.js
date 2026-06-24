@@ -26,6 +26,7 @@ export const notNewTabRedirect = [
   `${process.env.NEXT_PUBLIC_BASE_URL}adalo-development-services/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}flutterflow-development-services/`,
   `${process.env.NEXT_PUBLIC_BASE_URL}low-code-no-code-development-services/`,
+  `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-services/`,
 ];
 
 export const blogSubCategories = [
@@ -130,6 +131,19 @@ export const blogSubCategories = [
 ];
 
 export const servicesMenuItems = [
+  {
+    name: "Data & Analytics",
+    subSections: [
+      {
+        name: "Data Engineering",
+        path: "/data-engineering-services/",
+      },
+      {
+        name: "Data Engineering Tools",
+        path: "/data-engineering-tools/",
+      },
+    ],
+  },
   {
     name: "AI & Agents",
     subSections: [
@@ -1335,6 +1349,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/databricks-partner/",
     lastmod: "2026-06-22T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-services/",
+    lastmod: "2026-06-23T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/privacy-policy/",

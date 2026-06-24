@@ -8,8 +8,8 @@ import ButtonV2 from "../Common/ButtonV2";
 import CTASection from "../Common/CTASection";
 
 const BrilworksCareerReview = dynamic(() => import("./BrilworksCareerReview"));
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
 const ContactFormV2 = dynamic(() => import("../Homepage/ContactFormV2"));
 

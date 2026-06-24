@@ -1,26 +1,26 @@
 {
   "/": [
     {
-      "name": "The Roadmap to Successful AI Implementation",
-      "slug": "roadmap-to-successful-ai-implementation",
+      "name": "What Is Snowflake? A Practical Guide to the Cloud Data Platform",
+      "slug": "what-is-snowflake",
       "content": {
         "Priority": "",
-        "Published": "2024-09-11 11:27",
+        "Published": "2026-06-23 00:00",
         "mobile_banner": {
-          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/821f4d5d85_banner-image-the-roadmap-to-successful-ai-implementation-1_1x.webp",
-          "alt": "Banner Image - The Roadmap to Successful AI Implementation"
+          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/Group_88-1782195650828.png",
+          "alt": "What Is Snowflake - A Practical Guide to the Cloud Data Platform"
         }
       }
     },
     {
-      "name": "IT Infrastructure Trends Every CIO Should Know",
-      "slug": "node-js-vs-golang",
+      "name": "What Is Databricks? A Complete Guide for Modern Data Teams",
+      "slug": "what-is-databricks-a-complete-guide-for-modern-data-teams",
       "content": {
         "Priority": "",
-        "Published": "2025-06-04 07:27",
+        "Published": "2026-06-15 00:00",
         "mobile_banner": {
-          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/Mobile_Banner_Image_-_IT_Infrastructure_Trends_Every_CIO_Should_Know_(And_How_to_Act_on_Them)-1749022988394.webp",
-          "alt": "2 Banner Image - IT Infrastructure Trends"
+          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/Group_80-1781520748561.png",
+          "alt": "What Is Databricks - A Complete Guide for Modern Data Teams"
         }
       }
     }

@@ -19,6 +19,7 @@ import {
 import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 import { Calendar, Clock } from "lucide-react";
+import SummarizeWithAI from "@/app/components/Blog/SummarizeWithAI";
 
 export async function generateMetadata({ params }) {
   const { props: data } = await fetchData(params?.slug);
@@ -262,6 +263,7 @@ export default async function Page(props) {
                   </div>
                 </div>
               </div>
+              <SummarizeWithAI slug={params?.slug} />
             </div>
           </div>
         </div>
