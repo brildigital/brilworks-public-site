@@ -121,10 +121,10 @@ const page = () => {
       <DataSciencePillars />
       <DataScienceAgentsBand />
       <DataScienceIndustries />
+      <PlatformPartners />
       <ExploreOurExpertise />
       <ClientReviews />
       <IndustriesWeServe />
-      <PlatformPartners />
       <ClutchReviews />
       <Honors />
       <EbookSection />

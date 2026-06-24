@@ -6,6 +6,7 @@ const PARTNERS = [
   { name: "AWS", logo: "/images/v2/aws_partner.webp" },
   { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
   { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },
+  { name: "adalo", logo: "/images/v2/adalo_partner.webp" },
 ];
 
 const PlatformPartners = () => {
@@ -39,14 +40,14 @@ const PlatformPartners = () => {
               color: "#0d0f1a",
             }}
           >
-            Certified Partners You Can Trust
+            Built on the Platforms That Power Modern Data
           </h2>
           <p
             className="mt-3"
             style={{ fontSize: 15, lineHeight: 1.7, color: "#6b7280" }}
           >
-            Dedicated Centers of Excellence for each platform we partner with,
-            ensuring top-tier expertise and innovation.
+            We partner with leading cloud and data platforms to deliver
+            reliable, scalable solutions backed by certified expertise.
           </p>
         </div>
       </div>
