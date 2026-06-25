@@ -23,6 +23,7 @@ import {
   GraduationCap,
   Truck,
 } from "lucide-react";
+import Image from "next/image";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
@@ -356,7 +357,7 @@ const SERVICES = [
       "UI/UX designers with design-system experience",
       "3+ years minimum, domain-vetted, portfolio-reviewed",
     ],
-    mockup: <MockupSkillBoard />,
+    image:"/images/v2/frontend_engineers.webp",
     imageBg: "linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)",
     padMockup: true,
     reverse: false,
@@ -370,7 +371,7 @@ const SERVICES = [
       "AWS Certified cloud & serverless developers",
       "Real-world system-design and scaling experience",
     ],
-    mockup: <MockupBenchStats />,
+    image:"/images/v2/backend_cloud_team.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
     padMockup: true,
     reverse: true,
@@ -384,7 +385,7 @@ const SERVICES = [
       "Blockchain & smart-contract developers",
       "Transparent hourly, monthly, and T&M pricing",
     ],
-    mockup: <MockupBillingRates />,
+    image:"/images/v2/ai_ml_engineers.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
     padMockup: true,
     reverse: false,
@@ -398,7 +399,7 @@ const SERVICES = [
       "QA & test automation specialists (Cypress, Playwright)",
       "Onboarded in 5-7 business days",
     ],
-    mockup: <MockupPhone />,
+    image:"/images/v2/devops_qa.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: false,
     reverse: true,
@@ -412,7 +413,7 @@ const SERVICES = [
       "Business analysts for requirements & discovery",
       "Seamless integration with your existing SDLC",
     ],
-    mockup: <MockupMultiDevice />,
+    image:"/images/v2/project_managers.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
     padMockup: false,
     reverse: false,
@@ -505,13 +506,14 @@ const StaffAugmentation = () => {
               <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+                     >
+                      <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
