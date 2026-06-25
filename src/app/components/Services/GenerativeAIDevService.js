@@ -225,178 +225,6 @@ const FAQ = [
   },
 ];
 
-// ---------- Service Mockups ----------
-const MockBar = ({ label }) => (
-  <div className="flex items-center gap-1.5 px-3.5 py-2.5" style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}>
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ef4444" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#10b981" }} />
-    <em className="not-italic ml-3 text-[11px] font-semibold" style={{ color: "#94a3b8", letterSpacing: "0.02em" }}>{label}</em>
-  </div>
-);
-
-// Mockup 1: Sticky note discovery board (Consulting)
-const MockupBoard = () => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label="AI Opportunity Map · Discovery" />
-    <div className="flex-1 relative p-4" style={{ background: "#fafbfc", backgroundImage: "radial-gradient(#e2e8f0 1px, transparent 1px)", backgroundSize: "14px 14px" }}>
-      {[
-        { c: "#fef3c7", r: "-5deg", left: "6%", top: "14%", w1: "75%", w2: "55%" },
-        { c: "#ede9fe", r: "3deg", left: "38%", top: "8%", w1: "80%", w2: "60%" },
-        { c: "#dcfce7", r: "-3deg", left: "68%", top: "18%", w1: "65%", w2: "75%" },
-        { c: "#fce7f3", r: "4deg", left: "14%", top: "55%", w1: "70%", w2: "50%" },
-        { c: "#e0e7ff", r: "-2deg", left: "48%", top: "60%", w1: "80%", w2: "55%" },
-      ].map((s, i) => (
-        <div key={i} className="absolute px-2.5 py-2 rounded-[4px]"
-          style={{ width: "28%", background: s.c, transform: `rotate(${s.r})`, left: s.left, top: s.top, boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
-          <span className="block h-[5px] w-[60%] rounded-sm mb-[5px]" style={{ background: "rgba(0,0,0,0.35)" }} />
-          <span className="block h-[3px] rounded-sm mb-[3px]" style={{ width: s.w1, background: "rgba(0,0,0,0.18)" }} />
-          <span className="block h-[3px] rounded-sm" style={{ width: s.w2, background: "rgba(0,0,0,0.18)" }} />
-        </div>
-      ))}
-      <div className="absolute" style={{ left: "34%", top: "30%", width: "10%", height: "1.5px", background: "#7c3aed", opacity: 0.5, transform: "rotate(15deg)" }} />
-      <div className="absolute" style={{ left: "62%", top: "38%", width: "8%", height: "1.5px", background: "#7c3aed", opacity: 0.5, transform: "rotate(45deg)" }} />
-    </div>
-  </div>
-);
-
-// Mockup 2: Code + Canvas (RAG / LLM Model Development)
-const codeSeg = (cls, w) => {
-  const colors = { k: "#c084fc", s: "#86efac", v: "#fbbf24", t: "#67e8f9", x: "#475569" };
-  return <span className="inline-block rounded-sm" style={{ height: 7, width: w, background: colors[cls] }} />;
-};
-
-const MockupCodeCanvas = () => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label="rag_pipeline.py · retriever.ts" />
-    <div className="flex-1 grid grid-cols-2">
-      <div className="p-3.5" style={{ background: "#0d1117" }}>
-        {[
-          [["k", 18], ["t", 36], ["x", 8]],
-          [["x", 8], ["k", 24], ["s", 48]],
-          [["x", 8], ["v", 18], ["s", 30], ["t", 18]],
-          [["x", 16], ["k", 30], ["v", 24]],
-          [["x", 8], ["t", 42], ["x", 6]],
-          [["k", 20], ["s", 40]],
-          [["x", 24], ["v", 30]],
-          [["t", 18], ["s", 36]],
-        ].map((line, i) => (
-          <div key={i} className="flex gap-1.5 items-center mb-[7px]">
-            <b className="text-[9px] font-mono min-w-[14px]" style={{ color: "#94a3b8" }}>{i + 1}</b>
-            {line.map(([c, w], j) => <span key={j}>{codeSeg(c, w)}</span>)}
-          </div>
-        ))}
-      </div>
-      <div className="p-3.5" style={{ background: "#f8fafc" }}>
-        {[
-          { color: "#4f46e5", w1: "80%", w2: "60%", hasSecond: true },
-          { color: "#7c3aed", w1: "75%", w2: "55%", hasSecond: true },
-          { color: "#a855f7", w1: "70%", w2: null, hasSecond: false },
-        ].map((c, i) => (
-          <div key={i} className="bg-white rounded-md p-2 mb-2" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
-            <div style={{ height: 6, width: "60%", background: c.color, borderRadius: 2, marginBottom: 5 }} />
-            <div style={{ height: 4, width: c.w1, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-            {c.hasSecond && <div style={{ height: 4, width: c.w2, background: "#cbd5e1", borderRadius: 1.5 }} />}
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-// Mockup 3: Multi-device (Integration)
-const MockupMultiDevice = () => (
-  <div className="grid gap-3.5 p-3.5 h-full items-center" style={{ gridTemplateColumns: "2fr 1fr", background: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)" }}>
-    <div style={{ background: "#0d0f1a", borderRadius: "8px 8px 4px 4px", padding: "6px 6px 0" }}>
-      <div className="bg-white p-2" style={{ borderRadius: "4px 4px 0 0", minHeight: 110 }}>
-        <div style={{ height: 8, width: "40%", background: "#0d9488", borderRadius: 2, marginBottom: 8 }} />
-        <div className="grid grid-cols-3 gap-1 mb-2">
-          <div style={{ height: 24, borderRadius: 3, background: "linear-gradient(135deg, #0d9488, #14b8a6)" }} />
-          <div style={{ height: 24, borderRadius: 3, background: "#ecfdf5", border: "1px solid #bbf7d0" }} />
-          <div style={{ height: 24, borderRadius: 3, background: "#ecfdf5", border: "1px solid #bbf7d0" }} />
-        </div>
-        {["80%", "65%", "75%", "55%"].map((w, i) => (
-          <div key={i} style={{ height: 4, background: "#e2e8f0", borderRadius: 1.5, marginBottom: 3, width: w }} />
-        ))}
-      </div>
-      <div style={{ height: 6, background: "#1e293b", borderRadius: "0 0 8px 8px" }} />
-    </div>
-    <div style={{ background: "#0d0f1a", borderRadius: 10, padding: 5 }}>
-      <div className="p-2" style={{ background: "linear-gradient(160deg, white, #ecfdf5)", borderRadius: 6, minHeight: 90 }}>
-        <div style={{ height: 5, width: "50%", background: "#0d9488", borderRadius: 2, marginBottom: 6 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-        <div style={{ height: 12, width: "50%", background: "#0d9488", borderRadius: 3, marginTop: 6 }} />
-      </div>
-    </div>
-  </div>
-);
-
-// Mockup 4: Stats dashboard (Model Performance / Monitoring & Fine-Tuning)
-const MockupStatsDashboard = ({ stats, rows, label }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label={label} />
-    <div className="flex-1 p-4">
-      <div className="grid grid-cols-3 gap-2.5 mb-3">
-        {stats.map((s, i) => (
-          <div key={i} className="rounded-md py-2.5 px-2 text-center"
-            style={{
-              background: s.tone === "warn" ? "#fef3c7" : s.tone === "err" ? "#fee2e2" : "#f0fdf4",
-              border: `1px solid ${s.tone === "warn" ? "#fde68a" : s.tone === "err" ? "#fecaca" : "#bbf7d0"}`,
-            }}>
-            <div className="text-[16px] font-extrabold leading-none"
-              style={{ color: s.tone === "warn" ? "#a16207" : s.tone === "err" ? "#b91c1c" : "#047857" }}>{s.n}</div>
-            <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>{s.lb}</div>
-          </div>
-        ))}
-      </div>
-      <div>
-        {rows.map((row, i, arr) => (
-          <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
-            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.pass ? "#10b981" : "#ef4444" }}>
-              {row.pass
-                ? <Check size={10} color="white" strokeWidth={3} />
-                : <X size={10} color="white" strokeWidth={3} />}
-            </div>
-            <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
-            <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-// Mockup 5: Phone (Chat / Replication UI)
-const MockupPhone = () => (
-  <div className="flex items-center justify-center gap-[18px] h-full" style={{ background: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)" }}>
-    <div className="relative p-2" style={{ width: 110, height: 200, background: "#0d0f1a", borderRadius: 18, boxShadow: "0 12px 40px rgba(124,58,237,0.25)" }}>
-      <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#0d0f1a", borderRadius: "0 0 6px 6px" }} />
-      <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: "linear-gradient(160deg, #ffffff 0%, #f5f3ff 100%)" }}>
-        <div style={{ height: 6, width: "50%", background: "#7c3aed", borderRadius: 2, marginBottom: 8 }} />
-        {[{ w1: "80%", w2: "60%", both: true }, { w1: "70%", w2: "50%", both: true }, { w1: "75%", w2: null, both: false }].map((c, i) => (
-          <div key={i} className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-            <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-            <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: c.w1 }} />
-            {c.both && <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: c.w2 }} />}
-          </div>
-        ))}
-        <div className="flex items-center justify-center mt-1.5" style={{ background: "#7c3aed", height: 18, borderRadius: 4 }}>
-          <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
-        </div>
-      </div>
-    </div>
-    <div className="flex flex-col gap-2 max-[600px]:hidden">
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #7c3aed, #a855f7)", boxShadow: "0 4px 12px rgba(124,58,237,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #017eeb, #00dbd3)", boxShadow: "0 4px 12px rgba(124,58,237,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #f59e0b, #ef4444)", boxShadow: "0 4px 12px rgba(124,58,237,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #8b5cf6, #ec4899)", boxShadow: "0 4px 12px rgba(124,58,237,0.15)" }} />
-    </div>
-  </div>
-);
-
 const SERVICES = [
   {
     title: "Generative AI Consulting",
@@ -407,9 +235,8 @@ const SERVICES = [
       "Model, cost, and data-privacy strategy",
       "Prioritized 90-day GenAI roadmap",
     ],
-    mockup: <MockupBoard />,
+    image: "/images/ai_consulting.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
-    padMockup: true,
     reverse: false,
   },
   {
@@ -421,9 +248,8 @@ const SERVICES = [
       "Multi-agent orchestration (LangGraph, CrewAI)",
       "Guardrails, evals, and hallucination controls",
     ],
-    mockup: <MockupCodeCanvas />,
+    image: "/images/ai_model_development.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
-    padMockup: true,
     reverse: true,
   },
   {
@@ -435,9 +261,8 @@ const SERVICES = [
       "CRM, ERP, Slack, and data-warehouse connectors",
       "Token-cost observability & rate limiting",
     ],
-    mockup: <MockupMultiDevice />,
+    image: "/images/ai_integration.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
-    padMockup: false,
     reverse: false,
   },
   {
@@ -449,25 +274,8 @@ const SERVICES = [
       "Drift detection and regression alerts",
       "Prompt-injection and jailbreak monitoring",
     ],
-    mockup: (
-      <MockupStatsDashboard
-        label="Model Monitor · Prod · LLM-v2.3"
-        stats={[
-          { n: "96.4%", lb: "Accuracy" },
-          { n: "842ms", lb: "P95 Latency", tone: "warn" },
-          { n: "$0.41", lb: "Avg Cost" },
-        ]}
-        rows={[
-          { pass: true, w: "70%" },
-          { pass: true, w: "60%" },
-          { pass: true, w: "80%" },
-          { pass: false, w: "65%" },
-          { pass: true, w: "75%" },
-        ]}
-      />
-    ),
+    image: "/images/ai_upgrade_maintenance.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
-    padMockup: true,
     reverse: true,
   },
   {
@@ -479,25 +287,8 @@ const SERVICES = [
       "LoRA / QLoRA for efficient training",
       "Eval harness & A/B comparison vs. base model",
     ],
-    mockup: (
-      <MockupStatsDashboard
-        label="Fine-Tune Job · Llama-3-8B · Epoch 4/5"
-        stats={[
-          { n: "+18%", lb: "Accuracy" },
-          { n: "0.09", lb: "Loss", tone: "warn" },
-          { n: "4/5", lb: "Epochs" },
-        ]}
-        rows={[
-          { pass: true, w: "70%" },
-          { pass: true, w: "60%" },
-          { pass: true, w: "55%" },
-          { pass: true, w: "80%" },
-          { pass: true, w: "65%" },
-        ]}
-      />
-    ),
+    image: "/images/ai_model_fine_tuning.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
-    padMockup: true,
     reverse: false,
   },
   {
@@ -509,9 +300,8 @@ const SERVICES = [
       "On-prem & private-cloud rollout",
       "Central prompt & policy governance",
     ],
-    mockup: <MockupPhone />,
+    image: "/images/ai_model_replication.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
-    padMockup: false,
     reverse: true,
   },
 ];
@@ -606,13 +396,14 @@ const GenerativeAIDevService = () => {
               <div className="grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2">
                 <div className={svc.reverse ? "lg:order-2" : ""}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+                  >
+                    <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover "
+                    />
                   </div>
                 </div>
                 <div className={svc.reverse ? "lg:order-1" : ""}>

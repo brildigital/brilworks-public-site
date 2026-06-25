@@ -22,6 +22,7 @@ import {
   Plane,
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import Image from "next/image";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
@@ -207,182 +208,6 @@ const FAQ = [
   },
 ];
 
-// ---------- Service Mockups ----------
-const MockBar = ({ label }) => (
-  <div className="flex items-center gap-1.5 px-3.5 py-2.5" style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}>
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ef4444" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#10b981" }} />
-    <em className="not-italic ml-3 text-[11px] font-semibold" style={{ color: "#94a3b8", letterSpacing: "0.02em" }}>{label}</em>
-  </div>
-);
-
-// Phone mockup – tinted to a chosen accent color (used for Native iOS/Android)
-const MockupPhone = ({ accent = "#017eeb", bg = "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)", screenBg = "linear-gradient(160deg, #ffffff 0%, #f0fdfa 100%)", swatches }) => {
-  const sw = swatches || [
-    "linear-gradient(135deg, #017eeb, #00dbd3)",
-    "linear-gradient(135deg, #0d0f1a, #475569)",
-    "linear-gradient(135deg, #34c759, #30d158)",
-    "linear-gradient(135deg, #ff9500, #ff3b30)",
-  ];
-  return (
-    <div className="flex items-center justify-center gap-[18px] h-full" style={{ background: bg }}>
-      <div className="relative p-2" style={{ width: 110, height: 200, background: "#0d0f1a", borderRadius: 18, boxShadow: `0 12px 40px ${accent}40` }}>
-        <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#0d0f1a", borderRadius: "0 0 6px 6px" }} />
-        <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: screenBg }}>
-          <div style={{ height: 6, width: "50%", background: accent, borderRadius: 2, marginBottom: 8 }} />
-          {[{ w1: "80%", w2: "60%", both: true }, { w1: "70%", w2: "55%", both: true }, { w1: "75%", w2: null, both: false }].map((c, i) => (
-            <div key={i} className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-              <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-              <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: c.w1 }} />
-              {c.both && <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: c.w2 }} />}
-            </div>
-          ))}
-          <div className="flex items-center justify-center mt-1.5" style={{ background: accent, height: 18, borderRadius: 4 }}>
-            <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col gap-2 max-[600px]:hidden">
-        {sw.map((g, i) => (
-          <div key={i} style={{ width: 38, height: 38, borderRadius: 10, background: g, boxShadow: `0 4px 12px ${accent}26` }} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-// Multi-device mockup – laptop + tablet, tinted
-const MockupMultiDevice = ({ accent = "#0891b2", accent2 = "#06b6d4", bg = "linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)", screenTint = "#ecfeff" }) => (
-  <div className="grid gap-3.5 p-3.5 h-full items-center" style={{ gridTemplateColumns: "2fr 1fr", background: bg }}>
-    <div style={{ background: "#0d0f1a", borderRadius: "8px 8px 4px 4px", padding: "6px 6px 0" }}>
-      <div className="bg-white p-2" style={{ borderRadius: "4px 4px 0 0", minHeight: 110 }}>
-        <div style={{ height: 8, width: "40%", background: accent, borderRadius: 2, marginBottom: 8 }} />
-        <div className="grid grid-cols-3 gap-1 mb-2">
-          <div style={{ height: 24, borderRadius: 3, background: `linear-gradient(135deg, ${accent}, ${accent2})` }} />
-          <div style={{ height: 24, borderRadius: 3, background: `linear-gradient(135deg, ${accent2}, ${accent})` }} />
-          <div style={{ height: 24, borderRadius: 3, background: screenTint, border: "1px solid #cffafe" }} />
-        </div>
-        {["80%", "65%", "75%", "55%"].map((w, i) => (
-          <div key={i} style={{ height: 4, background: "#e2e8f0", borderRadius: 1.5, marginBottom: 3, width: w }} />
-        ))}
-      </div>
-      <div style={{ height: 6, background: "#1e293b", borderRadius: "0 0 8px 8px" }} />
-    </div>
-    <div style={{ background: "#0d0f1a", borderRadius: 10, padding: 5 }}>
-      <div className="p-2" style={{ background: `linear-gradient(160deg, white, ${screenTint})`, borderRadius: 6, minHeight: 90 }}>
-        <div style={{ height: 5, width: "50%", background: accent, borderRadius: 2, marginBottom: 6 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 12, width: "50%", background: accent, borderRadius: 3, marginTop: 6 }} />
-      </div>
-    </div>
-  </div>
-);
-
-// Code + canvas mockup – tinted
-const MockupCodeCanvas = ({ canvasBg = "#f0fdf4", cardColors = ["#10b981", "#059669", "#047857"], keyColor = "#86efac" }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label="app.manifest \u00B7 sw.js" />
-    <div className="flex-1 grid grid-cols-2">
-      <div className="p-3.5" style={{ background: "#0d1117" }}>
-        {[
-          [["k", 22], ["t", 36]],
-          [["x", 8], ["s", 48]],
-          [["x", 8], ["v", 18], ["s", 30]],
-          [["x", 16], ["k", 30], ["v", 24]],
-          [["x", 8], ["t", 42]],
-          [["k", 20], ["s", 40]],
-          [["x", 24], ["v", 30]],
-          [["t", 18], ["s", 36]],
-        ].map((line, i) => {
-          const colors = { k: keyColor, s: "#86efac", v: "#fbbf24", t: "#67e8f9", x: "#475569" };
-          return (
-            <div key={i} className="flex gap-1.5 items-center mb-[7px]">
-              <b className="text-[9px] font-mono min-w-[14px]" style={{ color: "#94a3b8" }}>{i + 1}</b>
-              {line.map(([c, w], j) => (
-                <span key={j} className="inline-block rounded-sm" style={{ height: 7, width: w, background: colors[c] }} />
-              ))}
-            </div>
-          );
-        })}
-      </div>
-      <div className="p-3.5" style={{ background: canvasBg }}>
-        {cardColors.map((color, i) => (
-          <div key={i} className="bg-white rounded-md p-2 mb-2" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
-            <div style={{ height: 6, width: "60%", background: color, borderRadius: 2, marginBottom: 5 }} />
-            <div style={{ height: 4, width: i < 2 ? "80%" : "70%", background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-            {i < 2 && <div style={{ height: 4, width: "60%", background: "#cbd5e1", borderRadius: 1.5 }} />}
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-// Stats / device-mesh dashboard – tinted (used for IoT)
-const MockupDashboard = ({ pillBg = "#f0fdfa", pillBorder = "#99f6e4", numColor = "#0f766e", checkColor = "#14b8a6", label = "Dashboard" }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-    <MockBar label={label} />
-    <div className="flex-1 p-4">
-      <div className="grid grid-cols-3 gap-2.5 mb-3">
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: pillBg, border: `1px solid ${pillBorder}` }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: numColor }}>248</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>Online</div>
-        </div>
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: "#fef3c7", border: "1px solid #fde68a" }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: "#a16207" }}>4</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>Syncing</div>
-        </div>
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: "#ecfdf5", border: "1px solid #a7f3d0" }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: "#047857" }}>99.8%</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>Uptime</div>
-        </div>
-      </div>
-      <div>
-        {[{ w: "70%" }, { w: "60%" }, { w: "80%" }, { w: "70%" }, { w: "75%" }].map((row, i, arr) => (
-          <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
-            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: checkColor }}>
-              <Check size={10} color="white" strokeWidth={3} />
-            </div>
-            <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
-            <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
-
-// Sticky-board mockup – tinted (used for Wearable)
-const MockupBoard = ({ label = "Board", boardBg = "#ecfeff", dotColor = "#a5f3fc", arrowColor = "#06b6d4" }) => {
-  const stickies = [
-    { c: "#cffafe", r: "-4deg", left: "8%", top: "14%", barRgba: "rgba(6,182,212,0.6)", lineRgba: "rgba(6,182,212,0.3)", w1: "75%", w2: "55%" },
-    { c: "#a5f3fc", r: "3deg", left: "38%", top: "8%", barRgba: "rgba(14,116,144,0.6)", lineRgba: "rgba(14,116,144,0.3)", w1: "80%", w2: "60%" },
-    { c: "#67e8f9", r: "-3deg", left: "68%", top: "18%", barRgba: "rgba(255,255,255,0.7)", lineRgba: "rgba(255,255,255,0.4)", w1: "65%", w2: "75%" },
-    { c: "#cffafe", r: "4deg", left: "14%", top: "55%", barRgba: "rgba(6,182,212,0.6)", lineRgba: "rgba(6,182,212,0.3)", w1: "70%", w2: "50%" },
-    { c: "#a5f3fc", r: "-2deg", left: "48%", top: "60%", barRgba: "rgba(14,116,144,0.6)", lineRgba: "rgba(14,116,144,0.3)", w1: "80%", w2: "55%" },
-  ];
-  return (
-    <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
-      <MockBar label={label} />
-      <div className="flex-1 relative p-4" style={{ background: boardBg, backgroundImage: `radial-gradient(${dotColor} 1px, transparent 1px)`, backgroundSize: "14px 14px" }}>
-        {stickies.map((s, i) => (
-          <div key={i} className="absolute px-2.5 py-2 rounded-[4px]"
-            style={{ width: "28%", background: s.c, transform: `rotate(${s.r})`, left: s.left, top: s.top, boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>
-            <span className="block h-[5px] w-[60%] rounded-sm mb-[5px]" style={{ background: s.barRgba }} />
-            <span className="block h-[3px] rounded-sm mb-[3px]" style={{ width: s.w1, background: s.lineRgba }} />
-            <span className="block h-[3px] rounded-sm" style={{ width: s.w2, background: s.lineRgba }} />
-          </div>
-        ))}
-        <div className="absolute" style={{ left: "34%", top: "30%", width: "10%", height: "1.5px", background: arrowColor, opacity: 0.7, transform: "rotate(15deg)" }} />
-        <div className="absolute" style={{ left: "62%", top: "38%", width: "8%", height: "1.5px", background: arrowColor, opacity: 0.7, transform: "rotate(45deg)" }} />
-      </div>
-    </div>
-  );
-};
-
 const SERVICES = [
   {
     title: "Native iOS & Android App Development",
@@ -393,13 +218,7 @@ const SERVICES = [
       "Biometrics, camera, sensors, push, offline",
       "First-submit App Store & Play Store approval",
     ],
-    mockup: (
-      <MockupPhone
-        accent="#017eeb"
-        bg="linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)"
-        screenBg="linear-gradient(160deg, #ffffff 0%, #f0f7ff 100%)"
-      />
-    ),
+    image:"/images/v2/ios_android_app.webp",
     imageBg: "linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)",
     padMockup: false,
     reverse: false,
@@ -413,14 +232,7 @@ const SERVICES = [
       "1 codebase \u2192 2 platforms, 40% faster launch",
       "OTA updates via CodePush & Expo EAS",
     ],
-    mockup: (
-      <MockupMultiDevice
-        accent="#4f46e5"
-        accent2="#7c3aed"
-        bg="linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)"
-        screenTint="#f5f3ff"
-      />
-    ),
+    image:"/images/v2/cross_platform_app.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
     padMockup: false,
     reverse: true,
@@ -434,7 +246,7 @@ const SERVICES = [
       "Service workers, manifest, Lighthouse 95+",
       "No App Store friction, instant updates",
     ],
-    mockup: <MockupCodeCanvas canvasBg="#f0fdf4" cardColors={["#10b981", "#059669", "#047857"]} keyColor="#86efac" />,
+    image:"/images/v2/pwa.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
     padMockup: true,
     reverse: false,
@@ -448,7 +260,7 @@ const SERVICES = [
       "Real-time dashboards & OTA firmware",
       "End-to-end encrypted device pairing",
     ],
-    mockup: <MockupDashboard label="IoT Device Mesh \u00B7 248 connected" pillBg="#f0fdfa" pillBorder="#99f6e4" numColor="#0f766e" checkColor="#14b8a6" />,
+    image:"/images/v2/iot_mobile_app.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: true,
     reverse: true,
@@ -462,7 +274,7 @@ const SERVICES = [
       "Complications, tiles, quick actions",
       "Battery-aware sensor & sync strategy",
     ],
-    mockup: <MockupBoard label="watchOS \u00B7 Wear OS \u00B7 Fitness Band" boardBg="#ecfeff" dotColor="#a5f3fc" arrowColor="#06b6d4" />,
+    image:"/images/v2/wearable_app.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
     padMockup: true,
     reverse: false,
@@ -555,13 +367,14 @@ const MobileAppDevelopmentService = () => {
               <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
                   <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+                   >
+                   <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
