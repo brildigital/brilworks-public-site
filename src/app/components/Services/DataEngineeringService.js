@@ -27,6 +27,7 @@ import {
   GitCompare,
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import Image from "next/image";
 
 const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm"),
@@ -73,7 +74,7 @@ const SERVICES = [
       "Reconciled row-by-row, zero silent loss",
       "Phased cutover, no big-bang risk",
     ],
-    imageBg: "linear-gradient(135deg, #f0f7ff 0%, #e0ecfc 100%)",
+    image: "/images/v2/data_platform_migration.webp",
     reverse: false,
   },
   {
@@ -85,7 +86,7 @@ const SERVICES = [
       "dbt-first, tested transformations",
       "Built to be debugged and owned by your team",
     ],
-    imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
+    image: "/images/v2/data_pipeline.webp",
     reverse: true,
   },
   {
@@ -97,7 +98,7 @@ const SERVICES = [
       "Warehouse right-sizing and tuning",
       "Itemized plan, not vague advice",
     ],
-    imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
+    image: "/images/v2/data_cost_optimization.webp",
     reverse: false,
   },
   {
@@ -109,7 +110,7 @@ const SERVICES = [
       "MLOps and feature pipelines",
       "Access control and lineage built in",
     ],
-    imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
+    image: "/images/v2/aiml_data_foundation.webp",
     reverse: true,
   },
 ];
@@ -188,7 +189,6 @@ const TESTIMONIALS = [
       "Two days of weekly reporting turned into four minutes. The ops team got a day back.",
   },
 ];
-
 
 const HONORS = [
   {
@@ -365,8 +365,6 @@ const DataEngineeringService = () => {
                   </span>
                 ))}
               </div>
-
-
             </div>
             <div>
               <div className="grid grid-cols-2 gap-4">
@@ -483,19 +481,13 @@ const DataEngineeringService = () => {
               <div key={svc.title} className="py-10 lg:py-12">
                 <div className="grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2">
                   <div className={svc.reverse ? "lg:order-2" : ""}>
-                    <div
-                      className="w-full overflow-hidden rounded-2xl relative flex items-center justify-center"
-                      style={{
-                        aspectRatio: "4 / 3",
-                        background: svc.imageBg,
-                        border: "1px solid #e5e7eb",
-                      }}
-                    >
-                      <Icon
-                        size={74}
-                        color="#017eeb"
-                        strokeWidth={1.3}
-                        style={{ opacity: 0.85 }}
+                    <div className="w-full overflow-hidden rounded-2xl relative flex items-center justify-center">
+                      <Image
+                        src={svc.image}
+                        alt={svc.title}
+                        width={200}
+                        height={120}
+                        className="object-cover"
                       />
                     </div>
                   </div>
