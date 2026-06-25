@@ -56,7 +56,7 @@ const serviceCards = [
 
 const ExploreOurExpertise = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-[#f5f7fb]">
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         {/* Section Header */}
         <div className="mb-14 reveal">
