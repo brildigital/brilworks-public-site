@@ -126,17 +126,7 @@
 }
 
 .hero-section {
-  background-image: url("/images/v2/hero-pg-main.webp");
   width: 100%;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 767px) {
-  .hero-section {
-    background-image: linear-gradient(to top, var(--navyBlue), var(--theme-color));
-  }
 }
 
 .banner-layer {
