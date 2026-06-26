@@ -36,7 +36,6 @@ export const metadata = {
 export default async function Home() {
   return (
     <>
-      <link rel="preload" href="/images/v2/hero-pg-main.webp" as="image" />
       <HomePage />
     </>
   );

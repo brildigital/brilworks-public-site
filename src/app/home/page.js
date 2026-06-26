@@ -1,16 +1,10 @@
 import dynamic from "next/dynamic";
 import { homepageFAQ } from "../components/lib/schemaCode";
-// import GameChanger from "../components/Homepage/GameChanger";
 import Script from "next/script";
-const DataScienceHeroSection = dynamic(
-  () => import("../components/DataScience/DataScienceHeroSection"),
-);
-const DataScienceTrustBar = dynamic(
-  () => import("../components/DataScience/DataScienceTrustBar"),
-);
-const DataScienceThesis = dynamic(
-  () => import("../components/DataScience/DataScienceThesis"),
-);
+// import MainHero from "../components/Homepage/MainHero";
+import DataScienceThesis from "../components/DataScience/DataScienceThesis";
+import DataScienceHeroSection from "../components/DataScience/DataScienceHeroSection";
+import DataScienceTrustBar from "../components/DataScience/DataScienceTrustBar";
 const DataScienceWork = dynamic(
   () => import("../components/DataScience/DataScienceWork"),
 );
