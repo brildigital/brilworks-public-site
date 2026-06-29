@@ -47,7 +47,6 @@ const SnowflakeWhyChoose = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-10 reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Why enterprises choose us
           </span>
           <h2
@@ -67,7 +66,10 @@ const SnowflakeWhyChoose = () => {
                 className="grid grid-cols-[46px_1fr] lg:grid-cols-[56px_1fr_1.4fr] gap-x-6 gap-y-2 items-center bg-white rounded-xl p-6 reveal"
               >
                 <div className="w-[46px] h-[46px] rounded-[10px] bg-[#f5f7fb] border border-[#e4e8f0] flex items-center justify-center">
-                  <Icon className="w-[23px] h-[23px] text-themeColor" strokeWidth={1.7} />
+                  <Icon
+                    className="w-[23px] h-[23px] text-themeColor"
+                    strokeWidth={1.7}
+                  />
                 </div>
                 <h3 className="font-Figtree font-semibold text-[18px] text-[#0B1020] m-0 leading-[1.25]">
                   {r.title}

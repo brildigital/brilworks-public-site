@@ -75,22 +75,21 @@ const DataScienceAgentsBand = () => {
       className="relative overflow-hidden"
       style={{
         background:
-          "radial-gradient(700px 400px at 85% 0%, rgba(52,229,160,.16), transparent 60%), #0B1020",
+          "radial-gradient(700px 400px at 85% 0%, rgba(26,92,204,.16), transparent 60%), #0A0D14",
       }}
       id="agents"
     >
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-9 reveal">
-          <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-[#34d399] mb-4">
-            <span className="w-[22px] h-[1px] bg-[#34d399] inline-block"></span>
+          <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
             The payoff
           </span>
           <h2
             className="font-Figtree font-extrabold tracking-[-0.02em] leading-[1.06] text-white mb-3"
             style={{ fontSize: "clamp(28px, 4vw, 46px)", maxWidth: "16ch" }}
           >
-            30+ AI agents. <span className="text-[#34d399]">Running live.</span>{" "}
-            Right now.
+            30+ AI agents.{" "}
+            <span className="text-themeColor">Running live.</span> Right now.
           </h2>
           <p
             className="font-Figtree text-white/60 leading-[1.55]"
@@ -109,26 +108,26 @@ const DataScienceAgentsBand = () => {
               <a
                 key={i}
                 href={agent.link}
-                className="border border-white/[0.08] rounded-2xl p-[22px] bg-white/[0.025] hover:-translate-y-1 hover:border-[#34d399]/40 transition-all duration-300 reveal flex flex-col"
+                className="border border-white/[0.08] rounded-2xl p-[22px] bg-white/[0.025] hover:-translate-y-1 hover:border-[#1A5CCC]/40 transition-[transform,border-color] duration-300 reveal flex flex-col"
               >
                 <div className="flex items-center justify-start gap-4 mb-3">
                   {Icon && (
-                    <div className="w-9 h-9 rounded-lg bg-[#34d399]/10 flex items-center justify-center">
-                      <Icon className="w-[18px] h-[18px] text-[#34d399]" />
+                    <div className="w-9 h-9 rounded-lg bg-[#1A5CCC]/10 flex items-center justify-center">
+                      <Icon className="w-[18px] h-[18px] text-themeColor" />
                     </div>
                   )}
-                  <div className="flex items-center gap-[7px] font-mono text-[11px] font-semibold text-[#34d399] tracking-[0.06em]">
-                    <span className="w-[7px] h-[7px] rounded-full bg-[#34d399] hero-blink shrink-0"></span>
+                  <div className="flex items-center gap-[7px] font-mono text-xs font-semibold text-themeColor tracking-[0.06em]">
+                    <span className="w-[7px] h-[7px] rounded-full bg-themeColor hero-blink shrink-0"></span>
                     {agent.proof}
                   </div>
                 </div>
                 <h3 className="font-Figtree font-semibold text-[16px] text-white tracking-[-0.01em] mb-2">
                   {agent.title}
                 </h3>
-                <p className="font-Figtree text-[13px] text-white/60 leading-[1.55] m-0 mb-3">
+                <p className="font-Figtree text-[13px] text-white/60 leading-[1.55] m-0">
                   {agent.description}
                 </p>
-                <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-[#34d399] group-hover:gap-2 transition-all mt-auto">
+                <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-themeColor group-hover:gap-2 transition-[gap] duration-200 mt-auto">
                   Explore Agent <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </a>

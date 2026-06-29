@@ -1,6 +1,9 @@
 "use client";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 import { Clock, TrendingUp } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";

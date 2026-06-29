@@ -3,18 +3,11 @@ import "./styles/Homepage.scss";
 import "./styles/button.scss";
 import "./styles/tab-sticky-style.scss";
 import "@splidejs/splide/dist/css/splide.min.css";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/virtual";
-import "swiper/css/navigation";
-import "react-loading-skeleton/dist/skeleton.css";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import CookieConsent from "./components/CookieConsent/CookieConsent";
-import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 import LoadScripts from "./ScriptLoader";
@@ -28,11 +21,11 @@ import {
 
 // FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
 //            and figtree variable back to "--global-font"
-const figtree = Figtree({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-figtree", // was "--global-font" — kept loaded for easy revert
-});
+// const figtree = Figtree({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-figtree", // was "--global-font" — kept loaded for easy revert
+// });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -60,7 +53,7 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html
         lang="en"
-        className={`${figtree.variable} ${plusJakartaSans.variable} ${inter.variable}`}
+        className={` ${plusJakartaSans.variable} ${inter.variable}`}
       >
         <head>
           <meta name="viewport" content="width=device-width" />

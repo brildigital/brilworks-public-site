@@ -47,7 +47,6 @@ const DataScienceWork = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-9 reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Work that speaks for itself
           </span>
           <h2
@@ -68,7 +67,7 @@ const DataScienceWork = () => {
             <Link
               href={c.link}
               key={i}
-              className="border border-[#e4e8f0] rounded-2xl overflow-hidden bg-white hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(11,16,32,0.4)] transition-all duration-300 reveal block"
+              className="border border-[#e4e8f0] rounded-2xl overflow-hidden bg-white hover:-translate-y-1 hover:shadow-[0_24px_50px_-28px_rgba(11,16,32,0.4)] transition-[transform,box-shadow] duration-300 reveal block"
             >
               {/* Thumbnail */}
               <div className="h-[160px] sm:h-[190px] md:h-[220px] relative overflow-hidden">

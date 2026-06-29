@@ -1,5 +1,6 @@
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Tooltip } from "react-tooltip";

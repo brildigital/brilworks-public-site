@@ -5,6 +5,7 @@ import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { scrollEffect } from "../lib/commonFunction";
 import FreeUiContactForm from "./FreeUiContactForm";

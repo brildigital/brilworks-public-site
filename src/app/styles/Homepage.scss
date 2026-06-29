@@ -159,15 +159,14 @@
   border-radius: 50%;
   pointer-events: none;
   animation: heroGlowPulse 6s ease-in-out infinite;
+  will-change: opacity;
 }
 @keyframes heroGlowPulse {
   0%,
   100% {
-    transform: scale(1);
     opacity: 0.8;
   }
   50% {
-    transform: scale(1.1);
     opacity: 1;
   }
 }

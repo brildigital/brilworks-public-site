@@ -108,7 +108,7 @@ const page = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
       <DataScienceHeroSection />
-      <DataScienceTrustBar />
+      {/* <DataScienceTrustBar /> */}
       <DataScienceThesis />
       <DataScienceWork />
       <DataScienceReasons />

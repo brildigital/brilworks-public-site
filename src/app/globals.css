@@ -554,7 +554,8 @@ input[type="number"] {
   position: relative;
   transform: translateY(100px);
   opacity: 0;
-  transition: 1s all ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  will-change: transform, opacity;
 }
 
 .reveal.active {
@@ -778,4 +779,17 @@ input[type="number"] {
 }
 .blog_content > ul {
   padding-inline-start: 20px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  .hero-fade-down,
+  .hero-fade-up,
+  .hero-blink {
+    animation: none;
+  }
 }

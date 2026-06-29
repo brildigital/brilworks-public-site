@@ -65,7 +65,6 @@ const SnowflakeServices = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-11 reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             What we deliver
           </span>
           <h2
@@ -82,7 +81,10 @@ const SnowflakeServices = () => {
             return (
               <div key={i} className="reveal">
                 <div className="w-[34px] h-[34px] mb-[14px]">
-                  <Icon className="w-[34px] h-[34px] text-[#0B1020]" strokeWidth={1.6} />
+                  <Icon
+                    className="w-[34px] h-[34px] text-[#0B1020]"
+                    strokeWidth={1.6}
+                  />
                 </div>
                 <h3 className="font-Figtree font-semibold text-[17px] text-[#0B1020] m-0 mb-2">
                   {svc.title}

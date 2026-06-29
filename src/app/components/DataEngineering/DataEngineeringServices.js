@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Layers,
-  AlignLeft,
-  CircleDollarSign,
-  Cpu,
-} from "lucide-react";
+import { Layers, AlignLeft, CircleDollarSign, Cpu } from "lucide-react";
 
 const services = [
   {
@@ -55,7 +50,6 @@ const DataEngineeringServices = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="text-center max-w-[60ch] mx-auto mb-12 reveal">
           <span className="flex items-center justify-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             What we build
           </span>
           <h2
