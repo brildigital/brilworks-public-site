@@ -7,7 +7,6 @@ const CustomerDataPlatformCase = () => (
     kicker="Case Study · SaaS"
     title="Unifying customer data across 11 systems into a single source of truth."
     subtitle="A growing SaaS company had customer information scattered across sales, support, billing, product, and marketing platforms. Every department had its own version of the customer, and no one could confidently answer basic questions about account health, engagement, or revenue. We built a unified customer data platform that gave the entire company a shared view of every customer."
-    heroImage="/images/v2/data_eng_hero_2.webp"
     proofBar={[
       { value: "11 → 1", label: "Systems consolidated", highlight: true },
       { value: "80%", label: "Faster customer insights", highlight: true },

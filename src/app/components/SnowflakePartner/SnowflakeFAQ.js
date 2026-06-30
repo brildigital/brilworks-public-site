@@ -41,7 +41,6 @@ const SnowflakeFAQ = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-9 reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Common questions
           </span>
           <h2

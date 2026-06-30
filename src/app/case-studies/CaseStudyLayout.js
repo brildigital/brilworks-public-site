@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import Heading from "../components/HTMLComponents/Heading";
 import Link from "next/link";
 import { getCalApi } from "@calcom/embed-react";
@@ -10,7 +9,6 @@ const CaseStudyLayout = ({
   kicker,
   title,
   subtitle,
-  heroImage,
   proofBar,
   situation,
   findings,
@@ -52,7 +50,7 @@ const CaseStudyLayout = ({
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-12 items-center">
             <div>
               <span
                 className="inline-block mb-4"
@@ -75,39 +73,76 @@ const CaseStudyLayout = ({
               <p className="text-white/60 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
                 {subtitle}
               </p>
+
+              <div className="flex flex-wrap gap-3 mt-8">
+                <button
+                  onClick={async () => {
+                    const cal = await getCalApi({});
+                    cal("modal", {
+                      calLink: "vikas-singh-bril/30-min-product-eng-review",
+                      config: { theme: "light" },
+                    });
+                  }}
+                  className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border hover:!text-themeColor"
+                >
+                  <span>Book a Free Consultation</span>
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </button>
+                <Link
+                  href="/case-studies/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
+                  style={{
+                    background: "transparent",
+                    color: "#fff",
+                    border: "1px solid rgba(255,255,255,0.3)",
+                    padding: "14px 24px",
+                    fontSize: 15,
+                  }}
+                >
+                  View All Case Studies
+                </Link>
+              </div>
             </div>
 
-            {heroImage && (
-              <div className="hidden lg:block relative">
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                  <Image
-                    src={heroImage}
-                    alt={title}
-                    fill
-                    // sizes="420px"
-                    className="object-fill"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navyBlue/30 to-transparent" />
-                </div>
+            {/* Proof stats */}
+            <div>
+              <div className="grid grid-cols-2 gap-4">
+                {proofBar.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl transition-all"
+                    style={{
+                      background: "rgba(255,255,255,0.05)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      padding: "24px 20px",
+                      backdropFilter: "blur(10px)",
+                    }}
+                  >
+                    <div
+                      className={`font-extrabold leading-none mb-2 ${
+                        stat.highlight ? "text-[#34d399]" : "text-white"
+                      }`}
+                      style={{
+                        fontSize: "clamp(28px, 3vw, 42px)",
+                        letterSpacing: "-1px",
+                      }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div
+                      style={{
+                        color: "rgba(255,255,255,0.65)",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-            )}
-          </div>
-
-          {/* Proof bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
-            {proofBar.map((stat, i) => (
-              <div key={i} className="bg-white/[0.03] p-5 text-center">
-                <div
-                  className={`text-2xl md:text-[28px] font-extrabold pb-1 ${
-                    stat.highlight ? "text-[#34d399]" : "text-white"
-                  }`}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-xs text-white/50">{stat.label}</div>
-              </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

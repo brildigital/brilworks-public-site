@@ -70,7 +70,7 @@ const PlatformPartners = () => {
               <img
                 src={p.logo}
                 alt={p.name}
-                className="max-h-[70px] max-w-[170px] object-contain opacity-90 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                className="max-h-[70px] max-w-[170px] object-contain opacity-90 transition-opacity duration-300 hover:grayscale-0 hover:opacity-100"
               />
             </div>
           ))}

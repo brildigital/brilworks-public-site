@@ -24,7 +24,6 @@ const DataEngineeringToolsCTA = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="text-center max-w-[60ch] mx-auto mb-12 reveal">
           <span className="flex items-center justify-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Free tools
           </span>
           <h2
@@ -48,10 +47,7 @@ const DataEngineeringToolsCTA = () => {
                 className="flex items-center gap-4 bg-[#f5f7fb] border border-[#e4e8f0] rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-themeColor"
               >
                 <div className="w-10 h-10 rounded-lg bg-white border border-[#e4e8f0] flex items-center justify-center shrink-0">
-                  <Icon
-                    className="w-5 h-5 text-themeColor"
-                    strokeWidth={1.7}
-                  />
+                  <Icon className="w-5 h-5 text-themeColor" strokeWidth={1.7} />
                 </div>
                 <span className="font-Figtree font-semibold text-[15px] text-[#0B1020]">
                   {tool.name}

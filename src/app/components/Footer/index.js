@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 import ButtonV2 from "../Common/ButtonV2";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
@@ -9,7 +10,7 @@ import { hasConsent } from "../CookieConsent/consent";
 
 const TawkMessengerReact = dynamic(
   () => import("@tawk.to/tawk-messenger-react"),
-  { ssr: false }
+  { ssr: false },
 );
 
 const Footer = () => {
@@ -214,12 +215,12 @@ const Footer = () => {
         {
           link: "tel:919313644148",
           text: "+ 91 9313644148",
-          imgSrc: "/images/call-white.svg",
+          icon: Phone,
         },
         {
           link: "mailto:sales@brilworks.com",
           text: "sales@brilworks.com",
-          imgSrc: "/images/sms-white.svg",
+          icon: Mail,
         },
       ],
     },
@@ -229,12 +230,12 @@ const Footer = () => {
         {
           link: "tel:919106810920",
           text: "+ 91 9106810920",
-          imgSrc: "/images/call-white.svg",
+          icon: Phone,
         },
         {
           link: "mailto:hr@brilworks.com",
           text: "hr@brilworks.com",
-          imgSrc: "/images/sms-white.svg",
+          icon: Mail,
         },
       ],
     },
@@ -244,7 +245,7 @@ const Footer = () => {
         {
           link: "tel:919106810920",
           text: "503, Fortune Business Hub, Science City Road, Sola, Ahmedabad, Gujarat, India Pincode- 380060",
-          imgSrc: "/images/location-white.svg",
+          icon: MapPin,
         },
       ],
     },
@@ -261,7 +262,7 @@ const Footer = () => {
     pathname.includes("/i-remi") ? (
     ""
   ) : (
-    <div className="footer-background text-colorWhite pb-14 md:pb-14 lg:pb-14">
+    <div className="footer-background text-[#0B1E33] pb-14 md:pb-14 lg:pb-14">
       <div className="container max-w-[1280px] mx-auto main-section-padding-top !pb-0">
         <div
           className={`footer-new w-full xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5 ${
@@ -273,7 +274,7 @@ const Footer = () => {
           <div className="w-full">
             <Image
               className="w-[155px] h-[46px] md:mb-7 mb-5"
-              src="/images/logo-white.svg"
+              src="/images/logo-black.svg"
               alt="Brilworks Logo"
               width="155"
               height="46"
@@ -281,7 +282,7 @@ const Footer = () => {
             />
             <p className="md:text-xl text-lg w-full !mb-7.5">
               Hello, we are
-              <span className="gradient-text font-medium">
+              <span className="text-[#007EEB] font-medium">
                 &nbsp;BRILLIAN’S.&nbsp;
               </span>
               Trying to make an effort to put the right people for you to get
@@ -293,7 +294,7 @@ const Footer = () => {
             ) : (
               <>
                 <div className="flex items-center md:text-2xl textxl font-medium mb-4">
-                  <span className="gradient-text">We are Hiring!</span>
+                  <span className="text-[#007EEB]">We are Hiring!</span>
                   <Image
                     className="w-6 h-6 ml-2"
                     src="/images/group-of-people.png"
@@ -319,7 +320,7 @@ const Footer = () => {
                   key={title}
                   className={`flex flex-col flex-wrap gap-[14px]`}
                 >
-                  <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                  <h3 className="md:text-xl text-lg mb-[2px] text-[#0B1E33]">
                     {title}
                   </h3>
                   {links.map(({ link, text }) => (
@@ -341,27 +342,21 @@ const Footer = () => {
         ""
       ) : (
         <>
-          <hr className="border-[#232323] mt-7.5 mb-5" />
+          <hr className="border-[#E4EAF1] mt-7.5 mb-5" />
           <div className="container max-w-[1280px] !py-0 mx-auto main-section-padding-top">
             <div className="w-full grid slg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-[155px] gap-6">
               {contactLinks.map(({ title, links }, index) => (
                 <div className="flex flex-col gap-4" key={index}>
-                  <h3 className="md:text-xl text-lg mb-[2px] text-colorWhite">
+                  <h3 className="md:text-xl text-lg mb-[2px] text-[#0B1E33]">
                     {title}
                   </h3>
-                  {links.map(({ text, imgSrc, link }, idx) =>
+                  {links.map(({ text, icon: Icon, link }) =>
                     text.includes("503") ? (
                       <div
                         key={text}
-                        className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-start font-medium"
+                        className="!text-[#566678] md:text-base text-sm flex slg:gap-2 gap-1 items-start font-medium"
                       >
-                        <Image
-                          className="mt-1 w-5"
-                          src={imgSrc}
-                          alt="location"
-                          width="20"
-                          height="20"
-                        />
+                        <Icon className="mt-1 w-5 h-5 shrink-0 !text-[#566678]" />
 
                         {text}
                       </div>
@@ -370,17 +365,9 @@ const Footer = () => {
                         key={text}
                         href={link}
                         target="_blank"
-                        className="!text-colorWhite md:text-base text-sm flex slg:gap-2 gap-1 items-center font-medium"
+                        className="!text-[#566678] md:text-base text-sm flex slg:gap-2 gap-1 items-center font-medium"
                       >
-                        <Image
-                          className={`${
-                            text.includes("503") ? "mt-1" : ""
-                          } w-5`}
-                          src={imgSrc}
-                          alt="call-email-logo"
-                          width="20"
-                          height="20"
-                        />
+                        <Icon className="w-5 h-5 shrink-0" />
                         {text}
                       </a>
                     ),
@@ -391,7 +378,7 @@ const Footer = () => {
           </div>
         </>
       )}
-      <hr className="border-[#232323] mt-7.5" />
+      <hr className="border-[#E4EAF1] mt-7.5" />
       <div className="container max-w-[1280px] main-section-padding-bottom py-0 mx-auto">
         <div className="w-full flex md:items-center justify-between flex-col lg:flex-row lg:gap-20 gap-4">
           <div className="flex">

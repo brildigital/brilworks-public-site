@@ -8,6 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { formatSrcUrl } from "../lib/commonFunction";
 
