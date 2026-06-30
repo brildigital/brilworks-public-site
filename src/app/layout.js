@@ -7,7 +7,7 @@ import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import CookieConsent from "./components/CookieConsent/CookieConsent";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 import LoadScripts from "./ScriptLoader";
@@ -41,6 +41,13 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono-enterprise",
+  weight: ["400", "500"],
+});
+
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
   use: [apiPlugin],
@@ -53,7 +60,7 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html
         lang="en"
-        className={` ${plusJakartaSans.variable} ${inter.variable}`}
+        className={` ${plusJakartaSans.variable} ${ibmPlexMono.variable}`}
       >
         <head>
           <meta name="viewport" content="width=device-width" />

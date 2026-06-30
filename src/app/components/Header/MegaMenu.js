@@ -5,11 +5,23 @@ import {
   MenuList,
 } from "@material-tailwind/react";
 import React from "react";
+import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import MenuItem from "./MenuItem";
 
-const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
+const MegaMenu = ({
+  setOpenNav,
+  name,
+  heading,
+  menuItems,
+  pathname,
+  theme,
+  columns,
+  footerNote,
+  footerLink,
+}) => {
   const isCompact = true;
+  const isEnterprise = theme === "enterprise";
 
   return (
     <Menu
@@ -29,9 +41,22 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
               e.preventDefault();
               setOpenNav(false);
             }}
-            className="group/item flex items-center header_font hover:text-themeColor"
+            className={`group/item flex items-center header_font ${
+              isEnterprise
+                ? "text-[#0B1E33] hover:text-[#2F6BFF]"
+                : "hover:text-themeColor"
+            }`}
+            style={
+              isEnterprise ? { fontFamily: "var(--font-body)" } : undefined
+            }
           >
-            <p className="!mb-0 group-hover/item:text-themeColor font-normal">
+            <p
+              className={`!mb-0 font-normal ${
+                isEnterprise
+                  ? "group-hover/item:text-[#2F6BFF]"
+                  : "group-hover/item:text-themeColor"
+              }`}
+            >
               {name}
             </p>
             <ChevronDown className="w-4 h-4 ms-2" aria-hidden="true" />
@@ -40,11 +65,13 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
       </MenuHandler>
       <MenuList
         dismissible
-        className={`z-[9999] outline-none bg-white border border-[#e5e7eb] !p-0 ${
+        className={`z-[9999] outline-none bg-white border ${
+          isEnterprise ? "border-[#E4EAF1]" : "border-[#e5e7eb]"
+        } !p-0 ${
           isCompact
             ? "!w-auto rounded-xl shadow-lg"
             : "w-full rounded-none border-t menu-shadow"
-        }`}
+        } ${columns === 2 ? "min-w-[420px]" : ""}`}
       >
         <div
           className={`outline-none ${
@@ -54,7 +81,16 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
           }`}
         >
           {heading && (
-            <div className="font-bold text-xs tracking-[0.1em] uppercase text-[#6b7280] !mb-6">
+            <div
+              className={`text-xs tracking-[0.1em] uppercase !mb-6 ${
+                isEnterprise ? "text-[#2F6BFF]" : "text-[#6b7280]"
+              }`}
+              style={
+                isEnterprise
+                  ? { fontFamily: "var(--font-mono-enterprise)" }
+                  : undefined
+              }
+            >
               {heading}
             </div>
           )}
@@ -66,14 +102,30 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
             {menuItems.map((mainSection) => (
               <div
                 key={mainSection?.name || Math.random()}
-                className="flex flex-col min-w-[140px]"
+                className={`flex flex-col ${columns ? "w-full" : "min-w-[140px]"}`}
               >
-                {mainSection?.name && (
-                  <span className="font-bold text-sm text-[#212121] tracking-[-0.2px] !mb-3">
-                    {mainSection.name}
-                  </span>
-                )}
-                <div className="flex flex-col gap-0.5">
+                {mainSection?.name &&
+                  (isEnterprise ? (
+                    <span
+                      className={`font-bold text-[11px] tracking-[0.08em] uppercase !mb-3 ${
+                        mainSection?.muted ? "text-[#6B7A8A]" : "text-[#2F6BFF]"
+                      }`}
+                      style={{ fontFamily: "var(--font-mono-enterprise)" }}
+                    >
+                      {mainSection.name}
+                    </span>
+                  ) : (
+                    <span className="font-bold text-sm tracking-[-0.2px] !mb-3 text-[#212121]">
+                      {mainSection.name}
+                    </span>
+                  ))}
+                <div
+                  className={
+                    columns === 2
+                      ? "grid grid-cols-2 gap-x-6 gap-y-2"
+                      : "flex flex-col gap-0.5"
+                  }
+                >
                   {mainSection?.subSections
                     .filter((subSection) => !subSection?.hideInHeader)
                     .map((subSection) => (
@@ -85,7 +137,12 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
                           name={subSection?.name}
                           path={subSection?.path}
                           onClick={() => setOpenNav(false)}
-                          className="text-[15px] text-[#6b7280] hover:text-themeColor transition-colors py-1.5 block"
+                          theme={theme}
+                          className={`text-[15px] transition-colors py-1.5 block ${
+                            isEnterprise
+                              ? ""
+                              : "text-[#6b7280] hover:text-themeColor"
+                          }`}
                         />
                       </MaterialMenuItem>
                     ))}
@@ -93,6 +150,44 @@ const MegaMenu = ({ setOpenNav, name, heading, menuItems, pathname }) => {
               </div>
             ))}
           </div>
+          {(footerNote || footerLink) && (
+            <div
+              className={`mt-4 pt-3 flex items-center justify-between gap-3 flex-wrap border-t ${
+                isEnterprise ? "border-[#EEF2F8]" : "border-[#e5e7eb]"
+              }`}
+            >
+              {footerNote && (
+                <span
+                  className={`text-xs ${isEnterprise ? "text-[#6B7A8A]" : "text-[#6b7280]"}`}
+                  style={
+                    isEnterprise
+                      ? { fontFamily: "var(--font-body)" }
+                      : undefined
+                  }
+                >
+                  {footerNote}
+                </span>
+              )}
+              {footerLink && (
+                <Link
+                  href={footerLink.path}
+                  onClick={() => setOpenNav(false)}
+                  className={`text-sm font-medium whitespace-nowrap ${
+                    isEnterprise
+                      ? "text-[#2F6BFF] hover:underline"
+                      : "text-themeColor hover:underline"
+                  }`}
+                  style={
+                    isEnterprise
+                      ? { fontFamily: "var(--font-body)" }
+                      : undefined
+                  }
+                >
+                  {footerLink.name}
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </MenuList>
     </Menu>

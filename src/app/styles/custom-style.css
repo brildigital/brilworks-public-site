@@ -227,9 +227,8 @@
 
 .footer-background {
   width: 100vw;
-  background: url("/images/v2/footer-background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: #ffffff;
+  color: #0b1e33;
 }
 
 .gradient-text {

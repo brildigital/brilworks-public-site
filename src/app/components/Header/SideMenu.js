@@ -112,7 +112,7 @@ const SideMenu = ({ open, close }) => {
         {/* CTA Button at top */}
         <div className="pt-10 pb-2">
           <ButtonV2
-            label="Get Free Estimate"
+            label="Book a data audit"
             size="large"
             className="w-full justify-center"
             redirect="/contact-us/"
