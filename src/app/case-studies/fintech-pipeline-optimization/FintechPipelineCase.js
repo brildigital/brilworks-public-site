@@ -9,7 +9,6 @@ const FintechPipelineCase = () => {
       kicker="Case Study · Fintech"
       title="Cutting a fintech's pipeline costs 60% while making it 4x faster."
       subtitle="A payments-analytics platform came to us to fix a slow nightly job. We rebuilt the pipeline underneath it instead, in stages, while it kept running."
-      heroImage="/images/v2/data_engineering_hero.webp"
       proofBar={[
         { value: "60%", label: "Lower warehouse cost", highlight: true },
         { value: "4×", label: "Faster pipeline", highlight: true },
