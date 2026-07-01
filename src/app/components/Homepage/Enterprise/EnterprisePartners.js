@@ -1,13 +1,13 @@
 "use client";
 
 const PARTNERS = [
-  { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
-  { name: "Databricks", logo: "/images/v2/databricks_partner.webp" },
   { name: "AWS", logo: "/images/v2/aws_partner.webp" },
-  { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
-  { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },
+  { name: "Databricks", logo: "/images/v2/databricks_partner.webp" },
+  { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
   { name: "adalo", logo: "/images/v2/adalo_partner.webp" },
+  { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
   { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
+  { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },
 ];
 
 const EnterprisePartners = () => {
@@ -17,7 +17,7 @@ const EnterprisePartners = () => {
       <div className="wrap">
         <p className="eyebrow">Official technology partners</p>
         <div
-          className="relative w-full"
+          className="relative w-full my-4 overflow-hidden"
           style={{
             maskImage:
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
@@ -25,12 +25,12 @@ const EnterprisePartners = () => {
               "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
           }}
         >
-          <div className="flex w-max animate-[partnerScroll_25s_linear_infinite]">
+          <div className="flex w-max animate-[partnerScroll_25s_linear_infinite] ">
             {logos.map((p, i) => (
               <div
                 key={i}
-                className="flex items-center justify-center shrink-0 mx-10"
-                style={{ width: 190, height: 90 }}
+                className="flex items-center justify-center shrink-0 mx-8"
+                // style={{ width: 190, height: 90 }}
               >
                 <img
                   src={p.logo}

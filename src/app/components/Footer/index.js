@@ -293,7 +293,7 @@ const Footer = () => {
               ""
             ) : (
               <>
-                <div className="flex items-center md:text-2xl textxl font-medium mb-4">
+                <div className="flex items-center md:text-2xl text-xl font-medium mb-4">
                   <span className="text-[#007EEB]">We are Hiring!</span>
                   <Image
                     className="w-6 h-6 ml-2"
@@ -306,7 +306,7 @@ const Footer = () => {
                 <ButtonV2
                   redirect={`/career/`}
                   label="View Positions"
-                  className="w-fit"
+                  className="w-fit hover:!text-themeColor"
                 />
               </>
             )}

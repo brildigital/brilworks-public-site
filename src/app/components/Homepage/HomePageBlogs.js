@@ -29,26 +29,22 @@ const HomePageBlogs = () => {
   };
 
   return (
-    <div className="bg-white">
-      <div className="container max-w-[1280px] main-section-padding mx-auto">
-        <div className="lg:pb-10 md:pb-8 pb-5">
-          <span className="text-[11px] font-bold tracking-[0.12em] uppercase block mb-3 text-themeColor">
-            Engineering Insights
-          </span>
-          <h2 className="text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1px] leading-[1.1] text-[#0d0f1a]">
-            Insights from the Brilworks Engineering Mindset
-          </h2>
+    <section className="bw-home alt">
+      <div className="wrap">
+        <div className="">
+          <p className="eyebrow">Insights</p>
+          <h2 className="sec">From the Brilworks engineering mindset.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 reveal">
+        <div className="posts">
           {blogResponse[pathname]?.length ? (
             blogResponse[pathname]
               .slice(0, 2)
-              .map(({ slug, name, content }, index) => (
+              .map(({ slug, name, content, kicker }, index) => (
                 <div
                   key={index}
-                  className="overflow-hidden border border-borderGray rounded-2xl group transition-all duration-200 hover:border-themeColor hover:shadow-sm"
+                  className="overflow-hidden group transition-all duration-200  hover:shadow-sm post !p-0"
                 >
-                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`}>
+                  <Link as={`/blog/${slug}`} href={`/blog/[slug]`} className="">
                     <Image
                       src={formatSrcUrl(content?.mobile_banner?.filename) || ""}
                       alt={content?.mobile_banner?.alt || "Blog banner"}
@@ -57,13 +53,14 @@ const HomePageBlogs = () => {
                       height={283}
                       sizes="(min-width: 767px) 550px, calc(100vw - 30px)"
                     />
-                    <div className="px-5 py-7.5">
-                      <h4 className="lg:text-lg text-base font-medium mb-3 min-h-[50px]">
+                    <div className="p-4 flex flex-col">
+                      <span className="pk">{kicker}</span>
+                      <h4 className="lg:text-lg text-base font-medium min-h-[50px]">
                         {name}
                       </h4>
-                      <p className="flex items-center text-base font-medium text-themeColor group-hover:text-colorBlack duration-500">
+                      <p className="flex items-center text-base font-medium text-[var(--accent)] duration-500 mt-3 ml-auto">
                         Read article
-                        <ArrowRight size={16} className="ml-2" />
+                        <ArrowRight size={16} className="ml-2 " />
                       </p>
                     </div>
                   </Link>
@@ -75,7 +72,7 @@ const HomePageBlogs = () => {
             </div>
           )}
         </div>
-        <div className="text-center mt-8 reveal">
+        <div className="text-center reveal">
           <Link
             href="/blog/"
             className="font-Figtree text-themeColor font-semibold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
@@ -84,7 +81,7 @@ const HomePageBlogs = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

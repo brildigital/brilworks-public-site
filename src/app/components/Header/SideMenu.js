@@ -46,11 +46,11 @@ const SideMenu = ({ open, close }) => {
             >
               <AccordionHeader
                 onClick={() => handleOpen(index)}
-                className={`group/item accordion-title py-6 hover:!text-themeColor ${
+                className={`group/item accordion-title !py-3 hover:!text-themeColor !text-[24px] !font-normal ${
                   openSection === index ? "border-none" : ""
                 }`}
               >
-                <p className="group-hover/item:text-themeColor">
+                <p className="group-hover/item:text-themeColor !text-[24px]">
                   {menuItem.name}
                 </p>
               </AccordionHeader>
@@ -62,17 +62,21 @@ const SideMenu = ({ open, close }) => {
                 {menuItem?.menuItems?.map((subMenu) => (
                   <div
                     key={subMenu.name || Math.random()}
-                    className="menu_mob_flex mega-menu-content flex flex-col gap-3 !items-start"
+                    className="flex flex-col mb-3 gap-2 items-start w-full"
                   >
-                    {subMenu.name && <p>{subMenu.name}</p>}
-                    <div className="flex flex-col menu_mob_flex mega-menu-content !items-start gap-2">
+                    {subMenu.name && (
+                      <p className="text-[20px] mt-6 mb-1 leading-8 font-normal">
+                        {subMenu.name}
+                      </p>
+                    )}
+                    <div className="flex flex-col items-start gap-2 w-full pl-4">
                       {subMenu.subSections.map((subMenuItem) => (
                         <MenuItem
                           key={subMenuItem?.name}
                           name={subMenuItem?.name}
                           path={subMenuItem?.path}
                           onClick={close}
-                          className="!text-3xl"
+                          className="!text-[18px] !font-normal leading-8"
                         />
                       ))}
                     </div>
@@ -90,8 +94,8 @@ const SideMenu = ({ open, close }) => {
     <Drawer
       open={open}
       placement="right"
-      size={"100vw"}
-      className="overflow-y-scroll z-[9999] bg-white"
+      size={500}
+      className="overflow-y-scroll z-[9999] bg-white !w-full md:!w-[400px]"
       onClose={close}
       transition={{
         duration: 1,
@@ -114,7 +118,7 @@ const SideMenu = ({ open, close }) => {
           <ButtonV2
             label="Book a data audit"
             size="large"
-            className="w-full justify-center"
+            className="w-full justify-center hover:text-themeColor"
             redirect="/contact-us/"
             onClick={close}
           />

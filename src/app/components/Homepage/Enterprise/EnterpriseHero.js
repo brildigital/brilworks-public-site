@@ -13,18 +13,17 @@ const EnterpriseHero = () => {
           <h1 className="rv d1">From raw data to running agents.</h1>
           <p className="lede rv d2">
             Brilworks is a Data &amp; AI engineering firm. We build the data
-            foundation and the AI that runs on it — or embed certified
-            engineers in your team to keep it running.
+            foundation and the AI that runs on it — or embed certified engineers
+            in your team to keep it running.
           </p>
-          <div className="ctas rv d2">
+          <div className="ctas rv mt-4">
             <Link className="btn btn-primary" href="#approach">
               See how we work
             </Link>
           </div>
           <div className="trust rv d3">
             <span>
-              <span className="star">★★★★★</span> 22 verified reviews on
-              Clutch
+              <span className="star">★★★★★</span> 22 verified reviews on Clutch
             </span>
             <span>AWS · Snowflake · Databricks partner</span>
             <span>Certified engineers on every engagement</span>

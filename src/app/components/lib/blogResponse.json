@@ -1,6 +1,7 @@
 {
   "/": [
     {
+      "kicker": "Data Platforms",
       "name": "What Is Snowflake? A Practical Guide to the Cloud Data Platform",
       "slug": "what-is-snowflake",
       "content": {
@@ -13,6 +14,7 @@
       }
     },
     {
+      "kicker": "Data Platforms",
       "name": "What Is Databricks? A Complete Guide for Modern Data Teams",
       "slug": "what-is-databricks-a-complete-guide-for-modern-data-teams",
       "content": {

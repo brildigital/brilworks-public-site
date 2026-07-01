@@ -8,11 +8,11 @@ const EnterpriseFinalCTA = () => {
         <div className="final">
           <h2>Tell us what you&apos;re building.</h2>
           <p>
-            Send us the problem — you&apos;ll get back a practical plan, not
-            a sales pitch. Start a project, or bring our certified engineers
-            onto your team.
+            Send us the problem — you&apos;ll get back a practical plan, not a
+            sales pitch. Start a project, or bring our certified engineers onto
+            your team.
           </p>
-          <div className="ctas">
+          <div className="ctas mt-4">
             <Link className="btn btn-primary" href="/contact-us/">
               Start the conversation
             </Link>

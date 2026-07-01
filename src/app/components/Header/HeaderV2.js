@@ -124,9 +124,11 @@ const HeaderV2 = () => {
       <header>
         <div className={`header ${isHidden ? "header-hide" : ""}`}>
           <Navbar
-            className={`sticky top-0 border-none border-b border-b-[#E4EAF1] z-10 h-max rounded-none !px-0 shadow-none font-semibold bg-[rgba(247,249,252,0.92)] backdrop-blur-md ${
-              openNav ? "!fixed" : ""
-            }`}
+            className={`sticky top-0 z-10 h-max rounded-none !px-0 shadow-none font-semibold transition-all duration-300 ${
+              hasBg
+                ? "bg-[rgba(247,249,252,0.92)] backdrop-blur-md border-b border-b-[#E4EAF1]"
+                : "bg-transparent backdrop-blur-none border-b border-transparent md:bg-[rgba(247,249,252,0.92)] md:backdrop-blur-md md:border-b md:border-b-[#E4EAF1]"
+            } ${openNav ? "!fixed" : ""}`}
           >
             <div
               className="flex justify-between text-[#0B1E33] container max-w-[1280px] md:px-10 px-5 mx-auto"

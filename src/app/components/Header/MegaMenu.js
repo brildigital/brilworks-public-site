@@ -99,56 +99,71 @@ const MegaMenu = ({
               isCompact ? "gap-x-12" : "gap-x-16 justify-center flex-wrap"
             }`}
           >
-            {menuItems.map((mainSection) => (
-              <div
-                key={mainSection?.name || Math.random()}
-                className={`flex flex-col ${columns ? "w-full" : "min-w-[140px]"}`}
-              >
-                {mainSection?.name &&
-                  (isEnterprise ? (
-                    <span
-                      className={`font-bold text-[11px] tracking-[0.08em] uppercase !mb-3 ${
-                        mainSection?.muted ? "text-[#6B7A8A]" : "text-[#2F6BFF]"
-                      }`}
-                      style={{ fontFamily: "var(--font-mono-enterprise)" }}
-                    >
-                      {mainSection.name}
-                    </span>
-                  ) : (
-                    <span className="font-bold text-sm tracking-[-0.2px] !mb-3 text-[#212121]">
-                      {mainSection.name}
-                    </span>
-                  ))}
+            {menuItems.map((mainSection) => {
+              return (
                 <div
-                  className={
-                    columns === 2
-                      ? "grid grid-cols-2 gap-x-6 gap-y-2"
-                      : "flex flex-col gap-0.5"
-                  }
+                  key={mainSection?.name || Math.random()}
+                  className={`flex flex-col ${columns ? "w-full" : "min-w-[140px]"}`}
                 >
-                  {mainSection?.subSections
-                    .filter((subSection) => !subSection?.hideInHeader)
-                    .map((subSection) => (
-                      <MaterialMenuItem
-                        key={subSection?.name}
-                        className="!p-0 !bg-transparent hover:!bg-transparent"
+                  {mainSection?.name &&
+                    (isEnterprise ? (
+                      <span
+                        className={` text-[11px] tracking-[0.08em] uppercase !mb-3 ${
+                          mainSection?.muted
+                            ? "text-[#6B7A8A]"
+                            : "text-[#2F6BFF]"
+                        }`}
+                        style={
+                          isEnterprise
+                            ? { fontFamily: "var(--font-body)" }
+                            : undefined
+                        }
                       >
-                        <MenuItem
-                          name={subSection?.name}
-                          path={subSection?.path}
-                          onClick={() => setOpenNav(false)}
-                          theme={theme}
-                          className={`text-[15px] transition-colors py-1.5 block ${
-                            isEnterprise
-                              ? ""
-                              : "text-[#6b7280] hover:text-themeColor"
-                          }`}
-                        />
-                      </MaterialMenuItem>
+                        {mainSection.name}
+                      </span>
+                    ) : (
+                      <span
+                        className="font-bold text-sm tracking-[-0.2px] !mb-3 text-[#212121]"
+                        style={
+                          isEnterprise
+                            ? { fontFamily: "var(--font-body)" }
+                            : undefined
+                        }
+                      >
+                        {mainSection.name}
+                      </span>
                     ))}
+                  <div
+                    className={
+                      columns === 2
+                        ? "grid grid-cols-2 gap-x-6 gap-y-2"
+                        : "flex flex-col gap-0.5"
+                    }
+                  >
+                    {mainSection?.subSections
+                      .filter((subSection) => !subSection?.hideInHeader)
+                      .map((subSection) => (
+                        <MaterialMenuItem
+                          key={subSection?.name}
+                          className="!p-0 !bg-transparent hover:!bg-transparent"
+                        >
+                          <MenuItem
+                            name={subSection?.name}
+                            path={subSection?.path}
+                            onClick={() => setOpenNav(false)}
+                            theme={theme}
+                            className={`text-[15px] transition-colors py-1.5 block ${
+                              isEnterprise
+                                ? ""
+                                : "text-[#6b7280] hover:text-themeColor"
+                            }`}
+                          />
+                        </MaterialMenuItem>
+                      ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
           {(footerNote || footerLink) && (
             <div

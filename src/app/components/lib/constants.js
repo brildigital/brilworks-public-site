@@ -396,7 +396,8 @@ export const menuItems = [
   },
   {
     name: "Case Studies",
-    path: "/case-studies/",
+    path: "#work",
+    hideInSideMenu: true,
   },
   {
     name: "AI Solutions",
