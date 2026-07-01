@@ -12,7 +12,7 @@ const EnterpriseIoT = () => {
     <section className="bw-home">
       <div className="wrap">
         <div className="iot">
-          <div>
+          <div className="rv">
             <p className="eyebrow">New — edge to cloud</p>
             <h2>Where the data starts: the device.</h2>
             <p>
@@ -24,7 +24,7 @@ const EnterpriseIoT = () => {
               Explore edge &amp; embedded →
             </a>
           </div>
-          <div className="flow">
+          <div className="flow rv d2">
             {FLOW.map((f) => (
               <div className="frow" key={f.n}>
                 <b>{f.n}</b> {f.label}

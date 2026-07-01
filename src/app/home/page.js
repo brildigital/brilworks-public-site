@@ -9,7 +9,6 @@ import EnterpriseSolutions from "../components/Homepage/Enterprise/EnterpriseSol
 import EnterpriseProof from "../components/Homepage/Enterprise/EnterpriseProof";
 import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
 import EnterpriseIoT from "../components/Homepage/Enterprise/EnterpriseIoT";
-import EnterpriseInsights from "../components/Homepage/Enterprise/EnterpriseInsights";
 import EnterpriseFinalCTA from "../components/Homepage/Enterprise/EnterpriseFinalCTA";
 import HomePageBlogs from "../components/Homepage/HomePageBlogs";
 

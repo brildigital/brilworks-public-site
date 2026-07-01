@@ -78,10 +78,10 @@ const EnterpriseProof = () => {
   return (
     <section className="bw-home">
       <div className="wrap">
-        <p className="eyebrow">Trusted by the people we work with</p>
+        <p className="eyebrow rv">Trusted by the people we work with</p>
         <div className="proof-header">
-          <h2 className="sec">5.0 on Clutch, across 22 reviews.</h2>
-          <div className="rev-nav">
+          <h2 className="sec rv d1">5.0 on Clutch, across 22 reviews.</h2>
+          <div className="rev-nav rv d2">
             <button
               className="rev-btn"
               onClick={() => scroll(-1)}

@@ -153,15 +153,15 @@ const HireEngineers = () => {
       {/* ── Roles ── alt bg (slight blue) */}
       <section className="alt" id="roles">
         <div className="wrap">
-          <p className="eyebrow">All roles</p>
-          <h2 className="sec">Pick the engineer you need.</h2>
-          <p className="sub">
+          <p className="eyebrow rv">All roles</p>
+          <h2 className="sec rv d1">Pick the engineer you need.</h2>
+          <p className="sub rv d2">
             Every engineer is vetted for technical skill, communication, and
             delivery — before you ever speak to them.
           </p>
           <div className="hire-roles">
-            {ROLES.map((r) => (
-              <Link className="hrole" key={r.href} href={r.href}>
+            {ROLES.map((r, i) => (
+              <Link className="hrole rv" key={r.href} href={r.href} style={{ transitionDelay: `${0.06 + i * 0.06}s` }}>
                 <h4>{r.title}</h4>
                 <p>{r.body}</p>
                 <div className="hchips">
@@ -179,11 +179,11 @@ const HireEngineers = () => {
       {/* ── Process ── white bg */}
       <section>
         <div className="wrap">
-          <p className="eyebrow">Process</p>
-          <h2 className="sec">From requirement to onboarded in a week.</h2>
+          <p className="eyebrow rv">Process</p>
+          <h2 className="sec rv d1">From requirement to onboarded in a week.</h2>
           <div className="steps">
-            {STEPS.map((s) => (
-              <div className="step" key={s.n}>
+            {STEPS.map((s, i) => (
+              <div className="step rv" key={s.n} style={{ transitionDelay: `${0.06 + i * 0.08}s` }}>
                 <span className="n">{s.n}</span>
                 <h4>{s.title}</h4>
                 <p>{s.body}</p>
@@ -196,7 +196,7 @@ const HireEngineers = () => {
       {/* ── CTA ── alt bg (slight blue) */}
       <section className="alt">
         <div className="wrap">
-          <div className="final">
+          <div className="final rv">
             <h2>Tell us who you need.</h2>
             <p>
               Share your requirements — you&apos;ll get back matched developer

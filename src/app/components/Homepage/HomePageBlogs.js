@@ -32,8 +32,8 @@ const HomePageBlogs = () => {
     <section className="bw-home alt">
       <div className="wrap">
         <div className="">
-          <p className="eyebrow">Insights</p>
-          <h2 className="sec">From the Brilworks engineering mindset.</h2>
+          <p className="eyebrow rv">Insights</p>
+          <h2 className="sec rv d1">From the Brilworks engineering mindset.</h2>
         </div>
         <div className="posts">
           {blogResponse[pathname]?.length ? (

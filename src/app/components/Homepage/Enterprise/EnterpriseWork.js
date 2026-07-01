@@ -55,15 +55,15 @@ const EnterpriseWork = () => {
   return (
     <section className="bw-home" id="work">
       <div className="wrap">
-        <p className="eyebrow">What we build</p>
-        <h2 className="sec">From data foundation to running agent.</h2>
-        <p className="sub">
+        <p className="eyebrow rv">What we build</p>
+        <h2 className="sec rv d1">From data foundation to running agent.</h2>
+        <p className="sub rv d2">
           The core engagement: we build the layers in the order they have to
           be built — and you own every part of it.
         </p>
         <div className="cases">
-          {CASES.map((c) => (
-            <Link className="case" href={c.link} key={c.tag}>
+          {CASES.map((c, i) => (
+            <Link className="case rv" href={c.link} key={c.tag} style={{ transitionDelay: `${0.06 + i * 0.08}s` }}>
               <span className="tag">{c.tag}</span>
               <h4>{c.title}</h4>
               <p>{c.body}</p>
@@ -72,8 +72,8 @@ const EnterpriseWork = () => {
           ))}
         </div>
         <div className="nums">
-          {NUMS.map((n) => (
-            <div className="num" key={n.v}>
+          {NUMS.map((n, i) => (
+            <div className="num rv" key={n.v} style={{ transitionDelay: `${0.06 + i * 0.07}s` }}>
               <div className="v" style={{ fontSize: 19 }}>
                 {n.v}
               </div>
