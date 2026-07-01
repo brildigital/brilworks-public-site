@@ -308,19 +308,19 @@ export const hireTeamMenuItems = [
       },
       {
         name: "Data Engineers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-data-engineer/",
       },
       {
         name: "Analytics Engineers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-analytics-engineer/",
       },
       {
         name: "ML / AI Engineers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-ml-ai-engineer/",
       },
       {
         name: "MLOps Engineers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-mlops-engineer/",
       },
       {
         name: "All Roles →",
@@ -647,6 +647,22 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/hire-databricks-developer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-data-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-analytics-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-ml-ai-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-mlops-engineer/",
     lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
