@@ -4,9 +4,9 @@ const PARTNERS = [
   { name: "AWS", logo: "/images/v2/aws_partner.webp" },
   { name: "Databricks", logo: "/images/v2/databricks_partner.webp" },
   { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
+  { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
   { name: "adalo", logo: "/images/v2/adalo_partner.webp" },
   { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
-  { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
   { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },
 ];
 
@@ -35,7 +35,7 @@ const EnterprisePartners = () => {
                 <img
                   src={p.logo}
                   alt={p.name}
-                  className="max-h-[70px] max-w-[170px] object-contain opacity-90 transition-opacity duration-300 hover:grayscale-0 hover:opacity-100"
+                  className="max-h-[50px] md:max-h-[70px] max-w-[140px]  md:max-w-[170px] object-contain opacity-90 transition-opacity duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
             ))}
