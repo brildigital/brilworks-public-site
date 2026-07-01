@@ -175,19 +175,19 @@ const DATA = {
     p: "Flexible models to match your stage, whether you need a full firmware team, extra embedded hands, or a fixed build delivered end to end.",
     models: [
       {
-        icon: "⚙",
+        icon: "Users",
         h3: "Dedicated Development Team",
         md: "A full embedded team of firmware engineers, hardware integration specialists, and QA, working only on your product. Best for companies building a core connected platform.",
         bill: "dedicated team, monthly.",
       },
       {
-        icon: "👥",
+        icon: "UserPlus",
         h3: "Team Extension",
         md: "Add our embedded engineers to your existing team. They join your repo, standups, and processes and read your platform fast. Best for scaling without the hiring cycle.",
         bill: "per engineer, monthly.",
       },
       {
-        icon: "📦",
+        icon: "Package",
         h3: "Project-Based Model",
         md: "Fixed scope, fixed deliverable. We own the firmware from board bring-up to cloud, tested and documented. Best for a defined product or a well-scoped build.",
         bill: "fixed-scope, quoted per project.",

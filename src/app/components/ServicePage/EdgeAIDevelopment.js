@@ -165,19 +165,19 @@ const DATA = {
     p: "Flexible engagement models for companies building intelligent connected products, whether you need dedicated Edge AI specialists or an end-to-end engineering partner.",
     models: [
       {
-        icon: "⚙",
+        icon: "Users",
         h3: "Dedicated Edge AI Team",
         md: "A cross-functional team of embedded engineers, machine learning specialists, and software developers focused exclusively on your product. Best for long-term intelligent product development.",
         bill: "dedicated team, monthly.",
       },
       {
-        icon: "👥",
+        icon: "UserPlus",
         h3: "Team Extension",
         md: "Integrate experienced Edge AI engineers into your existing embedded or AI team to accelerate delivery without disrupting your development process. Best for scaling existing engineering teams.",
         bill: "per engineer, monthly.",
       },
       {
-        icon: "📦",
+        icon: "Package",
         h3: "Project-Based Model",
         md: "Fixed-scope engagement covering model optimization, embedded deployment, hardware integration, and production validation. Best for well-defined Edge AI initiatives.",
         bill: "fixed-scope, quoted per project.",

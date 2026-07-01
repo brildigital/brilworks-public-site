@@ -10,6 +10,12 @@ import {
   Zap,
   Lock,
   FlaskConical,
+  Users,
+  UserPlus,
+  Package,
+  Briefcase,
+  Settings,
+  LayoutGrid,
 } from "lucide-react";
 import CalPopupButton from "./CalPopupButton";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
@@ -28,6 +34,15 @@ const CAP_ICONS = {
   Zap,
   Lock,
   FlaskConical,
+};
+
+const ENGAGE_ICONS = {
+  Users,
+  UserPlus,
+  Package,
+  Briefcase,
+  Settings,
+  LayoutGrid,
 };
 
 /**
@@ -298,7 +313,16 @@ const ServicePageTemplate = ({ data }) => {
                   key={i}
                   style={{ transitionDelay: `${0.06 + i * 0.1}s` }}
                 >
-                  <div className="mi">{m.icon}</div>
+                  <div className="mi">
+                    {(() => {
+                      const Icon = ENGAGE_ICONS[m.icon];
+                      return Icon ? (
+                        <Icon size={24} strokeWidth={1.6} />
+                      ) : (
+                        m.icon
+                      );
+                    })()}
+                  </div>
                   <h3>{m.h3}</h3>
                   <p className="md">{m.md}</p>
                   <div className="bill">

@@ -7,13 +7,13 @@ const EnterpriseHero = () => {
       <div className="wrap">
         <div>
           <span className="pill rv">
-            <b>★ 5.0</b> on Clutch · AWS Advanced Tier · Snowflake &amp;
-            Databricks Partner
+            <b>★ 5.0</b> on Clutch · AWS · Databricks · Snowflake · dbtLabs
+            Partners
           </span>
           <h1 className="rv d1">From raw data to running agents.</h1>
           <p className="lede rv d2">
             Brilworks is a Data &amp; AI engineering firm. We build the data
-            foundation and the AI that runs on it — or embed certified engineers
+            foundation and the AI that runs on it, or embed certified engineers
             in your team to keep it running.
           </p>
           <div className="ctas rv mt-4">
@@ -21,13 +21,13 @@ const EnterpriseHero = () => {
               See how we work
             </Link>
           </div>
-          <div className="trust rv d3">
+          {/* <div className="trust rv d3">
             <span>
               <span className="star">★★★★★</span> 22 verified reviews on Clutch
             </span>
-            <span>AWS · Snowflake · Databricks partner</span>
+            <span>AWS · Snowflake · Databricks · dbtLabs partners</span>
             <span>Certified engineers on every engagement</span>
-          </div>
+          </div> */}
         </div>
         <div className="rv d2">
           <div className="panel">
@@ -40,7 +40,7 @@ const EnterpriseHero = () => {
               <div>
                 <div className="nm">Ingest</div>
                 <div className="meta">
-                  Every source — apps, APIs, legacy databases
+                  Every source apps, APIs, legacy databases
                 </div>
               </div>
             </div>
@@ -70,7 +70,7 @@ const EnterpriseHero = () => {
             <div className="pf">
               <div>
                 <div className="l">Built on</div>
-                <div className="v">Snowflake · Databricks · AWS</div>
+                <div className="v">Snowflake · Databricks · AWS · dbtLabs</div>
               </div>
             </div>
           </div>
