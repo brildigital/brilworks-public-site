@@ -300,11 +300,11 @@ export const hireTeamMenuItems = [
     subSections: [
       {
         name: "Snowflake Developers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-snowflake-developer/",
       },
       {
         name: "Databricks Developers",
-        path: "/hire-dedicated-software-development-team/",
+        path: "/hire-databricks-developer/",
       },
       {
         name: "Data Engineers",
@@ -640,6 +640,14 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/hire-blockchain-developer/",
     lastmod: "2025-05-22T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-snowflake-developer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-databricks-developer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/hire-flutterflow-developer/",

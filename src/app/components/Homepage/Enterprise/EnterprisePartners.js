@@ -42,8 +42,8 @@ const EnterprisePartners = () => {
           </div>
         </div>
         <p className="pnote rv d1">
-          Vetted partner status at the company level — and Snowflake- and
-          Databricks-certified engineers on every engagement.
+          Company-wide vetted partner status, with Snowflake and Databricks
+          certified engineers on every engagement.
         </p>
       </div>
     </section>
