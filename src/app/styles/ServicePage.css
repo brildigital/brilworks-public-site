@@ -982,35 +982,50 @@
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 600px) {
-  .bw-home .sp-caps {
-    grid-template-columns: 1fr;
-  }
-}
+
+/* ── Tablet (≤ 900px) ── */
 @media (max-width: 900px) {
+  .bw-home .sp-hero {
+    padding: 60px 0 50px;
+  }
   .bw-home .sp-hgrid {
     grid-template-columns: 1fr;
     gap: 36px;
   }
   .bw-home .sp-stats {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .bw-home .sp-caps {
     grid-template-columns: repeat(2, 1fr);
   }
+  .bw-home .sp-diff,
   .bw-home .sp-builds,
   .bw-home .sp-pq,
-  .bw-home .sp-models,
-  .bw-home .sp-diff,
   .bw-home .sp-qgrid {
     grid-template-columns: 1fr;
   }
+  /* engagement models: 2-col on tablet, collapses to 1 at mobile */
+  .bw-home .sp-models {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* process steps: stack as horizontal-number + text rows */
   .bw-home .sp-flow {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 16px;
   }
   .bw-home .sp-flow::before {
     display: none;
+  }
+  .bw-home .sp-fstep {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    padding-right: 0;
+  }
+  .bw-home .sp-fstep .node {
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
   .bw-home .sp-tmrow {
     justify-content: flex-start;
@@ -1022,10 +1037,54 @@
     width: 100%;
   }
   .bw-home .sp-final {
-    padding: 44px 22px;
+    padding: 44px 24px;
     border-radius: 16px;
   }
+}
+
+/* ── Mobile (≤ 600px) ── */
+@media (max-width: 600px) {
   .bw-home .sp-hero {
-    padding: 60px 0 50px;
+    padding: 48px 0 40px;
+  }
+  .bw-home .sp-caps {
+    grid-template-columns: 1fr;
+  }
+  .bw-home .sp-models {
+    grid-template-columns: 1fr;
+  }
+  /* tighten card padding */
+  .bw-home .sp-stat {
+    padding: 20px 16px;
+  }
+  .bw-home .sp-stat .v {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+  .bw-home .sp-capcard {
+    padding: 20px 16px;
+  }
+  .bw-home .sp-dcard {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .bw-home .sp-build {
+    padding: 22px 18px;
+  }
+  .bw-home .sp-build .spec {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bw-home .sp-model {
+    padding: 26px 18px;
+  }
+  .bw-home .sp-indrow span {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  .bw-home .sp-final {
+    padding: 36px 16px;
+    border-radius: 12px;
+  }
+  .bw-home .sp-final h2 {
+    max-width: unset;
   }
 }

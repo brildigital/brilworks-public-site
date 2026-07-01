@@ -1,10 +1,34 @@
 import Link from "next/link";
-import { Cpu, Cloud, Brain, RefreshCw, ShieldCheck, Layers, Wifi, Zap, Lock, FlaskConical } from "lucide-react";
+import {
+  Cpu,
+  Cloud,
+  Brain,
+  RefreshCw,
+  ShieldCheck,
+  Layers,
+  Wifi,
+  Zap,
+  Lock,
+  FlaskConical,
+} from "lucide-react";
 import CalPopupButton from "./CalPopupButton";
+import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import FinalCTA from "../Common/FinalCTA";
 import "../../styles/EnterpriseHome.css";
 import "../../styles/ServicePage.css";
 
-const CAP_ICONS = { Cpu, Cloud, Brain, RefreshCw, ShieldCheck, Layers, Wifi, Zap, Lock, FlaskConical };
+const CAP_ICONS = {
+  Cpu,
+  Cloud,
+  Brain,
+  RefreshCw,
+  ShieldCheck,
+  Layers,
+  Wifi,
+  Zap,
+  Lock,
+  FlaskConical,
+};
 
 /**
  * Reusable template for embedded / IoT / firmware service pages.
@@ -146,7 +170,15 @@ const ServicePageTemplate = ({ data }) => {
                 >
                   <div className="sp-card-top">
                     <div className="sp-cn">{cap.n}</div>
-                    {cap.icon && (() => { const Icon = CAP_ICONS[cap.icon]; return Icon ? <div className="sp-cicon"><Icon size={26} strokeWidth={1.5} /></div> : null; })()}
+                    {cap.icon &&
+                      (() => {
+                        const Icon = CAP_ICONS[cap.icon];
+                        return Icon ? (
+                          <div className="sp-cicon">
+                            <Icon size={26} strokeWidth={1.5} />
+                          </div>
+                        ) : null;
+                      })()}
                   </div>
                   <h3>{cap.h3}</h3>
                   <p className="cd">{cap.p}</p>
@@ -339,22 +371,21 @@ const ServicePageTemplate = ({ data }) => {
 
       {/* ── FAQ ── */}
       {faq && (
-        <section>
+        <section style={{ background: "#fff" }}>
           <div className="wrap">
-            <div className="sp-shead rv">
-              <span className="sp-tag">{faq.tag}</span>
-              <h2>{faq.h2}</h2>
-            </div>
-            <div className="sp-qgrid">
+            <div style={{ maxWidth: 860, margin: "0 auto" }}>
+              <div className="sp-shead rv" style={{ marginBottom: 40 }}>
+                <span className="sp-tag">{faq.tag}</span>
+                <h2>{faq.h2}</h2>
+                {faq.p && <p style={{ marginTop: 12 }}>{faq.p}</p>}
+              </div>
               {faq.items.map((item, i) => (
-                <div
-                  className="sp-qitem rv"
+                <GradientFAQAccordion
                   key={i}
-                  style={{ transitionDelay: `${0.06 + i * 0.07}s` }}
-                >
-                  <p className="qq">{item.q}</p>
-                  <p className="qa">{item.a}</p>
-                </div>
+                  id={i + 1}
+                  question={item.q}
+                  answer={item.a}
+                />
               ))}
             </div>
           </div>
@@ -362,44 +393,7 @@ const ServicePageTemplate = ({ data }) => {
       )}
 
       {/* ── Final CTA ── */}
-      {cta && (
-        <section className={cta.altBg ? "alt" : ""}>
-          <div className="wrap">
-            <div className="sp-final rv">
-              <span className="sp-tag">{cta.tag}</span>
-              <h2>{cta.h2}</h2>
-              <p className="!mt-4">{cta.p}</p>
-              <div className="ctas mt-4">
-                {cta.ctas.map((c, i) =>
-                  c.cal ? (
-                    <CalPopupButton
-                      key={i}
-                      label={c.label}
-                      calLink={c.calLink}
-                      className={`btn ${c.primary ? "btn-primary" : "btn-ghost"}`}
-                    />
-                  ) : (
-                    <Link
-                      key={i}
-                      className={`btn ${c.primary ? "btn-primary" : "btn-ghost"}`}
-                      href={c.href}
-                    >
-                      {c.label}
-                    </Link>
-                  ),
-                )}
-              </div>
-              {cta.ticks && (
-                <div className="ticks">
-                  {cta.ticks.map((t, i) => (
-                    <span key={i}>{t}</span>
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
+      {cta && <FinalCTA {...cta} />}
     </div>
   );
 };

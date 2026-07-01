@@ -1156,6 +1156,31 @@
   letter-spacing: -0.01em;
 }
 
+/* ===== BLOG VIEW ALL ===== */
+.bw-home .blog-view-all {
+  text-align: center;
+  margin-top: 36px;
+  padding: 8px 0;
+}
+.bw-home .blog-view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--fd);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+}
+.bw-home .blog-view-all-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 /* ===== FINAL CTA ===== */
 .bw-home .final {
   position: relative;

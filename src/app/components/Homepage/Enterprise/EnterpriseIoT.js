@@ -20,7 +20,7 @@ const EnterpriseIoT = () => {
               on hardware — feeding the same trusted pipelines we build for
               everyone else.
             </p>
-            <a className="softlink" href="#">
+            <a className="softlink" href="/embedded-software-development-services/">
               Explore edge &amp; embedded →
             </a>
           </div>

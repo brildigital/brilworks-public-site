@@ -72,11 +72,8 @@ const HomePageBlogs = () => {
             </div>
           )}
         </div>
-        <div className="text-center reveal">
-          <Link
-            href="/blog/"
-            className="font-Figtree text-themeColor font-semibold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
-          >
+        <div className="blog-view-all rv d2">
+          <Link href="/blog/" className="blog-view-all-link">
             View all articles →
           </Link>
         </div>

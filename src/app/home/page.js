@@ -9,7 +9,7 @@ import EnterpriseSolutions from "../components/Homepage/Enterprise/EnterpriseSol
 import EnterpriseProof from "../components/Homepage/Enterprise/EnterpriseProof";
 import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
 import EnterpriseIoT from "../components/Homepage/Enterprise/EnterpriseIoT";
-import EnterpriseFinalCTA from "../components/Homepage/Enterprise/EnterpriseFinalCTA";
+import FinalCTA from "../components/Common/FinalCTA";
 import HomePageBlogs from "../components/Homepage/HomePageBlogs";
 
 export async function generateMetadata() {
@@ -83,7 +83,7 @@ const page = () => {
       <EnterpriseStack />
       <EnterpriseIoT />
       <HomePageBlogs />
-      <EnterpriseFinalCTA />
+      <FinalCTA />
     </div>
   );
 };

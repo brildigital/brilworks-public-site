@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const ScrollRevealInit = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -16,7 +19,7 @@ const ScrollRevealInit = () => {
     );
     document.querySelectorAll("section").forEach((s) => obs.observe(s));
     return () => obs.disconnect();
-  }, []);
+  }, [pathname]);
   return null;
 };
 

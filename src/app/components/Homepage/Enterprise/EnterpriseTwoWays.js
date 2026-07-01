@@ -14,7 +14,7 @@ const WAYS = [
   {
     wk: "We staff",
     title: "Certified engineers, in your team",
-    desc: "Snowflake- and Databricks-certified data and AI engineers, embedded in your team and on your timezone. Scale without the hiring cycle.",
+    desc: "Snowflake- and Databricks-certified engineers embedded in your team on your timezone — scale without the hiring cycle.",
     chips: ["Certified", "Your timezone", "In your repo & standups"],
     quote: "They feel like an extension of our internal team, not a vendor.",
     who: "CEO · Rastrack",

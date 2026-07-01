@@ -156,27 +156,27 @@ export const servicesMenuItems = [
       // },
     ],
   },
-  // {
-  //   name: "IoT & Embedded",
-  //   subSections: [
-  //     {
-  //       name: "Embedded Software (New)",
-  //       path: "/contact-us/",
-  //     },
-  //     {
-  //       name: "Firmware Engineering (New)",
-  //       path: "/contact-us/",
-  //     },
-  //     {
-  //       name: "Edge AI / On-Device ML (New)",
-  //       path: "/contact-us/",
-  //     },
-  //     {
-  //       name: "IoT Product Engineering (New)",
-  //       path: "/contact-us/",
-  //     },
-  //   ],
-  // },
+  {
+    name: "IoT & Embedded",
+    subSections: [
+      {
+        name: "Embedded Software",
+        path: "/embedded-software-development-services/",
+      },
+      {
+        name: "Firmware Engineering",
+        path: "/firmware-engineering-services/",
+      },
+      {
+        name: "Edge AI / On-Device ML",
+        path: "/edge-ai-development-services/",
+      },
+      {
+        name: "IoT Product Engineering",
+        path: "/iot-product-engineering-services/",
+      },
+    ],
+  },
   {
     name: "The Stack Underneath",
     muted: true,
