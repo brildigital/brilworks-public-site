@@ -28,16 +28,16 @@ const EnterpriseStack = () => {
   return (
     <section className="bw-home alt" id="services">
       <div className="wrap">
-        <p className="eyebrow">The stack underneath</p>
-        <h2 className="sec">Everything around the data, too.</h2>
-        <p className="sub">
+        <p className="eyebrow rv">The stack underneath</p>
+        <h2 className="sec rv d1">Everything around the data, too.</h2>
+        <p className="sub rv d2">
           Pipelines and agents don&apos;t ship alone. We bring the product,
           cloud, and platform engineering that puts them in front of real
           users.
         </p>
         <div className="stack">
-          {STACK.map((s) => (
-            <Link className="scard" key={s.title} href={s.href}>
+          {STACK.map((s, i) => (
+            <Link className="scard rv" key={s.title} href={s.href} style={{ transitionDelay: `${0.06 + i * 0.08}s` }}>
               <h4>{s.title}</h4>
               <p>{s.body}</p>
             </Link>

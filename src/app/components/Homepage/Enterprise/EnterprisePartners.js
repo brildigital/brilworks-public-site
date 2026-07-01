@@ -15,7 +15,7 @@ const EnterprisePartners = () => {
   return (
     <section className="bw-home partners">
       <div className="wrap">
-        <p className="eyebrow">Official technology partners</p>
+        <p className="eyebrow rv">Official technology partners</p>
         <div
           className="relative w-full my-4 overflow-hidden"
           style={{
@@ -41,7 +41,7 @@ const EnterprisePartners = () => {
             ))}
           </div>
         </div>
-        <p className="pnote">
+        <p className="pnote rv d1">
           Vetted partner status at the company level — and Snowflake- and
           Databricks-certified engineers on every engagement.
         </p>

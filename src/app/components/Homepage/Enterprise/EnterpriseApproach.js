@@ -27,19 +27,19 @@ const EnterpriseApproach = () => {
   return (
     <section className="bw-home" id="approach">
       <div className="wrap">
-        <p className="eyebrow">Why this order matters</p>
-        <h2 className="sec">
+        <p className="eyebrow rv">Why this order matters</p>
+        <h2 className="sec rv d1">
           An AI agent is only as good as the data feeding it.
         </h2>
-        <p className="sub">
+        <p className="sub rv d2">
           Most teams jump straight to the agent — then it hallucinates,
           because the data underneath is stale, duplicated, or untrusted. We
           build in the order it has to be built: foundation first, agent
           last.
         </p>
         <div className="steps">
-          {STEPS.map((s) => (
-            <div className="step" key={s.n}>
+          {STEPS.map((s, i) => (
+            <div className="step rv" style={{ transitionDelay: `${0.06 + i * 0.08}s` }} key={s.n}>
               <div className="n">{s.n}</div>
               <h4>{s.title}</h4>
               <p>{s.body}</p>

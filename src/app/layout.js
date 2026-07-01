@@ -11,6 +11,7 @@ import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 import LoadScripts from "./ScriptLoader";
+import ScrollRevealInit from "./components/Common/ScrollRevealInit";
 import Script from "next/script";
 import PostHogProvider from "./components/PostHogProvider";
 import {
@@ -105,6 +106,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <CookieConsent />
           </PostHogProvider>
+          <ScrollRevealInit />
           <LoadScripts
             organization={organization}
             website={website}

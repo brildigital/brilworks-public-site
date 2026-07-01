@@ -32,8 +32,8 @@ const HomePageBlogs = () => {
     <section className="bw-home alt">
       <div className="wrap">
         <div className="">
-          <p className="eyebrow">Insights</p>
-          <h2 className="sec">From the Brilworks engineering mindset.</h2>
+          <p className="eyebrow rv">Insights</p>
+          <h2 className="sec rv d1">From the Brilworks engineering mindset.</h2>
         </div>
         <div className="posts">
           {blogResponse[pathname]?.length ? (
@@ -72,11 +72,8 @@ const HomePageBlogs = () => {
             </div>
           )}
         </div>
-        <div className="text-center reveal">
-          <Link
-            href="/blog/"
-            className="font-Figtree text-themeColor font-semibold text-sm inline-flex items-center gap-1.5 hover:gap-2.5 transition-all duration-200"
-          >
+        <div className="blog-view-all rv d2">
+          <Link href="/blog/" className="blog-view-all-link">
             View all articles →
           </Link>
         </div>

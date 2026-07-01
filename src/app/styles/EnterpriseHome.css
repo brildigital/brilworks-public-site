@@ -1156,6 +1156,31 @@
   letter-spacing: -0.01em;
 }
 
+/* ===== BLOG VIEW ALL ===== */
+.bw-home .blog-view-all {
+  text-align: center;
+  margin-top: 36px;
+  padding: 8px 0;
+}
+.bw-home .blog-view-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--fd);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1.5px solid var(--accent);
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
+}
+.bw-home .blog-view-all-link:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
 /* ===== FINAL CTA ===== */
 .bw-home .final {
   position: relative;
@@ -1359,22 +1384,16 @@
 @media (prefers-reduced-motion: no-preference) {
   .bw-home .rv {
     opacity: 0;
-    transform: translateY(12px);
-    animation: bwHomeRise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+    transform: translateY(14px);
+    transition: opacity 0.55s cubic-bezier(0.22, 0.7, 0.3, 1),
+                transform 0.55s cubic-bezier(0.22, 0.7, 0.3, 1);
   }
-  .bw-home .rv.d1 {
-    animation-delay: 0.07s;
-  }
-  .bw-home .rv.d2 {
-    animation-delay: 0.15s;
-  }
-  .bw-home .rv.d3 {
-    animation-delay: 0.23s;
-  }
-  @keyframes bwHomeRise {
-    to {
-      opacity: 1;
-      transform: none;
-    }
+  .bw-home .rv.d1 { transition-delay: 0.08s; }
+  .bw-home .rv.d2 { transition-delay: 0.16s; }
+  .bw-home .rv.d3 { transition-delay: 0.24s; }
+  .bw-home .rv.d4 { transition-delay: 0.32s; }
+  .bw-home .rv.in {
+    opacity: 1;
+    transform: none;
   }
 }
