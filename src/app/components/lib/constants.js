@@ -342,7 +342,7 @@ export const hireTeamNavMenuItems = [
 
 export const hireTeamFooterLink = {
   name: "All roles →",
-  path: "/hire-dedicated-software-development-team/",
+  path: "/hire-engineers/",
 };
 
 export const AISolutionsMenuItems = [
@@ -396,7 +396,8 @@ export const menuItems = [
   },
   {
     name: "Case Studies",
-    path: "/case-studies/",
+    path: "#work",
+    hideInSideMenu: true,
   },
   {
     name: "AI Solutions",

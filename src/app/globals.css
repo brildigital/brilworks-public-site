@@ -7,7 +7,8 @@
 /* Pre-declare Tawk's icon font with font-display:swap to prevent invisible text during load */
 @font-face {
   font-family: "tawk-font-icon-3";
-  src: url("https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728") format("woff");
+  src: url("https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728")
+    format("woff");
   font-display: swap;
 }
 
@@ -249,12 +250,12 @@ input[type="number"] {
 }
 
 .menu_txt1 {
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--color_gray);
 }
 
 .menu_txt1 p {
-  font-size: var(--font_36);
+  font-size: 24px !important;
   color: var(--color_black);
 }
 
@@ -554,7 +555,9 @@ input[type="number"] {
   position: relative;
   transform: translateY(100px);
   opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
   will-change: transform, opacity;
 }
 

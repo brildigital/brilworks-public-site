@@ -32,22 +32,22 @@
 }
 
 .accordion-title {
-  padding: 1.5rem 0;
   border-bottom: 1px solid var(--color_gray);
+  font-size: 24px !important;
 }
 
 .accordion-title p {
-  font-size: var(--font_36);
+  font-size: 24px !important;
   font-family: var(--global-font);
   color: var(--color_black);
   width: fit-content;
   font-weight: 400;
-  line-height: 2.5rem;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 1152px) {
   .accordion-title p {
-    font-size: 1.5rem;
+    font-size: 24px !important;
   }
 }
 
@@ -67,18 +67,20 @@
 }
 
 .mega-menu-content p {
-  font-size: var(--font_32);
+  font-size: 20px !important;
   font-family: var(--global-font);
   width: fit-content;
   font-weight: 400;
-  line-height: 2.5rem;
+  line-height: 1.5;
+  white-space: normal !important;
 }
 
-@media screen and (max-width: 1152px) {
+/* @media screen and (max-width: 1152px) {
   .mega-menu-content p {
-    font-size: 1rem;
+    font-size: 20px !important;
+    white-space: normal !important;
   }
-}
+} */
 
 @media screen and (max-width: 767px) {
   .mega-menu-content p {
@@ -282,7 +284,8 @@
   border-color: transparent;
   background:
     linear-gradient(white, white) padding-box,
-    linear-gradient(167.42deg, #007aeb -0.42%, #008ce7 42.32%, #00dbd3 102.1%) border-box;
+    linear-gradient(167.42deg, #007aeb -0.42%, #008ce7 42.32%, #00dbd3 102.1%)
+      border-box;
   border-radius: 6px;
 }
 
@@ -302,7 +305,8 @@
   border-color: transparent;
   background:
     linear-gradient(#081120, #081120) padding-box,
-    linear-gradient(167.42deg, #007aeb -0.42%, #008ce7 42.32%, #00dbd3 102.1%) border-box;
+    linear-gradient(167.42deg, #007aeb -0.42%, #008ce7 42.32%, #00dbd3 102.1%)
+      border-box;
 }
 
 .swiper-pagination-bullet {
@@ -364,7 +368,12 @@
 
 .honors-card:hover {
   border-color: transparent;
-  background: linear-gradient(150.51deg, #007aeb 12.91%, #008ce7 45.61%, #00dbd3 91.35%);
+  background: linear-gradient(
+    150.51deg,
+    #007aeb 12.91%,
+    #008ce7 45.61%,
+    #00dbd3 91.35%
+  );
 }
 
 .award_sec8_img1 {

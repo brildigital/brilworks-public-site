@@ -9,7 +9,7 @@ const MenuItem = ({ path, onClick, name, className, theme }) => {
   return (
     <Link href={path} onClick={onClick} className={className}>
       <p
-        className={`!mb-0 w-full whitespace-nowrap font-normal ${
+        className={`!mb-0 w-full whitespace-normal font-normal ${
           pathname === path
             ? isEnterprise
               ? "!text-[#2F6BFF] !font-semibold"

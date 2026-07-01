@@ -11,6 +11,7 @@ import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
 import EnterpriseIoT from "../components/Homepage/Enterprise/EnterpriseIoT";
 import EnterpriseInsights from "../components/Homepage/Enterprise/EnterpriseInsights";
 import EnterpriseFinalCTA from "../components/Homepage/Enterprise/EnterpriseFinalCTA";
+import HomePageBlogs from "../components/Homepage/HomePageBlogs";
 
 export async function generateMetadata() {
   return {
@@ -82,7 +83,7 @@ const page = () => {
       <EnterpriseProof />
       <EnterpriseStack />
       <EnterpriseIoT />
-      <EnterpriseInsights />
+      <HomePageBlogs />
       <EnterpriseFinalCTA />
     </div>
   );

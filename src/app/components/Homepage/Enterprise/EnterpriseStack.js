@@ -1,21 +1,26 @@
 import "../../../styles/EnterpriseHome.css";
+import Link from "next/link";
 
 const STACK = [
   {
     title: "Product engineering",
     body: "MVP to enterprise scale, built to last past the demo.",
+    href: "/product-engineering-development-services/",
   },
   {
     title: "Web & SaaS",
     body: "Scalable web apps and platforms on React and Node.",
+    href: "/web-app-development-services/",
   },
   {
     title: "Mobile apps",
     body: "iOS, Android, and React Native.",
+    href: "/react-native-app-development-services/",
   },
   {
     title: "Cloud & DevOps",
     body: "AWS architecture, CI/CD, Kubernetes.",
+    href: "/aws-consulting-services/",
   },
 ];
 
@@ -32,10 +37,10 @@ const EnterpriseStack = () => {
         </p>
         <div className="stack">
           {STACK.map((s) => (
-            <div className="scard" key={s.title}>
+            <Link className="scard" key={s.title} href={s.href}>
               <h4>{s.title}</h4>
               <p>{s.body}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
