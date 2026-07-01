@@ -167,19 +167,19 @@ const DATA = {
     p: "Flexible engagement models for companies building connected products, whether you need a dedicated IoT team or an end-to-end engineering partner.",
     models: [
       {
-        icon: "⚙",
+        icon: "Users",
         h3: "Dedicated IoT Engineering Team",
         md: "A cross-functional team of firmware engineers, cloud engineers, backend developers, QA specialists, and IoT architects focused exclusively on your product. Best for long-term connected product development.",
         bill: "dedicated team, monthly.",
       },
       {
-        icon: "👥",
+        icon: "UserPlus",
         h3: "Team Extension",
         md: "Integrate experienced IoT engineers into your existing team to accelerate delivery without disrupting your development process. Best for scaling existing engineering teams.",
         bill: "per engineer, monthly.",
       },
       {
-        icon: "📦",
+        icon: "Package",
         h3: "Project-Based Model",
         md: "Fixed-scope engagement covering firmware, connectivity, cloud infrastructure, and production validation. Best for well-defined IoT product initiatives.",
         bill: "fixed-scope, quoted per project.",

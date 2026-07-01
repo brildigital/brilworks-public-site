@@ -1329,6 +1329,18 @@ export const sitemapData = [
     lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
+    loc: "https://www.brilworks.com/data-engineering-for-healthtech/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-for-fintech/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-for-saas/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
     loc: "https://www.brilworks.com/privacy-policy/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },

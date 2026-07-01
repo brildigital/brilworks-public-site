@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "../../../styles/EnterpriseHome.css";
 
 const INDUSTRIES = [
@@ -5,16 +6,19 @@ const INDUSTRIES = [
     name: "SaaS",
     c: "Anchor",
     body: "Product analytics you trust and AI features that hold up in production.",
+    href: "/data-engineering-for-saas/",
   },
   {
     name: "Fintech",
     c: "Next",
     body: "Audit-ready pipelines, fraud and risk agents, low-latency data.",
+    href: "/data-engineering-for-fintech/",
   },
   {
     name: "Healthtech",
     c: "Long game",
     body: "Compliant data unification across records and connected devices.",
+    href: "/data-engineering-for-healthtech/",
   },
 ];
 
@@ -30,11 +34,17 @@ const EnterpriseSolutions = () => {
         </p>
         <div className="inds">
           {INDUSTRIES.map((ind, i) => (
-            <div className="ind rv" key={ind.name} style={{ transitionDelay: `${0.06 + i * 0.09}s` }}>
+            <Link
+              className="ind rv"
+              key={ind.name}
+              href={ind.href}
+              style={{ transitionDelay: `${0.06 + i * 0.09}s` }}
+            >
               <h4>{ind.name}</h4>
               <span className="c">{ind.c}</span>
               <p>{ind.body}</p>
-            </div>
+              <span className="ind-arrow">Explore →</span>
+            </Link>
           ))}
         </div>
       </div>
