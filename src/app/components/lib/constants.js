@@ -1313,6 +1313,22 @@ export const sitemapData = [
     lastmod: "2026-06-23T00:00:00.000Z",
   },
   {
+    loc: "https://www.brilworks.com/embedded-software-development-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/firmware-engineering-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/edge-ai-development-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/iot-product-engineering-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
     loc: "https://www.brilworks.com/privacy-policy/",
     lastmod: "2025-05-15T12:04:49.528Z",
   },
