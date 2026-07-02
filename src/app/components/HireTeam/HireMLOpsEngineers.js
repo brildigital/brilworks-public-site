@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "MLOps · ML Platform Engineering · Model Deployment · Monitoring",
-    h1: [
-      { text: "Hire " },
-      { text: "MLOps Engineers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "MLOps Engineers", accent: true }],
     lede: "MLOps engineers who operationalise machine learning — building the pipelines, platforms, and infrastructure that take models from notebook to production and keep them reliable after launch.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -58,35 +59,62 @@ const DATA = {
         icon: "RefreshCw",
         h3: "Training pipelines & CI/CD for ML",
         p: "Automate model training, evaluation, and promotion with reproducible, version-controlled pipelines. CI/CD workflows that run on code change, data drift trigger, or schedule — without manual handoffs from data science to engineering.",
-        chips: ["CI/CD for ML", "Training automation", "Model versioning", "GitHub Actions"],
+        chips: [
+          "CI/CD for ML",
+          "Training automation",
+          "Model versioning",
+          "GitHub Actions",
+        ],
       },
       {
         n: "02",
         icon: "Cloud",
         h3: "Model serving & inference infrastructure",
         p: "Deploy models to production with optimised serving infrastructure. Batch scoring pipelines, real-time REST endpoints, and GPU inference setups using Triton, BentoML, or managed endpoints on AWS SageMaker, Databricks, or GCP Vertex.",
-        chips: ["Triton", "BentoML", "SageMaker Endpoints", "Batch scoring", "GPU serving"],
+        chips: [
+          "Triton",
+          "BentoML",
+          "SageMaker Endpoints",
+          "Batch scoring",
+          "GPU serving",
+        ],
       },
       {
         n: "03",
         icon: "Layers",
         h3: "Feature store & feature pipeline engineering",
         p: "Build a feature store that separates feature computation from model training — so features are consistent between training and serving, shareable across models, and not recomputed from scratch for every experiment.",
-        chips: ["Feast", "Databricks Feature Store", "Vertex AI Feature Store", "Point-in-time correctness"],
+        chips: [
+          "Feast",
+          "Databricks Feature Store",
+          "Vertex AI Feature Store",
+          "Point-in-time correctness",
+        ],
       },
       {
         n: "04",
         icon: "ShieldCheck",
         h3: "Model monitoring & drift detection",
         p: "Instrument models in production with data drift detection, prediction distribution monitoring, and performance degradation alerting — so you know when a model needs retraining before stakeholders do.",
-        chips: ["Evidently", "WhyLabs", "Data drift", "Concept drift", "SLA alerting"],
+        chips: [
+          "Evidently",
+          "WhyLabs",
+          "Data drift",
+          "Concept drift",
+          "SLA alerting",
+        ],
       },
       {
         n: "05",
         icon: "Brain",
         h3: "ML experiment tracking & model registry",
         p: "Set up MLflow or equivalent to give data scientists reproducible experiments, tracked metrics, versioned artifacts, and a model registry with promotion workflows — so no model ever reaches production without a known lineage.",
-        chips: ["MLflow", "Model registry", "Experiment tracking", "Artifact management"],
+        chips: [
+          "MLflow",
+          "Model registry",
+          "Experiment tracking",
+          "Artifact management",
+        ],
       },
     ],
   },
@@ -131,7 +159,12 @@ const DATA = {
           ["Retraining", "Weekly automated trigger"],
           ["Deploy time", "3 days → 2 hours"],
         ],
-        stk: ["Feature Store", "A/B traffic splitting", "Evidently drift monitoring", "CI/CD for ML"],
+        stk: [
+          "Feature Store",
+          "A/B traffic splitting",
+          "Evidently drift monitoring",
+          "CI/CD for ML",
+        ],
       },
       {
         href: "#case-fintech",
@@ -144,7 +177,12 @@ const DATA = {
           ["Latency", "< 200ms p99"],
           ["Throughput", "5k req/min peak"],
         ],
-        stk: ["Kubernetes autoscaling", "drift alerting", "shadow mode testing", "model canary rollout"],
+        stk: [
+          "Kubernetes autoscaling",
+          "drift alerting",
+          "shadow mode testing",
+          "model canary rollout",
+        ],
       },
     ],
     quotes: [
@@ -273,10 +311,19 @@ const DATA = {
     h2: "Let's operationalise your ML.",
     p: "Whether you're struggling to get models into production, dealing with serving infrastructure that can't scale, or monitoring drift after the fact — we'll help you design the right MLOps architecture before writing a line of infrastructure code.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "AWS & Databricks Partner", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "AWS & Databricks Partner",
+      "No obligation",
+    ],
   },
 };
 

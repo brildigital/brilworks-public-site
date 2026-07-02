@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "ML Engineering · GenAI · LLM Applications · AI Agents",
-    h1: [
-      { text: "Hire " },
-      { text: "ML / AI Engineers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "ML / AI Engineers", accent: true }],
     lede: "Senior ML and AI engineers who build production models, GenAI applications, and agentic systems — not demos. From feature engineering and model training to deployment, monitoring, and LLM-powered products.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -58,28 +59,52 @@ const DATA = {
         icon: "Brain",
         h3: "ML model development & training",
         p: "End-to-end model development — feature engineering, training pipelines, hyperparameter tuning, and evaluation frameworks for classification, regression, recommendation, and time-series forecasting problems.",
-        chips: ["PyTorch", "scikit-learn", "Feature engineering", "Model evaluation", "AutoML"],
+        chips: [
+          "PyTorch",
+          "scikit-learn",
+          "Feature engineering",
+          "Model evaluation",
+          "AutoML",
+        ],
       },
       {
         n: "02",
         icon: "Layers",
         h3: "GenAI applications & LLM integration",
         p: "Build LLM-powered products using OpenAI, Anthropic, or open-source models. RAG pipelines, prompt engineering, structured output, multi-turn conversation, and tool-use patterns for real product use cases.",
-        chips: ["LangChain", "LlamaIndex", "RAG", "Prompt engineering", "OpenAI", "Claude"],
+        chips: [
+          "LangChain",
+          "LlamaIndex",
+          "RAG",
+          "Prompt engineering",
+          "OpenAI",
+          "Claude",
+        ],
       },
       {
         n: "03",
         icon: "Zap",
         h3: "AI agents & agentic systems",
         p: "Design and build multi-step AI agents with tool use, memory, planning, and decision loops. Agentic workflows that automate knowledge work reliably enough to put in front of real users.",
-        chips: ["Agentic workflows", "Tool use", "Memory", "Multi-agent systems"],
+        chips: [
+          "Agentic workflows",
+          "Tool use",
+          "Memory",
+          "Multi-agent systems",
+        ],
       },
       {
         n: "04",
         icon: "Cloud",
         h3: "Model deployment & serving",
         p: "Deploy models to production using optimised serving infrastructure — Triton, TorchServe, or managed endpoints on AWS, GCP, or Azure. Latency optimisation, batching, quantisation, and cost-per-inference management.",
-        chips: ["Triton", "TorchServe", "AWS Bedrock", "Quantisation", "A/B testing"],
+        chips: [
+          "Triton",
+          "TorchServe",
+          "AWS Bedrock",
+          "Quantisation",
+          "A/B testing",
+        ],
       },
       {
         n: "05",
@@ -273,10 +298,19 @@ const DATA = {
     h2: "Let's build your AI product.",
     p: "Whether you're building a GenAI feature, training a production ML model, or standing up an agentic system — we'll help you scope the right architecture before writing a line of code.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "AWS GenAI Competency", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "AWS GenAI Competency",
+      "No obligation",
+    ],
   },
 };
 

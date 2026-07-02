@@ -13,10 +13,26 @@ import {
 } from "../lib/leadSource";
 
 const projectTypes = [
-  { value: "ai-solutions", label: "AI Solutions", icon: <Bot size={20} strokeWidth={1.75} /> },
-  { value: "mobile-app", label: "Mobile App", icon: <Smartphone size={20} strokeWidth={1.75} /> },
-  { value: "web-saas", label: "Web / SaaS", icon: <Globe size={20} strokeWidth={1.75} /> },
-  { value: "staff-augmentation", label: "Staff Augmentation", icon: <Users size={20} strokeWidth={1.75} /> },
+  {
+    value: "ai-solutions",
+    label: "AI Solutions",
+    icon: <Bot size={20} strokeWidth={1.75} />,
+  },
+  {
+    value: "mobile-app",
+    label: "Mobile App",
+    icon: <Smartphone size={20} strokeWidth={1.75} />,
+  },
+  {
+    value: "web-saas",
+    label: "Web / SaaS",
+    icon: <Globe size={20} strokeWidth={1.75} />,
+  },
+  {
+    value: "staff-augmentation",
+    label: "Staff Augmentation",
+    icon: <Users size={20} strokeWidth={1.75} />,
+  },
 ];
 
 const ContactFormV2 = ({
@@ -81,7 +97,8 @@ const ContactFormV2 = ({
     setIsSubmitting(true);
 
     const token = await recaptchaRef.current.executeAsync();
-    const leadSource = getLeadSource() === "unknown" ? "form_funnel" : getLeadSource();
+    const leadSource =
+      getLeadSource() === "unknown" ? "form_funnel" : getLeadSource();
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
@@ -97,7 +114,7 @@ const ContactFormV2 = ({
             previousPage,
             lead_source_funnel: leadSource,
           }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -132,23 +149,39 @@ const ContactFormV2 = ({
       <div className={`w-full ${darkMode ? "dark" : ""}`}>
         {/* Step Indicator */}
         {!careerMode && (
-        <div className="flex items-center gap-3 mb-6">
-          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 1 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}>
-            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 1 ? "bg-themeColor text-white" : "bg-themeColor/20 text-themeColor"}`}>1</span>
-            Project type
+          <div className="flex items-center gap-3 mb-6">
+            <div
+              className={`flex items-center gap-2 text-sm font-semibold ${step === 1 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}
+            >
+              <span
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 1 ? "bg-themeColor text-white" : "bg-themeColor/20 text-themeColor"}`}
+              >
+                1
+              </span>
+              Project type
+            </div>
+            <div
+              className={`w-8 h-[1px] ${darkMode ? "bg-white/20" : "bg-[#e5e7eb]"}`}
+            />
+            <div
+              className={`flex items-center gap-2 text-sm font-semibold ${step === 2 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}
+            >
+              <span
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 2 ? "bg-themeColor text-white" : darkMode ? "bg-white/10 text-white/40" : "bg-[#f3f4f6] text-[#9ca3af]"}`}
+              >
+                2
+              </span>
+              Your details
+            </div>
           </div>
-          <div className={`w-8 h-[1px] ${darkMode ? "bg-white/20" : "bg-[#e5e7eb]"}`} />
-          <div className={`flex items-center gap-2 text-sm font-semibold ${step === 2 ? "text-themeColor" : darkMode ? "text-white/40" : "text-[#9ca3af]"}`}>
-            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step === 2 ? "bg-themeColor text-white" : darkMode ? "bg-white/10 text-white/40" : "bg-[#f3f4f6] text-[#9ca3af]"}`}>2</span>
-            Your details
-          </div>
-        </div>
         )}
 
         {/* Step 1: Project Type Selection */}
         {step === 1 && (
           <div className="flex flex-col gap-3">
-            <p className={`text-[15px] font-medium mb-1 ${darkMode ? "text-white/70" : "text-[#374151]"}`}>
+            <p
+              className={`text-[15px] font-medium mb-1 ${darkMode ? "text-white/70" : "text-[#374151]"}`}
+            >
               What are you building?
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -160,10 +193,12 @@ const ContactFormV2 = ({
                   className={`flex items-center gap-3 px-4 py-4 rounded-xl border transition-all duration-200 text-left group ${
                     darkMode
                       ? "border-white/10 hover:border-themeColor hover:bg-white/[0.05] text-white/70 hover:text-white"
-                      : "border-[#e5e7eb] hover:border-themeColor hover:bg-[#f0f5ff] text-[#374151]"
+                      : "border-gray-300 hover:border-themeColor hover:bg-[#f0f5ff] text-[#374151]"
                   }`}
                 >
-                  <span className={`${darkMode ? "text-white/50 group-hover:text-themeColor" : "text-[#9ca3af] group-hover:text-themeColor"} transition-colors`}>
+                  <span
+                    className={`${darkMode ? "text-white/50 group-hover:text-themeColor" : "text-[#9ca3af] group-hover:text-themeColor"} transition-colors`}
+                  >
                     {type.icon}
                   </span>
                   <span className="text-sm font-semibold">{type.label}</span>
@@ -183,8 +218,13 @@ const ContactFormV2 = ({
             {/* Selected project type chip */}
             {!careerMode && (
               <div className="flex items-center gap-2 mb-1">
-                <span className={`text-xs font-semibold px-3 py-1.5 rounded-full ${darkMode ? "bg-white/10 text-white/70" : "bg-[#f0f5ff] text-themeColor"}`}>
-                  {projectTypes.find((t) => t.value === formData.projectType)?.label}
+                <span
+                  className={`text-xs font-semibold px-3 py-1.5 rounded-full ${darkMode ? "bg-white/10 text-white/70" : "bg-[#f0f5ff] text-themeColor"}`}
+                >
+                  {
+                    projectTypes.find((t) => t.value === formData.projectType)
+                      ?.label
+                  }
                 </span>
                 <button
                   type="button"
@@ -221,7 +261,11 @@ const ContactFormV2 = ({
                 className="form-field"
                 cols="1"
                 rows="4"
-                placeholder={careerMode ? "Tell us about yourself — role you're applying for, experience, and a link to your resume or portfolio..." : "Tell us what you're building — goals, timeline, budget range..."}
+                placeholder={
+                  careerMode
+                    ? "Tell us about yourself — role you're applying for, experience, and a link to your resume or portfolio..."
+                    : "Tell us what you're building — goals, timeline, budget range..."
+                }
                 id="message"
                 aria-invalid="false"
                 name="message"
@@ -253,11 +297,19 @@ const ContactFormV2 = ({
                 size="large"
                 className="hover:text-themeColor hover:!bg-colorWhite w-fit gap-2"
                 icon={isSubmitting ? <Loader /> : ""}
-                label={isSubmitting ? "Submitting..." : careerMode ? "Send Application" : "Let's Build This"}
+                label={
+                  isSubmitting
+                    ? "Submitting..."
+                    : careerMode
+                      ? "Send Application"
+                      : "Let's Build This"
+                }
                 disabled={isSubmitting}
               />
               {!hideEmail && (
-                <p className={`text-xs ${darkMode ? "text-white/35" : "text-[#9ca3af]"}`}>
+                <p
+                  className={`text-xs ${darkMode ? "text-white/35" : "text-[#9ca3af]"}`}
+                >
                   Or email us directly at{" "}
                   <a
                     href="mailto:sales@brilworks.com"

@@ -9,8 +9,12 @@ const DATA = {
     ],
     lede: "Production firmware for connected and industrial hardware that has to work every day, not just during the demo. Hire us as a dedicated team, or embed our engineers in yours.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See the work", href: "#work", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -275,7 +279,12 @@ const DATA = {
     h2: "Tell us what you're building.",
     p: "Whether you're starting from a new board or improving an existing platform, we'll help you define the right approach before any code is written.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See the work first", href: "#work", primary: false },
     ],
     ticks: ["30-minute call", "You own the code", "No obligation"],

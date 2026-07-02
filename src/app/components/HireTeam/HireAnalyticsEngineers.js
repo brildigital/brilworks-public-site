@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "Analytics Engineering · dbt · Data Modelling · BI",
-    h1: [
-      { text: "Hire " },
-      { text: "Analytics Engineers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "Analytics Engineers", accent: true }],
     lede: "Analytics engineers who sit between raw data and business decisions — building the transformation layer, semantic layer, and data models that make dashboards trustworthy and self-serve possible.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -58,21 +59,37 @@ const DATA = {
         icon: "Layers",
         h3: "dbt transformation layer",
         p: "Build a modular, tested, version-controlled transformation layer using dbt Core or Cloud. Staging, intermediate, and mart layers with full lineage, data quality tests, and documentation your analysts can navigate.",
-        chips: ["dbt Core", "dbt Cloud", "Staging / marts", "CI/CD for data", "dbt docs"],
+        chips: [
+          "dbt Core",
+          "dbt Cloud",
+          "Staging / marts",
+          "CI/CD for data",
+          "dbt docs",
+        ],
       },
       {
         n: "02",
         icon: "Cloud",
         h3: "Data modelling & warehouse design",
         p: "Design dimensional models, one big table strategies, or wide denormalised marts that match how your business asks questions — not just what was easiest to load.",
-        chips: ["Dimensional modelling", "Star schema", "OBT", "Slowly changing dimensions"],
+        chips: [
+          "Dimensional modelling",
+          "Star schema",
+          "OBT",
+          "Slowly changing dimensions",
+        ],
       },
       {
         n: "03",
         icon: "Zap",
         h3: "Semantic layer & metrics definitions",
         p: "Define a single source of truth for metrics — revenue, activation, churn — using dbt Semantic Layer or LookML so every dashboard and data consumer works from the same numbers.",
-        chips: ["dbt Semantic Layer", "LookML", "Metrics definitions", "Single source of truth"],
+        chips: [
+          "dbt Semantic Layer",
+          "LookML",
+          "Metrics definitions",
+          "Single source of truth",
+        ],
       },
       {
         n: "04",
@@ -86,7 +103,12 @@ const DATA = {
         icon: "ShieldCheck",
         h3: "Data quality & observability",
         p: "Instrument models with dbt tests, source freshness checks, and anomaly detection so your analytics team stops second-guessing numbers and starts making decisions.",
-        chips: ["dbt tests", "Source freshness", "Anomaly detection", "Data SLAs"],
+        chips: [
+          "dbt tests",
+          "Source freshness",
+          "Anomaly detection",
+          "Data SLAs",
+        ],
       },
     ],
   },
@@ -131,7 +153,12 @@ const DATA = {
           ["Models", "140+ documented models"],
           ["Tests", "800+ data quality tests"],
         ],
-        stk: ["Staging / intermediate / marts", "dbt docs", "CI/CD via GitHub Actions", "Metabase"],
+        stk: [
+          "Staging / intermediate / marts",
+          "dbt docs",
+          "CI/CD via GitHub Actions",
+          "Metabase",
+        ],
       },
       {
         href: "#case-ecom",
@@ -273,10 +300,19 @@ const DATA = {
     h2: "Let's build a data layer your analysts trust.",
     p: "Whether you're starting a dbt project from scratch, refactoring an existing one, or rebuilding metrics that mean different things in different dashboards — we'll help you design the right model before any SQL is written.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "Snowflake & Databricks Partner", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "Snowflake & Databricks Partner",
+      "No obligation",
+    ],
   },
 };
 

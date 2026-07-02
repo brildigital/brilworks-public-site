@@ -2,10 +2,27 @@ import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
 
-const SolutionContactForm = ({ title, description, messageRequired = true, submitLabel }) => {
+const SolutionContactForm = ({
+  title,
+  description,
+  messageRequired = true,
+  submitLabel,
+  bgStyle,
+  bgClassName,
+}) => {
   return (
     <div className="hire-team-contact-section">
-      <div id="section-contact-form" className="banner-layer-dark">
+      <div
+        id="section-contact-form"
+        className={
+          bgClassName
+            ? bgClassName
+            : bgStyle
+              ? ""
+              : "banner-layer-dark"
+        }
+        style={bgStyle}
+      >
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <div className="flex flex-col lg:flex-row items-center lg:gap-16 md:gap-10 gap-6">
             <div className="lg:w-1/2 w-full">
@@ -28,6 +45,7 @@ const SolutionContactForm = ({ title, description, messageRequired = true, submi
                 messageField={true}
                 messageRequired={messageRequired}
                 submitLabel={submitLabel}
+                // darkMode={false}
               />
             </div>
             <div className="lg:w-1/2 w-full">

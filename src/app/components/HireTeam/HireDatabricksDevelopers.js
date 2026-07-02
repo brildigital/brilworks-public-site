@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "Databricks Partner · Lakehouse · Data Engineering · ML",
-    h1: [
-      { text: "Hire " },
-      { text: "Databricks Developers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "Databricks Developers", accent: true }],
     lede: "Certified Databricks engineers building production lakehouses, streaming pipelines, and ML platforms. Company-wide Databricks Partner status with certified engineers on every engagement — not just the credential on a website.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -58,21 +59,36 @@ const DATA = {
         icon: "Layers",
         h3: "Lakehouse architecture & Delta Lake",
         p: "Design medallion architectures (bronze, silver, gold) on Delta Lake that handle batch and streaming in one place. We architect for reliability, schema evolution, and time-travel from day one.",
-        chips: ["Medallion architecture", "Delta Lake", "Schema evolution", "Time travel"],
+        chips: [
+          "Medallion architecture",
+          "Delta Lake",
+          "Schema evolution",
+          "Time travel",
+        ],
       },
       {
         n: "02",
         icon: "RefreshCw",
         h3: "Spark pipelines & streaming",
         p: "Build production-grade batch and streaming pipelines using PySpark, Structured Streaming, Delta Live Tables, and Auto Loader. Designed for operational reliability, not just throughput benchmarks.",
-        chips: ["PySpark", "Structured Streaming", "Delta Live Tables", "Auto Loader"],
+        chips: [
+          "PySpark",
+          "Structured Streaming",
+          "Delta Live Tables",
+          "Auto Loader",
+        ],
       },
       {
         n: "03",
         icon: "Brain",
         h3: "ML platforms with MLflow & Feature Store",
         p: "Stand up end-to-end ML platforms on Databricks — experiment tracking with MLflow, feature engineering and serving with Feature Store, and model deployment via Databricks Model Serving.",
-        chips: ["MLflow", "Feature Store", "Model Serving", "Experiment tracking"],
+        chips: [
+          "MLflow",
+          "Feature Store",
+          "Model Serving",
+          "Experiment tracking",
+        ],
       },
       {
         n: "04",
@@ -131,7 +147,12 @@ const DATA = {
           ["Govern", "Unity Catalog · column masking"],
           ["ML", "MLflow · Feature Store"],
         ],
-        stk: ["Delta Live Tables", "Structured Streaming", "PySpark", "HIPAA compliance"],
+        stk: [
+          "Delta Live Tables",
+          "Structured Streaming",
+          "PySpark",
+          "HIPAA compliance",
+        ],
       },
       {
         href: "#case-ecommerce",
@@ -279,10 +300,19 @@ const DATA = {
     h2: "Let's build your Databricks lakehouse.",
     p: "Whether you're migrating legacy ETL, building a net-new lakehouse, or standing up a production ML platform — we'll help you design the right architecture before any code is written.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "Certified engineers on every project", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "Certified engineers on every project",
+      "No obligation",
+    ],
   },
 };
 

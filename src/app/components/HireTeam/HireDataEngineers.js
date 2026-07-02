@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "Data Engineering · Pipeline Architecture · Cloud Data Platforms",
-    h1: [
-      { text: "Hire " },
-      { text: "Data Engineers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "Data Engineers", accent: true }],
     lede: "Senior data engineers who design, build, and operate production pipelines — not proof-of-concepts. Ingestion, transformation, orchestration, and delivery on whatever cloud stack you run.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -65,14 +66,24 @@ const DATA = {
         icon: "Layers",
         h3: "Data warehouse & lakehouse architecture",
         p: "Architect Snowflake, Databricks, BigQuery, or Redshift environments sized for your query patterns and team. Medallion architecture, schema design, and partition strategies built before data moves.",
-        chips: ["Snowflake", "Databricks", "BigQuery", "Medallion architecture"],
+        chips: [
+          "Snowflake",
+          "Databricks",
+          "BigQuery",
+          "Medallion architecture",
+        ],
       },
       {
         n: "03",
         icon: "RefreshCw",
         h3: "ELT / ETL modernisation",
         p: "Replace legacy ETL tools and fragile scripts with a version-controlled, tested transformation layer using dbt. Documented models, data quality tests, and CI/CD for data built in.",
-        chips: ["dbt Core", "dbt Cloud", "Legacy ETL migration", "Data quality tests"],
+        chips: [
+          "dbt Core",
+          "dbt Cloud",
+          "Legacy ETL migration",
+          "Data quality tests",
+        ],
       },
       {
         n: "04",
@@ -144,7 +155,12 @@ const DATA = {
           ["Latency", "< 50ms p99"],
           ["Throughput", "12k events/sec peak"],
         ],
-        stk: ["Structured Streaming", "Delta Lake", "schema registry", "dead-letter queues"],
+        stk: [
+          "Structured Streaming",
+          "Delta Lake",
+          "schema registry",
+          "dead-letter queues",
+        ],
       },
     ],
     quotes: [
@@ -274,10 +290,19 @@ const DATA = {
     h2: "Let's build your data platform.",
     p: "Whether you're replacing legacy ETL, consolidating scattered sources, or building streaming infrastructure from scratch — we'll help you design the right architecture before any code is written.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "Snowflake & Databricks Partner", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "Snowflake & Databricks Partner",
+      "No obligation",
+    ],
   },
 };
 

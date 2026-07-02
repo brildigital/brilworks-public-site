@@ -25,47 +25,18 @@ import {
   Truck,
 } from "lucide-react";
 import Image from "next/image";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
-// ---------- Style tokens ----------
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-
 // ---------- Data ----------
 const TRUST = [
-  { icon: <ShieldCheck size={18} color="#017eeb" />, label: "AWS Consulting Partner" },
-  { icon: <Rocket size={18} color="#017eeb" />, label: "10x Faster Deployments" },
-  { icon: <CircleCheck size={18} color="#017eeb" />, label: "99.99% Uptime" },
-  { icon: <Layers size={18} color="#017eeb" />, label: "100+ Pipelines Built" },
+  { icon: <ShieldCheck size={18} color="#2f6bff" />, label: "AWS Consulting Partner" },
+  { icon: <Rocket size={18} color="#2f6bff" />, label: "10x Faster Deployments" },
+  { icon: <CircleCheck size={18} color="#2f6bff" />, label: "99.99% Uptime" },
+  { icon: <Layers size={18} color="#2f6bff" />, label: "100+ Pipelines Built" },
 ];
 
 const HERO_STATS = [
@@ -80,7 +51,7 @@ const BENEFITS = [
     title: "Streamlined Workflows",
     tint: "#e8f0fd",
     body: "We automate manual tasks and build CI/CD pipelines that slash cycle times, reduce errors, and let engineers focus on shipping features.",
-    icon: <Workflow size={32} color="#017eeb" />,
+    icon: <Workflow size={32} color="#2f6bff" />,
   },
   {
     title: "Scalability & Flexibility",
@@ -139,18 +110,18 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Consulting Partner", icon: <ShieldCheck size={20} color="#017eeb" /> },
-  { label: "Clutch Top DevOps 2024", icon: <Star size={20} color="#017eeb" /> },
-  { label: "GoodFirms Top DevOps", icon: <Award size={20} color="#017eeb" /> },
-  { label: "ISO 27001 Certified", icon: <BadgeCheck size={20} color="#017eeb" /> },
-  { label: "Google Cloud Partner", icon: <Star size={20} color="#017eeb" /> },
+  { label: "AWS Consulting Partner", icon: <ShieldCheck size={20} color="#2f6bff" /> },
+  { label: "Clutch Top DevOps 2024", icon: <Star size={20} color="#2f6bff" /> },
+  { label: "GoodFirms Top DevOps", icon: <Award size={20} color="#2f6bff" /> },
+  { label: "ISO 27001 Certified", icon: <BadgeCheck size={20} color="#2f6bff" /> },
+  { label: "Google Cloud Partner", icon: <Star size={20} color="#2f6bff" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Fintech",
     href: "/industry/fintech-software-development/",
-    icon: <CreditCard size={32} color="#017eeb" />,
+    icon: <CreditCard size={32} color="#2f6bff" />,
   },
   {
     label: "SaaS",
@@ -302,39 +273,37 @@ const DevOpsService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
+      <section className="relative overflow-hidden svc-hero-bg" style={{ padding: "120px 0 80px" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <Sparkles size={14} color="#00b4d8" /> DevOps Consulting Services
+                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                  style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+                  <Sparkles size={14} color="#2f6bff" /> DevOps Consulting Services
                 </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                  Ship Faster With <span style={gradientTextStyle}>Bulletproof CI/CD</span>
+                <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
+                  Ship Faster With <span style={{ color: "#2f6bff" }}>Bulletproof CI/CD</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                  We build high-performance CI/CD pipelines and cloud automation that cut your deploy time by 10x — so your team ships features daily, not quarterly. 100+ pipelines delivered, 99.99% uptime guaranteed.
+                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
+                  We build high-performance CI/CD pipelines and cloud automation that cut your deploy time by 10x, so your team ships features daily, not quarterly. 100+ pipelines delivered, 99.99% uptime guaranteed.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                    style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "16px 32px", fontSize: 16 }}>
                     Get My Free DevOps Audit <ArrowRight size={16} />
                   </Link>
                   <Link href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                    style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "16px 32px", fontSize: 16 }}>
                     See What We Automate
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+                <div className="flex flex-wrap gap-[18px]" style={{ color: "#6b7a8a", fontSize: 14 }}>
                   {["Free pipeline audit", "48-hour roadmap", "No commitment"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
+                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
+                      <span style={{ color: "#16a34a" }}><Check size={16} /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -342,10 +311,9 @@ const DevOpsService = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                    <div key={s.label} className="rounded-2xl transition-all svc-stat-card" style={{ padding: "28px 24px" }}>
+                      <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
+                      <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -356,7 +324,7 @@ const DevOpsService = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section aria-label="Trust indicators" style={{ background: "#ffffff", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
             {TRUST.map((t) => (
@@ -369,10 +337,10 @@ const DevOpsService = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section id="services" className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>What We Automate</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>What We Automate</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our DevOps Consulting Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end DevOps — from CI/CD pipelines and IaC to Kubernetes, release management, and zero-downtime deployments.</p>
           </div>
@@ -398,7 +366,7 @@ const DevOpsService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
+                        <span style={{ color: "#2f6bff", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -410,15 +378,14 @@ const DevOpsService = () => {
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center" style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }} />
+      <section className="relative overflow-hidden text-center svc-mid-cta-bg" style={{ padding: "56px 0" }}>
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Ship 10x Faster?</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute DevOps audit. We&apos;ll review your current pipeline, spot the top 3 bottlenecks, and map your path to daily deploys — no commitment.</p>
+          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute DevOps audit. We&apos;ll review your current pipeline, spot the top 3 bottlenecks, and map your path to daily deploys, no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
-            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Book My Free DevOps Audit
           </Link>
         </div>
@@ -428,7 +395,7 @@ const DevOpsService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Why Brilworks</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Why Brilworks</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>DevOps Engineers Who&apos;ve Shipped 100+ Production Pipelines</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don&apos;t just set up Jenkins — we partner with you to reshape how your team ships software, measure outcomes, and scale confidently.</p>
           </div>
@@ -447,30 +414,30 @@ const DevOpsService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00b4d8" }}>Client Stories</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What DevOps Leaders &amp; CTOs Say About Us</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Real outcomes from real partners across SaaS, fintech, healthcare, and e-commerce.</p>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Client Stories</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What DevOps Leaders &amp; CTOs Say About Us</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Real outcomes from real partners across SaaS, fintech, healthcare, and e-commerce.</p>
           </div>
           <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {TESTIMONIALS.map((t) => (
               <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
                   {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" strokeWidth={0} />)}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #017eeb, #00dbd3)", fontSize: 16 }}>
+                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #1e4fd6)", fontSize: 16 }}>
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -480,10 +447,10 @@ const DevOpsService = () => {
       </section>
 
       {/* HONORS */}
-      <section className="py-16" style={{ background: "#f8f9ff" }}>
+      <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Recognized By</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Recognized By</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Trusted &amp; Awarded by Industry Leaders</h2>
           </div>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
@@ -500,7 +467,7 @@ const DevOpsService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Industries We Serve</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Industries We Serve</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>DevOps Expertise Across Regulated &amp; High-Scale Verticals</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We&apos;ve delivered DevOps transformations for compliance-heavy, high-throughput, and global industries — bringing infrastructure and domain knowledge together.</p>
           </div>
@@ -518,10 +485,10 @@ const DevOpsService = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Common Questions</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Common Questions</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything CTOs, DevOps leads, and VPs of Engineering typically ask before engaging.</p>
           </div>
@@ -542,9 +509,10 @@ const DevOpsService = () => {
       <div id="contact">
         <SolutionContactForm
           title="Ready to Ship 10x Faster?"
-          description="You're one conversation away from a bulletproof pipeline. Tell us what's slowing your releases — we'll audit it for free and show you exactly what to fix first."
+          description="You're one conversation away from a bulletproof pipeline. Tell us what's slowing your releases, we'll audit it for free and show you exactly what to fix first."
           messageRequired={false}
           submitLabel="Get My Free DevOps Audit"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Free 30-minute DevOps audit with a senior engineer",
             "Detailed roadmap & estimate within 48 hours",

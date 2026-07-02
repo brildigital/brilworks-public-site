@@ -1,0 +1,50 @@
+/* Shared light-theme tokens for standalone service pages that are NOT wrapped
+   in .bw-home (DataEngineeringService, AiAgentServicePage, GenerativeAIDevService).
+   These mirror .sp-hero / .sp-stat / .sp-final in ServicePage.css but are
+   intentionally unscoped — adding .bw-home here would re-trigger the
+   `.bw-home section { padding: 72px 0 }` specificity bug on these pages. */
+
+.svc-hero-bg {
+  background:
+    radial-gradient(900px 420px at 78% -8%, rgba(47, 107, 255, 0.12), transparent 60%),
+    radial-gradient(700px 360px at 8% 6%, rgba(47, 107, 255, 0.06), transparent 55%),
+    #f7f9fc;
+}
+
+.svc-stat-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 24px 20px;
+  box-shadow: 0 4px 24px rgba(11, 30, 51, 0.12);
+}
+
+.svc-mid-cta-bg {
+  background: linear-gradient(135deg, #0b1e33, #13315c);
+}
+
+.svc-mid-cta-glow {
+  background: radial-gradient(600px 300px at 80% 0%, rgba(47, 107, 255, 0.35), transparent 60%);
+}
+
+.svc-dark-section-bg {
+  background: #f1f5fb;
+}
+
+/* Light-bg variant of the shared ClientReviews testimonials swiper —
+   the default nav arrows/dots are white, tuned for a dark (#0d0f1a) section. */
+.testimonials-swiper.testimonials-swiper-light .swiper-button-next,
+.testimonials-swiper.testimonials-swiper-light .swiper-button-prev {
+  color: rgba(11, 30, 51, 0.35);
+}
+.testimonials-swiper.testimonials-swiper-light .swiper-button-next:hover,
+.testimonials-swiper.testimonials-swiper-light .swiper-button-prev:hover {
+  color: #2f6bff;
+}
+.testimonials-swiper.testimonials-swiper-light .swiper-pagination-bullet {
+  background: rgba(11, 30, 51, 0.18) !important;
+}
+.testimonials-swiper.testimonials-swiper-light .swiper-pagination-bullet-active {
+  background: #2f6bff !important;
+}

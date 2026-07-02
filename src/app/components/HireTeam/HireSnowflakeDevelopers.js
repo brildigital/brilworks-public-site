@@ -3,14 +3,15 @@ import ServicePageTemplate from "../ServicePage/ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "Snowflake Partner · Data Warehouse · Analytics Engineering",
-    h1: [
-      { text: "Hire " },
-      { text: "Snowflake Developers", accent: true },
-    ],
+    h1: [{ text: "Hire " }, { text: "Snowflake Developers", accent: true }],
     lede: "Certified Snowflake engineers who design, migrate, and optimise your data warehouse. Company-wide Snowflake Partner accreditation — certified engineers on every engagement, not just the pitch.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See how we work", href: "#capabilities", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -58,28 +59,49 @@ const DATA = {
         icon: "Cloud",
         h3: "Data warehouse design & cloud migration",
         p: "Architect Snowflake environments fit for your data volumes, query patterns, and team structure. Migrate from on-prem, Redshift, BigQuery, or Synapse with zero data loss and minimal downtime.",
-        chips: ["Cloud migration", "Schema design", "Redshift migration", "Multi-cluster warehouses"],
+        chips: [
+          "Cloud migration",
+          "Schema design",
+          "Redshift migration",
+          "Multi-cluster warehouses",
+        ],
       },
       {
         n: "02",
         icon: "Layers",
         h3: "dbt analytics engineering",
         p: "Build a modular, version-controlled transformation layer with dbt Core or Cloud. Staging, intermediate, and mart layers with full lineage, tests, and documentation built in.",
-        chips: ["dbt Core", "dbt Cloud", "Data modelling", "Lineage", "CI/CD for data"],
+        chips: [
+          "dbt Core",
+          "dbt Cloud",
+          "Data modelling",
+          "Lineage",
+          "CI/CD for data",
+        ],
       },
       {
         n: "03",
         icon: "Zap",
         h3: "Performance tuning & cost optimisation",
         p: "Identify expensive queries, rationalise warehouse sizes, implement clustering keys, materialisation strategies, and query result caching to cut costs without touching your logic.",
-        chips: ["Clustering keys", "Materialisation", "Query profiling", "Credit reduction"],
+        chips: [
+          "Clustering keys",
+          "Materialisation",
+          "Query profiling",
+          "Credit reduction",
+        ],
       },
       {
         n: "04",
         icon: "ShieldCheck",
         h3: "Data governance & security",
         p: "Implement role-based access control, column-level masking, row-level access policies, and dynamic data masking using Snowflake's native governance features.",
-        chips: ["RBAC", "Column masking", "Row access policies", "Data sharing"],
+        chips: [
+          "RBAC",
+          "Column masking",
+          "Row access policies",
+          "Data sharing",
+        ],
       },
       {
         n: "05",
@@ -131,7 +153,12 @@ const DATA = {
           ["Ingest", "Fivetran · custom Snowpipe"],
           ["Governance", "RBAC · column masking"],
         ],
-        stk: ["Dynamic Tables", "Zero-copy cloning", "CI/CD for data", "Row-level security"],
+        stk: [
+          "Dynamic Tables",
+          "Zero-copy cloning",
+          "CI/CD for data",
+          "Row-level security",
+        ],
       },
       {
         href: "#case-saas",
@@ -144,7 +171,12 @@ const DATA = {
           ["Security", "Row access policies"],
           ["Latency", "sub-2s dashboard queries"],
         ],
-        stk: ["Multi-tenant isolation", "Clustering keys", "Cortex AI", "Delta Sharing"],
+        stk: [
+          "Multi-tenant isolation",
+          "Clustering keys",
+          "Cortex AI",
+          "Delta Sharing",
+        ],
       },
     ],
     quotes: [
@@ -279,10 +311,19 @@ const DATA = {
     h2: "Let's build your Snowflake data platform.",
     p: "Whether you're migrating an existing warehouse, building your first analytics layer, or optimising a platform that's grown too expensive — we'll help you define the right architecture before any code is written.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See how we work first", href: "#capabilities", primary: false },
     ],
-    ticks: ["30-minute discovery call", "Certified engineers on every project", "No obligation"],
+    ticks: [
+      "30-minute discovery call",
+      "Certified engineers on every project",
+      "No obligation",
+    ],
   },
 };
 

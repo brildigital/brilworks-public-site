@@ -40,9 +40,10 @@ const USE_CASES = [
     title: "Customer operations",
     body: (
       <>
-        <strong>Triage and resolution agents</strong> that read inbound tickets, classify intent, pull
-        relevant context from CRM and product systems, and either resolve directly or hand off to the
-        right human with a draft response prepared. Result we target: 30–60% reduction in
+        <strong>Triage and resolution agents</strong> that read inbound tickets,
+        classify intent, pull relevant context from CRM and product systems, and
+        either resolve directly or hand off to the right human with a draft
+        response prepared. Result we target: 30–60% reduction in
         time-to-first-response, measurable deflection on tier-1 tickets.
       </>
     ),
@@ -51,9 +52,10 @@ const USE_CASES = [
     title: "Sales and revenue",
     body: (
       <>
-        <strong>Research and outreach agents</strong> that build account briefs, summarize signal
-        across data providers, and prepare the first-pass outreach draft. Result we target: SDR
-        research time cut by 50%+, with the human still owning the send.
+        <strong>Research and outreach agents</strong> that build account briefs,
+        summarize signal across data providers, and prepare the first-pass
+        outreach draft. Result we target: SDR research time cut by 50%+, with
+        the human still owning the send.
       </>
     ),
   },
@@ -61,10 +63,11 @@ const USE_CASES = [
     title: "Internal operations",
     body: (
       <>
-        <strong>Back-office agents</strong> for procurement intake, contract triage, vendor
-        onboarding, expense flagging — the long tail of internal workflows that nobody owns and
-        everybody hates. Result we target: cycle-time reduction on workflows that previously required
-        cross-team chasing.
+        <strong>Back-office agents</strong> for procurement intake, contract
+        triage, vendor onboarding, expense flagging — the long tail of internal
+        workflows that nobody owns and everybody hates. Result we target:
+        cycle-time reduction on workflows that previously required cross-team
+        chasing.
       </>
     ),
   },
@@ -72,13 +75,17 @@ const USE_CASES = [
     title: "Engineering and product",
     body: (
       <>
-        <strong>Coding and code-review agents</strong> that work alongside dev teams. We've helped
-        existing clients adopt{" "}
-        <Link href="/services/claude-code/" className="text-themeColor underline">
+        <strong>Coding and code-review agents</strong> that work alongside dev
+        teams. We've helped existing clients adopt{" "}
+        <Link
+          href="/services/claude-code/"
+          className="text-themeColor underline"
+        >
           Claude Code
         </Link>{" "}
-        the right way, with anonymized client data showing coding-speed lifts of roughly 50% across
-        two engagements (full case study forthcoming). See our dedicated{" "}
+        the right way, with anonymized client data showing coding-speed lifts of
+        roughly 50% across two engagements (full case study forthcoming). See
+        our dedicated{" "}
         <Link
           href="/services/agentic-ai-software-development/"
           className="text-themeColor underline"
@@ -184,17 +191,19 @@ const AiAgentDevelopmentService = () => {
           />
           <div className="space-y-5 text-base md:text-lg leading-relaxed">
             <p>
-              An AI agent is software that can take a goal, decide on a sequence of actions, use
-              tools and data on its own, and produce a result without a human stepping through every
-              move.
+              An AI agent is software that can take a goal, decide on a sequence
+              of actions, use tools and data on its own, and produce a result
+              without a human stepping through every move.
             </p>
             <p>
-              That sounds simple. In practice, getting an agent to behave reliably inside a real
-              business — connected to real systems, with real data, accountable for real outcomes —
-              is where most projects stall.
+              That sounds simple. In practice, getting an agent to behave
+              reliably inside a real business — connected to real systems, with
+              real data, accountable for real outcomes — is where most projects
+              stall.
             </p>
             <p>
-              You probably need an AI agent (and not just a chatbot or an automation script) when:
+              You probably need an AI agent (and not just a chatbot or an
+              automation script) when:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               {TRIGGERS.map((line, i) => (
@@ -202,9 +211,10 @@ const AiAgentDevelopmentService = () => {
               ))}
             </ul>
             <p>
-              If your problem is &ldquo;answer a question from a knowledge base,&rdquo; you want a
-              chatbot. If your problem is &ldquo;triage 200 inbound requests, decide what each one
-              needs, and act on most of them,&rdquo; you want an agent.
+              If your problem is &ldquo;answer a question from a knowledge
+              base,&rdquo; you want a chatbot. If your problem is &ldquo;triage
+              200 inbound requests, decide what each one needs, and act on most
+              of them,&rdquo; you want an agent.
             </p>
             <p className="text-sm md:text-base text-[#475569]">
               Want to feel an agent before you read another spec? Our{" "}
@@ -228,8 +238,8 @@ const AiAgentDevelopmentService = () => {
             text="Brilworks's AI agent development services"
           />
           <p className="text-base md:text-lg leading-relaxed mb-7.5">
-            We deliver custom AI agents end-to-end. Four engagement modes, the same outcome: an
-            agent running in production with measurable impact.
+            We deliver custom AI agents end-to-end. Four engagement modes, the
+            same outcome: an agent running in production with measurable impact.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {SERVICE_TIERS.map((tier) => (
@@ -252,9 +262,12 @@ const AiAgentDevelopmentService = () => {
             text="Where custom AI agents earn their keep"
           />
           <p className="text-base md:text-lg leading-relaxed mb-7.5">
-            Four use case categories where we&rsquo;ve shipped, with the kind of result we measure
-            for. <em>(Specific client names withheld under NDA — case studies available on request,
-            signed under MNDA.)</em>
+            Four use case categories where we&rsquo;ve shipped, with the kind of
+            result we measure for.{" "}
+            <em>
+              (Specific client names withheld under NDA — case studies available
+              on request, signed under MNDA.)
+            </em>
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {USE_CASES.map((uc) => (
@@ -274,14 +287,21 @@ const AiAgentDevelopmentService = () => {
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <SectionHeading eyebrow="Section 4" text="Tech stack we work with" />
           <p className="text-base md:text-lg leading-relaxed mb-7.5">
-            We are model-, framework-, and cloud-agnostic. We pick the stack that fits the job, not
-            the other way around.
+            We are model-, framework-, and cloud-agnostic. We pick the stack
+            that fits the job, not the other way around.
           </p>
           <ul className="space-y-5">
             {TECH_STACK.map((row) => (
-              <li key={row.label} className="flex flex-col md:flex-row gap-2 md:gap-6">
-                <span className="md:w-1/3 font-semibold text-themeColor">{row.label}</span>
-                <span className="md:w-2/3 text-base leading-relaxed">{row.body}</span>
+              <li
+                key={row.label}
+                className="flex flex-col md:flex-row gap-2 md:gap-6"
+              >
+                <span className="md:w-1/3 font-semibold text-themeColor">
+                  {row.label}
+                </span>
+                <span className="md:w-2/3 text-base leading-relaxed">
+                  {row.body}
+                </span>
               </li>
             ))}
           </ul>
@@ -292,7 +312,8 @@ const AiAgentDevelopmentService = () => {
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <SectionHeading eyebrow="Section 5" text="Engagement model" />
           <p className="text-base md:text-lg leading-relaxed mb-7.5">
-            Three engagement modes. Pick the one that matches how committed you already are.
+            Three engagement modes. Pick the one that matches how committed you
+            already are.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {ENGAGEMENTS.map((tier) => (
@@ -306,8 +327,8 @@ const AiAgentDevelopmentService = () => {
             ))}
           </div>
           <p className="text-base md:text-lg leading-relaxed mt-7.5">
-            All engagements include source code, evaluation suites, runbooks, and a knowledge
-            transfer at handoff. No black boxes.
+            All engagements include source code, evaluation suites, runbooks,
+            and a knowledge transfer at handoff. No black boxes.
           </p>
         </div>
       </section>
@@ -333,9 +354,10 @@ const AiAgentDevelopmentService = () => {
         <div className="container max-w-[1280px] main-section-padding mx-auto">
           <SectionHeading eyebrow="Section 7" text="Talk to us" />
           <p className="text-base md:text-lg leading-relaxed mb-6">
-            If you have a workflow in mind — or if you suspect there&rsquo;s one and want a second
-            opinion — book a 30-minute scoping call. No deck, no sales engineer, just a conversation
-            with the engineer who would lead your build.
+            If you have a workflow in mind — or if you suspect there&rsquo;s one
+            and want a second opinion — book a 30-minute scoping call. No deck,
+            no sales engineer, just a conversation with the engineer who would
+            lead your build.
           </p>
           <div className="flex md:flex-row flex-col md:items-center items-start gap-5">
             <ButtonV2

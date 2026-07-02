@@ -9,8 +9,12 @@ const DATA = {
     ],
     lede: "We provide embedded firmware development services for hardware that has to run untouched for years, not just survive a demo. From bootloader to board bring-up, we write the code your product boots on.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See the work", href: "#work", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -271,7 +275,12 @@ const DATA = {
     h2: "Tell us what you're building.",
     p: "Send us the problem — you'll get back a practical plan, not a sales pitch. Start a project, or bring our certified engineers onto your team.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See the work first", href: "#work", primary: false },
     ],
     ticks: ["30-minute call", "You own the code", "No obligation"],

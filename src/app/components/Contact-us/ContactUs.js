@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
+import { Check } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
 import ContactFormV2 from "../Homepage/ContactFormV2";
-import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
+import "../../styles/ServiceLightTheme.css";
 
 const SERVICE_CONTEXT = {
   "replit-migration": {
@@ -119,9 +120,7 @@ const ContactUs = () => {
   return (
     <>
       {/* Hero with form */}
-      <section className="portfolio-hero">
-        <div className="portfolio-hero-bg"></div>
-        <div className="portfolio-hero-grid"></div>
+      <section className="relative overflow-hidden svc-hero-bg">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] pt-[120px] pb-16">
           <div className="flex flex-col md:flex-row items-stretch justify-start lg:gap-12 md:gap-10 gap-6">
             <h1 className="sr-only">Contact Us</h1>
@@ -129,67 +128,55 @@ const ContactUs = () => {
             {/* Left: Copy + Form */}
             <div className="md:w-[55%] w-full">
               {/* Badge */}
-              <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-6">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-xs font-semibold tracking-[0.1em] !mb-6 border"
+                style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}
+              >
                 <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
                 {ctx?.badge || "FREE CONSULTATION"}
               </span>
 
               <h2
-                className="font-extrabold text-white tracking-[-1px] leading-[1.15] !mb-4"
-                style={{ fontSize: "clamp(28px, 3vw, 44px)" }}
+                className="font-extrabold tracking-[-1px] leading-[1.15] !mb-4"
+                style={{ fontSize: "clamp(28px, 3vw, 44px)", color: "#0b1e33" }}
               >
                 {ctx?.heading || "Get a Free Project Estimate in 24 Hours"}
               </h2>
-              <p className="text-white/60 text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+              <p className="text-[17px] leading-[1.6] !mb-6 max-w-[560px]" style={{ color: "#566678" }}>
                 {ctx?.subtitle || "Share your idea. We'll respond with a plan, timeline, and price — no obligation."}
               </p>
 
               {/* Positive trust items */}
-              <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-3 !mb-8">
+              <div className="grid md:grid-cols-3 grid-cols-1 gap-3 !mb-8">
                 <div className="flex gap-2 items-center">
-                  <Image
-                    className="w-5 h-5"
-                    src="/images/v2/white-tick-icon.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm text-white/80">
+                  <Check size={18} style={{ color: "#16a34a" }} />
+                  <span className="text-sm" style={{ color: "#566678" }}>
                     24-hour response
                   </span>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <Image
-                    className="w-5 h-5"
-                    src="/images/v2/white-tick-icon.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm text-white/80">
+                  <Check size={18} style={{ color: "#16a34a" }} />
+                  <span className="text-sm" style={{ color: "#566678" }}>
                     Free consultation
                   </span>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <Image
-                    className="w-5 h-5"
-                    src="/images/v2/white-tick-icon.svg"
-                    alt=""
-                    width={20}
-                    height={20}
-                  />
-                  <span className="text-sm text-white/80">
+                  <Check size={18} style={{ color: "#16a34a" }} />
+                  <span className="text-sm" style={{ color: "#566678" }}>
                     NDA on request
                   </span>
                 </div>
               </div>
 
-              <ContactFormV2 darkMode={true} />
+              <ContactFormV2 darkMode={false} />
             </div>
 
             {/* Right: What happens next */}
-            <div className="md:w-[45%] w-full flex flex-col justify-center bg-white/[0.03] rounded-2xl border border-white/10 gap-6 md:p-7 p-5 backdrop-blur-[10px]">
-              <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00b4d8]">
+            <div
+              className="md:w-[45%] w-full flex flex-col justify-center rounded-2xl gap-6 md:p-7 p-5"
+              style={{ background: "#ffffff", border: "1px solid #e4eaf1", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}
+            >
+              <p className="text-[11px] font-bold tracking-[0.12em] uppercase" style={{ color: "#2f6bff" }}>
                 What Happens Next
               </p>
               {steps.map((step, index) => (
@@ -197,14 +184,17 @@ const ContactUs = () => {
                   key={index}
                   className="flex gap-3 items-start justify-start"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full text-white bg-themeColor text-sm font-bold flex items-center justify-center">
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-full text-white text-sm font-bold flex items-center justify-center"
+                    style={{ background: "#2f6bff" }}
+                  >
                     {index + 1}
                   </div>
                   <div>
-                    <p className="text-[15px] text-white font-semibold leading-tight">
+                    <p className="text-[15px] font-semibold leading-tight" style={{ color: "#0b1e33" }}>
                       {step.title}
                     </p>
-                    <p className="text-[13px] text-white/60 mt-1 leading-[1.5] font-light">
+                    <p className="text-[13px] mt-1 leading-[1.5] font-light" style={{ color: "#566678" }}>
                       {step.description}
                     </p>
                   </div>
@@ -216,18 +206,22 @@ const ContactUs = () => {
       </section>
 
       {/* Stats bar */}
-      <section className="bg-[#0d0f1a] border-t border-white/10">
+      <section className="svc-dark-section-bg" style={{ borderTop: "1px solid #e4eaf1" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08]">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-[1px] rounded-xl overflow-hidden"
+            style={{ background: "#e4eaf1", border: "1px solid #e4eaf1" }}
+          >
             {stats.map(({ value, label }, index) => (
               <div
                 key={index}
-                className="bg-white/[0.03] py-6 px-5 text-center"
+                className="py-6 px-5 text-center"
+                style={{ background: "#ffffff" }}
               >
-                <div className="text-white text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none">
+                <div className="text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none" style={{ color: "#0b1e33" }}>
                   {value}
                 </div>
-                <div className="text-white/70 text-[12px] md:text-[13px] mt-1">
+                <div className="text-[12px] md:text-[13px] mt-1" style={{ color: "#6b7a8a" }}>
                   {label}
                 </div>
               </div>
@@ -237,13 +231,13 @@ const ContactUs = () => {
       </section>
 
       {/* Client Reviews */}
-      <ClientReviews />
+      <ClientReviews light />
 
       {/* FAQ */}
-      <section className="main-section-padding bg-[#fafafa]">
+      <section className="main-section-padding" style={{ background: "#ffffff" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor inline-block !mb-3">
+            <span className="text-[11px] font-bold tracking-[0.12em] uppercase inline-block !mb-3" style={{ color: "#2f6bff" }}>
               FAQ
             </span>
             <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-[#0d0f1a]">
@@ -267,16 +261,17 @@ const ContactUs = () => {
 
       {/* Career card */}
       <section className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
-        <div className="flex items-center justify-between md:flex-row flex-col gap-4 bg-[#f2f9fe] border border-[#e5e7eb] rounded-2xl p-6 md:p-7">
+        <div className="flex items-center justify-between md:flex-row flex-col gap-4 bg-[#f1f5fb] border border-[#e5e7eb] rounded-2xl p-6 md:p-7">
           <div>
-            <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-themeColor !mb-1">
+            <p className="text-[11px] font-bold tracking-[0.12em] uppercase !mb-1" style={{ color: "#2f6bff" }}>
               Looking for a Job?
             </p>
             <p className="text-base md:text-lg text-[#212121]">
               Career inquiries:{" "}
               <a
                 href="mailto:hr@brilworks.com"
-                className="text-themeColor font-semibold hover:underline"
+                className="font-semibold hover:underline"
+                style={{ color: "#2f6bff" }}
               >
                 hr@brilworks.com
               </a>

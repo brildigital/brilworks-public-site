@@ -9,8 +9,12 @@ const DATA = {
     ],
     lede: "Build connected products that collect, process, and act on real world data. From embedded firmware and wireless connectivity to cloud platforms and user applications, we engineer IoT products that are designed for production from day one.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See the work", href: "#work", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -65,14 +69,26 @@ const DATA = {
         icon: "Wifi",
         h3: "Wireless connectivity & device communication",
         p: "Reliable communication between devices and the cloud using modern IoT protocols and wireless technologies. Built for products that must stay connected in real-world environments.",
-        chips: ["BLE", "WiFi", "LoRaWAN", "LTE-M", "MQTT", "Device provisioning"],
+        chips: [
+          "BLE",
+          "WiFi",
+          "LoRaWAN",
+          "LTE-M",
+          "MQTT",
+          "Device provisioning",
+        ],
       },
       {
         n: "03",
         icon: "Cloud",
         h3: "IoT cloud platforms & device management",
         p: "Cloud infrastructure that securely manages connected devices, telemetry, remote diagnostics, OTA firmware updates, and lifecycle management at scale.",
-        chips: ["AWS IoT Core", "Azure IoT", "Device management", "Secure telemetry"],
+        chips: [
+          "AWS IoT Core",
+          "Azure IoT",
+          "Device management",
+          "Secure telemetry",
+        ],
       },
       {
         n: "04",
@@ -86,7 +102,12 @@ const DATA = {
         icon: "Brain",
         h3: "Edge intelligence & analytics",
         p: "Deploy intelligence where it matters. From local decision making and sensor fusion to TinyML inference, we help devices respond instantly without depending entirely on cloud connectivity.",
-        chips: ["Edge AI", "TinyML", "On-device inference", "Real-time analytics"],
+        chips: [
+          "Edge AI",
+          "TinyML",
+          "On-device inference",
+          "Real-time analytics",
+        ],
       },
     ],
   },
@@ -131,7 +152,12 @@ const DATA = {
           ["Comms", "MQTT"],
           ["Sensors", "CO₂ · VOC · Humidity · PM"],
         ],
-        stk: ["FreeRTOS", "Embedded C", "Multi-zone control", "Cloud monitoring"],
+        stk: [
+          "FreeRTOS",
+          "Embedded C",
+          "Multi-zone control",
+          "Cloud monitoring",
+        ],
       },
       {
         href: "#case-gateway",
@@ -144,7 +170,12 @@ const DATA = {
           ["Protocol", "MQTT"],
           ["Cloud", "AWS IoT Core"],
         ],
-        stk: ["FreeRTOS", "Offline buffering", "Watchdog recovery", "Industrial IoT"],
+        stk: [
+          "FreeRTOS",
+          "Offline buffering",
+          "Watchdog recovery",
+          "Industrial IoT",
+        ],
       },
     ],
     quotes: [
@@ -281,7 +312,12 @@ const DATA = {
     h2: "Let's build your next connected product.",
     p: "Whether you're building a new IoT device, modernizing an existing product, or scaling an entire connected platform, we'll help you define the right architecture before development begins.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See the work first", href: "#work", primary: false },
     ],
     ticks: ["30-minute discovery call", "100% IP ownership", "No obligation"],
