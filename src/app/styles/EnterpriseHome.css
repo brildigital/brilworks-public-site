@@ -1423,4 +1423,13 @@
     opacity: 1;
     transform: none;
   }
+
+  /* Above-the-fold hero content must never be gated behind JS: Chrome's LCP
+     algorithm ignores opacity:0 elements, so hiding the hero text/CTA behind
+     hydration + IntersectionObserver was inflating LCP by several seconds. */
+  .hero .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
