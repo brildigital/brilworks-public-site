@@ -176,6 +176,18 @@ const Blog = () => {
               </button>
               <button
                 className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
+                  blogCategory === "IoT & Embedded"
+                    ? "bg-themeColor text-white"
+                    : "hover:!text-themeColor"
+                }`}
+                onClick={() => setBlogCategory("IoT & Embedded")}
+              >
+                <p className="text-base md:text-lg font-medium">
+                  IoT & Embedded
+                </p>
+              </button>
+              <button
+                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
                   blogCategory === "News & Insights"
                     ? "bg-themeColor text-white"
                     : "hover:!text-themeColor"

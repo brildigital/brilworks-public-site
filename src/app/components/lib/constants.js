@@ -128,6 +128,14 @@ export const blogSubCategories = [
     key: "Data Engineering",
     value: "data-engineering",
   },
+  {
+    key: "Embedded",
+    value: "embedded-software",
+  },
+  {
+    key: "Firmware Engineering",
+    value: "firmware-engineering",
+  },
 ];
 
 export const servicesMenuItems = [

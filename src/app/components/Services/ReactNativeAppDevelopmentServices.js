@@ -2,29 +2,70 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
-import { Check, X, ArrowRight, Star, Smartphone, ShieldCheck, Phone, Zap, UserCheck, TrendingUp, Clock, Award, LayoutDashboard, Heart, Building2, Layers, ShoppingCart, Truck, CheckCircle, Radio } from "lucide-react";
+import {
+  Check,
+  X,
+  ArrowRight,
+  Star,
+  Smartphone,
+  ShieldCheck,
+  Phone,
+  Zap,
+  UserCheck,
+  TrendingUp,
+  Clock,
+  Award,
+  LayoutDashboard,
+  Heart,
+  Building2,
+  Layers,
+  ShoppingCart,
+  Truck,
+  CheckCircle,
+  Radio,
+} from "lucide-react";
 import "../../styles/ServiceLightTheme.css";
+import Image from "next/image";
 
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
+const IconCheck = ({ size = 16, className = "" }) => (
+  <Check
+    size={size}
+    className={className}
+    strokeWidth={2.2}
+    aria-hidden="true"
+  />
+);
 
-const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
+const IconArrowRight = ({ size = 16 }) => (
+  <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />
+);
 
-const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
+const IconStarFilled = ({ size = 16 }) => (
+  <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+);
 
 const IconRNBadge = () => <Smartphone size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#2f6bff", size = 18 }) => <ShieldCheck size={size} color={color} strokeWidth={1.8} aria-hidden="true" />;
+const IconShield = ({ color = "#2f6bff", size = 18 }) => (
+  <ShieldCheck size={size} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
-const IconPhoneSingle = ({ color = "#2f6bff", size = 18 }) => <Radio size={size} color={color} aria-hidden="true" />;
+const IconPhoneSingle = ({ color = "#2f6bff", size = 18 }) => (
+  <Radio size={size} color={color} aria-hidden="true" />
+);
 
-const IconDualPhone = ({ color = "#2f6bff", size = 18 }) => <Smartphone size={size} color={color} aria-hidden="true" />;
+const IconDualPhone = ({ color = "#2f6bff", size = 18 }) => (
+  <Smartphone size={size} color={color} aria-hidden="true" />
+);
 
-const IconBolt = ({ color = "#2f6bff", size = 18 }) => <Zap size={size} color={color} aria-hidden="true" />;
+const IconBolt = ({ color = "#2f6bff", size = 18 }) => (
+  <Zap size={size} color={color} aria-hidden="true" />
+);
 
 // ---------- Data ----------
 const TRUST = [
@@ -46,31 +87,56 @@ const BENEFITS = [
     title: "Top 3% RN Talent",
     tint: "#ccfbf1",
     body: "You work with developers who've shipped multiple RN apps end-to-end — filtered for clarity, discipline, and mobile fluency.",
-    icon: <UserCheck size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <UserCheck
+        size={32}
+        color="#0d9488"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     title: "5-Star Rating",
     tint: "#dbeafe",
     body: "Our rating comes from consistent behaviour: clear communication, steady delivery, and fixing issues before they turn into excuses.",
-    icon: <Star size={32} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Star size={32} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     title: "80+ RN Apps Shipped",
     tint: "#d1fae5",
     body: "Enough mileage across stores to understand submission patterns, avoid rejection traps, and ship without surprises.",
-    icon: <Smartphone size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Smartphone
+        size={32}
+        color="#10b981"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     title: "AI-Driven Workflow",
     tint: "#ede9fe",
     body: "We use AI to cut slow review cycles, surface issues earlier, and keep engineering focused on the decisions that actually shape your app.",
-    icon: <CheckCircle size={32} color="#7c3aed" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <CheckCircle
+        size={32}
+        color="#7c3aed"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     title: "Real 24/7 Availability",
     tint: "#cffafe",
     body: "Overlapping time zones mean your app project doesn't sit idle — progress continues even when you're offline.",
-    icon: <Clock size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Clock size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     title: "Native Feel, Guaranteed",
@@ -106,42 +172,94 @@ const TESTIMONIALS = [
 
 const HONORS = [
   { label: "AWS Partner (Advanced Tier)", icon: <IconShield /> },
-  { label: "Clutch Global 2025", icon: <Star size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "GoodFirms Top Software", icon: <Award size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "Top 10 Agency 2026", icon: <LayoutDashboard size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "Adalo No-Code Certified", icon: <Star size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" /> },
+  {
+    label: "Clutch Global 2025",
+    icon: (
+      <Star size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
+  {
+    label: "GoodFirms Top Software",
+    icon: (
+      <Award size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
+  {
+    label: "Top 10 Agency 2026",
+    icon: (
+      <LayoutDashboard
+        size={20}
+        color="#2f6bff"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
+  },
+  {
+    label: "Adalo No-Code Certified",
+    icon: (
+      <Star size={20} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
 ];
 
 const INDUSTRIES = [
   {
     label: "Healthcare",
     href: "/industry/healthcare-software-development/",
-    icon: <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     label: "Fintech",
     href: "/industry/fintech-software-development/",
-    icon: <Building2 size={32} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Building2
+        size={32}
+        color="#2f6bff"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     label: "EdTech",
     href: "/industry/edtech-software-development/",
-    icon: <Layers size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Layers size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     label: "E-Commerce",
     href: "/industry/e-commerce-app-development/",
-    icon: <ShoppingCart size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <ShoppingCart
+        size={32}
+        color="#10b981"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     label: "SaaS",
     href: "#",
-    icon: <LayoutDashboard size={32} color="#7c3aed" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <LayoutDashboard
+        size={32}
+        color="#7c3aed"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     label: "Logistics",
     href: "/industry/fleet-management-software-development/",
-    icon: <Truck size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Truck size={32} color="#0891b2" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
 ];
 
@@ -178,67 +296,306 @@ const FAQ = [
 
 // ---------- Service Mockups ----------
 const MockBar = ({ label }) => (
-  <div className="flex items-center gap-1.5 px-3.5 py-2.5" style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}>
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ef4444" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#10b981" }} />
-    <em className="not-italic ml-3 text-[11px] font-semibold" style={{ color: "#94a3b8", letterSpacing: "0.02em" }}>{label}</em>
+  <div
+    className="flex items-center gap-1.5 px-3.5 py-2.5"
+    style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}
+  >
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#ef4444" }}
+    />
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#facc15" }}
+    />
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#10b981" }}
+    />
+    <em
+      className="not-italic ml-3 text-[11px] font-semibold"
+      style={{ color: "#94a3b8", letterSpacing: "0.02em" }}
+    >
+      {label}
+    </em>
   </div>
 );
 
 // Single phone + swatches
 const MockupPhone = () => (
-  <div className="flex items-center justify-center gap-[18px] h-full" style={{ background: "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)" }}>
-    <div className="relative p-2" style={{ width: 110, height: 200, background: "#0d0f1a", borderRadius: 18, boxShadow: "0 12px 40px rgba(13,148,136,0.25)" }}>
-      <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#0d0f1a", borderRadius: "0 0 6px 6px" }} />
-      <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: "linear-gradient(160deg, #ffffff 0%, #f0fdfa 100%)" }}>
-        <div style={{ height: 6, width: "50%", background: "#0d9488", borderRadius: 2, marginBottom: 8 }} />
-        {[{ w1: "80%", w2: "60%", both: true }, { w1: "70%", w2: "50%", both: true }, { w1: "75%", w2: null, both: false }].map((c, i) => (
-          <div key={i} className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-            <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-            <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: c.w1 }} />
-            {c.both && <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: c.w2 }} />}
+  <div
+    className="flex items-center justify-center gap-[18px] h-full"
+    style={{ background: "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)" }}
+  >
+    <div
+      className="relative p-2"
+      style={{
+        width: 110,
+        height: 200,
+        background: "#0d0f1a",
+        borderRadius: 18,
+        boxShadow: "0 12px 40px rgba(13,148,136,0.25)",
+      }}
+    >
+      <div
+        className="absolute z-10"
+        style={{
+          top: 4,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 36,
+          height: 4,
+          background: "#0d0f1a",
+          borderRadius: "0 0 6px 6px",
+        }}
+      />
+      <div
+        className="h-full rounded-xl overflow-hidden px-2 py-2.5"
+        style={{
+          background: "linear-gradient(160deg, #ffffff 0%, #f0fdfa 100%)",
+        }}
+      >
+        <div
+          style={{
+            height: 6,
+            width: "50%",
+            background: "#0d9488",
+            borderRadius: 2,
+            marginBottom: 8,
+          }}
+        />
+        {[
+          { w1: "80%", w2: "60%", both: true },
+          { w1: "70%", w2: "50%", both: true },
+          { w1: "75%", w2: null, both: false },
+        ].map((c, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-md p-1.5 mb-1.5"
+            style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}
+          >
+            <div
+              style={{
+                height: 3,
+                background: "#475569",
+                borderRadius: 1.5,
+                marginBottom: 3,
+                width: "60%",
+              }}
+            />
+            <div
+              style={{
+                height: 3,
+                background: "#cbd5e1",
+                borderRadius: 1.5,
+                marginBottom: 3,
+                width: c.w1,
+              }}
+            />
+            {c.both && (
+              <div
+                style={{
+                  height: 3,
+                  background: "#cbd5e1",
+                  borderRadius: 1.5,
+                  width: c.w2,
+                }}
+              />
+            )}
           </div>
         ))}
-        <div className="flex items-center justify-center mt-1.5" style={{ background: "#0d9488", height: 18, borderRadius: 4 }}>
-          <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
+        <div
+          className="flex items-center justify-center mt-1.5"
+          style={{ background: "#0d9488", height: 18, borderRadius: 4 }}
+        >
+          <span
+            style={{
+              background: "white",
+              height: 4,
+              width: "40%",
+              borderRadius: 1.5,
+            }}
+          />
         </div>
       </div>
     </div>
     <div className="flex flex-col gap-2 max-[600px]:hidden">
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #0d9488, #14b8a6)", boxShadow: "0 4px 12px rgba(13,148,136,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #2f6bff, #00dbd3)", boxShadow: "0 4px 12px rgba(13,148,136,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #f59e0b, #ef4444)", boxShadow: "0 4px 12px rgba(13,148,136,0.15)" }} />
-      <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg, #8b5cf6, #ec4899)", boxShadow: "0 4px 12px rgba(13,148,136,0.15)" }} />
+      <div
+        style={{
+          width: 38,
+          height: 38,
+          borderRadius: 10,
+          background: "linear-gradient(135deg, #0d9488, #14b8a6)",
+          boxShadow: "0 4px 12px rgba(13,148,136,0.15)",
+        }}
+      />
+      <div
+        style={{
+          width: 38,
+          height: 38,
+          borderRadius: 10,
+          background: "linear-gradient(135deg, #2f6bff, #00dbd3)",
+          boxShadow: "0 4px 12px rgba(13,148,136,0.15)",
+        }}
+      />
+      <div
+        style={{
+          width: 38,
+          height: 38,
+          borderRadius: 10,
+          background: "linear-gradient(135deg, #f59e0b, #ef4444)",
+          boxShadow: "0 4px 12px rgba(13,148,136,0.15)",
+        }}
+      />
+      <div
+        style={{
+          width: 38,
+          height: 38,
+          borderRadius: 10,
+          background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+          boxShadow: "0 4px 12px rgba(13,148,136,0.15)",
+        }}
+      />
     </div>
   </div>
 );
 
 // Multi-device (laptop + tablet) for cross-platform RN
 const MockupMultiDevice = () => (
-  <div className="grid gap-3.5 p-3.5 h-full items-center" style={{ gridTemplateColumns: "2fr 1fr", background: "linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)" }}>
-    <div style={{ background: "#0d0f1a", borderRadius: "8px 8px 4px 4px", padding: "6px 6px 0" }}>
-      <div className="bg-white p-2" style={{ borderRadius: "4px 4px 0 0", minHeight: 110 }}>
-        <div style={{ height: 8, width: "40%", background: "#0891b2", borderRadius: 2, marginBottom: 8 }} />
+  <div
+    className="grid gap-3.5 p-3.5 h-full items-center"
+    style={{
+      gridTemplateColumns: "2fr 1fr",
+      background: "linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)",
+    }}
+  >
+    <div
+      style={{
+        background: "#0d0f1a",
+        borderRadius: "8px 8px 4px 4px",
+        padding: "6px 6px 0",
+      }}
+    >
+      <div
+        className="bg-white p-2"
+        style={{ borderRadius: "4px 4px 0 0", minHeight: 110 }}
+      >
+        <div
+          style={{
+            height: 8,
+            width: "40%",
+            background: "#0891b2",
+            borderRadius: 2,
+            marginBottom: 8,
+          }}
+        />
         <div className="grid grid-cols-3 gap-1 mb-2">
-          <div style={{ height: 24, borderRadius: 3, background: "linear-gradient(135deg, #0891b2, #06b6d4)" }} />
-          <div style={{ height: 24, borderRadius: 3, background: "#ecfeff", border: "1px solid #cffafe" }} />
-          <div style={{ height: 24, borderRadius: 3, background: "#ecfeff", border: "1px solid #cffafe" }} />
+          <div
+            style={{
+              height: 24,
+              borderRadius: 3,
+              background: "linear-gradient(135deg, #0891b2, #06b6d4)",
+            }}
+          />
+          <div
+            style={{
+              height: 24,
+              borderRadius: 3,
+              background: "#ecfeff",
+              border: "1px solid #cffafe",
+            }}
+          />
+          <div
+            style={{
+              height: 24,
+              borderRadius: 3,
+              background: "#ecfeff",
+              border: "1px solid #cffafe",
+            }}
+          />
         </div>
         {["80%", "65%", "75%", "55%"].map((w, i) => (
-          <div key={i} style={{ height: 4, background: "#e2e8f0", borderRadius: 1.5, marginBottom: 3, width: w }} />
+          <div
+            key={i}
+            style={{
+              height: 4,
+              background: "#e2e8f0",
+              borderRadius: 1.5,
+              marginBottom: 3,
+              width: w,
+            }}
+          />
         ))}
       </div>
-      <div style={{ height: 6, background: "#1e293b", borderRadius: "0 0 8px 8px" }} />
+      <div
+        style={{
+          height: 6,
+          background: "#1e293b",
+          borderRadius: "0 0 8px 8px",
+        }}
+      />
     </div>
     <div style={{ background: "#0d0f1a", borderRadius: 10, padding: 5 }}>
-      <div className="p-2" style={{ background: "linear-gradient(160deg, white, #ecfeff)", borderRadius: 6, minHeight: 90 }}>
-        <div style={{ height: 5, width: "50%", background: "#0891b2", borderRadius: 2, marginBottom: 6 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-        <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-        <div style={{ height: 12, width: "50%", background: "#0891b2", borderRadius: 3, marginTop: 6 }} />
+      <div
+        className="p-2"
+        style={{
+          background: "linear-gradient(160deg, white, #ecfeff)",
+          borderRadius: 6,
+          minHeight: 90,
+        }}
+      >
+        <div
+          style={{
+            height: 5,
+            width: "50%",
+            background: "#0891b2",
+            borderRadius: 2,
+            marginBottom: 6,
+          }}
+        />
+        <div
+          style={{
+            height: 3,
+            background: "#cbd5e1",
+            borderRadius: 1.5,
+            marginBottom: 3,
+          }}
+        />
+        <div
+          style={{
+            height: 3,
+            background: "#cbd5e1",
+            borderRadius: 1.5,
+            marginBottom: 3,
+            width: "60%",
+          }}
+        />
+        <div
+          style={{
+            height: 3,
+            background: "#cbd5e1",
+            borderRadius: 1.5,
+            marginBottom: 3,
+          }}
+        />
+        <div
+          style={{
+            height: 3,
+            background: "#cbd5e1",
+            borderRadius: 1.5,
+            marginBottom: 3,
+            width: "60%",
+          }}
+        />
+        <div
+          style={{
+            height: 12,
+            width: "50%",
+            background: "#0891b2",
+            borderRadius: 3,
+            marginTop: 6,
+          }}
+        />
       </div>
     </div>
   </div>
@@ -246,21 +603,63 @@ const MockupMultiDevice = () => (
 
 // QA / performance dashboard mockup (tuned for RN — 60fps, TTI, Bundle)
 const MockupPerfAudit = () => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
+  <div
+    className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white"
+    style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}
+  >
     <MockBar label="Perf Audit · v3.2.1" />
     <div className="flex-1 p-4">
       <div className="grid grid-cols-3 gap-2.5 mb-3">
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: "#047857" }}>60</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>FPS</div>
+        <div
+          className="rounded-md py-2.5 px-2 text-center"
+          style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}
+        >
+          <div
+            className="text-[18px] font-extrabold leading-none"
+            style={{ color: "#047857" }}
+          >
+            60
+          </div>
+          <div
+            className="text-[8px] font-semibold mt-1 uppercase tracking-wider"
+            style={{ color: "#64748b" }}
+          >
+            FPS
+          </div>
         </div>
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: "#fef3c7", border: "1px solid #fde68a" }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: "#a16207" }}>1.4s</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>TTI</div>
+        <div
+          className="rounded-md py-2.5 px-2 text-center"
+          style={{ background: "#fef3c7", border: "1px solid #fde68a" }}
+        >
+          <div
+            className="text-[18px] font-extrabold leading-none"
+            style={{ color: "#a16207" }}
+          >
+            1.4s
+          </div>
+          <div
+            className="text-[8px] font-semibold mt-1 uppercase tracking-wider"
+            style={{ color: "#64748b" }}
+          >
+            TTI
+          </div>
         </div>
-        <div className="rounded-md py-2.5 px-2 text-center" style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}>
-          <div className="text-[18px] font-extrabold leading-none" style={{ color: "#047857" }}>-38%</div>
-          <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>Bundle</div>
+        <div
+          className="rounded-md py-2.5 px-2 text-center"
+          style={{ background: "#f0fdf4", border: "1px solid #bbf7d0" }}
+        >
+          <div
+            className="text-[18px] font-extrabold leading-none"
+            style={{ color: "#047857" }}
+          >
+            -38%
+          </div>
+          <div
+            className="text-[8px] font-semibold mt-1 uppercase tracking-wider"
+            style={{ color: "#64748b" }}
+          >
+            Bundle
+          </div>
         </div>
       </div>
       <div>
@@ -271,12 +670,42 @@ const MockupPerfAudit = () => (
           { pass: false, w: "65%" },
           { pass: true, w: "75%" },
         ].map((row, i, arr) => (
-          <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9" }}>
-            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.pass ? "#10b981" : "#ef4444" }}>
-              {row.pass ? <Check size={10} color="white" strokeWidth={3} /> : <X size={10} color="white" strokeWidth={3} />}
+          <div
+            key={i}
+            className="flex items-center gap-2 py-1.5"
+            style={{
+              borderBottom: i === arr.length - 1 ? "none" : "1px solid #f1f5f9",
+            }}
+          >
+            <div
+              className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ background: row.pass ? "#10b981" : "#ef4444" }}
+            >
+              {row.pass ? (
+                <Check size={10} color="white" strokeWidth={3} />
+              ) : (
+                <X size={10} color="white" strokeWidth={3} />
+              )}
             </div>
-            <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
-            <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
+            <b
+              style={{
+                display: "block",
+                height: 5,
+                width: row.w,
+                background: "#475569",
+                borderRadius: 2,
+              }}
+            />
+            <span
+              style={{
+                display: "block",
+                height: 4,
+                width: "30%",
+                background: "#cbd5e1",
+                borderRadius: 1.5,
+                marginLeft: "auto",
+              }}
+            />
           </div>
         ))}
       </div>
@@ -286,39 +715,197 @@ const MockupPerfAudit = () => (
 
 // Dual-phone (legacy vs new) for migration
 const MockupDualPhone = () => (
-  <div className="flex items-center justify-center gap-[18px] h-full" style={{ background: "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)" }}>
+  <div
+    className="flex items-center justify-center gap-[18px] h-full"
+    style={{ background: "linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%)" }}
+  >
     {/* Legacy / blue phone */}
-    <div className="relative p-2" style={{ width: 100, height: 190, background: "#1e40af", borderRadius: 18, boxShadow: "0 12px 40px rgba(30,64,175,0.25)" }}>
-      <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#1e40af", borderRadius: "0 0 6px 6px" }} />
-      <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: "linear-gradient(160deg, #eff6ff 0%, #dbeafe 100%)" }}>
-        <div style={{ height: 6, width: "50%", background: "#1e40af", borderRadius: 2, marginBottom: 8 }} />
-        <div className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-          <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-          <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: "70%" }} />
+    <div
+      className="relative p-2"
+      style={{
+        width: 100,
+        height: 190,
+        background: "#1e40af",
+        borderRadius: 18,
+        boxShadow: "0 12px 40px rgba(30,64,175,0.25)",
+      }}
+    >
+      <div
+        className="absolute z-10"
+        style={{
+          top: 4,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 36,
+          height: 4,
+          background: "#1e40af",
+          borderRadius: "0 0 6px 6px",
+        }}
+      />
+      <div
+        className="h-full rounded-xl overflow-hidden px-2 py-2.5"
+        style={{
+          background: "linear-gradient(160deg, #eff6ff 0%, #dbeafe 100%)",
+        }}
+      >
+        <div
+          style={{
+            height: 6,
+            width: "50%",
+            background: "#1e40af",
+            borderRadius: 2,
+            marginBottom: 8,
+          }}
+        />
+        <div
+          className="bg-white rounded-md p-1.5 mb-1.5"
+          style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}
+        >
+          <div
+            style={{
+              height: 3,
+              background: "#475569",
+              borderRadius: 1.5,
+              marginBottom: 3,
+              width: "60%",
+            }}
+          />
+          <div
+            style={{
+              height: 3,
+              background: "#cbd5e1",
+              borderRadius: 1.5,
+              width: "70%",
+            }}
+          />
         </div>
-        <div className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-          <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-          <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: "60%" }} />
+        <div
+          className="bg-white rounded-md p-1.5 mb-1.5"
+          style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}
+        >
+          <div
+            style={{
+              height: 3,
+              background: "#475569",
+              borderRadius: 1.5,
+              marginBottom: 3,
+              width: "60%",
+            }}
+          />
+          <div
+            style={{
+              height: 3,
+              background: "#cbd5e1",
+              borderRadius: 1.5,
+              width: "60%",
+            }}
+          />
         </div>
-        <div className="flex items-center justify-center mt-1.5" style={{ background: "#1e40af", height: 18, borderRadius: 4 }}>
-          <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
+        <div
+          className="flex items-center justify-center mt-1.5"
+          style={{ background: "#1e40af", height: 18, borderRadius: 4 }}
+        >
+          <span
+            style={{
+              background: "white",
+              height: 4,
+              width: "40%",
+              borderRadius: 1.5,
+            }}
+          />
         </div>
       </div>
     </div>
     {/* New / RN phone */}
-    <div className="relative p-2" style={{ width: 110, height: 200, background: "#0d0f1a", borderRadius: 18, boxShadow: "0 12px 40px rgba(13,148,136,0.25)" }}>
-      <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#0d0f1a", borderRadius: "0 0 6px 6px" }} />
-      <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: "linear-gradient(160deg, #ffffff 0%, #f0fdfa 100%)" }}>
-        <div style={{ height: 6, width: "50%", background: "#0d9488", borderRadius: 2, marginBottom: 8 }} />
-        {[{ w1: "80%", w2: "55%", both: true }, { w1: "70%", w2: null, both: false }, { w1: "75%", w2: null, both: false }].map((c, i) => (
-          <div key={i} className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-            <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-            <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: c.w1 }} />
-            {c.both && <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: c.w2 }} />}
+    <div
+      className="relative p-2"
+      style={{
+        width: 110,
+        height: 200,
+        background: "#0d0f1a",
+        borderRadius: 18,
+        boxShadow: "0 12px 40px rgba(13,148,136,0.25)",
+      }}
+    >
+      <div
+        className="absolute z-10"
+        style={{
+          top: 4,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: 36,
+          height: 4,
+          background: "#0d0f1a",
+          borderRadius: "0 0 6px 6px",
+        }}
+      />
+      <div
+        className="h-full rounded-xl overflow-hidden px-2 py-2.5"
+        style={{
+          background: "linear-gradient(160deg, #ffffff 0%, #f0fdfa 100%)",
+        }}
+      >
+        <div
+          style={{
+            height: 6,
+            width: "50%",
+            background: "#0d9488",
+            borderRadius: 2,
+            marginBottom: 8,
+          }}
+        />
+        {[
+          { w1: "80%", w2: "55%", both: true },
+          { w1: "70%", w2: null, both: false },
+          { w1: "75%", w2: null, both: false },
+        ].map((c, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-md p-1.5 mb-1.5"
+            style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}
+          >
+            <div
+              style={{
+                height: 3,
+                background: "#475569",
+                borderRadius: 1.5,
+                marginBottom: 3,
+                width: "60%",
+              }}
+            />
+            <div
+              style={{
+                height: 3,
+                background: "#cbd5e1",
+                borderRadius: 1.5,
+                marginBottom: 3,
+                width: c.w1,
+              }}
+            />
+            {c.both && (
+              <div
+                style={{
+                  height: 3,
+                  background: "#cbd5e1",
+                  borderRadius: 1.5,
+                  width: c.w2,
+                }}
+              />
+            )}
           </div>
         ))}
-        <div className="flex items-center justify-center mt-1.5" style={{ background: "#0d9488", height: 18, borderRadius: 4 }}>
-          <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
+        <div
+          className="flex items-center justify-center mt-1.5"
+          style={{ background: "#0d9488", height: 18, borderRadius: 4 }}
+        >
+          <span
+            style={{
+              background: "white",
+              height: 4,
+              width: "40%",
+              borderRadius: 1.5,
+            }}
+          />
         </div>
       </div>
     </div>
@@ -328,27 +915,78 @@ const MockupDualPhone = () => (
 // Code + canvas mockup (for API integration)
 const MockupCodeCanvas = () => {
   const codeSeg = (cls, w) => {
-    const colors = { k: "#c084fc", s: "#86efac", v: "#fbbf24", t: "#67e8f9", x: "#475569" };
-    return <span className="inline-block rounded-sm" style={{ height: 7, width: w, background: colors[cls] }} />;
+    const colors = {
+      k: "#c084fc",
+      s: "#86efac",
+      v: "#fbbf24",
+      t: "#67e8f9",
+      x: "#475569",
+    };
+    return (
+      <span
+        className="inline-block rounded-sm"
+        style={{ height: 7, width: w, background: colors[cls] }}
+      />
+    );
   };
   return (
-    <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
+    <div
+      className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white"
+      style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}
+    >
       <MockBar label="api/client.ts · auth · payments" />
       <div className="flex-1 grid grid-cols-2">
         <div className="p-3.5" style={{ background: "#0d1117" }}>
           {[
-            [["k", 18], ["t", 36], ["x", 8]],
-            [["x", 8], ["k", 24], ["s", 48]],
-            [["x", 8], ["v", 18], ["s", 30], ["t", 18]],
-            [["x", 16], ["k", 30], ["v", 24]],
-            [["x", 8], ["t", 42], ["x", 6]],
-            [["k", 20], ["s", 40]],
-            [["x", 24], ["v", 30]],
-            [["t", 18], ["s", 36]],
+            [
+              ["k", 18],
+              ["t", 36],
+              ["x", 8],
+            ],
+            [
+              ["x", 8],
+              ["k", 24],
+              ["s", 48],
+            ],
+            [
+              ["x", 8],
+              ["v", 18],
+              ["s", 30],
+              ["t", 18],
+            ],
+            [
+              ["x", 16],
+              ["k", 30],
+              ["v", 24],
+            ],
+            [
+              ["x", 8],
+              ["t", 42],
+              ["x", 6],
+            ],
+            [
+              ["k", 20],
+              ["s", 40],
+            ],
+            [
+              ["x", 24],
+              ["v", 30],
+            ],
+            [
+              ["t", 18],
+              ["s", 36],
+            ],
           ].map((line, i) => (
             <div key={i} className="flex gap-1.5 items-center mb-[7px]">
-              <b className="text-[9px] font-mono min-w-[14px]" style={{ color: "#94a3b8" }}>{i + 1}</b>
-              {line.map(([c, w], j) => <span key={j}>{codeSeg(c, w)}</span>)}
+              <b
+                className="text-[9px] font-mono min-w-[14px]"
+                style={{ color: "#94a3b8" }}
+              >
+                {i + 1}
+              </b>
+              {line.map(([c, w], j) => (
+                <span key={j}>{codeSeg(c, w)}</span>
+              ))}
             </div>
           ))}
         </div>
@@ -358,10 +996,42 @@ const MockupCodeCanvas = () => {
             { color: "#7c3aed", w1: "75%", w2: "55%", hasSecond: true },
             { color: "#a855f7", w1: "70%", w2: null, hasSecond: false },
           ].map((c, i) => (
-            <div key={i} className="bg-white rounded-md p-2 mb-2" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.05)", border: "1px solid #e2e8f0" }}>
-              <div style={{ height: 6, width: "60%", background: c.color, borderRadius: 2, marginBottom: 5 }} />
-              <div style={{ height: 4, width: c.w1, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3 }} />
-              {c.hasSecond && <div style={{ height: 4, width: c.w2, background: "#cbd5e1", borderRadius: 1.5 }} />}
+            <div
+              key={i}
+              className="bg-white rounded-md p-2 mb-2"
+              style={{
+                boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+                border: "1px solid #e2e8f0",
+              }}
+            >
+              <div
+                style={{
+                  height: 6,
+                  width: "60%",
+                  background: c.color,
+                  borderRadius: 2,
+                  marginBottom: 5,
+                }}
+              />
+              <div
+                style={{
+                  height: 4,
+                  width: c.w1,
+                  background: "#cbd5e1",
+                  borderRadius: 1.5,
+                  marginBottom: 3,
+                }}
+              />
+              {c.hasSecond && (
+                <div
+                  style={{
+                    height: 4,
+                    width: c.w2,
+                    background: "#cbd5e1",
+                    borderRadius: 1.5,
+                  }}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -373,84 +1043,78 @@ const MockupCodeCanvas = () => {
 const SERVICES = [
   {
     title: "End-to-End App Development",
-    body:
-      "We handle the complete journey. Discovery, UI and UX, development, integrations, testing, deployment, and post-launch support. The result is a stable React Native app designed for growth.",
+    body: "We handle the complete journey. Discovery, UI and UX, development, integrations, testing, deployment, and post-launch support. The result is a stable React Native app designed for growth.",
     features: [
       "Discovery, UX, development & QA",
       "App Store & Play Store submission",
       "Post-launch monitoring & iteration",
     ],
-    mockup: <MockupPhone />,
+    image: "/images/v2/end_to_end_app.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: false,
     reverse: false,
   },
   {
     title: "Custom React Native Features",
-    body:
-      "From chat and live tracking to in-app purchases, notifications, and media handling, we build features that require more than basic boilerplate.",
+    body: "From chat and live tracking to in-app purchases, notifications, and media handling, we build features that require more than basic boilerplate.",
     features: [
       "Real-time chat, video & live tracking",
       "In-app purchases & subscriptions",
       "Push notifications & deep linking",
     ],
-    mockup: <MockupMultiDevice />,
+    image: "/images/v2/cutom_react_native.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
     padMockup: false,
     reverse: true,
   },
   {
     title: "React Native Optimization",
-    body:
-      "If you already have an app but it feels slow, outdated, or inconsistent, we audit the codebase, fix performance issues, and bring it up to a modern standard.",
+    body: "If you already have an app but it feels slow, outdated, or inconsistent, we audit the codebase, fix performance issues, and bring it up to a modern standard.",
     features: [
       "Startup time & 60fps tuning",
       "Bundle size & memory profiling",
       "New Architecture (Fabric + TurboModules)",
     ],
-    mockup: <MockupPerfAudit />,
+    image: "/images/v2/react_native_optimization.webp",
     imageBg: "linear-gradient(135deg, #ecfdf5 0%, #bbf7d0 100%)",
     padMockup: true,
     reverse: false,
   },
   {
     title: "React Native Migration",
-    body:
-      "We help teams move from legacy stacks or outdated frameworks into a React Native environment that's easier to maintain and scale.",
+    body: "We help teams move from legacy stacks or outdated frameworks into a React Native environment that's easier to maintain and scale.",
     features: [
       "Native iOS / Android to RN migration",
       "Cordova / Ionic / Xamarin modernization",
       "Incremental migration with zero downtime",
     ],
-    mockup: <MockupDualPhone />,
+    image: "/images/v2/react_native_migration.webp",
     imageBg: "linear-gradient(135deg, #f0fdfa 0%, #99f6e4 100%)",
     padMockup: false,
     reverse: true,
   },
   {
     title: "API Integration",
-    body:
-      "Our team integrates your backend systems, payment gateways, analytics, auth flows, and third-party services into a stable React Native architecture.",
+    body: "Our team integrates your backend systems, payment gateways, analytics, auth flows, and third-party services into a stable React Native architecture.",
     features: [
       "REST, GraphQL & WebSocket clients",
       "Stripe, Firebase, Auth0, OneSignal",
       "Offline-first & sync architecture",
     ],
-    mockup: <MockupCodeCanvas />,
+    image: "/images/v2/api_integration.webp",
     imageBg: "linear-gradient(135deg, #f5f3ff 0%, #ddd6fe 100%)",
     padMockup: true,
     reverse: false,
   },
   {
     title: "Ongoing Maintenance and Support",
-    body:
-      "We update OS compatibility, patch issues, maintain libraries, and help you iterate on new features without disrupting live users.",
+    body: "We update OS compatibility, patch issues, maintain libraries, and help you iterate on new features without disrupting live users.",
     features: [
       "iOS & Android OS version support",
       "OTA updates via CodePush / EAS",
       "Crash monitoring & library upgrades",
     ],
-    mockup: <MockupMultiDevice />,
+    image: "/images/v2/ongoing_maintenance.webp",
     imageBg: "linear-gradient(135deg, #ecfeff 0%, #a5f3fc 100%)",
     padMockup: false,
     reverse: true,
@@ -462,37 +1126,103 @@ const ReactNativeAppDevelopmentServices = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden svc-hero-bg" style={{ padding: "120px 0 80px" }}>
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
+          <div
+            className="grid gap-10 lg:gap-[60px] items-center"
+            style={{ gridTemplateColumns: "1fr" }}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
-                  style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+                <span
+                  className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                  style={{
+                    background: "#ffffff",
+                    borderColor: "#e4eaf1",
+                    color: "#566678",
+                    letterSpacing: "0.1em",
+                    boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                  }}
+                >
                   <IconRNBadge /> React Native App Development
                 </span>
-                <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
-                  Cross-Platform Apps with Native Feel. <span style={{ color: "#2f6bff" }}>One Codebase, iOS + Android</span>
+                <h1
+                  className="font-extrabold mb-5"
+                  style={{
+                    fontSize: "clamp(34px, 4vw, 54px)",
+                    letterSpacing: "-1.5px",
+                    lineHeight: 1.1,
+                    color: "#0b1e33",
+                  }}
+                >
+                  Cross-Platform Apps with Native Feel.{" "}
+                  <span style={{ color: "#2f6bff" }}>
+                    One Codebase, iOS + Android
+                  </span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
-                  We ship React Native apps that launch on both stores from a single codebase. 80+ RN apps live, 95% code reuse across iOS and Android, and a 4.7 average app store rating, without doubling your engineering spend.
+                <p
+                  className="mb-8"
+                  style={{
+                    fontSize: 18,
+                    lineHeight: 1.7,
+                    color: "#566678",
+                    maxWidth: 580,
+                  }}
+                >
+                  We ship React Native apps that launch on both stores from a
+                  single codebase. 80+ RN apps live, 95% code reuse across iOS
+                  and Android, and a 4.7 average app store rating, without
+                  doubling your engineering spend.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
-                  <Link href="#contact"
+                  <Link
+                    href="#contact"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
-                    style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "16px 32px", fontSize: 16 }}>
+                    style={{
+                      background: "#2f6bff",
+                      color: "#fff",
+                      border: "1px solid #2f6bff",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     Start Your App Journey <IconArrowRight />
                   </Link>
-                  <Link href="#services"
+                  <Link
+                    href="#services"
                     className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
-                    style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "16px 32px", fontSize: 16 }}>
+                    style={{
+                      background: "transparent",
+                      color: "#0b1e33",
+                      border: "1px solid #e4eaf1",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     See Our RN Services
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "#6b7a8a", fontSize: 14 }}>
-                  {["Free 30-min consultation", "48-hour app roadmap", "No commitment"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
-                      <span style={{ color: "#16a34a" }}><IconCheck /></span>{t}
+                <div
+                  className="flex flex-wrap gap-[18px]"
+                  style={{ color: "#6b7a8a", fontSize: 14 }}
+                >
+                  {[
+                    "Free 30-min consultation",
+                    "48-hour app roadmap",
+                    "No commitment",
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="inline-flex items-center gap-2"
+                      style={{ color: "#6b7a8a" }}
+                    >
+                      <span style={{ color: "#16a34a" }}>
+                        <IconCheck />
+                      </span>
+                      {t}
                     </span>
                   ))}
                 </div>
@@ -500,9 +1230,31 @@ const ReactNativeAppDevelopmentServices = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all svc-stat-card" style={{ padding: "28px 24px" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                    <div
+                      key={s.label}
+                      className="rounded-2xl transition-all svc-stat-card"
+                      style={{ padding: "28px 24px" }}
+                    >
+                      <div
+                        className="font-extrabold leading-none mb-2"
+                        style={{
+                          color: "#2f6bff",
+                          fontSize: "clamp(32px, 3vw, 42px)",
+                          letterSpacing: "-1px",
+                        }}
+                      >
+                        {s.value}
+                      </div>
+                      <div
+                        style={{
+                          color: "#6b7a8a",
+                          fontSize: 13,
+                          fontWeight: 500,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {s.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -513,12 +1265,27 @@ const ReactNativeAppDevelopmentServices = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#ffffff", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section
+        aria-label="Trust indicators"
+        style={{
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
+          padding: "28px 0",
+        }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "12px 40px" }}
+          >
             {TRUST.map((t) => (
-              <div key={t.label} className="inline-flex items-center gap-2 whitespace-nowrap" style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>
-                {t.icon}{t.label}
+              <div
+                key={t.label}
+                className="inline-flex items-center gap-2 whitespace-nowrap"
+                style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+              >
+                {t.icon}
+                {t.label}
               </div>
             ))}
           </div>
@@ -526,36 +1293,106 @@ const ReactNativeAppDevelopmentServices = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
+      <section
+        id="services"
+        className="py-16 md:py-24"
+        style={{ background: "#f1f5fb" }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>What We Build</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our React Native Development Services</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end React Native engineering — from first prototype to App Store and Google Play, and everything after.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              What We Build
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Our React Native Development Services
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              End-to-end React Native engineering — from first prototype to App
+              Store and Google Play, and everything after.
+            </p>
           </div>
 
           {SERVICES.map((svc) => (
-            <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
-              style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
-                  <div className="w-full overflow-hidden rounded-2xl relative"
-                    style={{
-                      aspectRatio: "4 / 3",
-                      padding: svc.padMockup ? 24 : 0,
-                      background: svc.imageBg,
-                      border: "1px solid #e5e7eb",
-                    }}>
-                    {svc.mockup}
+            <div
+              key={svc.title}
+              className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
+              style={{ gridTemplateColumns: "1fr" }}
+            >
+              <div
+                className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
+              >
+                <div
+                  className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`}
+                  style={{ direction: "ltr" }}
+                >
+                  <div className="w-full overflow-hidden rounded-2xl relative">
+                    <Image
+                      src={svc.image}
+                      alt={svc.title}
+                      width={200}
+                      height={120}
+                      className="object-cover"
+                    />
                   </div>
                 </div>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
-                  <h3 className="font-bold mb-4" style={{ fontSize: "clamp(22px, 2.4vw, 28px)", letterSpacing: "-0.3px", lineHeight: 1.3, color: "#0d0f1a" }}>{svc.title}</h3>
-                  <p className="mb-5" style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}>{svc.body}</p>
+                <div
+                  className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`}
+                  style={{ direction: "ltr" }}
+                >
+                  <h3
+                    className="font-bold mb-4"
+                    style={{
+                      fontSize: "clamp(22px, 2.4vw, 28px)",
+                      letterSpacing: "-0.3px",
+                      lineHeight: 1.3,
+                      color: "#0d0f1a",
+                    }}
+                  >
+                    {svc.title}
+                  </h3>
+                  <p
+                    className="mb-5"
+                    style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}
+                  >
+                    {svc.body}
+                  </p>
                   <ul className="list-none">
                     {svc.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#2f6bff", flexShrink: 0, marginTop: 2 }}><IconCheck /></span>{f}
+                      <li
+                        key={f}
+                        className="flex items-start gap-2.5 mb-2.5"
+                        style={{ fontSize: 14, color: "#212121" }}
+                      >
+                        <span
+                          style={{
+                            color: "#2f6bff",
+                            flexShrink: 0,
+                            marginTop: 2,
+                          }}
+                        >
+                          <IconCheck />
+                        </span>
+                        {f}
                       </li>
                     ))}
                   </ul>
@@ -567,14 +1404,49 @@ const ReactNativeAppDevelopmentServices = () => {
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center svc-mid-cta-bg" style={{ padding: "56px 0" }}>
+      <section
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
+      >
         <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
-        <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
-          <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Ship Your App on Both Stores?</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute consultation with our React Native team. We'll review your idea, map a cross-platform roadmap, and estimate your timeline, no commitment.</p>
-          <Link href="#contact"
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Ready to Ship Your App on Both Stores?
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            Get a free 30-minute consultation with our React Native team. We'll
+            review your idea, map a cross-platform roadmap, and estimate your
+            timeline, no commitment.
+          </p>
+          <Link
+            href="#contact"
             className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
-            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            style={{
+              background: "#fff",
+              color: "#2f6bff",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
             Start My App Project
           </Link>
         </div>
@@ -584,19 +1456,68 @@ const ReactNativeAppDevelopmentServices = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Why Brilworks</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Why Teams Choose Brilworks for React Native</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don't just write cross-platform code — we partner with you to make the hard mobile decisions and ship faster on both stores.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Why Brilworks
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Why Teams Choose Brilworks for React Native
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              We don't just write cross-platform code — we partner with you to
+              make the hard mobile decisions and ship faster on both stores.
+            </p>
           </div>
-          <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          <div
+            className="grid gap-6"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
             {BENEFITS.map((b) => (
-              <div key={b.title} className="rounded-2xl transition-all hover:-translate-y-0.5"
-                style={{ background: "#fff", border: "1px solid #e5e7eb", padding: "32px 28px" }}>
-                <div className="rounded-[14px] flex items-center justify-center mb-5" style={{ width: 64, height: 64, background: b.tint }}>
+              <div
+                key={b.title}
+                className="rounded-2xl transition-all hover:-translate-y-0.5"
+                style={{
+                  background: "#fff",
+                  border: "1px solid #e5e7eb",
+                  padding: "32px 28px",
+                }}
+              >
+                <div
+                  className="rounded-[14px] flex items-center justify-center mb-5"
+                  style={{ width: 64, height: 64, background: b.tint }}
+                >
                   {b.icon}
                 </div>
-                <h3 className="font-bold mb-3" style={{ fontSize: 18, color: "#0d0f1a" }}>{b.title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>{b.body}</p>
+                <h3
+                  className="font-bold mb-3"
+                  style={{ fontSize: 18, color: "#0d0f1a" }}
+                >
+                  {b.title}
+                </h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>
+                  {b.body}
+                </p>
               </div>
             ))}
           </div>
@@ -605,28 +1526,92 @@ const ReactNativeAppDevelopmentServices = () => {
 
       {/* TESTIMONIALS */}
       <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
-        <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 1280, zIndex: 1 }}
+        >
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Client Stories</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What Mobile Leaders Say About Us</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Real outcomes from founders and mobile leads shipping cross-platform apps with our team.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Client Stories
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0b1e33",
+              }}
+            >
+              What Mobile Leaders Say About Us
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}
+            >
+              Real outcomes from founders and mobile leads shipping
+              cross-platform apps with our team.
+            </p>
           </div>
-          <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          <div
+            className="grid gap-6"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-2xl"
-                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+              <div
+                key={t.name}
+                className="rounded-2xl"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  padding: "32px 28px",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <IconStarFilled key={i} />
+                  ))}
                 </div>
-                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p
+                  className="mb-6"
+                  style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </p>
                 <div className="flex items-center gap-3">
-                  <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #1e4fd6)", fontSize: 16 }}>
+                  <div
+                    className="rounded-full flex items-center justify-center font-bold text-white"
+                    style={{
+                      width: 44,
+                      height: 44,
+                      background: "linear-gradient(135deg, #2f6bff, #1e4fd6)",
+                      fontSize: 16,
+                    }}
+                  >
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
-                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
+                    <span
+                      className="font-semibold"
+                      style={{ fontSize: 14, color: "#0b1e33" }}
+                    >
+                      {t.name}
+                    </span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>
+                      {t.role}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -638,14 +1623,46 @@ const ReactNativeAppDevelopmentServices = () => {
       {/* HONORS */}
       <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Recognized By</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Trusted &amp; Awarded by Industry Leaders</h2>
+          <div
+            className="text-center mx-auto"
+            style={{ maxWidth: 720, marginBottom: 32 }}
+          >
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Recognized By
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(22px, 2.4vw, 30px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Trusted &amp; Awarded by Industry Leaders
+            </h2>
           </div>
-          <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "32px 56px", opacity: 0.85 }}
+          >
             {HONORS.map((h) => (
-              <div key={h.label} className="flex items-center gap-2.5" style={{ color: "#6b7280", fontWeight: 600, fontSize: 14 }}>
-                {h.icon}{h.label}
+              <div
+                key={h.label}
+                className="flex items-center gap-2.5"
+                style={{ color: "#6b7280", fontWeight: 600, fontSize: 14 }}
+              >
+                {h.icon}
+                {h.label}
               </div>
             ))}
           </div>
@@ -656,17 +1673,64 @@ const ReactNativeAppDevelopmentServices = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Industries We Serve</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Mobile-Ready Expertise Across Verticals</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We&apos;ve shipped React Native apps into regulated, high-volume, and consumer-heavy categories.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Industries We Serve
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Mobile-Ready Expertise Across Verticals
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              We&apos;ve shipped React Native apps into regulated, high-volume,
+              and consumer-heavy categories.
+            </p>
           </div>
-          <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
+          <div
+            className="grid gap-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+            }}
+          >
             {INDUSTRIES.map((ind) => (
-              <Link key={ind.label} href={ind.href}
+              <Link
+                key={ind.label}
+                href={ind.href}
                 className="text-center transition-all hover:-translate-y-0.5"
-                style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 14, padding: "24px 16px", textDecoration: "none" }}>
-                <div className="mx-auto mb-3 flex items-center justify-center">{ind.icon}</div>
-                <span style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>{ind.label}</span>
+                style={{
+                  background: "#fff",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: 14,
+                  padding: "24px 16px",
+                  textDecoration: "none",
+                }}
+              >
+                <div className="mx-auto mb-3 flex items-center justify-center">
+                  {ind.icon}
+                </div>
+                <span
+                  style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+                >
+                  {ind.label}
+                </span>
               </Link>
             ))}
           </div>
@@ -677,9 +1741,36 @@ const ReactNativeAppDevelopmentServices = () => {
       <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Common Questions</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything founders and mobile leads typically ask before starting a React Native build.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Common Questions
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              Everything founders and mobile leads typically ask before starting
+              a React Native build.
+            </p>
           </div>
           <div className="mx-auto" style={{ maxWidth: 860 }}>
             {FAQ.map((item, i) => (
