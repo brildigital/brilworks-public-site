@@ -1,7 +1,44 @@
 import Link from "next/link";
+import FinalCTA from "../Common/FinalCTA";
 import "../../styles/EnterpriseHome.css";
 
 const ROLES = [
+  {
+    title: "Snowflake Developer",
+    body: "Data warehouse design, dbt analytics engineering, migration & performance tuning.",
+    tags: ["Data Warehousing", "dbt", "Performance Tuning"],
+    href: "/hire-snowflake-developer/",
+  },
+  {
+    title: "Databricks Developer",
+    body: "Lakehouse architecture, Delta Lake pipelines & MLflow ML platforms.",
+    tags: ["Delta Lake", "PySpark", "MLflow"],
+    href: "/hire-databricks-developer/",
+  },
+  {
+    title: "Data Engineer",
+    body: "Production pipelines — ingestion, dbt transformation, streaming & orchestration.",
+    tags: ["Airflow", "Kafka", "dbt"],
+    href: "/hire-data-engineer/",
+  },
+  {
+    title: "Analytics Engineer",
+    body: "dbt transformation layer, semantic models & dashboards teams can trust.",
+    tags: ["dbt Core", "Dimensional Modelling", "CI/CD for data"],
+    href: "/hire-analytics-engineer/",
+  },
+  {
+    title: "ML / AI Engineer",
+    body: "Production ML models, GenAI apps, RAG pipelines & agentic systems.",
+    tags: ["LLM Integration", "RAG", "MLOps-ready"],
+    href: "/hire-ml-ai-engineer/",
+  },
+  {
+    title: "MLOps Engineer",
+    body: "Training pipelines, model serving, feature stores & drift monitoring.",
+    tags: ["Model Serving", "CI/CD for ML", "Monitoring"],
+    href: "/hire-mlops-engineer/",
+  },
   {
     title: "Java Developer",
     body: "Enterprise backend, Spring Boot, microservices & REST APIs.",
@@ -161,7 +198,12 @@ const HireEngineers = () => {
           </p>
           <div className="hire-roles">
             {ROLES.map((r, i) => (
-              <Link className="hrole rv" key={r.href} href={r.href} style={{ transitionDelay: `${0.06 + i * 0.06}s` }}>
+              <Link
+                className="hrole rv"
+                key={r.href}
+                href={r.href}
+                style={{ transitionDelay: `${0.06 + i * 0.06}s` }}
+              >
                 <h4>{r.title}</h4>
                 <p>{r.body}</p>
                 <div className="hchips">
@@ -180,10 +222,16 @@ const HireEngineers = () => {
       <section>
         <div className="wrap">
           <p className="eyebrow rv">Process</p>
-          <h2 className="sec rv d1">From requirement to onboarded in a week.</h2>
+          <h2 className="sec rv d1">
+            From requirement to onboarded in a week.
+          </h2>
           <div className="steps">
             {STEPS.map((s, i) => (
-              <div className="step rv" key={s.n} style={{ transitionDelay: `${0.06 + i * 0.08}s` }}>
+              <div
+                className="step rv"
+                key={s.n}
+                style={{ transitionDelay: `${0.06 + i * 0.08}s` }}
+              >
                 <span className="n">{s.n}</span>
                 <h4>{s.title}</h4>
                 <p>{s.body}</p>
@@ -194,27 +242,16 @@ const HireEngineers = () => {
       </section>
 
       {/* ── CTA ── alt bg (slight blue) */}
-      <section className="alt">
-        <div className="wrap">
-          <div className="final rv">
-            <h2>Tell us who you need.</h2>
-            <p>
-              Share your requirements — you&apos;ll get back matched developer
-              profiles in 48 hours, not a sales pitch.
-            </p>
-            <div className="ctas mt-4">
-              <Link className="btn btn-primary" href="/contact-us/">
-                Get matched now
-              </Link>
-            </div>
-            <div className="ticks">
-              <span>NDA on request</span>
-              <span>No obligation</span>
-              <span>Profiles in 48 hours</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FinalCTA
+        tag={null}
+        h2="Tell us who you need."
+        p="Share your requirements — you'll get back matched developer profiles in 48 hours, not a sales pitch."
+        ctas={[
+          { label: "Get matched now", href: "/contact-us/", primary: true },
+        ]}
+        ticks={["NDA on request", "No obligation", "Profiles in 48 hours"]}
+        altBg
+      />
     </div>
   );
 };

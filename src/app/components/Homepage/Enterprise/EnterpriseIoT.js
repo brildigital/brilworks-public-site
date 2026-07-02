@@ -14,11 +14,11 @@ const EnterpriseIoT = () => {
         <div className="iot">
           <div className="rv">
             <p className="eyebrow">New — edge to cloud</p>
-            <h2>Where the data starts: the device.</h2>
+            <h2>Engineering at the edge</h2>
             <p>
-              Embedded and edge-AI engineering for teams whose data is born
-              on hardware — feeding the same trusted pipelines we build for
-              everyone else.
+              Embedded software and edge AI that capture data at the source
+              and deliver it into secure, production-ready pipelines built
+              for analytics and AI.
             </p>
             <a className="softlink" href="/embedded-software-development-services/">
               Explore edge &amp; embedded →
