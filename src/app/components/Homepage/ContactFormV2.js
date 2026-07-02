@@ -2,7 +2,7 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { Bot, Smartphone, Globe, Users } from "lucide-react";
+import { Bot, Smartphone, Globe, Users, Cpu, Database } from "lucide-react";
 import ButtonV2 from "../Common/ButtonV2";
 import Loader from "./Loader";
 import {
@@ -13,6 +13,16 @@ import {
 } from "../lib/leadSource";
 
 const projectTypes = [
+  {
+    value: "data-engineering",
+    label: "Data Engineering",
+    icon: <Database size={20} strokeWidth={1.75} />,
+  },
+  {
+    value: "embedded-solutions",
+    label: "Embedded Solutions",
+    icon: <Cpu size={20} strokeWidth={1.75} />,
+  },
   {
     value: "ai-solutions",
     label: "AI Solutions",

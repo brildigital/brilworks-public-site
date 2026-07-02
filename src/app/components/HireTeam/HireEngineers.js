@@ -146,27 +146,41 @@ const HireEngineers = () => {
             </div>
           </div>
 
-          {/* Right panel — mirrors the landing page panel */}
+          {/* Right panel — progress-ring stat variant, distinct from the landing page panel */}
           <div className="rv d2">
-            <div className="panel">
-              <div className="ph">
-                <span style={{ fontWeight: 600 }}>How hiring works</span>
+            <div className="hire-panel">
+              <div className="hp-head">
+                <span className="t">How hiring works</span>
                 <span className="up">share → match → interview → build</span>
               </div>
-              {STEPS.map((s) => (
-                <div className="stage" key={s.n}>
-                  <span className="ic">{s.n}</span>
-                  <div>
-                    <div className="nm">{s.title}</div>
-                    <div className="meta">{s.body}</div>
+              <div className="hp-focus">
+                <div className="hp-ring">
+                  <div className="hp-ring-inner">
+                    <div className="hp-ring-v">48hr</div>
+                    <div className="hp-ring-l">first profiles</div>
                   </div>
                 </div>
-              ))}
-              <div className="pf">
                 <div>
-                  <div className="l">Available for</div>
-                  <div className="v">Full-time · Part-time · Contract</div>
+                  <div className="hp-focus-t">Fast-tracked matching</div>
+                  <div className="hp-focus-d">
+                    Most clients get 3–5 vetted profiles within two business
+                    days of sharing requirements.
+                  </div>
                 </div>
+              </div>
+              <div className="hp-steps-mini">
+                {STEPS.map((s) => (
+                  <div className="hp-mini" key={s.n}>
+                    <span className="hp-mini-n">{s.n}</span>
+                    <span className="hp-mini-t">{s.title}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="hp-foot">
+                <div className="l">Available for</div>
+                <span className="chip">Full-time</span>
+                <span className="chip">Part-time</span>
+                <span className="chip">Contract</span>
               </div>
             </div>
           </div>
