@@ -35,7 +35,7 @@ const CASES = [
 const NUMS = [
   {
     v: "Foundation first",
-    l: "We build the data layer before the agent — so the AI holds up in production.",
+    l: "We build the data layer before the agent. So, the AI holds up in production.",
   },
   {
     v: "You own it all",
@@ -58,12 +58,18 @@ const EnterpriseWork = () => {
         <p className="eyebrow rv">What we build</p>
         <h2 className="sec rv d1">From data foundation to running agent.</h2>
         <p className="sub rv d2">
-          The core engagement: we build the layers in the order they have to
-          be built — and you own every part of it.
+          Reliable AI starts with the right foundation. We build every layer
+          in sequence, so nothing downstream breaks. You own every
+          deliverable.
         </p>
         <div className="cases">
           {CASES.map((c, i) => (
-            <Link className="case rv" href={c.link} key={c.tag} style={{ transitionDelay: `${0.06 + i * 0.08}s` }}>
+            <Link
+              className="case rv"
+              href={c.link}
+              key={c.tag}
+              style={{ transitionDelay: `${0.06 + i * 0.08}s` }}
+            >
               <span className="tag">{c.tag}</span>
               <h4>{c.title}</h4>
               <p>{c.body}</p>
@@ -73,7 +79,11 @@ const EnterpriseWork = () => {
         </div>
         <div className="nums">
           {NUMS.map((n, i) => (
-            <div className="num rv" key={n.v} style={{ transitionDelay: `${0.06 + i * 0.07}s` }}>
+            <div
+              className="num rv"
+              key={n.v}
+              style={{ transitionDelay: `${0.06 + i * 0.07}s` }}
+            >
               <div className="v" style={{ fontSize: 19 }}>
                 {n.v}
               </div>

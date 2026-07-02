@@ -3,23 +3,23 @@ import "../../../styles/EnterpriseHome.css";
 const STEPS = [
   {
     n: "01 / INGEST",
-    title: "Raw data in",
-    body: "Every source — apps, APIs, files, legacy databases — without losing a row.",
+    title: "Connect every source",
+    body: "Apps, APIs, files, legacy systems, and databases. Every byte captured, nothing left behind.",
   },
   {
     n: "02 / ENGINEER",
-    title: "Pipelines you trust",
-    body: "Clean, tested, scheduled. The part nobody sees and everything depends on.",
+    title: "Pipelines you can trust",
+    body: "Cleaned, tested, scheduled, and monitored. The invisible layer every reliable AI system depends on.",
   },
   {
     n: "03 / MODEL",
     title: "A warehouse that answers",
-    body: "One source of truth your team queries — and the AI grounds itself in.",
+    body: "A single source of truth your team can query and your AI can rely on.",
   },
   {
     n: "04 / RUN",
-    title: "Agents that act",
-    body: "AI on clean data, shipped to production. Answers that hold up, not demos.",
+    title: "Agents that deliver",
+    body: "Production-ready AI built on trusted data. Reliable answers that hold up long after the demo.",
   },
 ];
 
@@ -32,10 +32,9 @@ const EnterpriseApproach = () => {
           An AI agent is only as good as the data feeding it.
         </h2>
         <p className="sub rv d2">
-          Most teams jump straight to the agent — then it hallucinates,
-          because the data underneath is stale, duplicated, or untrusted. We
-          build in the order it has to be built: foundation first, agent
-          last.
+          Most teams build the agent first. We build the foundation first.
+          Because stale, duplicated, or unreliable data doesn&apos;t create
+          intelligent agents. It creates confident mistakes.
         </p>
         <div className="steps">
           {STEPS.map((s, i) => (

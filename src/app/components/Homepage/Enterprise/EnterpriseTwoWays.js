@@ -5,7 +5,7 @@ const WAYS = [
   {
     wk: "We build",
     title: "Fixed-scope projects",
-    desc: "Data platforms, AI agents, and edge builds delivered end to end — one accountable team from pipeline to production.",
+    desc: "Whether it's a data platform, AI agent, or edge application, one team owns delivery from the first design review to deployment.",
     chips: ["Fixed scope", "You own the code", "Pipeline to production"],
     quote: "Transparent, delivered exactly what was scoped — no surprises.",
     who: "Executive · Service Buddy",
@@ -14,7 +14,7 @@ const WAYS = [
   {
     wk: "We staff",
     title: "Certified engineers, in your team",
-    desc: "Snowflake- and Databricks-certified engineers embedded in your team on your timezone — scale without the hiring cycle.",
+    desc: "Embed Snowflake- and Databricks-certified engineers into your team and scale delivery without the time and cost of recruiting.",
     chips: ["Certified", "Your timezone", "In your repo & standups"],
     quote: "They feel like an extension of our internal team, not a vendor.",
     who: "CEO · Rastrack",

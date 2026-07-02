@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Script from "next/script";
 import { homepageFAQ } from "../components/lib/schemaCode";
 import EnterpriseHero from "../components/Homepage/Enterprise/EnterpriseHero";
@@ -11,6 +12,8 @@ import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
 import EnterpriseIoT from "../components/Homepage/Enterprise/EnterpriseIoT";
 import FinalCTA from "../components/Common/FinalCTA";
 import HomePageBlogs from "../components/Homepage/HomePageBlogs";
+
+const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
 
 export async function generateMetadata() {
   return {
@@ -84,6 +87,7 @@ const page = () => {
       <EnterpriseIoT />
       <HomePageBlogs />
       <FinalCTA />
+      <StickyCTA />
     </div>
   );
 };

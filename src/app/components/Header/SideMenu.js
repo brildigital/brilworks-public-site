@@ -82,6 +82,15 @@ const SideMenu = ({ open, close }) => {
                     </div>
                   </div>
                 ))}
+                {menuItem?.footerLink && (
+                  <Link
+                    href={menuItem.footerLink.path}
+                    onClick={close}
+                    className="text-[18px] font-medium text-themeColor hover:underline"
+                  >
+                    {menuItem.footerLink.name}
+                  </Link>
+                )}
               </AccordionBody>
             </Accordion>
           )}
@@ -101,7 +110,7 @@ const SideMenu = ({ open, close }) => {
         duration: 1,
       }}
       overlayProps={{
-        className: "!bg-black/50 z-[9998]",
+        className: "!fixed !inset-0 !bg-black/50 z-[9998]",
       }}
     >
       <IconButton
