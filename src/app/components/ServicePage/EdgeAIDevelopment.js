@@ -3,14 +3,15 @@ import ServicePageTemplate from "./ServicePageTemplate";
 const DATA = {
   hero: {
     tag: "Edge AI · TinyML · Intelligent Embedded Systems",
-    h1: [
-      { text: "Edge AI " },
-      { text: "Development Services", accent: true },
-    ],
+    h1: [{ text: "Edge AI " }, { text: "Development Services", accent: true }],
     lede: "Deploy machine learning directly on embedded devices, industrial equipment, and connected products. We engineer Edge AI systems that deliver real-time inference, reduce cloud dependency, and make intelligent decisions exactly where the data is created.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
-      { label: "See the work", href: "#work", primary: false },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
     ],
     micro: [
       { star: true, text: "★★★★★ 5.0 on Clutch" },
@@ -267,7 +268,12 @@ const DATA = {
     h2: "Tell us what you're building.",
     p: "Send us the problem — you'll get back a practical plan, not a sales pitch. Start a project, or bring our certified engineers onto your team.",
     ctas: [
-      { label: "Book a scoping call →", cal: true, calLink: "vikas-singh-bril/30-min-product-eng-review", primary: true },
+      {
+        label: "Book a scoping call →",
+        cal: true,
+        calLink: "vikas-singh-bril/30-min-product-eng-review",
+        primary: true,
+      },
       { label: "See the work first", href: "#work", primary: false },
     ],
     ticks: ["30-minute discovery call", "100% IP ownership", "No obligation"],

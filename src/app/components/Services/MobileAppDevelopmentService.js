@@ -23,47 +23,18 @@ import {
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import Image from "next/image";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
-// ---------- Style tokens ----------
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-
 // ---------- Data ----------
 const TRUST = [
-  { icon: <Shield size={18} color="#017eeb" />, label: "AWS Consulting Partner" },
-  { icon: <Smartphone size={18} color="#017eeb" />, label: "100+ Apps on App Store & Play Store" },
-  { icon: <Star size={18} color="#017eeb" />, label: "4.8★ Average App Store Rating" },
-  { icon: <TrendingUp size={18} color="#017eeb" />, label: "10M+ Downloads Driven" },
+  { icon: <Shield size={18} color="#2f6bff" />, label: "AWS Consulting Partner" },
+  { icon: <Smartphone size={18} color="#2f6bff" />, label: "100+ Apps on App Store & Play Store" },
+  { icon: <Star size={18} color="#2f6bff" />, label: "4.8★ Average App Store Rating" },
+  { icon: <TrendingUp size={18} color="#2f6bff" />, label: "10M+ Downloads Driven" },
 ];
 
 const HERO_STATS = [
@@ -78,7 +49,7 @@ const BENEFITS = [
     title: "Top 3% Mobile Talent",
     tint: "#e8f0fd",
     body: "Senior iOS, Android, React Native, and Flutter engineers filtered for clarity, shipping discipline, and problem-solving — not for time zone convenience.",
-    icon: <Users size={32} color="#017eeb" />,
+    icon: <Users size={32} color="#2f6bff" />,
   },
   {
     title: "4.8★ Average Rating",
@@ -137,11 +108,11 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Partner — Advanced Tier", icon: <Shield size={20} color="#017eeb" /> },
-  { label: "Clutch Global Award Spring 2025", icon: <Star size={20} color="#017eeb" /> },
-  { label: "Clutch Global Award Fall 2024", icon: <Star size={20} color="#017eeb" /> },
-  { label: "GoodFirms Top Software 2025-26", icon: <Award size={20} color="#017eeb" /> },
-  { label: "SelectedFirms Top 10 Agency 2026", icon: <LayoutGrid size={20} color="#017eeb" /> },
+  { label: "AWS Partner — Advanced Tier", icon: <Shield size={20} color="#2f6bff" /> },
+  { label: "Clutch Global Award Spring 2025", icon: <Star size={20} color="#2f6bff" /> },
+  { label: "Clutch Global Award Fall 2024", icon: <Star size={20} color="#2f6bff" /> },
+  { label: "GoodFirms Top Software 2025-26", icon: <Award size={20} color="#2f6bff" /> },
+  { label: "SelectedFirms Top 10 Agency 2026", icon: <LayoutGrid size={20} color="#2f6bff" /> },
 ];
 
 const INDUSTRIES = [
@@ -153,7 +124,7 @@ const INDUSTRIES = [
   {
     label: "FinTech",
     href: "/industry/fintech-software-development/",
-    icon: <CreditCard size={32} color="#017eeb" />,
+    icon: <CreditCard size={32} color="#2f6bff" />,
   },
   {
     label: "Healthcare",
@@ -286,39 +257,37 @@ const MobileAppDevelopmentService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
+      <section className="relative overflow-hidden svc-hero-bg" style={{ padding: "120px 0 80px" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                  <Smartphone size={14} color="#00b4d8" /> Mobile App Development Services
+                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                  style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+                  <Smartphone size={14} color="#2f6bff" /> Mobile App Development Services
                 </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                  Launch iOS &amp; Android Apps <span style={gradientTextStyle}>Users Love</span>
+                <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
+                  Launch iOS &amp; Android Apps <span style={{ color: "#2f6bff" }}>Users Love</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                  We design, build, and ship native and cross-platform mobile apps that hit the App Store and Google Play with velocity. 100+ apps delivered across healthcare, fintech, retail, and enterprise — MVP in 12-16 weeks, production-ready from day one.
+                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
+                  We design, build, and ship native and cross-platform mobile apps that hit the App Store and Google Play with velocity. 100+ apps delivered across healthcare, fintech, retail, and enterprise, MVP in 12-16 weeks, production-ready from day one.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                    style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "16px 32px", fontSize: 16 }}>
                     Start Your App Journey <ArrowRight size={16} />
                   </Link>
                   <Link href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                    style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "16px 32px", fontSize: 16 }}>
                     See What We Build
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+                <div className="flex flex-wrap gap-[18px]" style={{ color: "#6b7a8a", fontSize: 14 }}>
                   {["Free 30-min app consultation", "48-hour scope & estimate", "iOS + Android coverage"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
+                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
+                      <span style={{ color: "#16a34a" }}><Check size={16} /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -326,10 +295,9 @@ const MobileAppDevelopmentService = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                    <div key={s.label} className="rounded-2xl transition-all svc-stat-card" style={{ padding: "28px 24px" }}>
+                      <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
+                      <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -340,7 +308,7 @@ const MobileAppDevelopmentService = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section aria-label="Trust indicators" style={{ background: "#ffffff", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
             {TRUST.map((t) => (
@@ -353,10 +321,10 @@ const MobileAppDevelopmentService = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section id="services" className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>What We Build</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>What We Build</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Core Mobile App Development Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Full-lifecycle mobile engineering — from the first Figma frame to a five-star app store listing and every release after.</p>
           </div>
@@ -383,7 +351,7 @@ const MobileAppDevelopmentService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
+                        <span style={{ color: "#2f6bff", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -395,15 +363,14 @@ const MobileAppDevelopmentService = () => {
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center" style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }} />
+      <section className="relative overflow-hidden text-center svc-mid-cta-bg" style={{ padding: "56px 0" }}>
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Launch Your Mobile App?</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute consultation with a senior mobile engineer. We&apos;ll scope your app, choose native vs. cross-platform, and send you a timeline and quote within 48 hours — no commitment.</p>
+          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute consultation with a senior mobile engineer. We&apos;ll scope your app, choose native vs. cross-platform, and send you a timeline and quote within 48 hours, no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
-            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Start My App Project
           </Link>
         </div>
@@ -413,7 +380,7 @@ const MobileAppDevelopmentService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Why Brilworks</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Why Brilworks</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Mobile Engineers Who Ship Apps Users Actually Keep</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don&apos;t just push builds — we partner on every product decision that makes an app retain, monetize, and earn five-star reviews.</p>
           </div>
@@ -432,30 +399,30 @@ const MobileAppDevelopmentService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00b4d8" }}>Client Stories</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What Mobile Founders &amp; Product Leaders Say</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Not curated marketing quotes. Real words from real people who shipped real apps with us.</p>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Client Stories</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What Mobile Founders &amp; Product Leaders Say</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Not curated marketing quotes. Real words from real people who shipped real apps with us.</p>
           </div>
           <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {TESTIMONIALS.map((t) => (
               <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
                   {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #017eeb, #00dbd3)", fontSize: 16 }}>
+                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #1e4fd6)", fontSize: 16 }}>
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -465,10 +432,10 @@ const MobileAppDevelopmentService = () => {
       </section>
 
       {/* HONORS */}
-      <section className="py-16" style={{ background: "#f8f9ff" }}>
+      <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Recognition</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Recognition</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Trusted &amp; Awarded by Industry Leaders</h2>
           </div>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
@@ -485,7 +452,7 @@ const MobileAppDevelopmentService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Industries We Serve</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Industries We Serve</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Mobile Apps Built for Regulated &amp; Fast-Moving Verticals</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Real case studies, shipped apps, and production code across the sectors that move fastest on mobile.</p>
           </div>
@@ -503,10 +470,10 @@ const MobileAppDevelopmentService = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Common Questions</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Common Questions</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything founders and product teams typically ask before kicking off a mobile build with us.</p>
           </div>
@@ -527,9 +494,10 @@ const MobileAppDevelopmentService = () => {
       <div id="contact">
         <SolutionContactForm
           title="Ready to Build Your Mobile App?"
-          description="You're one conversation away from a mobile app that users actually download, open, and rate five stars. Tell us what you're building — we'll show you how we'd ship it."
+          description="You're one conversation away from a mobile app that users actually download, open, and rate five stars. Tell us what you're building, we'll show you how we'd ship it."
           messageRequired={false}
           submitLabel="Start My App Journey"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Free 30-minute consultation with a senior mobile engineer",
             "Detailed app scope, timeline, and quote within 48 hours",

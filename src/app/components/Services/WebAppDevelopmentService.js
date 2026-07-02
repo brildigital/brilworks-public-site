@@ -1,53 +1,52 @@
 "use client";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import CTASection from "../Common/CTASection";
 import {
   faAngular,
   faJs,
   faReact,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
-import { Check, ArrowRight, Globe, ShieldCheck, Star, TrendingUp } from "lucide-react";
+import {
+  Check,
+  ArrowRight,
+  Globe,
+  ShieldCheck,
+  Star,
+  TrendingUp,
+} from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
-const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
+const IconCheck = ({ size = 16, className = "" }) => (
+  <Check
+    size={size}
+    className={className}
+    strokeWidth={2.2}
+    aria-hidden="true"
+  />
+);
 
-const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
+const IconArrowRight = ({ size = 16 }) => (
+  <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />
+);
 
 const IconWebBadge = () => <Globe size={14} aria-hidden="true" />;
 
-const IconShieldWeb = ({ color = "#017eeb" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
+const IconShieldWeb = ({ color = "#2f6bff" }) => (
+  <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
-const IconGlobe = ({ color = "#017eeb" }) => <Globe size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
+const IconGlobe = ({ color = "#2f6bff" }) => (
+  <Globe size={18} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
-const IconStar = ({ color = "#017eeb" }) => <Star size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
+const IconStar = ({ color = "#2f6bff" }) => (
+  <Star size={18} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
-const IconChart = ({ color = "#017eeb" }) => <TrendingUp size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
-
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
+const IconChart = ({ color = "#2f6bff" }) => (
+  <TrendingUp size={18} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
 const WEB_TRUST = [
   { icon: <IconShieldWeb />, label: "AWS Consulting Partner" },
@@ -223,39 +222,103 @@ const WebAppDevelopmentService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
+          <div
+            className="grid gap-10 lg:gap-[60px] items-center"
+            style={{ gridTemplateColumns: "1fr" }}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
+                <span
+                  className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                  style={{
+                    background: "#ffffff",
+                    borderColor: "#e4eaf1",
+                    color: "#566678",
+                    letterSpacing: "0.1em",
+                    boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                  }}
+                >
                   <IconWebBadge /> Web App Development Services
                 </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                  Build Web Apps That <span style={gradientTextStyle}>Scale With Your Business</span>
+                <h1
+                  className="font-extrabold mb-5"
+                  style={{
+                    fontSize: "clamp(34px, 4vw, 54px)",
+                    letterSpacing: "-1.5px",
+                    lineHeight: 1.1,
+                    color: "#0b1e33",
+                  }}
+                >
+                  Build Web Apps That{" "}
+                  <span style={{ color: "#2f6bff" }}>
+                    Scale With Your Business
+                  </span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                  We design, build, and ship scalable, high-performance web applications for startups to enterprises. From custom platforms to enterprise-grade systems — end-to-end development with robust backends and intuitive front-end design.
+                <p
+                  className="mb-8"
+                  style={{
+                    fontSize: 18,
+                    lineHeight: 1.7,
+                    color: "#566678",
+                    maxWidth: 580,
+                  }}
+                >
+                  We design, build, and ship scalable, high-performance web
+                  applications for startups to enterprises. From custom
+                  platforms to enterprise-grade systems, end-to-end development
+                  with robust backends and intuitive front-end design.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
-                  <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
+                  <Link
+                    href="/contact-us/"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                    style={{
+                      background: "#2f6bff",
+                      color: "#fff",
+                      border: "1px solid #2f6bff",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     Get Free Consultation <IconArrowRight />
                   </Link>
-                  <Link href="#service-section"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
+                  <Link
+                    href="#service-section"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                    style={{
+                      background: "transparent",
+                      color: "#0b1e33",
+                      border: "1px solid #e4eaf1",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     See What We Build
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
-                  {["Free 30-min web consultation", "48-hour scope & estimate", "Full-stack coverage"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                <div
+                  className="flex flex-wrap gap-[18px]"
+                  style={{ color: "#6b7a8a", fontSize: 14 }}
+                >
+                  {[
+                    "Free 30-min web consultation",
+                    "48-hour scope & estimate",
+                    "Full-stack coverage",
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="inline-flex items-center gap-2"
+                      style={{ color: "#6b7a8a" }}
+                    >
+                      <span style={{ color: "#16a34a" }}>
+                        <IconCheck />
+                      </span>
+                      {t}
                     </span>
                   ))}
                 </div>
@@ -263,10 +326,31 @@ const WebAppDevelopmentService = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {WEB_HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                    <div
+                      key={s.label}
+                      className="rounded-2xl transition-all svc-stat-card"
+                      style={{ padding: "28px 24px" }}
+                    >
+                      <div
+                        className="font-extrabold leading-none mb-2"
+                        style={{
+                          color: "#2f6bff",
+                          fontSize: "clamp(32px, 3vw, 42px)",
+                          letterSpacing: "-1px",
+                        }}
+                      >
+                        {s.value}
+                      </div>
+                      <div
+                        style={{
+                          color: "#6b7a8a",
+                          fontSize: 13,
+                          fontWeight: 500,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {s.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -277,12 +361,27 @@ const WebAppDevelopmentService = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section
+        aria-label="Trust indicators"
+        style={{
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
+          padding: "28px 0",
+        }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "12px 40px" }}
+          >
             {WEB_TRUST.map((t) => (
-              <div key={t.label} className="inline-flex items-center gap-2 whitespace-nowrap" style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>
-                {t.icon}{t.label}
+              <div
+                key={t.label}
+                className="inline-flex items-center gap-2 whitespace-nowrap"
+                style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+              >
+                {t.icon}
+                {t.label}
               </div>
             ))}
           </div>
@@ -298,17 +397,59 @@ const WebAppDevelopmentService = () => {
         data={whyChooseUsDevelopmentData}
       />
       <Honors />
-      <ClientReviews />
+      <ClientReviews light />
       <TechStackWeWorkWith active="frontend" techStackList={techStackList} />
       <SeeingBelieving />
       <IndustriesWeServe darkBackground={false} />
       <HomePageBlogs />
-      <CTASection
-        descriptionClass="md:w-4/5"
-        title="Build your next high-impact web application with a trusted partner. Let’s turn your idea into a responsive, secure, and scalable digital experience."
-        buttonText="Get a Free Consultation"
-      />
       <ServicesFAQ />
+      <section
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
+      >
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Ready to Build Your Web App?
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            Build your next high-impact web application with a trusted partner.
+            Let&apos;s turn your idea into a responsive, secure, and scalable
+            digital experience.
+          </p>
+          <Link
+            href="/contact-us/"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{
+              background: "#fff",
+              color: "#2f6bff",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
+            Get a Free Consultation
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

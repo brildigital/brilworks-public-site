@@ -28,25 +28,12 @@ import {
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import Image from "next/image";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm"),
 );
 
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
 const TRUST = [
   {
     icon: <ShieldCheck size={18} color="#017eeb" />,
@@ -278,41 +265,39 @@ const DataEngineeringService = () => {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px]">
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ ...heroGridOverlay, zIndex: -1 }}
-        />
+        <div className="absolute inset-0 -z-10 svc-hero-bg" />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
             <div>
               <span
                 className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                 style={{
-                  background: "rgba(26,92,204,0.15)",
-                  border: "1px solid rgba(26,92,204,0.3)",
-                  color: "#00b4d8",
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  color: "#566678",
                   letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                 }}
               >
-                <Layers size={14} color="#00b4d8" /> Data Engineering Services
+                <Layers size={14} color="#2f6bff" /> Data Engineering Services
               </span>
               <h1
-                className="font-extrabold mb-5 text-white"
+                className="font-extrabold mb-5"
                 style={{
                   fontSize: "clamp(30px, 4vw, 54px)",
                   letterSpacing: "-1.5px",
                   lineHeight: 1.1,
+                  color: "#0b1e33",
                 }}
               >
                 Data Engineering Services that{" "}
-                <span style={{ color: "#3D7BFF" }}>Cut Cost and Ship AI.</span>
+                <span style={{ color: "#2f6bff" }}>Cut Cost and Ship AI.</span>
               </h1>
               <p
                 style={{
                   fontSize: 17,
                   lineHeight: 1.7,
-                  color: "rgba(255,255,255,0.72)",
+                  color: "#566678",
                   maxWidth: 580,
                 }}
               >
@@ -325,9 +310,9 @@ const DataEngineeringService = () => {
                   href="#contact"
                   className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
                   style={{
-                    background: "#017eeb",
+                    background: "#2f6bff",
                     color: "#fff",
-                    border: "1px solid #017eeb",
+                    border: "1px solid #2f6bff",
                     padding: "14px 24px",
                     fontSize: 15,
                   }}
@@ -336,11 +321,11 @@ const DataEngineeringService = () => {
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
                   style={{
                     background: "transparent",
-                    color: "#fff",
-                    border: "1px solid rgba(255,255,255,0.3)",
+                    color: "#2f6bff",
+                    border: "1px solid #2f6bff",
                     padding: "14px 24px",
                     fontSize: 15,
                   }}
@@ -350,7 +335,7 @@ const DataEngineeringService = () => {
               </div>
               <div
                 className="flex flex-wrap gap-x-5 gap-y-2.5"
-                style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}
+                style={{ color: "#6b7a8a", fontSize: 14 }}
               >
                 {[
                   "Fixed-price cost audit that pays for itself",
@@ -358,7 +343,7 @@ const DataEngineeringService = () => {
                   "Certified on Snowflake and Databricks",
                 ].map((t) => (
                   <span key={t} className="inline-flex items-center gap-2">
-                    <span style={{ color: "#00dbd3" }}>
+                    <span style={{ color: "#16a34a" }}>
                       <Check size={16} />
                     </span>
                     {t}
@@ -371,18 +356,12 @@ const DataEngineeringService = () => {
                 {HERO_STATS.map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-2xl transition-all"
-                    style={{
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      padding: "24px 20px",
-                      backdropFilter: "blur(10px)",
-                    }}
+                    className="rounded-2xl transition-all svc-stat-card"
                   >
                     <div
                       className="font-extrabold leading-none mb-2"
                       style={{
-                        color: s.accent ? "#34E5A0" : "#fff",
+                        color: s.accent ? "#2f6bff" : "#2f6bff",
                         fontSize: "clamp(28px, 3vw, 42px)",
                         letterSpacing: "-1px",
                       }}
@@ -391,7 +370,7 @@ const DataEngineeringService = () => {
                     </div>
                     <div
                       style={{
-                        color: "rgba(255,255,255,0.65)",
+                        color: "#6b7a8a",
                         fontSize: 13,
                         fontWeight: 500,
                         lineHeight: 1.4,
@@ -411,8 +390,8 @@ const DataEngineeringService = () => {
       <section
         aria-label="Trust indicators"
         style={{
-          background: "#fafafa",
-          borderBottom: "1px solid #e5e7eb",
+          background: "#ffffff",
+          borderBottom: "1px solid #e4eaf1",
           padding: "28px 0",
         }}
       >
@@ -439,7 +418,7 @@ const DataEngineeringService = () => {
       <section
         id="services"
         className="py-16 md:py-24"
-        style={{ background: "#f2f9fe" }}
+        style={{ background: "#f1f5fb" }}
       >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
@@ -543,19 +522,10 @@ const DataEngineeringService = () => {
 
       {/* MID CTA */}
       <section
-        className="relative overflow-hidden text-center"
-        style={{
-          padding: "56px 0",
-          background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)",
-        }}
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)",
-          }}
-        />
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div
           className="relative mx-auto px-5 md:px-10"
           style={{ maxWidth: 700, zIndex: 1 }}
@@ -671,11 +641,8 @@ const DataEngineeringService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section
-        className="relative overflow-hidden py-16 md:py-24"
-        style={darkSectionBg}
-      >
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
         <div
           className="relative mx-auto px-5 md:px-10"
           style={{ maxWidth: 1280, zIndex: 1 }}
@@ -688,17 +655,18 @@ const DataEngineeringService = () => {
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#00b4d8",
+                color: "#2f6bff",
               }}
             >
               Client Stories
             </span>
             <h2
-              className="font-extrabold text-white"
+              className="font-extrabold"
               style={{
                 fontSize: "clamp(28px, 3.2vw, 42px)",
                 letterSpacing: "-1px",
                 lineHeight: 1.15,
+                color: "#0b1e33",
               }}
             >
               What Data Leaders Say
@@ -708,7 +676,7 @@ const DataEngineeringService = () => {
               style={{
                 fontSize: 17,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.62)",
+                color: "#566678",
               }}
             >
               Real words from people who ran our work in production.
@@ -725,10 +693,10 @@ const DataEngineeringService = () => {
                 key={t.role}
                 className="rounded-2xl"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
                   padding: "32px 28px",
-                  backdropFilter: "blur(10px)",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                 }}
               >
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
@@ -739,7 +707,7 @@ const DataEngineeringService = () => {
                 <p
                   className="mb-6"
                   style={{
-                    color: "rgba(255,255,255,0.85)",
+                    color: "#0b1e33",
                     fontSize: 15,
                     lineHeight: 1.7,
                   }}
@@ -752,7 +720,7 @@ const DataEngineeringService = () => {
                     style={{
                       width: 44,
                       height: 44,
-                      background: "linear-gradient(135deg, #017eeb, #00dbd3)",
+                      background: "linear-gradient(135deg, #2f6bff, #1e4fd6)",
                       fontSize: 16,
                     }}
                   >
@@ -760,14 +728,12 @@ const DataEngineeringService = () => {
                   </div>
                   <div className="flex flex-col">
                     <span
-                      className="text-white font-semibold"
-                      style={{ fontSize: 14 }}
+                      className="font-semibold"
+                      style={{ fontSize: 14, color: "#0b1e33" }}
                     >
                       {t.name}
                     </span>
-                    <span
-                      style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}
-                    >
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>
                       {t.role}
                     </span>
                   </div>
@@ -828,7 +794,7 @@ const DataEngineeringService = () => {
       </section>
 
       {/* FREE TOOLS */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
@@ -906,9 +872,9 @@ const DataEngineeringService = () => {
               href="/data-engineering-tools/"
               className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
               style={{
-                background: "#017eeb",
+                background: "#2f6bff",
                 color: "#fff",
-                border: "1px solid #017eeb",
+                border: "1px solid #2f6bff",
                 padding: "14px 28px",
                 fontSize: 15,
               }}
@@ -986,7 +952,7 @@ const DataEngineeringService = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
@@ -1033,6 +999,7 @@ const DataEngineeringService = () => {
           description="One conversation is enough to know whether we are the right fit. Tell us what you are building or what is costing too much, and we will point you to the offer that fits."
           messageRequired={false}
           submitLabel="Talk to an Expert"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Free consultation with a senior data engineer",
             "Fixed-price cost audit that usually pays for itself",

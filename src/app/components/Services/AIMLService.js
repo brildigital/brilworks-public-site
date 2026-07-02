@@ -25,47 +25,18 @@ import {
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import Image from "next/image";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
-// ---------- Style tokens (inline so nothing shared is touched) ----------
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-
 // ---------- Data ----------
 const TRUST = [
-  { icon: <Shield size={18} color="#017eeb" />, label: "AWS Consulting Partner" },
-  { icon: <Cpu size={18} color="#017eeb" />, label: "50+ AI Models Deployed" },
-  { icon: <Users size={18} color="#017eeb" />, label: "100+ AI Engineers" },
-  { icon: <BadgeCheck size={18} color="#017eeb" />, label: "98% Client Satisfaction" },
+  { icon: <Shield size={18} color="#2f6bff" />, label: "AWS Consulting Partner" },
+  { icon: <Cpu size={18} color="#2f6bff" />, label: "50+ AI Models Deployed" },
+  { icon: <Users size={18} color="#2f6bff" />, label: "100+ AI Engineers" },
+  { icon: <BadgeCheck size={18} color="#2f6bff" />, label: "98% Client Satisfaction" },
 ];
 
 const HERO_STATS = [
@@ -80,7 +51,7 @@ const BENEFITS = [
     title: "Customized AI Solutions",
     tint: "#e8f0fd",
     body: "We collaborate closely with your team to understand unique challenges and build tailored AI/ML models engineered for your data and objectives.",
-    icon: <Shield size={32} color="#017eeb" />,
+    icon: <Shield size={32} color="#2f6bff" />,
   },
   {
     title: "Predictive Advantage",
@@ -139,18 +110,18 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Consulting Partner", icon: <Shield size={20} color="#017eeb" /> },
-  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#017eeb" /> },
-  { label: "GoodFirms Top AI Developers", icon: <Award size={20} color="#017eeb" /> },
-  { label: "ISO 27001 Certified", icon: <LayoutGrid size={20} color="#017eeb" /> },
-  { label: "Google Cloud AI Partner", icon: <BadgeCheck size={20} color="#017eeb" /> },
+  { label: "AWS Consulting Partner", icon: <Shield size={20} color="#2f6bff" /> },
+  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#2f6bff" /> },
+  { label: "GoodFirms Top AI Developers", icon: <Award size={20} color="#2f6bff" /> },
+  { label: "ISO 27001 Certified", icon: <LayoutGrid size={20} color="#2f6bff" /> },
+  { label: "Google Cloud AI Partner", icon: <BadgeCheck size={20} color="#2f6bff" /> },
 ];
 
 const INDUSTRIES = [
   {
     label: "Fintech",
     href: "/industry/fintech-software-development/",
-    icon: <CreditCard size={32} color="#017eeb" />,
+    icon: <CreditCard size={32} color="#2f6bff" />,
   },
   {
     label: "Healthcare",
@@ -183,7 +154,7 @@ const AI_STACK = [
   {
     title: "LLMs & Generative AI",
     tint: "#e8f0fd",
-    icon: <Sparkles size={20} color="#017eeb" />,
+    icon: <Sparkles size={20} color="#2f6bff" />,
     tools: ["OpenAI GPT-4o", "Claude 3.5", "Llama 3", "Mistral", "Gemini", "Mixtral"],
   },
   {
@@ -360,45 +331,43 @@ const AIMLService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px]">
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
+      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px] svc-hero-bg">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
-                <Sparkles size={14} color="#00b4d8" /> AI / ML Development Services
+              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+                <Sparkles size={14} color="#2f6bff" /> AI / ML Development Services
               </span>
-              <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(30px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                Ship Production-Ready AI — <span style={gradientTextStyle}>From Model to Measurable ROI</span>
+              <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(30px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
+                Ship Production-Ready AI. <span style={{ color: "#2f6bff" }}>From Model to Measurable ROI</span>
               </h1>
-              <p className="mb-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                We build, deploy, and scale AI/ML systems for founders and data teams. 50+ production models shipped across 20+ industries — pilot in 6 weeks, with measurable ROI from day one.
+              <p className="mb-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
+                We build, deploy, and scale AI/ML systems for founders and data teams. 50+ production models shipped across 20+ industries, pilot in 6 weeks, with measurable ROI from day one.
               </p>
-              <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", maxWidth: 580 }}>
+              <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "#6b7a8a", maxWidth: 580 }}>
                 Not sure{" "}
-                <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "underline", textUnderlineOffset: 4 }}>
+                <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "#0b1e33", textDecoration: "underline", textUnderlineOffset: 4 }}>
                   which AI platform fits your stack
                 </Link>
                 ? Compare the leading options before we scope your pilot.
               </p>
               <div className="flex flex-wrap gap-3 mt-8 mb-8">
                 <Link href="#contact"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                  style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "14px 24px", fontSize: 15 }}>
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "14px 24px", fontSize: 15 }}>
                   Book My Free AI Strategy Call <ArrowRight size={16} />
                 </Link>
                 <Link href="#services"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                  style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "14px 24px", fontSize: 15 }}>
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "14px 24px", fontSize: 15 }}>
                   See What We Build
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-x-5 gap-y-2.5" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+              <div className="flex flex-wrap gap-x-5 gap-y-2.5" style={{ color: "#6b7a8a", fontSize: 14 }}>
                 {["Free 30-min AI strategy call", "Pilot scope in 48 hours", "No commitment"].map((t) => (
-                  <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                    <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
+                  <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
+                    <span style={{ color: "#16a34a" }}><Check size={16} /></span>{t}
                   </span>
                 ))}
               </div>
@@ -406,10 +375,9 @@ const AIMLService = () => {
             <div>
               <div className="grid grid-cols-2 gap-4">
                 {HERO_STATS.map((s) => (
-                  <div key={s.label} className="rounded-2xl transition-all"
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "24px 20px", backdropFilter: "blur(10px)" }}>
-                    <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(28px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                    <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                  <div key={s.label} className="rounded-2xl transition-all svc-stat-card">
+                    <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(28px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
+                    <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -419,7 +387,7 @@ const AIMLService = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section aria-label="Trust indicators" style={{ background: "#ffffff", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
             {TRUST.map((t) => (
@@ -432,10 +400,10 @@ const AIMLService = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section id="services" className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>What We Build</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>What We Build</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our AI/ML Development Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end AI delivery — from identifying the right use case to deploying production models that drive measurable business outcomes.</p>
           </div>
@@ -460,7 +428,7 @@ const AIMLService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
+                        <span style={{ color: "#2f6bff", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -472,25 +440,24 @@ const AIMLService = () => {
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center" style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }} />
+      <section className="relative overflow-hidden text-center svc-mid-cta-bg" style={{ padding: "56px 0" }}>
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Turn AI Into Revenue?</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call with a senior ML engineer. We'll evaluate your data, recommend the right model approach, and map a 6-week pilot — no commitment.</p>
+          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call with a senior ML engineer. We&apos;ll evaluate your data, recommend the right model approach, and map a 6-week pilot, no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5 w-full sm:w-auto"
-            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5 w-full sm:w-auto"
+            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Start My AI Pilot
           </Link>
         </div>
       </section>
 
       {/* AI STACK */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Our AI Stack</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Our AI Stack</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>The Tools We've Actually Run in Production</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We pick the stack based on your compliance requirements, existing infrastructure, and budget — not on what we want to learn this quarter. Below is what we've shipped, not what we've read about.</p>
           </div>
@@ -520,7 +487,7 @@ const AIMLService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-6" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>How We Work</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>How We Work</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Five Steps From &ldquo;Interested&rdquo; to &ldquo;In Production&rdquo;</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280", maxWidth: 660, margin: "16px auto 0" }}>
               The most common place AI projects fail is scope. Not the model. Not the infrastructure. The scope. We front-load the hard questions so the build doesn&apos;t stall in week six.
@@ -534,19 +501,19 @@ const AIMLService = () => {
                   <div className="flex items-center justify-center rounded-full font-extrabold"
                     style={{
                       width: 52, height: 52, flexShrink: 0,
-                      background: "linear-gradient(135deg, #017eeb, #00dbd3)",
+                      background: "#2f6bff",
                       color: "#fff", fontSize: 14, letterSpacing: "-0.5px",
                     }}>
                     {step.num}
                   </div>
                   {i < HOW_WE_WORK.length - 1 && (
-                    <div style={{ width: 2, flex: 1, minHeight: 32, background: "linear-gradient(to bottom, #017eeb22, transparent)", marginTop: 6 }} />
+                    <div style={{ width: 2, flex: 1, minHeight: 32, background: "linear-gradient(to bottom, #2f6bff22, transparent)", marginTop: 6 }} />
                   )}
                 </div>
                 <div style={{ paddingBottom: i < HOW_WE_WORK.length - 1 ? 36 : 0, paddingTop: 10 }}>
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
                     <h3 className="font-bold" style={{ fontSize: 20, color: "#0d0f1a", margin: 0 }}>{step.title}</h3>
-                    {/* <span className="rounded-full px-3 py-0.5" style={{ fontSize: 12, fontWeight: 600, color: "#017eeb", background: "#e8f0fd", border: "1px solid #c7dcfb", whiteSpace: "nowrap" }}>{step.meta}</span> */}
+                    {/* <span className="rounded-full px-3 py-0.5" style={{ fontSize: 12, fontWeight: 600, color: "#2f6bff", background: "#e8f0fd", border: "1px solid #c7dcfb", whiteSpace: "nowrap" }}>{step.meta}</span> */}
                   </div>
                   <p style={{ fontSize: 15, lineHeight: 1.75, color: "#6b7280", margin: 0 }}>{step.body}</p>
                 </div>
@@ -560,7 +527,7 @@ const AIMLService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Why Brilworks</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Why Brilworks</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Built by AI Engineers Who&apos;ve Shipped 50+ Production Models</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don&apos;t chase demos. We partner with you to pick the right use case, build the right model, and ship AI that actually moves your metrics.</p>
           </div>
@@ -579,30 +546,30 @@ const AIMLService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00b4d8" }}>Client Stories</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What Founders &amp; Data Leaders Say About Us</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Real outcomes from real partners shipping AI across fintech, healthcare, retail, and logistics.</p>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Client Stories</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What Founders &amp; Data Leaders Say About Us</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Real outcomes from real partners shipping AI across fintech, healthcare, retail, and logistics.</p>
           </div>
           <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {TESTIMONIALS.map((t) => (
               <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
                   {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #017eeb, #00dbd3)", fontSize: 16 }}>
+                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #1e4fd6)", fontSize: 16 }}>
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -612,10 +579,10 @@ const AIMLService = () => {
       </section>
 
       {/* HONORS */}
-      <section className="py-16" style={{ background: "#f8f9ff" }}>
+      <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Recognized By</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Recognized By</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Trusted &amp; Awarded by Industry Leaders</h2>
           </div>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
@@ -632,7 +599,7 @@ const AIMLService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Industries We Serve with AI</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Industries We Serve with AI</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Deep Domain Expertise Across Verticals</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We&apos;ve deployed AI/ML systems in regulated, data-heavy, and fast-moving industries — bringing both model engineering and domain knowledge to every engagement.</p>
           </div>
@@ -650,10 +617,10 @@ const AIMLService = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Common Questions</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Common Questions</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything founders and data leaders typically ask before partnering with us on AI.</p>
           </div>
@@ -674,9 +641,10 @@ const AIMLService = () => {
       <div id="contact">
         <SolutionContactForm
           title="Ready to Build Your AI Solution?"
-          description="You're one conversation away from turning your data into a deployed AI product. Tell us what you're trying to solve — we'll show you how we'd model it."
+          description="You're one conversation away from turning your data into a deployed AI product. Tell us what you're trying to solve, we'll show you how we'd model it."
           messageRequired={false}
           submitLabel="Get My Free AI Strategy Call"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Free 30-minute AI strategy call with a senior ML engineer",
             "Custom pilot proposal & ROI estimate within 48 hours",
