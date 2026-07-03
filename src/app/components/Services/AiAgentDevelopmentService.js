@@ -1,8 +1,13 @@
+"use client";
+import { useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import ButtonV2 from "../Common/ButtonV2";
 import Heading from "../HTMLComponents/Heading";
 import ServicesFAQ from "./ServicesFAQ";
-import ServiceHeroSection from "./ServiceHeroSection";
+import { scrollEffect } from "../lib/commonFunction";
+import "../../styles/ServiceLightTheme.css";
 
 const PRIMARY_CTA =
   "/contact-us/?utm_source=site&utm_medium=service-page&utm_campaign=ai-agent-development&utm_content=primary-cta";
@@ -171,17 +176,94 @@ const SectionHeading = ({ text, eyebrow }) => (
 );
 
 const AiAgentDevelopmentService = () => {
+  useEffect(() => {
+    scrollEffect();
+    window.addEventListener("scroll", scrollEffect);
+    return () => {
+      window.removeEventListener("scroll", scrollEffect);
+    };
+  }, []);
+
   return (
     <>
-      <ServiceHeroSection
-        pageTitleText="AI Agent Development Services"
-        title="AI Agent Development Services"
-        description="We design, build, and deploy custom AI agents that do real work in production — not demos."
-        buttonText="Book a scoping call"
-        buttonUrl={PRIMARY_CTA}
-        imageSrc="/images/generative-ai.webp"
-        showGridData={false}
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                AI Agent Development Services
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                AI Agent{" "}
+                <span style={{ color: "#2f6bff" }}>Development Services</span>
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                We design, build, and deploy custom AI agents that do real
+                work in production — not demos.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <Link
+                  href={PRIMARY_CTA}
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background: "#2f6bff",
+                    color: "#fff",
+                    border: "1px solid #2f6bff",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Book a scoping call <ArrowRight size={16} strokeWidth={2} />
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="rounded-2xl overflow-hidden border border-[#e4eaf1] shadow-[0_4px_24px_rgba(11,30,51,0.08)]"
+                style={{ background: "#fff" }}
+              >
+                <Image
+                  className="object-cover w-full"
+                  src="/images/generative-ai.webp"
+                  alt="AI Agent Development Services"
+                  width={565}
+                  height={610}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white">
         <div className="container max-w-[1280px] main-section-padding mx-auto">

@@ -10,6 +10,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";
 import { blogSubCategories } from "../lib/constants";
+import "../../styles/ServiceLightTheme.css";
 
 const Blog = () => {
   const ITEMS_PER_PAGE = 10;
@@ -99,29 +100,42 @@ const Blog = () => {
   return (
     <>
       <div className="blog-listing-section">
-        <div className="banner-layer-dark h-full min-h-[600px] md:max-h-[700px] max-h-full">
-          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
-              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
-                We Write
-              </p>
-              <Heading
-                type="h1"
-                className="text-white"
-                text="Brilworks Blogs"
-              />
-              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                In the realm of software-defined landscapes, the Brilworks Blog
-                serves as your guide through the technological renaissance. Our
-                platform is dedicated to delivering comprehensive insights into
-                cutting-edge research, innovative thinking, and perspectives on
-                technological advancements in the field of software development.
-                We provide a profound context to assist tech leaders in making
-                informed and intelligent decisions.
-              </p>
-            </div>
+        <section
+          className="relative overflow-hidden svc-hero-bg"
+          style={{ padding: "120px 0 80px" }}
+        >
+          <div className="container max-w-[1280px] main-section-padding mx-auto">
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e4eaf1",
+                color: "#566678",
+                letterSpacing: "0.1em",
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+              }}
+            >
+              We Write
+            </span>
+            <Heading
+              type="h1"
+              className="text-[#0b1e33]"
+              text="Brilworks Blogs"
+            />
+            <p
+              className="lg:text-2xl md:text-xl text-lg !mt-5"
+              style={{ color: "#566678", maxWidth: 780 }}
+            >
+              In the realm of software-defined landscapes, the Brilworks Blog
+              serves as your guide through the technological renaissance. Our
+              platform is dedicated to delivering comprehensive insights into
+              cutting-edge research, innovative thinking, and perspectives on
+              technological advancements in the field of software development.
+              We provide a profound context to assist tech leaders in making
+              informed and intelligent decisions.
+            </p>
           </div>
-        </div>
+        </section>
       </div>
       <SubscribeNewsLetterForm />
       <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">

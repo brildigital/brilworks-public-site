@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import { Check, ArrowRight, Star, Zap, ShieldCheck, Smartphone, Layers, Award, UserCheck, CheckCircle, Clock, TrendingUp, MessageSquare, Building2, Heart, ShoppingCart, Globe, Truck } from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
 
 const SolutionContactForm = dynamic(() =>
@@ -29,32 +30,14 @@ const IconBadge = ({ color = "#017eeb" }) => <Award size={18} aria-hidden="true"
 // ---------- Style tokens ----------
 const heroBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
+    "radial-gradient(900px 420px at 78% -8%, rgba(47,107,255,0.12) 0%, transparent 60%), radial-gradient(700px 360px at 8% 6%, rgba(47,107,255,0.06) 0%, transparent 55%), #f7f9fc",
 };
 const darkSectionBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
+    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(47,107,255,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(47,107,255,0.04) 0%, transparent 60%), #f1f5fb",
 };
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
+const gradientTextStyle = { color: "#2f6bff" };
+const statValueStyle = { color: "#2f6bff" };
 
 // ---------- Data ----------
 const TRUST = [
@@ -442,37 +425,36 @@ const ApplicationDevelopmentService = () => {
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
         <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
+                  style={{ background: "#ffffff", border: "1px solid #e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                   <IconSparkle /> Application Development Services
                 </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
+                <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
                   Ship Custom Applications — <span style={gradientTextStyle}>From Concept to Production</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
+                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
                   We&apos;re a passionate team of engineers who turn ideas into shipped software. Web, mobile, enterprise and SaaS platforms — designed, built, and maintained end-to-end. 300+ apps delivered across 8+ platforms with 99.9% uptime.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                    style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "16px 32px", fontSize: 16 }}>
                     Get My Free App Consultation <IconArrowRight />
                   </Link>
                   <Link href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                    style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "16px 32px", fontSize: 16 }}>
                     See What We Build
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+                <div className="flex flex-wrap gap-[18px]" style={{ color: "#6b7a8a", fontSize: 14 }}>
                   {["Free 30-min consultation", "48-hour proposal", "NDA on request"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
+                      <span style={{ color: "#16a34a" }}><IconCheck /></span>{t}
                     </span>
                   ))}
                 </div>
@@ -480,10 +462,10 @@ const ApplicationDevelopmentService = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
+                    <div key={s.label} className="rounded-2xl transition-all svc-stat-card"
+                      style={{ padding: "28px 24px" }}>
                       <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                      <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -585,30 +567,30 @@ const ApplicationDevelopmentService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
+      {/* TESTIMONIALS */}
       <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00b4d8" }}>Our Clients Simply Love Our Work</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What Our Clients Say</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Not curated marketing quotes. Real words from real people who&apos;ve worked with us for years.</p>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Our Clients Simply Love Our Work</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What Our Clients Say</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Not curated marketing quotes. Real words from real people who&apos;ve worked with us for years.</p>
           </div>
           <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {TESTIMONIALS.map((t) => (
               <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
                   {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #017eeb, #00dbd3)", fontSize: 16 }}>
+                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #00b4d8)", fontSize: 16 }}>
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -690,6 +672,7 @@ const ApplicationDevelopmentService = () => {
             "Response guaranteed within 24 business hours",
             "100% code and IP ownership handed over at end",
           ]}
+          bgClassName="svc-mid-cta-bg"
         />
       </div>
     </>

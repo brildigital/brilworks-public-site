@@ -7,17 +7,17 @@ import ServicesSection from "../Common/ServicesSection";
 
 const AdaloFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -177,7 +177,7 @@ const AdaloTechnology = () => {
         description="We understand the need for a stable, cost-effective tech infrastructure. Our Adalo experts deliver end-to-end solutions to drive your business growth and innovation."
         keyValueData={adaloExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <AdaloFAQs />
     </>
   );

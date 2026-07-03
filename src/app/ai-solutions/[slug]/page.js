@@ -9,6 +9,7 @@ import {
 } from "@/app/components/lib/commonFunction";
 import { generateVideoSchema } from "@/app/components/lib/schemaCode";
 import VideoSchema from "@/app/components/Common/VideoSchema";
+import "@/app/styles/ServiceLightTheme.css";
 
 const AISeamlessIntegration = dynamic(
   () => import("@/app/components/AISolutions/AISeamlessIntegration")
@@ -159,13 +160,10 @@ export default async function Page({ params }) {
       {/* <AICaseStudies /> */}
       <WhatUserSays userSaysData={what_users_say} />
       <section
-        className="relative overflow-hidden text-center"
-        style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}
+        className="svc-mid-cta-bg relative overflow-hidden text-center"
+        style={{ padding: "56px 0" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }}
-        />
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
           <h3
             className="font-extrabold mb-3.5"
@@ -179,7 +177,7 @@ export default async function Page({ params }) {
           <a
             href="/contact-us/"
             className="mt-7 inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all "
-            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}
+            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}
           >
             {CTA?.[0]?.button_text || "Get Free Consultation"}
           </a>

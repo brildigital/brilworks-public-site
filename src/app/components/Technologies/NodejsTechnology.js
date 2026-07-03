@@ -22,10 +22,10 @@ const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const SolutionContactForm = dynamic(
-  () => import("../Solution/SolutionContactForm")
+  () => import("../Solution/SolutionContactForm"),
 );
 const HireDevelopersInThreeSteps = dynamic(
-  () => import("../HireTeam/HireDevelopersInThreeSteps")
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -170,7 +170,6 @@ const nodeJSService = {
   ],
 };
 
-
 const why100PlusCompaniesTrust = [
   {
     title: "No Time Zone Barriers",
@@ -258,7 +257,9 @@ const NodejsTechnology = () => {
                 <h3 className="text-colorBlack md:!text-xl !text-lg font-semibold !mb-3">
                   {title}
                 </h3>
-                <p className="md:text-base text-sm text-gray-500 flex-1">{description}</p>
+                <p className="md:text-base text-sm text-gray-500 flex-1">
+                  {description}
+                </p>
               </div>
             ))}
           </div>
@@ -270,7 +271,7 @@ const NodejsTechnology = () => {
         title="NodeJS Developers"
       />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <NodeJSFAQs />
     </>
   );

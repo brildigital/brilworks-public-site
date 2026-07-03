@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { formatSrcUrl } from "../components/lib/commonFunction";
+import "../styles/ServiceLightTheme.css";
 
 const TOPIC_RULES = [
   { key: "genai", label: "Generative AI", classKey: "t-ai", match: /\b(gen.?ai|generative|llm|gpt|rag)\b/i },
@@ -101,90 +102,76 @@ const UseCaseHub = ({ useCases = [] }) => {
       `}</style>
 
       {/* ============ HERO ============ */}
-      <section style={{ position: "relative", overflow: "hidden", background: "#0d0f1a", padding: "120px 0 80px" }}>
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 0,
-          background:
-            "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(26,92,204,0.22) 0%, transparent 70%), radial-gradient(ellipse 40% 55% at 20% 80%, rgba(0,180,216,0.10) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.06, zIndex: 0, pointerEvents: "none",
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-
+      <section className="svc-hero-bg" style={{ position: "relative", overflow: "hidden", padding: "120px 0 80px" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto" style={{ position: "relative", zIndex: 1 }}>
-          <nav style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", marginBottom: 20 }} aria-label="Breadcrumb">
-            <Link href="/" style={{ color: "rgba(255,255,255,0.75)" }}>Home</Link>
+          <nav style={{ fontSize: 13, color: "#6b7a8a", marginBottom: 20 }} aria-label="Breadcrumb">
+            <Link href="/" style={{ color: "#566678" }}>Home</Link>
             <span style={{ margin: "0 8px", opacity: 0.5 }}>›</span>
-            <span style={{ color: "rgba(255,255,255,0.9)" }}>Use Cases</span>
+            <span style={{ color: "#0b1e33" }}>Use Cases</span>
           </nav>
 
-          <div style={{ maxWidth: 780 }}>
-            <span style={{
-              display: "inline-flex", alignItems: "center", gap: 8,
-              background: "rgba(26,92,204,0.18)", border: "1px solid rgba(26,92,204,0.35)",
-              borderRadius: 9999, padding: "7px 16px", color: "#00b4d8",
-              fontSize: 12, fontWeight: 600, letterSpacing: "0.12em",
-              textTransform: "uppercase", marginBottom: 24,
-            }}>
-              Real Engagements · Shipped
-            </span>
-            <h1 className="!mb-5" style={{
-              fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 800,
-              lineHeight: 1.08, letterSpacing: "-1.5px", color: "#fff",
-            }}>
-              Use Cases from Real{" "}
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
               <span style={{
-                background: "linear-gradient(90deg, #00b4d8 0%, #00dbd3 100%)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+                display: "inline-flex", alignItems: "center", gap: 8,
+                background: "#ffffff", border: "1px solid #e4eaf1",
+                borderRadius: 9999, padding: "7px 16px", color: "#566678",
+                fontSize: 12, fontWeight: 600, letterSpacing: "0.12em",
+                textTransform: "uppercase", marginBottom: 24,
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
               }}>
-                Brilworks Engagements
+                Real Engagements · Shipped
               </span>
-            </h1>
-            <p className="!mb-8" style={{
-              fontSize: 18, lineHeight: 1.65, color: "rgba(255,255,255,0.70)",
-              maxWidth: 640,
-            }}>
-              Real engagements shipped for healthcare, fintech, media, manufacturing, and retail teams —
-              with the architecture, tradeoffs, and outcomes called out.
-            </p>
+              <h1 className="!mb-5" style={{
+                fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 800,
+                lineHeight: 1.08, letterSpacing: "-1.5px", color: "#0b1e33",
+              }}>
+                Use Cases from Real{" "}
+                <span style={{ color: "#2f6bff" }}>
+                  Brilworks Engagements
+                </span>
+              </h1>
+              <p className="!mb-8" style={{
+                fontSize: 18, lineHeight: 1.65, color: "#566678",
+                maxWidth: 640,
+              }}>
+                Real engagements shipped for healthcare, fintech, media, manufacturing, and retail teams —
+                with the architecture, tradeoffs, and outcomes called out.
+              </p>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {["Healthcare", "Fintech", "Media & Entertainment", "Manufacturing", "Retail", "IoT"].map((t) => (
-                <span key={t} style={{
-                  display: "inline-flex", alignItems: "center",
-                  background: "rgba(255,255,255,0.06)",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  borderRadius: 9999, padding: "6px 14px",
-                  fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.85)",
-                }}>{t}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ TRUST BAR ============ */}
-      <section style={{ background: "#fff", borderBottom: "1px solid #e5e7eb", padding: "36px 0" }}>
-        <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
-          <div className="grid md:grid-cols-4 grid-cols-2 gap-6 md:gap-8 text-center">
-            {[
-              { num: `${enriched.length}+`, lbl: "Use Cases" },
-              { num: "100+", lbl: "Engagements" },
-              { num: "5+", lbl: "Industries" },
-              { num: "4.8★", lbl: "Client Rating" },
-            ].map((s) => (
-              <div key={s.lbl}>
-                <div style={{ fontSize: "clamp(28px, 3vw, 36px)", fontWeight: 800, letterSpacing: "-0.8px", lineHeight: 1 }}>
-                  <span style={{
-                    background: "linear-gradient(90deg, #017eeb, #00dbd3)",
-                    WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-                  }}>{s.num}</span>
-                </div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: "#6b7280", marginTop: 6, textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.lbl}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {["Healthcare", "Fintech", "Media & Entertainment", "Manufacturing", "Retail", "IoT"].map((t) => (
+                  <span key={t} style={{
+                    display: "inline-flex", alignItems: "center",
+                    background: "#ffffff",
+                    border: "1px solid #e4eaf1",
+                    borderRadius: 9999, padding: "6px 14px",
+                    fontSize: 12, fontWeight: 600, color: "#566678",
+                  }}>{t}</span>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Stats grid — right side */}
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { num: `${enriched.length}+`, lbl: "Use Cases" },
+                  { num: "100+", lbl: "Engagements" },
+                  { num: "5+", lbl: "Industries" },
+                  { num: "4.8★", lbl: "Client Rating" },
+                ].map((s) => (
+                  <div key={s.lbl} className="rounded-2xl transition-all svc-stat-card" style={{ padding: "28px 24px" }}>
+                    <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>
+                      {s.num}
+                    </div>
+                    <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>
+                      {s.lbl}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -320,26 +307,20 @@ const UseCaseHub = ({ useCases = [] }) => {
       </section>
 
       {/* ============ FINAL CTA ============ */}
-      <section style={{
-        background: "linear-gradient(135deg, #017eeb 0%, #1a5ccc 50%, #0d0f1a 100%)",
-        padding: "80px 0", position: "relative", overflow: "hidden",
-      }}>
-        <div style={{
-          position: "absolute", inset: 0,
-          background: "radial-gradient(circle at 80% 20%, rgba(0,219,211,0.25) 0%, transparent 50%)",
-        }} />
+      <section className="svc-mid-cta-bg" style={{ padding: "80px 0", position: "relative", overflow: "hidden" }}>
+        <div className="svc-mid-cta-glow" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center" style={{ maxWidth: 680, margin: "0 auto" }}>
             <h2 className="!mb-3" style={{
               color: "#fff", fontSize: "clamp(28px, 3vw, 40px)",
               fontWeight: 800, letterSpacing: "-0.8px", lineHeight: 1.2,
             }}>Got a use case of your own?</h2>
-            <p className="!mb-7" style={{ color: "rgba(255,255,255,0.8)", fontSize: 16, lineHeight: 1.6 }}>
+            <p className="!mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.6 }}>
               Tell us the problem. We'll share what we'd ship, in plain language, in a free 30-minute call.
             </p>
             <Link href="/contact-us/" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
-              background: "#fff", color: "#017eeb",
+              background: "#fff", color: "#2f6bff",
               border: "1px solid #fff", borderRadius: 6,
               padding: "16px 32px", fontWeight: 700, fontSize: 16,
               textDecoration: "none",

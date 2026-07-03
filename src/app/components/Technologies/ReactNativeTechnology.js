@@ -7,30 +7,30 @@ import ServicesSection from "../Common/ServicesSection";
 
 const ReactNativeFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
-const MultipleCardInGrid = dynamic(() =>
-  import("../Common/MultipleCardInGrid")
+const MultipleCardInGrid = dynamic(
+  () => import("../Common/MultipleCardInGrid"),
 );
-const HireTeamDigitalTransformation = dynamic(() =>
-  import("../HireTeam/HireTeamDigitalTransformation")
+const HireTeamDigitalTransformation = dynamic(
+  () => import("../HireTeam/HireTeamDigitalTransformation"),
 );
 const BrilworksAdvantage = dynamic(() => import("./BrilworksAdvantage"));
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
-const MultipleCardWithIconBG = dynamic(() =>
-  import("../Common/MultipleCardWithIconBG")
+const MultipleCardWithIconBG = dynamic(
+  () => import("../Common/MultipleCardWithIconBG"),
 );
 const CTASection = dynamic(() => import("../Common/CTASection"));
-const ReactNativeHiringTable = dynamic(() =>
-  import("./ReactNativeHiringTable")
+const ReactNativeHiringTable = dynamic(
+  () => import("./ReactNativeHiringTable"),
 );
 
 const why100PlusCompaniesTrustMobile = [
@@ -210,7 +210,7 @@ const ReactNativeTechnology = () => {
       />
       <ReactNativeHiringTable />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <ReactNativeFAQs />
     </>
   );

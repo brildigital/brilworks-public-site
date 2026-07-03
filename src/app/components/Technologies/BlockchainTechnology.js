@@ -251,7 +251,7 @@ const BlockchainTechnology = () => {
         title="Blockchain Developers"
       />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <BlockChainFAQs />
     </>
   );

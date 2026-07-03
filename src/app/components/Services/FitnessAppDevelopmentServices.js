@@ -2,58 +2,79 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
-import { Check, X, ArrowRight, Star, Heart, ShieldCheck, TrendingUp, Watch, UserCheck, Activity, Smartphone, Layers, MessageSquare, Award, LayoutDashboard, Building2, Users, Zap } from "lucide-react";
+import {
+  Check,
+  X,
+  ArrowRight,
+  Star,
+  Heart,
+  ShieldCheck,
+  TrendingUp,
+  Watch,
+  UserCheck,
+  Activity,
+  Smartphone,
+  Layers,
+  MessageSquare,
+  Award,
+  LayoutDashboard,
+  Building2,
+  Users,
+  Zap,
+} from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
 
 // ---------- Inline icon primitives ----------
-const IconCheck = ({ size = 16, className = "" }) => <Check size={size} className={className} strokeWidth={2.2} aria-hidden="true" />;
+const IconCheck = ({ size = 16, className = "" }) => (
+  <Check
+    size={size}
+    className={className}
+    strokeWidth={2.2}
+    aria-hidden="true"
+  />
+);
 
-const IconArrowRight = ({ size = 16 }) => <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />;
+const IconArrowRight = ({ size = 16 }) => (
+  <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />
+);
 
-const IconStarFilled = ({ size = 16 }) => <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />;
+const IconStarFilled = ({ size = 16 }) => (
+  <Star size={size} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+);
 
 const IconHeartBadge = () => <Heart size={14} aria-hidden="true" />;
 
-const IconShield = ({ color = "#017eeb" }) => <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />;
+const IconShield = ({ color = "#017eeb" }) => (
+  <ShieldCheck size={18} color={color} strokeWidth={1.8} aria-hidden="true" />
+);
 
-const IconChart = ({ color = "#017eeb" }) => <TrendingUp size={18} aria-hidden="true" color={color}/>;
+const IconChart = ({ color = "#017eeb" }) => (
+  <TrendingUp size={18} aria-hidden="true" color={color} />
+);
 
-const IconWatch = ({ color = "#017eeb" }) => <Watch size={18} aria-hidden="true" color={color}/>;
+const IconWatch = ({ color = "#017eeb" }) => (
+  <Watch size={18} aria-hidden="true" color={color} />
+);
 
-const IconStar = ({ color = "#017eeb" }) => <Star size={18} aria-hidden="true" color={color}/>;
+const IconStar = ({ color = "#017eeb" }) => (
+  <Star size={18} aria-hidden="true" color={color} />
+);
 
 // ---------- Style tokens ----------
 const heroBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
+    "radial-gradient(900px 420px at 78% -8%, rgba(47,107,255,0.12) 0%, transparent 60%), radial-gradient(700px 360px at 8% 6%, rgba(47,107,255,0.06) 0%, transparent 55%), #f7f9fc",
 };
 const darkSectionBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
+    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(47,107,255,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(47,107,255,0.04) 0%, transparent 60%), #f1f5fb",
 };
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
+const gradientTextStyle = { color: "#2f6bff" };
+const statValueStyle = { color: "#2f6bff" };
 
 // ---------- Data ----------
 const TRUST = [
@@ -75,25 +96,43 @@ const BENEFITS = [
     title: "Fitness-Specialist Team",
     tint: "#e8f0fd",
     body: "Engineers and designers with deep experience across workout, nutrition, yoga, and wearable app domains.",
-    icon: <UserCheck size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <UserCheck
+        size={32}
+        color="#017eeb"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     title: "Retention-First Architecture",
     tint: "#ede9fe",
     body: "We design for D7, D30, and D90 retention from day one — gamification, streaks, and push at the core.",
-    icon: <TrendingUp size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <TrendingUp
+        size={32}
+        color="#4f46e5"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     title: "Wearable & Health Integrations",
     tint: "#d1fae5",
     body: "Apple Watch, Fitbit, Garmin, Samsung, Whoop — plus Apple Health and Google Fit. We've shipped them all.",
-    icon: <Watch size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Watch size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     title: "Cross-Platform Native Feel",
     tint: "#ccfbf1",
     body: "iOS and Android delivered from a single codebase — React Native and Flutter — without sacrificing native UX.",
-    icon: <Layers size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Layers size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     title: "HIPAA-Ready & Secure",
@@ -105,7 +144,14 @@ const BENEFITS = [
     title: "Post-Launch Support",
     tint: "#dbeafe",
     body: "OS updates, bug fixes, new features, performance tuning — we stay long after launch day.",
-    icon: <MessageSquare size={32} color="#1e40af" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <MessageSquare
+        size={32}
+        color="#1e40af"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
 ];
 
@@ -134,43 +180,100 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Advanced Tier Partner", icon: <ShieldCheck size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "Clutch Global Award 2025", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "GoodFirms Top Companies 2025-26", icon: <Award size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "SelectedFirms Top 10 Agency 2026", icon: <LayoutDashboard size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
-  { label: "Adalo Certified Expert", icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" /> },
+  {
+    label: "AWS Advanced Tier Partner",
+    icon: (
+      <ShieldCheck
+        size={20}
+        color="#017eeb"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
+  },
+  {
+    label: "Clutch Global Award 2025",
+    icon: (
+      <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
+  {
+    label: "GoodFirms Top Companies 2025-26",
+    icon: (
+      <Award size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
+  {
+    label: "SelectedFirms Top 10 Agency 2026",
+    icon: (
+      <LayoutDashboard
+        size={20}
+        color="#017eeb"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
+  },
+  {
+    label: "Adalo Certified Expert",
+    icon: (
+      <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />
+    ),
+  },
 ];
 
 const INDUSTRIES = [
   {
     label: "Health & Wellness",
     href: "/industry/healthcare-software-development/",
-    icon: <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Heart size={32} color="#ef4444" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     label: "Gyms & Studios",
     href: "#services",
-    icon: <Activity size={32} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Activity
+        size={32}
+        color="#017eeb"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     label: "Corporate Wellness",
     href: "#services",
-    icon: <Building2 size={32} color="#4f46e5" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Building2
+        size={32}
+        color="#4f46e5"
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
+    ),
   },
   {
     label: "Nutrition & Diet",
     href: "#services",
-    icon: <Zap size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Zap size={32} color="#10b981" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     label: "Sports & Athletics",
     href: "#services",
-    icon: <Users size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Users size={32} color="#0d9488" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
   {
     label: "Mental Health & Mindfulness",
     href: "#services",
-    icon: <Heart size={32} color="#8b5cf6" strokeWidth={1.8} aria-hidden="true" />,
+    icon: (
+      <Heart size={32} color="#8b5cf6" strokeWidth={1.8} aria-hidden="true" />
+    ),
   },
 ];
 
@@ -207,11 +310,28 @@ const FAQ = [
 
 // ---------- Service Mockups ----------
 const MockBar = ({ label }) => (
-  <div className="flex items-center gap-1.5 px-3.5 py-2.5" style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}>
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#ef4444" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#facc15" }} />
-    <span className="inline-block w-2 h-2 rounded-full" style={{ background: "#10b981" }} />
-    <em className="not-italic ml-3 text-[11px] font-semibold" style={{ color: "#94a3b8", letterSpacing: "0.02em" }}>{label}</em>
+  <div
+    className="flex items-center gap-1.5 px-3.5 py-2.5"
+    style={{ background: "#f8fafc", borderBottom: "1px solid #eef2f7" }}
+  >
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#ef4444" }}
+    />
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#facc15" }}
+    />
+    <span
+      className="inline-block w-2 h-2 rounded-full"
+      style={{ background: "#10b981" }}
+    />
+    <em
+      className="not-italic ml-3 text-[11px] font-semibold"
+      style={{ color: "#94a3b8", letterSpacing: "0.02em" }}
+    >
+      {label}
+    </em>
   </div>
 );
 
@@ -230,30 +350,112 @@ const MockupPhone = ({
     s4: "linear-gradient(135deg, #8b5cf6, #ec4899)",
   };
   return (
-    <div className="flex items-center justify-center gap-[18px] h-full" style={{ background: bg }}>
-      <div className="relative p-2" style={{ width: 110, height: 200, background: "#0d0f1a", borderRadius: 18, boxShadow: `0 12px 40px ${shadow}` }}>
-        <div className="absolute z-10" style={{ top: 4, left: "50%", transform: "translateX(-50%)", width: 36, height: 4, background: "#0d0f1a", borderRadius: "0 0 6px 6px" }} />
-        <div className="h-full rounded-xl overflow-hidden px-2 py-2.5" style={{ background: screenBg }}>
-          <div style={{ height: 6, width: "50%", background: accent, borderRadius: 2, marginBottom: 8 }} />
+    <div
+      className="flex items-center justify-center gap-[18px] h-full"
+      style={{ background: bg }}
+    >
+      <div
+        className="relative p-2"
+        style={{
+          width: 110,
+          height: 200,
+          background: "#0d0f1a",
+          borderRadius: 18,
+          boxShadow: `0 12px 40px ${shadow}`,
+        }}
+      >
+        <div
+          className="absolute z-10"
+          style={{
+            top: 4,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 36,
+            height: 4,
+            background: "#0d0f1a",
+            borderRadius: "0 0 6px 6px",
+          }}
+        />
+        <div
+          className="h-full rounded-xl overflow-hidden px-2 py-2.5"
+          style={{ background: screenBg }}
+        >
+          <div
+            style={{
+              height: 6,
+              width: "50%",
+              background: accent,
+              borderRadius: 2,
+              marginBottom: 8,
+            }}
+          />
           {[
             { w1: "80%", w2: "55%", both: true },
             { w1: "70%", w2: "45%", both: true },
             { w1: "75%", w2: "60%", both: true },
           ].map((c, i) => (
-            <div key={i} className="bg-white rounded-md p-1.5 mb-1.5" style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
-              <div style={{ height: 3, background: "#475569", borderRadius: 1.5, marginBottom: 3, width: "60%" }} />
-              <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, marginBottom: 3, width: c.w1 }} />
-              {c.both && <div style={{ height: 3, background: "#cbd5e1", borderRadius: 1.5, width: c.w2 }} />}
+            <div
+              key={i}
+              className="bg-white rounded-md p-1.5 mb-1.5"
+              style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}
+            >
+              <div
+                style={{
+                  height: 3,
+                  background: "#475569",
+                  borderRadius: 1.5,
+                  marginBottom: 3,
+                  width: "60%",
+                }}
+              />
+              <div
+                style={{
+                  height: 3,
+                  background: "#cbd5e1",
+                  borderRadius: 1.5,
+                  marginBottom: 3,
+                  width: c.w1,
+                }}
+              />
+              {c.both && (
+                <div
+                  style={{
+                    height: 3,
+                    background: "#cbd5e1",
+                    borderRadius: 1.5,
+                    width: c.w2,
+                  }}
+                />
+              )}
             </div>
           ))}
-          <div className="flex items-center justify-center mt-1.5" style={{ background: accent, height: 18, borderRadius: 4 }}>
-            <span style={{ background: "white", height: 4, width: "40%", borderRadius: 1.5 }} />
+          <div
+            className="flex items-center justify-center mt-1.5"
+            style={{ background: accent, height: 18, borderRadius: 4 }}
+          >
+            <span
+              style={{
+                background: "white",
+                height: 4,
+                width: "40%",
+                borderRadius: 1.5,
+              }}
+            />
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-2 max-[600px]:hidden">
         {swatchOrder.map((s, i) => (
-          <div key={i} style={{ width: 38, height: 38, borderRadius: 10, background: swatchMap[s], boxShadow: `0 4px 12px ${shadow}` }} />
+          <div
+            key={i}
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 10,
+              background: swatchMap[s],
+              boxShadow: `0 4px 12px ${shadow}`,
+            }}
+          />
         ))}
       </div>
     </div>
@@ -262,25 +464,73 @@ const MockupPhone = ({
 
 // Stats dashboard mockup (fitness tracking style)
 const MockupStatsDashboard = ({ label, stats, rows, accent = "#10b981" }) => (
-  <div className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white" style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}>
+  <div
+    className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-white"
+    style={{ boxShadow: "0 8px 24px rgba(13,15,26,0.08)" }}
+  >
     <MockBar label={label} />
     <div className="flex-1 p-4">
       <div className="grid grid-cols-3 gap-2.5 mb-3">
         {stats.map((s, i) => (
-          <div key={i} className="rounded-md py-2.5 px-2 text-center" style={{ background: s.bg, border: `1px solid ${s.border}` }}>
-            <div className="text-[18px] font-extrabold leading-none" style={{ color: s.color }}>{s.n}</div>
-            <div className="text-[8px] font-semibold mt-1 uppercase tracking-wider" style={{ color: "#64748b" }}>{s.lb}</div>
+          <div
+            key={i}
+            className="rounded-md py-2.5 px-2 text-center"
+            style={{ background: s.bg, border: `1px solid ${s.border}` }}
+          >
+            <div
+              className="text-[18px] font-extrabold leading-none"
+              style={{ color: s.color }}
+            >
+              {s.n}
+            </div>
+            <div
+              className="text-[8px] font-semibold mt-1 uppercase tracking-wider"
+              style={{ color: "#64748b" }}
+            >
+              {s.lb}
+            </div>
           </div>
         ))}
       </div>
       <div>
         {rows.map((row, i) => (
-          <div key={i} className="flex items-center gap-2 py-1.5" style={{ borderBottom: i === rows.length - 1 ? "none" : "1px solid #f1f5f9" }}>
-            <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: row.fail ? "#ef4444" : accent }}>
-              {row.fail ? <X size={10} color="white" strokeWidth={3} /> : <Check size={10} color="white" strokeWidth={3} />}
+          <div
+            key={i}
+            className="flex items-center gap-2 py-1.5"
+            style={{
+              borderBottom:
+                i === rows.length - 1 ? "none" : "1px solid #f1f5f9",
+            }}
+          >
+            <div
+              className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+              style={{ background: row.fail ? "#ef4444" : accent }}
+            >
+              {row.fail ? (
+                <X size={10} color="white" strokeWidth={3} />
+              ) : (
+                <Check size={10} color="white" strokeWidth={3} />
+              )}
             </div>
-            <b style={{ display: "block", height: 5, width: row.w, background: "#475569", borderRadius: 2 }} />
-            <span style={{ display: "block", height: 4, width: "30%", background: "#cbd5e1", borderRadius: 1.5, marginLeft: "auto" }} />
+            <b
+              style={{
+                display: "block",
+                height: 5,
+                width: row.w,
+                background: "#475569",
+                borderRadius: 2,
+              }}
+            />
+            <span
+              style={{
+                display: "block",
+                height: 4,
+                width: "30%",
+                background: "#cbd5e1",
+                borderRadius: 1.5,
+                marginLeft: "auto",
+              }}
+            />
           </div>
         ))}
       </div>
@@ -291,8 +541,7 @@ const MockupStatsDashboard = ({ label, stats, rows, accent = "#10b981" }) => (
 const SERVICES = [
   {
     title: "Workout Training Apps",
-    body:
-      "Comprehensive workout planning and tracking applications with exercise libraries, video demonstrations, customizable routines, progress tracking, and personalized training plans tailored to individual fitness goals.",
+    body: "Comprehensive workout planning and tracking applications with exercise libraries, video demonstrations, customizable routines, progress tracking, and personalized training plans tailored to individual fitness goals.",
     features: [
       "Exercise library with HD video demos",
       "AI-powered personalized training plans",
@@ -305,8 +554,7 @@ const SERVICES = [
   },
   {
     title: "Nutrition & Diet Apps",
-    body:
-      "Complete nutrition tracking solutions featuring calorie counters, meal planning, recipe databases, macro tracking, barcode scanning, and personalized dietary recommendations based on user goals.",
+    body: "Complete nutrition tracking solutions featuring calorie counters, meal planning, recipe databases, macro tracking, barcode scanning, and personalized dietary recommendations based on user goals.",
     features: [
       "Barcode & photo food recognition",
       "Macro, hydration & micronutrient tracking",
@@ -316,11 +564,35 @@ const SERVICES = [
       <MockupStatsDashboard
         label="Daily Nutrition · Today"
         stats={[
-          { n: "1,842", lb: "Cal In", bg: "#f0fdf4", border: "#bbf7d0", color: "#047857" },
-          { n: "128g", lb: "Carbs", bg: "#fef3c7", border: "#fde68a", color: "#a16207" },
-          { n: "94g", lb: "Protein", bg: "#f0fdf4", border: "#bbf7d0", color: "#047857" },
+          {
+            n: "1,842",
+            lb: "Cal In",
+            bg: "#f0fdf4",
+            border: "#bbf7d0",
+            color: "#047857",
+          },
+          {
+            n: "128g",
+            lb: "Carbs",
+            bg: "#fef3c7",
+            border: "#fde68a",
+            color: "#a16207",
+          },
+          {
+            n: "94g",
+            lb: "Protein",
+            bg: "#f0fdf4",
+            border: "#bbf7d0",
+            color: "#047857",
+          },
         ]}
-        rows={[{ w: "70%" }, { w: "60%" }, { w: "80%" }, { w: "65%" }, { w: "75%" }]}
+        rows={[
+          { w: "70%" },
+          { w: "60%" },
+          { w: "80%" },
+          { w: "65%" },
+          { w: "75%" },
+        ]}
         accent="#10b981"
       />
     ),
@@ -330,8 +602,7 @@ const SERVICES = [
   },
   {
     title: "Yoga & Meditation Apps",
-    body:
-      "Mindfulness and wellness platforms offering guided meditation sessions, yoga routines, breathing exercises, sleep stories, stress management tools, and progress tracking for mental health.",
+    body: "Mindfulness and wellness platforms offering guided meditation sessions, yoga routines, breathing exercises, sleep stories, stress management tools, and progress tracking for mental health.",
     features: [
       "Audio-led guided sessions & sleep stories",
       "Breathing exercises & HRV tracking",
@@ -352,8 +623,7 @@ const SERVICES = [
   },
   {
     title: "Running & Cycling Apps",
-    body:
-      "GPS-enabled tracking apps for runners and cyclists with route mapping, distance tracking, pace monitoring, elevation tracking, social challenges, and integration with wearable devices.",
+    body: "GPS-enabled tracking apps for runners and cyclists with route mapping, distance tracking, pace monitoring, elevation tracking, social challenges, and integration with wearable devices.",
     features: [
       "GPS route mapping & elevation",
       "Apple Watch, Fitbit, Garmin sync",
@@ -363,11 +633,35 @@ const SERVICES = [
       <MockupStatsDashboard
         label="Run · 10.4 km · 52:18"
         stats={[
-          { n: "10.4", lb: "KM", bg: "#f0fdf4", border: "#bbf7d0", color: "#047857" },
-          { n: "5:02", lb: "Pace", bg: "#cffafe", border: "#a5f3fc", color: "#0e7490" },
-          { n: "148", lb: "Avg BPM", bg: "#fef3c7", border: "#fde68a", color: "#a16207" },
+          {
+            n: "10.4",
+            lb: "KM",
+            bg: "#f0fdf4",
+            border: "#bbf7d0",
+            color: "#047857",
+          },
+          {
+            n: "5:02",
+            lb: "Pace",
+            bg: "#cffafe",
+            border: "#a5f3fc",
+            color: "#0e7490",
+          },
+          {
+            n: "148",
+            lb: "Avg BPM",
+            bg: "#fef3c7",
+            border: "#fde68a",
+            color: "#a16207",
+          },
         ]}
-        rows={[{ w: "70%" }, { w: "75%" }, { w: "85%" }, { w: "65%" }, { w: "70%" }]}
+        rows={[
+          { w: "70%" },
+          { w: "75%" },
+          { w: "85%" },
+          { w: "65%" },
+          { w: "70%" },
+        ]}
         accent="#06b6d4"
       />
     ),
@@ -377,8 +671,7 @@ const SERVICES = [
   },
   {
     title: "Personal Training Apps",
-    body:
-      "Connect trainers with clients through virtual training platforms featuring live sessions, on-demand workouts, progress monitoring, communication tools, payment processing, and scheduling systems.",
+    body: "Connect trainers with clients through virtual training platforms featuring live sessions, on-demand workouts, progress monitoring, communication tools, payment processing, and scheduling systems.",
     features: [
       "Live & on-demand video sessions",
       "In-app payments & subscriptions",
@@ -399,8 +692,7 @@ const SERVICES = [
   },
   {
     title: "Gym Management Apps",
-    body:
-      "All-in-one solutions for fitness centers including member management, class scheduling, attendance tracking, billing and payments, staff management, and equipment maintenance tracking.",
+    body: "All-in-one solutions for fitness centers including member management, class scheduling, attendance tracking, billing and payments, staff management, and equipment maintenance tracking.",
     features: [
       "Member check-in & attendance tracking",
       "Automated billing & renewals",
@@ -410,11 +702,35 @@ const SERVICES = [
       <MockupStatsDashboard
         label="Gym Admin · Members & Classes"
         stats={[
-          { n: "1,284", lb: "Members", bg: "#dbeafe", border: "#bfdbfe", color: "#1e40af" },
-          { n: "42", lb: "Classes Today", bg: "#f0fdf4", border: "#bbf7d0", color: "#047857" },
-          { n: "18", lb: "Renewals", bg: "#fef3c7", border: "#fde68a", color: "#a16207" },
+          {
+            n: "1,284",
+            lb: "Members",
+            bg: "#dbeafe",
+            border: "#bfdbfe",
+            color: "#1e40af",
+          },
+          {
+            n: "42",
+            lb: "Classes Today",
+            bg: "#f0fdf4",
+            border: "#bbf7d0",
+            color: "#047857",
+          },
+          {
+            n: "18",
+            lb: "Renewals",
+            bg: "#fef3c7",
+            border: "#fde68a",
+            color: "#a16207",
+          },
         ]}
-        rows={[{ w: "70%" }, { w: "70%" }, { w: "85%" }, { w: "55%", fail: true }, { w: "75%" }]}
+        rows={[
+          { w: "70%" },
+          { w: "70%" },
+          { w: "85%" },
+          { w: "55%", fail: true },
+          { w: "75%" },
+        ]}
         accent="#017eeb"
       />
     ),
@@ -429,39 +745,102 @@ const FitnessAppDevelopmentServices = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden" style={{ padding: "120px 0 80px" }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ padding: "120px 0 80px" }}
+      >
         <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="grid gap-10 lg:gap-[60px] items-center" style={{ gridTemplateColumns: "1fr" }}>
+          <div
+            className="grid gap-10 lg:gap-[60px] items-center"
+            style={{ gridTemplateColumns: "1fr" }}
+          >
             <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
               <div>
-                <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                  style={{ background: "rgba(26,92,204,0.15)", border: "1px solid rgba(26,92,204,0.3)", color: "#00b4d8", letterSpacing: "0.1em" }}>
+                <span
+                  className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
+                  style={{
+                    background: "#ffffff",
+                    border: "1px solid #e4eaf1",
+                    color: "#566678",
+                    letterSpacing: "0.1em",
+                    boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                  }}
+                >
                   <IconHeartBadge /> Fitness App Development Services
                 </span>
-                <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(34px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                  Build Fitness Apps That <span style={gradientTextStyle}>Keep Users Coming Back</span>
+                <h1
+                  className="font-extrabold mb-5"
+                  style={{
+                    fontSize: "clamp(34px, 4vw, 54px)",
+                    letterSpacing: "-1.5px",
+                    lineHeight: 1.1,
+                    color: "#0b1e33",
+                  }}
+                >
+                  Build Fitness Apps That{" "}
+                  <span style={gradientTextStyle}>Keep Users Coming Back</span>
                 </h1>
-                <p className="mb-8" style={{ fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
-                  We partner with fitness founders, gyms, and wellness brands to engineer apps that actually retain users. 30+ fitness apps shipped — Apple Health, wearable integrations, and HIPAA-ready infrastructure, from MVP in 12-20 weeks.
+                <p
+                  className="mb-8"
+                  style={{
+                    fontSize: 18,
+                    lineHeight: 1.7,
+                    color: "#566678",
+                    maxWidth: 580,
+                  }}
+                >
+                  We partner with fitness founders, gyms, and wellness brands to
+                  engineer apps that actually retain users. 30+ fitness apps
+                  shipped — Apple Health, wearable integrations, and HIPAA-ready
+                  infrastructure, from MVP in 12-20 weeks.
                 </p>
                 <div className="flex flex-wrap gap-3.5 my-10">
-                  <Link href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                    style={{ background: "#017eeb", color: "#fff", border: "1px solid #017eeb", padding: "16px 32px", fontSize: 16 }}>
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                    style={{
+                      background: "#2f6bff",
+                      color: "#fff",
+                      border: "1px solid #2f6bff",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     Get My Free Fitness App Consultation <IconArrowRight />
                   </Link>
-                  <Link href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                    style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "16px 32px", fontSize: 16 }}>
+                  <Link
+                    href="#services"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                    style={{
+                      background: "transparent",
+                      color: "#0b1e33",
+                      border: "1px solid #e4eaf1",
+                      padding: "16px 32px",
+                      fontSize: 16,
+                    }}
+                  >
                     See What We Build
                   </Link>
                 </div>
-                <div className="flex flex-wrap gap-[18px]" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
-                  {["Free 30-min consultation", "48-hour proposal", "NDA signed upfront"].map((t) => (
-                    <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                      <span style={{ color: "#00dbd3" }}><IconCheck /></span>{t}
+                <div
+                  className="flex flex-wrap gap-[18px]"
+                  style={{ color: "#6b7a8a", fontSize: 14 }}
+                >
+                  {[
+                    "Free 30-min consultation",
+                    "48-hour proposal",
+                    "NDA signed upfront",
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="inline-flex items-center gap-2"
+                      style={{ color: "#6b7a8a" }}
+                    >
+                      <span style={{ color: "#16a34a" }}>
+                        <IconCheck />
+                      </span>
+                      {t}
                     </span>
                   ))}
                 </div>
@@ -469,10 +848,33 @@ const FitnessAppDevelopmentServices = () => {
               <div className="hidden lg:block">
                 <div className="grid grid-cols-2 gap-4">
                   {HERO_STATS.map((s) => (
-                    <div key={s.label} className="rounded-2xl transition-all"
-                      style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "28px 24px", backdropFilter: "blur(10px)" }}>
-                      <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(32px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                      <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                    <div
+                      key={s.label}
+                      className="rounded-2xl transition-all svc-stat-card"
+                      style={{
+                        padding: "28px 24px",
+                      }}
+                    >
+                      <div
+                        className="font-extrabold leading-none mb-2"
+                        style={{
+                          ...statValueStyle,
+                          fontSize: "clamp(32px, 3vw, 42px)",
+                          letterSpacing: "-1px",
+                        }}
+                      >
+                        {s.value}
+                      </div>
+                      <div
+                        style={{
+                          color: "#6b7a8a",
+                          fontSize: 13,
+                          fontWeight: 500,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {s.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -483,12 +885,27 @@ const FitnessAppDevelopmentServices = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section
+        aria-label="Trust indicators"
+        style={{
+          background: "#fafafa",
+          borderBottom: "1px solid #e5e7eb",
+          padding: "28px 0",
+        }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "12px 40px" }}
+          >
             {TRUST.map((t) => (
-              <div key={t.label} className="inline-flex items-center gap-2 whitespace-nowrap" style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>
-                {t.icon}{t.label}
+              <div
+                key={t.label}
+                className="inline-flex items-center gap-2 whitespace-nowrap"
+                style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+              >
+                {t.icon}
+                {t.label}
               </div>
             ))}
           </div>
@@ -496,36 +913,108 @@ const FitnessAppDevelopmentServices = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section
+        id="services"
+        className="py-16 md:py-24"
+        style={{ background: "#f2f9fe" }}
+      >
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>What We Build</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Types of Fitness Apps We Develop</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>From workout trackers to gym management platforms — we build fitness apps that users actually stick with.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              What We Build
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Types of Fitness Apps We Develop
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              From workout trackers to gym management platforms — we build
+              fitness apps that users actually stick with.
+            </p>
           </div>
 
           {SERVICES.map((svc) => (
-            <div key={svc.title} className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
-              style={{ gridTemplateColumns: "1fr" }}>
-              <div className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
-                  <div className="w-full overflow-hidden rounded-2xl relative"
+            <div
+              key={svc.title}
+              className="grid items-center gap-8 lg:gap-[60px] py-10 lg:py-12"
+              style={{ gridTemplateColumns: "1fr" }}
+            >
+              <div
+                className={`grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2 ${svc.reverse ? "lg:[direction:rtl]" : ""}`}
+              >
+                <div
+                  className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`}
+                  style={{ direction: "ltr" }}
+                >
+                  <div
+                    className="w-full overflow-hidden rounded-2xl relative"
                     style={{
                       aspectRatio: "4 / 3",
                       padding: svc.padMockup ? 24 : 0,
                       background: svc.imageBg,
                       border: "1px solid #e5e7eb",
-                    }}>
+                    }}
+                  >
                     {svc.mockup}
                   </div>
                 </div>
-                <div className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`} style={{ direction: "ltr" }}>
-                  <h3 className="font-bold mb-4" style={{ fontSize: "clamp(22px, 2.4vw, 28px)", letterSpacing: "-0.3px", lineHeight: 1.3, color: "#0d0f1a" }}>{svc.title}</h3>
-                  <p className="mb-5" style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}>{svc.body}</p>
+                <div
+                  className={`${svc.reverse ? "lg:[direction:ltr]" : ""}`}
+                  style={{ direction: "ltr" }}
+                >
+                  <h3
+                    className="font-bold mb-4"
+                    style={{
+                      fontSize: "clamp(22px, 2.4vw, 28px)",
+                      letterSpacing: "-0.3px",
+                      lineHeight: 1.3,
+                      color: "#0d0f1a",
+                    }}
+                  >
+                    {svc.title}
+                  </h3>
+                  <p
+                    className="mb-5"
+                    style={{ fontSize: 16, lineHeight: 1.7, color: "#6b7280" }}
+                  >
+                    {svc.body}
+                  </p>
                   <ul className="list-none">
                     {svc.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#017eeb", flexShrink: 0, marginTop: 2 }}><IconCheck /></span>{f}
+                      <li
+                        key={f}
+                        className="flex items-start gap-2.5 mb-2.5"
+                        style={{ fontSize: 14, color: "#212121" }}
+                      >
+                        <span
+                          style={{
+                            color: "#017eeb",
+                            flexShrink: 0,
+                            marginTop: 2,
+                          }}
+                        >
+                          <IconCheck />
+                        </span>
+                        {f}
                       </li>
                     ))}
                   </ul>
@@ -537,15 +1026,58 @@ const FitnessAppDevelopmentServices = () => {
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center" style={{ padding: "56px 0", background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }} />
-        <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
-          <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Ready to Build Your Fitness App?</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute consultation with our fitness app team. We&apos;ll scope features, estimate cost, and map your MVP timeline — no commitment.</p>
-          <Link href="#contact"
+      <section
+        className="relative overflow-hidden text-center"
+        style={{
+          padding: "56px 0",
+          background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)",
+          }}
+        />
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Ready to Build Your Fitness App?
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            Get a free 30-minute consultation with our fitness app team.
+            We&apos;ll scope features, estimate cost, and map your MVP timeline
+            — no commitment.
+          </p>
+          <Link
+            href="#contact"
             className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
-            style={{ background: "#fff", color: "#017eeb", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            style={{
+              background: "#fff",
+              color: "#017eeb",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
             Start My Fitness App
           </Link>
         </div>
@@ -555,49 +1087,175 @@ const FitnessAppDevelopmentServices = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Why Brilworks</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Built by Engineers Who&apos;ve Shipped 30+ Fitness Apps</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don&apos;t just write code — we&apos;ve already solved retention, wearable data sync, and health compliance at scale.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              Why Brilworks
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Built by Engineers Who&apos;ve Shipped 30+ Fitness Apps
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              We don&apos;t just write code — we&apos;ve already solved
+              retention, wearable data sync, and health compliance at scale.
+            </p>
           </div>
-          <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          <div
+            className="grid gap-6"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
             {BENEFITS.map((b) => (
-              <div key={b.title} className="rounded-2xl transition-all hover:-translate-y-0.5"
-                style={{ background: "#fff", border: "1px solid #e5e7eb", padding: "32px 28px" }}>
-                <div className="rounded-[14px] flex items-center justify-center mb-5" style={{ width: 64, height: 64, background: b.tint }}>
+              <div
+                key={b.title}
+                className="rounded-2xl transition-all hover:-translate-y-0.5"
+                style={{
+                  background: "#fff",
+                  border: "1px solid #e5e7eb",
+                  padding: "32px 28px",
+                }}
+              >
+                <div
+                  className="rounded-[14px] flex items-center justify-center mb-5"
+                  style={{ width: 64, height: 64, background: b.tint }}
+                >
                   {b.icon}
                 </div>
-                <h3 className="font-bold mb-3" style={{ fontSize: 18, color: "#0d0f1a" }}>{b.title}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>{b.body}</p>
+                <h3
+                  className="font-bold mb-3"
+                  style={{ fontSize: 18, color: "#0d0f1a" }}
+                >
+                  {b.title}
+                </h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>
+                  {b.body}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
-        <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
+      {/* TESTIMONIALS */}
+      <section
+        className="relative overflow-hidden py-16 md:py-24"
+        style={darkSectionBg}
+      >
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 1280, zIndex: 1 }}
+        >
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#00b4d8" }}>Client Stories</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What Fitness Founders &amp; CTOs Say About Us</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Real outcomes from real partners across workout, wellness, and gym-management apps.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#2f6bff",
+              }}
+            >
+              Client Stories
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0b1e33",
+              }}
+            >
+              What Fitness Founders &amp; CTOs Say About Us
+            </h2>
+            <p
+              className="mt-4"
+              style={{
+                fontSize: 17,
+                lineHeight: 1.7,
+                color: "#566678",
+              }}
+            >
+              Real outcomes from real partners across workout, wellness, and
+              gym-management apps.
+            </p>
           </div>
-          <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+          <div
+            className="grid gap-6"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            }}
+          >
             {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+              <div
+                key={t.name}
+                className="rounded-2xl"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  padding: "32px 28px",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => <IconStarFilled key={i} />)}
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <IconStarFilled key={i} />
+                  ))}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p
+                  className="mb-6"
+                  style={{
+                    color: "#0b1e33",
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                  }}
+                >
+                  &ldquo;{t.quote}&rdquo;
+                </p>
                 <div className="flex items-center gap-3">
-                  <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #017eeb, #00dbd3)", fontSize: 16 }}>
+                  <div
+                    className="rounded-full flex items-center justify-center font-bold text-white"
+                    style={{
+                      width: 44,
+                      height: 44,
+                      background: "linear-gradient(135deg, #2f6bff, #00b4d8)",
+                      fontSize: 16,
+                    }}
+                  >
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span
+                      className="font-semibold"
+                      style={{ fontSize: 14, color: "#0b1e33" }}
+                    >
+                      {t.name}
+                    </span>
+                    <span
+                      style={{ color: "#6b7a8a", fontSize: 12 }}
+                    >
+                      {t.role}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -609,14 +1267,46 @@ const FitnessAppDevelopmentServices = () => {
       {/* HONORS */}
       <section className="py-16" style={{ background: "#f8f9ff" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Recognized By</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Trusted &amp; Awarded by Industry Leaders</h2>
+          <div
+            className="text-center mx-auto"
+            style={{ maxWidth: 720, marginBottom: 32 }}
+          >
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              Recognized By
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(22px, 2.4vw, 30px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Trusted &amp; Awarded by Industry Leaders
+            </h2>
           </div>
-          <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "32px 56px", opacity: 0.85 }}
+          >
             {HONORS.map((h) => (
-              <div key={h.label} className="flex items-center gap-2.5" style={{ color: "#6b7280", fontWeight: 600, fontSize: 14 }}>
-                {h.icon}{h.label}
+              <div
+                key={h.label}
+                className="flex items-center gap-2.5"
+                style={{ color: "#6b7280", fontWeight: 600, fontSize: 14 }}
+              >
+                {h.icon}
+                {h.label}
               </div>
             ))}
           </div>
@@ -627,17 +1317,64 @@ const FitnessAppDevelopmentServices = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Verticals We Serve</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Deep Domain Expertise Across Fitness &amp; Wellness</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Not generalists. We have case studies, clients, and production code in each of these verticals.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              Verticals We Serve
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Deep Domain Expertise Across Fitness &amp; Wellness
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              Not generalists. We have case studies, clients, and production
+              code in each of these verticals.
+            </p>
           </div>
-          <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))" }}>
+          <div
+            className="grid gap-4"
+            style={{
+              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+            }}
+          >
             {INDUSTRIES.map((ind) => (
-              <Link key={ind.label} href={ind.href}
+              <Link
+                key={ind.label}
+                href={ind.href}
                 className="text-center transition-all hover:-translate-y-0.5"
-                style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 14, padding: "24px 16px", textDecoration: "none" }}>
-                <div className="mx-auto mb-3 flex items-center justify-center">{ind.icon}</div>
-                <span style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}>{ind.label}</span>
+                style={{
+                  background: "#fff",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: 14,
+                  padding: "24px 16px",
+                  textDecoration: "none",
+                }}
+              >
+                <div className="mx-auto mb-3 flex items-center justify-center">
+                  {ind.icon}
+                </div>
+                <span
+                  style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+                >
+                  {ind.label}
+                </span>
               </Link>
             ))}
           </div>
@@ -648,9 +1385,36 @@ const FitnessAppDevelopmentServices = () => {
       <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#017eeb" }}>Common Questions</span>
-            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything fitness founders and product teams typically ask before working with us.</p>
+            <span
+              className="inline-block mb-4"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#017eeb",
+              }}
+            >
+              Common Questions
+            </span>
+            <h2
+              className="font-extrabold"
+              style={{
+                fontSize: "clamp(28px, 3.2vw, 42px)",
+                letterSpacing: "-1px",
+                lineHeight: 1.15,
+                color: "#0d0f1a",
+              }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <p
+              className="mt-4"
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
+            >
+              Everything fitness founders and product teams typically ask before
+              working with us.
+            </p>
           </div>
           <div className="mx-auto" style={{ maxWidth: 860 }}>
             {FAQ.map((item, i) => (
@@ -679,6 +1443,7 @@ const FitnessAppDevelopmentServices = () => {
             "Response guaranteed within 24 business hours",
             "Apple Health, Google Fit & wearable integrations included",
           ]}
+          bgClassName="svc-mid-cta-bg"
         />
       </div>
     </>

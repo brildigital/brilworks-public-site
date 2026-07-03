@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { formatSrcUrl } from "../lib/commonFunction";
+import "../../styles/EnterpriseHome.css";
 
 const HomePageBlogs = () => {
   const rawPathname = usePathname();

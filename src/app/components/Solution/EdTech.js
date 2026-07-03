@@ -2,23 +2,32 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { GraduationCap, Layers, BarChart2, UserCheck, LifeBuoy } from "lucide-react";
+import {
+  GraduationCap,
+  Layers,
+  BarChart2,
+  UserCheck,
+  LifeBuoy,
+} from "lucide-react";
 import {
   faReact,
   faAngular,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
-import SolutionHeroSection from "./SolutionHeroSection";
+import Image from "next/image";
+import Link from "next/link";
+import ButtonV2 from "../Common/ButtonV2";
 import ServicesSection from "../Common/ServicesSection";
 import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
+import "../../styles/ServiceLightTheme.css";
 
 const EdTechFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
 );
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const EdTech = () => {
@@ -208,13 +217,98 @@ const EdTech = () => {
 
   return (
     <>
-      <SolutionHeroSection
-        technologyText="EdTech Software Development Company"
-        title="EdTech Software Development Services"
-        description="120+ products shipped across 20 countries. We design and develop education technology solutions that transform how learners, teachers, and organizations connect. From custom e-learning platforms to AI-powered learning apps, our EdTech software development services are designed to meet the growing demand for digital learning experiences."
-        imageSrc="/images/v2/EdTech-Software-Development-Services-banner.webp"
-        buttonText="Get a Free Consultation"
-      />
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                EdTech Software Development Company
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                EdTech Software Development Services
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                120+ products shipped across 20 countries. We design and develop
+                education technology solutions that transform how learners,
+                teachers, and organizations connect. From custom e-learning
+                platforms to AI-powered learning apps, our EdTech software
+                development services are designed to meet the growing demand for
+                digital learning experiences.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <ButtonV2
+                  size="large"
+                  label="Get a Free Consultation"
+                  redirect="#section-contact-form"
+                  scrollingButton
+                  className="hover:!text-themeColor"
+                />
+                <Link
+                  href="/portfolio/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  View Case Studies
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="w-full rounded-2xl overflow-hidden"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  boxShadow: "0 4px 24px rgba(11,30,51,0.08)",
+                  padding: 8,
+                }}
+              >
+                <Image
+                  className="rounded-xl object-cover w-full"
+                  src="/images/v2/EdTech-Software-Development-Services-banner.webp"
+                  alt="EdTech Software Development Company"
+                  width={565}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ServicesSection sectionId="services-one" serviceData={edTechServices1} />
       <TechStackWeWorkWith
         active="frontend"
@@ -228,6 +322,7 @@ const EdTech = () => {
         description="Share your requirements and we'll get back with a project plan within 48 hours."
         messageRequired={false}
         submitLabel="Get My Free Estimate"
+        bgClassName="svc-mid-cta-bg"
       />
       <EdTechFAQs />
     </>
