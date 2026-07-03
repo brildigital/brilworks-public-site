@@ -98,7 +98,7 @@ export default function ProcessSection() {
             How the <span className="gradient-text">48-hour process</span> works
           </h2>
           <p
-            className="text-lg text-[#94a3b8] max-w-3xl mx-auto"
+            className="text-lg text-[#566678] max-w-3xl mx-auto"
             data-testid="text-process-subtitle"
           >
             Here’s our fast-track plan to move from your idea to validated MVP
@@ -125,7 +125,7 @@ export default function ProcessSection() {
               >
                 {/* Step Number */}
                 <div className="flex justify-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-themeColor to-accent rounded-full flex items-center justify-center shadow-2xl shadow-[#017eeb4D] group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-[#2f6bff] rounded-full flex items-center justify-center shadow-2xl shadow-[#2f6bff33] group-hover:scale-110 transition-transform duration-300">
                     <span className="text-white font-bold text-xl">
                       {index + 1}
                     </span>
@@ -133,11 +133,11 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Process Card */}
-                <div className="bg-[#121a2b33] backdrop-blur-sm border border-[#017eeb33] rounded-2xl p-3 hover:shadow-2xl hover:shadow-[#017eeb1A] hover:border-primary/40 transition-all duration-500 group-hover:transform group-hover:scale-105 flex flex-col h-full">
+                <div className="bg-white backdrop-blur-sm border border-[#e4eaf1] rounded-2xl p-3 hover:shadow-2xl hover:shadow-[#2f6bff1A] hover:border-primary/40 transition-all duration-500 group-hover:transform group-hover:scale-105 flex flex-col h-full">
                   {/* Icon */}
                   <div className="flex justify-center mb-4">
-                    <div className="w-12 h-12 bg-[#017eeb1A] rounded-xl flex items-center justify-center border border-[#017eeb33]">
-                      <step.icon className="text-themeColor text-xl group-hover:text-accent transition-colors duration-300" />
+                    <div className="w-12 h-12 bg-[#eaf1ff] rounded-xl flex items-center justify-center border border-[#e4eaf1]">
+                      <step.icon className="text-themeColor text-xl group-hover:text-[#1e4fd6] transition-colors duration-300" />
                     </div>
                   </div>
 
@@ -150,13 +150,13 @@ export default function ProcessSection() {
                       {step.title}
                     </h3>
                     <div
-                      className="text-sm text-accent font-medium mb-3 bg-accent/10 px-3 py-1 rounded-full inline-block"
+                      className="text-sm text-[#2f6bff] font-medium mb-3 bg-[#eaf1ff] px-3 py-1 rounded-full inline-block"
                       data-testid={`text-process-duration-${index}`}
                     >
                       {step.duration}
                     </div>
                     <p
-                      className="text-[#94a3b8] text-sm leading-relaxed flex-1"
+                      className="text-[#566678] text-sm leading-relaxed flex-1"
                       data-testid={`text-process-description-${index}`}
                     >
                       {step.description}
@@ -185,7 +185,7 @@ export default function ProcessSection() {
           className="text-center mt-16"
         >
           <div
-            className="inline-flex items-center text-xs md:text-base justify-center space-x-2 bg-[#017eeb1A] text-themeColor px-6 py-3 rounded-full font-medium border border-[#017eeb33]"
+            className="inline-flex items-center text-xs md:text-base justify-center space-x-2 bg-[#eaf1ff] text-themeColor px-6 py-3 rounded-full font-medium border border-[#e4eaf1]"
             data-testid="text-process-guarantee"
           >
             <Clock className="text-themePrimary w-5 md:w-8 h-5 md:h-8" />

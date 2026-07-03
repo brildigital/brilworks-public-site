@@ -143,10 +143,6 @@ const Footer = () => {
       title: "Technologies",
       links: [
         {
-          link: "/hire-engineers/",
-          text: "All Roles →",
-        },
-        {
           link: "/hire-java-developer/",
           text: "Java",
         },
@@ -173,6 +169,10 @@ const Footer = () => {
         {
           link: "/hire-blockchain-developer/",
           text: "Blockchain Development",
+        },
+        {
+          link: "/hire-engineers/",
+          text: "All Roles →",
         },
       ],
     },

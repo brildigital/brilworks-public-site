@@ -88,7 +88,7 @@ export default function FAQSection() {
   return (
     <section
       className={`py-20 ${
-        pathname === "/mvp-in-48-hours/" ? "bg-[#0b111e]" : "bg-[#0d0f11]"
+        pathname === "/mvp-in-48-hours/" ? "bg-[#f1f5fb]" : "bg-[#f1f5fb]"
       }`}
     >
       <div className="container max-w-[1280px] mx-auto px-6">
@@ -103,7 +103,7 @@ export default function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p
-            className="text-xl text-[#94a3b8] max-w-2xl mx-auto"
+            className="text-xl text-[#566678] max-w-2xl mx-auto"
             data-testid="faq-subtitle"
           >
             Everything you need to know about our 48-hour MVP process
@@ -123,13 +123,13 @@ export default function FAQSection() {
               <div
                 className={`${
                   pathname === "/mvp-in-48-hours/"
-                    ? "bg-[#121a2b33] border-[#017eeb33]"
+                    ? "bg-white border-[#e4eaf1]"
                     : "glass-effect"
                 }  border  rounded-2xl overflow-hidden hover:border-primary/30 transition-colors`}
                 data-testid={`faq-item-${index}`}
               >
                 <button
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/30 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-[#f1f5fb] transition-colors"
                   onClick={() => toggleFAQ(index)}
                   data-testid={`faq-question-${index}`}
                 >
@@ -141,7 +141,7 @@ export default function FAQSection() {
                     {openIndex === index ? (
                       <ChevronUp className="w-5 h-5 text-primary" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-[#94a3b8]" />
+                      <ChevronDown className="w-5 h-5 text-[#566678]" />
                     )}
                   </motion.div>
                 </button>
@@ -156,7 +156,7 @@ export default function FAQSection() {
                   className="overflow-hidden"
                 >
                   <div
-                    className="p-6 pt-0 text-[#94a3b8] leading-relaxed"
+                    className="p-6 pt-0 text-[#566678] leading-relaxed"
                     data-testid={`faq-answer-${index}`}
                   >
                     {faq.answer}

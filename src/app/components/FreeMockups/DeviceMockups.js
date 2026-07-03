@@ -24,9 +24,9 @@ export default function DeviceMockups() {
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
           <div className="space-y-2">
-            <div className="h-4 bg-[#017eeb4D] rounded w-3/4"></div>
-            <div className="h-3 bg-[#1d2839] rounded w-full"></div>
-            <div className="h-3 bg-[#1d2839] rounded w-2/3"></div>
+            <div className="h-4 bg-[#2f6bff4D] rounded w-3/4"></div>
+            <div className="h-3 bg-[#e4eaf1] rounded w-full"></div>
+            <div className="h-3 bg-[#e4eaf1] rounded w-2/3"></div>
           </div>
         </div> */}
       </div>
@@ -47,19 +47,19 @@ export default function DeviceMockups() {
         />
       </div>
       {/*<div
-        className="md:w-48 w-40 md:h-96 h-72 bg-[#14161a] rounded-3xl border-4 my-10 md:my-0 border-border mockup-shadow mx-auto animate-float"
+        className="md:w-48 w-40 md:h-96 h-72 bg-[#f1f5fb] rounded-3xl border-4 my-10 md:my-0 border-border mockup-shadow mx-auto animate-float"
         style={{ animationDelay: "1s" }}
         data-testid="mockup-mobile"
       >
         <div className="p-6 h-full">
-          <div className="w-12 h-1 bg-[#1d2839] rounded-full mx-auto mb-6"></div>
+          <div className="w-12 h-1 bg-[#e4eaf1] rounded-full mx-auto mb-6"></div>
            <div className="space-y-4">
-            <div className="h-6 bg-[#017eeb66] rounded-lg w-3/4"></div>
-            <div className="h-4 bg-[#1d2839] rounded w-full"></div>
-            <div className="h-4 bg-[#1d2839] rounded w-5/6"></div>
+            <div className="h-6 bg-[#2f6bff66] rounded-lg w-3/4"></div>
+            <div className="h-4 bg-[#e4eaf1] rounded w-full"></div>
+            <div className="h-4 bg-[#e4eaf1] rounded w-5/6"></div>
             <div className="grid grid-cols-2 gap-3 mt-8">
               <div className="h-20 bg-accent/30 rounded-xl"></div>
-              <div className="h-20 bg-[#017eeb4D] rounded-xl"></div>
+              <div className="h-20 bg-[#2f6bff4D] rounded-xl"></div>
             </div>
           </div> 
         </div>
@@ -73,11 +73,11 @@ export default function DeviceMockups() {
       >
         {/* <div className="p-4">
           <div className="grid grid-cols-3 gap-3 h-full">
-            <div className="bg-[#017eeb4D] rounded-lg"></div>
+            <div className="bg-[#2f6bff4D] rounded-lg"></div>
             <div className="space-y-2">
-              <div className="h-3 bg-[#1d2839] rounded"></div>
-              <div className="h-3 bg-[#1d2839] rounded w-4/5"></div>
-              <div className="h-3 bg-[#1d2839] rounded w-3/5"></div>
+              <div className="h-3 bg-[#e4eaf1] rounded"></div>
+              <div className="h-3 bg-[#e4eaf1] rounded w-4/5"></div>
+              <div className="h-3 bg-[#e4eaf1] rounded w-3/5"></div>
             </div>
             <div className="bg-accent/30 rounded-lg"></div>
           </div>

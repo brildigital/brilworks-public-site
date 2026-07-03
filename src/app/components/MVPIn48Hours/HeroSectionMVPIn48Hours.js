@@ -26,7 +26,7 @@ const HeroSectionMVPIn48Hours = () => {
               With a Free one-on-one Walkthrough
             </h1>
             <p
-              className="text-xl text-[#94a3b8] !mb-8 max-w-3xl mx-auto"
+              className="text-xl text-[#566678] !mb-8 max-w-3xl mx-auto"
               data-testid="text-hero-subheading"
             >
               From idea to functioning prototype, Brilworks helps you validate
@@ -34,7 +34,7 @@ const HeroSectionMVPIn48Hours = () => {
             </p>
             <button
               onClick={(e) => scrollToSection(e, "calendar-section")}
-              className="relative bg-gradient-to-r from-themeColor to-[#1cb9d5] flex gap-2 mx-auto items-center text-background px-6 py-2 rounded-md text-lg font-semibold hover:shadow-2xl transition-all shadow-xl overflow-hidden group mb-12 hover:scale-105"
+              className="relative bg-[#2f6bff] text-white flex gap-2 mx-auto items-center px-6 py-2 rounded-md text-lg font-semibold hover:shadow-2xl transition-all shadow-xl overflow-hidden group mb-12 hover:scale-105"
               data-testid="hero-cta-button"
             >
               <motion.div
@@ -57,29 +57,29 @@ const HeroSectionMVPIn48Hours = () => {
             className="grid grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center !mb-8 max-w-3xl mx-auto"
           >
             <div className="text-center group" data-testid="metric-installs">
-              <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
-                <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
+              <div className="bg-white border border-[#e4eaf1] rounded-lg p-4 backdrop-blur-sm group-hover:bg-white transition-all duration-300">
+                <div className="text-2xl font-bold text-[#2f6bff]">
                   120k+
                 </div>
-                <div className="text-sm text-[#94a3b8]">Projects Completed</div>
+                <div className="text-sm text-[#566678]">Projects Completed</div>
               </div>
             </div>
             <div className="text-center group" data-testid="metric-community">
-              <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
-                <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
+              <div className="bg-white border border-[#e4eaf1] rounded-lg p-4 backdrop-blur-sm group-hover:bg-white transition-all duration-300">
+                <div className="text-2xl font-bold text-[#2f6bff]">
                   8+
                 </div>
-                <div className="text-sm text-[#94a3b8]">
+                <div className="text-sm text-[#566678]">
                   Years of Experience
                 </div>
               </div>
             </div>
             <div className="text-center group" data-testid="metric-agents">
-              <div className="bg-card/50 border border-[#017eeb33] rounded-lg p-4 backdrop-blur-sm group-hover:bg-card/70 transition-all duration-300">
-                <div className="text-2xl font-bold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent">
+              <div className="bg-white border border-[#e4eaf1] rounded-lg p-4 backdrop-blur-sm group-hover:bg-white transition-all duration-300">
+                <div className="text-2xl font-bold text-[#2f6bff]">
                   98+
                 </div>
-                <div className="text-sm text-[#94a3b8]">
+                <div className="text-sm text-[#566678]">
                   Project Success Rate
                 </div>
               </div>
@@ -90,7 +90,7 @@ const HeroSectionMVPIn48Hours = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="inline-flex items-center md:text-base space-x-2 bg-[#192134] px-4 py-2 rounded-full text-xs text-[#94a3b8]"
+            className="inline-flex items-center md:text-base space-x-2 bg-white border border-[#e4eaf1] px-4 py-2 rounded-full text-xs text-[#566678]"
             data-testid="text-reassurance"
           >
             <ShieldHalf className="text-themeColor md:w-8 md:h-8 w-5 h-5" />

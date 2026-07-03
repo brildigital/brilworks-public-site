@@ -121,7 +121,7 @@ const ExamplesOfFreeMockup = () => {
               <step.icon size={28} />
             </div>
             <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-            <p className="mt-1 text-sm text-[#94a3b8] leading-relaxed">
+            <p className="mt-1 text-sm text-[#566678] leading-relaxed">
               {step.description}
             </p>
           </div>
@@ -136,7 +136,7 @@ const ExamplesOfFreeMockup = () => {
           Explore Free <span className="gradient-text">Design Templates</span>
         </h2>
 
-        <p className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-[#566678] max-w-2xl mx-auto">
           Browse our collection of premium UI/UX templates. Click any template
           to view and download.
         </p>
@@ -170,7 +170,7 @@ const ExamplesOfFreeMockup = () => {
               <h3 className="mt-3 text-lg font-semibold text-white">
                 {item.title}
               </h3>
-              <p className="mt-1 text-sm text-[#94a3b8]">{item.description}</p>
+              <p className="mt-1 text-sm text-[#566678]">{item.description}</p>
             </div>
           </Link>
         ))}

@@ -4,15 +4,23 @@ import { ShieldCheck, Star, Users, Check } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
 import Image from "next/image";
 import IndustriesWeServe from "../Homepage/IndustriesWeServe";
-import CTASection from "../Common/CTASection";
 import MeetOurTeam from "./MeetOurTeam";
 import Link from "next/link";
 import ButtonV2 from "../Common/ButtonV2";
+import "../../styles/ServiceLightTheme.css";
 
-const IconShield = () => <ShieldCheck size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
-const IconStar = () => <Star size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
-const IconTeam = () => <Users size={18} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />;
-const IconCheck = () => <Check size={16} strokeWidth={2.2} aria-hidden="true" />;
+const IconShield = () => (
+  <ShieldCheck size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+);
+const IconStar = () => (
+  <Star size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+);
+const IconTeam = () => (
+  <Users size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />
+);
+const IconCheck = () => (
+  <Check size={16} strokeWidth={2.2} aria-hidden="true" />
+);
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const TRUST = [
@@ -87,38 +95,44 @@ const AboutUs = () => {
 
   return (
     <>
-      {/* ── HERO (portfolio-hero dark theme) ────────────────────────────────── */}
-      <section className="portfolio-hero" aria-labelledby="about-hero-heading">
-        <div className="portfolio-hero-bg" />
-        <div className="portfolio-hero-grid" />
+      {/* ── HERO (light theme) ──────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        aria-labelledby="about-hero-heading"
+      >
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] grid-cols-1 gap-10 lg:gap-[60px] items-center pt-[160px] pb-20 lg:pb-[100px]">
             {/* Left */}
             <div>
-              <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-7">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-xs font-semibold tracking-[0.1em] !mb-7 border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
                 <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
                 Trusted by 120+ companies across 20 countries
               </span>
 
               <h1
                 id="about-hero-heading"
-                className="font-extrabold text-white tracking-[-1.5px] leading-[1.1] !mb-4"
-                style={{ fontSize: "clamp(36px, 3.8vw, 54px)" }}
+                className="font-extrabold tracking-[-1.5px] leading-[1.1] !mb-4"
+                style={{
+                  fontSize: "clamp(36px, 3.8vw, 54px)",
+                  color: "#0b1e33",
+                }}
               >
                 Your Tech Partner in a{" "}
-                <span
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #017eeb, #00ffff)",
-                  }}
-                >
-                  Fast Changing
-                </span>{" "}
-                World.
+                <span style={{ color: "#2f6bff" }}>Fast Changing</span> World.
               </h1>
 
-              <p className="text-[18px] text-white/60 leading-[1.7] max-w-[600px] !mb-10">
+              <p
+                className="text-[18px] leading-[1.7] max-w-[600px] !mb-10"
+                style={{ color: "#566678" }}
+              >
                 We create digital experiences that drive business performance —
                 helping organizations adapt to shifts in customer behaviour and
                 technology.
@@ -129,26 +143,35 @@ const AboutUs = () => {
                   size="large"
                   label="Work With Us"
                   redirect="/career/"
+                  className={"hover:text-themeColor"}
                 />
                 <Link
                   href="/portfolio/"
-                  className="inline-flex items-center whitespace-nowrap rounded-md px-[30px] py-3 font-medium text-white border border-white/20 bg-transparent hover:bg-white/[0.08] hover:border-white/40 transition-all duration-300"
+                  className="inline-flex items-center whitespace-nowrap rounded-md px-[30px] py-3 font-medium transition-all duration-300 hover:bg-black/5"
+                  style={{ color: "#0b1e33", border: "1px solid #e4eaf1" }}
                 >
                   View Our Work
                 </Link>
               </div>
 
-              {/* Stats row — edtech style */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08]">
+              {/* Stats row */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {STATS.map(({ value, label }, index) => (
                   <div
                     key={index}
-                    className="bg-white/[0.03] hover:bg-white/[0.08] transition-colors py-5 px-5 text-center"
+                    className="rounded-2xl transition-all svc-stat-card text-center"
+                    style={{ padding: "20px 16px" }}
                   >
-                    <div className="text-white text-[28px] font-extrabold tracking-[-0.5px] leading-none">
+                    <div
+                      className="text-[28px] font-extrabold tracking-[-0.5px] leading-none"
+                      style={{ color: "#2f6bff" }}
+                    >
                       {value}
                     </div>
-                    <div className="text-white/50 text-[12px] mt-1">
+                    <div
+                      className="text-[12px] mt-1"
+                      style={{ color: "#6b7a8a" }}
+                    >
                       {label}
                     </div>
                   </div>
@@ -158,7 +181,14 @@ const AboutUs = () => {
 
             {/* Right — hero image */}
             <div className="hidden lg:flex items-center justify-center">
-              <div className="w-full rounded-2xl overflow-hidden bg-white/[0.05] border border-white/10 backdrop-blur-[10px]">
+              <div
+                className="w-full rounded-2xl overflow-hidden"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  boxShadow: "0 4px 24px rgba(11, 30, 51, 0.12)",
+                }}
+              >
                 <Image
                   className="rounded-2xl object-cover w-full"
                   src="/images/v2/about-us-hero-img.webp"
@@ -177,7 +207,7 @@ const AboutUs = () => {
       <section
         aria-label="Trust indicators"
         style={{
-          background: "#fafafa",
+          background: "#ffffff",
           borderBottom: "1px solid #e5e7eb",
           padding: "28px 0",
         }}
@@ -202,7 +232,7 @@ const AboutUs = () => {
       </section>
 
       {/* ── MISSION & VISION (light-blue, alternating) ──────────────────────── */}
-      <section className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
@@ -212,7 +242,7 @@ const AboutUs = () => {
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#017eeb",
+                color: "#2f6bff",
               }}
             >
               Who We Are
@@ -264,7 +294,7 @@ const AboutUs = () => {
               >
                 <span
                   className="inline-block mb-4 text-[11px] font-bold uppercase tracking-widest"
-                  style={{ color: "#017eeb" }}
+                  style={{ color: "#2f6bff" }}
                 >
                   {item.badge}
                 </span>
@@ -294,7 +324,7 @@ const AboutUs = () => {
                     >
                       <span
                         style={{
-                          color: "#017eeb",
+                          color: "#2f6bff",
                           flexShrink: 0,
                           marginTop: 2,
                         }}
@@ -388,21 +418,12 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── MID-CTA (blue gradient) ─────────────────────────────────────────── */}
+      {/* ── MID-CTA ─────────────────────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden text-center"
-        style={{
-          padding: "56px 0",
-          background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)",
-        }}
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)",
-          }}
-        />
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div
           className="relative mx-auto px-5 md:px-10"
           style={{ maxWidth: 700, zIndex: 1 }}
@@ -431,10 +452,10 @@ const AboutUs = () => {
           </p>
           <Link
             href="/contact-us/"
-            className="mt-7 inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white"
+            className="mt-7 inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33]"
             style={{
               background: "#fff",
-              color: "#017eeb",
+              color: "#2f6bff",
               border: "1px solid #fff",
               padding: "16px 32px",
               fontSize: 16,
@@ -456,7 +477,7 @@ const AboutUs = () => {
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#017eeb",
+                color: "#2f6bff",
               }}
             >
               Brilbelief
@@ -523,22 +544,59 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* ── INDUSTRIES (dark) ───────────────────────────────────────────────── */}
-      <IndustriesWeServe
-        title="Trusted by Companies across Industries"
-        darkBackground={true}
-      />
+      {/* ── INDUSTRIES ──────────────────────────────────────────────────────── */}
+      <IndustriesWeServe title="Trusted by Companies across Industries" />
 
-      {/* ── MEET OUR TEAM (dark) ────────────────────────────────────────────── */}
+      {/* ── MEET OUR TEAM ───────────────────────────────────────────────────── */}
       <MeetOurTeam />
 
       {/* ── BOTTOM CTA ──────────────────────────────────────────────────────── */}
-      <CTASection
-        title="Let's Build Something Great Together."
-        description="Tell us your project idea and get a free consultation to create an outstanding digital product."
-        buttonText="Let's Discuss"
-        darkBackground={false}
-      />
+      <section
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
+      >
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Let&apos;s Build Something Great Together.
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            Tell us your project idea and get a free consultation to create an
+            outstanding digital product.
+          </p>
+          <Link
+            href="/contact-us/"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{
+              background: "#fff",
+              color: "#2f6bff",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
+            Let&apos;s Discuss
+          </Link>
+        </div>
+      </section>
     </>
   );
 };
