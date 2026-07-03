@@ -65,7 +65,7 @@ export default function LeadFormSection() {
             Turn My Idea Into <span className="gradient-text">Mockups</span>
           </h2>
           <p
-            className="text-lg md:text-xl text-[#94a3b8] max-w-2xl mx-auto"
+            className="text-lg md:text-xl text-[#566678] max-w-2xl mx-auto"
             data-testid="text-form-description"
           >
             Tell me about your idea, and I'll turn it into something you can
@@ -81,10 +81,10 @@ export default function LeadFormSection() {
             <div className="glass-effect rounded-2xl md:pt-6 md:px-4 p-4 h-full flex flex-col">
               <div className="text-center mb-2">
                 <h3 className="text-2xl font-bold mb-1">
-                  Or Book a <span className="text-accent">15-Min</span> Idea
+                  Or Book a <span className="text-[#2f6bff]">15-Min</span> Idea
                   Chat (Free)
                 </h3>
-                <p className="text-[#94a3b8]">
+                <p className="text-[#566678]">
                   Prefer to talk? Let's discuss your idea live and I'll give you
                   instant feedback.
                 </p>
@@ -97,7 +97,7 @@ export default function LeadFormSection() {
               </div>
 
               <div className="text-center">
-                <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[#94a3b8]">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-[#566678]">
                   <span className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
                     15 minutes

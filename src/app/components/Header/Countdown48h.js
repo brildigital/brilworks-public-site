@@ -112,12 +112,12 @@ export default function Countdown48h({
       className={`w-full hidden items-center gap-3 ${isMobile ? "" : "!flex"}`}
     >
       {/* Left Text */}
-      <div className="font-semibold text-xl text-white">
+      <div className="font-semibold text-xl text-[#0b1e33]">
         Hurry Up! Free Mockups ends in:&nbsp;
       </div>
       {/* Countdown */}
       <div className="mr-3">
-        <div className="flex items-center gap-1 text-xl font-bold">
+        <div className="flex items-center gap-1 text-xl font-bold text-[#2F6BFF]">
           <span>{z(days)}</span> : <span>{z(hours)}</span> :{" "}
           <span>{z(minutes)}</span> : <span>{z(seconds)}</span>
         </div>

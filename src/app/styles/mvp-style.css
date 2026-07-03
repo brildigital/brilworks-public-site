@@ -1,22 +1,22 @@
 :root {
-  --mvp-background: hsl(222, 47%, 8%);
-  --mvp-foreground: hsl(210, 40%, 98%);
-  --card: hsl(222, 40%, 12%);
-  --card-foreground: hsl(210, 40%, 98%);
-  --popover: hsl(222, 40%, 12%);
-  --popover-foreground: hsl(210, 40%, 98%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(222, 35%, 15%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --muted: hsl(222, 35%, 15%);
-  --muted-foreground: hsl(215, 20%, 65%);
-  --accent: hsl(180, 100%, 50%);
-  --accent-foreground: hsl(222, 84%, 5%);
+  --mvp-background: #f7f9fc;
+  --mvp-foreground: #0b1e33;
+  --card: #ffffff;
+  --card-foreground: #0b1e33;
+  --popover: #ffffff;
+  --popover-foreground: #0b1e33;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5fb;
+  --secondary-foreground: #0b1e33;
+  --muted: #f1f5fb;
+  --muted-foreground: #566678;
+  --accent: #2f6bff;
+  --accent-foreground: #ffffff;
   --destructive: hsl(356.3033, 90.5579%, 54.3137%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(222, 35%, 20%);
-  --input: hsl(222, 35%, 20%);
-  --ring: hsl(217, 91%, 60%);
+  --border: #e4eaf1;
+  --input: #e4eaf1;
+  --ring: #2f6bff;
   --chart-1: hsl(217, 91%, 60%);
   --chart-2: hsl(180, 100%, 50%);
   --chart-3: hsl(42.029, 92.8251%, 56.2745%);
@@ -243,15 +243,14 @@
   animation: mvpHolographic 10s ease-in-out infinite;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    hsl(217, 91%, 60%) 0%,
-    hsl(180, 100%, 50%) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Higher specificity than the global .gradient-text in custom-style.css —
+   these landing pages use a solid blue accent instead of the blue→cyan gradient. */
+.mvp-page .gradient-text,
+.free-mockup .gradient-text {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
+  color: #2f6bff;
 }
 
 .animate-on-scroll {

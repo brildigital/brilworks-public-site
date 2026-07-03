@@ -31,7 +31,7 @@ export const metadata = {
 };
 const page = () => {
   return (
-    <div className="bg-[#0b111e] text-[#f8fafc] antialiased">
+    <div className="mvp-page bg-[#f7f9fc] text-[#0b1e33] antialiased">
       <HeroSectionMVPIn48Hours />
       <ProcessSection />
       <OutcomesSection />

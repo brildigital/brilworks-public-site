@@ -1,53 +1,52 @@
 :root {
-  --background: #0d0f11;
-  --foreground: #f8fafc;
-  --card: #14161a;
-  --card-foreground: hsl(210, 40%, 95%);
-  --popover: hsl(220, 13%, 6%);
-  --popover-foreground: hsl(210, 40%, 98%);
-  --primary: hsl(197, 100%, 50%);
-  --primary-foreground: hsl(220, 13%, 6%);
-  --secondary: hsl(217, 32%, 17%);
-  --secondary-foreground: hsl(210, 40%, 90%);
-  --muted: hsl(217, 32%, 17%);
-  --muted-foreground: hsl(215, 20%, 65%);
-  --accent: hsl(180, 100%, 60%);
-  --accent-foreground: hsl(220, 13%, 6%);
+  --background: #f7f9fc;
+  --foreground: #0b1e33;
+  --card: #ffffff;
+  --card-foreground: #0b1e33;
+  --popover: #ffffff;
+  --popover-foreground: #0b1e33;
+  --primary: #2f6bff;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5fb;
+  --secondary-foreground: #0b1e33;
+  --muted: #f1f5fb;
+  --muted-foreground: #566678;
+  --accent: #2f6bff;
+  --accent-foreground: #ffffff;
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --input: hsl(217, 32%, 17%);
-  --ring: hsl(197, 100%, 50%);
+  --input: #e4eaf1;
+  --ring: #2f6bff;
   --radius: 12px;
-  --border: hsl(214, 78%, 51%, 0.2);
+  --border: #e4eaf1;
 }
 
 .free-mockup .border {
-  border-color: #2175e433 !important;
+  border-color: #e4eaf1 !important;
 }
 .free-mockup .border-4 {
-  border-color: #2175e433 !important;
+  border-color: #e4eaf1 !important;
 }
 
-// .gradient-text {
-//   background-image: linear-gradient(
-//     to right,
-//     var(--tw-gradient-from),
-//     var(--tw-gradient-to)
-//   );
-//   -webkit-background-clip: text;
-//   background-clip: text;
-//   color: transparent;
-// }
+/* Higher specificity than the global .gradient-text in custom-style.css —
+   this landing page uses a solid blue accent instead of the blue→cyan gradient. */
+.free-mockup .gradient-text {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
+  color: #2f6bff;
+}
 
 .glass-effect {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: #ffffff;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px); /* for Safari */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #e4eaf1;
+  box-shadow: 0 1px 2px rgba(11, 30, 51, 0.05);
 }
 
 .mockup-shadow {
-  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 25px 50px rgba(11, 30, 51, 0.18));
 }
 
 .animate-float {
@@ -75,10 +74,10 @@
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 20px rgba(47, 107, 255, 0.35);
   }
   50% {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(47, 107, 255, 0.5);
   }
 }
 

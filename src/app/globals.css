@@ -214,16 +214,14 @@ input[type="number"] {
 }
 
 .header-btn {
-  background: linear-gradient(
-    159.52deg,
-    #007aeb -3.23%,
-    #008ce7 33.69%,
-    #00dbd3 85.35%
-  ) !important;
+  background: #2f6bff !important;
+  border-color: #2f6bff !important;
 }
 
 .header-btn:hover {
-  background: transparent !important;
+  background: #1e4fd6 !important;
+  border-color: #1e4fd6 !important;
+  color: #ffffff !important;
 }
 
 .item-accordion {

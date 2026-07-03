@@ -70,7 +70,7 @@ export default function AuthoritySection() {
               Why I Do This <span className="gradient-text">Differently</span>
             </h2>
             <p
-              className="text-lg md:text-xl text-[#94a3b8] !mb-8"
+              className="text-lg md:text-xl text-[#566678] !mb-8"
               data-testid="text-authority-description"
             >
               I've turned <b>200+ napkin sketches into funded startups</b>. We
@@ -86,7 +86,7 @@ export default function AuthoritySection() {
                   data-testid={`achievement-${index}`}
                 >
                   <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                    <Check className="text-[#0d0f11] text-sm" />
+                    <Check className="text-white text-sm" />
                   </div>
                   <div>
                     <h4
@@ -96,7 +96,7 @@ export default function AuthoritySection() {
                       {achievement.title}
                     </h4>
                     <p
-                      className="text-[#94a3b8]"
+                      className="text-[#566678]"
                       data-testid={`text-achievement-description-${index}`}
                     >
                       {achievement.description}
@@ -117,7 +117,7 @@ export default function AuthoritySection() {
                     className={`group aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index}`}
                   >
-                    <div className="h-full bg-[#14161a] rounded-xl">
+                    <div className="h-full bg-[#f1f5fb] rounded-xl">
                       <Image
                         className="rounded-xl md:w-56 w-auto md:h-[275px] h-full group-hover:scale-105 transition-transform duration-300"
                         src={item.image}
@@ -138,7 +138,7 @@ export default function AuthoritySection() {
                       </div> */}
                     </div>
                     <div className="text-center mt-2">
-                      <p className="text-xs text-[#94a3b8]">{item.name}</p>
+                      <p className="text-xs text-[#566678]">{item.name}</p>
                     </div>
                   </div>
                 ))}
@@ -152,7 +152,7 @@ export default function AuthoritySection() {
                     className={`group aspect-[4/5] bg-gradient-to-br ${item.colors} rounded-2xl border border-border cursor-pointer p-4`}
                     data-testid={`portfolio-item-${index + 2}`}
                   >
-                    <div className="h-full bg-[#14161a] rounded-xl">
+                    <div className="h-full bg-[#f1f5fb] rounded-xl">
                       {/* <div className="space-y-2">
                         <div
                           className={`h-3 ${item.accent} rounded w-1/3`}
@@ -174,7 +174,7 @@ export default function AuthoritySection() {
                       />
                     </div>
                     <div className="text-center mt-2">
-                      <p className="text-xs text-[#94a3b8]">{item.name}</p>
+                      <p className="text-xs text-[#566678]">{item.name}</p>
                     </div>
                   </div>
                 ))}
@@ -183,10 +183,10 @@ export default function AuthoritySection() {
 
             <div className="text-center mt-8">
               <p
-                className="text-sm text-[#94a3b8]"
+                className="text-sm text-[#566678]"
                 data-testid="text-social-proof-stats"
               >
-                <span className="text-accent font-semibold">
+                <span className="text-[#2f6bff] font-semibold">
                   Trusted by 500+ founders
                 </span>{" "}
                 •

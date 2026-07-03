@@ -33,7 +33,7 @@ export const metadata = {
 };
 const page = () => {
   return (
-    <div className="free-mockup bg-[#0d0f11] text-[#f8fafc]">
+    <div className="free-mockup bg-[#f7f9fc] text-[#0b1e33]">
       <FreeMockUpHeroSection />
       <BenefitsSection />
       <AuthoritySection />

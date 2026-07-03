@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Heading from "../HTMLComponents/Heading";
 import PortfolioBanner from "./PortfolioBanner";
-import CTASection from "../Common/CTASection";
 import ToolsAndGetInTouch from "./ToolsAndGetInTouch";
 import { formatSrcUrl } from "../lib/commonFunction";
 import { aiAgentCaseStudies } from "@/app/portfolio/ai-agents/[slug]/content";
 import { trackEvent } from "../lib/tracking";
+import "../../styles/ServiceLightTheme.css";
 
 const Portfolio = ({ caseStudyData = [] }) => {
   const aiAgentCount = Object.keys(aiAgentCaseStudies).length;
@@ -164,11 +164,53 @@ const Portfolio = ({ caseStudyData = [] }) => {
           }
         }}
       >
-        <CTASection
-          title="Tell us what you're building."
-          description="We'll come back within 24 hours with an estimate, a proposed team, and a realistic timeline — not a sales call."
-          buttonText="Tell us about your project"
-        />
+        <section
+          className="relative overflow-hidden text-center svc-mid-cta-bg"
+          style={{ padding: "56px 0" }}
+        >
+          <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+          <div
+            className="relative mx-auto px-5 md:px-10"
+            style={{ maxWidth: 700, zIndex: 1 }}
+          >
+            <h3
+              className="font-extrabold mb-3.5"
+              style={{
+                fontSize: "clamp(24px, 3vw, 36px)",
+                color: "#fff",
+                lineHeight: 1.2,
+                letterSpacing: "-0.5px",
+              }}
+            >
+              Tell us what you&apos;re building.
+            </h3>
+            <p
+              className="mb-7"
+              style={{
+                color: "rgba(255,255,255,0.85)",
+                fontSize: 16,
+                lineHeight: 1.7,
+              }}
+            >
+              We&apos;ll come back within 24 hours with an estimate, a
+              proposed team, and a realistic timeline — not a sales call.
+            </p>
+            <Link
+              href="/contact-us/"
+              prefetch={false}
+              className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+              style={{
+                background: "#fff",
+                color: "#2f6bff",
+                border: "1px solid #fff",
+                padding: "16px 32px",
+                fontSize: 16,
+              }}
+            >
+              Tell us about your project
+            </Link>
+          </div>
+        </section>
       </div>
 
       <ToolsAndGetInTouch />
