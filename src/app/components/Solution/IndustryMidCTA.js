@@ -5,10 +5,15 @@ import ButtonV2 from "../Common/ButtonV2";
 const IndustryMidCTA = ({
   title = "Ready to Build Your App?",
   description = "Get a free consultation and project estimate. We respond within 24 hours.",
+  light = false,
 }) => {
   return (
-    <section className="bg-[#0d0f1a] py-16 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_50%_60%_at_50%_50%,rgba(1,126,235,0.10)_0%,transparent_70%)]"></div>
+    <section
+      className={`py-16 relative overflow-hidden ${light ? "svc-mid-cta-bg" : "bg-[#0d0f1a]"}`}
+    >
+      <div
+        className={`absolute inset-0 pointer-events-none ${light ? "svc-mid-cta-glow" : "bg-[radial-gradient(ellipse_50%_60%_at_50%_50%,rgba(1,126,235,0.10)_0%,transparent_70%)]"}`}
+      ></div>
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] text-center">
         <h3
           className="font-extrabold text-white tracking-[-1px] leading-[1.2] !mb-3"
@@ -16,7 +21,9 @@ const IndustryMidCTA = ({
         >
           {title}
         </h3>
-        <p className="text-white/50 text-base !mb-8 max-w-[576px] mx-auto">
+        <p
+          className={`text-base !mb-8 max-w-[576px] mx-auto ${light ? "text-white/80" : "text-white/50"}`}
+        >
           {description}
         </p>
         <div className="flex justify-center gap-4 flex-wrap">

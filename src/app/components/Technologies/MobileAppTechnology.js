@@ -172,7 +172,7 @@ const MobileAppTechnology = () => {
         description="Mobile App has taken the world by storm and rightly so. It’s fast, flexible, and cost-effective. We leverage React Native to deliver brilliant & unforgettable user experience to our clients. Our Mobile App developers focus on delivering flawless solutions with clear insights to meet all your business needs."
         keyValueData={mobileAppExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <MobileAppFAQs />
     </>
   );

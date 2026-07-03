@@ -1,9 +1,11 @@
 "use client";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "./ServiceHeroSection";
-import CTASection from "../Common/CTASection";
+import Image from "next/image";
+import Link from "next/link";
+import { Check, ArrowRight } from "lucide-react";
 import AboutOurExpertise from "./AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
+import "../../styles/ServiceLightTheme.css";
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
@@ -139,26 +141,129 @@ const WhiteLabelAppDevelopment = () => {
 
   return (
     <>
-      <ServiceHeroSection
-        title="White Label Mobile App Development Services"
-        description="We build ready to launch mobile applications that can be branded, customized, scaled, and shipped quickly. Our white label solutions cover fitness, wellness, delivery, ride hailing, education, marketplace, and on-demand services. Each solution is structured for fast deployment, flexible branding, and long term maintainability."
-        buttonText="Start Your App Journey"
-        imageSrc="/images/v2/white-label-mobile-app-development-services-banner.webp"
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                White Label App Development
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                White Label{" "}
+                <span style={{ color: "#2f6bff" }}>Mobile App</span>{" "}
+                Development Services
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                We build ready to launch mobile applications that can be
+                branded, customized, scaled, and shipped quickly. Our white
+                label solutions cover fitness, wellness, delivery, ride
+                hailing, education, marketplace, and on-demand services. Each
+                solution is structured for fast deployment, flexible
+                branding, and long term maintainability.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <Link
+                  href="/contact-us/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background: "#2f6bff",
+                    color: "#fff",
+                    border: "1px solid #2f6bff",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Start Your App Journey <ArrowRight size={16} strokeWidth={2} />
+                </Link>
+                <Link
+                  href="/portfolio/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  See What We Build
+                </Link>
+              </div>
+              <div
+                className="flex flex-wrap gap-[18px]"
+                style={{ color: "#6b7a8a", fontSize: 14 }}
+              >
+                {[
+                  "Ready-to-launch templates",
+                  "Fast deployment",
+                  "Flexible branding",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-2"
+                    style={{ color: "#6b7a8a" }}
+                  >
+                    <span style={{ color: "#16a34a" }}>
+                      <Check size={16} strokeWidth={2.2} aria-hidden="true" />
+                    </span>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="rounded-2xl overflow-hidden border border-[#e4eaf1] shadow-[0_4px_24px_rgba(11,30,51,0.08)]"
+                style={{ background: "#fff" }}
+              >
+                <Image
+                  className="object-cover w-full"
+                  src="/images/v2/white-label-mobile-app-development-services-banner.webp"
+                  alt="White Label Mobile App Development Services"
+                  width={565}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <AboutOurExpertise
         title="Our White Label App Expertise"
         description1="We design repeatable app architectures that can adapt to different brands, features, and industries without rebuilding from scratch. You get a foundation that supports quick customization, publishes smoothly to the app stores, and stays stable when new modules are added."
         description2="Every product is built with clear functionality layers, intuitive workflows, and simple ways to extend the app for new business requirements. Our process includes transparent scoping, steady updates, and predictable delivery."
       />
 
-      {/* <CTASection
-        titleClass="md:w-[70%]"
-        descriptionClass="md:w-4/5"
-        title="Ship Faster, Test Smarter, Deploy Smoother: DevOps Consulting for Modern Businesses"
-        description="We're a leading DevOps consulting service company dedicated to building high-performing software delivery pipelines that streamline your workflow, accelerate releases, and empower your teams. Our expert consultants work alongside your team to identify your unique challenges and design a pipeline tailored to address your unique needs. We leverage the latest tools and cutting-edge technologies, from GitLab CI/CD to containerization solutions, to create a system that aligns perfectly with your specific needs."
-        buttonText="Let’s Discuss"
-        darkBackground={false}
-      /> */}
       <ServicesSection
         bgClass="bg-themeLight"
         sectionId="service-section"
@@ -176,17 +281,59 @@ const WhiteLabelAppDevelopment = () => {
         data={whyChooseUsDevelopmentData}
       />
       <Honors />
-      <ClientReviews />
+      <ClientReviews light />
 
       <SeeingBelieving />
       <IndustriesWeServe darkBackground={false} />
       <HomePageBlogs />
-      <CTASection
-        descriptionClass="md:w-4/5"
-        title="Build your next high-impact web application with a trusted partner. Let’s turn your idea into a responsive, secure, and scalable digital experience."
-        buttonText="Get a Free Consultation"
-      />
       <ServicesFAQ />
+
+      <section
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
+      >
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Ready to Launch Your White Label App?
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            Build your next high-impact mobile app with a trusted partner.
+            Let&apos;s turn your idea into a branded, ready-to-launch product.
+          </p>
+          <Link
+            href="/contact-us/"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{
+              background: "#fff",
+              color: "#2f6bff",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
+            Get a Free Consultation
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

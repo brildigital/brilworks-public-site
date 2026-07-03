@@ -8,14 +8,14 @@ import ServicesSection from "../Common/ServicesSection";
 const JavaFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -93,7 +93,7 @@ const JavaTechnology = () => {
       <TechnologyCombination />
       <HireDevelopersInThreeSteps title="Java Developers" />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <JavaFAQs />
     </>
   );

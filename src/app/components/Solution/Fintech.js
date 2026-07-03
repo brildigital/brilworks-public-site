@@ -2,7 +2,14 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { ShieldAlert, Laptop, AlertTriangle, Building2, UserCheck, TrendingUp } from "lucide-react";
+import {
+  ShieldAlert,
+  Laptop,
+  AlertTriangle,
+  Building2,
+  UserCheck,
+  TrendingUp,
+} from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
@@ -243,7 +250,7 @@ const Fintech = () => {
         keyValueData={fintechExperienceShowCase}
       />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <FintechFAQ />
     </>
   );

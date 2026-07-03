@@ -33,9 +33,7 @@ const SolutionContactForm = dynamic(
 const HireDevelopersInThreeSteps = dynamic(
   () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
-const HireInFourSteps = dynamic(
-  () => import("../HireTeam/HireInFourSteps"),
-);
+const HireInFourSteps = dynamic(() => import("../HireTeam/HireInFourSteps"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
 const techStackList = [
@@ -185,8 +183,7 @@ const ReactJSTechnology = () => {
   return (
     <>
       <HireTeamHeroSection
-      technologyText={"Hire ReactJS Developers"}
-      
+        technologyText={"Hire ReactJS Developers"}
         title="Hire ReactJS Developers, Onboarded in 48 Hours"
         description="Build fast, scalable web apps with India’s top ReactJS engineers. Vetted talent, onboarded in days — not months."
         imageSrc="/images/v2/hire_reactJS_hero_img.webp"
@@ -223,7 +220,7 @@ const ReactJSTechnology = () => {
         title="ReactJS Developers"
       />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <section className="bg-themeLight">
         <div className="max-w-7xl main-section-padding-top mx-auto text-center">
           <Heading

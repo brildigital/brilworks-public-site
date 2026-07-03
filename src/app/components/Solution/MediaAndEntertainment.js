@@ -2,7 +2,25 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { ShieldCheck, Clapperboard, Tv2, Globe, Rss, Languages, MessageSquare, CreditCard, Cpu, Bell, Layout, Share2, Star, Award, RefreshCw, MessageCircle, LifeBuoy } from "lucide-react";
+import {
+  ShieldCheck,
+  Clapperboard,
+  Tv2,
+  Globe,
+  Rss,
+  Languages,
+  MessageSquare,
+  CreditCard,
+  Cpu,
+  Bell,
+  Layout,
+  Share2,
+  Star,
+  Award,
+  RefreshCw,
+  MessageCircle,
+  LifeBuoy,
+} from "lucide-react";
 import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 import IndustryMidCTA from "./IndustryMidCTA";
@@ -277,6 +295,7 @@ const MediaAndEntertainment = () => {
           "Cross-platform mobile and web apps",
           "24/7 uptime monitoring and support",
         ]}
+        bgClassName="svc-mid-cta-bg"
       />
     </>
   );

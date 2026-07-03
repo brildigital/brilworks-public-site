@@ -690,6 +690,7 @@ const ApplicationDevelopmentService = () => {
             "Response guaranteed within 24 business hours",
             "100% code and IP ownership handed over at end",
           ]}
+          bgClassName="svc-mid-cta-bg"
         />
       </div>
     </>

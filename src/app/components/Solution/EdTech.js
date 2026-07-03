@@ -2,7 +2,13 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { GraduationCap, Layers, BarChart2, UserCheck, LifeBuoy } from "lucide-react";
+import {
+  GraduationCap,
+  Layers,
+  BarChart2,
+  UserCheck,
+  LifeBuoy,
+} from "lucide-react";
 import {
   faReact,
   faAngular,
@@ -14,11 +20,11 @@ import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
 
 const EdTechFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
-const TechStackWeWorkWith = dynamic(() =>
-  import("../Technologies/TechStackWeWorkWith")
+const TechStackWeWorkWith = dynamic(
+  () => import("../Technologies/TechStackWeWorkWith"),
 );
-const SolutionEngagementAndHowCanStart = dynamic(() =>
-  import("./SolutionEngagementAndHowCanStart")
+const SolutionEngagementAndHowCanStart = dynamic(
+  () => import("./SolutionEngagementAndHowCanStart"),
 );
 
 const EdTech = () => {
@@ -228,6 +234,7 @@ const EdTech = () => {
         description="Share your requirements and we'll get back with a project plan within 48 hours."
         messageRequired={false}
         submitLabel="Get My Free Estimate"
+        bgClassName="svc-mid-cta-bg"
       />
       <EdTechFAQs />
     </>

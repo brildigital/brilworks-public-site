@@ -172,7 +172,7 @@ const BubbleIoTechnology = () => {
         description="We understand the need for a stable, cost-effective tech infrastructure. Our Bubble experts deliver end-to-end solutions to drive your business growth and innovation."
         keyValueData={bubbleExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <BubbleIoFAQs />
     </>
   );

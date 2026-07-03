@@ -2,7 +2,18 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { MapPin, Route, AlertTriangle, Bell, History, Settings2, WifiOff, Plug, Cloud, BarChart2 } from "lucide-react";
+import {
+  MapPin,
+  Route,
+  AlertTriangle,
+  Bell,
+  History,
+  Settings2,
+  WifiOff,
+  Plug,
+  Cloud,
+  BarChart2,
+} from "lucide-react";
 import {
   faReact,
   faAngular,
@@ -171,8 +182,14 @@ const FleetManagementNGPS = () => {
         title: "Offline Tracking",
         icon: <WifiOff size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
-      { title: "API Integration", icon: <Plug size={28} color="#1A5CCC" strokeWidth={1.75} /> },
-      { title: "Cloud Based", icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} /> },
+      {
+        title: "API Integration",
+        icon: <Plug size={28} color="#1A5CCC" strokeWidth={1.75} />,
+      },
+      {
+        title: "Cloud Based",
+        icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} />,
+      },
       {
         title: "Analytics & Reporting",
         icon: <BarChart2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
@@ -330,6 +347,7 @@ const FleetManagementNGPS = () => {
       />
       <SolutionEngagementAndHowCanStart />
       <SolutionContactForm
+        bgClassName="svc-mid-cta-bg"
         title="Start Building Your Fleet Management App Today"
         description="Modern fleet runs on technology. Let’s build the solution that keeps yours ahead of the curve."
       />

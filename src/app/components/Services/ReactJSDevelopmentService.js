@@ -1,7 +1,15 @@
 "use client";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "./ServiceHeroSection";
-import SolutionContactForm from "../Solution/SolutionContactForm";
+import Link from "next/link";
+import {
+  Check,
+  ArrowRight,
+  Code2,
+  ShieldCheck,
+  Star,
+  TrendingUp,
+} from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
@@ -15,10 +23,50 @@ const MultipleCardInGrid = dynamic(
 const HireTeamSolutions = dynamic(
   () => import("../Technologies/HireTeamSolutions"),
 );
-const CTASection = dynamic(() => import("../Common/CTASection"));
 const SeeingBelieving = dynamic(() => import("../Homepage/SeeingBelieving"));
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const ServicesFAQ = dynamic(() => import("./ServicesFAQ"));
+
+const IconCheck = ({ size = 16, className = "" }) => (
+  <Check
+    size={size}
+    className={className}
+    strokeWidth={2.2}
+    aria-hidden="true"
+  />
+);
+
+const IconArrowRight = ({ size = 16 }) => (
+  <ArrowRight size={size} strokeWidth={2} aria-hidden="true" />
+);
+
+const IconReactBadge = () => <Code2 size={14} aria-hidden="true" />;
+
+const REACT_TRUST = [
+  {
+    icon: <ShieldCheck size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    label: "Clean, Maintainable Code",
+  },
+  {
+    icon: <Star size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    label: "4.9★ on Clutch & GoodFirms",
+  },
+  {
+    icon: <TrendingUp size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    label: "Faster Time to Market",
+  },
+  {
+    icon: <Code2 size={18} color="#2f6bff" strokeWidth={1.8} aria-hidden="true" />,
+    label: "100+ Businesses Choose Us",
+  },
+];
+
+const REACT_HERO_STATS = [
+  { value: "100+", label: "Businesses Served" },
+  { value: "60%", label: "Avg. Cost Savings" },
+  { value: "4.9★", label: "Avg. Clutch Rating" },
+  { value: "24/7", label: "Expert Support" },
+];
 
 const ReactJSDevelopmentService = () => {
   const reactJSDevelopmentServices = {
@@ -155,14 +203,168 @@ const ReactJSDevelopmentService = () => {
 
   return (
     <>
-      <ServiceHeroSection
-        title="End-to-End ReactJS Development Services"
-        description="Looking for a ReactJS development company that delivers fast, scalable, and user-friendly web applications? Our team combines deep frontend expertise with engineering discipline to deliver responsive, performant, and maintainable React solutions."
-        buttonText="Get Free Consultation"
-        secondaryBtnText="Hire ReactJS Developer"
-        secondaryBtnUrl="/hire-reactjs-developer/"
-        imageSrc="/images/v2/reactjs-development-service-banner.webp"
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                <IconReactBadge /> ReactJS Development Services
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                End-to-End{" "}
+                <span style={{ color: "#2f6bff" }}>ReactJS Development</span>{" "}
+                Services
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                Looking for a ReactJS development company that delivers fast,
+                scalable, and user-friendly web applications? Our team
+                combines deep frontend expertise with engineering discipline
+                to deliver responsive, performant, and maintainable React
+                solutions.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <Link
+                  href="/contact-us/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background: "#2f6bff",
+                    color: "#fff",
+                    border: "1px solid #2f6bff",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Get Free Consultation <IconArrowRight />
+                </Link>
+                <Link
+                  href="/hire-reactjs-developer/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Hire ReactJS Developer
+                </Link>
+              </div>
+              <div
+                className="flex flex-wrap gap-[18px]"
+                style={{ color: "#6b7a8a", fontSize: 14 }}
+              >
+                {[
+                  "Free 30-min consultation",
+                  "48-hour scope & estimate",
+                  "Modern React stack (Hooks, TS)",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-2"
+                    style={{ color: "#6b7a8a" }}
+                  >
+                    <span style={{ color: "#16a34a" }}>
+                      <IconCheck />
+                    </span>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-2 gap-4">
+                {REACT_HERO_STATS.map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-2xl transition-all svc-stat-card"
+                    style={{ padding: "28px 24px" }}
+                  >
+                    <div
+                      className="font-extrabold leading-none mb-2"
+                      style={{
+                        color: "#2f6bff",
+                        fontSize: "clamp(32px, 3vw, 42px)",
+                        letterSpacing: "-1px",
+                      }}
+                    >
+                      {s.value}
+                    </div>
+                    <div
+                      style={{
+                        color: "#6b7a8a",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST BAR */}
+      <section
+        aria-label="Trust indicators"
+        style={{
+          background: "#ffffff",
+          borderBottom: "1px solid #e5e7eb",
+          padding: "28px 0",
+        }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div
+            className="flex flex-wrap items-center justify-center"
+            style={{ gap: "12px 40px" }}
+          >
+            {REACT_TRUST.map((t) => (
+              <div
+                key={t.label}
+                className="inline-flex items-center gap-2 whitespace-nowrap"
+                style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
+              >
+                {t.icon}
+                {t.label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <MultipleCardInGrid
         title="Why 100+ Businesses Choose Our ReactJS Development Services"
         description="We craft interfaces that keep users coming back. Here’s why clients stick with us."
@@ -180,21 +382,60 @@ const ReactJSDevelopmentService = () => {
       />
 
       <Honors />
-      <ClientReviews />
+      <ClientReviews light />
       <SeeingBelieving />
       <HireTeamSolutions />
-
-      <CTASection
-        descriptionClass="md:w-4/5"
-        title="Build your next high-impact web application with a trusted partner. Let’s turn your idea into a responsive, secure, and scalable digital experience."
-        buttonText="Get a Free Consultation"
-      />
       <HomePageBlogs />
-      <SolutionContactForm
-        title="Ready to Build with ReactJS?"
-        description="If you’re evaluating modern frontend approaches or looking to accelerate with React, let’s talk. Get a free consultation to discover how our ReactJS development services can turn your interface into a competitive advantage."
-      />
       <ServicesFAQ />
+
+      <section
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
+      >
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+        <div
+          className="relative mx-auto px-5 md:px-10"
+          style={{ maxWidth: 700, zIndex: 1 }}
+        >
+          <h3
+            className="font-extrabold mb-3.5"
+            style={{
+              fontSize: "clamp(24px, 3vw, 36px)",
+              color: "#fff",
+              lineHeight: 1.2,
+              letterSpacing: "-0.5px",
+            }}
+          >
+            Ready to Build with ReactJS?
+          </h3>
+          <p
+            className="mb-7"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontSize: 16,
+              lineHeight: 1.7,
+            }}
+          >
+            If you’re evaluating modern frontend approaches or looking to
+            accelerate with React, let’s talk. Get a free consultation to
+            discover how our ReactJS development services can turn your
+            interface into a competitive advantage.
+          </p>
+          <Link
+            href="/contact-us/"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5"
+            style={{
+              background: "#fff",
+              color: "#2f6bff",
+              border: "1px solid #fff",
+              padding: "16px 32px",
+              fontSize: 16,
+            }}
+          >
+            Get a Free Consultation
+          </Link>
+        </div>
+      </section>
     </>
   );
 };

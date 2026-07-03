@@ -176,7 +176,7 @@ const LowCodeNoCodeTechnology = () => {
         description="We understand the need for a stable, cost-effective tech infrastructure. Our Low Code experts deliver end-to-end app development solutions to drive your business growth and innovation."
         keyValueData={lowCodeExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <LowCodeNoCodeFAQs />
     </>
   );

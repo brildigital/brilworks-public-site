@@ -6,17 +6,17 @@ import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
 
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
-const MultipleKeyValueWithBG = dynamic(() =>
-  import("../Common/MultipleKeyValueWithBG")
+const MultipleKeyValueWithBG = dynamic(
+  () => import("../Common/MultipleKeyValueWithBG"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 const AWSFAQs = dynamic(() => import("./TechnologyFAQ"));
@@ -139,7 +139,7 @@ const AWSTechnology = () => {
         description="We understand the need for a stable, cost-effective tech infrastructure. Our AWS experts deliver end-to-end cloud solutions to drive your business growth and innovation."
         keyValueData={awsExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <AWSFAQs />
     </>
   );
