@@ -2,9 +2,12 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import SolutionHeroSection from "./SolutionHeroSection";
+import Image from "next/image";
+import Link from "next/link";
+import ButtonV2 from "../Common/ButtonV2";
 import ServicesSection from "../Common/ServicesSection";
 import CTASection from "../Common/CTASection";
+import "../../styles/ServiceLightTheme.css";
 const TechStackWeWorkWith = dynamic(
   () => import("../Technologies/TechStackWeWorkWith"),
   { ssr: false },
@@ -306,19 +309,126 @@ const ECommerceSolution = () => {
 
   return (
     <>
-      <SolutionHeroSection
-        technologyText="E-Commerce App Development"
-        title='Elevate Your Online Retail: Custom <span class="bg-gradient-to-r from-[#017eeb] to-[#00ffff] bg-clip-text" style="--tw-gradient-from:#017eeb;--tw-gradient-to:#00ffff;-webkit-background-clip:text;-webkit-text-fill-color:transparent">E-Commerce App Development</span>'
-        description="Revolutionise your digital presence with cutting-edge mobile and web solutions tailored for superior performance and growth. Our expert ecommerce app development services empower businesses to connect with customers seamlessly, driving conversions and fostering lasting brand loyalty."
-        buttonText="Hire E-Commerce Developer"
-        imageSrc="/images/v2/e-commerce-industry-banner.webp"
-        stats={[
-          { value: "120+", label: "Products Shipped" },
-          { value: "50+", label: "E-Commerce Apps" },
-          { value: "$10M+", label: "Revenue Generated" },
-          { value: "98%", label: "Client Retention" },
-        ]}
-      />
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                E-Commerce App Development
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                Elevate Your Online Retail: Custom{" "}
+                <span style={{ color: "#2f6bff" }}>
+                  E-Commerce App Development
+                </span>
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                Revolutionise your digital presence with cutting-edge mobile and
+                web solutions tailored for superior performance and growth. Our
+                expert ecommerce app development services empower businesses to
+                connect with customers seamlessly, driving conversions and
+                fostering lasting brand loyalty.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <ButtonV2
+                  size="large"
+                  label="Hire E-Commerce Developer"
+                  redirect="#section-contact-form"
+                  scrollingButton
+                  className="hover:!text-themeColor"
+                />
+                <Link
+                  href="/portfolio/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  View Case Studies
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { value: "120+", label: "Products Shipped" },
+                  { value: "50+", label: "E-Commerce Apps" },
+                  { value: "$10M+", label: "Revenue Generated" },
+                  { value: "98%", label: "Client Retention" },
+                ].map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-2xl transition-all svc-stat-card text-center"
+                    style={{ padding: "18px 12px" }}
+                  >
+                    <div
+                      className="font-extrabold leading-none"
+                      style={{ color: "#2f6bff", fontSize: 26 }}
+                    >
+                      {s.value}
+                    </div>
+                    <div
+                      style={{ color: "#6b7a8a", fontSize: 12, marginTop: 6 }}
+                    >
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="w-full rounded-2xl overflow-hidden"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  boxShadow: "0 4px 24px rgba(11,30,51,0.08)",
+                  padding: 8,
+                }}
+              >
+                <Image
+                  className="rounded-xl object-cover w-full"
+                  src="/images/v2/e-commerce-industry-banner.webp"
+                  alt="E-Commerce App Development"
+                  width={565}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <IndustryTrustBar items={trustBarItems} />
       <ServicesSection
         sectionId="services-one"
@@ -352,7 +462,7 @@ const ECommerceSolution = () => {
         keyValueData={fintechExperienceShowCase}
       />
 
-      <ClientReviews />
+      <ClientReviews light />
       <SolutionEngagementAndHowCanStart />
       <FintechFAQ />
       <SolutionContactForm
