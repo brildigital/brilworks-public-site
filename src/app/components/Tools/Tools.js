@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Search, CheckCircle, Star } from "lucide-react";
 import { usePostHog } from "posthog-js/react";
 import Cookies from "js-cookie";
+import "../../styles/ServiceLightTheme.css";
 
 const toolsData = [
   {
@@ -422,53 +423,47 @@ const Tools = () => {
   });
 
   const isFiltering = activeTag !== "" || debouncedSearch !== "";
-  const visibleTools = isFiltering || showAll
-    ? filteredTools
-    : filteredTools.slice(0, INITIAL_VISIBLE_COUNT);
-  const hasMore = !isFiltering && filteredTools.length > INITIAL_VISIBLE_COUNT && !showAll;
+  const visibleTools =
+    isFiltering || showAll
+      ? filteredTools
+      : filteredTools.slice(0, INITIAL_VISIBLE_COUNT);
+  const hasMore =
+    !isFiltering && filteredTools.length > INITIAL_VISIBLE_COUNT && !showAll;
 
   const featuredTools = toolsData.filter((t) =>
-    featuredToolSlugs.includes(t.link)
+    featuredToolSlugs.includes(t.link),
   );
 
   return (
     <>
       {/* ═══ HERO SECTION ═══ */}
-      <section className="bg-navyBlue relative overflow-hidden">
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        {/* Radial gradients */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
-          }}
-        />
-
+      <section className="svc-hero-bg relative overflow-hidden">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
           {/* Eyebrow */}
-          <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-3.5 py-1.5 text-[#00b4d8] text-xs font-semibold tracking-widest uppercase mb-7">
-            <Star className="w-3.5 h-3.5" />
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-widest uppercase mb-7"
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e4eaf1",
+              color: "#566678",
+              boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+            }}
+          >
+            <Star className="w-3.5 h-3.5 text-[#2f6bff]" />
             40+ FREE TOOLS &mdash; NO SIGNUP REQUIRED
           </span>
 
           {/* H1 */}
           <Heading
             type="h1"
-            className="text-white !font-extrabold max-w-[720px]"
+            className="text-[#0b1e33] !font-extrabold max-w-[720px]"
             text="Free Calculators Built for Software Teams & Startups"
           />
 
           {/* Subtitle */}
-          <p className="text-gray-400 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
+          <p className="text-[#566678] lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
             Estimate app development costs, plan your MVP budget, calculate SaaS
             metrics, and make confident tech decisions &mdash; all in seconds,
             with zero friction.
@@ -479,12 +474,12 @@ const Tools = () => {
             <ButtonV2
               redirect="/contact-us/"
               label="Get a Free Project Estimate"
-              className="hover:!text-colorWhite"
+              className="hover:!text-themeColor"
               icon={<ArrowRight className="w-4 h-4" />}
             />
             <a
               href="#all-tools"
-              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-[#e4eaf1] text-[#0b1e33] hover:bg-black/5"
               onClick={(e) => {
                 e.preventDefault();
                 document
@@ -497,7 +492,7 @@ const Tools = () => {
           </div>
 
           {/* Trust Strip */}
-          <div className="flex flex-wrap gap-5 mt-10 pt-6 border-t border-white/10">
+          <div className="flex flex-wrap gap-5 mt-10 pt-6 border-t border-[#e4eaf1]">
             {[
               "No account required",
               "100% free, forever",
@@ -506,27 +501,48 @@ const Tools = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 text-white/50 text-sm font-medium"
+                className="flex items-center gap-2 text-[#6b7a8a] text-sm font-medium"
               >
-                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                 {item}
               </div>
             ))}
           </div>
+            </div>
 
-          {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="bg-white/[0.03] p-5 text-center"
-              >
-                <div className="text-2xl md:text-[28px] font-extrabold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-1">
-                  {stat.value}
-                </div>
-                <div className="text-xs text-white/50">{stat.label}</div>
+            {/* Stats grid \u2014 right side */}
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl transition-all svc-stat-card"
+                    style={{ padding: "28px 24px" }}
+                  >
+                    <div
+                      className="font-extrabold leading-none mb-2"
+                      style={{
+                        color: "#2f6bff",
+                        fontSize: "clamp(32px, 3vw, 42px)",
+                        letterSpacing: "-1px",
+                      }}
+                    >
+                      {stat.value}
+                    </div>
+                    <div
+                      style={{
+                        color: "#6b7a8a",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -581,10 +597,7 @@ const Tools = () => {
       </section>
 
       {/* ═══ ALL TOOLS ═══ */}
-      <section
-        id="all-tools"
-        className="bg-white pt-12 pb-16 md:pb-24"
-      >
+      <section id="all-tools" className="bg-white pt-12 pb-16 md:pb-24">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           {/* Section Header */}
           <Heading
@@ -732,21 +745,15 @@ const Tools = () => {
       </section>
 
       {/* ═══ MID-PAGE CTA ═══ */}
-      <section className="bg-navyBlue py-16 relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 80% at 50% 50%, rgba(26,92,204,0.12) 0%, transparent 70%)",
-          }}
-        />
+      <section className="svc-mid-cta-bg py-16 relative overflow-hidden">
+        <div className="svc-mid-cta-glow absolute inset-0 pointer-events-none" />
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 text-center relative z-10">
           <Heading
             type="h2"
             className="text-white !font-extrabold mb-3"
             text="Need Custom Software Development?"
           />
-          <p className="text-white/50 text-base mb-0 max-w-[576px] mx-auto">
+          <p className="text-white/80 text-base mb-0 max-w-[576px] mx-auto">
             Our tools give you estimates &mdash; our team turns them into
             reality. Talk to our experts about your project.
           </p>

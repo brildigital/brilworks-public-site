@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatSrcUrl } from "../lib/commonFunction";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import "../../styles/ServiceLightTheme.css";
 
 const TOPIC_RULES = [
   { key: "ai", label: "Generative AI", classKey: "t-ai", match: /\b(ai|gpt|llm|genai|generative|rag|ml|machine.?learning)\b/i },
@@ -179,49 +180,36 @@ const Ebooks = () => {
       `}</style>
 
       {/* ============ HERO ============ */}
-      <section style={{ position: "relative", overflow: "hidden", background: "#0d0f1a", padding: "120px 0 80px" }}>
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 0,
-          background: "radial-gradient(ellipse 60% 50% at 70% 40%, rgba(26,92,204,0.22) 0%, transparent 70%), radial-gradient(ellipse 40% 55% at 20% 80%, rgba(0,180,216,0.10) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, opacity: 0.06, zIndex: 0, pointerEvents: "none",
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
-
+      <section className="svc-hero-bg" style={{ position: "relative", overflow: "hidden", padding: "120px 0 80px" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="grid lg:grid-cols-[1.15fr_1fr] grid-cols-1 gap-10 lg:gap-14 items-center">
             <div>
               <span style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "rgba(26,92,204,0.18)", border: "1px solid rgba(26,92,204,0.35)",
-                borderRadius: 9999, padding: "7px 16px", color: "#00b4d8",
+                background: "#ffffff", border: "1px solid #e4eaf1",
+                borderRadius: 9999, padding: "7px 16px", color: "#566678",
                 fontSize: 12, fontWeight: 600, letterSpacing: "0.12em",
                 textTransform: "uppercase", marginBottom: 24,
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
               }}>
-                <Star size={12} color="#00dbd3" fill="#00dbd3" />
+                <Star size={12} color="#2f6bff" fill="#2f6bff" />
                 Free Resources • No Paywall
               </span>
               <h1 style={{
                 fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 800,
-                lineHeight: 1.08, letterSpacing: "-1.5px", color: "#fff", marginBottom: 20,
+                lineHeight: 1.08, letterSpacing: "-1.5px", color: "#0b1e33", marginBottom: 20,
               }}>
                 Free Expert Guides on{" "}
-                <span style={{
-                  background: "linear-gradient(90deg, #00b4d8 0%, #00dbd3 100%)",
-                  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}>
+                <span style={{ color: "#2f6bff" }}>
                   AI, Cloud &amp; Product Engineering
                 </span>
               </h1>
               <p style={{
-                fontSize: 18, lineHeight: 1.7, color: "rgba(255,255,255,0.70)",
+                fontSize: 18, lineHeight: 1.7, color: "#566678",
                 marginBottom: 28, maxWidth: 560,
               }}>
                 In-depth playbooks written by engineering leaders who ship AI, AWS, and mobile products daily.
-                Downloaded by <strong style={{ color: "#fff" }}>5,000+ CTOs and engineers</strong> — no fluff, no sales pitch.
+                Downloaded by <strong style={{ color: "#0b1e33" }}>5,000+ CTOs and engineers</strong> — no fluff, no sales pitch.
               </p>
 
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 32, flexWrap: "wrap" }}>
@@ -229,8 +217,8 @@ const Ebooks = () => {
                   {["SK", "MJ", "AP", "RT"].map((i, idx) => (
                     <span key={i} style={{
                       width: 36, height: 36, borderRadius: "50%",
-                      background: "linear-gradient(135deg, #1A5CCC, #00b4d8)",
-                      border: "2px solid #0d0f1a",
+                      background: "linear-gradient(135deg, #2f6bff, #00b4d8)",
+                      border: "2px solid #f7f9fc",
                       marginLeft: idx === 0 ? 0 : -10,
                       display: "flex", alignItems: "center", justifyContent: "center",
                       color: "#fff", fontWeight: 700, fontSize: 13,
@@ -238,8 +226,8 @@ const Ebooks = () => {
                   ))}
                 </div>
                 <div>
-                  <div style={{ color: "rgba(255,255,255,0.85)", fontSize: 14, fontWeight: 500 }}>
-                    <strong style={{ color: "#fff" }}>5,000+</strong> CTOs &amp; engineering leads read our ebooks
+                  <div style={{ color: "#566678", fontSize: 14, fontWeight: 500 }}>
+                    <strong style={{ color: "#0b1e33" }}>5,000+</strong> CTOs &amp; engineering leads read our ebooks
                   </div>
                   <span style={{ color: "#f7b500", fontSize: 14, letterSpacing: 2, display: "block", marginTop: 2 }} aria-label="5 out of 5 stars">★★★★★</span>
                 </div>
@@ -248,15 +236,15 @@ const Ebooks = () => {
               <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 36 }}>
                 <a href="#library" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "#017eeb", color: "#fff",
-                  border: "1px solid #017eeb", borderRadius: 6,
+                  background: "#2f6bff", color: "#fff",
+                  border: "1px solid #2f6bff", borderRadius: 6,
                   padding: "14px 28px", fontWeight: 600, fontSize: 15,
                   textDecoration: "none", transition: "all 0.3s",
                 }}>Browse the Library →</a>
                 <a href="#subscribe" style={{
                   display: "inline-flex", alignItems: "center", gap: 8,
-                  background: "transparent", color: "#fff",
-                  border: "1px solid rgba(255,255,255,0.35)", borderRadius: 6,
+                  background: "transparent", color: "#0b1e33",
+                  border: "1px solid #e4eaf1", borderRadius: 6,
                   padding: "14px 28px", fontWeight: 600, fontSize: 15,
                   textDecoration: "none", transition: "all 0.3s",
                 }}>Get New Ebooks by Email</a>
@@ -266,10 +254,10 @@ const Ebooks = () => {
                 {["Generative AI", "AWS & Cloud", "Mobile", "DevOps", "Product Engineering", "SaaS"].map((t) => (
                   <span key={t} style={{
                     display: "inline-flex", alignItems: "center",
-                    background: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.14)",
+                    background: "#ffffff",
+                    border: "1px solid #e4eaf1",
                     borderRadius: 9999, padding: "6px 14px",
-                    fontSize: 12, fontWeight: 600, color: "rgba(255,255,255,0.85)",
+                    fontSize: 12, fontWeight: 600, color: "#566678",
                   }}>{t}</span>
                 ))}
               </div>
@@ -278,16 +266,16 @@ const Ebooks = () => {
             {/* Featured ebook */}
             {featuredEbook && (
               <aside style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                background: "#ffffff",
+                border: "1px solid #e4eaf1",
                 borderRadius: 24, padding: 32,
-                backdropFilter: "blur(14px)", WebkitBackdropFilter: "blur(14px)",
+                boxShadow: "0 4px 24px rgba(11, 30, 51, 0.08)",
               }}>
                 <span style={{
                   display: "inline-flex", alignItems: "center", gap: 6,
-                  background: "rgba(0,180,216,0.18)",
-                  border: "1px solid rgba(0,180,216,0.35)",
-                  color: "#00dbd3", fontSize: 11, fontWeight: 700,
+                  background: "#e0f7fa",
+                  border: "1px solid #b2ebf2",
+                  color: "#00838f", fontSize: 11, fontWeight: 700,
                   letterSpacing: "0.1em", padding: "5px 12px",
                   borderRadius: 9999, textTransform: "uppercase", marginBottom: 20,
                 }}>
@@ -322,16 +310,16 @@ const Ebooks = () => {
                   )}
                 </div>
                 <h2 style={{
-                  color: "#fff", fontSize: 20, fontWeight: 700,
+                  color: "#0b1e33", fontSize: 20, fontWeight: 700,
                   letterSpacing: "-0.3px", marginBottom: 8, lineHeight: 1.3,
                 }}>{featuredEbook.name}</h2>
-                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 13, marginBottom: 20 }}>
-                  <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Most downloaded this month</strong> · Free expert guide by Brilworks.
+                <p style={{ color: "#6b7a8a", fontSize: 13, marginBottom: 20 }}>
+                  <strong style={{ color: "#0b1e33", fontWeight: 600 }}>Most downloaded this month</strong> · Free expert guide by Brilworks.
                 </p>
                 <Link href={`/ebooks/${featuredEbook.slug}`} className="mt-5" style={{
                   display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  background: "#017eeb", color: "#fff",
-                  border: "1px solid #017eeb", borderRadius: 6,
+                  background: "#2f6bff", color: "#fff",
+                  border: "1px solid #2f6bff", borderRadius: 6,
                   padding: "14px 28px", fontWeight: 600, fontSize: 15,
                   width: "100%", textDecoration: "none", transition: "all 0.3s",
                 }}>Get Free Ebook →</Link>
@@ -638,24 +626,20 @@ const Ebooks = () => {
       </section>
 
       {/* ============ TESTIMONIALS ============ */}
-      <section className="main-section-padding" style={{ background: "#0d0f1a", position: "relative", overflow: "hidden" }}>
-        <div style={{
-          position: "absolute", inset: 0, zIndex: 0,
-          background: "radial-gradient(ellipse 50% 40% at 80% 20%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 10% 90%, rgba(0,180,216,0.10) 0%, transparent 60%)",
-        }} />
+      <section className="main-section-padding" style={{ background: "#f1f5fb", position: "relative", overflow: "hidden" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center" style={{ marginBottom: 56 }}>
             <span style={{
               display: "inline-block", fontSize: 11, fontWeight: 700,
               letterSpacing: "0.14em", textTransform: "uppercase",
-              color: "#00b4d8", marginBottom: 14,
+              color: "#2f6bff", marginBottom: 14,
             }}>Reader Reviews</span>
             <h2 style={{
               fontSize: "clamp(30px, 3.5vw, 44px)", fontWeight: 800,
               letterSpacing: "-1px", lineHeight: 1.1,
-              color: "#fff", marginBottom: 14,
+              color: "#0b1e33", marginBottom: 14,
             }}>What Readers Are Saying</h2>
-            <p style={{ fontSize: 17, color: "rgba(255,255,255,0.65)", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
+            <p style={{ fontSize: 17, color: "#566678", maxWidth: 620, margin: "0 auto", lineHeight: 1.6 }}>
               Honest feedback from CTOs and engineering managers who've applied these playbooks.
             </p>
           </div>
@@ -663,30 +647,30 @@ const Ebooks = () => {
           <div className="grid lg:grid-cols-3 grid-cols-1 gap-5">
             {TESTIMONIALS.map((t) => (
               <div key={t.name} style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.1)",
+                background: "#ffffff",
+                border: "1px solid #e4eaf1",
                 borderRadius: 20, padding: 32,
-                backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
               }}>
                 <span style={{ color: "#f7b500", fontSize: 14, letterSpacing: 2, marginBottom: 16, display: "block" }} aria-label="5 stars">★★★★★</span>
                 <blockquote style={{
                   fontSize: 16, lineHeight: 1.65,
-                  color: "rgba(255,255,255,0.88)", fontWeight: 400,
+                  color: "#0b1e33", fontWeight: 400,
                   marginBottom: 24,
                 }}>"{t.quote}"</blockquote>
                 <div style={{
                   display: "flex", alignItems: "center", gap: 12,
-                  paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.1)",
+                  paddingTop: 20, borderTop: "1px solid #e4eaf1",
                 }}>
                   <div style={{
                     width: 44, height: 44, borderRadius: "50%",
-                    background: "linear-gradient(135deg, #1a5ccc, #00dbd3)",
+                    background: "linear-gradient(135deg, #1a5ccc, #00b4d8)",
                     display: "flex", alignItems: "center", justifyContent: "center",
                     color: "#fff", fontWeight: 700, fontSize: 15,
                   }}>{t.initials}</div>
                   <div>
-                    <strong style={{ color: "#fff", fontSize: 15, fontWeight: 700, display: "block" }}>{t.name}</strong>
-                    <span style={{ color: "rgba(255,255,255,0.6)", fontSize: 13 }}>{t.role}</span>
+                    <strong style={{ color: "#0b1e33", fontSize: 15, fontWeight: 700, display: "block" }}>{t.name}</strong>
+                    <span style={{ color: "#6b7a8a", fontSize: 13 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -728,11 +712,8 @@ const Ebooks = () => {
       </section>
 
       {/* ============ FINAL CTA ============ */}
-      <section style={{ background: "#0d0f1a", padding: "80px 0", position: "relative", overflow: "hidden" }}>
-        <div style={{
-          position: "absolute", inset: 0,
-          background: "radial-gradient(circle at 50% 0%, rgba(26,92,204,0.25) 0%, transparent 60%)",
-        }} />
+      <section className="svc-mid-cta-bg" style={{ padding: "80px 0", position: "relative", overflow: "hidden" }}>
+        <div className="svc-mid-cta-glow" style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto" style={{ position: "relative", zIndex: 1 }}>
           <div className="text-center" style={{ maxWidth: 640, margin: "0 auto" }}>
             <h2 style={{
@@ -740,22 +721,22 @@ const Ebooks = () => {
               fontWeight: 800, letterSpacing: "-0.8px", lineHeight: 1.2,
               marginBottom: 14,
             }}>Start with the most downloaded one.</h2>
-            <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 16, marginBottom: 28, lineHeight: 1.6 }}>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, marginBottom: 28, lineHeight: 1.6 }}>
               Free expert guides on AI, Cloud, and Product Engineering. Pick one, read it in 30 minutes, ship better code this week.
             </p>
             {featuredEbook ? (
               <Link href={`/ebooks/${featuredEbook.slug}`} className="mt-5" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "linear-gradient(135deg, #017eeb, #00dbd3)",
-                color: "#fff", border: "1px solid transparent", borderRadius: 6,
+                background: "#fff",
+                color: "#2f6bff", border: "1px solid #fff", borderRadius: 6,
                 padding: "14px 28px", fontWeight: 600, fontSize: 15,
                 textDecoration: "none", transition: "all 0.3s",
               }}>Get the Free Ebook →</Link>
             ) : (
               <a href="#library" style={{
                 display: "inline-flex", alignItems: "center", gap: 8,
-                background: "linear-gradient(135deg, #017eeb, #00dbd3)",
-                color: "#fff", border: "1px solid transparent", borderRadius: 6,
+                background: "#fff",
+                color: "#2f6bff", border: "1px solid #fff", borderRadius: 6,
                 padding: "14px 28px", fontWeight: 600, fontSize: 15,
                 textDecoration: "none", transition: "all 0.3s",
               }}>Browse the Library →</a>
