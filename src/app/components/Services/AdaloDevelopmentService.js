@@ -21,6 +21,7 @@ import {
   PhoneIcon,
   Smartphone,
 } from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm"),
@@ -65,32 +66,14 @@ const IconClock = ({ color = "#0d9488" }) => (
 // ---------- Style tokens ----------
 const heroBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(13,148,136,0.22) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(94,234,212,0.10) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #0f1f24 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
+    "radial-gradient(900px 420px at 78% -8%, rgba(13,148,136,0.10) 0%, transparent 60%), radial-gradient(700px 360px at 8% 6%, rgba(13,148,136,0.06) 0%, transparent 55%), #f7f9fc",
 };
 const darkSectionBg = {
   background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(13,148,136,0.16) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(94,234,212,0.08) 0%, transparent 60%), #0d0f1a",
+    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(13,148,136,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(13,148,136,0.04) 0%, transparent 60%), #f1f5fb",
 };
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #017eeb, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #0d9488, #5eead4)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
+const gradientTextStyle = { color: "#2f6bff" };
+const statValueStyle = { color: "#0d9488" };
 
 // ---------- Data ----------
 const TRUST = [
@@ -912,10 +895,6 @@ const AdaloDevelopmentService = () => {
         style={{ padding: "120px 0 80px" }}
       >
         <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{ ...heroGridOverlay, zIndex: -1 }}
-        />
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div
             className="grid gap-10 lg:gap-[60px] items-center"
@@ -926,20 +905,22 @@ const AdaloDevelopmentService = () => {
                 <span
                   className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
                   style={{
-                    background: "rgba(13,148,136,0.18)",
-                    border: "1px solid rgba(94,234,212,0.35)",
-                    color: "#5eead4",
+                    background: "#ffffff",
+                    border: "1px solid #e4eaf1",
+                    color: "#0d9488",
                     letterSpacing: "0.1em",
+                    boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                   }}
                 >
                   <IconBolt /> Adalo No-Code Development
                 </span>
                 <h1
-                  className="font-extrabold mb-5 text-white"
+                  className="font-extrabold mb-5"
                   style={{
                     fontSize: "clamp(34px, 4vw, 54px)",
                     letterSpacing: "-1.5px",
                     lineHeight: 1.1,
+                    color: "#0b1e33",
                   }}
                 >
                   Launch No-Code Apps{" "}
@@ -950,7 +931,7 @@ const AdaloDevelopmentService = () => {
                   style={{
                     fontSize: 18,
                     lineHeight: 1.7,
-                    color: "rgba(255,255,255,0.72)",
+                    color: "#566678",
                     maxWidth: 580,
                   }}
                 >
@@ -962,11 +943,11 @@ const AdaloDevelopmentService = () => {
                 <div className="flex flex-wrap gap-3.5 my-10">
                   <Link
                     href="#contact"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
                     style={{
-                      background: "#017eeb",
+                      background: "#2f6bff",
                       color: "#fff",
-                      border: "1px solid #017eeb",
+                      border: "1px solid #2f6bff",
                       padding: "16px 32px",
                       fontSize: 16,
                     }}
@@ -975,11 +956,11 @@ const AdaloDevelopmentService = () => {
                   </Link>
                   <Link
                     href="#services"
-                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
                     style={{
                       background: "transparent",
-                      color: "#fff",
-                      border: "1px solid rgba(255,255,255,0.3)",
+                      color: "#0b1e33",
+                      border: "1px solid #e4eaf1",
                       padding: "16px 32px",
                       fontSize: 16,
                     }}
@@ -989,7 +970,7 @@ const AdaloDevelopmentService = () => {
                 </div>
                 <div
                   className="flex flex-wrap gap-[18px]"
-                  style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}
+                  style={{ color: "#6b7a8a", fontSize: 14 }}
                 >
                   {[
                     "Free 30-min strategy call",
@@ -999,9 +980,9 @@ const AdaloDevelopmentService = () => {
                     <span
                       key={t}
                       className="inline-flex items-center gap-2"
-                      style={{ color: "rgba(255,255,255,0.65)" }}
+                      style={{ color: "#6b7a8a" }}
                     >
-                      <span style={{ color: "#5eead4" }}>
+                      <span style={{ color: "#16a34a" }}>
                         <IconCheck />
                       </span>
                       {t}
@@ -1014,12 +995,9 @@ const AdaloDevelopmentService = () => {
                   {HERO_STATS.map((s) => (
                     <div
                       key={s.label}
-                      className="rounded-2xl transition-all"
+                      className="rounded-2xl transition-all svc-stat-card"
                       style={{
-                        background: "rgba(255,255,255,0.05)",
-                        border: "1px solid rgba(255,255,255,0.1)",
                         padding: "28px 24px",
-                        backdropFilter: "blur(10px)",
                       }}
                     >
                       <div
@@ -1034,7 +1012,7 @@ const AdaloDevelopmentService = () => {
                       </div>
                       <div
                         style={{
-                          color: "rgba(255,255,255,0.65)",
+                          color: "#6b7a8a",
                           fontSize: 13,
                           fontWeight: 500,
                           lineHeight: 1.4,
@@ -1322,7 +1300,7 @@ const AdaloDevelopmentService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
+      {/* TESTIMONIALS */}
       <section
         className="relative overflow-hidden py-16 md:py-24"
         style={darkSectionBg}
@@ -1339,17 +1317,18 @@ const AdaloDevelopmentService = () => {
                 fontWeight: 700,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#5eead4",
+                color: "#0d9488",
               }}
             >
               Client Stories
             </span>
             <h2
-              className="font-extrabold text-white"
+              className="font-extrabold"
               style={{
                 fontSize: "clamp(28px, 3.2vw, 42px)",
                 letterSpacing: "-1px",
                 lineHeight: 1.15,
+                color: "#0b1e33",
               }}
             >
               What Founders Say About Working With Us
@@ -1359,7 +1338,7 @@ const AdaloDevelopmentService = () => {
               style={{
                 fontSize: 17,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.62)",
+                color: "#566678",
               }}
             >
               Real words from founders, product managers, and non-technical
@@ -1377,10 +1356,10 @@ const AdaloDevelopmentService = () => {
                 key={t.name}
                 className="rounded-2xl"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
                   padding: "32px 28px",
-                  backdropFilter: "blur(10px)",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                 }}
               >
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
@@ -1391,7 +1370,7 @@ const AdaloDevelopmentService = () => {
                 <p
                   className="mb-6"
                   style={{
-                    color: "rgba(255,255,255,0.85)",
+                    color: "#0b1e33",
                     fontSize: 15,
                     lineHeight: 1.7,
                   }}
@@ -1412,13 +1391,13 @@ const AdaloDevelopmentService = () => {
                   </div>
                   <div className="flex flex-col">
                     <span
-                      className="text-white font-semibold"
-                      style={{ fontSize: 14 }}
+                      className="font-semibold"
+                      style={{ fontSize: 14, color: "#0b1e33" }}
                     >
                       {t.name}
                     </span>
                     <span
-                      style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}
+                      style={{ color: "#6b7a8a", fontSize: 12 }}
                     >
                       {t.role}
                     </span>
@@ -1427,7 +1406,7 @@ const AdaloDevelopmentService = () => {
                       style={{
                         fontSize: 12,
                         fontWeight: 600,
-                        color: "#5eead4",
+                        color: "#0d9488",
                       }}
                     >
                       {t.metric}
