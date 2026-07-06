@@ -91,6 +91,56 @@ export async function getblogData(
   };
 }
 
+export async function getLatestBlogs(limit_per_page) {
+  let stories = await Storyblok.get(
+    "cdn/stories",
+    {
+      starts_with: "blog/",
+      page: 1,
+      per_page: limit_per_page || 3,
+      sort_by: "first_published_at:desc",
+      version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+      filter_query: {
+        component: {
+          in: "article",
+        },
+      },
+    },
+    {
+      next: { revalidate: 3600 },
+    },
+  );
+
+  return stories.data.stories;
+}
+
+export async function getBlogCategoryCounts(categories) {
+  const counts = await Promise.all(
+    categories.map(async (category) => {
+      const stories = await Storyblok.get(
+        "cdn/stories",
+        {
+          starts_with: "blog/",
+          page: 1,
+          per_page: 1,
+          excluding_fields: "content,Content_1,Content_2,Content_3",
+          version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+          filter_query: {
+            component: { in: "article" },
+            ...(category && { Category: { in: category } }),
+          },
+        },
+        {
+          next: { revalidate: 3600 },
+        },
+      );
+      return [category || "All", stories.total];
+    }),
+  );
+
+  return Object.fromEntries(counts);
+}
+
 export async function getSuggestionblog(
   page_no,
   limit_per_page,
