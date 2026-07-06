@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import ServicesSection from "../Common/ServicesSection";
+import "../../styles/ServiceLightTheme.css";
 
 const ToolsAndGetInTouch = dynamic(
   () => import("../Portfolio/ToolsAndGetInTouch"),
@@ -204,47 +205,82 @@ const OurProcessPage = () => {
 
   return (
     <>
-      <section className="portfolio-hero" aria-labelledby="hero-heading">
-        <div className="portfolio-hero-bg"></div>
-        <div className="portfolio-hero-grid"></div>
+      <section
+        className="svc-hero-bg relative overflow-hidden"
+        aria-labelledby="hero-heading"
+      >
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] grid-cols-1 gap-10 lg:gap-[60px] items-center pt-[140px] pb-20">
             <div>
-              <nav className="text-[13px] text-white/70 !mb-5" aria-label="Breadcrumb">
-                <Link href="/" className="text-white/80 hover:text-white transition-colors">Home</Link>
+              <nav
+                className="text-[13px] !mb-5"
+                style={{ color: "#6b7a8a" }}
+                aria-label="Breadcrumb"
+              >
+                <Link
+                  href="/"
+                  className="transition-colors"
+                  style={{ color: "#566678" }}
+                >
+                  Home
+                </Link>
                 {" / "}
-                <span>Our Process</span>
+                <span style={{ color: "#0b1e33" }}>Our Process</span>
               </nav>
-              <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] mb-6">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-xs font-semibold tracking-[0.1em] mb-6 border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
                 HOW WE WORK
               </span>
               <h1
                 id="hero-heading"
-                className="font-extrabold tracking-[-1.5px] leading-[1.1] mb-4 bg-gradient-to-r from-white via-white to-[#00ffff] bg-clip-text text-transparent"
-                style={{ fontSize: "clamp(36px, 3.8vw, 54px)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                className="font-extrabold tracking-[-1.5px] leading-[1.1] mb-4"
+                style={{ fontSize: "clamp(36px, 3.8vw, 54px)", color: "#0b1e33" }}
               >
                 Time Tested Processes for All Your Project Needs
               </h1>
-              <p className="text-[18px] text-white/60 leading-[1.7] max-w-[600px] !mb-10">
+              <p
+                className="text-[18px] leading-[1.7] max-w-[600px] !mb-10"
+                style={{ color: "#566678" }}
+              >
                 Over the past decade, we&apos;ve developed a flexible production process that enables us to deliver high-quality solutions on time, regardless of scale. Our experienced team offers a breadth of technical expertise to meet any client&apos;s needs.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact-us/"
-                  className="c-button c-btn-large bg-[#1A5CCC] text-white hover:bg-[#1450b8] transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
+                  className="c-button c-btn-large text-white transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
+                  style={{ background: "#2F6BFF" }}
                 >
                   Contact Us
                 </Link>
                 <Link
                   href="/portfolio/"
-                  className="c-button c-btn-large border border-white/20 text-white bg-transparent hover:bg-white/[0.08] hover:border-white/40 transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center"
+                  className="c-button c-btn-large transition-all duration-300 rounded-md px-[30px] py-3 font-medium whitespace-nowrap inline-flex items-center hover:bg-black/5"
+                  style={{
+                    border: "1px solid #e4eaf1",
+                    color: "#0b1e33",
+                    background: "transparent",
+                  }}
                 >
                   View Our Work
                 </Link>
               </div>
             </div>
             <div className="hidden lg:flex items-center justify-center">
-              <div className="w-full rounded-2xl overflow-hidden bg-white/[0.05] border border-white/10 backdrop-blur-[10px]">
+              <div
+                className="w-full rounded-2xl overflow-hidden"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  boxShadow: "0 4px 24px rgba(11,30,51,0.08)",
+                }}
+              >
                 <Image
                   src="/images/v2/our-procee-banner.webp"
                   alt="Our Process - How We Work"
