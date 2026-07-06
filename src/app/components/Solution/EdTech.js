@@ -8,6 +8,12 @@ import {
   BarChart2,
   UserCheck,
   LifeBuoy,
+  PlayCircle,
+  LayoutDashboard,
+  Smartphone,
+  Video,
+  BrainCog,
+  Rocket,
 } from "lucide-react";
 import {
   faReact,
@@ -37,6 +43,7 @@ const EdTech = () => {
     servicesList: [
       {
         title: "E-Learning Platform Development",
+        icon: <PlayCircle size={24} strokeWidth={1.75} />,
         description:
           "We build end-to-end e-learning platforms that support online courses, content delivery, video streaming, and student assessments. With built-in analytics and user-friendly dashboards, our solutions help educators manage everything from enrollment to performance tracking.",
         value: "e-learning-platform-development",
@@ -45,6 +52,7 @@ const EdTech = () => {
       },
       {
         title: "Learning Management System (LMS) Development",
+        icon: <LayoutDashboard size={24} strokeWidth={1.75} />,
         description:
           "Our LMS development services help schools and enterprises simplify training and upskilling. We design systems with role-based access, gamified learning, attendance tracking, and secure content management — all adaptable to your organization’s workflow.",
         value: "lms-development",
@@ -54,6 +62,7 @@ const EdTech = () => {
       },
       {
         title: "Mobile Learning App Development",
+        icon: <Smartphone size={24} strokeWidth={1.75} />,
         description:
           "Reach learners wherever they are. We create cross-platform mobile apps that deliver lessons, tests, and feedback in a clean and interactive format. Ideal for on-the-go learning, exam prep, or personalized tutoring experiences.",
         value: "mobile-learning-app-development",
@@ -62,6 +71,7 @@ const EdTech = () => {
       },
       {
         title: "School & University Management Software",
+        icon: <GraduationCap size={24} strokeWidth={1.75} />,
         description:
           "Our school management systems automate administrative tasks like admissions, scheduling, attendance, and communication between teachers, parents, and students. We help educational institutions run efficiently while improving student engagement.",
         value: "school-university-management-software",
@@ -70,6 +80,7 @@ const EdTech = () => {
       },
       {
         title: "Virtual Classroom & Video Learning Platforms",
+        icon: <Video size={24} strokeWidth={1.75} />,
         description:
           "Enable real-time teaching with integrated video conferencing, whiteboard tools, breakout sessions, and recording features. We build virtual classroom software that gives educators full control and learners a seamless experience.",
         value: "virtual-classroom-video-learning-platforms",
@@ -78,6 +89,7 @@ const EdTech = () => {
       },
       {
         title: "Adaptive & AI-Driven Learning Solutions",
+        icon: <BrainCog size={24} strokeWidth={1.75} />,
         description:
           "We design intelligent systems that analyze learner behavior, recommend personalized content, and adjust learning paths automatically. Perfect for training platforms, corporate learning, and education startups that want to use data to improve outcomes.",
         value: "adaptive-ai-learning-solutions",
@@ -86,6 +98,7 @@ const EdTech = () => {
       },
       {
         title: "Custom EdTech Platform Development",
+        icon: <Rocket size={24} strokeWidth={1.75} />,
         description:
           "If you need a tailored solution, we develop custom EdTech products from the ground up — integrating your branding, curriculum logic, and monetization models. From MVPs for startups to enterprise-grade systems, we bring your education technology vision to life.",
         value: "custom-edtech-platform-development",

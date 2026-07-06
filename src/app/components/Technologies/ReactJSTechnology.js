@@ -18,6 +18,13 @@ import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import ButtonV2 from "../Common/ButtonV2";
 import Cal from "@calcom/embed-react";
 import Heading from "../HTMLComponents/Heading";
+import {
+  Code2,
+  RefreshCw,
+  LayoutDashboard,
+  ShoppingBag,
+  Smartphone,
+} from "lucide-react";
 
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
 const TechStackWeWorkWith = dynamic(() => import("./TechStackWeWorkWith"));
@@ -112,6 +119,7 @@ const ReactJSTechnology = () => {
       {
         title: "Custom Application Development",
         value: "reactjs-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/custom-application-development-img.webp",
         description:
           "We design and deliver dynamic, scalable web and mobile applications with ReactJS and Next.js, ensuring smooth user experiences and solid technical foundations.",
@@ -119,6 +127,7 @@ const ReactJSTechnology = () => {
       {
         title: "Legacy Modernization",
         value: "reactjs-2",
+        icon: <RefreshCw size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/legacy-modernization-img.webp",
         description:
           "Replace outdated front-ends with fast, SEO-friendly React apps, or migrate from older frameworks to a future-ready stack.",
@@ -126,6 +135,7 @@ const ReactJSTechnology = () => {
       {
         title: "Real-time Dashboards & PWAs",
         value: "reactjs-3",
+        icon: <LayoutDashboard size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/realtime-dashboards-PWAs-img.webp",
         description:
           "Build analytics dashboards, PWAs, and live data interfaces using best practices for performance and engagement.",
@@ -133,6 +143,7 @@ const ReactJSTechnology = () => {
       {
         title: "eCommerce & SaaS Platforms",
         value: "reactjs-4",
+        icon: <ShoppingBag size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/e-eommerce-saas-platforms-img.webp",
         description:
           "Develop intuitive dashboards, product catalogs, portals, and user management systems for online businesses.",
@@ -140,6 +151,7 @@ const ReactJSTechnology = () => {
       {
         title: "Mobile with React Native",
         value: "reactjs-5",
+        icon: <Smartphone size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mobile-with-react-native-img.webp",
         description:
           "Extend your product’s reach with mobile apps using React Native—built for both iOS and Android with a shared codebase.",

@@ -89,7 +89,7 @@ const MeetOurTeam = () => {
         <ButtonV2
           redirect="/career/"
           label="Join Our Team"
-          className="w-fit mx-auto mt-5"
+          className="w-fit mx-auto mt-5 hover:text-themeColor"
         />
       </div>
     </div>

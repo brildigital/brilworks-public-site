@@ -3,6 +3,15 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
+import {
+  Dumbbell,
+  Truck,
+  Car,
+  ShoppingBag,
+  CalendarCheck,
+  GraduationCap,
+  Users,
+} from "lucide-react";
 import AboutOurExpertise from "./AboutOurExpertise";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 import "../../styles/ServiceLightTheme.css";
@@ -27,6 +36,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Fitness and Wellness Apps",
         value: "web-service-1",
+        icon: <Dumbbell size={24} strokeWidth={1.75} />,
         description:
           "We build white label fitness platforms with workouts, diet plans, progress tracking, trainer dashboards, community features, and subscription modules. Ideal for coaches, gyms, wellness brands, and digital fitness platforms.",
         imageSrc: "/images/v2/Native-App-Development.webp",
@@ -35,6 +45,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Delivery and Logistics Apps",
         value: "web-service-2",
+        icon: <Truck size={24} strokeWidth={1.75} />,
         description:
           "Our delivery stack includes apps for customer ordering, courier management, live tracking, route optimization, vendor dashboards, and automated dispatching. Suitable for food delivery, parcel delivery, and hyperlocal services.",
         imageSrc: "/images/v2/Cross-Platform-Development.webp",
@@ -43,6 +54,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Ride Hailing and Mobility Apps",
         value: "web-service-3",
+        icon: <Car size={24} strokeWidth={1.75} />,
         description:
           "We provide ready to deploy ride hailing systems with driver and rider apps, trip management, fare calculation, routing, and admin tools for fleet operations.",
         imageSrc: "/images/v2/Progressive-Web-App-(PWA) Development).webp",
@@ -51,6 +63,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Marketplace and E-Commerce Apps",
         value: "web-service-4",
+        icon: <ShoppingBag size={24} strokeWidth={1.75} />,
         description:
           "Our marketplace templates include multi vendor catalogs, cart and checkout flows, digital payments, order tracking, and seller dashboards. Good for retail brands and niche commerce models.",
         imageSrc: "/images/v2/IoT-App-Development.webp",
@@ -59,6 +72,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "On Demand Service Apps",
         value: "web-service-5",
+        icon: <CalendarCheck size={24} strokeWidth={1.75} />,
         description:
           "We offer service booking apps for home services, beauty, cleaning, repairs, and professional appointments. These include provider profiles, booking systems, schedules, reviews, and in app payments.",
         imageSrc: "/images/v2/Wearable-App-Development.webp",
@@ -67,6 +81,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Learning and Education Apps",
         value: "web-service-6",
+        icon: <GraduationCap size={24} strokeWidth={1.75} />,
         description:
           "Our white label learning platforms include courses, quizzes, assignments, instructor dashboards, student progress, and community interaction.",
         imageSrc: "/images/v2/Wearable-App-Development.webp",
@@ -75,6 +90,7 @@ const WhiteLabelAppDevelopment = () => {
       {
         title: "Membership and Community Apps",
         value: "web-service-7",
+        icon: <Users size={24} strokeWidth={1.75} />,
         description:
           "We create community driven apps for clubs, programs, creators, and organizations with feeds, groups, events, messaging, and content sections.",
         imageSrc: "/images/v2/Wearable-App-Development.webp",

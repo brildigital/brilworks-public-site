@@ -5,6 +5,20 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  ClipboardList,
+  Layers,
+  Palette,
+  Code2,
+  ShieldCheck,
+  Rocket,
+  LifeBuoy,
+  UserSearch,
+  Languages,
+  Brain,
+  ClipboardCheck,
+  Users,
+} from "lucide-react";
 import "../../styles/ServiceLightTheme.css";
 
 const ToolsAndGetInTouch = dynamic(
@@ -19,6 +33,7 @@ const OurProcessPage = () => {
       {
         title: "Requirements Analysis",
         value: "our-process-one-1",
+        icon: <ClipboardList size={24} strokeWidth={1.75} />,
         description:
           "We follow a rigorous process of requirement analysis in which we go through the business needs using various techniques. It includes end-to-end sessions with the client team and project team.",
         imageSrc: "/images/v2/requirement-analysis.webp",
@@ -34,6 +49,7 @@ const OurProcessPage = () => {
       {
         title: "Prototype or MVP",
         value: "our-process-one-2",
+        icon: <Layers size={24} strokeWidth={1.75} />,
         description:
           "After identifying the business needs and understanding the market, we develop the product with the help of our industry experts and create a minimum viable product to verify its usability.",
         imageSrc: "/images/v2/prototype-of-mvp.webp",
@@ -47,6 +63,7 @@ const OurProcessPage = () => {
       {
         title: "Design Sprint",
         value: "our-process-one-3",
+        icon: <Palette size={24} strokeWidth={1.75} />,
         description:
           "When planning your product, we ensure that user experience is at the core of our development. Our best practices have led to a flow of product development that enriches user experience.",
         imageSrc: "/images/v2/design-sprint.webp",
@@ -61,6 +78,7 @@ const OurProcessPage = () => {
       {
         title: "Development Sprint",
         value: "our-process-one-4",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         description:
           "We work together to ensure the delivery of the product is on time while ensuring that all the intended features are in place. We ensure the delivery of a stable build before a launch. Internal demos ensure that we are ready for testing prior to any release.",
         imageSrc: "/images/v2/development-sprint.webp",
@@ -77,6 +95,7 @@ const OurProcessPage = () => {
       {
         title: "Quality Assurance",
         value: "our-process-one-5",
+        icon: <ShieldCheck size={24} strokeWidth={1.75} />,
         description:
           "Our quality assurance team supports our developers by testing the product in various environments and scenarios. Our testing experts test across all the product requirements through both automated and manual approaches. We ensure that the entire product is properly tested before going to market.",
         imageSrc: "/images/v2/quality-assurance.webp",
@@ -92,6 +111,7 @@ const OurProcessPage = () => {
       {
         title: "Implementation & Deployment",
         value: "our-process-one-6",
+        icon: <Rocket size={24} strokeWidth={1.75} />,
         description:
           "When the software is ready for release, we orchestrate the build from sprint to the staging server. This allows us to test the product in a live environment thereby removing any risk of failure. Once everyone is satisfied, we take the product live.",
         imageSrc: "/images/v2/implementation-deployment.webp",
@@ -106,6 +126,7 @@ const OurProcessPage = () => {
       {
         title: "Maintenance & Support",
         value: "our-process-one-7",
+        icon: <LifeBuoy size={24} strokeWidth={1.75} />,
         description:
           "Maintenance keeps the application running smoothly by providing 24x7x365 days support for complete peace of mind. It’s the best way to ensure that your new app is up-to-date and secure, which means users will continue to love it.",
         imageSrc: "/images/v2/maintenance-support.webp",
@@ -126,6 +147,7 @@ const OurProcessPage = () => {
       {
         title: "Screening & Shortlisting",
         value: "our-process-two-1",
+        icon: <UserSearch size={24} strokeWidth={1.75} />,
         description:
           "Phase I begins with sorting, filtering, and assessing candidates against our stringent criteria. This helps us to determine the best candidates for each role.",
         imageSrc: "/images/v2/screening-shortlisting.webp",
@@ -140,6 +162,7 @@ const OurProcessPage = () => {
       {
         title: "Language Proficiency",
         value: "our-process-two-2",
+        icon: <Languages size={24} strokeWidth={1.75} />,
         description:
           "We test each candidate’s language proficiency through a series of assessments to understand their speaking, writing, and collaboration skills.",
         imageSrc: "/images/v2/language-proficiency.webp",
@@ -155,6 +178,7 @@ const OurProcessPage = () => {
       {
         title: " Aptitude Assessment",
         value: "our-process-two-3",
+        icon: <Brain size={24} strokeWidth={1.75} />,
         description:
           "Each candidate is given a timed aptitude test to help assess their decision-making, problem-solving, and critical thinking skills. These tests help us determine if they have the skills you are looking for. We also use this test as an indicator of how well they will fit into your company culture.",
         imageSrc: "/images/v2/aptitude-assessment.webp",
@@ -168,6 +192,7 @@ const OurProcessPage = () => {
       {
         title: "Technical Evaluation",
         value: "our-process-two-4",
+        icon: <ClipboardCheck size={24} strokeWidth={1.75} />,
         description:
           "We conduct rigorous skill review tests to review your technical capabilities and professional knowledge",
         imageSrc: "/images/v2/technical-evaluation.webp",
@@ -182,6 +207,7 @@ const OurProcessPage = () => {
       {
         title: "Team Extension",
         value: "our-process-two-5",
+        icon: <Users size={24} strokeWidth={1.75} />,
         description:
           "The final matchmaking process to connect you with the right talent for your business. Our mission is to keep your project on track by providing you with the skills and talent you need.",
         imageSrc: "/images/v2/team-extension.webp",

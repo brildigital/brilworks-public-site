@@ -266,7 +266,7 @@ const Footer = () => {
     pathname.includes("/i-remi") ? (
     ""
   ) : (
-    <div className="footer-background text-[#0B1E33] pb-14 md:pb-14 lg:pb-14">
+    <div className="footer-background text-[#0B1E33] pb-14 md:pb-14 lg:pb-14 border-t border-[#E4EAF1]">
       <div className="container max-w-[1280px] mx-auto main-section-padding-top !pb-0">
         <div
           className={`footer-new w-full xl:gap-20 md:gap-10 gap-6 xl:mb-10 md:mb-8 mb-5 ${

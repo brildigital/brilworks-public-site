@@ -8,6 +8,11 @@ import {
   ShieldCheck,
   Star,
   TrendingUp,
+  RefreshCw,
+  AppWindow,
+  Component,
+  Gauge,
+  Users,
 } from "lucide-react";
 import "../../styles/ServiceLightTheme.css";
 
@@ -76,6 +81,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "Custom React Application Development",
         value: "web-service-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         description:
           "Crafting single-page and multi-page React applications with clean state management, component architecture, and optimized rendering to ensure responsiveness and maintainability.",
         imageSrc: "/images/v2/mobile-app-img.webp",
@@ -84,6 +90,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "React Migration & Modernization",
         value: "web-service-2",
+        icon: <RefreshCw size={24} strokeWidth={1.75} />,
         description:
           "Updating legacy frontends to modern React stacks (including hooks, functional components, and TypeScript integration) to improve developer velocity and performance.",
         imageSrc: "/images/v2/react-modernization.webp",
@@ -92,6 +99,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "Progressive Web Apps (PWAs) with React",
         value: "web-service-3",
+        icon: <AppWindow size={24} strokeWidth={1.75} />,
         description:
           "Building installable, offline-capable web experiences that rival native apps in speed and engagement.",
         imageSrc: "/images/v2/progressive-web-app-pwa-development.webp",
@@ -100,6 +108,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "Design System Implementation",
         value: "web-service-4",
+        icon: <Component size={24} strokeWidth={1.75} />,
         description:
           "Creating reusable, accessible component libraries in React to ensure consistency across products while enabling rapid feature development.",
         imageSrc: "/images/v2/reactjs-dev-design-system.webp",
@@ -108,6 +117,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "React Performance Optimization",
         value: "web-service-5",
+        icon: <Gauge size={24} strokeWidth={1.75} />,
         description:
           "Profiling and tuning render patterns, lazy loading, code splitting, memoization, and minimizing bundle size for real-world speed.",
         imageSrc: "/images/v2/reactjs-dev-performance-optimization.webp",
@@ -116,6 +126,7 @@ const ReactJSDevelopmentService = () => {
       {
         title: "Team Augmentation / Staff Extension",
         value: "web-service-6",
+        icon: <Users size={24} strokeWidth={1.75} />,
         description:
           "Seamlessly embed our experienced ReactJS developers into your existing team to accelerate delivery or fill specific capability gaps.",
         imageSrc: "/images/v2/reactjs-dev-team-augmentation.webp",

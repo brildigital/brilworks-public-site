@@ -4,6 +4,14 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  Sparkles,
+  Smartphone,
+  Workflow,
+  Boxes,
+  Zap,
+  MonitorSmartphone,
+} from "lucide-react";
 
 const LowCodeNoCodeFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -96,6 +104,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "No-Code App Development",
         value: "low-code-1",
+        icon: <Sparkles size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/no-code-app-development.webp",
         description:
           "Build apps quickly with our expert developers, who specialize in building next-level applications with leading no-code platforms like Adalo, Flutterflow, and Bubble.io.",
@@ -103,6 +112,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "Adalo Development",
         value: "low-code-2",
+        icon: <Smartphone size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/adalo-consulting-services.webp",
         description:
           "Leverage the power of Adalo's intuitive interface. Our experts craft stunning, user-friendly apps, handling all aspects – from design to deployment – for a seamless experience.",
@@ -110,6 +120,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "Flutterflow Development",
         value: "low-code-3",
+        icon: <Workflow size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/flutterflow-migration.webp",
         description:
           "Get to market faster with next-level applications built using our Flutterflow development service. Our developers are skilled in building complex apps with this powerful platform.",
@@ -117,6 +128,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "Bubble.io Development",
         value: "low-code-4",
+        icon: <Boxes size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/bubble-development.webp",
         description:
           "Our skilled developers use Bubble.io's full-stack capabilities to build complex applications that rival fully coded ones in functionality and quality.",
@@ -124,6 +136,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "Streamlined Low-Code Development",
         value: "low-code-5",
+        icon: <Zap size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/streamlined-low-code-development.webp",
         description:
           "Our team combines coding expertise with low-code platforms to deliver modern apps in record time. Hire a low-code developer today to get started.",
@@ -131,6 +144,7 @@ const LowCodeNoCodeTechnology = () => {
       {
         title: "Low-Code Mobile App Development",
         value: "low-code-6",
+        icon: <MonitorSmartphone size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mobile-app-img.webp",
         description:
           "Our specialists develop low-code mobile apps that seamlessly run on both iOS and Android platforms.",

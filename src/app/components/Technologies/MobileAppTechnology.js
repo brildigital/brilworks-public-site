@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import { Repeat, Atom, Apple, Smartphone } from "lucide-react";
 
 const MobileAppFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -30,6 +31,7 @@ const MobileAppTechnology = () => {
       {
         title: "Cross-Platform App Development",
         value: "mobile-app-1",
+        icon: <Repeat size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/cross-platform-app-dev.webp",
         description:
           "We offer cross-platform app development solutions using industry-leading frameworks.",
@@ -37,6 +39,7 @@ const MobileAppTechnology = () => {
       {
         title: "React Native Development",
         value: "mobile-app-2",
+        icon: <Atom size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-development.webp",
         description:
           "React Native is a powerful framework to build high-performance mobile apps for both iOS and Android using a single codebase.",
@@ -44,6 +47,7 @@ const MobileAppTechnology = () => {
       {
         title: "iOS App Development",
         value: "mobile-app-3",
+        icon: <Apple size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/ios-app-development.webp",
         description:
           "Our experienced iOS developers specialize in developing innovative and visually appealing apps using the latest technologies and design trends.",
@@ -51,6 +55,7 @@ const MobileAppTechnology = () => {
       {
         title: "Android App Development",
         value: "mobile-app-4",
+        icon: <Smartphone size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/android-app-development.webp",
         description:
           "Our Android app development team is skilled in building robust and scalable apps, ensuring optimal performance, compatibility, and a native-like experience across various Android devices.",

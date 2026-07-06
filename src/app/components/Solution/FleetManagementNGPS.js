@@ -13,6 +13,13 @@ import {
   Plug,
   Cloud,
   BarChart2,
+  Truck,
+  Warehouse,
+  Navigation,
+  Building2,
+  TrafficCone,
+  PackageCheck,
+  Boxes,
 } from "lucide-react";
 import {
   faReact,
@@ -44,6 +51,7 @@ const FleetManagementNGPS = () => {
     servicesList: [
       {
         title: "Fleet Management App Development",
+        icon: <Truck size={24} strokeWidth={1.75} />,
         description:
           "We build apps that allow you to monitor and optimise your vehicle fleets in real time. Track drivers, plan routes, capture performance data and reduce idle time so your fleet becomes a strategic asset, not just a cost centre.",
         value: "fleet-one-1",
@@ -53,6 +61,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Inventory Management App Development",
+        icon: <Warehouse size={24} strokeWidth={1.75} />,
         description:
           "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You’ll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.",
         value: "fleet-one-2",
@@ -62,6 +71,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "On-Demand Logistics App Development",
+        icon: <Navigation size={24} strokeWidth={1.75} />,
         description:
           "On-demand logistics apps for dynamic routing, real-time tracking for customers and dispatchers, helping you win in competitive markets.",
         value: "fleet-one-3",
@@ -71,6 +81,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Route Optimisation App Development",
+        icon: <Route size={24} strokeWidth={1.75} />,
         description:
           "For companies managing complex transportation logistics, we build apps that integrate order volumes, traffic data, vehicle capacities and delivery constraints to plan efficient trips, reduce costs and improve reliability.",
         value: "fleet-one-4",
@@ -80,6 +91,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Custom Enterprise Logistics App Development ",
+        icon: <Building2 size={24} strokeWidth={1.75} />,
         description:
           "Your business is unique. If you need a tailored solution. We design custom logistics apps built to your requirements, with future-proof architecture, data analytics modules and support across mobile and web platforms.",
         value: "fleet-one-5",
@@ -96,6 +108,7 @@ const FleetManagementNGPS = () => {
     servicesList: [
       {
         title: "GPS Fleet Tracking",
+        icon: <MapPin size={24} strokeWidth={1.75} />,
         description:
           "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
         value: "fleet-two-1",
@@ -104,6 +117,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Traffic Management Software",
+        icon: <TrafficCone size={24} strokeWidth={1.75} />,
         description:
           "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.",
         value: "fleet-two-2",
@@ -112,6 +126,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Delivery Management Software",
+        icon: <PackageCheck size={24} strokeWidth={1.75} />,
         description:
           "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
         value: "fleet-two-3",
@@ -120,6 +135,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Transportation Software",
+        icon: <Truck size={24} strokeWidth={1.75} />,
         description:
           "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
         value: "fleet-two-4",
@@ -128,6 +144,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Supply Chain Management Software",
+        icon: <Boxes size={24} strokeWidth={1.75} />,
         description:
           "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
         value: "fleet-two-5",
