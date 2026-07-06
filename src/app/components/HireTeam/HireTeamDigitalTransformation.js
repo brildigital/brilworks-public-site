@@ -56,13 +56,13 @@ const HireTeamDigitalTransformation = () => {
   ];
 
   return (
-    <div className="bg-navyBlue">
-      <div className="border-b border-b-[#2B3138] reveal">
+    <div className="bg-white">
+      <div className="border-b border-b-[#e4eaf1] reveal">
         <div className="container max-w-[1280px] mx-auto main-section-padding !pb-0">
           <div className="lg:mb-10 md:mb-8 mb-6">
             <Heading
               type="h2"
-              className="lg:!text-[34px] md:!text-3xl !text-2xl text-white"
+              className="lg:!text-[34px] md:!text-3xl !text-2xl !text-[#0b1e33]"
               text="Empowering Your Digital Transformation"
             />
           </div>
@@ -82,6 +82,7 @@ const HireTeamDigitalTransformation = () => {
                 data={data}
                 handleOpen={handleOpen}
                 open={open}
+                darkMode={false}
               />
             </div>
           ))
@@ -90,6 +91,7 @@ const HireTeamDigitalTransformation = () => {
             sectionId="empower-digital-tranformation"
             initialTabValue="node-digital-trasndormation-1"
             data={nodeJSDigitalTranformationData}
+            darkMode={false}
           />
         )}
       </div>
