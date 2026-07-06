@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import { Code2, Palette, Plug, Wrench, MessageSquare } from "lucide-react";
 
 const AdaloFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -104,6 +105,7 @@ const AdaloTechnology = () => {
       {
         title: "Custom App Development",
         value: "adalo-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mobile-app-img.webp",
         description:
           "Whether you need a prototype or a fully functional application, our team can develop any kind of custom app using Adalo.",
@@ -111,6 +113,7 @@ const AdaloTechnology = () => {
       {
         title: "UI/UX Design",
         value: "adalo-2",
+        icon: <Palette size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/ui-ux-img.webp",
         description:
           "User experience is at the heart of every successful app. Our design team crafts intuitive and engaging interfaces, ensuring a seamless user journey from start to finish.",
@@ -118,6 +121,7 @@ const AdaloTechnology = () => {
       {
         title: "Integration Services",
         value: "adalo-3",
+        icon: <Plug size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/integration-services.webp",
         description:
           "Integrate your app with third-party services and APIs, from payment gateways to social media platforms, to enhance its functionality.",
@@ -125,6 +129,7 @@ const AdaloTechnology = () => {
       {
         title: "App Maintenance and Support",
         value: "adalo-4",
+        icon: <Wrench size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/maintenance.webp",
         description:
           "Our commitment to your success doesn’t end at launch. We offer ongoing maintenance and support services.",
@@ -132,6 +137,7 @@ const AdaloTechnology = () => {
       {
         title: "Adalo Consulting Services",
         value: "adalo-5",
+        icon: <MessageSquare size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/adalo-consulting-services.webp",
         description:
           "Not sure where to start? Our Adalo experts provide consulting services to help you navigate the app development process, from ideation to deployment.",

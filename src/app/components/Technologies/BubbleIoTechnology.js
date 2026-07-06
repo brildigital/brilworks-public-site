@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import { Database, Bug, LayoutTemplate, Plug, Wrench } from "lucide-react";
 
 const BubbleIoFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -31,6 +32,7 @@ const BubbleIoTechnology = () => {
       {
         title: "Database Integration",
         value: "bubble-io-1",
+        icon: <Database size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/databse-integration.webp",
         description:
           "We seamlessly connect your app to various databases, ensuring efficient data management and real-time updates for enhanced functionality.",
@@ -38,6 +40,7 @@ const BubbleIoTechnology = () => {
       {
         title: "Testing and Debugging",
         value: "bubble-io-2",
+        icon: <Bug size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/testing-and-debugging.webp",
         description:
           "Our rigorous testing process identifies and resolves bugs early, ensuring a smooth user experience and reliable app performance across all devices.",
@@ -45,6 +48,7 @@ const BubbleIoTechnology = () => {
       {
         title: "Visual Development",
         value: "bubble-io-3",
+        icon: <LayoutTemplate size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/visual-development.webp",
         description:
           "We utilize Bubble's powerful visual development tools to create intuitive user interfaces, bringing your app ideas to life without extensive coding knowledge.",
@@ -52,6 +56,7 @@ const BubbleIoTechnology = () => {
       {
         title: "App Integration",
         value: "bubble-io-4",
+        icon: <Plug size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/app-integration.webp",
         description:
           "Integrate your Bubble app with other systems and platforms, such as CRM, payment gateways, and social media.",
@@ -59,6 +64,7 @@ const BubbleIoTechnology = () => {
       {
         title: "Maintenance",
         value: "bubble-io-5",
+        icon: <Wrench size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/maintenance.webp",
         description:
           "Our ongoing maintenance services keep your app running smoothly, providing updates and optimizations to enhance performance and user engagement over time.",

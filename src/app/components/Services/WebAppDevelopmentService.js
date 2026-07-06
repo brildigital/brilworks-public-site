@@ -14,6 +14,12 @@ import {
   ShieldCheck,
   Star,
   TrendingUp,
+  Code2,
+  Layers,
+  AppWindow,
+  Building2,
+  Palette,
+  Wrench,
 } from "lucide-react";
 import "../../styles/ServiceLightTheme.css";
 
@@ -85,6 +91,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "Custom Web Application Development",
         value: "web-service-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         description:
           "We craft bespoke web apps tailored to fit your process. We follow a consultative process to understand your workflow, customer needs, and growth vision before writing a single line of code.",
         imageSrc: "/images/v2/custom-web-application-development.webp",
@@ -93,6 +100,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "Frontend and Backend Development",
         value: "web-service-2",
+        icon: <Layers size={24} strokeWidth={1.75} />,
         description:
           "We build structured, maintainable systems across both client and server sides. Everything is designed for clarity, consistency, and long-term use, nothing added without purpose.",
         imageSrc: "/images/v2/frontend-and-backend-development.webp",
@@ -101,6 +109,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "Progressive Web App (PWA) Development",
         value: "web-service-3",
+        icon: <AppWindow size={24} strokeWidth={1.75} />,
         description:
           "Give users a native-app-like experience on the web. Our PWA solutions work offline, load instantly, and provide seamless interactions across devices and browsers.",
         imageSrc: "/images/v2/progressive-web-app-pwa-development.webp",
@@ -109,6 +118,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "Enterprise Web Development",
         value: "web-service-4",
+        icon: <Building2 size={24} strokeWidth={1.75} />,
         description:
           "For growing organizations and complex ecosystems, we develop enterprise-grade web solutions that scale effortlessly.",
         imageSrc: "/images/v2/enterprise-web-development.webp",
@@ -117,6 +127,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "UI/UX Design for Web Applications",
         value: "web-service-5",
+        icon: <Palette size={24} strokeWidth={1.75} />,
         description:
           "Design drives engagement. Our UI/UX designers create intuitive, user-friendly interfaces that enhance usability and customer satisfaction.",
         imageSrc: "/images/v2/ui-ux-design-for-web-applications.webp",
@@ -125,6 +136,7 @@ const WebAppDevelopmentService = () => {
       {
         title: "Web App Maintenance & Optimization",
         value: "web-service-6",
+        icon: <Wrench size={24} strokeWidth={1.75} />,
         description:
           "We provide ongoing support, performance monitoring, updates, and enhancements to ensure your web application runs smoothly and adapts to changing user needs.",
         imageSrc: "/images/v2/web-app-maintenance-optimization.webp",

@@ -4,6 +4,13 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  MessageSquare,
+  Palette,
+  Compass,
+  PenTool,
+  LayoutTemplate,
+} from "lucide-react";
 
 const UIUXFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -27,6 +34,7 @@ const UIUXTechnology = () => {
       {
         title: "UI UX Consulting Services",
         value: "ui-ux-1",
+        icon: <MessageSquare size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/java-consulting.webp",
         description:
           "Our UX and UI design can help you set the tone of your brand, create designs that are visually appealing and easy for your users to navigate.",
@@ -34,6 +42,7 @@ const UIUXTechnology = () => {
       {
         title: "UI UX Design Services",
         value: "ui-ux-2",
+        icon: <Palette size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/ui-ux-design-services.webp",
         description:
           "We believe in the power of intuitive design and are always on the lookout for new ways to streamline the user experience. Our team has proven expertise in creating human-centered experiences.",
@@ -41,6 +50,7 @@ const UIUXTechnology = () => {
       {
         title: "UX Strategy",
         value: "ui-ux-3",
+        icon: <Compass size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/ux-strategy.webp",
         description:
           "Our strategy is a perfect blend of design, usability, and business principles. We identify your biggest needs and come up with an effective UX strategy to transform your brand into one that resonates with users.",
@@ -48,6 +58,7 @@ const UIUXTechnology = () => {
       {
         title: "Mockups Designing",
         value: "ui-ux-4",
+        icon: <PenTool size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mockups-designing.webp",
         description:
           "Our talented team of UI/UX designers deliver mockups that make it easy for you to focus on what’s most important: creating a great product.",
@@ -55,6 +66,7 @@ const UIUXTechnology = () => {
       {
         title: "Wireframe and Prototyping",
         value: "ui-ux-5",
+        icon: <LayoutTemplate size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/wireframe-and-prototyping.webp",
         description:
           "With our expertly curated selection of UX professionals, you’ll get wireframe designers that offer a full range of services to make your product plan come alive.",

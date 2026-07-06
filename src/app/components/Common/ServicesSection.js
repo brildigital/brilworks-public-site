@@ -49,7 +49,15 @@ const ServicesSection = ({
                     className={index === serviceData.servicesList.length - 1 ? "invert brightness-200" : ""}
                   />
                 ) : (
-                  <span className="text-2xl">{service.icon || "📦"}</span>
+                  <span
+                    className={
+                      index === serviceData.servicesList.length - 1
+                        ? "text-white"
+                        : "text-themeColor"
+                    }
+                  >
+                    {service.icon}
+                  </span>
                 )}
               </div>
               <h3 className="text-xl font-bold text-[#212121] tracking-[-0.5px] leading-[1.3] !mb-2">

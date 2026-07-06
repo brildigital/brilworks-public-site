@@ -4,6 +4,17 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  Code2,
+  Repeat,
+  Palette,
+  Apple,
+  RefreshCw,
+  ArrowRightLeft,
+  Users,
+  Wrench,
+  Bug,
+} from "lucide-react";
 
 const ReactNativeFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -74,6 +85,7 @@ const ReactNativeTechnology = () => {
       {
         title: "Custom Mobile App Development",
         value: "rn-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/custom-mobile-app-development.webp",
         description:
           "Need a customized mobile app for your business? Our React Native app development services deliver bespoke React Native solutions, from MVPs to enterprise-grade apps. We align with your goals, using tools like Redux and Jest for robust performance.",
@@ -81,6 +93,7 @@ const ReactNativeTechnology = () => {
       {
         title: "Cross-Platform App Development",
         value: "rn-2",
+        icon: <Repeat size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/cross-platform-app-development-2.webp",
         description:
           "Native-like mobile experiences built with React Native's most advanced capabilities. Our development process delivers iOS and Android versions simultaneously with shared business logic and platform-perfect interfaces. From concept to app store submission, we build complete cross-platform mobile solutions.",
@@ -88,6 +101,7 @@ const ReactNativeTechnology = () => {
       {
         title: "React Native UI/UX Development",
         value: "rn-3",
+        icon: <Palette size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/ux-development.webp",
         description:
           "Craft pixel-perfect interfaces that set industry standards. Our React Native UI/UX development services combine Figma's precision design tools with optimized native components, delivering buttery-smooth experiences across all devices.",
@@ -95,6 +109,7 @@ const ReactNativeTechnology = () => {
       {
         title: "React Native iOS App Development",
         value: "rn-4",
+        icon: <Apple size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-ios-app-development.webp",
         description:
           "We engineer premium iOS experiences using React Native, optimized for Apple's ecosystem. Our iOS solutions deliver true-native performance while maintaining cross-platform efficiency, fully compliant with App Store guidelines.",
@@ -102,6 +117,7 @@ const ReactNativeTechnology = () => {
       {
         title: "React Native Application Modernization",
         value: "rn-5",
+        icon: <RefreshCw size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-modernization.webp",
         description:
           "Update outdated apps with React Native application modernization. We revamp legacy systems, improve performance, and add modern features (e.g., push notifications, offline support), keeping your app competitive in 2025 and beyond.",
@@ -109,6 +125,7 @@ const ReactNativeTechnology = () => {
       {
         title: "React Native Migration Services",
         value: "rn-6",
+        icon: <ArrowRightLeft size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-migration-2.webp",
         description:
           "Migrate legacy apps to React Native without data loss. Our React Native migration services ensure smooth transitions, updating your app to the latest standards with minimal downtime. Ideal for modernizing your mobile presence.",
@@ -116,6 +133,7 @@ const ReactNativeTechnology = () => {
       {
         title: "React Native Team Augmentation",
         value: "rn-7",
+        icon: <Users size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-team-augmentation.webp",
         description:
           "Scale your in-house team with React Native team augmentation. Hire our dedicated React Native developers to work alongside your team, providing expertise in custom development, API integration, or modernization, with flexible engagement models.",
@@ -123,6 +141,7 @@ const ReactNativeTechnology = () => {
       {
         title: "App Maintenance & Support",
         value: "rn-8",
+        icon: <Wrench size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-app-maintenance.webp",
         description:
           "Keep your app running smoothly with 24/7 maintenance. We monitor performance, fix bugs, and provide updates to ensure scalable mobile apps with 99.9% uptime.",
@@ -130,6 +149,7 @@ const ReactNativeTechnology = () => {
       {
         title: "Testing & Audit",
         value: "rn-9",
+        icon: <Bug size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-testing-audit.webp",
         description:
           "Ensure your app is bug-free with our testing services. We conduct performance audits, responsiveness tests, and stability checks across devices, delivering a flawless user experience.",
