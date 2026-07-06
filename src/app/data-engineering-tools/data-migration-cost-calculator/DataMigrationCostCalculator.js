@@ -4,6 +4,7 @@ import Heading from "../../components/HTMLComponents/Heading";
 import GradientFAQAccordion from "../../components/Common/GradientFAQAccordion";
 import Link from "next/link";
 import { getCalApi } from "@calcom/embed-react";
+import "../../styles/ServiceLightTheme.css";
 import {
   ArrowRight,
   ArrowLeft,
@@ -526,33 +527,29 @@ const DataMigrationCostCalculator = () => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navyBlue relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(61,123,255,0.18) 0%, transparent 70%)",
-          }}
-        />
+      <section className="svc-hero-bg relative overflow-hidden">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
-          <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-3.5 py-1.5 text-[#00b4d8] text-xs font-semibold tracking-widest uppercase mb-7">
-            <Star className="w-3.5 h-3.5" />
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-widest uppercase mb-7"
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e4eaf1",
+              color: "#566678",
+              boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+            }}
+          >
+            <Star className="w-3.5 h-3.5" style={{ color: "#2f6bff" }} />
             FREE TOOL
           </span>
           <Heading
             type="h1"
-            className="text-white !font-extrabold max-w-[720px]"
+            className="!font-extrabold max-w-[720px] text-[#0b1e33]"
             text="Data Migration Cost Calculator"
           />
-          <p className="text-gray-400 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
+          <p
+            className="lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed"
+            style={{ color: "#566678" }}
+          >
             Estimate the cost of your data migration based on your data volume,
             source systems, migration complexity, and project requirements. Plan
             your migration with greater confidence before work begins.
@@ -560,7 +557,7 @@ const DataMigrationCostCalculator = () => {
           <div className="mt-8">
             <a
               href="#calculator"
-              className="w-fit c-button c-btn-primary c-btn-medium inline-flex items-center gap-2 hover:!text-colorWhite"
+              className="w-fit c-button c-btn-primary c-btn-medium inline-flex items-center gap-2 hover:!text-themeColor"
               onClick={(e) => {
                 e.preventDefault();
                 document
@@ -571,7 +568,10 @@ const DataMigrationCostCalculator = () => {
               Start Calculator <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-          <div className="flex flex-wrap gap-5 mt-8 pt-6 border-t border-white/10">
+          <div
+            className="flex flex-wrap gap-5 mt-8 pt-6"
+            style={{ borderTop: "1px solid #e4eaf1" }}
+          >
             {[
               "No signup required",
               "Results in under 2 min",
@@ -579,9 +579,13 @@ const DataMigrationCostCalculator = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 text-white/50 text-sm font-medium"
+                className="flex items-center gap-2 text-sm font-medium"
+                style={{ color: "#6b7a8a" }}
               >
-                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                <CheckCircle
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{ color: "#16a34a" }}
+                />
                 {item}
               </div>
             ))}
@@ -592,19 +596,28 @@ const DataMigrationCostCalculator = () => {
       {/* Breadcrumb */}
       <div className="bg-white">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 py-3">
-          <nav className="text-sm text-gray-400" aria-label="Breadcrumb">
-            <Link href="/" className="text-themeColor hover:underline">
+          <nav
+            className="text-sm"
+            style={{ color: "#6b7a8a" }}
+            aria-label="Breadcrumb"
+          >
+            <Link
+              href="/"
+              style={{ color: "#2f6bff" }}
+              className="hover:underline"
+            >
               Home
             </Link>
             <span className="mx-1.5">/</span>
             <Link
               href="/data-engineering-tools/"
-              className="text-themeColor hover:underline"
+              style={{ color: "#2f6bff" }}
+              className="hover:underline"
             >
               Data Engineering Tools
             </Link>
             <span className="mx-1.5">/</span>
-            <span className="text-gray-600 font-medium">
+            <span className="font-medium" style={{ color: "#0b1e33" }}>
               Data Migration Cost Calculator
             </span>
           </nav>
@@ -616,7 +629,7 @@ const DataMigrationCostCalculator = () => {
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5">
           {!result ? (
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg shadow-gray-200/60 overflow-hidden">
-              <div className="bg-navyBlue px-6 md:px-10 py-5">
+              <div className="svc-mid-cta-bg px-6 md:px-10 py-5">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-white/60 text-xs font-semibold tracking-wider uppercase">
@@ -750,14 +763,8 @@ const DataMigrationCostCalculator = () => {
               </div>
 
               {/* Lead gen CTA */}
-              <div className="relative bg-navyBlue rounded-2xl p-7 md:p-9 overflow-hidden">
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse 60% 80% at 80% 20%, rgba(61,123,255,0.2) 0%, transparent 60%)",
-                  }}
-                />
+              <div className="relative svc-mid-cta-bg rounded-2xl p-7 md:p-9 overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold text-white mb-2">
                     Planning a migration soon?

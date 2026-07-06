@@ -4,6 +4,7 @@ import CaseStudyLayout from "../CaseStudyLayout";
 
 const EcommerceAnalyticsCase = () => (
   <CaseStudyLayout
+    light
     kicker="Case Study · E-commerce"
     title="Reducing reporting delays from days to minutes for retailer."
     subtitle="An omnichannel retailer had data spread across Shopify, Amazon, Meta Ads, Google Ads, and its ERP system. Leadership spent more time debating numbers than making decisions. We built a centralized analytics platform that gave every team the same answers."

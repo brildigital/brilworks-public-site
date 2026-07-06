@@ -2,7 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const MenuItem = ({ path, onClick, name, className, theme }) => {
+const MenuItem = ({
+  path,
+  onClick,
+  name,
+  className,
+  theme,
+  activeColor = "#2F6BFF",
+}) => {
   const pathname = usePathname();
   const isEnterprise = theme === "enterprise";
 
@@ -12,13 +19,20 @@ const MenuItem = ({ path, onClick, name, className, theme }) => {
         className={`!mb-0 w-full whitespace-normal font-normal ${
           pathname === path
             ? isEnterprise
-              ? "!text-[#2F6BFF] !font-semibold"
+              ? "!font-semibold"
               : "page-active"
             : isEnterprise
               ? "text-[#0B1E33] hover:!text-[#2F6BFF]"
               : "hover:!text-themeColor"
         }`}
-        style={isEnterprise ? { fontFamily: "var(--font-body)" } : undefined}
+        style={
+          isEnterprise
+            ? {
+                fontFamily: "var(--font-body)",
+                color: pathname === path ? activeColor : undefined,
+              }
+            : undefined
+        }
       >
         {name}
       </p>

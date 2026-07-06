@@ -1,16 +1,16 @@
 import DataEngineeringSaaS from "@/app/components/IndustryPage/DataEngineeringSaaS";
 
 export const metadata = {
-  title: "Data Engineering for SaaS | Brilworks",
+  title: "SaaS Data Engineering Services | Brilworks",
   description:
-    "Data engineering for SaaS companies. Multi-tenant pipelines, tenant-isolated warehouses, and billing data that never drifts. Snowflake and Databricks partner.",
+    "Multi-tenant warehouses, product analytics, and billing pipelines built for SaaS companies. Snowflake and Databricks certified. Talk to a data engineer.",
   keywords:
     "SaaS data engineering, multi-tenant warehouse, Snowflake SaaS, row-level security, product analytics pipeline, billing data accuracy, Databricks SaaS",
   openGraph: {
-    title: "Data Engineering for SaaS | Brilworks",
+    title: "SaaS Data Engineering Services | Brilworks",
     type: "website",
     description:
-      "We pull data scattered across your CRM, billing, product, and support tools into one warehouse — without one tenant ever seeing another tenant's numbers.",
+      "Multi-tenant warehouses, product analytics, and billing pipelines built for SaaS companies. Snowflake and Databricks certified. Talk to a data engineer.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-saas/`,
     siteName: "Brilworks",
   },

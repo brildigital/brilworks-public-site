@@ -6,13 +6,13 @@ import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
 const LAST_UPDATED = "2026-05-01";
 
 export const metadata = {
-  title: "Custom AI Agent Development | AI Agents for Business | Brilworks",
+  title: "AI Agent Development Services | Live in 7 Days",
   description:
-    "Get a working AI agent prototype in 7 days. Brilworks builds custom AI agents — lead qualification, customer support, WhatsApp, document processing, and workflow automation. Starting at $2,000.",
+    "AI Agent Development Services. We deploy working AI agents that qualify leads, process documents, and automate support without long build cycles.",
   openGraph: {
-    title: "Custom AI Agent Development | Brilworks",
+    title: "AI Agent Development Services | Live in 7 Days",
     description:
-      "Get a working AI agent prototype in 7 days, tailored to your operations. 30+ agents built and deployed.",
+      "AI Agent Development Services. We deploy working AI agents that qualify leads, process documents, and automate support without long build cycles.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agent-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -25,9 +25,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Custom AI Agent Development | Brilworks",
+    title: "AI Agent Development Services | Live in 7 Days",
     description:
-      "Get a working AI agent prototype in 7 days, tailored to your operations. 30+ agents built and deployed.",
+      "AI Agent Development Services. We deploy working AI agents that qualify leads, process documents, and automate support without long build cycles.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -44,10 +44,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateWebPageSchema({
-            title:
-              "Custom AI Agent Development | AI Agents for Business | Brilworks",
+            title: "AI Agent Development Services | Live in 7 Days",
             description:
-              "Get a working AI agent prototype in 7 days. Brilworks builds custom AI agents — lead qualification, customer support, WhatsApp, document processing, and workflow automation. Starting at $2,000.",
+              "AI Agent Development Services. We deploy working AI agents that qualify leads, process documents, and automate support without long build cycles.",
             url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agent-development-services/`,
             dateModified: LAST_UPDATED,
           }),

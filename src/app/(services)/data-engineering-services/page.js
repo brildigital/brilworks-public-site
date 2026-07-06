@@ -6,24 +6,24 @@ import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
 const LAST_UPDATED = "2026-06-23";
 
 export const metadata = {
-  title: "Data Engineering Services | Snowflake & Databricks | Brilworks",
+  title: "Data Engineering Services | Snowflake & Databricks Experts",
   description:
-    "Brilworks data engineering services: cut Snowflake and Databricks costs, migrate legacy platforms, and build pipelines that hold up in production. From raw data to running AI.",
+    "Data engineering services on Snowflake and Databricks. We cut warehouse spend 20 to 40% and get your AI production-ready. Fixed-price audit, no lock-in.",
   keywords:
     "data engineering services, data pipeline development, data warehouse services, snowflake databricks consulting",
   openGraph: {
-    title: "Data Engineering Services | Brilworks",
+    title: "Data Engineering Services | Snowflake & Databricks Experts",
     type: "website",
     description:
-      "Brilworks data engineering services: cut Snowflake and Databricks costs, migrate legacy platforms, and build pipelines that hold up in production.",
+      "Data engineering services on Snowflake and Databricks. We cut warehouse spend 20 to 40% and get your AI production-ready. Fixed-price audit, no lock-in.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-services/`,
     siteName: "Brilworks",
     locale: "en-US",
   },
   twitter: {
-    title: "Data Engineering Services | Brilworks",
+    title: "Data Engineering Services | Snowflake & Databricks Experts",
     description:
-      "Brilworks data engineering services: cut Snowflake and Databricks costs, migrate legacy platforms, and build pipelines that hold up in production.",
+      "Data engineering services on Snowflake and Databricks. We cut warehouse spend 20 to 40% and get your AI production-ready. Fixed-price audit, no lock-in.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -40,10 +40,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateWebPageSchema({
-            title:
-              "Data Engineering Services | Snowflake & Databricks | Brilworks",
+            title: "Data Engineering Services | Snowflake & Databricks Experts",
             description:
-              "Brilworks data engineering services: cut Snowflake and Databricks costs, migrate legacy platforms, and build pipelines that hold up in production. From raw data to running AI.",
+              "Data engineering services on Snowflake and Databricks. We cut warehouse spend 20 to 40% and get your AI production-ready. Fixed-price audit, no lock-in.",
             url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-services/`,
             dateModified: LAST_UPDATED,
           }),

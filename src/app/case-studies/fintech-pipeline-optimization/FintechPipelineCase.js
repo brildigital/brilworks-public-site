@@ -6,6 +6,7 @@ import CaseStudyLayout from "../CaseStudyLayout";
 const FintechPipelineCase = () => {
   return (
     <CaseStudyLayout
+      light
       kicker="Case Study · Fintech"
       title="Cutting a fintech's pipeline costs 60% while making it 4x faster."
       subtitle="A payments-analytics platform came to us to fix a slow nightly job. We rebuilt the pipeline underneath it instead, in stages, while it kept running."
