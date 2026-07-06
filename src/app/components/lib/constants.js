@@ -404,7 +404,7 @@ export const menuItems = [
   },
   {
     name: "Case Studies",
-    path: "#work",
+    path: "/case-studies/",
     hideInSideMenu: true,
   },
   {

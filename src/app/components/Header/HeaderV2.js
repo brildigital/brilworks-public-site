@@ -163,6 +163,7 @@ const HeaderV2 = () => {
                               className="header_font"
                               onClick={() => setOpenNav(false)}
                               theme="enterprise"
+                              // activeColor="#0B1E33"
                             />
                           ) : (
                             <MegaMenu
