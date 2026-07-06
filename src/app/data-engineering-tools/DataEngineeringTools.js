@@ -4,6 +4,7 @@ import Heading from "../components/HTMLComponents/Heading";
 import ButtonV2 from "../components/Common/ButtonV2";
 import GradientFAQAccordion from "../components/Common/GradientFAQAccordion";
 import Link from "next/link";
+import "../styles/ServiceLightTheme.css";
 import {
   ArrowRight,
   Calculator,
@@ -88,36 +89,31 @@ const DataEngineeringTools = () => {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navyBlue relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
-          }}
-        />
-
+      <section className="svc-hero-bg relative overflow-hidden">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 relative z-10 pt-28 pb-16 md:pt-32 md:pb-20">
-          <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-3.5 py-1.5 text-[#00b4d8] text-xs font-semibold tracking-widest uppercase mb-7">
-            <Star className="w-3.5 h-3.5" />
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold tracking-widest uppercase mb-7"
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e4eaf1",
+              color: "#566678",
+              boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+            }}
+          >
+            <Star className="w-3.5 h-3.5" style={{ color: "#2f6bff" }} />
             FREE TOOLS &mdash; NO SIGNUP REQUIRED
           </span>
 
           <Heading
             type="h1"
-            className="text-white !font-extrabold max-w-[720px]"
+            className="!font-extrabold max-w-[720px] text-[#0b1e33]"
             text="Free Tools for Data Engineering Teams"
           />
 
-          <p className="text-gray-400 lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed">
+          <p
+            className="lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed"
+            style={{ color: "#566678" }}
+          >
             Calculate your cloud data spend, score your AI readiness, and
             estimate migration complexity &mdash; all in minutes, with zero
             friction.
@@ -127,12 +123,17 @@ const DataEngineeringTools = () => {
             <ButtonV2
               redirect="/contact-us/"
               label="Book a Free Consultation"
-              className="hover:!text-colorWhite"
+              className="hover:!text-themeColor"
               icon={<ArrowRight className="w-4 h-4" />}
             />
             <a
               href="#all-tools"
-              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 border border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+              className="c-button c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300"
+              style={{
+                border: "1px solid #e4eaf1",
+                color: "#0b1e33",
+                background: "#ffffff",
+              }}
               onClick={(e) => {
                 e.preventDefault();
                 document
@@ -144,7 +145,10 @@ const DataEngineeringTools = () => {
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-5 mt-10 pt-6 border-t border-white/10">
+          <div
+            className="flex flex-wrap gap-5 mt-10 pt-6"
+            style={{ borderTop: "1px solid #e4eaf1" }}
+          >
             {[
               "No account required",
               "100% free, forever",
@@ -153,21 +157,34 @@ const DataEngineeringTools = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 text-white/50 text-sm font-medium"
+                className="flex items-center gap-2 text-sm font-medium"
+                style={{ color: "#6b7a8a" }}
               >
-                <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                <CheckCircle
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{ color: "#16a34a" }}
+                />
                 {item}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-3 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 mt-10">
+          <div className="grid grid-cols-3 gap-4 mt-10">
             {stats.map((stat, i) => (
-              <div key={i} className="bg-white/[0.03] p-5 text-center">
-                <div className="text-2xl md:text-[28px] font-extrabold bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent pb-1">
+              <div
+                key={i}
+                className="rounded-2xl transition-all svc-stat-card text-center"
+                style={{ padding: "20px 12px" }}
+              >
+                <div
+                  className="text-2xl md:text-[28px] font-extrabold pb-1"
+                  style={{ color: "#2f6bff" }}
+                >
                   {stat.value}
                 </div>
-                <div className="text-xs text-white/50">{stat.label}</div>
+                <div className="text-xs" style={{ color: "#6b7a8a" }}>
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
@@ -177,12 +194,20 @@ const DataEngineeringTools = () => {
       {/* Breadcrumb */}
       <div className="bg-white">
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 py-3">
-          <nav className="text-sm text-gray-400" aria-label="Breadcrumb">
-            <Link href="/" className="text-themeColor hover:underline">
+          <nav
+            className="text-sm"
+            style={{ color: "#6b7a8a" }}
+            aria-label="Breadcrumb"
+          >
+            <Link
+              href="/"
+              style={{ color: "#2f6bff" }}
+              className="hover:underline"
+            >
               Home
             </Link>
             <span className="mx-1.5">/</span>
-            <span className="text-gray-600 font-medium">
+            <span className="font-medium" style={{ color: "#0b1e33" }}>
               Data Engineering Tools
             </span>
           </nav>
@@ -249,14 +274,8 @@ const DataEngineeringTools = () => {
       </section>
 
       {/* Mid-page CTA */}
-      <section className="bg-navyBlue py-16 relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 80% at 50% 50%, rgba(26,92,204,0.12) 0%, transparent 70%)",
-          }}
-        />
+      <section className="svc-mid-cta-bg py-16 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="container max-w-[1280px] mx-auto md:px-10 px-5 text-center relative z-10">
           <Heading
             type="h2"
