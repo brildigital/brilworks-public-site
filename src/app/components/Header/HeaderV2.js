@@ -7,7 +7,6 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { menuItems } from "../lib/constants";
-import ButtonV2 from "../Common/ButtonV2";
 import Countdown48h from "./Countdown48h";
 
 const Svgs = dynamic(() => import("../Svgs"));
@@ -125,19 +124,20 @@ const HeaderV2 = () => {
       <header>
         <div className={`header ${isHidden ? "header-hide" : ""}`}>
           <Navbar
-            className={`sticky top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold ${
-              openNav
-                ? "!fixed"
-                : hasBg || pathname === "/event-app-development/" || pathname === "/login/"
-                  ? "bg-[#000000e6]"
-                  : "bg-transparent"
-            }`}
+            className={`sticky top-0 z-10 h-max rounded-none !px-0 shadow-none font-semibold transition-all duration-300 ${
+              hasBg
+                ? "bg-[rgba(247,249,252,0.92)] backdrop-blur-md border-b border-b-[#E4EAF1]"
+                : "bg-transparent backdrop-blur-none border-b border-transparent md:bg-[rgba(247,249,252,0.92)] md:backdrop-blur-md md:border-b md:border-b-[#E4EAF1]"
+            } ${openNav ? "!fixed" : ""}`}
           >
-            <div className="flex justify-between text-white container max-w-[1280px] md:px-10 px-5 mx-auto">
+            <div
+              className="flex justify-between text-[#0B1E33] container max-w-[1280px] md:px-10 px-5 mx-auto"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
               <div className="header_logo">
                 <Link href="/">
                   <Image
-                    src="/images/logo-white.svg"
+                    src="/images/logo-black.svg"
                     alt="Brilworks Logo"
                     width="155"
                     height="46"
@@ -148,7 +148,7 @@ const HeaderV2 = () => {
               {pathname !== "/posters/" && (
                 <div className="flex items-center">
                   <div className="mr-4 hidden md:block">
-                    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6 text-white">
+                    <ul className="mt-2 mb-4 flex flex-col gap-2 md:mb-0 md:mt-0 md:flex-row md:items-center md:gap-3 lg:gap-6 text-[#0B1E33]">
                       <div className="we_are_hiring hidden">
                         <Svgs name="we-are-hiring" />
                       </div>
@@ -162,6 +162,8 @@ const HeaderV2 = () => {
                               path={menu?.path}
                               className="header_font"
                               onClick={() => setOpenNav(false)}
+                              theme="enterprise"
+                              // activeColor="#0B1E33"
                             />
                           ) : (
                             <MegaMenu
@@ -171,6 +173,10 @@ const HeaderV2 = () => {
                               heading={menu?.heading}
                               setOpenNav={setOpenNav}
                               menuItems={menu?.menuItems}
+                              columns={menu?.columns}
+                              footerNote={menu?.footerNote}
+                              footerLink={menu?.footerLink}
+                              theme="enterprise"
                             />
                           ),
                         )}
@@ -185,38 +191,16 @@ const HeaderV2 = () => {
                 ) : (
                   ""
                 )}
-                {/* <ButtonV2
-                  label={
-                    pathname === "/free-ui/"
-                      ? "Claim Free Screens"
-                      : pathname === "/ai-studio/" ||
-                          pathname === "/app-development-cost-calculator/" ||
-                          pathname === "/roi-calculator/"
-                        ? "Contact Us"
-                        : "Claim Free"
-                  }
-                  className={
-                    pathname === "/ai-studio/" ||
-                    pathname === "/app-development-cost-calculator/" ||
-                    pathname === "/roi-calculator/"
-                      ? ""
-                      : "header-btn"
-                  }
-                  redirect={
-                    pathname === "/free-ui/"
-                      ? "#cta"
-                      : pathname === "/ai-studio/" ||
-                          pathname === "/app-development-cost-calculator/" ||
-                          pathname === "/roi-calculator/"
-                        ? ""
-                        : "/free-ui/"
-                  }
-                  // {...(pathname === "/free-ui/" ? { redirect: "#cta" } : {})}
-                  scrollingButton={pathname === "/free-ui/"}
-                /> */}
+                <Link
+                  href="/contact-us/"
+                  className="hidden sm:inline-flex items-center justify-center rounded-[10px] px-[18px] py-[10px] text-[14.5px] font-semibold text-white bg-[#2F6BFF] hover:bg-[#1E4FD6] transition-colors whitespace-nowrap"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
+                  Book a data audit
+                </Link>
                 <IconButton
                   variant="text"
-                  className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
+                  className="ml-auto h-6 w-6 !rounded-[9px] border border-[#E4EAF1] bg-white p-5 text-[#0B1E33] hover:border-[#2F6BFF] hover:text-[#2F6BFF] hover:bg-transparent focus:bg-transparent active:bg-transparent"
                   ripple={false}
                   onClick={() => setOpenNav(!openNav)}
                 >

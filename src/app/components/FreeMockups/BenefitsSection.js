@@ -39,7 +39,7 @@ export default function BenefitsSection() {
             What You'll <span className="gradient-text">Actually Get</span>
           </h2>
           <p
-            className="md:text-xl text-lg text-[#94a3b8] max-w-3xl mx-auto"
+            className="md:text-xl text-lg text-[#566678] max-w-3xl mx-auto"
             data-testid="text-benefits-subheadline"
           >
             No fluff. No filler. Just what you need to make your idea feel real
@@ -65,7 +65,7 @@ export default function BenefitsSection() {
                 {benefit.title}
               </h3>
               <p
-                className="text-[#94a3b8]"
+                className="text-[#566678]"
                 data-testid={`text-benefit-description-${index}`}
               >
                 {benefit.description}
@@ -76,16 +76,16 @@ export default function BenefitsSection() {
 
         <div className="mt-16 text-center scroll-reveal">
           <div className="inline-flex items-center gap-4 bg-card/30 flex-wrap rounded-full px-8 py-4 border border-border">
-            <span className="text-[#94a3b8]">Process:</span>
+            <span className="text-[#566678]">Process:</span>
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-[#017eeb33] text-themeColor rounded-full text-sm font-semibold">
+              <span className="px-3 py-1 bg-[#2f6bff33] text-themeColor rounded-full text-sm font-semibold">
                 Idea
               </span>
-              <span className="text-[#94a3b8]">→</span>
-              <span className="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium">
+              <span className="text-[#566678]">→</span>
+              <span className="px-3 py-1 bg-[#eaf1ff] text-[#2f6bff] rounded-full text-sm font-medium">
                 Mockup
               </span>
-              <span className="text-[#94a3b8]">→</span>
+              <span className="text-[#566678]">→</span>
               <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm font-medium">
                 Share
               </span>

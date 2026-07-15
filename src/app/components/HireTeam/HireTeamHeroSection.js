@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { Check } from "lucide-react";
 import PortfolioContactForm from "../Portfolio/PortfolioContactForm";
+import "../../styles/ServiceLightTheme.css";
 
 const steps = [
   {
@@ -31,9 +33,7 @@ const HireTeamHeroSection = ({
   return (
     <>
       {/* Hero */}
-      <section className="portfolio-hero">
-        <div className="portfolio-hero-bg"></div>
-        <div className="portfolio-hero-grid"></div>
+      <section className="svc-hero-bg relative overflow-hidden">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] pt-[120px] pb-16">
           <div className="flex flex-col md:flex-row items-stretch justify-start lg:gap-12 md:gap-10 gap-6">
             <h1 className="sr-only">{technologyText}</h1>
@@ -41,39 +41,33 @@ const HireTeamHeroSection = ({
             {/* Left: Copy + What Happens Next */}
             <div className="md:w-[55%] w-full flex flex-col justify-between gap-8">
               <div>
-                <span className="inline-flex items-center gap-2 bg-[rgba(26,92,204,0.15)] border border-[rgba(26,92,204,0.3)] rounded-full px-[14px] py-[6px] text-[#00b4d8] text-xs font-semibold tracking-[0.1em] !mb-6">
+                <span className="inline-flex items-center gap-2 bg-[rgba(47,107,255,0.1)] border border-[rgba(47,107,255,0.25)] rounded-full px-[14px] py-[6px] text-[#2f6bff] text-xs font-semibold tracking-[0.1em] !mb-6">
                   <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
                   {badge || technologyText}
                 </span>
 
                 <h2
-                  className="font-extrabold text-white tracking-[-1px] leading-[1.15] !mb-4"
+                  className="font-extrabold text-[#0b1e33] tracking-[-1px] leading-[1.15] !mb-4"
                   style={{ fontSize: "clamp(28px, 3vw, 44px)" }}
                 >
                   {title}
                 </h2>
 
-                <p className="text-white/60 text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
+                <p className="text-[#566678] text-[17px] leading-[1.6] !mb-6 max-w-[560px]">
                   {description}
                 </p>
 
-                <div className="text-white grid md:grid-cols-3 grid-cols-1 gap-3">
+                <div className="grid md:grid-cols-3 grid-cols-1 gap-3">
                   {trustItems.map((item) => (
                     <div key={item} className="flex gap-2 items-center">
-                      <Image
-                        className="w-5 h-5"
-                        src="/images/v2/white-tick-icon.svg"
-                        alt=""
-                        width={20}
-                        height={20}
-                      />
-                      <span className="text-sm text-white/80">{item}</span>
+                      <Check size={18} style={{ color: "#16a34a" }} />
+                      <span className="text-sm text-[#566678]">{item}</span>
                     </div>
                   ))}
                 </div>
 
                 {imageSrc && (
-                  <div className="mt-7 rounded-2xl overflow-hidden border border-white/10">
+                  <div className="mt-7 rounded-2xl overflow-hidden border border-[#e4eaf1] shadow-[0_4px_24px_rgba(11,30,51,0.08)]">
                     <Image
                       src={imageSrc}
                       alt={title || "Hero image"}
@@ -84,14 +78,18 @@ const HireTeamHeroSection = ({
                   </div>
                 )}
               </div>
-              </div>
+            </div>
 
             {/* Right: Form */}
-            <div className="md:w-[45%] w-full flex flex-col justify-center bg-white/[0.04] rounded-2xl border border-white/10 md:p-7 p-5 backdrop-blur-[10px]">
-              <p className="text-white/80 text-[15px] md:text-3xl font-semibold !mb-5">
+            <div className="md:w-[45%] w-full flex flex-col justify-center bg-white rounded-2xl border border-[#e4eaf1] shadow-[0_4px_24px_rgba(11,30,51,0.08)] md:p-7 px-5 py-7 h-fit my-auto">
+              <p className="text-[#0b1e33] text-[15px] md:text-3xl font-semibold !mb-5">
                 Enter the details to proceed
               </p>
-              <PortfolioContactForm showPhoneField={true} messageField={true} />
+              <PortfolioContactForm
+                showPhoneField={true}
+                messageField={true}
+                darkMode={false}
+              />
             </div>
           </div>
         </div>

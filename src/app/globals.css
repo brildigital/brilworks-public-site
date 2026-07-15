@@ -7,7 +7,8 @@
 /* Pre-declare Tawk's icon font with font-display:swap to prevent invisible text during load */
 @font-face {
   font-family: "tawk-font-icon-3";
-  src: url("https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728") format("woff");
+  src: url("https://embed.tawk.to/fonts/tawk-font-icon-3.woff?55755728")
+    format("woff");
   font-display: swap;
 }
 
@@ -213,16 +214,14 @@ input[type="number"] {
 }
 
 .header-btn {
-  background: linear-gradient(
-    159.52deg,
-    #007aeb -3.23%,
-    #008ce7 33.69%,
-    #00dbd3 85.35%
-  ) !important;
+  background: #2f6bff !important;
+  border-color: #2f6bff !important;
 }
 
 .header-btn:hover {
-  background: transparent !important;
+  background: #1e4fd6 !important;
+  border-color: #1e4fd6 !important;
+  color: #ffffff !important;
 }
 
 .item-accordion {
@@ -249,12 +248,12 @@ input[type="number"] {
 }
 
 .menu_txt1 {
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--color_gray);
 }
 
 .menu_txt1 p {
-  font-size: var(--font_36);
+  font-size: 24px !important;
   color: var(--color_black);
 }
 
@@ -554,7 +553,10 @@ input[type="number"] {
   position: relative;
   transform: translateY(100px);
   opacity: 0;
-  transition: 1s all ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+  will-change: transform, opacity;
 }
 
 .reveal.active {
@@ -778,4 +780,17 @@ input[type="number"] {
 }
 .blog_content > ul {
   padding-inline-start: 20px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  .hero-fade-down,
+  .hero-fade-up,
+  .hero-blink {
+    animation: none;
+  }
 }

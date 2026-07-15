@@ -3,21 +3,15 @@ import "./styles/Homepage.scss";
 import "./styles/button.scss";
 import "./styles/tab-sticky-style.scss";
 import "@splidejs/splide/dist/css/splide.min.css";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "swiper/css/virtual";
-import "swiper/css/navigation";
-import "react-loading-skeleton/dist/skeleton.css";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";
 import CookieConsent from "./components/CookieConsent/CookieConsent";
-import { Figtree, Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter, IBM_Plex_Mono } from "next/font/google";
 // import { GoogleTagManager } from '@next/third-parties/google'
 import dynamic from "next/dynamic";
 import LoadScripts from "./ScriptLoader";
+import ScrollRevealInit from "./components/Common/ScrollRevealInit";
 import Script from "next/script";
 import PostHogProvider from "./components/PostHogProvider";
 import {
@@ -28,11 +22,11 @@ import {
 
 // FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
 //            and figtree variable back to "--global-font"
-const figtree = Figtree({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-figtree", // was "--global-font" — kept loaded for easy revert
-});
+// const figtree = Figtree({
+//   subsets: ["latin"],
+//   display: "swap",
+//   variable: "--font-figtree", // was "--global-font" — kept loaded for easy revert
+// });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -48,6 +42,13 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono-enterprise",
+  weight: ["400", "500"],
+});
+
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_ACCESS_TOKEN,
   use: [apiPlugin],
@@ -60,10 +61,10 @@ export default function RootLayout({ children }) {
     <StoryblokProvider>
       <html
         lang="en"
-        className={`${figtree.variable} ${plusJakartaSans.variable} ${inter.variable}`}
+        className={` ${plusJakartaSans.variable} ${inter.variable} ${ibmPlexMono.variable}`}
       >
         <head>
-          <meta name="viewport" content="width=device-width" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             property="article:publisher"
             content="https://www.facebook.com/brilwork/"
@@ -105,6 +106,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <CookieConsent />
           </PostHogProvider>
+          <ScrollRevealInit />
           <LoadScripts
             organization={organization}
             website={website}

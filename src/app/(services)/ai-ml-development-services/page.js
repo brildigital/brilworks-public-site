@@ -6,13 +6,13 @@ import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
 const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
-  title: "AI & ML Development Services for SMB & Enterprise — Brilworks",
+  title: "AI and ML Development Services | Production-Ready AI",
   description:
-    "Custom AI development for SMB and enterprise — agents, RAG, LLM integrations, AI tools. Built by a team running production AI systems for 30+ clients. Get a 30-min consultation.",
+    "We build ML systems, generative AI, and computer vision that ship to production, drive measurable ROI, and scale with your data.",
   openGraph: {
-    title: "AI & ML Development Services for SMB & Enterprise — Brilworks",
+    title: "AI and ML Development Services | Production-Ready AI",
     description:
-      "Custom AI development for SMB and enterprise — agents, RAG, LLM integrations, AI tools. Built by a team running production AI systems for 30+ clients. Get a 30-min consultation.",
+      "We build ML systems, generative AI, and computer vision that ship to production, drive measurable ROI, and scale with your data.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -25,9 +25,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "AI & ML Development Services for SMB & Enterprise — Brilworks",
+    title: "AI and ML Development Services | Production-Ready AI",
     description:
-      "Custom AI development for SMB and enterprise — agents, RAG, LLM integrations, AI tools. Built by a team running production AI systems for 30+ clients. Get a 30-min consultation.",
+      "We build ML systems, generative AI, and computer vision that ship to production, drive measurable ROI, and scale with your data.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -44,9 +44,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateWebPageSchema({
-            title: "AI & ML Development Services for SMB & Enterprise — Brilworks",
+            title: "AI and ML Development Services | Production-Ready AI",
             description:
-              "Custom AI development for SMB and enterprise — agents, RAG, LLM integrations, AI tools. Built by a team running production AI systems for 30+ clients. Get a 30-min consultation.",
+              "We build ML systems, generative AI, and computer vision that ship to production, drive measurable ROI, and scale with your data.",
             url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
             dateModified: LAST_UPDATED,
           }),

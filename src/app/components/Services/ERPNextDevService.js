@@ -1,6 +1,8 @@
 "use client";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "./ServiceHeroSection";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import "../../styles/ServiceLightTheme.css";
 
 const Honors = dynamic(() => import("../Homepage/Honors"));
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
@@ -94,13 +96,69 @@ const ERPNextDevService = () => {
   ];
   return (
     <>
-      <ServiceHeroSection
-        title="ERPNext Development Services"
-        description="At Brilworks, we are passionate about helping businesses leverage the full potential of ERPNext. Our team of ERPNext development experts possesses the knowledge, experience, and innovation to transform your business operations."
-        buttonText="Let’s Get Started"
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg text-center"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 780 }}>
+          <span
+            className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+            style={{
+              background: "#ffffff",
+              borderColor: "#e4eaf1",
+              color: "#566678",
+              letterSpacing: "0.1em",
+              boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+            }}
+          >
+            ERPNext Development Services
+          </span>
+          <h1
+            className="font-extrabold mb-5"
+            style={{
+              fontSize: "clamp(34px, 4vw, 54px)",
+              letterSpacing: "-1.5px",
+              lineHeight: 1.1,
+              color: "#0b1e33",
+            }}
+          >
+            <span style={{ color: "#2f6bff" }}>ERPNext</span> Development
+            Services
+          </h1>
+          <p
+            className="mb-8 mx-auto"
+            style={{
+              fontSize: 18,
+              lineHeight: 1.7,
+              color: "#566678",
+              maxWidth: 620,
+            }}
+          >
+            At Brilworks, we are passionate about helping businesses leverage
+            the full potential of ERPNext. Our team of ERPNext development
+            experts possesses the knowledge, experience, and innovation to
+            transform your business operations.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3.5">
+            <Link
+              href="/contact-us/"
+              className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+              style={{
+                background: "#2f6bff",
+                color: "#fff",
+                border: "1px solid #2f6bff",
+                padding: "16px 32px",
+                fontSize: 16,
+              }}
+            >
+              Let&apos;s Get Started <ArrowRight size={16} strokeWidth={2} />
+            </Link>
+          </div>
+        </div>
+      </section>
       <Honors />
-      <ClientReviews />
+      <ClientReviews light />
       <SeeingBelieving />
       <HomePageBlogs />
       <ServicesFAQ />

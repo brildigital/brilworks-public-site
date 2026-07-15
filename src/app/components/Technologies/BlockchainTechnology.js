@@ -3,6 +3,14 @@ import { useEffect } from "react";
 import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import { faJs, faDocker } from "@fortawesome/free-brands-svg-icons";
+import {
+  FileCode2,
+  Blocks,
+  ArrowRightLeft,
+  Building2,
+  Coins,
+  MessageSquare,
+} from "lucide-react";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
 
@@ -125,6 +133,7 @@ const BlockchainTechnology = () => {
       {
         title: "Smart Contract Development",
         value: "blockchain-1",
+        icon: <FileCode2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/smart-contract-dev.webp",
         description:
           "Self-executing contracts with zero loopholes. Code audited by third parties for vulnerabilities, ensuring ironclad compliance.",
@@ -132,6 +141,7 @@ const BlockchainTechnology = () => {
       {
         title: "DApp Development",
         value: "blockchain-2",
+        icon: <Blocks size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/dapp-development.webp",
         description:
           "Decentralized apps that combine intuitive UX with blockchain’s power. Scalable, secure, and built for mass adoption.",
@@ -139,6 +149,7 @@ const BlockchainTechnology = () => {
       {
         title: "Blockchain Migration",
         value: "blockchain-3",
+        icon: <ArrowRightLeft size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/blockchain-migration.webp",
         description:
           "Transition legacy systems to blockchain smoothly. We ensure zero downtime, data integrity, and enhanced functionality.",
@@ -146,6 +157,7 @@ const BlockchainTechnology = () => {
       {
         title: "Enterprise Blockchain Solutions",
         value: "blockchain-4",
+        icon: <Building2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/enterprise-blockchain-solutions.webp",
         description:
           "Permissioned networks tailored for industries needing privacy and control. Audit trails, role-based access, and GDPR compliance.",
@@ -153,6 +165,7 @@ const BlockchainTechnology = () => {
       {
         title: "Tokenization & DeFi Platforms",
         value: "blockchain-5",
+        icon: <Coins size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/tokenization-defi.webp",
         description:
           "Launch tokens, NFTs, or DeFi ecosystems with secure wallets, liquidity pools, and staking mechanisms that drive engagement.",
@@ -160,6 +173,7 @@ const BlockchainTechnology = () => {
       {
         title: "Blockchain Consulting",
         value: "blockchain-6",
+        icon: <MessageSquare size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/blockchain-consulting.webp",
         description:
           "From consensus algorithms to governance models—strategic roadmaps that align blockchain with your business goals.",
@@ -251,7 +265,7 @@ const BlockchainTechnology = () => {
         title="Blockchain Developers"
       />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <BlockChainFAQs />
     </>
   );

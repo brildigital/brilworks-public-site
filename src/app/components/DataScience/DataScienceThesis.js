@@ -37,7 +37,6 @@ const DataScienceThesis = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-[42px] reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Why this order matters
           </span>
           <h2
@@ -62,7 +61,7 @@ const DataScienceThesis = () => {
           {arcNodes.map((node, i) => (
             <div
               key={i}
-              className="group border border-[#e4e8f0] rounded-2xl p-6 bg-white hover:border-[#c8d9f8] hover:-translate-y-1 hover:shadow-[0_18px_40px_-22px_rgba(11,16,32,0.3)] transition-all duration-300 reveal"
+              className="group border border-[#e4e8f0] rounded-2xl p-6 bg-white hover:border-[#c8d9f8] hover:-translate-y-1 hover:shadow-[0_18px_40px_-22px_rgba(11,16,32,0.3)] transition-[transform,box-shadow,border-color] duration-300 reveal"
             >
               <div className="font-mono text-[12px] font-semibold text-themeColor tracking-[0.1em]">
                 {node.idx}
@@ -74,7 +73,7 @@ const DataScienceThesis = () => {
                 {node.desc}
               </p>
               <div
-                className="h-[3px] rounded-[3px] mt-4 bg-themeColor/[0.18] group-hover:bg-gradient-to-r group-hover:from-themeColor group-hover:to-[#34d399] transition-all duration-300"
+                className="h-[3px] rounded-[3px] mt-4 bg-themeColor/[0.18] group-hover:bg-gradient-to-r group-hover:from-themeColor group-hover:to-[#34d399] transition-[background] duration-300"
                 style={{ width: `${node.progress}%` }}
               ></div>
             </div>

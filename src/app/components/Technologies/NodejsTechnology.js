@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleCardInGrid from "../Common/MultipleCardInGrid";
+import { Globe, Plug, RefreshCw, Boxes, Cloud, MessageSquare } from "lucide-react";
 
 const HireTeamSolutions = dynamic(() => import("./HireTeamSolutions"));
 const ServicesSection = dynamic(() => import("../Common/ServicesSection"));
@@ -22,10 +23,10 @@ const HiringModels = dynamic(() => import("./HiringModels"));
 const NodeJSFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const SolutionContactForm = dynamic(
-  () => import("../Solution/SolutionContactForm")
+  () => import("../Solution/SolutionContactForm"),
 );
 const HireDevelopersInThreeSteps = dynamic(
-  () => import("../HireTeam/HireDevelopersInThreeSteps")
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
 
@@ -128,6 +129,7 @@ const nodeJSService = {
     {
       title: "Web App Development",
       value: "nodejs-1",
+      icon: <Globe size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/web-development.webp",
       description:
         "We engineer high-traffic web applications that outperform industry benchmarks. Our deep understanding of Node.js’s event-driven architecture enables us to build solutions that maintain sub-second response times.",
@@ -135,6 +137,7 @@ const nodeJSService = {
     {
       title: "API Development & Integration",
       value: "nodejs-2",
+      icon: <Plug size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/api-dev.webp",
       description:
         "Our track record includes 100+ mission-critical API implementations. We design secure RESTful/GraphQL APIs and 99.99% uptime SLAs, having integrated complex ecosystems spanning fintech platforms, IoT networks, and global ERP systems.",
@@ -142,6 +145,7 @@ const nodeJSService = {
     {
       title: "Legacy Application Modernization",
       value: "nodejs-3",
+      icon: <RefreshCw size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/legacy-modernization-leadership.webp",
       description:
         "We’ve successfully migrated 50+ legacy systems to Node.js with zero business disruption. Our phased modernization approach combines reverse-engineering expertise with future-ready architecture design.",
@@ -149,6 +153,7 @@ const nodeJSService = {
     {
       title: "Microservices Development",
       value: "nodejs-4",
+      icon: <Boxes size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/microservices-architecture-authority.webp",
       description:
         "Architects of 50+ production-grade Node.js microservices ecosystems, we implement containerized, Kubernetes-optimized solutions that enable true CI/CD. Our modular designs have helped enterprises achieve 5x faster feature deployments.",
@@ -156,6 +161,7 @@ const nodeJSService = {
     {
       title: "Serverless Development",
       value: "nodejs-5",
+      icon: <Cloud size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/serverless-development-innovators.webp",
       description:
         "We are a top-rated app development company in serverless Node.js implementations. We optimize cloud costs by reducing infrastructure expenses through intelligent cloud management.",
@@ -163,13 +169,13 @@ const nodeJSService = {
     {
       title: "Node js Consulting",
       value: "nodejs-6",
+      icon: <MessageSquare size={24} strokeWidth={1.75} />,
       imageSrc: "/images/v2/node-js-consulting.webp",
       description:
         "Run high-performance Node.js applications with precision, backed by expert guidance and strategic support from our team. Whether you're launching your first Node.js project or optimizing for enterprise-scale growth, our consulting services deliver the insights and solutions you need to succeed.",
     },
   ],
 };
-
 
 const why100PlusCompaniesTrust = [
   {
@@ -258,7 +264,9 @@ const NodejsTechnology = () => {
                 <h3 className="text-colorBlack md:!text-xl !text-lg font-semibold !mb-3">
                   {title}
                 </h3>
-                <p className="md:text-base text-sm text-gray-500 flex-1">{description}</p>
+                <p className="md:text-base text-sm text-gray-500 flex-1">
+                  {description}
+                </p>
               </div>
             ))}
           </div>
@@ -270,7 +278,7 @@ const NodejsTechnology = () => {
         title="NodeJS Developers"
       />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <NodeJSFAQs />
     </>
   );

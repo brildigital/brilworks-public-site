@@ -15,7 +15,6 @@ const DataScienceIndustries = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-7 reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Deep domain expertise
           </span>
           <h2
@@ -25,7 +24,9 @@ const DataScienceIndustries = () => {
             We&apos;ve moved data in these worlds.
           </h2>
           <p className="font-Figtree text-[#525a6b] text-[16px] leading-[1.55] max-w-[62ch]">
-            Pipeline patterns differ by industry. The compliance rules, the data shapes, the latency people will tolerate. We have shipped in each of these.
+            Pipeline patterns differ by industry. The compliance rules, the data
+            shapes, the latency people will tolerate. We have shipped in each of
+            these.
           </p>
         </div>
 
@@ -33,7 +34,7 @@ const DataScienceIndustries = () => {
           {industries.map((name) => (
             <span
               key={name}
-              className="border border-[#e4e8f0] rounded-full px-5 py-[11px] font-Figtree text-[14.5px] font-semibold text-[#0B1020] bg-white hover:-translate-y-0.5 hover:border-themeColor hover:text-themeColor transition-all duration-200 cursor-default"
+              className="border border-[#e4e8f0] rounded-full px-5 py-[11px] font-Figtree text-[14.5px] font-semibold text-[#0B1020] bg-white hover:-translate-y-0.5 hover:border-themeColor hover:text-themeColor transition-[transform,border-color,color] duration-200 cursor-default"
             >
               {name}
             </span>

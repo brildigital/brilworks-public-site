@@ -1,49 +1,18 @@
 import dynamic from "next/dynamic";
-import { homepageFAQ } from "../components/lib/schemaCode";
 import Script from "next/script";
-// import MainHero from "../components/Homepage/MainHero";
-import DataScienceThesis from "../components/DataScience/DataScienceThesis";
-import DataScienceHeroSection from "../components/DataScience/DataScienceHeroSection";
-import DataScienceTrustBar from "../components/DataScience/DataScienceTrustBar";
-const DataScienceWork = dynamic(
-  () => import("../components/DataScience/DataScienceWork"),
-);
-const DataScienceReasons = dynamic(
-  () => import("../components/DataScience/DataScienceReasons"),
-);
-const DataSciencePillars = dynamic(
-  () => import("../components/DataScience/DataSciencePillars"),
-);
-const DataScienceAgentsBand = dynamic(
-  () => import("../components/DataScience/DataScienceAgentsBand"),
-);
-const DataScienceIndustries = dynamic(
-  () => import("../components/DataScience/DataScienceIndustries"),
-);
+import { homepageFAQ } from "../components/lib/schemaCode";
+import EnterpriseHero from "../components/Homepage/Enterprise/EnterpriseHero";
+import EnterprisePartners from "../components/Homepage/Enterprise/EnterprisePartners";
+import EnterpriseApproach from "../components/Homepage/Enterprise/EnterpriseApproach";
+import EnterpriseTwoWays from "../components/Homepage/Enterprise/EnterpriseTwoWays";
+import EnterpriseWork from "../components/Homepage/Enterprise/EnterpriseWork";
+import EnterpriseSolutions from "../components/Homepage/Enterprise/EnterpriseSolutions";
+import EnterpriseProof from "../components/Homepage/Enterprise/EnterpriseProof";
+import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
+import EnterpriseIoT from "../components/Homepage/Enterprise/EnterpriseIoT";
+import FinalCTA from "../components/Common/FinalCTA";
+import HomePageBlogs from "../components/Homepage/HomePageBlogs";
 
-const ExploreOurExpertise = dynamic(
-  () => import("../components/Homepage/ExploreOurExpertise"),
-);
-const ClientReviews = dynamic(
-  () => import("../components/Homepage/ClientReviews"),
-);
-const PlatformPartners = dynamic(
-  () => import("../components/Homepage/PlatformPartners"),
-);
-const ClutchReviews = dynamic(
-  () => import("../components/Homepage/ClutchReviews"),
-);
-const IndustriesWeServe = dynamic(
-  () => import("../components/Homepage/IndustriesWeServe"),
-);
-const Honors = dynamic(() => import("../components/Homepage/Honors"));
-const EbookSection = dynamic(
-  () => import("../components/Homepage/EbookSection"),
-);
-const HomepageBlog = dynamic(
-  () => import("../components/Homepage/HomePageBlogs"),
-);
-const ContactUs = dynamic(() => import("../components/Homepage/ContactUs"));
 const StickyCTA = dynamic(() => import("../components/Homepage/StickyCTA"));
 
 export async function generateMetadata() {
@@ -92,7 +61,7 @@ const page = () => {
   };
 
   return (
-    <>
+    <div className="bw-home">
       <Script
         defer
         id="breadcrumbs"
@@ -107,25 +76,19 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFAQ) }}
       />
-      <DataScienceHeroSection />
-      <DataScienceTrustBar />
-      <DataScienceThesis />
-      <DataScienceWork />
-      <DataScienceReasons />
-      <DataSciencePillars />
-      <DataScienceAgentsBand />
-      <DataScienceIndustries />
-      <PlatformPartners />
-      <ExploreOurExpertise />
-      <ClientReviews />
-      <IndustriesWeServe />
-      <ClutchReviews />
-      <Honors />
-      <EbookSection />
-      <HomepageBlog />
-      <ContactUs />
+      <EnterpriseHero />
+      <EnterprisePartners />
+      <EnterpriseApproach />
+      <EnterpriseTwoWays />
+      <EnterpriseWork />
+      <EnterpriseSolutions />
+      <EnterpriseProof />
+      <EnterpriseStack />
+      <EnterpriseIoT />
+      <HomePageBlogs />
+      <FinalCTA />
       <StickyCTA />
-    </>
+    </div>
   );
 };
 

@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(
   () => import("../Solution/SolutionContactForm"),
@@ -63,7 +64,7 @@ const agentTypes = [
   {
     icon: UserCheck,
     color: "text-blue-500",
-    bg: "rgba(1,126,235,0.10)",
+    bg: "rgba(47,107,255,0.10)",
     title: "Lead Qualification Agents",
     desc: "Not every lead deserves your sales team's time. This agent screens every inbound lead automatically, scores them against your criteria, and routes only the ones worth pursuing.",
     handles: [
@@ -247,7 +248,7 @@ const whyCards = [
   {
     icon: Settings,
     tint: "#e8f0fd",
-    iconColor: "#017eeb",
+    iconColor: "#2f6bff",
     title: "Built Around Your Workflow",
     desc: "We don't start with a template. We start with your operations — your data, your edge cases, the specific problems your team runs into every day. The agent we build is scoped to that, not to a generic use case we've done before.",
   },
@@ -315,23 +316,23 @@ const TESTIMONIALS = [
 const HONORS = [
   {
     label: "AWS Consulting Partner",
-    icon: <Shield size={20} style={{ color: "#017eeb" }} />,
+    icon: <Shield size={20} style={{ color: "#2f6bff" }} />,
   },
   {
     label: "Clutch Global Award 2025",
-    icon: <Award size={20} style={{ color: "#017eeb" }} />,
+    icon: <Award size={20} style={{ color: "#2f6bff" }} />,
   },
   {
     label: "GoodFirms Top AI Developers",
-    icon: <Star size={20} style={{ color: "#017eeb" }} />,
+    icon: <Star size={20} style={{ color: "#2f6bff" }} />,
   },
   {
     label: "ISO 27001 Certified",
-    icon: <Shield size={20} style={{ color: "#017eeb" }} />,
+    icon: <Shield size={20} style={{ color: "#2f6bff" }} />,
   },
   // {
   //   label: "Google Cloud AI Partner",
-  //   icon: <Zap size={20} style={{ color: "#017eeb" }} />,
+  //   icon: <Zap size={20} style={{ color: "#2f6bff" }} />,
   // },
 ];
 
@@ -347,7 +348,7 @@ const industries = [
     label: "Fintech",
     icon: CreditCard,
     color: "text-blue-500",
-    bg: "rgba(1,126,235,0.10)",
+    bg: "rgba(47,107,255,0.10)",
     href: "/industry/fintech-software-development/",
   },
   {
@@ -414,11 +415,6 @@ const faqs = [
 const contactUrl = "/contact-us/";
 const agentsUrl = "/ai-agents/";
 
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
-
 const AiAgentServicePage = () => {
   const [stickyVisible, setStickyVisible] = useState(false);
 
@@ -431,36 +427,13 @@ const AiAgentServicePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       {/* HERO */}
-      <section
-        className="relative overflow-hidden"
-        style={{ background: "#000d1e" }}
-      >
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
-          }}
-        />
-        <div
-          aria-hidden
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
+      <section className="relative overflow-hidden svc-hero-bg">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
           <div
             className="grid items-center gap-10 lg:gap-[60px] pt-[100px] pb-20"
             style={{ gridTemplateColumns: "1fr" }}
           >
-            <div
-              className="grid items-center gap-10 grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]"
-            >
+            <div className="grid items-center gap-10 grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
                 {/* Breadcrumb */}
                 <nav className="mb-8" aria-label="Breadcrumb">
@@ -468,13 +441,14 @@ const AiAgentServicePage = () => {
                     <li>
                       <Link
                         href="/"
-                        className="text-white/70 hover:text-white transition-colors"
+                        className="transition-colors"
+                        style={{ color: "#6b7a8a" }}
                       >
                         Home
                       </Link>
                     </li>
-                    <li className="text-white/50">/</li>
-                    <li className="text-white/70 font-semibold">
+                    <li style={{ color: "#6b7a8a" }}>/</li>
+                    <li className="font-semibold" style={{ color: "#566678" }}>
                       AI Agent Development
                     </li>
                   </ol>
@@ -484,23 +458,24 @@ const AiAgentServicePage = () => {
                 <div
                   className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 border"
                   style={{
-                    background: "rgba(26,92,204,0.15)",
-                    borderColor: "rgba(26,92,204,0.3)",
+                    background: "#ffffff",
+                    borderColor: "#e4eaf1",
+                    boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                   }}
                 >
                   <span className="relative flex h-2 w-2">
                     <span
                       className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                      style={{ background: "#00dbd3" }}
+                      style={{ background: "#2f6bff" }}
                     />
                     <span
                       className="relative inline-flex rounded-full h-2 w-2"
-                      style={{ background: "#00dbd3" }}
+                      style={{ background: "#2f6bff" }}
                     />
                   </span>
                   <span
                     className="text-xs font-semibold tracking-widest"
-                    style={{ color: "#00b4d8" }}
+                    style={{ color: "#566678" }}
                   >
                     30+ AI AGENTS SHIPPED ACROSS 12 INDUSTRIES
                   </span>
@@ -508,23 +483,23 @@ const AiAgentServicePage = () => {
 
                 {/* H1 */}
                 <h1
-                  className="font-extrabold text-white tracking-[-1.5px] leading-[1.1] mb-6"
-                  style={{ fontSize: "clamp(28px, 3.4vw, 54px)" }}
+                  className="font-extrabold tracking-[-1.5px] leading-[1.1] mb-6"
+                  style={{
+                    fontSize: "clamp(28px, 3.4vw, 54px)",
+                    color: "#0b1e33",
+                  }}
                 >
                   Get a Working AI Agent
                   <br />
-                  <span
-                    className="bg-clip-text text-transparent"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(to right, #017eeb, #00dbd3)",
-                    }}
-                  >
+                  <span style={{ color: "#2f6bff" }}>
                     in 7 Days — Built for Your Workflow
                   </span>
                 </h1>
 
-                <p className="text-base md:text-lg text-white/60 !mb-10 max-w-xl leading-relaxed">
+                <p
+                  className="text-base md:text-lg !mb-10 max-w-xl leading-relaxed"
+                  style={{ color: "#566678" }}
+                >
                   We build and deploy AI agents that handle lead qualification,
                   customer support, document processing, and more. You get a
                   working prototype in the first week — tested on your actual
@@ -535,16 +510,14 @@ const AiAgentServicePage = () => {
                   <Link
                     href={contactUrl}
                     className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
-                    style={{
-                      background:
-                        "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-                    }}
+                    style={{ background: "#2f6bff" }}
                   >
                     Get My Free AI Blueprint <ArrowRight size={18} />
                   </Link>
                   <Link
                     href={agentsUrl}
-                    className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold text-white border border-white/25 hover:bg-white/5 hover:border-white/50 transition-all"
+                    className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold border transition-all hover:bg-black/5"
+                    style={{ color: "#0b1e33", borderColor: "#e4eaf1" }}
                   >
                     Explore 30+ Live Demos
                   </Link>
@@ -561,14 +534,9 @@ const AiAgentServicePage = () => {
                       style={{ background: "#f59e0b" }}
                     />
                   </span>
-                  <span
-                    className="text-xs"
-                    style={{ color: "rgba(255,255,255,0.55)" }}
-                  >
+                  <span className="text-xs" style={{ color: "#6b7a8a" }}>
                     Currently accepting{" "}
-                    <strong style={{ color: "rgba(255,255,255,0.85)" }}>
-                      3 new clients
-                    </strong>{" "}
+                    <strong style={{ color: "#0b1e33" }}>3 new clients</strong>{" "}
                     this month
                   </span>
                 </div>
@@ -581,9 +549,10 @@ const AiAgentServicePage = () => {
                   ].map((t) => (
                     <span
                       key={t}
-                      className="inline-flex items-center gap-2 text-sm text-white/60"
+                      className="inline-flex items-center gap-2 text-sm"
+                      style={{ color: "#6b7a8a" }}
                     >
-                      <Check size={14} style={{ color: "#00dbd3" }} />
+                      <Check size={14} style={{ color: "#16a34a" }} />
                       {t}
                     </span>
                   ))}
@@ -600,23 +569,13 @@ const AiAgentServicePage = () => {
                 ].map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-2xl transition-all"
-                    style={{
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      padding: "28px 24px",
-                      backdropFilter: "blur(10px)",
-                    }}
+                    className="rounded-2xl transition-all svc-stat-card"
+                    style={{ padding: "28px 24px" }}
                   >
                     <div
                       className="font-extrabold leading-none mb-2"
                       style={{
-                        backgroundImage:
-                          "linear-gradient(to right, #017eeb, #00dbd3)",
-                        WebkitBackgroundClip: "text",
-                        backgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        color: "transparent",
+                        color: "#2f6bff",
                         fontSize: "clamp(28px, 2.8vw, 40px)",
                         letterSpacing: "-1px",
                       }}
@@ -625,7 +584,7 @@ const AiAgentServicePage = () => {
                     </div>
                     <div
                       style={{
-                        color: "rgba(255,255,255,0.65)",
+                        color: "#6b7a8a",
                         fontSize: 13,
                         fontWeight: 500,
                         lineHeight: 1.4,
@@ -645,7 +604,7 @@ const AiAgentServicePage = () => {
       <section
         aria-label="Trust indicators"
         style={{
-          background: "#fafafa",
+          background: "#ffffff",
           borderBottom: "1px solid #e5e7eb",
           padding: "24px 0",
         }}
@@ -675,7 +634,7 @@ const AiAgentServicePage = () => {
           <div className="text-center mx-auto mb-12" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               What We Build
             </span>
@@ -693,7 +652,7 @@ const AiAgentServicePage = () => {
             {agentTypes.map((agent) => (
               <div
                 key={agent.title}
-                className="rounded-2xl p-7 bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(1,126,235,0.08)] transition-all duration-200 flex flex-col"
+                className="rounded-2xl p-7 bg-white border border-[#e5e7eb] hover:border-[#2f6bff] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(47,107,255,0.08)] transition-all duration-200 flex flex-col"
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
@@ -728,12 +687,12 @@ const AiAgentServicePage = () => {
       </section>
 
       {/* ==================== HOW IT WORKS ==================== */}
-      <section className="py-20" style={{ background: "#f8f9ff" }}>
+      <section className="py-20" style={{ background: "#f1f5fb" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div className="text-center mx-auto mb-12" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               How It Works
             </span>
@@ -760,15 +719,13 @@ const AiAgentServicePage = () => {
               >
                 <span
                   className="text-[11px] font-bold tracking-[0.08em] uppercase mb-3"
-                  style={{ color: "#017eeb" }}
+                  style={{ color: "#2f6bff" }}
                 >
                   {step.week}
                 </span>
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center mb-3"
-                  style={{
-                    background: "linear-gradient(135deg, #017eeb, #00dbd3)",
-                  }}
+                  style={{ background: "#2f6bff" }}
                 >
                   <step.icon size={16} className="text-white" />
                 </div>
@@ -785,23 +742,20 @@ const AiAgentServicePage = () => {
           <div
             className="rounded-2xl px-7 py-5 border flex items-center justify-between gap-6 flex-wrap"
             style={{
-              background: "rgba(1,126,235,0.05)",
-              borderColor: "rgba(1,126,235,0.2)",
+              background: "rgba(47,107,255,0.05)",
+              borderColor: "rgba(47,107,255,0.2)",
             }}
           >
             <p className="text-[15px] font-semibold text-[#0f172a] leading-relaxed">
               You don&apos;t wait months to see results.{" "}
-              <span style={{ color: "#017eeb" }}>
+              <span style={{ color: "#2f6bff" }}>
                 You see it working in the first week.
               </span>
             </p>
             <Link
               href={contactUrl}
               className="inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold text-white transition-all hover:opacity-90 flex-shrink-0"
-              style={{
-                background:
-                  "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-              }}
+              style={{ background: "#2f6bff" }}
             >
               Get Your Prototype in Week 1 <ArrowRight size={16} />
             </Link>
@@ -815,21 +769,13 @@ const AiAgentServicePage = () => {
           <div className="text-center mx-auto mb-10" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Live Demos
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-black tracking-tight leading-tight mb-4">
               30+ live agents you can{" "}
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #017eeb, #00dbd3)",
-                }}
-              >
-                test right now.
-              </span>
+              <span style={{ color: "#2f6bff" }}>test right now.</span>
             </h2>
             <p className="text-[#475569] text-base md:text-lg leading-relaxed">
               A lot of companies can describe what an AI agent does. We&apos;d
@@ -845,7 +791,7 @@ const AiAgentServicePage = () => {
               <Link
                 key={agent.name}
                 href={agent.path}
-                className="group flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(1,126,235,0.08)] transition-all duration-200"
+                className="group flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white border border-[#e5e7eb] hover:border-[#2f6bff] hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(47,107,255,0.08)] transition-all duration-200"
                 style={{ minHeight: 160, borderColor: "#e5e7eb" }}
               >
                 <div
@@ -867,20 +813,21 @@ const AiAgentServicePage = () => {
           <div className="text-center">
             <Link
               href={agentsUrl}
-              className="inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold text-[#017eeb] transition-all hover:opacity-90 hover:-translate-y-0.5 bg-[rgba(1,126,235,0.05)] border border-[#017eeb90]"
+              className="inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold text-[#2f6bff] transition-all hover:opacity-90 hover:-translate-y-0.5 bg-[rgba(47,107,255,0.05)] border border-[#2f6bff90]"
             >
               Explore All 30+ AI Agents <ArrowRight size={18} />
             </Link>
-            <p className="text-sm md:text-base text-[#475569] mt-4">
+            {/* <p className="text-sm md:text-base text-[#475569] mt-4">
               Or pull up our{" "}
               <Link
                 href="/ai-agents/meme/"
-                className="text-[#017eeb] underline underline-offset-4 hover:opacity-80"
+                className="text-[#2f6bff] underline underline-offset-4 hover:opacity-80"
               >
                 AI Meme Generator
               </Link>{" "}
-              for an unhinged roast — same Gemini image stack we ship to clients.
-            </p>
+              for an unhinged roast — same Gemini image stack we ship to
+              clients.
+            </p> */}
           </div>
         </div>
       </section>
@@ -895,7 +842,7 @@ const AiAgentServicePage = () => {
             <div>
               <span
                 className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-                style={{ color: "#017eeb" }}
+                style={{ color: "#2f6bff" }}
               >
                 Free AI Agent Audit
               </span>
@@ -911,7 +858,7 @@ const AiAgentServicePage = () => {
                 Tell us what to automate.
                 <br />
                 We&apos;ll send back a{" "}
-                <span style={{ color: "#017eeb" }}>plan</span>.
+                <span style={{ color: "#2f6bff" }}>plan</span>.
               </h2>
               <p
                 style={{
@@ -937,7 +884,7 @@ const AiAgentServicePage = () => {
                     key={item}
                     className="flex items-center gap-2 text-sm text-[#475569]"
                   >
-                    <Check size={14} style={{ color: "#017eeb" }} />
+                    <Check size={14} style={{ color: "#2f6bff" }} />
                     {item}
                   </li>
                 ))}
@@ -946,7 +893,7 @@ const AiAgentServicePage = () => {
 
             <div
               className="rounded-2xl p-8"
-              style={{ background: "#f8f9ff", border: "1px solid #e5e7eb" }}
+              style={{ background: "#f1f5fb", border: "1px solid #e5e7eb" }}
             >
               <p
                 className="text-[15px] font-semibold text-[#0f172a]"
@@ -966,7 +913,7 @@ const AiAgentServicePage = () => {
                   <Link
                     key={use}
                     href={contactUrl}
-                    className="flex items-center justify-center text-center rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 text-[13px] font-semibold text-[#374151] hover:border-[#017eeb] hover:text-[#017eeb] transition-all duration-150"
+                    className="flex items-center justify-center text-center rounded-xl border border-[#e5e7eb] bg-white px-4 py-3 text-[13px] font-semibold text-[#374151] hover:border-[#2f6bff] hover:text-[#2f6bff] transition-all duration-150"
                   >
                     {use}
                   </Link>
@@ -975,10 +922,7 @@ const AiAgentServicePage = () => {
               <Link
                 href={contactUrl}
                 className="flex items-center justify-center gap-2 rounded-lg px-6 py-3.5 font-semibold text-white text-sm transition-all hover:opacity-90"
-                style={{
-                  background:
-                    "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-                }}
+                style={{ background: "#2f6bff" }}
               >
                 Get My Free AI Blueprint <ArrowRight size={16} />
               </Link>
@@ -992,19 +936,10 @@ const AiAgentServicePage = () => {
 
       {/* ==================== MID CTA BANNER ==================== */}
       <section
-        className="relative overflow-hidden text-center"
-        style={{
-          padding: "56px 0",
-          background: "linear-gradient(135deg, #017eeb 0%, #0061c4 100%)",
-        }}
+        className="relative overflow-hidden text-center svc-mid-cta-bg"
+        style={{ padding: "56px 0" }}
       >
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)",
-          }}
-        />
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div
           className="relative mx-auto px-5 md:px-10"
           style={{ maxWidth: 700, zIndex: 1 }}
@@ -1037,7 +972,7 @@ const AiAgentServicePage = () => {
             className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5"
             style={{
               background: "#fff",
-              color: "#017eeb",
+              color: "#2f6bff",
               border: "1px solid #fff",
               padding: "16px 32px",
               fontSize: 16,
@@ -1054,7 +989,7 @@ const AiAgentServicePage = () => {
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Why Brilworks
             </span>
@@ -1119,12 +1054,12 @@ const AiAgentServicePage = () => {
       </section>
 
       {/* ==================== PRICING ==================== */}
-      <section className="py-20" style={{ background: "#f8f9ff" }}>
+      <section className="py-20" style={{ background: "#f1f5fb" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Pricing
             </span>
@@ -1155,12 +1090,12 @@ const AiAgentServicePage = () => {
                 key={tier.name}
                 className="rounded-2xl p-7 flex flex-col"
                 style={{
-                  background: tier.highlight ? "#000d1e" : "#ffffff",
+                  background: tier.highlight ? "#0b1e33" : "#ffffff",
                   border: tier.highlight
-                    ? "1.5px solid #017eeb"
+                    ? "1.5px solid #2f6bff"
                     : "1px solid #e5e7eb",
                   boxShadow: tier.highlight
-                    ? "0 0 0 4px rgba(1,126,235,0.08)"
+                    ? "0 0 0 4px rgba(47,107,255,0.08)"
                     : "none",
                 }}
               >
@@ -1168,7 +1103,7 @@ const AiAgentServicePage = () => {
                   <span
                     className="inline-block text-[11px] font-bold tracking-widest uppercase rounded-full px-3 py-1 mb-4 self-start"
                     style={{
-                      background: "rgba(1,126,235,0.15)",
+                      background: "rgba(47,107,255,0.15)",
                       color: "#00b4d8",
                     }}
                   >
@@ -1195,7 +1130,7 @@ const AiAgentServicePage = () => {
                 </h3>
                 <p
                   className="text-2xl font-extrabold mb-1"
-                  style={{ color: tier.highlight ? "#00dbd3" : "#017eeb" }}
+                  style={{ color: tier.highlight ? "#00dbd3" : "#2f6bff" }}
                 >
                   {tier.price}
                 </p>
@@ -1216,7 +1151,7 @@ const AiAgentServicePage = () => {
                         size={15}
                         className="mt-0.5 shrink-0"
                         style={{
-                          color: tier.highlight ? "#00dbd3" : "#017eeb",
+                          color: tier.highlight ? "#00dbd3" : "#2f6bff",
                         }}
                       />
                       <span
@@ -1237,12 +1172,8 @@ const AiAgentServicePage = () => {
                   className="mt-7 inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all hover:opacity-90"
                   style={
                     tier.highlight
-                      ? {
-                          background:
-                            "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-                          color: "#ffffff",
-                        }
-                      : { background: "rgba(1,126,235,0.08)", color: "#017eeb" }
+                      ? { background: "#2f6bff", color: "#ffffff" }
+                      : { background: "rgba(47,107,255,0.08)", color: "#2f6bff" }
                   }
                 >
                   {tier.cta} <ArrowRight size={15} />
@@ -1258,7 +1189,7 @@ const AiAgentServicePage = () => {
       </section>
 
       {/* ==================== CLIENT STORIES ==================== */}
-      <section className="relative overflow-hidden py-20" style={darkSectionBg}>
+      <section className="relative overflow-hidden py-20 svc-dark-section-bg">
         <div
           className="relative container max-w-[1280px] md:px-10 px-5 mx-auto"
           style={{ zIndex: 1 }}
@@ -1266,16 +1197,17 @@ const AiAgentServicePage = () => {
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#00b4d8" }}
+              style={{ color: "#2f6bff" }}
             >
               Client Stories
             </span>
             <h2
-              className="font-extrabold text-white"
+              className="font-extrabold"
               style={{
                 fontSize: "clamp(28px, 3.2vw, 42px)",
                 letterSpacing: "-1px",
                 lineHeight: 1.15,
+                color: "#0b1e33",
               }}
             >
               What Our Clients Say
@@ -1285,7 +1217,7 @@ const AiAgentServicePage = () => {
               style={{
                 fontSize: 17,
                 lineHeight: 1.7,
-                color: "rgba(255,255,255,0.62)",
+                color: "#566678",
               }}
             >
               Rated 4.8★ on Clutch across 40+ verified reviews. Real outcomes
@@ -1303,10 +1235,10 @@ const AiAgentServicePage = () => {
                 key={t.name}
                 className="rounded-2xl"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.1)",
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
                   padding: "32px 28px",
-                  backdropFilter: "blur(10px)",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
                 }}
               >
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
@@ -1317,7 +1249,7 @@ const AiAgentServicePage = () => {
                 <p
                   className="mb-6"
                   style={{
-                    color: "rgba(255,255,255,0.85)",
+                    color: "#0b1e33",
                     fontSize: 15,
                     lineHeight: 1.7,
                   }}
@@ -1330,7 +1262,7 @@ const AiAgentServicePage = () => {
                     style={{
                       width: 44,
                       height: 44,
-                      background: "linear-gradient(135deg, #017eeb, #00dbd3)",
+                      background: "linear-gradient(135deg, #2f6bff, #1e4fd6)",
                       fontSize: 15,
                     }}
                   >
@@ -1338,14 +1270,12 @@ const AiAgentServicePage = () => {
                   </div>
                   <div className="flex flex-col">
                     <span
-                      className="text-white font-semibold"
-                      style={{ fontSize: 14 }}
+                      className="font-semibold"
+                      style={{ fontSize: 14, color: "#0b1e33" }}
                     >
                       {t.name}
                     </span>
-                    <span
-                      style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}
-                    >
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>
                       {t.role}
                     </span>
                   </div>
@@ -1365,24 +1295,19 @@ const AiAgentServicePage = () => {
                 key={s.lbl}
                 className="text-center rounded-xl py-5"
                 style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
                 }}
               >
                 <div
                   className="text-2xl font-extrabold mb-1"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #017eeb, #00dbd3)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    color: "transparent",
-                  }}
+                  style={{ color: "#2f6bff" }}
                 >
                   {s.num}
                 </div>
-                <div className="text-xs text-white/50">{s.lbl}</div>
+                <div className="text-xs" style={{ color: "#6b7a8a" }}>
+                  {s.lbl}
+                </div>
               </div>
             ))}
           </div>
@@ -1390,7 +1315,7 @@ const AiAgentServicePage = () => {
       </section>
 
       {/* ==================== RECOGNIZED BY ==================== */}
-      <section className="py-16" style={{ background: "#f8f9ff" }}>
+      <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div
             className="text-center mx-auto"
@@ -1398,7 +1323,7 @@ const AiAgentServicePage = () => {
           >
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Recognized By
             </span>
@@ -1438,7 +1363,7 @@ const AiAgentServicePage = () => {
           <div className="text-center mx-auto mb-10" style={{ maxWidth: 720 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Industries
             </span>
@@ -1457,7 +1382,7 @@ const AiAgentServicePage = () => {
               <Link
                 key={industry.label}
                 href={industry.href}
-                className="flex flex-col items-center justify-center text-center rounded-2xl p-5 border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
+                className="flex flex-col items-center justify-center text-center rounded-2xl p-5 border border-[#e5e7eb] hover:border-[#2f6bff] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
@@ -1475,7 +1400,7 @@ const AiAgentServicePage = () => {
       </section>
 
       {/* ==================== FAQ ==================== */}
-      <section className="py-20" style={{ background: "#f8f9ff" }}>
+      <section className="py-20" style={{ background: "#f1f5fb" }}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div
             className="max-w-3xl mx-auto"
@@ -1484,7 +1409,7 @@ const AiAgentServicePage = () => {
           >
             <span
               className="text-center block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Frequently Asked Questions
             </span>
@@ -1512,6 +1437,7 @@ const AiAgentServicePage = () => {
           description="One conversation is usually enough to know whether an AI agent is the right fit for what you're trying to automate. Tell us what you need. We'll walk you through how we'd build it and have a working prototype ready within a week."
           messageRequired={false}
           submitLabel="Book My Free AI Agent Consultation"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Working prototype in 7 days — test it before you commit",
             "Starting at $2,000, with transparent pricing throughout",
@@ -1528,7 +1454,7 @@ const AiAgentServicePage = () => {
           stickyVisible ? "translate-y-0" : "translate-y-full"
         }`}
         style={{
-          background: "rgba(13, 15, 26, 0.92)",
+          background: "rgba(11, 30, 51, 0.92)",
           padding: "12px 20px",
         }}
       >
@@ -1537,11 +1463,7 @@ const AiAgentServicePage = () => {
         </span>
         <Link
           href={contactUrl}
-          className="inline-flex items-center gap-2 rounded-md px-6 py-2 text-sm font-semibold text-white transition-all hover:opacity-90"
-          style={{
-            background:
-              "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-          }}
+          className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 !py-2 !px-5 !text-sm hover:text-themeColor"
         >
           Talk to Us <ArrowRight size={16} />
         </Link>

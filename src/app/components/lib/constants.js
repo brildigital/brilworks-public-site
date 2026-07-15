@@ -128,83 +128,82 @@ export const blogSubCategories = [
     key: "Data Engineering",
     value: "data-engineering",
   },
+  {
+    key: "Embedded",
+    value: "embedded-software",
+  },
+  {
+    key: "Firmware Engineering",
+    value: "firmware-engineering",
+  },
 ];
 
 export const servicesMenuItems = [
   {
-    name: "Data & Analytics",
+    name: "Data & AI",
     subSections: [
       {
         name: "Data Engineering",
         path: "/data-engineering-services/",
       },
       {
-        name: "Data Engineering Tools",
-        path: "/data-engineering-tools/",
-      },
-    ],
-  },
-  {
-    name: "AI & Agents",
-    subSections: [
-      {
         name: "AI Agent Development",
         path: "/ai-agent-development-services/",
       },
       {
-        name: "Generative AI Development",
+        name: "Generative AI",
         path: "/generative-ai-development-services/",
       },
       {
-        name: "AI/ML Development",
+        name: "AI / ML Development",
         path: "/ai-ml-development-services/",
+      },
+      // {
+      //   name: "MLOps (New)",
+      //   path: "/contact-us/",
+      // },
+    ],
+  },
+  {
+    name: "IoT & Embedded",
+    subSections: [
+      {
+        name: "Embedded Software",
+        path: "/embedded-software-development-services/",
+      },
+      {
+        name: "Firmware Engineering",
+        path: "/firmware-engineering-services/",
+      },
+      {
+        name: "Edge AI / On-Device ML",
+        path: "/edge-ai-development-services/",
+      },
+      {
+        name: "IoT Product Engineering",
+        path: "/iot-product-engineering-services/",
       },
     ],
   },
   {
-    name: "Software Development",
+    name: "The Stack Underneath",
+    muted: true,
     subSections: [
       {
         name: "Product Engineering",
         path: "/product-engineering-development-services/",
       },
       {
-        name: "SaaS Development",
+        name: "Web & SaaS",
         path: "/saas-application-development-services/",
-      },
-      {
-        name: "Web Apps",
-        path: "/web-app-development-services/",
       },
       {
         name: "Mobile Apps",
         path: "/mobile-app-development-services/",
       },
-    ],
-  },
-  {
-    name: "Cloud & Infrastructure",
-    subSections: [
       {
-        name: "AWS Consulting",
-        path: "/aws-consulting-services/",
-      },
-      {
-        name: "DevOps",
+        name: "Cloud & DevOps",
         path: "/devops-consulting-services/",
-      },
-    ],
-  },
-  {
-    name: "Work With Us",
-    subSections: [
-      {
-        name: "Dedicated Teams",
-        path: "/hire-dedicated-software-development-team/",
-      },
-      {
-        name: "Staff Augmentation",
-        path: "/staff-augmentation/",
       },
     ],
   },
@@ -305,97 +304,54 @@ export const resourcesMenuItems = [
 
 export const hireTeamMenuItems = [
   {
-    name: "FRONTEND DEVELOPMENT",
+    name: "",
     subSections: [
       {
-        name: "React.JS",
-        path: "/hire-reactjs-developer/",
-      },
-      // {
-      //   name: "Flutter",
-      //   path: "#",
-      // },
-      {
-        name: "UI/UX Development",
-        path: "/hire-ui-ux-designer/",
-      },
-    ],
-  },
-  {
-    name: "BACKEND DEVELOPMENT",
-    subSections: [
-      {
-        name: "Java",
-        path: "/hire-java-developer/",
+        name: "Snowflake Developers",
+        path: "/hire-snowflake-developer/",
       },
       {
-        name: "Node.JS",
-        path: "/hire-nodejs-developer/",
-      },
-      // {
-      //   name: "Python",
-      //   path: "#",
-      // },
-    ],
-  },
-  {
-    name: "CLOUD DEVELOPMENT",
-    subSections: [
-      {
-        name: "AWS Certified Developers",
-        path: "/hire-aws-developer/",
-      },
-    ],
-  },
-
-  {
-    name: "MOBILE APP DEVELOPMENT",
-    subSections: [
-      {
-        name: "React Native Developers",
-        path: "/hire-react-native-developer/",
+        name: "Databricks Developers",
+        path: "/hire-databricks-developer/",
       },
       {
-        name: "Mobile App Developers",
-        path: "/hire-mobile-app-developer/",
-      },
-    ],
-  },
-  {
-    name: "LOW CODE/ NO CODE DEVELOPMENT",
-    subSections: [
-      {
-        name: "Flutterflow Developers",
-        path: "/hire-flutterflow-developer/",
+        name: "Data Engineers",
+        path: "/hire-data-engineer/",
       },
       {
-        name: "Bubble.io Developers",
-        path: "/hire-bubble-developer/",
+        name: "Analytics Engineers",
+        path: "/hire-analytics-engineer/",
       },
       {
-        name: "Adalo Developers",
-        path: "/hire-adalo-developer/",
+        name: "ML / AI Engineers",
+        path: "/hire-ml-ai-engineer/",
       },
       {
-        name: "Low Code No Code Developers",
-        path: "/hire-low-code-no-code-developer/",
+        name: "MLOps Engineers",
+        path: "/hire-mlops-engineer/",
       },
       {
-        name: "White Label App Developers",
-        path: "/hire-white-label-developer/",
-      },
-    ],
-  },
-  {
-    name: "EMERGING TECHNOLOGIES",
-    subSections: [
-      {
-        name: "Blockchain Development",
-        path: "/hire-blockchain-developer/",
+        name: "All Roles →",
+        path: "/hire-dedicated-software-development-team/",
       },
     ],
   },
 ];
+
+// Nav-only subset (mega menu shows certified roles as a 2-column grid + a
+// separate footer row; the SEO/legacy links stay in hireTeamMenuItems above
+// for the sitemap page).
+export const hireTeamNavMenuItems = [
+  {
+    name: "",
+    subSections: hireTeamMenuItems[0].subSections.slice(0, 6),
+  },
+];
+
+export const hireTeamFooterLink = {
+  name: "All roles →",
+  path: "/hire-engineers/",
+};
 
 export const AISolutionsMenuItems = [
   {
@@ -438,15 +394,31 @@ export const menuItems = [
     isMegaMenu: true,
   },
   {
+    name: "Hire Engineers",
+    path: "",
+    heading: "Certified data & AI engineers",
+    menuItems: hireTeamNavMenuItems,
+    columns: 2,
+    footerLink: hireTeamFooterLink,
+    isMegaMenu: true,
+  },
+  {
+    name: "Case Studies",
+    path: "/case-studies/",
+    hideInSideMenu: true,
+  },
+  {
     name: "AI Solutions",
     path: "",
     heading: "",
     menuItems: AISolutionsMenuItems,
     isMegaMenu: true,
+    hideInHeader: true,
   },
   {
     name: "Portfolio",
     path: "/portfolio/",
+    hideInHeader: true,
   },
   {
     name: "Industry",
@@ -454,19 +426,13 @@ export const menuItems = [
     heading: "",
     menuItems: industryMenuItems,
     isMegaMenu: true,
+    hideInHeader: true,
   },
   {
     name: "Resources",
     path: "",
     heading: "",
     menuItems: resourcesMenuItems,
-    isMegaMenu: true,
-  },
-  {
-    name: "Hire Team",
-    path: "",
-    heading: "Technologies",
-    menuItems: hireTeamMenuItems,
     isMegaMenu: true,
     hideInHeader: true,
   },
@@ -682,6 +648,30 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/hire-blockchain-developer/",
     lastmod: "2025-05-22T12:04:49.528Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-snowflake-developer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-databricks-developer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-data-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-analytics-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-ml-ai-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-mlops-engineer/",
+    lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/hire-flutterflow-developer/",
@@ -1353,6 +1343,34 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/data-engineering-services/",
     lastmod: "2026-06-23T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/embedded-software-development-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/firmware-engineering-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/edge-ai-development-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/iot-product-engineering-services/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-for-healthtech/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-for-fintech/",
+    lastmod: "2026-07-01T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-for-saas/",
+    lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/privacy-policy/",

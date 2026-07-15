@@ -100,13 +100,13 @@ const AboutSection = () => {
         >
           <div className="flex flex-col items-center mb-8">
             <h2
-              className="text-3xl font-bold mb-4 !bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent"
+              className="text-3xl font-bold mb-4 text-[#2f6bff]"
               data-testid="text-about-name"
             >
               Why Brilworks is the Right Partner
             </h2>
             <p
-              className="text-lg text-[#94a3b8] max-w-2xl mx-auto"
+              className="text-lg text-[#566678] max-w-2xl mx-auto"
               data-testid="text-outcomes-subtitle"
             >
               Brilworks brings together technical strength, design thinking, and
@@ -119,14 +119,14 @@ const AboutSection = () => {
               return (
                 <div
                   key={idx}
-                  className="flex items-start flex-col bg-card/50 backdrop-blur-sm rounded-xl p-4 border border-[#017eeb33]"
+                  className="flex items-start flex-col bg-white backdrop-blur-sm rounded-xl p-4 border border-[#e4eaf1]"
                   data-testid="text-about-experience-1"
                 >
-                  <div className="flex items-center gap-2 font-semibold text-white mb-2">
+                  <div className="flex items-center gap-2 font-semibold text-themeColor mb-2">
                     <CheckCircle className="text-themeColor flex-shrink-0" />
                     {item.title}
                   </div>
-                  <p className="text-sm text-[#94a3b8] pl-8">
+                  <p className="text-sm text-[#566678] pl-8">
                     {item.description}
                   </p>
                 </div>
@@ -142,7 +142,7 @@ const AboutSection = () => {
           className="max-w-5xl mx-auto"
         >
           <h3
-            className="text-2xl font-bold mb-12 text-center !bg-gradient-to-r from-themeColor to-accent bg-clip-text text-transparent"
+            className="text-2xl font-bold mb-12 text-center text-[#2f6bff]"
             data-testid="text-proof-title"
           >
             Proof of work
@@ -156,7 +156,7 @@ const AboutSection = () => {
                   isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
                 }
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-card/80 backdrop-blur-sm border border-primary/20 rounded-2xl p-6 hover:shadow-2xl border-[#017eeb33] transition-all duration-500 cursor-pointer group overflow-hidden"
+                className="bg-white backdrop-blur-sm border border-primary/20 rounded-2xl p-6 hover:shadow-2xl border-[#e4eaf1] transition-all duration-500 cursor-pointer group overflow-hidden"
                 data-testid={`card-proof-${index}`}
               >
                 <Link href={item.link} className="flex flex-col space-y-4">
@@ -164,7 +164,7 @@ const AboutSection = () => {
                     <img
                       src={item.image}
                       alt={item.alt}
-                      className="w-full h-full rounded-xl object-cover border border-[#017eeb33] shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-500"
+                      className="w-full h-full rounded-xl object-cover border border-[#e4eaf1] shadow-lg group-hover:shadow-xl group-hover:scale-[1.02] transition-all duration-500"
                       data-testid={`img-proof-${index}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -180,7 +180,7 @@ const AboutSection = () => {
                       {item.title}
                     </h4>
                     <p
-                      className="text-[#94a3b8] group-hover:text-[#94a3b8] transition-colors duration-300"
+                      className="text-[#566678] group-hover:text-[#566678] transition-colors duration-300"
                       data-testid={`text-proof-description-${index}`}
                     >
                       {item.description}

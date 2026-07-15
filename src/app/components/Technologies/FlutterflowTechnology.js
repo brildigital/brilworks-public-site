@@ -5,6 +5,14 @@ import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import MultipleKeyValueWithBG from "../Common/MultipleKeyValueWithBG";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  Code2,
+  RefreshCw,
+  ArrowRightLeft,
+  Plug,
+  Wrench,
+  GraduationCap,
+} from "lucide-react";
 
 const FlutterflowFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
@@ -28,6 +36,7 @@ const FlutterflowTechnology = () => {
       {
         title: "Custom App Development",
         value: "flutterflow-1",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mobile-app-img.webp",
         description:
           "Develop stunning custom applications that adjust to fit your vision, with complete control over the features and functionalities.",
@@ -35,6 +44,7 @@ const FlutterflowTechnology = () => {
       {
         title: "App Redesign and Modernization",
         value: "flutterflow-2",
+        icon: <RefreshCw size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/cross-platform-app-dev.webp",
         description:
           "Modernize and redesign your existing app in less time with our Flutterflow development services for long-term success.",
@@ -42,6 +52,7 @@ const FlutterflowTechnology = () => {
       {
         title: "Flutterflow Migration",
         value: "flutterflow-3",
+        icon: <ArrowRightLeft size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/flutterflow-migration.webp",
         description:
           "Migrate your existing apps (both native or hybrid) effortlessly to Flutterflow to reduce development costs and time.",
@@ -49,6 +60,7 @@ const FlutterflowTechnology = () => {
       {
         title: "App Integration",
         value: "flutterflow-4",
+        icon: <Plug size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/app-integration.webp",
         description:
           "Integrate your Flutterflow app with other systems and platforms, such as CRM, payment gateways, and social media.",
@@ -56,6 +68,7 @@ const FlutterflowTechnology = () => {
       {
         title: "App Maintenance and Support",
         value: "flutterflow-5",
+        icon: <Wrench size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/react-native-app-maintenance.webp",
         description:
           "We provide ongoing maintenance and support for Flutterflow apps, from addressing bugs, issues, and security vulnerabilities to implementing updates and enhancements.",
@@ -63,6 +76,7 @@ const FlutterflowTechnology = () => {
       {
         title: "Flutterflow Training and Consulting",
         value: "flutterflow-6",
+        icon: <GraduationCap size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/flutterflow-training-and-consulting.webp",
         description:
           "We offer training and consulting services to help clients learn how to use Flutterflow effectively.",
@@ -175,7 +189,7 @@ const FlutterflowTechnology = () => {
         description="We understand the need for a stable, cost-effective tech infrastructure. Our Flutter experts deliver end-to-end solutions to drive your business growth and innovation."
         keyValueData={flutterflowExperienceShowCase}
       />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <FlutterflowFAQs />
     </>
   );

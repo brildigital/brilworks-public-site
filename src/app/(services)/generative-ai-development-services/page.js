@@ -5,13 +5,13 @@ import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
 const LAST_UPDATED = "2026-04-23";
 
 export const metadata = {
-  title: "Generative AI Services | Brilworks",
+  title: "Generative AI Development Services | Brilworks",
   description:
-    "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+    "Generative AI Development Services. We build production-grade LLM, RAG, and agent systems that ship in weeks, run with guardrails, and scale reliably.",
   openGraph: {
-    title: "Generative AI Services",
+    title: "Generative AI Development Services | Brilworks",
     description:
-      "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+      "Generative AI Development Services. We build production-grade LLM, RAG, and agent systems that ship in weeks, run with guardrails, and scale reliably.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}generative-ai-development-services/`,
     siteName:
       "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
@@ -24,9 +24,9 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: "Generative AI Services",
+    title: "Generative AI Development Services | Brilworks",
     description:
-      "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+      "Generative AI Development Services. We build production-grade LLM, RAG, and agent systems that ship in weeks, run with guardrails, and scale reliably.",
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -43,9 +43,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: generateWebPageSchema({
-            title: "Generative AI Services | Brilworks",
+            title: "Generative AI Development Services | Brilworks",
             description:
-              "Pioneer the future with Brilworks' generative AI development. Leverage cutting-edge AI to create innovative solutions that set your business apart.",
+              "Generative AI Development Services. We build production-grade LLM, RAG, and agent systems that ship in weeks, run with guardrails, and scale reliably.",
             url: `${process.env.NEXT_PUBLIC_BASE_URL}generative-ai-development-services/`,
             dateModified: LAST_UPDATED,
           }),

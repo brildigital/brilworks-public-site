@@ -2,17 +2,38 @@
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { scrollEffect } from "../lib/commonFunction";
-import { MapPin, Route, AlertTriangle, Bell, History, Settings2, WifiOff, Plug, Cloud, BarChart2 } from "lucide-react";
+import {
+  MapPin,
+  Route,
+  AlertTriangle,
+  Bell,
+  History,
+  Settings2,
+  WifiOff,
+  Plug,
+  Cloud,
+  BarChart2,
+  Truck,
+  Warehouse,
+  Navigation,
+  Building2,
+  TrafficCone,
+  PackageCheck,
+  Boxes,
+} from "lucide-react";
 import {
   faReact,
   faAngular,
   faVuejs,
 } from "@fortawesome/free-brands-svg-icons";
-import SolutionHeroSection from "./SolutionHeroSection";
+import Image from "next/image";
+import Link from "next/link";
+import ButtonV2 from "../Common/ButtonV2";
 import ServicesSection from "../Common/ServicesSection";
 import TypesOfAppWeDevelop from "./TypesOfAppWeDevelop";
 import MultipleCardWithIconBG from "../Common/MultipleCardWithIconBG";
 import MultipleKeyValueWithBG from "../Common/MultipleKeyValueWithBG";
+import "../../styles/ServiceLightTheme.css";
 
 const FleetManagmentFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -30,6 +51,7 @@ const FleetManagementNGPS = () => {
     servicesList: [
       {
         title: "Fleet Management App Development",
+        icon: <Truck size={24} strokeWidth={1.75} />,
         description:
           "We build apps that allow you to monitor and optimise your vehicle fleets in real time. Track drivers, plan routes, capture performance data and reduce idle time so your fleet becomes a strategic asset, not just a cost centre.",
         value: "fleet-one-1",
@@ -39,6 +61,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Inventory Management App Development",
+        icon: <Warehouse size={24} strokeWidth={1.75} />,
         description:
           "From warehouse operations to inventory tracking and procurement workflows, our supply-chain apps give you the visibility you need to make decisions based on data. You’ll get accurate status updates, alerts on delays or stock-outs, and control over processes end-to-end.",
         value: "fleet-one-2",
@@ -48,6 +71,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "On-Demand Logistics App Development",
+        icon: <Navigation size={24} strokeWidth={1.75} />,
         description:
           "On-demand logistics apps for dynamic routing, real-time tracking for customers and dispatchers, helping you win in competitive markets.",
         value: "fleet-one-3",
@@ -57,6 +81,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Route Optimisation App Development",
+        icon: <Route size={24} strokeWidth={1.75} />,
         description:
           "For companies managing complex transportation logistics, we build apps that integrate order volumes, traffic data, vehicle capacities and delivery constraints to plan efficient trips, reduce costs and improve reliability.",
         value: "fleet-one-4",
@@ -66,6 +91,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Custom Enterprise Logistics App Development ",
+        icon: <Building2 size={24} strokeWidth={1.75} />,
         description:
           "Your business is unique. If you need a tailored solution. We design custom logistics apps built to your requirements, with future-proof architecture, data analytics modules and support across mobile and web platforms.",
         value: "fleet-one-5",
@@ -82,6 +108,7 @@ const FleetManagementNGPS = () => {
     servicesList: [
       {
         title: "GPS Fleet Tracking",
+        icon: <MapPin size={24} strokeWidth={1.75} />,
         description:
           "We’re smarter than most fleet managers. Our software developers have extensive experience in fleet-tracking solutions. Through a combination of real-time GPS tracking, route optimization, and manual regrouping, our proprietary software allows you to easily monitor your fleet anywhere, while on the move.",
         value: "fleet-two-1",
@@ -90,6 +117,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Traffic Management Software",
+        icon: <TrafficCone size={24} strokeWidth={1.75} />,
         description:
           "Never be caught out by unexpected road conditions. Our traffic management software lets your team stay informed and updated by providing real-time visibility, insight, and control.",
         value: "fleet-two-2",
@@ -98,6 +126,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Delivery Management Software",
+        icon: <PackageCheck size={24} strokeWidth={1.75} />,
         description:
           "Our online POS system makes managing consignment paperwork, sending real-time notifications, and creating delivery records easy!",
         value: "fleet-two-3",
@@ -106,6 +135,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Transportation Software",
+        icon: <Truck size={24} strokeWidth={1.75} />,
         description:
           "Let our software will deliver information about the fastest, cheapest, and most convenient for you to transport goods. We bring you the greatest value in pricing and cost savings every time you move goods.",
         value: "fleet-two-4",
@@ -114,6 +144,7 @@ const FleetManagementNGPS = () => {
       },
       {
         title: "Supply Chain Management Software",
+        icon: <Boxes size={24} strokeWidth={1.75} />,
         description:
           "Our supply chain tracking services make it easy to track, manage and maintain the movement of all your inventory, making sure that you’re aware of its location at all times.",
         value: "fleet-two-5",
@@ -171,8 +202,14 @@ const FleetManagementNGPS = () => {
         title: "Offline Tracking",
         icon: <WifiOff size={28} color="#1A5CCC" strokeWidth={1.75} />,
       },
-      { title: "API Integration", icon: <Plug size={28} color="#1A5CCC" strokeWidth={1.75} /> },
-      { title: "Cloud Based", icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} /> },
+      {
+        title: "API Integration",
+        icon: <Plug size={28} color="#1A5CCC" strokeWidth={1.75} />,
+      },
+      {
+        title: "Cloud Based",
+        icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} />,
+      },
       {
         title: "Analytics & Reporting",
         icon: <BarChart2 size={28} color="#1A5CCC" strokeWidth={1.75} />,
@@ -296,17 +333,99 @@ const FleetManagementNGPS = () => {
 
   return (
     <>
-      <SolutionHeroSection
-        technologyText={
-          <>
-            Fleet Management App
-            <br className="md:block hidden" /> Development Services
-          </>
-        }
-        title="Custom Fleet Management Mobile & Web App Development"
-        description="At Brilworks, we design and build custom fleet management apps for mobile and web that transform fleet operations. We build smartest solutions for managing fleets, tracking shipments, and optimising last-mile delivery. Our fleet management app development services give you the tools to reduce costs, increase visibility and deliver better service. "
-        imageSrc="/images/v2/fleet-mgmt-banner.webp"
-      />
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                Fleet Management App
+                <br className="md:block hidden" /> Development Services
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                Custom Fleet Management Mobile &amp; Web App Development
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                At Brilworks, we design and build custom fleet management apps
+                for mobile and web that transform fleet operations. We build
+                smartest solutions for managing fleets, tracking shipments, and
+                optimising last-mile delivery. Our fleet management app
+                development services give you the tools to reduce costs,
+                increase visibility and deliver better service.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <ButtonV2
+                  size="large"
+                  label="Get My Free Consultation"
+                  redirect="#section-contact-form"
+                  scrollingButton
+                  className="hover:!text-themeColor"
+                />
+                <Link
+                  href="/portfolio/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  View Case Studies
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="w-full rounded-2xl overflow-hidden"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  boxShadow: "0 4px 24px rgba(11,30,51,0.08)",
+                  padding: 8,
+                }}
+              >
+                <Image
+                  className="rounded-xl object-cover w-full"
+                  src="/images/v2/fleet-mgmt-banner.webp"
+                  alt="Fleet Management App Development Services"
+                  width={565}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ServicesSection sectionId="services-one" serviceData={fleetServices1} />
       <ServicesSection
         bgClass="bg-themeLight"
@@ -330,6 +449,7 @@ const FleetManagementNGPS = () => {
       />
       <SolutionEngagementAndHowCanStart />
       <SolutionContactForm
+        bgClassName="svc-mid-cta-bg"
         title="Start Building Your Fleet Management App Today"
         description="Modern fleet runs on technology. Let’s build the solution that keeps yours ahead of the curve."
       />

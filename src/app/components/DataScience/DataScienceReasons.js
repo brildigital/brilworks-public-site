@@ -45,7 +45,6 @@ const DataScienceReasons = () => {
       <div className="container max-w-[1280px] md:px-10 px-5 mx-auto main-section-padding">
         <div className="mb-[38px] reveal">
           <span className="flex items-center gap-[9px] font-mono text-[12px] font-semibold tracking-[0.16em] uppercase text-themeColor mb-4">
-            <span className="w-[22px] h-[1px] bg-themeColor inline-block"></span>
             Six reasons, all verifiable
           </span>
           <h2
@@ -61,15 +60,14 @@ const DataScienceReasons = () => {
           {reasons.map((r, i) => (
             <div
               key={i}
-              className="bg-white p-7 hover:bg-[#f5f7fb] transition-colors duration-200 reveal"
+              className="bg-white p-7 hover:bg-[#f5f7fb] transition-[background-color] duration-200 reveal"
             >
               <div className="font-mono text-[11px] font-semibold tracking-[0.12em] uppercase text-[#8a91a1] mb-2">
                 {r.num}
               </div>
               <div
-                className={`font-Figtree font-bold tracking-[-0.02em] leading-none my-3 ${
-                  r.isGreen ? "text-[#0d9e6a]" : "text-themeColor"
-                }`}
+                className={`font-Figtree font-bold tracking-[-0.02em] leading-none my-3 
+                  text-themeColor`}
                 style={{ fontSize: "clamp(22px, 2.5vw, 30px)" }}
               >
                 {r.big}

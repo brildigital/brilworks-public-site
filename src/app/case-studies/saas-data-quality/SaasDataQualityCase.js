@@ -4,10 +4,10 @@ import CaseStudyLayout from "../CaseStudyLayout";
 
 const SaasDataQualityCase = () => (
   <CaseStudyLayout
+    light
     kicker="Case Study · SaaS"
     title="Reducing bad data incidents by 90% for a growing SaaS company."
     subtitle="A B2B SaaS platform relied on analytics for product decisions, customer success, and executive reporting. As the company scaled, broken dashboards, missing records, and inconsistent metrics became a weekly occurrence. We built a data quality and observability layer that caught issues before they reached the business."
-    heroImage="/images/v2/data_agent_hero.webp"
     proofBar={[
       { value: "90%", label: "Fewer bad data incidents", highlight: true },
       { value: "75%", label: "Faster issue detection", highlight: true },

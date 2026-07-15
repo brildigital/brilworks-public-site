@@ -1,6 +1,9 @@
 "use client";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 import { Clock, TrendingUp } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
@@ -62,8 +65,14 @@ const clientTestimonials = [
   },
 ];
 
-const TestimonialCard = ({ testimonial, index }) => (
-  <div className="bg-white/[0.05] border border-white/[0.08] rounded-2xl p-7 transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(26,92,204,0.5)] h-full flex flex-col">
+const TestimonialCard = ({ testimonial, index, light }) => (
+  <div
+    className={
+      light
+        ? "bg-white border border-[#e4eaf1] rounded-2xl p-7 transition-all duration-300 hover:border-[#2f6bff] h-full flex flex-col shadow-[0_1px_2px_rgba(11,30,51,0.05)]"
+        : "bg-white/[0.05] border border-white/[0.08] rounded-2xl p-7 transition-all duration-300 hover:bg-white/[0.08] hover:border-[rgba(26,92,204,0.5)] h-full flex flex-col"
+    }
+  >
     {/* Stars + Duration */}
     <div className="flex items-center justify-between mb-3.5">
       <div className="text-[#fbbf24] text-sm tracking-[1px]">★★★★★</div>
@@ -84,7 +93,9 @@ const TestimonialCard = ({ testimonial, index }) => (
     )}
 
     {/* Quote */}
-    <p className="font-Figtree text-sm text-white/80 leading-[1.75] mb-5 italic flex-1">
+    <p
+      className={`font-Figtree text-sm leading-[1.75] mb-5 italic flex-1 ${light ? "text-[#0b1e33]" : "text-white/80"}`}
+    >
       &ldquo;{testimonial.quote}&rdquo;
     </p>
 
@@ -96,10 +107,14 @@ const TestimonialCard = ({ testimonial, index }) => (
         {testimonial.initials}
       </div>
       <div>
-        <div className="font-Figtree text-sm font-semibold text-white">
+        <div
+          className={`font-Figtree text-sm font-semibold ${light ? "text-[#0b1e33]" : "text-white"}`}
+        >
           {testimonial.author}
         </div>
-        <div className="font-Figtree text-xs text-white/40">
+        <div
+          className={`font-Figtree text-xs ${light ? "text-[#6b7a8a]" : "text-white/40"}`}
+        >
           {testimonial.position}
         </div>
       </div>
@@ -107,7 +122,7 @@ const TestimonialCard = ({ testimonial, index }) => (
   </div>
 );
 
-const ClientReviews = () => {
+const ClientReviews = ({ light = false }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -129,24 +144,32 @@ const ClientReviews = () => {
 
   return (
     <>
-      <div className="bg-[#0d0f1a] py-24">
+      <div className={light ? "bg-[#f1f5fb] py-24" : "bg-[#0d0f1a] py-24"}>
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           {/* Section Header */}
           <div className="mb-14 reveal">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase block mb-3 text-[#00b4d8]">
+            <span
+              className={`text-[11px] font-bold tracking-[0.12em] uppercase block mb-3 ${light ? "text-[#2f6bff]" : "text-[#00b4d8]"}`}
+            >
               Our Clients Simply Love Our Work
             </span>
-            <h2 className="text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1px] leading-[1.1] text-white">
+            <h2
+              className={`text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1px] leading-[1.1] ${light ? "text-[#0b1e33]" : "text-white"}`}
+            >
               What Our Clients Say
             </h2>
-            <p className="text-[17px] text-white/50 mt-3 max-w-[560px]">
+            <p
+              className={`text-[17px] mt-3 max-w-[560px] ${light ? "text-[#566678]" : "text-white/50"}`}
+            >
               Not curated marketing quotes. Real words from real people who have
               worked with us for years.
             </p>
           </div>
 
           {/* Testimonials Swiper */}
-          <div className="reveal testimonials-swiper">
+          <div
+            className={`reveal testimonials-swiper${light ? " testimonials-swiper-light" : ""}`}
+          >
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               spaceBetween={20}
@@ -162,7 +185,7 @@ const ClientReviews = () => {
             >
               {clientTestimonials.map((testimonial, index) => (
                 <SwiperSlide key={index} className="!h-auto">
-                  <TestimonialCard testimonial={testimonial} index={index} />
+                  <TestimonialCard testimonial={testimonial} index={index} light={light} />
                 </SwiperSlide>
               ))}
             </Swiper>

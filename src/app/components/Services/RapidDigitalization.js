@@ -1,7 +1,10 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import ServiceHeroSection from "./ServiceHeroSection";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import CTASection from "../Common/CTASection";
+import { serviceStats } from "@/data/serviceStats";
+import "../../styles/ServiceLightTheme.css";
 
 const WhyDedicatedTeam = dynamic(() => import("./WhyDedicatedTeam"));
 const MultipleCardInGrid = dynamic(() =>
@@ -86,12 +89,92 @@ const RapidDigitalization = () => {
 
   return (
     <>
-      <ServiceHeroSection
-        title="Unlock Digital Potential with Our Acceleration Services"
-        description="Our team is dedicated to driving innovation, efficiency, and growth through strategic digital initiatives tailored to your unique business objectives."
-        buttonText="Explore Digital Acceleration Services"
-        showGridData={true}
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                Unlock{" "}
+                <span style={{ color: "#2f6bff" }}>Digital Potential</span>{" "}
+                with Our Acceleration Services
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                Our team is dedicated to driving innovation, efficiency, and
+                growth through strategic digital initiatives tailored to your
+                unique business objectives.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <Link
+                  href="/contact-us/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background: "#2f6bff",
+                    color: "#fff",
+                    border: "1px solid #2f6bff",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Explore Digital Acceleration Services{" "}
+                  <ArrowRight size={16} strokeWidth={2} />
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div className="grid grid-cols-2 gap-4">
+                {serviceStats.map((s) => (
+                  <div
+                    key={s.description}
+                    className="rounded-2xl transition-all svc-stat-card"
+                    style={{ padding: "28px 24px" }}
+                  >
+                    <div
+                      className="font-extrabold leading-none mb-2"
+                      style={{
+                        color: "#2f6bff",
+                        fontSize: "clamp(32px, 3vw, 42px)",
+                        letterSpacing: "-1px",
+                      }}
+                    >
+                      {s.value}
+                    </div>
+                    <div
+                      style={{
+                        color: "#6b7a8a",
+                        fontSize: 13,
+                        fontWeight: 500,
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {s.description}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <CTASection
         titleClass="md:w-[70%]"
         descriptionClass="md:w-4/5"
@@ -112,8 +195,9 @@ const RapidDigitalization = () => {
         title="Let us guide you through every step of your digital transformation journey. Partner with us to unleash the full potential of your business in the digital era."
         description="Tell us your project idea and get a free consultation to create an outstanding digital product."
         buttonText="Get Started Today"
+        darkBackground={false}
       />
-      <ClientReviews />
+      <ClientReviews light />
       <TechStackWeUse />
       <ServicesFAQ />
     </>

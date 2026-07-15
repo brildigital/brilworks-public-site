@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { scrollToSection } from "../lib/commonFunction";
 import ButtonV2 from "./ButtonV2";
 

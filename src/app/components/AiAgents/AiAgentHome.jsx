@@ -43,6 +43,7 @@ import Link from "next/link";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
 import AIAgentLayout from "./AIAgentLayout";
 import { ModuleType } from "../../lib/enums";
+import "../../styles/ServiceLightTheme.css";
 
 const categories = {
   "Core Systems": [
@@ -387,8 +388,8 @@ const faqs = [
   },
 ];
 
-const contactUrl = "https://www.brilworks.com/contact-us/";
-const portfolioUrl = "https://www.brilworks.com/portfolio/";
+const contactUrl = "/contact-us/";
+const portfolioUrl = "/portfolio/";
 
 const AiAgentHome = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -415,143 +416,160 @@ const AiAgentHome = () => {
     <AIAgentLayout>
       <div className="flex flex-col min-h-screen">
         {/* ==================== HERO ==================== */}
-        <section className="relative overflow-hidden">
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(26,92,204,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-[0.04] pointer-events-none"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-              backgroundSize: "60px 60px",
-            }}
-          />
-
+        <section className="relative overflow-hidden svc-hero-bg">
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2]">
-            <div className="flex flex-col items-start pt-[100px] pb-20 max-w-3xl">
-              {/* Breadcrumb */}
-              <nav className="mb-8" aria-label="Breadcrumb">
-                <ol className="flex items-center gap-2 text-xs">
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-white/65 hover:text-white transition-colors"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li className="text-white/20">/</li>
-                  <li className="text-white/70 font-semibold">AI Agents</li>
-                </ol>
-              </nav>
+            <div
+              className="grid items-center gap-10 lg:gap-[60px] pt-[100px] pb-20"
+              style={{ gridTemplateColumns: "1fr" }}
+            >
+              <div className="grid items-center gap-10 grid-cols-1 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                  {/* Breadcrumb */}
+                  <nav className="mb-8" aria-label="Breadcrumb">
+                    <ol className="flex items-center gap-2 text-xs">
+                      <li>
+                        <Link
+                          href="/"
+                          className="transition-colors"
+                          style={{ color: "#6b7a8a" }}
+                        >
+                          Home
+                        </Link>
+                      </li>
+                      <li style={{ color: "#6b7a8a" }}>/</li>
+                      <li
+                        className="font-semibold"
+                        style={{ color: "#566678" }}
+                      >
+                        AI Agents
+                      </li>
+                    </ol>
+                  </nav>
 
-              {/* Badge */}
-              <div
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 border"
-                style={{
-                  background: "rgba(26,92,204,0.15)",
-                  borderColor: "rgba(26,92,204,0.3)",
-                }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span
-                    className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                    style={{ background: "#00dbd3" }}
-                  ></span>
-                  <span
-                    className="relative inline-flex rounded-full h-2 w-2"
-                    style={{ background: "#00dbd3" }}
-                  ></span>
-                </span>
-                <span
-                  className="text-xs font-semibold tracking-widest"
-                  style={{ color: "#00b4d8" }}
-                >
-                  30+ AGENTS LIVE
-                </span>
-              </div>
-
-              {/* Headline */}
-              <h1
-                className="font-extrabold text-white tracking-[-1.5px] leading-[1.1] mb-6"
-                style={{ fontSize: "clamp(28px, 3.4vw, 54px)" }}
-              >
-                AI Agents That Actually <br />
-                <span
-                  className="bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #017eeb, #00dbd3)",
-                  }}
-                >
-                  Work for Your Business
-                </span>
-              </h1>
-
-              <p className="text-base md:text-lg text-white/60 !mb-6 max-w-xl leading-relaxed">
-                Brilworks builds and deploys custom AI agents for startups and
-                enterprise teams. Explore our live demos — then let's build
-                yours.
-              </p>
-              <p className="text-sm md:text-base text-white/50 !mb-10 max-w-xl leading-relaxed">
-                Want a no-signup taste? Try our viral{" "}
-                <Link
-                  href="/ai-agents/meme/"
-                  className="text-white/80 underline underline-offset-4 hover:text-white"
-                >
-                  AI Meme Generator
-                </Link>
-                {" "}— same Gemini image stack, zero forms. Curious what models power agents like these? See{" "}
-                <Link
-                  href="/blog/best-artificial-intelligence-platforms/"
-                  className="text-white/80 underline underline-offset-4 hover:text-white"
-                >
-                  our shortlist of the best AI platforms for 2026
-                </Link>
-                .
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href={contactUrl}
-                  className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
-                  style={{
-                    background:
-                      "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
-                  }}
-                >
-                  Build AI Agents for My Product <ArrowRight size={18} />
-                </Link>
-                <a
-                  href="#explore"
-                  className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold text-white border border-white/25 hover:bg-white/5 hover:border-white/50 transition-all"
-                >
-                  Explore the Demos
-                </a>
-              </div>
-
-              {/* Trust Bar */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-white/[0.08] rounded-xl overflow-hidden border border-white/[0.08] mt-10 w-full">
-                {trustStats.map((stat) => (
+                  {/* Badge */}
                   <div
-                    key={stat.label}
-                    className="bg-white/[0.04] hover:bg-white/[0.08] transition-colors py-[18px] px-5 text-center"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-7 border"
+                    style={{
+                      background: "#ffffff",
+                      borderColor: "#e4eaf1",
+                      boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                    }}
                   >
-                    <div className="text-white text-[26px] font-extrabold tracking-[-0.5px] leading-none">
-                      {stat.number}
-                    </div>
-                    <div className="text-white/50 text-[11px] mt-1 tracking-[0.04em] uppercase">
-                      {stat.label}
-                    </div>
+                    <span className="relative flex h-2 w-2">
+                      <span
+                        className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                        style={{ background: "#2f6bff" }}
+                      ></span>
+                      <span
+                        className="relative inline-flex rounded-full h-2 w-2"
+                        style={{ background: "#2f6bff" }}
+                      ></span>
+                    </span>
+                    <span
+                      className="text-xs font-semibold tracking-widest"
+                      style={{ color: "#566678" }}
+                    >
+                      30+ AGENTS LIVE
+                    </span>
                   </div>
-                ))}
+
+                  {/* Headline */}
+                  <h1
+                    className="font-extrabold tracking-[-1.5px] leading-[1.1] mb-6"
+                    style={{
+                      fontSize: "clamp(28px, 3.4vw, 54px)",
+                      color: "#0b1e33",
+                    }}
+                  >
+                    AI Agents That Actually <br />
+                    <span style={{ color: "#2f6bff" }}>
+                      Work for Your Business
+                    </span>
+                  </h1>
+
+                  <p
+                    className="text-base md:text-lg !mb-6 max-w-xl leading-relaxed"
+                    style={{ color: "#566678" }}
+                  >
+                    Brilworks builds and deploys custom AI agents for startups
+                    and enterprise teams. Explore our live demos — then let's
+                    build yours.
+                  </p>
+                  <p
+                    className="text-sm md:text-base !mb-10 max-w-xl leading-relaxed"
+                    style={{ color: "#6b7a8a" }}
+                  >
+                    Want a no-signup taste? Try our viral{" "}
+                    <Link
+                      href="/ai-agents/meme/"
+                      className="underline underline-offset-4"
+                      style={{ color: "#2f6bff" }}
+                    >
+                      AI Meme Generator
+                    </Link>{" "}
+                    — same Gemini image stack, zero forms. Curious what models
+                    power agents like these? See{" "}
+                    <Link
+                      href="/blog/best-artificial-intelligence-platforms/"
+                      className="underline underline-offset-4"
+                      style={{ color: "#2f6bff" }}
+                    >
+                      our shortlist of the best AI platforms for 2026
+                    </Link>
+                    .
+                  </p>
+
+                  <div className="flex flex-wrap gap-4">
+                    <Link
+                      href={contactUrl}
+                      className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
+                      style={{
+                        background: "#2f6bff",
+                      }}
+                    >
+                      Build AI Agents for My Product <ArrowRight size={18} />
+                    </Link>
+                    <a
+                      href="#explore"
+                      className="inline-flex items-center justify-center rounded-md px-8 py-4 font-semibold transition-all hover:bg-black/5"
+                      style={{ color: "#0b1e33", border: "1px solid #e4eaf1" }}
+                    >
+                      Explore the Demos
+                    </a>
+                  </div>
+                </div>
+
+                {/* Trust stats grid */}
+                <div className="grid grid-cols-2 gap-4 max-lg:hidden">
+                  {trustStats.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-2xl transition-all svc-stat-card"
+                      style={{ padding: "28px 24px" }}
+                    >
+                      <div
+                        className="font-extrabold leading-none mb-2"
+                        style={{
+                          color: "#2f6bff",
+                          fontSize: "clamp(28px, 2.8vw, 40px)",
+                          letterSpacing: "-1px",
+                        }}
+                      >
+                        {stat.number}
+                      </div>
+                      <div
+                        style={{
+                          color: "#6b7a8a",
+                          fontSize: 13,
+                          fontWeight: 500,
+                          lineHeight: 1.4,
+                        }}
+                      >
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -566,7 +584,7 @@ const AiAgentHome = () => {
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto w-full">
             {/* Search */}
             <div className="relative mb-12 group">
-              <div className="relative bg-white border border-[#e5e7eb] focus-within:border-[#017eeb] rounded-full flex items-center overflow-hidden transition-colors shadow-sm">
+              <div className="relative bg-white border border-[#e5e7eb] focus-within:border-[#2f6bff] rounded-full flex items-center overflow-hidden transition-colors shadow-sm">
                 <div className="pl-5 text-[#94a3b8]">
                   <Search size={18} />
                 </div>
@@ -600,7 +618,7 @@ const AiAgentHome = () => {
                   <div className="flex items-center gap-4 mb-6">
                     <span
                       className="flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.12em] whitespace-nowrap"
-                      style={{ color: "#017eeb" }}
+                      style={{ color: "#2f6bff" }}
                     >
                       <Star size={14} fill="currentColor" /> Start Here
                     </span>
@@ -635,11 +653,11 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== WHY BRILWORKS (Light) ==================== */}
-        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
+        <section className="py-20 px-6" style={{ background: "#f1f5fb" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#017eeb" }}
+              style={{ color: "#2f6bff" }}
             >
               Why Brilworks
             </span>
@@ -652,13 +670,13 @@ const AiAgentHome = () => {
               {whyCards.map((c) => (
                 <div
                   key={c.title}
-                  className="rounded-2xl p-7 bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
+                  className="rounded-2xl p-7 bg-white border border-[#e5e7eb] hover:border-[#2f6bff] hover:-translate-y-0.5 hover:shadow-sm transition-all duration-200"
                 >
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center mb-4"
-                    style={{ background: "rgba(1,126,235,0.12)" }}
+                    style={{ background: "rgba(47,107,255,0.12)" }}
                   >
-                    <c.icon size={18} style={{ color: "#017eeb" }} />
+                    <c.icon size={18} style={{ color: "#2f6bff" }} />
                   </div>
                   <h3 className="text-xl font-bold text-[#0f172a] mb-2 tracking-tight">
                     {c.title}
@@ -673,31 +691,24 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== CTA ==================== */}
-        <section
-          className="py-20 px-6 text-center border-t border-white/5"
-          style={{ background: "#000d1e" }}
-        >
-          <div className="max-w-3xl mx-auto">
+        <section className="relative overflow-hidden py-20 px-6 text-center svc-mid-cta-bg">
+          <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
+          <div className="relative max-w-3xl mx-auto" style={{ zIndex: 1 }}>
             <span
               className="block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-              style={{ color: "#00b4d8" }}
+              style={{ color: "rgba(255,255,255,0.75)" }}
             >
               Ready to Build?
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-tight">
               Let's Build AI Agents
               <br />
-              <span
-                className="bg-clip-text text-transparent"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, #017eeb, #00dbd3)",
-                }}
-              >
-                for Your Product
-              </span>
+              for Your Product
             </h2>
-            <p className="text-[17px] text-white/50 max-w-xl mx-auto !mb-9 leading-relaxed">
+            <p
+              className="text-[17px] max-w-xl mx-auto !mb-9 leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
               You've seen what's possible. Now let our team build custom AI
               agents designed for your business — tailored to your data, your
               workflows, and your users.
@@ -705,10 +716,11 @@ const AiAgentHome = () => {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href={contactUrl}
-                className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 rounded-md px-8 py-4 font-semibold transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33]"
                 style={{
-                  background:
-                    "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+                  background: "#fff",
+                  color: "#2f6bff",
+                  border: "1px solid #fff",
                 }}
               >
                 Book a Free AI Consultation <ArrowRight size={18} />
@@ -720,9 +732,12 @@ const AiAgentHome = () => {
                 View Our Portfolio
               </a>
             </div>
-            <p className="!mt-5 text-[13px] text-white/65">
+            <p
+              className="!mt-5 text-[13px]"
+              style={{ color: "rgba(255,255,255,0.65)" }}
+            >
               We take on{" "}
-              <strong style={{ color: "#00dbd3" }}>
+              <strong style={{ color: "#fff" }}>
                 5 new AI agent projects per month
               </strong>{" "}
               — limited availability.
@@ -731,12 +746,12 @@ const AiAgentHome = () => {
         </section>
 
         {/* ==================== FAQ (Light) ==================== */}
-        <section className="py-20 px-6" style={{ background: "#f8f9ff" }}>
+        <section className="py-20 px-6" style={{ background: "#f1f5fb" }}>
           <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
             <div className="max-w-3xl mx-auto">
               <span
                 className="text-center block text-[11px] font-bold tracking-[0.12em] uppercase mb-3"
-                style={{ color: "#017eeb" }}
+                style={{ color: "#2f6bff" }}
               >
                 Frequently Asked Questions
               </span>
@@ -765,7 +780,7 @@ const AiAgentHome = () => {
             stickyVisible ? "translate-y-0" : "translate-y-full"
           }`}
           style={{
-            background: "rgba(13, 15, 26, 0.92)",
+            background: "rgba(11, 30, 51, 0.92)",
             padding: "12px 20px",
           }}
         >
@@ -777,8 +792,7 @@ const AiAgentHome = () => {
             href={contactUrl}
             className="inline-flex items-center gap-2 rounded-md px-6 py-2 text-sm font-semibold text-white transition-all hover:opacity-90"
             style={{
-              background:
-                "linear-gradient(159.52deg, #007aeb -3.23%, #008ce7 33.69%, #00dbd3 85.35%)",
+              background: "#2f6bff",
             }}
           >
             Talk to Us <ArrowRight size={16} />
@@ -792,16 +806,16 @@ const AiAgentHome = () => {
 const ModuleCard = ({ mod }) => (
   <Link
     href={`/ai-agents${mod.path}`}
-    className="group relative flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white border border-[#e5e7eb] hover:border-[#017eeb] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(1,126,235,0.08)] transition-all duration-300 min-h-[160px]"
+    className="group relative flex flex-col items-center justify-center text-center p-6 rounded-2xl bg-white border border-[#e5e7eb] hover:border-[#2f6bff] hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(47,107,255,0.08)] transition-all duration-300 min-h-[160px]"
     style={{ textDecoration: "none" }}
   >
-    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3.5 bg-[#f8f9ff] border border-[#e5e7eb] group-hover:scale-110 group-hover:border-[#017eeb]/30 transition-all duration-300">
+    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-3.5 bg-[#f1f5fb] border border-[#e5e7eb] group-hover:scale-110 group-hover:border-[#2f6bff]/30 transition-all duration-300">
       <mod.icon size={22} className={mod.color} />
     </div>
     <span className="text-base font-bold text-[#0f172a] mb-1 tracking-tight">
       {mod.name}
     </span>
-    <span className="text-xs text-[#64748b] leading-snug group-hover:text-[#017eeb] transition-colors">
+    <span className="text-xs text-[#64748b] leading-snug group-hover:text-[#2f6bff] transition-colors">
       {mod.desc}
     </span>
   </Link>

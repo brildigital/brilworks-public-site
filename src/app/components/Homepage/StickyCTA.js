@@ -27,7 +27,7 @@ const StickyCTA = () => {
       </span>
       <Link
         href="/contact-us/"
-        className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 !py-2 !px-5 !text-sm"
+        className="c-button c-btn-primary c-btn-medium outline-none overflow-hidden whitespace-nowrap transition-all duration-300 !py-2 !px-5 !text-sm hover:text-themeColor"
       >
         Book Free Consultation
       </Link>

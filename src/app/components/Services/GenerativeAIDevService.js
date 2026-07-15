@@ -25,47 +25,18 @@ import {
   X,
 } from "lucide-react";
 import GradientFAQAccordion from "../Common/GradientFAQAccordion";
+import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(() =>
   import("../Solution/SolutionContactForm")
 );
 
-// ---------- Style tokens ----------
-const heroBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(124,58,237,0.20) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.08) 0%, transparent 60%), linear-gradient(160deg, #0d0f1a 0%, #111428 50%, #0a0c1e 100%)",
-};
-const heroGridOverlay = {
-  backgroundImage:
-    "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-  backgroundSize: "60px 60px",
-  opacity: 0.06,
-};
-const darkSectionBg = {
-  background:
-    "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(124,58,237,0.15) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(0,180,216,0.06) 0%, transparent 60%), #0d0f1a",
-};
-const gradientTextStyle = {
-  backgroundImage: "linear-gradient(to right, #7c3aed, #00ffff)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-const statValueStyle = {
-  backgroundImage: "linear-gradient(to right, #7c3aed, #00dbd3)",
-  WebkitBackgroundClip: "text",
-  backgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-  color: "transparent",
-};
-
 // ---------- Data ----------
 const TRUST = [
-  { icon: <Shield size={18} color="#7c3aed" />, label: "AWS Consulting Partner" },
-  { icon: <Star size={18} color="#7c3aed" />, label: "30+ GenAI Apps Shipped" },
-  { icon: <BadgeCheck size={18} color="#7c3aed" />, label: "OpenAI / Anthropic / Bedrock Experts" },
-  { icon: <Compass size={18} color="#7c3aed" />, label: "RAG + Fine-Tuning Specialists" },
+  { icon: <Shield size={18} color="#2f6bff" />, label: "AWS Consulting Partner" },
+  { icon: <Star size={18} color="#2f6bff" />, label: "30+ GenAI Apps Shipped" },
+  { icon: <BadgeCheck size={18} color="#2f6bff" />, label: "OpenAI / Anthropic / Bedrock Experts" },
+  { icon: <Compass size={18} color="#2f6bff" />, label: "RAG + Fine-Tuning Specialists" },
 ];
 
 const HERO_STATS = [
@@ -80,7 +51,7 @@ const BENEFITS = [
     title: "Beyond Automation, Embrace Innovation",
     tint: "#ede9fe",
     body: "We don't just automate tasks — we empower your AI to generate entirely new content, concepts, and ideas that differentiate your product.",
-    icon: <Star size={32} color="#7c3aed" />,
+    icon: <Star size={32} color="#2f6bff" />,
   },
   {
     title: "Scalable AI Solutions",
@@ -141,23 +112,23 @@ const TESTIMONIALS = [
 const HONORS = [
   {
     label: "AWS Partner · Advanced Tier",
-    icon: <Shield size={20} color="#7c3aed" />,
+    icon: <Shield size={20} color="#2f6bff" />,
   },
   {
     label: "Clutch Global Award 2025",
-    icon: <Star size={20} color="#7c3aed" />,
+    icon: <Star size={20} color="#2f6bff" />,
   },
   {
     label: "GoodFirms Top 2025-26",
-    icon: <Award size={20} color="#7c3aed" />,
+    icon: <Award size={20} color="#2f6bff" />,
   },
   {
     label: "SelectedFirms Top 10 · 2026",
-    icon: <LayoutGrid size={20} color="#7c3aed" />,
+    icon: <LayoutGrid size={20} color="#2f6bff" />,
   },
   {
     label: "Adalo · No-Code Certified",
-    icon: <Star size={20} color="#7c3aed" />,
+    icon: <Star size={20} color="#2f6bff" />,
   },
 ];
 
@@ -165,7 +136,7 @@ const INDUSTRIES = [
   {
     label: "FinTech",
     href: "/use-case/gen-ai-in-fintech/",
-    icon: <CreditCard size={32} color="#7c3aed" />,
+    icon: <CreditCard size={32} color="#2f6bff" />,
   },
   {
     label: "HealthTech",
@@ -311,45 +282,43 @@ const GenerativeAIDevService = () => {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px]">
-        <div className="absolute inset-0 -z-10" style={heroBg} />
-        <div className="absolute inset-0 pointer-events-none" style={{ ...heroGridOverlay, zIndex: -1 }} />
+      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px] svc-hero-bg">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                style={{ background: "rgba(124,58,237,0.15)", border: "1px solid rgba(124,58,237,0.3)", color: "#c4b5fd", letterSpacing: "0.1em" }}>
-                <Sparkles size={14} color="#c4b5fd" /> Generative AI Development
+              <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", letterSpacing: "0.1em", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
+                <Sparkles size={14} color="#2f6bff" /> Generative AI Development
               </span>
-              <h1 className="font-extrabold mb-5 text-white" style={{ fontSize: "clamp(30px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1 }}>
-                Ship Production-Grade Generative AI — <span style={gradientTextStyle}>In Weeks, Not Quarters</span>
+              <h1 className="font-extrabold mb-5" style={{ fontSize: "clamp(30px, 4vw, 54px)", letterSpacing: "-1.5px", lineHeight: 1.1, color: "#0b1e33" }}>
+                Ship Production-Grade Generative AI. <span style={{ color: "#2f6bff" }}>In Weeks, Not Quarters</span>
               </h1>
-              <p className="mb-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.72)", maxWidth: 580 }}>
+              <p className="mb-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678", maxWidth: 580 }}>
                 We build LLM apps, RAG pipelines, AI agents, and fine-tuned models on OpenAI, Anthropic, and AWS Bedrock. 30+ GenAI apps shipped — production-ready from day one, with guardrails, evals, and cost controls built in.
               </p>
-              <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "rgba(255,255,255,0.6)", maxWidth: 580 }}>
+              <p className="mb-8" style={{ fontSize: 15, lineHeight: 1.7, color: "#6b7a8a", maxWidth: 580 }}>
                 Start by{" "}
-                <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "rgba(255,255,255,0.9)", textDecoration: "underline", textUnderlineOffset: 4 }}>
+                <Link href="/blog/best-artificial-intelligence-platforms/" style={{ color: "#0b1e33", textDecoration: "underline", textUnderlineOffset: 4 }}>
                   comparing AI platforms for generative AI workloads
                 </Link>{" "}
                 — then we&apos;ll match the right model and architecture to your use case.
               </p>
               <div className="flex flex-wrap gap-3 mt-8 mb-8">
                 <Link href="#contact"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                  style={{ background: "#7c3aed", color: "#fff", border: "1px solid #7c3aed", padding: "14px 24px", fontSize: 15 }}>
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{ background: "#2f6bff", color: "#fff", border: "1px solid #2f6bff", padding: "14px 24px", fontSize: 15 }}>
                   Get My Free AI Consultation <ArrowRight size={16} />
                 </Link>
                 <Link href="#services"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-white/10"
-                  style={{ background: "transparent", color: "#fff", border: "1px solid rgba(255,255,255,0.3)", padding: "14px 24px", fontSize: 15 }}>
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{ background: "transparent", color: "#0b1e33", border: "1px solid #e4eaf1", padding: "14px 24px", fontSize: 15 }}>
                   See What We Build
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-x-5 gap-y-2.5" style={{ color: "rgba(255,255,255,0.65)", fontSize: 14 }}>
+              <div className="flex flex-wrap gap-x-5 gap-y-2.5" style={{ color: "#6b7a8a", fontSize: 14 }}>
                 {["Free 30-min AI strategy call", "48-hour proposal", "NDA-first, data stays yours"].map((t) => (
-                  <span key={t} className="inline-flex items-center gap-2" style={{ color: "rgba(255,255,255,0.65)" }}>
-                    <span style={{ color: "#00dbd3" }}><Check size={16} /></span>{t}
+                  <span key={t} className="inline-flex items-center gap-2" style={{ color: "#6b7a8a" }}>
+                    <span style={{ color: "#16a34a" }}><Check size={16} /></span>{t}
                   </span>
                 ))}
               </div>
@@ -357,10 +326,9 @@ const GenerativeAIDevService = () => {
             <div>
               <div className="grid grid-cols-2 gap-4">
                 {HERO_STATS.map((s) => (
-                  <div key={s.label} className="rounded-2xl transition-all"
-                    style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "24px 20px", backdropFilter: "blur(10px)" }}>
-                    <div className="font-extrabold leading-none mb-2" style={{ ...statValueStyle, fontSize: "clamp(28px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
-                    <div style={{ color: "rgba(255,255,255,0.65)", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
+                  <div key={s.label} className="rounded-2xl transition-all svc-stat-card">
+                    <div className="font-extrabold leading-none mb-2" style={{ color: "#2f6bff", fontSize: "clamp(28px, 3vw, 42px)", letterSpacing: "-1px" }}>{s.value}</div>
+                    <div style={{ color: "#6b7a8a", fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -370,7 +338,7 @@ const GenerativeAIDevService = () => {
       </section>
 
       {/* TRUST BAR */}
-      <section aria-label="Trust indicators" style={{ background: "#fafafa", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
+      <section aria-label="Trust indicators" style={{ background: "#ffffff", borderBottom: "1px solid #e5e7eb", padding: "28px 0" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "12px 40px" }}>
             {TRUST.map((t) => (
@@ -383,10 +351,10 @@ const GenerativeAIDevService = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-24" style={{ background: "#f2f9fe" }}>
+      <section id="services" className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>What We Build</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>What We Build</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Our Generative AI Development Services</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>End-to-end GenAI engineering — from strategy and model selection to RAG pipelines, fine-tuning, and scalable deployment.</p>
           </div>
@@ -412,7 +380,7 @@ const GenerativeAIDevService = () => {
                   <ul className="list-none">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 mb-2.5" style={{ fontSize: 14, color: "#212121" }}>
-                        <span style={{ color: "#7c3aed", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
+                        <span style={{ color: "#2f6bff", flexShrink: 0, marginTop: 2 }}><Check size={16} /></span>{f}
                       </li>
                     ))}
                   </ul>
@@ -420,19 +388,18 @@ const GenerativeAIDevService = () => {
               </div>
             </div>
           ))}
-        </div>``
+        </div>
       </section>
 
       {/* MID CTA */}
-      <section className="relative overflow-hidden text-center" style={{ padding: "56px 0", background: "linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at center, rgba(0,219,211,0.2) 0%, transparent 60%)" }} />
+      <section className="relative overflow-hidden text-center svc-mid-cta-bg" style={{ padding: "56px 0" }}>
+        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 700, zIndex: 1 }}>
           <h3 className="font-extrabold mb-3.5" style={{ fontSize: "clamp(22px, 3vw, 36px)", color: "#fff", lineHeight: 1.2, letterSpacing: "-0.5px" }}>Data is the new oil, but AI is the refinery.</h3>
-          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call. We&apos;ll review your data, prioritize a GenAI use case, and map a production roadmap — no commitment.</p>
+          <p className="mb-7" style={{ color: "rgba(255,255,255,0.85)", fontSize: 16, lineHeight: 1.7 }}>Get a free 30-minute AI strategy call. We&apos;ll review your data, prioritize a GenAI use case, and map a production roadmap, no commitment.</p>
           <Link href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5 w-full sm:w-auto"
-            style={{ background: "#fff", color: "#7c3aed", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0b1e33] hover:!text-white hover:!border-[#0b1e33] mt-5 w-full sm:w-auto"
+            style={{ background: "#fff", color: "#2f6bff", border: "1px solid #fff", padding: "16px 32px", fontSize: 16 }}>
             Schedule a Free AI Consultation
           </Link>
         </div>
@@ -442,7 +409,7 @@ const GenerativeAIDevService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>Why Brilworks</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Why Brilworks</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Here&apos;s What Sets Us Apart</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>We don&apos;t run three-month PoCs that die on a whiteboard. We ship GenAI apps real users use — with guardrails, evals, and cost controls from day one.</p>
           </div>
@@ -461,30 +428,30 @@ const GenerativeAIDevService = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS (dark) */}
-      <section className="relative overflow-hidden py-16 md:py-24" style={darkSectionBg}>
+      {/* TESTIMONIALS */}
+      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
         <div className="relative mx-auto px-5 md:px-10" style={{ maxWidth: 1280, zIndex: 1 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#c4b5fd" }}>Client Stories</span>
-            <h2 className="font-extrabold text-white" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15 }}>What Founders &amp; AI Leaders Say About Us</h2>
-            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>Real outcomes from teams that trusted Brilworks to take their GenAI work from idea to production.</p>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Client Stories</span>
+            <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0b1e33" }}>What Founders &amp; AI Leaders Say About Us</h2>
+            <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#566678" }}>Real outcomes from teams that trusted Brilworks to take their GenAI work from idea to production.</p>
           </div>
           <div className="grid gap-6" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
             {TESTIMONIALS.map((t) => (
               <div key={t.name} className="rounded-2xl"
-                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", padding: "32px 28px", backdropFilter: "blur(10px)" }}>
+                style={{ background: "#ffffff", border: "1px solid #e4eaf1", padding: "32px 28px", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}>
                 <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
                   {[0, 1, 2, 3, 4].map((i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <p className="mb-6" style={{ color: "rgba(255,255,255,0.85)", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
+                <p className="mb-6" style={{ color: "#0b1e33", fontSize: 15, lineHeight: 1.7 }}>&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-3">
                   <div className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #7c3aed, #00dbd3)", fontSize: 16 }}>
+                    style={{ width: 44, height: 44, background: "linear-gradient(135deg, #2f6bff, #1e4fd6)", fontSize: 16 }}>
                     {t.initials}
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white font-semibold" style={{ fontSize: 14 }}>{t.name}</span>
-                    <span style={{ color: "rgba(255,255,255,0.55)", fontSize: 12 }}>{t.role}</span>
+                    <span className="font-semibold" style={{ fontSize: 14, color: "#0b1e33" }}>{t.name}</span>
+                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>{t.role}</span>
                   </div>
                 </div>
               </div>
@@ -494,10 +461,10 @@ const GenerativeAIDevService = () => {
       </section>
 
       {/* HONORS */}
-      <section className="py-16" style={{ background: "#f8f9ff" }}>
+      <section className="py-16" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto" style={{ maxWidth: 720, marginBottom: 32 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>Recognized By</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Recognized By</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(22px, 2.4vw, 30px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>We&apos;re Pleased to Share Some of the Honors</h2>
           </div>
           <div className="flex flex-wrap items-center justify-center" style={{ gap: "32px 56px", opacity: 0.85 }}>
@@ -514,7 +481,7 @@ const GenerativeAIDevService = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>Industries We Serve</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Industries We Serve</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Deep Domain Expertise Across Verticals</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Not generalists. We have shipped GenAI solutions with case studies, clients, and production models in each of these verticals.</p>
           </div>
@@ -532,10 +499,10 @@ const GenerativeAIDevService = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f8f9ff" }}>
+      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
         <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
           <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7c3aed" }}>Common Questions</span>
+            <span className="inline-block mb-4" style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#2f6bff" }}>Common Questions</span>
             <h2 className="font-extrabold" style={{ fontSize: "clamp(28px, 3.2vw, 42px)", letterSpacing: "-1px", lineHeight: 1.15, color: "#0d0f1a" }}>Frequently Asked Questions</h2>
             <p className="mt-4" style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}>Everything AI leaders and founders typically ask before partnering with us on a GenAI project.</p>
           </div>
@@ -556,9 +523,10 @@ const GenerativeAIDevService = () => {
       <div id="contact">
         <SolutionContactForm
           title="Ready to Ship Your GenAI App?"
-          description="Tell us your project idea and get a free AI consultation to turn data into shipped product. No buzzwords — just a real roadmap."
+          description="Tell us your project idea and get a free AI consultation to turn data into shipped product. No buzzwords, just a real roadmap."
           messageRequired={false}
           submitLabel="Get My Free AI Consultation"
+          bgClassName="svc-mid-cta-bg"
           benefits={[
             "Free 30-minute consultation with a senior AI engineer",
             "Detailed project proposal within 48 hours",

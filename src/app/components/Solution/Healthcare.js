@@ -1,9 +1,24 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Check,
+  Video,
+  Activity,
+  Pill,
+  HeartHandshake,
+  Wifi,
+  FileText,
+  Hospital,
+  FlaskConical,
+  Stethoscope,
+  Rocket,
+} from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
-import SolutionHeroSection from "./SolutionHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import "../../styles/ServiceLightTheme.css";
 
 const HealthcareFAQs = dynamic(() => import("./SolutionFAQ"));
 const SolutionContactForm = dynamic(() => import("./SolutionContactForm"));
@@ -26,6 +41,7 @@ const HealthCare = () => {
       {
         title: "Telemedicine Software Developments",
         value: "healthcare-1-1",
+        icon: <Video size={24} strokeWidth={1.75} />,
         description:
           "Our custom healthcare software development services include application development, custom reporting, and real-time data interaction.",
         imageSrc: "/images/v2/telemedicine-img.webp",
@@ -34,6 +50,7 @@ const HealthCare = () => {
       {
         title: "Remote Patient Monitoring Software",
         value: "healthcare-1-2",
+        icon: <Activity size={24} strokeWidth={1.75} />,
         description:
           "With remote monitoring software, doctors can monitor patients’ health remotely via virtual care or vitals captured through wearable devices and IoT sensors. This improves patient outcomes by providing healthcare professionals with better tools to provide superior care at the most appropriate time.",
         imageSrc: "/images/v2/remote-patient-monitoring-software.webp",
@@ -42,6 +59,7 @@ const HealthCare = () => {
       {
         title: "mPrescription App Development",
         value: "healthcare-1-3",
+        icon: <Pill size={24} strokeWidth={1.75} />,
         description:
           "We help simplify medication management by providing prescription mobile apps to store patient data, medical history, allergies, and prescriptions. Our apps are trusted by both doctors and patients alike.",
         imageSrc: "/images/v2/mprescription-app-development.webp",
@@ -50,6 +68,7 @@ const HealthCare = () => {
       {
         title: "Patient Engagement Solutions",
         value: "healthcare-1-4",
+        icon: <HeartHandshake size={24} strokeWidth={1.75} />,
         description:
           "Your patients are a priority and we’ll help you create systems that deliver great care, improve patient satisfaction and increase revenue. Our patient engagement solutions allow patients and healthcare providers to connect anywhere and anytime with great ease.",
         imageSrc: "/images/v2/patient-engagement-solutions.webp",
@@ -58,6 +77,7 @@ const HealthCare = () => {
       {
         title: "IoT Healthcare Software",
         value: "healthcare-1-5",
+        icon: <Wifi size={24} strokeWidth={1.75} />,
         description:
           "Our IoT software helps doctors make better decisions faster. It captures relevant patient information through smart sensors, then analyses it in real-time to generate valuable insights. We develop applications that empower doctors and medical staff with accurate and valuable patient data.",
         imageSrc: "/images/v2/iot-healthcare-software.webp",
@@ -66,6 +86,7 @@ const HealthCare = () => {
       {
         title: "Electronic Medical Record Software",
         value: "healthcare-1-6",
+        icon: <FileText size={24} strokeWidth={1.75} />,
         description:
           "Growing patient expectations requires doctors to not just interact with their patients, but also provide them with efficient and comprehensive care. With our software, you can leverage your existing EMR/EHR platform to maximize clinical productivity and interact with patients via patient portals.",
         imageSrc: "/images/v2/electronic-medical-record-software.webp",
@@ -81,6 +102,7 @@ const HealthCare = () => {
       {
         title: "Healthcare Providers",
         value: "healthcare-2-1",
+        icon: <Hospital size={24} strokeWidth={1.75} />,
         description:
           "We assist healthcare providers to automate medical workflows, simplify tedious tasks and increase patient satisfaction. Improve your hospital efficiency and uptime while streamlining daily processes.",
         imageSrc: "/images/v2/healthcare-providers.webp",
@@ -89,6 +111,7 @@ const HealthCare = () => {
       {
         title: "Pharmaceutical Companies",
         value: "healthcare-2-2",
+        icon: <FlaskConical size={24} strokeWidth={1.75} />,
         description:
           "We believe that bringing together the best software options for pharma research and development can help you achieve your goals. Our team assists you from the outset of your drug development projects to the end of each phase in your clinical trial.",
         imageSrc: "/images/v2/pharmaceutical-companies.webp",
@@ -97,6 +120,7 @@ const HealthCare = () => {
       {
         title: "Medical Device Manufacturers",
         value: "healthcare-2-3",
+        icon: <Stethoscope size={24} strokeWidth={1.75} />,
         description:
           "Medical device manufacturers are at the forefront of innovation, rapidly transforming how healthcare is delivered. Our software helps medical device manufacturers bring new functionality to their products.",
         imageSrc: "/images/v2/medical-device-manufactures.webp",
@@ -105,6 +129,7 @@ const HealthCare = () => {
       {
         title: "Healthcare Startups",
         value: "healthcare-2-4",
+        icon: <Rocket size={24} strokeWidth={1.75} />,
         description:
           "We’re committed to helping healthcare startups bring their incredible ideas to life. From medicine to medicine delivery, health technology is changing at an exponential rate. Our team of experts uses their experience and expertise to deliver software solutions that are agile, scalable, reliable, and secure.",
         imageSrc: "/images/v2/healthcare-startups.webp",
@@ -175,12 +200,120 @@ const HealthCare = () => {
 
   return (
     <>
-      <SolutionHeroSection
-        technologyText="Healthcare Software Development Services"
-        title="Healthcare Software Development"
-        description="Leverage our healthcare software development services to improve processes and patient experience. Resolve accessibility issues by offering remote consultations and telehealth solutions."
-        imageSrc="/images/v2/helathcare-banner.webp"
-      />
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden svc-hero-bg"
+        style={{ padding: "120px 0 80px" }}
+      >
+        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
+            <div>
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase border"
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  letterSpacing: "0.1em",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
+              >
+                Healthcare Software Development Services
+              </span>
+              <h1
+                className="font-extrabold mb-5"
+                style={{
+                  fontSize: "clamp(34px, 4vw, 54px)",
+                  letterSpacing: "-1.5px",
+                  lineHeight: 1.1,
+                  color: "#0b1e33",
+                }}
+              >
+                Healthcare Software{" "}
+                <span style={{ color: "#2f6bff" }}>Development</span>
+              </h1>
+              <p
+                className="mb-8"
+                style={{
+                  fontSize: 18,
+                  lineHeight: 1.7,
+                  color: "#566678",
+                  maxWidth: 580,
+                }}
+              >
+                Leverage our healthcare software development services to
+                improve processes and patient experience. Resolve
+                accessibility issues by offering remote consultations and
+                telehealth solutions.
+              </p>
+              <div className="flex flex-wrap gap-3.5 my-10">
+                <Link
+                  href="#section-contact-form"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:opacity-90 hover:-translate-y-0.5"
+                  style={{
+                    background: "#2f6bff",
+                    color: "#fff",
+                    border: "1px solid #2f6bff",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  Build My Healthcare App
+                </Link>
+                <Link
+                  href="/portfolio/"
+                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
+                  style={{
+                    background: "transparent",
+                    color: "#0b1e33",
+                    border: "1px solid #e4eaf1",
+                    padding: "16px 32px",
+                    fontSize: 16,
+                  }}
+                >
+                  View Case Studies
+                </Link>
+              </div>
+              <div
+                className="flex flex-wrap gap-[18px]"
+                style={{ color: "#6b7a8a", fontSize: 14 }}
+              >
+                {[
+                  "HIPAA & GDPR compliant",
+                  "Security-first approach",
+                  "Proven mHealth experience",
+                ].map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-2"
+                    style={{ color: "#6b7a8a" }}
+                  >
+                    <span style={{ color: "#16a34a" }}>
+                      <Check size={16} strokeWidth={2.2} aria-hidden="true" />
+                    </span>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div
+                className="rounded-2xl overflow-hidden border border-[#e4eaf1] shadow-[0_4px_24px_rgba(11,30,51,0.08)]"
+                style={{ background: "#fff" }}
+              >
+                <Image
+                  className="object-cover w-full"
+                  src="/images/v2/helathcare-banner.webp"
+                  alt="Healthcare Software Development Services"
+                  width={565}
+                  height={650}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <ServicesSection
         sectionId="services-one"
         serviceData={healthcareServices1}
@@ -206,7 +339,7 @@ const HealthCare = () => {
       />
       <HomePageBlogs />
       <SolutionEngagementAndHowCanStart />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <HealthcareFAQs />
     </>
   );

@@ -1,15 +1,29 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Search } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Search, Calendar, ArrowRight } from "lucide-react";
 import FetchDataSpinner from "../Homepage/FetchDataSpinner";
 import Image from "next/image";
-import { getblogData, getBlogForSitemap } from "../lib/getblog";
+import {
+  getblogData,
+  getLatestBlogs,
+  getBlogCategoryCounts,
+} from "../lib/getblog";
 import { formatSrcUrl, formattedDate } from "../lib/commonFunction";
 import { usePathname, useRouter } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
 import SubscribeNewsLetterForm from "./SubscribeNewsLetterForm";
 import { blogSubCategories } from "../lib/constants";
+import "../../styles/ServiceLightTheme.css";
+
+const BLOG_CATEGORIES = [
+  { value: "", label: "All" },
+  { value: "Product Engineering", label: "Product Engineering" },
+  { value: "Cloud DevOps and Data", label: "Cloud, DevOps and Data" },
+  { value: "Technology Practices", label: "Technology Practices" },
+  { value: "IOT & Embedded", label: "IoT & Embedded" },
+  { value: "News & Insights", label: "News & Insights" },
+];
 
 const Blog = () => {
   const ITEMS_PER_PAGE = 10;
@@ -20,8 +34,11 @@ const Blog = () => {
   const [blogSubCategory, setBlogSubCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [recentBlogs, setRecentBlogs] = useState([]);
+  const [categoryCounts, setCategoryCounts] = useState({});
   const searchParams = usePathname();
   const router = useRouter();
+  const isFirstRun = useRef(true);
 
   //This function is to statically generate all the link for blogs and paste in constant.js file
   // const fetchAllBlogData = async () => {
@@ -53,12 +70,19 @@ const Blog = () => {
       setIsLoading(false);
     }, 300);
   };
+
   useEffect(() => {
     const delayDebounceFn = setTimeout(
       () => {
         fetchData();
         // fetchAllBlogData();
-        window.scrollTo({ top: 0 });
+        if (isFirstRun.current) {
+          isFirstRun.current = false;
+        } else {
+          document
+            .getElementById("blog-results")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       },
       searchQuery ? 1000 : 0,
     );
@@ -69,6 +93,16 @@ const Blog = () => {
   useEffect(() => {
     setCurrentPage(1);
   }, [blogCategory, blogSubCategory]);
+
+  useEffect(() => {
+    getLatestBlogs(3)
+      .then(setRecentBlogs)
+      .catch((error) => console.error(error));
+
+    getBlogCategoryCounts(BLOG_CATEGORIES.map((c) => c.value))
+      .then(setCategoryCounts)
+      .catch((error) => console.error(error));
+  }, []);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -99,134 +133,237 @@ const Blog = () => {
   return (
     <>
       <div className="blog-listing-section">
-        <div className="banner-layer-dark h-full min-h-[600px] md:max-h-[700px] max-h-full">
-          <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
-            <div className="flex flex-col items-start justify-center h-full min-h-[500px] md:max-h-[700px] max-h-full">
-              <p className="text-colorWhite uppercase md:text-2xl text-xl md:!mb-7.5 !mb-5">
-                We Write
-              </p>
-              <Heading
-                type="h1"
-                className="text-white"
-                text="Brilworks Blogs"
-              />
-              <p className="text-white lg:text-2xl md:text-xl text-lg !mt-5">
-                In the realm of software-defined landscapes, the Brilworks Blog
-                serves as your guide through the technological renaissance. Our
-                platform is dedicated to delivering comprehensive insights into
-                cutting-edge research, innovative thinking, and perspectives on
-                technological advancements in the field of software development.
-                We provide a profound context to assist tech leaders in making
-                informed and intelligent decisions.
-              </p>
-            </div>
+        <section
+          className="relative overflow-hidden svc-hero-bg"
+          style={{ padding: "120px 0 60px" }}
+        >
+          <div className="container max-w-[1280px] main-section-padding mx-auto">
+            <span
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e4eaf1",
+                color: "#566678",
+                letterSpacing: "0.1em",
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+              }}
+            >
+              Insights / The Brilworks Blog
+            </span>
+            <Heading
+              type="h1"
+              className="text-[#0b1e33]"
+              text="From the engineering mindset"
+            />
+            <p
+              className="lg:text-2xl md:text-xl text-lg !mt-5"
+              style={{ color: "#566678", maxWidth: 780 }}
+            >
+              Practical writing on data platforms, AI agents, and the systems
+              underneath them, from the team that builds and ships them.
+            </p>
+
+            {recentBlogs?.length > 0 && (
+              <div className="!mt-12 max-w-[1180px]">
+                <p
+                  className="text-xs font-semibold uppercase !mb-4"
+                  style={{ color: "#6b7a8a", letterSpacing: "0.1em" }}
+                >
+                  Recent Posts
+                </p>
+                <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
+                  {recentBlogs.map(({ slug, name, content }, index) => (
+                    <Link
+                      key={slug}
+                      as={`/blog/${slug}`}
+                      href={`/blog/[slug]`}
+                      prefetch={true}
+                      className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
+                      style={{
+                        background: "#ffffff",
+                        border: "1px solid #e4eaf1",
+                        boxShadow: "0 4px 24px rgba(11,30,51,0.06)",
+                      }}
+                    >
+                      <div
+                        className="relative w-full aspect-[16/9] overflow-hidden"
+                        style={{ background: "#eaf1fb" }}
+                      >
+                        <Image
+                          className="object-contain transition-transform duration-300 group-hover:scale-105"
+                          src={
+                            content?.mobile_banner?.filename
+                              ? formatSrcUrl(content?.mobile_banner?.filename)
+                              : "/images/not-found-image.webp"
+                          }
+                          alt={
+                            content?.mobile_banner?.alt ||
+                            content?.Image?.alt ||
+                            `Recent-blog-${index + 1}`
+                          }
+                          fill
+                          unoptimized
+                        />
+                      </div>
+                      <div className="p-4">
+                        {content?.Category && (
+                          <span
+                            className="inline-block text-[11px] font-semibold uppercase !mb-2"
+                            style={{
+                              color: "#2f6bff",
+                              letterSpacing: "0.06em",
+                            }}
+                          >
+                            {content.Category}
+                          </span>
+                        )}
+                        <p
+                          className="text-[15px] font-semibold leading-snug line-clamp-2 !mb-3 transition-colors group-hover:!text-[#2f6bff]"
+                          style={{ color: "#0b1e33" }}
+                        >
+                          {name}
+                        </p>
+                        <div
+                          className="flex items-center gap-1.5 text-xs"
+                          style={{ color: "#6b7a8a" }}
+                        >
+                          <Calendar size={13} />
+                          {content.Published
+                            ? formattedDate(content?.Published)
+                            : content.PublishedDate || "DD MM, YYYY"}
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
+        </section>
       </div>
       <SubscribeNewsLetterForm />
-      <div className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto">
-        <div className="flex sxl:flex-row flex-col-reverse !mt-4">
-          <div className="blog_category w-full flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-4">
-            <div className="bg-[#F8FAFC] p-1 rounded-md border border-borderGray">
+      <div
+        id="blog-results"
+        className="container max-w-[1280px] main-section-padding xl:py-[60px] md:py-10 py-5 mx-auto"
+        style={{ scrollMarginTop: "100px" }}
+      >
+        {/* Categories */}
+        <div className="flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap !mb-6 blog_category">
+          <div className="flex items-center gap-2">
+            {BLOG_CATEGORIES.map(({ value, label }) => {
+              const isActive = blogCategory === value;
+              const count = categoryCounts?.[value || "All"];
+              return (
+                <button
+                  key={label}
+                  className="flex items-center gap-1.5 text-sm font-semibold whitespace-nowrap rounded-full px-4 py-2.5 transition-all duration-200 cursor-pointer"
+                  style={{
+                    background: isActive ? "#2f6bff" : "#ffffff",
+                    color: isActive ? "#ffffff" : "#566678",
+                    border: `1px solid ${isActive ? "#2f6bff" : "#e4eaf1"}`,
+                    boxShadow: isActive
+                      ? "0 4px 14px rgba(47,107,255,0.25)"
+                      : "0 1px 2px rgba(11,30,51,0.04)",
+                  }}
+                  onClick={() => setBlogCategory(value)}
+                >
+                  {label}
+                  {typeof count === "number" && (
+                    <span
+                      className="text-[11px] font-bold rounded-full px-[7px] py-[1px]"
+                      style={{
+                        background: isActive
+                          ? "rgba(255,255,255,0.2)"
+                          : "#f1f5fb",
+                        color: isActive ? "#ffffff" : "#6b7a8a",
+                      }}
+                    >
+                      {count}
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Filters: search + subcategory */}
+        <div
+          className="rounded-2xl !mb-2"
+          style={{
+            background: "#f7f9fc",
+            border: "1px solid #e4eaf1",
+            padding: "20px",
+          }}
+        >
+          <form className="!mb-4" onSubmit={(e) => e.preventDefault()}>
+            <div className="relative w-full">
+              <Search
+                size={20}
+                className="absolute top-1/2 transform -translate-y-1/2 left-4"
+                style={{ color: "#6b7a8a" }}
+              />
+              <input
+                id="user-search"
+                className="w-full font-medium rounded-xl py-3.5 !pl-12 pr-4 text-base appearance-none focus:outline-none transition-colors"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e4eaf1",
+                  color: "#0b1e33",
+                }}
+                onFocus={(e) => (e.target.style.borderColor = "#2f6bff")}
+                onBlur={(e) => (e.target.style.borderColor = "#e4eaf1")}
+                value={searchQuery}
+                type="search"
+                placeholder="Search articles by title..."
+                autoComplete="off"
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+          </form>
+
+          <p
+            className="text-xs font-semibold uppercase !mb-3"
+            style={{ color: "#6b7a8a", letterSpacing: "0.08em" }}
+          >
+            Browse by Subcategory
+          </p>
+          <div className="flex flex-nowrap justify-start items-center !overflow-auto whitespace-nowrap blog_category">
+            <div className="flex items-center gap-2">
               <button
-                className={`Blog_category_head transition duration-600 ease-in-out lg:!px-5 px-4 !py-2 !rounded-md cursor-pointer ${
-                  blogCategory === ""
-                    ? "bg-themeColor text-white"
-                    : "hover:!text-themeColor"
-                }`}
-                onClick={() => setBlogCategory("")}
+                className="text-[13px] font-medium whitespace-nowrap rounded-full px-3.5 py-2 transition-all duration-200 cursor-pointer"
+                style={{
+                  background: blogSubCategory === "" ? "#0b1e33" : "#ffffff",
+                  color: blogSubCategory === "" ? "#ffffff" : "#566678",
+                  border: `1px solid ${
+                    blogSubCategory === "" ? "#0b1e33" : "#e4eaf1"
+                  }`,
+                }}
+                onClick={() => setBlogSubCategory("")}
               >
-                <p className="text-base md:text-lg font-medium">All</p>
+                All
               </button>
-              <button
-                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
-                  blogCategory === "Product Engineering"
-                    ? "bg-themeColor text-white"
-                    : "hover:!text-themeColor"
-                }`}
-                onClick={() => setBlogCategory("Product Engineering")}
-              >
-                <p className="text-base md:text-lg font-medium">
-                  Product Engineering
-                </p>
-              </button>
-              <button
-                className={`Blog_category_head ease-in-out duration-300 text-re lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
-                  blogCategory === "Cloud DevOps and Data"
-                    ? "bg-themeColor text-white"
-                    : "hover:!text-themeColor"
-                }`}
-                onClick={() => setBlogCategory("Cloud DevOps and Data")}
-              >
-                <p className="text-base md:text-lg font-medium">
-                  Cloud, DevOps and Data
-                </p>
-              </button>
-              <button
-                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
-                  blogCategory === "Technology Practices"
-                    ? "bg-themeColor text-white"
-                    : "hover:!text-themeColor"
-                }`}
-                onClick={() => setBlogCategory("Technology Practices")}
-              >
-                <p className="text-base md:text-lg font-medium">
-                  Technology Practices
-                </p>
-              </button>
-              <button
-                className={`Blog_category_head ease-in-out duration-300 lg:!px-3 px-2 !py-2 cursor-pointer !rounded-md ${
-                  blogCategory === "News & Insights"
-                    ? "bg-themeColor text-white"
-                    : "hover:!text-themeColor"
-                }`}
-                onClick={() => setBlogCategory("News & Insights")}
-              >
-                <p className="text-base md:text-lg font-medium">
-                  News & Insights
-                </p>
-              </button>
+              {blogSubCategories?.map(({ key, value }) => {
+                const isActive = blogSubCategory === value;
+                return (
+                  <button
+                    key={value}
+                    className="text-[13px] font-medium whitespace-nowrap rounded-full px-3.5 py-2 transition-all duration-200 cursor-pointer"
+                    style={{
+                      background: isActive ? "#0b1e33" : "#ffffff",
+                      color: isActive ? "#ffffff" : "#566678",
+                      border: `1px solid ${isActive ? "#0b1e33" : "#e4eaf1"}`,
+                    }}
+                    onClick={() => setBlogSubCategory(value)}
+                  >
+                    {key}
+                  </button>
+                );
+              })}
             </div>
           </div>
-          <div className="w-full sxl:!w-1/3">
-            <form
-              className="md:pb-0 !pb-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="relative w-full">
-                <Search size={24} className="absolute top-1/2 transform -translate-y-1/2 left-2.5 text-gray-400" />
-                <input
-                  id="user-search"
-                  className={`w-full bg-[#F8FAFC] font-medium rounded-md py-3 px-4 text-base md:text-lg appearance-none border !pl-10 focus:outline-none focus:border-themeColor hover:border-themeColor focus:ring-0 focus:ring-themeColor`}
-                  value={searchQuery}
-                  type="search"
-                  placeholder="Search"
-                  autoComplete="off"
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  disabled={!searchQuery && !blogDataPerPage?.length}
-                />
-              </div>
-            </form>
-          </div>
         </div>
-        <div className="w-full sxl:!w-1/3 flex flex-col items-start justify-end">
-          <label className="block text-base font-medium mb-1">
-            Sub Category
-          </label>
-          <select
-            name="subCategory"
-            className="w-fit px-4 py-2 border border-gray-300 rounded-lg text-sm bg-[#F8FAFC]"
-            onChange={(e) => setBlogSubCategory(e.target.value)}
-            value={blogSubCategory}
-          >
-            <option value="">All</option>
-            {blogSubCategories?.map((subCategory, index) => (
-              <option key={index} value={subCategory?.value}>
-                {subCategory.key}
-              </option>
-            ))}
-          </select>
-        </div>
+
         <div
           className={`grid ${
             isLoading || !blogDataPerPage?.length

@@ -4,18 +4,26 @@ import dynamic from "next/dynamic";
 import { scrollEffect } from "../lib/commonFunction";
 import HireTeamHeroSection from "../HireTeam/HireTeamHeroSection";
 import ServicesSection from "../Common/ServicesSection";
+import {
+  MessageSquare,
+  Globe,
+  Code2,
+  Leaf,
+  Smartphone,
+  Layers,
+} from "lucide-react";
 
 const JavaFAQs = dynamic(() => import("./TechnologyFAQ"));
 const TechnologyDevelopers = dynamic(() => import("./TechnologyDevelopers"));
 const TechnologyCombination = dynamic(() => import("./TechnologyCombination"));
-const SolutionContactForm = dynamic(() =>
-  import("../Solution/SolutionContactForm")
+const SolutionContactForm = dynamic(
+  () => import("../Solution/SolutionContactForm"),
 );
-const BenefitOfHiringDevelopers = dynamic(() =>
-  import("./BenefitOfHiringDevelopers")
+const BenefitOfHiringDevelopers = dynamic(
+  () => import("./BenefitOfHiringDevelopers"),
 );
-const HireDevelopersInThreeSteps = dynamic(() =>
-  import("../HireTeam/HireDevelopersInThreeSteps")
+const HireDevelopersInThreeSteps = dynamic(
+  () => import("../HireTeam/HireDevelopersInThreeSteps"),
 );
 
 const HomePageBlogs = dynamic(() => import("../Homepage/HomePageBlogs"));
@@ -28,6 +36,7 @@ const JavaTechnology = () => {
       {
         title: "Java Consulting",
         value: "java-service-1",
+        icon: <MessageSquare size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/java-consulting.webp",
         description:
           "Our team has a unique combination of skills, experience, and cultural expertise (both domestically and internationally) to provide you with fast, accurate advice.",
@@ -35,6 +44,7 @@ const JavaTechnology = () => {
       {
         title: "Java Web Development",
         value: "java-service-2",
+        icon: <Globe size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/web-development.webp",
         description:
           "Our Full-stack Java Developers have the knowledge and experience to design, develop, release and support scalable web-based solutions for your business. They use modern technologies such as Spring Boot, Hibernate, and Microservices to help you organize your business into highly scalable applications.",
@@ -42,6 +52,7 @@ const JavaTechnology = () => {
       {
         title: "Java Software Development",
         value: "java-service-3",
+        icon: <Code2 size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/java-software-development.webp",
         description:
           "Our Java Developers have a proven track record of delivering quality software at a rapid pace. They have extensive knowledge of enterprise-level technologies such as Java, C++, and other tools in order to create scalable, robust, and platform-independent software that is easily maintainable.",
@@ -49,6 +60,7 @@ const JavaTechnology = () => {
       {
         title: "Spring Core Development",
         value: "java-service-4",
+        icon: <Leaf size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/java-spring-core-dev.webp",
         description:
           "Hire Spring boot developer to easily develop J2EE applications from plain old Java Objects to enterprises level services through Spring framework.",
@@ -57,6 +69,7 @@ const JavaTechnology = () => {
       {
         title: "Java App Development",
         value: "java-service-5",
+        icon: <Smartphone size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/mobile-app-img.webp",
         description:
           "Have you considered the benefits of hiring an app developer with Java programming skills? Our developers are skilled at java application development and in developing all types of mobile applications from games, and social media applications to enterprise solutions.",
@@ -64,6 +77,7 @@ const JavaTechnology = () => {
       {
         title: "Java Full Stack Development",
         value: "java-service-6",
+        icon: <Layers size={24} strokeWidth={1.75} />,
         imageSrc: "/images/v2/java-full-stack-dev.webp",
         description:
           "Our team is proficient in full-stack java development. We do not believe in off-the-shelf frameworks or ready-made solutions. Instead, we work with our clients to build scalable applications that are highly scalable, performant, and maintainable.",
@@ -93,7 +107,7 @@ const JavaTechnology = () => {
       <TechnologyCombination />
       <HireDevelopersInThreeSteps title="Java Developers" />
       <HomePageBlogs />
-      <SolutionContactForm />
+      <SolutionContactForm bgClassName="svc-mid-cta-bg" />
       <JavaFAQs />
     </>
   );

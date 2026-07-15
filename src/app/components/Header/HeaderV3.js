@@ -14,13 +14,13 @@ const HeaderV3 = () => {
     <header>
       <div className="header">
         <Navbar
-          className="top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold fixed transition-colors duration-300 ease-in-out bg-[#000000e6]"
+          className="top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold fixed transition-colors duration-300 ease-in-out bg-white/95 backdrop-blur border-b !border-[#e4eaf1]"
           // className={`top-0 border-none z-10 h-max rounded-none !px-0 shadow-none font-semibold fixed transition-colors duration-300 ease-in-out ${
           //   hasBg ? "bg-[#000000e6]" : "bg-transparent"
           // }`}
         >
           <div
-            className={`flex justify-between text-white container md:px-10 px-5 mx-auto ${
+            className={`flex justify-between text-[#0b1e33] container md:px-10 px-5 mx-auto ${
               pathname === "/mvp-in-48-hours/"
                 ? "max-w-[1200px]"
                 : "max-w-[1280px]"
@@ -29,7 +29,7 @@ const HeaderV3 = () => {
             <div className="header_logo">
               <Link href="/">
                 <Image
-                  src="/images/logo-white.svg"
+                  src="/images/logo-black.svg"
                   alt="Brilworks Logo"
                   width="155"
                   height="46"
