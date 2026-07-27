@@ -140,12 +140,45 @@ export const blogSubCategories = [
 
 export const servicesMenuItems = [
   {
-    name: "Data & AI",
+    name: "Data",
     subSections: [
       {
         name: "Data Engineering",
         path: "/data-engineering-services/",
       },
+      {
+        name: "Enterprise Data Strategy",
+        path: "/enterprise-data-strategy/",
+      },
+      {
+        name: "Cloud Data Engineering",
+        path: "/cloud-data-engineering/",
+      },
+      {
+        name: "Data Pipeline Development",
+        path: "/data-pipeline-development/",
+      },
+      {
+        name: "Data Modernization",
+        path: "/data-modernization/",
+      },
+      {
+        name: "Data Governance Consulting",
+        path: "/data-governance-consulting/",
+      },
+      {
+        name: "Business Intelligence Development",
+        path: "/business-intelligence-development/",
+      },
+      // {
+      //   name: "MLOps (New)",
+      //   path: "/contact-us/",
+      // },
+    ],
+  },
+  {
+    name: "AI",
+    subSections: [
       {
         name: "AI Agent Development",
         path: "/ai-agent-development-services/",
@@ -158,33 +191,29 @@ export const servicesMenuItems = [
         name: "AI / ML Development",
         path: "/ai-ml-development-services/",
       },
-      // {
-      //   name: "MLOps (New)",
-      //   path: "/contact-us/",
-      // },
     ],
   },
-  {
-    name: "IoT & Embedded",
-    subSections: [
-      {
-        name: "Embedded Software",
-        path: "/embedded-software-development-services/",
-      },
-      {
-        name: "Firmware Engineering",
-        path: "/firmware-engineering-services/",
-      },
-      {
-        name: "Edge AI / On-Device ML",
-        path: "/edge-ai-development-services/",
-      },
-      {
-        name: "IoT Product Engineering",
-        path: "/iot-product-engineering-services/",
-      },
-    ],
-  },
+  // {
+  //   name: "IoT & Embedded",
+  //   subSections: [
+  //     {
+  //       name: "Embedded Software",
+  //       path: "/embedded-software-development-services/",
+  //     },
+  //     {
+  //       name: "Firmware Engineering",
+  //       path: "/firmware-engineering-services/",
+  //     },
+  //     {
+  //       name: "Edge AI / On-Device ML",
+  //       path: "/edge-ai-development-services/",
+  //     },
+  //     {
+  //       name: "IoT Product Engineering",
+  //       path: "/iot-product-engineering-services/",
+  //     },
+  //   ],
+  // },
   {
     name: "The Stack Underneath",
     muted: true,

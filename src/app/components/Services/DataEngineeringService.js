@@ -1,10 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import {
-  Check,
-  ArrowRight,
-  Star,
   Layers,
   AlignLeft,
   CircleDollarSign,
@@ -17,6 +13,7 @@ import {
   Activity,
   Award,
   BadgeCheck,
+  Star,
   Landmark,
   HeartPulse,
   ShoppingCart,
@@ -26,8 +23,16 @@ import {
   ArrowRightLeft,
   GitCompare,
 } from "lucide-react";
-import GradientFAQAccordion from "../Common/GradientFAQAccordion";
-import Image from "next/image";
+import ServiceHero from "./common/ServiceHero";
+import ServiceTrustBar from "./common/ServiceTrustBar";
+import ServiceCoreOfferings from "./common/ServiceCoreOfferings";
+import ServiceMidCta from "./common/ServiceMidCta";
+import ServiceWhyUs from "./common/ServiceWhyUs";
+import ServiceTestimonials from "./common/ServiceTestimonials";
+import ServiceHonors from "./common/ServiceHonors";
+import ServiceFreeTools from "./common/ServiceFreeTools";
+import ServiceIndustries from "./common/ServiceIndustries";
+import ServiceFaq from "./common/ServiceFaq";
 import "../../styles/ServiceLightTheme.css";
 
 const SolutionContactForm = dynamic(
@@ -263,734 +268,76 @@ const FAQ = [
 const DataEngineeringService = () => {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden pt-20 pb-14 md:pt-[120px] md:pb-[80px]">
-        <div className="absolute inset-0 -z-10 svc-hero-bg" />
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-[60px] items-center">
-            <div>
-              <span
-                className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-6 text-[12px] font-semibold uppercase"
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid #e4eaf1",
-                  color: "#566678",
-                  letterSpacing: "0.1em",
-                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
-                }}
-              >
-                <Layers size={14} color="#2f6bff" /> Data Engineering Services
-              </span>
-              <h1
-                className="font-extrabold mb-5"
-                style={{
-                  fontSize: "clamp(30px, 4vw, 54px)",
-                  letterSpacing: "-1.5px",
-                  lineHeight: 1.1,
-                  color: "#0b1e33",
-                }}
-              >
-                Data Engineering Services that{" "}
-                <span style={{ color: "#2f6bff" }}>Cut Cost and Ship AI.</span>
-              </h1>
-              <p
-                style={{
-                  fontSize: 17,
-                  lineHeight: 1.7,
-                  color: "#566678",
-                  maxWidth: 580,
-                }}
-              >
-                Brilworks unifies your data on Snowflake and Databricks, cuts
-                what you overspend to run it, and gets AI into production on
-                data your teams can trust.
-              </p>
-              <div className="flex flex-wrap gap-3 my-8">
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-                  style={{
-                    background: "#2f6bff",
-                    color: "#fff",
-                    border: "1px solid #2f6bff",
-                    padding: "14px 24px",
-                    fontSize: 15,
-                  }}
-                >
-                  Talk to an Expert <ArrowRight size={16} />
-                </Link>
-                <Link
-                  href="#services"
-                  className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:bg-black/5"
-                  style={{
-                    background: "transparent",
-                    color: "#2f6bff",
-                    border: "1px solid #2f6bff",
-                    padding: "14px 24px",
-                    fontSize: 15,
-                  }}
-                >
-                  See what we do
-                </Link>
-              </div>
-              <div
-                className="flex flex-wrap gap-x-5 gap-y-2.5"
-                style={{ color: "#6b7a8a", fontSize: 14 }}
-              >
-                {[
-                  "Fixed-price cost audit that pays for itself",
-                  "Your cloud, your repo, no lock-in",
-                  "Certified on Snowflake and Databricks",
-                ].map((t) => (
-                  <span key={t} className="inline-flex items-center gap-2">
-                    <span style={{ color: "#16a34a" }}>
-                      <Check size={16} />
-                    </span>
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <div className="grid grid-cols-2 gap-4">
-                {HERO_STATS.map((s) => (
-                  <div
-                    key={s.label}
-                    className="rounded-2xl transition-all svc-stat-card"
-                  >
-                    <div
-                      className="font-extrabold leading-none mb-2"
-                      style={{
-                        color: s.accent ? "#2f6bff" : "#2f6bff",
-                        fontSize: "clamp(28px, 3vw, 42px)",
-                        letterSpacing: "-1px",
-                      }}
-                    >
-                      {s.value}
-                    </div>
-                    <div
-                      style={{
-                        color: "#6b7a8a",
-                        fontSize: 13,
-                        fontWeight: 500,
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        label="Data Engineering Services"
+        labelIcon={<Layers size={14} color="#2f6bff" />}
+        titleLead="Data Engineering Services that"
+        titleAccent="Cut Cost and Ship AI."
+        subhead="Brilworks unifies your data on Snowflake and Databricks, cuts what you overspend to run it, and gets AI into production on data your teams can trust."
+        primaryCta={{ label: "Talk to an Expert", href: "#contact" }}
+        secondaryCta={{ label: "See what we do", href: "#services" }}
+        trustPoints={[
+          "Fixed-price cost audit that pays for itself",
+          "Your cloud, your repo, no lock-in",
+          "Certified on Snowflake and Databricks",
+        ]}
+        stats={HERO_STATS}
+      />
 
-      {/* TRUST BAR */}
-      <section
-        aria-label="Trust indicators"
-        style={{
-          background: "#ffffff",
-          borderBottom: "1px solid #e4eaf1",
-          padding: "28px 0",
-        }}
-      >
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div
-            className="flex flex-wrap items-center justify-center"
-            style={{ gap: "12px 40px" }}
-          >
-            {TRUST.map((t) => (
-              <div
-                key={t.label}
-                className="inline-flex items-center gap-2 whitespace-nowrap"
-                style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
-              >
-                {t.icon}
-                {t.label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTrustBar items={TRUST} />
 
-      {/* SERVICES */}
-      <section
+      <ServiceCoreOfferings
         id="services"
-        className="py-16 md:py-24"
-        style={{ background: "#f1f5fb" }}
-      >
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              What We Build
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Core Data Engineering Services
-            </h2>
-            <p
-              className="mt-4"
-              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
-            >
-              Full-lifecycle data engineering, from the pipeline that ingests
-              raw data to the AI layer that runs on top of it.
-            </p>
-          </div>
+        sectionLabel="What We Build"
+        heading="Core Data Engineering Services"
+        subhead="Full-lifecycle data engineering, from the pipeline that ingests raw data to the AI layer that runs on top of it."
+        items={SERVICES}
+      />
 
-          {SERVICES.map((svc) => {
-            const Icon = svc.icon;
-            return (
-              <div key={svc.title} className="py-10 lg:py-12">
-                <div className="grid items-center gap-8 lg:gap-[60px] grid-cols-1 lg:grid-cols-2">
-                  <div className={svc.reverse ? "lg:order-2" : ""}>
-                    <div className="w-full overflow-hidden rounded-2xl relative flex items-center justify-center">
-                      <Image
-                        src={svc.image}
-                        alt={svc.title}
-                        width={200}
-                        height={120}
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className={svc.reverse ? "lg:order-1" : ""}>
-                    <h3
-                      className="font-bold mb-4"
-                      style={{
-                        fontSize: "clamp(22px, 2.4vw, 28px)",
-                        letterSpacing: "-0.3px",
-                        lineHeight: 1.3,
-                        color: "#0d0f1a",
-                      }}
-                    >
-                      {svc.title}
-                    </h3>
-                    <p
-                      className="mb-5"
-                      style={{
-                        fontSize: 16,
-                        lineHeight: 1.7,
-                        color: "#6b7280",
-                      }}
-                    >
-                      {svc.body}
-                    </p>
-                    <ul className="list-none">
-                      {svc.features.map((f) => (
-                        <li
-                          key={f}
-                          className="flex items-start gap-2.5 mb-2.5"
-                          style={{ fontSize: 14, color: "#212121" }}
-                        >
-                          <span
-                            style={{
-                              color: "#017eeb",
-                              flexShrink: 0,
-                              marginTop: 2,
-                            }}
-                          >
-                            <Check size={16} />
-                          </span>
-                          {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+      <ServiceMidCta
+        headline="Not sure where to start? Start with the bill."
+        pitch="Your Snowflake or Databricks spend is probably 20 to 40% higher than it needs to be. Our fixed-price Cost-Optimization Audit finds where, and usually pays for itself."
+        buttonLabel="Get a Cost Audit"
+        buttonHref="#contact"
+      />
 
-      {/* MID CTA */}
-      <section
-        className="relative overflow-hidden text-center svc-mid-cta-bg"
-        style={{ padding: "56px 0" }}
-      >
-        <div className="absolute inset-0 pointer-events-none svc-mid-cta-glow" />
-        <div
-          className="relative mx-auto px-5 md:px-10"
-          style={{ maxWidth: 700, zIndex: 1 }}
-        >
-          <h3
-            className="font-extrabold mb-3.5"
-            style={{
-              fontSize: "clamp(24px, 3vw, 36px)",
-              color: "#fff",
-              lineHeight: 1.2,
-              letterSpacing: "-0.5px",
-            }}
-          >
-            Not sure where to start? Start with the bill.
-          </h3>
-          <p
-            className="mb-7"
-            style={{
-              color: "rgba(255,255,255,0.85)",
-              fontSize: 16,
-              lineHeight: 1.7,
-            }}
-          >
-            Your Snowflake or Databricks spend is probably 20 to 40% higher than
-            it needs to be. Our fixed-price Cost-Optimization Audit finds where,
-            and usually pays for itself.
-          </p>
-          <Link
-            href="#contact"
-            className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all hover:!bg-[#0d0f1a] hover:!text-white hover:!border-[#0d0f1a] mt-5 w-full sm:w-auto"
-            style={{
-              background: "#fff",
-              color: "#017eeb",
-              border: "1px solid #fff",
-              padding: "16px 32px",
-              fontSize: 16,
-            }}
-          >
-            Get a Cost Audit
-          </Link>
-        </div>
-      </section>
+      <ServiceWhyUs
+        sectionLabel="Why Brilworks"
+        heading="Data engineers who ship, then stay accountable"
+        subhead="We do not just hand over a diagram. We engineer the platform and stand behind the numbers it produces."
+        items={BENEFITS}
+      />
 
-      {/* WHY BRILWORKS */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              Why Brilworks
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Data engineers who ship, then stay accountable
-            </h2>
-            <p
-              className="mt-4"
-              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
-            >
-              We do not just hand over a diagram. We engineer the platform and
-              stand behind the numbers it produces.
-            </p>
-          </div>
-          <div
-            className="grid gap-6"
-            style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            }}
-          >
-            {BENEFITS.map((b) => (
-              <div
-                key={b.title}
-                className="rounded-2xl transition-all hover:-translate-y-0.5"
-                style={{
-                  background: "#fff",
-                  border: "1px solid #e5e7eb",
-                  padding: "32px 28px",
-                }}
-              >
-                <div
-                  className="rounded-[14px] flex items-center justify-center mb-5"
-                  style={{ width: 64, height: 64, background: b.tint }}
-                >
-                  {b.icon}
-                </div>
-                <h3
-                  className="font-bold mb-3"
-                  style={{ fontSize: 18, color: "#0d0f1a" }}
-                >
-                  {b.title}
-                </h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#6b7280" }}>
-                  {b.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceTestimonials
+        sectionLabel="Client Stories"
+        heading="What Data Leaders Say"
+        subhead="Real words from people who ran our work in production."
+        items={TESTIMONIALS}
+      />
 
-      {/* TESTIMONIALS */}
-      <section className="relative overflow-hidden py-16 md:py-24 svc-dark-section-bg">
-        <div
-          className="relative mx-auto px-5 md:px-10"
-          style={{ maxWidth: 1280, zIndex: 1 }}
-        >
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#2f6bff",
-              }}
-            >
-              Client Stories
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0b1e33",
-              }}
-            >
-              What Data Leaders Say
-            </h2>
-            <p
-              className="mt-4"
-              style={{
-                fontSize: 17,
-                lineHeight: 1.7,
-                color: "#566678",
-              }}
-            >
-              Real words from people who ran our work in production.
-            </p>
-          </div>
-          <div
-            className="grid gap-6"
-            style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            }}
-          >
-            {TESTIMONIALS.map((t) => (
-              <div
-                key={t.role}
-                className="rounded-2xl"
-                style={{
-                  background: "#ffffff",
-                  border: "1px solid #e4eaf1",
-                  padding: "32px 28px",
-                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
-                }}
-              >
-                <div className="flex gap-0.5 mb-4" style={{ color: "#facc15" }}>
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
-                </div>
-                <p
-                  className="mb-6"
-                  style={{
-                    color: "#0b1e33",
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                  }}
-                >
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="rounded-full flex items-center justify-center font-bold text-white"
-                    style={{
-                      width: 44,
-                      height: 44,
-                      background: "linear-gradient(135deg, #2f6bff, #1e4fd6)",
-                      fontSize: 16,
-                    }}
-                  >
-                    {t.initials}
-                  </div>
-                  <div className="flex flex-col">
-                    <span
-                      className="font-semibold"
-                      style={{ fontSize: 14, color: "#0b1e33" }}
-                    >
-                      {t.name}
-                    </span>
-                    <span style={{ color: "#6b7a8a", fontSize: 12 }}>
-                      {t.role}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceHonors items={HONORS} />
 
-      {/* HONORS */}
-      <section className="py-16">
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div
-            className="text-center mx-auto"
-            style={{ maxWidth: 720, marginBottom: 32 }}
-          >
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              Recognized By
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(22px, 2.4vw, 30px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Trusted &amp; Awarded by Industry Leaders
-            </h2>
-          </div>
-          <div
-            className="flex flex-wrap items-center justify-center"
-            style={{ gap: "32px 56px", opacity: 0.85 }}
-          >
-            {HONORS.map((h) => (
-              <div
-                key={h.label}
-                className="flex items-center gap-2.5"
-                style={{ color: "#6b7280", fontWeight: 600, fontSize: 14 }}
-              >
-                {h.icon}
-                {h.label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceFreeTools
+        sectionLabel="Free Tools"
+        heading="Size Up Your Data Stack Before You Commit"
+        subhead="Free calculators and assessments for Snowflake and Databricks teams. Get numbers in minutes, no sales call required."
+        tools={TOOLS}
+        exploreHref="/data-engineering-tools/"
+      />
 
-      {/* FREE TOOLS */}
-      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              Free Tools
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Size Up Your Data Stack Before You Commit
-            </h2>
-            <p
-              className="mt-4"
-              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
-            >
-              Free calculators and assessments for Snowflake and Databricks
-              teams. Get numbers in minutes, no sales call required.
-            </p>
-          </div>
-          <div
-            className="grid gap-4"
-            style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            }}
-          >
-            {TOOLS.map((tool) => {
-              const Icon = tool.icon;
-              return (
-                <Link
-                  key={tool.name}
-                  href={tool.href}
-                  className="flex items-center gap-4 rounded-2xl transition-all hover:-translate-y-0.5 bg-white"
-                  style={{
-                    border: "1px solid #e5e7eb",
-                    padding: "20px 24px",
-                    textDecoration: "none",
-                  }}
-                >
-                  <div
-                    className="rounded-[10px] flex items-center justify-center flex-shrink-0"
-                    style={{
-                      width: 44,
-                      height: 44,
-                      background: "#fff",
-                      border: "1px solid #e5e7eb",
-                    }}
-                  >
-                    <Icon size={20} color="#017eeb" strokeWidth={1.7} />
-                  </div>
-                  <span
-                    style={{ fontSize: 15, fontWeight: 600, color: "#0d0f1a" }}
-                  >
-                    {tool.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/data-engineering-tools/"
-              className="inline-flex items-center justify-center gap-2 font-semibold rounded-md transition-all"
-              style={{
-                background: "#2f6bff",
-                color: "#fff",
-                border: "1px solid #2f6bff",
-                padding: "14px 28px",
-                fontSize: 15,
-              }}
-            >
-              Explore All Tools <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ServiceIndustries
+        sectionLabel="Industries We Serve"
+        heading="Data Engineering Built for Your Vertical"
+        subhead="Pipeline patterns differ by industry. We have shipped in each of these."
+        items={INDUSTRIES}
+      />
 
-      {/* INDUSTRIES */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              Industries We Serve
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Data Engineering Built for Your Vertical
-            </h2>
-            <p
-              className="mt-4"
-              style={{ fontSize: 17, lineHeight: 1.7, color: "#6b7280" }}
-            >
-              Pipeline patterns differ by industry. We have shipped in each of
-              these.
-            </p>
-          </div>
-          <div
-            className="grid gap-4"
-            style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-            }}
-          >
-            {INDUSTRIES.map((ind) => (
-              <div
-                key={ind.label}
-                className="text-center transition-all hover:-translate-y-0.5"
-                style={{
-                  background: "#fff",
-                  border: "1px solid #e5e7eb",
-                  borderRadius: 14,
-                  padding: "24px 16px",
-                }}
-              >
-                <div className="mx-auto mb-3 flex items-center justify-center">
-                  {ind.icon}
-                </div>
-                <span
-                  style={{ fontSize: 13, fontWeight: 600, color: "#212121" }}
-                >
-                  {ind.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-16 md:py-24" style={{ background: "#f1f5fb" }}>
-        <div className="mx-auto px-5 md:px-10" style={{ maxWidth: 1280 }}>
-          <div className="text-center mx-auto mb-14" style={{ maxWidth: 720 }}>
-            <span
-              className="inline-block mb-4"
-              style={{
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#017eeb",
-              }}
-            >
-              Common Questions
-            </span>
-            <h2
-              className="font-extrabold"
-              style={{
-                fontSize: "clamp(28px, 3.2vw, 42px)",
-                letterSpacing: "-1px",
-                lineHeight: 1.15,
-                color: "#0d0f1a",
-              }}
-            >
-              Data Engineering Services, Answered
-            </h2>
-          </div>
-          <div className="mx-auto" style={{ maxWidth: 860 }}>
-            {FAQ.map((item, i) => (
-              <GradientFAQAccordion
-                key={i + 1}
-                id={`data-eng-${i + 1}`}
-                question={item.q}
-                answer={item.a}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ServiceFaq
+        sectionLabel="Common Questions"
+        heading="Data Engineering Services, Answered"
+        faqs={FAQ}
+        idPrefix="data-eng"
+      />
 
       {/* CONTACT FORM */}
       <div id="contact">
