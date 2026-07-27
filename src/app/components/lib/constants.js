@@ -234,6 +234,10 @@ export const servicesMenuItems = [
         name: "Cloud & DevOps",
         path: "/devops-consulting-services/",
       },
+      {
+        name: "IoT & Embedded",
+        path: "/iot-embedded-development-services/",
+      },
     ],
   },
 ];
