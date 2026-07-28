@@ -272,8 +272,8 @@ const DataPipelineDevelopmentService = () => {
       <ServiceHero
         label="Data Pipeline Development"
         labelIcon={<Workflow size={14} color="#2f6bff" />}
-        titleLead="Data Pipelines That"
-        titleAccent="Do Not Break at 3am"
+        titleLead="Data Pipeline Development"
+        titleAccent="That Scales with You"
         subhead="We build and maintain the pipelines that feed your warehouse. Ingestion, ETL/ELT, transformation, and orchestration, tuned to hold up when volume and table count climb, not just on sample data."
         primaryCta={{ label: "Talk to an Engineer", href: "#contact" }}
         secondaryCta={{ label: "See what we build", href: "#services" }}

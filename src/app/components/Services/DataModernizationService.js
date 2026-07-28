@@ -271,8 +271,8 @@ const DataModernizationService = () => {
       <ServiceHero
         label="Data Modernization"
         labelIcon={<RefreshCw size={14} color="#2f6bff" />}
-        titleLead="Move Off Legacy Data Systems"
-        titleAccent="Without Stopping the Business"
+        titleLead="Data Modernization"
+        titleAccent="for the AI-Driven Era"
         subhead="Teradata, on-prem SQL Server, Hadoop, or a legacy warehouse holding you back. We migrate you onto Snowflake or Databricks in phases, with the old system live until you trust the new one."
         primaryCta={{ label: "Talk to an Engineer", href: "#contact" }}
         secondaryCta={{ label: "See how we migrate", href: "#services" }}

@@ -272,8 +272,8 @@ const BusinessIntelligenceDevelopmentService = () => {
       <ServiceHero
         label="Business Intelligence Development"
         labelIcon={<LayoutDashboard size={14} color="#2f6bff" />}
-        titleLead="Dashboards Your Team"
-        titleAccent="Actually Opens"
+        titleLead="Business Intelligence Development"
+        titleAccent="for Modern Enterprises"
         subhead="Most BI ends as forty dashboards no one looks at. We build reporting people use, on a data layer where the same number means one thing everywhere, so decisions run on trust, not on a spreadsheet someone kept on the side."
         primaryCta={{ label: "Talk to a BI Engineer", href: "#contact" }}
         secondaryCta={{ label: "See what we build", href: "#services" }}

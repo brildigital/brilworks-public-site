@@ -272,8 +272,8 @@ const EnterpriseDataStrategyService = () => {
       <ServiceHero
         label="Enterprise Data Strategy"
         labelIcon={<Compass size={14} color="#2f6bff" />}
-        titleLead="Enterprise Data Strategy That Your Team Can"
-        titleAccent="Actually Execute"
+        titleLead="Build a Modern Enterprise Data Strategy"
+        titleAccent="Fit for the AI Era"
         subhead="We map where your data breaks, what to fix first, and what it costs, then hand you a sequenced roadmap your team can start on Monday. Not another vision deck."
         primaryCta={{ label: "Talk to a Strategist", href: "#contact" }}
         secondaryCta={{ label: "See what we do", href: "#services" }}

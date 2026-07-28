@@ -272,8 +272,8 @@ const CloudDataEngineeringService = () => {
       <ServiceHero
         label="Cloud Data Engineering"
         labelIcon={<Cloud size={14} color="#2f6bff" />}
-        titleLead="Cloud Data Platforms That"
-        titleAccent="Ship in Weeks, Not Quarters"
+        titleLead="Next-Gen Cloud Data Platform"
+        titleAccent="Built for Performance"
         subhead="We design, build, and run cloud data platforms on Snowflake and Databricks. Warehousing, lakehouse, and real-time pipelines, tuned to hold up under real volume and stay cheap to run."
         primaryCta={{ label: "Talk to an Engineer", href: "#contact" }}
         secondaryCta={{ label: "See what we build", href: "#services" }}

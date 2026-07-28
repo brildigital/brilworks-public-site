@@ -272,8 +272,8 @@ const DataGovernanceConsultingService = () => {
       <ServiceHero
         label="Data Governance Consulting"
         labelIcon={<ShieldCheck size={14} color="#2f6bff" />}
-        titleLead="Data Governance That Actually Gets"
-        titleAccent="Enforced"
+        titleLead="Data Governance Consulting"
+        titleAccent="& Risk Mitigation"
         subhead="Most governance work ends as a policy document no one follows. We build governance into your data stack, framework, quality rules, catalog, and access, so it runs automatically instead of sitting in a shared drive."
         primaryCta={{ label: "Talk to a Consultant", href: "#contact" }}
         secondaryCta={{ label: "See how we implement", href: "#services" }}
