@@ -97,7 +97,7 @@ export async function getLatestBlogs(limit_per_page) {
     {
       starts_with: "blog/",
       page: 1,
-      per_page: limit_per_page || 3,
+      per_page: limit_per_page || 2,
       sort_by: "first_published_at:desc",
       version: process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
       filter_query: {
@@ -294,7 +294,10 @@ export async function getBlogForSitemap() {
     page: 1,
   });
 
-  const total = parseInt(firstResponse.headers?.total || firstResponse.data?.stories?.length, 10);
+  const total = parseInt(
+    firstResponse.headers?.total || firstResponse.data?.stories?.length,
+    10,
+  );
   const totalPages = Math.ceil(total / 100);
 
   let allStories = [...firstResponse.data.stories];
@@ -303,10 +306,12 @@ export async function getBlogForSitemap() {
   if (totalPages > 1) {
     const remainingPages = await Promise.all(
       Array.from({ length: totalPages - 1 }, (_, i) =>
-        Storyblok.get("cdn/stories", { ...baseParams, page: i + 2 })
-      )
+        Storyblok.get("cdn/stories", { ...baseParams, page: i + 2 }),
+      ),
     );
-    allStories = allStories.concat(remainingPages.flatMap((r) => r.data.stories));
+    allStories = allStories.concat(
+      remainingPages.flatMap((r) => r.data.stories),
+    );
   }
 
   return allStories.map((data) => ({
