@@ -3,8 +3,8 @@
 const PARTNERS = [
   { name: "AWS", logo: "/images/v2/aws_partner.webp" },
   { name: "Databricks", logo: "/images/v2/databricks_partner.webp" },
-  { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
-  { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
+  // { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
+  // { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
   { name: "adalo", logo: "/images/v2/adalo_partner.webp" },
   { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
   { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },
@@ -42,8 +42,8 @@ const EnterprisePartners = () => {
           </div>
         </div>
         <p className="pnote rv d1">
-          Company-wide vetted partner status, with Snowflake and Databricks
-          certified engineers on every engagement.
+          Company-wide vetted partner status, with Databricks certified
+          engineers on every engagement.
         </p>
       </div>
     </section>

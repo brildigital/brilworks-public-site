@@ -27,7 +27,7 @@ export function scrollEffect() {
           }
         });
       },
-      { rootMargin: "0px 0px -100px 0px", threshold: 0 }
+      { rootMargin: "0px 0px -100px 0px", threshold: 0 },
     );
   }
 
@@ -166,7 +166,7 @@ export const blogAuthor = (authorName) => {
     {
       name: "Vikas Singh",
       authorImage: `${process.env.NEXT_PUBLIC_CLOUDFRONT_URL}/assets/35b061522a_vikas.jpg`,
-      authorLinkedIn: "https://www.linkedin.com/in/vksingh319/",
+      authorLinkedIn: "https://www.linkedin.com/in/vikas-singh-bril/",
       authorPageUrl: "https://www.brilworks.com/blog/author/vikas-singh/",
       jobTitle: "Chief Technology Officer, Brilworks",
       authorDesc:
@@ -241,7 +241,7 @@ export function formatPhoneNumber(phoneNumber) {
 
 export const handleDownloadFile = async (downloadFileUrl) => {
   const filename = downloadFileUrl.substring(
-    downloadFileUrl.lastIndexOf("/") + 1
+    downloadFileUrl.lastIndexOf("/") + 1,
   );
 
   try {
@@ -324,7 +324,7 @@ export const suggestSimilarBlogPosts = (blogTitle = "") => {
   ];
 
   const match = keywordMap.find(({ keywords }) =>
-    keywords.some((word) => title.includes(word))
+    keywords.some((word) => title.includes(word)),
   );
 
   return match ? match.value : null;
@@ -438,5 +438,7 @@ export function getYouTubeThumbnail(url) {
     /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
   const match = url.match(regExp);
   const videoId = match && match[7].length === 11 ? match[7] : false;
-  return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : "";
+  return videoId
+    ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+    : "";
 }

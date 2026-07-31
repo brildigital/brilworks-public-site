@@ -2,14 +2,14 @@
   "/": [
     {
       "kicker": "Data Platforms",
-      "name": "What Is Snowflake? A Practical Guide to the Cloud Data Platform",
-      "slug": "what-is-snowflake",
+      "name": "Databricks vs Snowflake: A Practical Comparison for 2026",
+      "slug": "databricks-vs-snowflake",
       "content": {
         "Priority": "",
-        "Published": "2026-06-23 00:00",
+        "Published": "2026-07-16 00:00",
         "mobile_banner": {
-          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/Group_88-1782195650828.png",
-          "alt": "What Is Snowflake - A Practical Guide to the Cloud Data Platform"
+          "filename": "https://d14lhgoyljo1xt.cloudfront.net/assets/Group_115-1784206987175.png",
+          "alt": "Databricks vs Snowflake - A Practical Comparison for 2026"
         }
       }
     },
