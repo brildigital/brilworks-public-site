@@ -180,6 +180,14 @@ export const servicesMenuItems = [
     name: "AI",
     subSections: [
       {
+        name: "AI Strategy & Advisory",
+        path: "/ai-strategy-advisory-services/",
+      },
+      {
+        name: "AI Readiness & Data Foundation",
+        path: "/ai-readiness-data-foundation-services/",
+      },
+      {
         name: "AI Agent Development",
         path: "/ai-agent-development-services/",
       },
@@ -190,6 +198,14 @@ export const servicesMenuItems = [
       {
         name: "AI / ML Development",
         path: "/ai-ml-development-services/",
+      },
+      {
+        name: "AI Engineering (AIOps)",
+        path: "/ai-engineering-aiops-services/",
+      },
+      {
+        name: "AI Governance",
+        path: "/ai-governance-services/",
       },
     ],
   },
