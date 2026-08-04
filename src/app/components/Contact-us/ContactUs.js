@@ -13,33 +13,38 @@ const SERVICE_CONTEXT = {
   "replit-migration": {
     badge: "MIGRATION SUPPORT",
     heading: "Let Us Handle Your Replit Migration",
-    subtitle: "Tell us about your app and we'll map the fastest path to production — dependencies, database, secrets, CI/CD, all handled.",
+    subtitle:
+      "Tell us about your app and we'll map the fastest path to production — dependencies, database, secrets, CI/CD, all handled.",
   },
   "migration-assessment": {
     badge: "FREE ASSESSMENT",
     heading: "Get a Free Migration Assessment",
-    subtitle: "Share your stack details and we'll recommend the right platform — with a clear timeline and cost estimate.",
+    subtitle:
+      "Share your stack details and we'll recommend the right platform — with a clear timeline and cost estimate.",
   },
   "migration-cost": {
     badge: "COST ESTIMATE",
     heading: "See What Your Migration Would Cost",
-    subtitle: "We'll audit your project, recommend the right platform, and give you a fixed-price migration estimate — free, no strings.",
+    subtitle:
+      "We'll audit your project, recommend the right platform, and give you a fixed-price migration estimate — free, no strings.",
   },
   "cloud-migration": {
     badge: "CLOUD MIGRATION",
     heading: "Plan Your Cloud Migration With Experts",
-    subtitle: "From AWS to Vercel to Render — we'll assess your infrastructure needs and build a migration roadmap.",
+    subtitle:
+      "From AWS to Vercel to Render — we'll assess your infrastructure needs and build a migration roadmap.",
   },
   "mvp-to-production": {
     badge: "MVP TO PRODUCTION",
     heading: "Take Your MVP to Production",
-    subtitle: "We've helped 50+ teams move from prototyping tools to production-grade infrastructure. Let's plan yours.",
+    subtitle:
+      "We've helped 50+ teams move from prototyping tools to production-grade infrastructure. Let's plan yours.",
   },
 };
 
 const ClientReviews = dynamic(() => import("../Homepage/ClientReviews"));
-const GradientFAQAccordion = dynamic(() =>
-  import("../Common/GradientFAQAccordion")
+const GradientFAQAccordion = dynamic(
+  () => import("../Common/GradientFAQAccordion"),
 );
 
 const ContactUs = () => {
@@ -114,8 +119,7 @@ const ContactUs = () => {
     },
   ];
 
-  const handleFaqOpen = (value) =>
-    setOpenFaq(openFaq === value ? 0 : value);
+  const handleFaqOpen = (value) => setOpenFaq(openFaq === value ? 0 : value);
 
   return (
     <>
@@ -130,7 +134,12 @@ const ContactUs = () => {
               {/* Badge */}
               <span
                 className="inline-flex items-center gap-2 rounded-full px-[14px] py-[6px] text-xs font-semibold tracking-[0.1em] !mb-6 border"
-                style={{ background: "#ffffff", borderColor: "#e4eaf1", color: "#566678", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}
+                style={{
+                  background: "#ffffff",
+                  borderColor: "#e4eaf1",
+                  color: "#566678",
+                  boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+                }}
               >
                 <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
                 {ctx?.badge || "FREE CONSULTATION"}
@@ -142,8 +151,12 @@ const ContactUs = () => {
               >
                 {ctx?.heading || "Get a Free Project Estimate in 24 Hours"}
               </h2>
-              <p className="text-[17px] leading-[1.6] !mb-6 max-w-[560px]" style={{ color: "#566678" }}>
-                {ctx?.subtitle || "Share your idea. We'll respond with a plan, timeline, and price — no obligation."}
+              <p
+                className="text-[17px] leading-[1.6] !mb-6 max-w-[560px]"
+                style={{ color: "#566678" }}
+              >
+                {ctx?.subtitle ||
+                  "Share your idea. We'll respond with a plan, timeline, and price — no obligation."}
               </p>
 
               {/* Positive trust items */}
@@ -173,10 +186,17 @@ const ContactUs = () => {
 
             {/* Right: What happens next */}
             <div
-              className="md:w-[45%] w-full flex flex-col justify-center rounded-2xl gap-6 md:p-7 p-5"
-              style={{ background: "#ffffff", border: "1px solid #e4eaf1", boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)" }}
+              className="md:w-[45%] w-full h-fit my-auto flex flex-col justify-center rounded-2xl gap-6 md:p-7 p-5 md:py-16"
+              style={{
+                background: "#ffffff",
+                border: "1px solid #e4eaf1",
+                boxShadow: "0 1px 2px rgba(11, 30, 51, 0.05)",
+              }}
             >
-              <p className="text-[11px] font-bold tracking-[0.12em] uppercase" style={{ color: "#2f6bff" }}>
+              <p
+                className="text-[11px] font-bold tracking-[0.12em] uppercase"
+                style={{ color: "#2f6bff" }}
+              >
                 What Happens Next
               </p>
               {steps.map((step, index) => (
@@ -191,10 +211,16 @@ const ContactUs = () => {
                     {index + 1}
                   </div>
                   <div>
-                    <p className="text-[15px] font-semibold leading-tight" style={{ color: "#0b1e33" }}>
+                    <p
+                      className="text-[15px] font-semibold leading-tight"
+                      style={{ color: "#0b1e33" }}
+                    >
                       {step.title}
                     </p>
-                    <p className="text-[13px] mt-1 leading-[1.5] font-light" style={{ color: "#566678" }}>
+                    <p
+                      className="text-[13px] mt-1 leading-[1.5] font-light"
+                      style={{ color: "#566678" }}
+                    >
                       {step.description}
                     </p>
                   </div>
@@ -206,7 +232,10 @@ const ContactUs = () => {
       </section>
 
       {/* Stats bar */}
-      <section className="svc-dark-section-bg" style={{ borderTop: "1px solid #e4eaf1" }}>
+      <section
+        className="svc-dark-section-bg"
+        style={{ borderTop: "1px solid #e4eaf1" }}
+      >
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
           <div
             className="grid grid-cols-2 md:grid-cols-4 gap-[1px] rounded-xl overflow-hidden"
@@ -218,10 +247,16 @@ const ContactUs = () => {
                 className="py-6 px-5 text-center"
                 style={{ background: "#ffffff" }}
               >
-                <div className="text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none" style={{ color: "#0b1e33" }}>
+                <div
+                  className="text-[26px] md:text-[32px] font-extrabold tracking-[-0.5px] leading-none"
+                  style={{ color: "#0b1e33" }}
+                >
                   {value}
                 </div>
-                <div className="text-[12px] md:text-[13px] mt-1" style={{ color: "#6b7a8a" }}>
+                <div
+                  className="text-[12px] md:text-[13px] mt-1"
+                  style={{ color: "#6b7a8a" }}
+                >
                   {label}
                 </div>
               </div>
@@ -234,10 +269,16 @@ const ContactUs = () => {
       <ClientReviews light />
 
       {/* FAQ */}
-      <section className="main-section-padding" style={{ background: "#ffffff" }}>
+      <section
+        className="main-section-padding"
+        style={{ background: "#ffffff" }}
+      >
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[11px] font-bold tracking-[0.12em] uppercase inline-block !mb-3" style={{ color: "#2f6bff" }}>
+            <span
+              className="text-[11px] font-bold tracking-[0.12em] uppercase inline-block !mb-3"
+              style={{ color: "#2f6bff" }}
+            >
               FAQ
             </span>
             <h2 className="lg:text-[44px] md:text-[36px] text-[30px] font-extrabold leading-[1.1] tracking-[-1px] text-[#0d0f1a]">
@@ -263,7 +304,10 @@ const ContactUs = () => {
       <section className="container max-w-[1280px] md:px-10 px-5 mx-auto py-10">
         <div className="flex items-center justify-between md:flex-row flex-col gap-4 bg-[#f1f5fb] border border-[#e5e7eb] rounded-2xl p-6 md:p-7">
           <div>
-            <p className="text-[11px] font-bold tracking-[0.12em] uppercase !mb-1" style={{ color: "#2f6bff" }}>
+            <p
+              className="text-[11px] font-bold tracking-[0.12em] uppercase !mb-1"
+              style={{ color: "#2f6bff" }}
+            >
               Looking for a Job?
             </p>
             <p className="text-base md:text-lg text-[#212121]">

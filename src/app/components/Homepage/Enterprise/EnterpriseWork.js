@@ -6,7 +6,7 @@ const CASES = [
     tag: "Data engineering",
     title: "Pipelines & warehousing",
     body: "Ingestion, transformation, and a modeled warehouse your whole team can trust as one source of truth.",
-    metric: "ETL / ELT · dbt · Snowflake · Databricks",
+    metric: "ETL / ELT · Databricks · dbt",
     link: "/data-engineering-services/",
   },
   {
@@ -43,7 +43,7 @@ const NUMS = [
   },
   {
     v: "Certified",
-    l: "Snowflake, Databricks, and AWS Advanced Tier partners.",
+    l: "Databricks, and AWS Advanced Tier partners.",
   },
   {
     v: "Start small",
@@ -58,9 +58,8 @@ const EnterpriseWork = () => {
         <p className="eyebrow rv">What we build</p>
         <h2 className="sec rv d1">From data foundation to running agent.</h2>
         <p className="sub rv d2">
-          Reliable AI starts with the right foundation. We build every layer
-          in sequence, so nothing downstream breaks. You own every
-          deliverable.
+          Reliable AI starts with the right foundation. We build every layer in
+          sequence, so nothing downstream breaks. You own every deliverable.
         </p>
         <div className="cases">
           {CASES.map((c, i) => (
