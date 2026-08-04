@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendDataToSlack, createHubSpotContact } from "..";
+import { sendDataToGoogleSpace, createHubSpotContact } from "..";
 import { cookies } from "next/headers";
 
 export async function POST(req) {
@@ -25,7 +25,7 @@ export async function POST(req) {
         email,
         page,
       }),
-      sendDataToSlack({
+      sendDataToGoogleSpace({
         name: email.split("@")[0],
         email,
         page,

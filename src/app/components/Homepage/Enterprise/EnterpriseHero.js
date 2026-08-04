@@ -7,8 +7,7 @@ const EnterpriseHero = () => {
       <div className="wrap">
         <div>
           <span className="pill rv">
-            <b>★ 5.0</b> on Clutch · AWS · Databricks · Snowflake · dbtLabs
-            Partners
+            <b>★ 5.0</b> on Clutch · AWS · Databricks · dbtLabs Partners
           </span>
           <h1 className="rv d1">From raw data to running agents.</h1>
           <p className="lede rv d2">
@@ -25,7 +24,7 @@ const EnterpriseHero = () => {
             <span>
               <span className="star">★★★★★</span> 22 verified reviews on Clutch
             </span>
-            <span>AWS · Snowflake · Databricks · dbtLabs partners</span>
+            <span>AWS · Databricks · dbtLabs partners</span>
             <span>Certified engineers on every engagement</span>
           </div> */}
         </div>
@@ -70,7 +69,7 @@ const EnterpriseHero = () => {
             <div className="pf">
               <div>
                 <div className="l">Built on</div>
-                <div className="v">Snowflake · Databricks · AWS · dbtLabs</div>
+                <div className="v">Databricks · AWS · dbtLabs</div>
               </div>
             </div>
           </div>

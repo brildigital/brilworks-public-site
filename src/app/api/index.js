@@ -45,6 +45,8 @@ export async function createHubSpotContact(payload) {
   }
 }
 
+// Migrated from Slack to Google Chat — old Slack implementation kept below (commented) for reference/rollback.
+/*
 export async function sendDataToSlack(payload) {
   const {
     name,
@@ -135,6 +137,99 @@ export async function sendDataToSlack(payload) {
     console.error("Error:", error);
     return NextResponse.json(
       { error: "An error occurred while sending the message to Slack." },
+      { status: 500 },
+    );
+  }
+}
+*/
+
+export async function sendDataToGoogleSpace(payload) {
+  const {
+    name,
+    email,
+    phone,
+    company,
+    message,
+    page,
+    website,
+    linkedin,
+    previousPage,
+    userData,
+    toolFormData,
+    projectType,
+    lead_source_funnel,
+  } = payload;
+  const pageURL = `${process.env.NEXT_PUBLIC_BASE_URL}${page?.replace(/^\/+/, "")}`;
+
+  const formatObjectForChat = (obj = {}) =>
+    Object.entries(obj)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join("\n");
+  const dynamicFormDataText = formatObjectForChat(toolFormData);
+
+  const widgets = [];
+  const addField = (topLabel, text) => {
+    if (text) widgets.push({ decoratedText: { topLabel, text } });
+  };
+
+  addField(
+    "Email",
+    email ? `<a href="mailto:${email}">${email}</a>` : undefined,
+  );
+  addField("Name", name);
+  addField("Phone", phone);
+  addField("Message", message);
+  addField("Company", company);
+  addField("Previous Page", previousPage);
+  addField("Page", pageURL);
+  addField("Website", website);
+  addField("LinkedIn", linkedin);
+  addField("Project Type", projectType);
+  addField("Region", userData?.region);
+  addField("City", userData?.city);
+  addField("Country", userData?.country);
+  addField("Lead Source Funnel", lead_source_funnel);
+  if (page?.includes("/tools/") || toolFormData) {
+    widgets.push({
+      decoratedText: {
+        topLabel: "Tool Form Data",
+        text: dynamicFormDataText,
+        wrapText: true,
+      },
+    });
+  }
+
+  const data = {
+    cardsV2: [
+      {
+        cardId: "leadNotification",
+        card: {
+          header: { title: "New Lead Submission" },
+          sections: [{ widgets }],
+        },
+      },
+    ],
+  };
+
+  try {
+    const response = await axios.post(
+      `${process.env.GOOGLE_CHAT_WEBHOOK_URL}`,
+      data,
+      { headers: { "Content-Type": "application/json; charset=utf-8" } },
+    );
+    const responseData = response.data;
+    if (responseData?.error) {
+      console.error(
+        `Error: ${responseData.error.message || responseData.error}`,
+      );
+      return NextResponse.json({ message: responseData.error });
+    } else {
+      return NextResponse.json({ data: responseData }, { status: 200 });
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json(
+      { error: "An error occurred while sending the message to Google Chat." },
       { status: 500 },
     );
   }
