@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import {
   createHubSpotContact,
-  sendDataToSlack,
+  sendDataToGoogleSpace,
   validateContactPayload,
 } from "..";
 import { cookies } from "next/headers";
@@ -135,7 +135,7 @@ export async function POST(req, res) {
     } else if (page.startsWith("/portfolio/") || page.startsWith("/ebooks/")) {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack({ ...payload, userData, toolFormData }),
+        sendDataToGoogleSpace({ ...payload, userData, toolFormData }),
       ]);
 
       if (downloadLink) {
@@ -220,7 +220,7 @@ export async function POST(req, res) {
     } else {
       await Promise.all([
         createHubSpotContact(payload),
-        sendDataToSlack({ ...payload, userData, toolFormData }),
+        sendDataToGoogleSpace({ ...payload, userData, toolFormData }),
       ]);
     }
     return NextResponse.json(

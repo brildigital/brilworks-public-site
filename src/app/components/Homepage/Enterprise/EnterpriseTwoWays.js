@@ -14,7 +14,7 @@ const WAYS = [
   {
     wk: "We staff",
     title: "Certified engineers, in your team",
-    desc: "Embed Snowflake- and Databricks-certified engineers into your team and scale delivery without the time and cost of recruiting.",
+    desc: "Embed Databricks-certified engineers into your team and scale delivery without the time and cost of recruiting.",
     chips: ["Certified", "Your timezone", "In your repo & standups"],
     quote: "They feel like an extension of our internal team, not a vendor.",
     who: "CEO · Rastrack",
@@ -23,7 +23,10 @@ const WAYS = [
 ];
 
 const WayCard = ({ wk, title, desc, chips, quote, who, cta, i = 0 }) => (
-  <div className="way flex flex-col rv" style={{ transitionDelay: `${0.06 + i * 0.12}s` }}>
+  <div
+    className="way flex flex-col rv"
+    style={{ transitionDelay: `${0.06 + i * 0.12}s` }}
+  >
     <p className="wk">{wk}</p>
     <h3>{title}</h3>
     <p>{desc}</p>
