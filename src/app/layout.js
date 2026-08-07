@@ -73,6 +73,18 @@ export default function RootLayout({ children }) {
             name="google-site-verification"
             content="hNJJZ9uUBRBPzUqYVEdl5yrr5nyaY_t6kU6KQyLDU0M"
           />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+          />
           <Script
             id="gtm-config"
             strategy="afterInteractive"
