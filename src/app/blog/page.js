@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { generateBreadcrumb } from "../components/lib/schemaCode";
 
 const Blog = dynamic(() => import("../components/Blog/Blog"));
 
@@ -26,7 +27,17 @@ export const metadata = {
 };
 
 const page = () => {
-  return <Blog />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumb("Brilworks Blogs"),
+        }}
+      />
+      <Blog />
+    </>
+  );
 };
 
 export default page;

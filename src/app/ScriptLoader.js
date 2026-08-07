@@ -26,23 +26,23 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
         document.body.appendChild(clearbitScript);
 
         // Organization Script
-        const organizationScript = document.createElement("script");
-        organizationScript.type = "application/ld+json";
-        organizationScript.innerHTML = pathname.startsWith("/blog")
-          ? generateBreadcrumb("Brilworks Blogs")
-          : JSON.stringify(organization);
-        document.body.appendChild(organizationScript);
+        // const organizationScript = document.createElement("script");
+        // organizationScript.type = "application/ld+json";
+        // organizationScript.innerHTML = pathname.startsWith("/blog")
+        //   ? generateBreadcrumb("Brilworks Blogs")
+        //   : JSON.stringify(organization);
+        // document.body.appendChild(organizationScript);
 
         // Website Script
-        const localBusinessScript = document.createElement("script");
-        localBusinessScript.type = "application/ld+json";
-        localBusinessScript.innerHTML = JSON.stringify(localBusiness);
-        document.body.appendChild(localBusinessScript);
+        // const localBusinessScript = document.createElement("script");
+        // localBusinessScript.type = "application/ld+json";
+        // localBusinessScript.innerHTML = JSON.stringify(localBusiness);
+        // document.body.appendChild(localBusinessScript);
         // Website Script
-        const websiteScript = document.createElement("script");
-        websiteScript.type = "application/ld+json";
-        websiteScript.innerHTML = JSON.stringify(website);
-        document.body.appendChild(websiteScript);
+        // const websiteScript = document.createElement("script");
+        // websiteScript.type = "application/ld+json";
+        // websiteScript.innerHTML = JSON.stringify(website);
+        // document.body.appendChild(websiteScript);
 
         // Factors AI Script
         const factorsScript = document.createElement("script");
