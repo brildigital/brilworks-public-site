@@ -169,7 +169,7 @@ export async function sendDataToGoogleSpace(payload) {
 
   const widgets = [];
   const addField = (topLabel, text) => {
-    if (text) widgets.push({ decoratedText: { topLabel, text } });
+    if (text) widgets.push({ decoratedText: { topLabel, text, wrapText: true } });
   };
 
   addField(
