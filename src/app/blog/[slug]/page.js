@@ -219,7 +219,11 @@ export default async function Page(props) {
                   Last updated{" "}
                   {formattedDate(data?.story?.published_at || new Date())}
                 </div>
-                <Heading type="h1" text={data?.story?.content?.title} />
+                <Heading
+                  type="h1"
+                  text={data?.story?.content?.title}
+                  className="!text-3xl"
+                />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
                 <div className="flex items-center justify-between slg:border-r-2 slg:border-[#5C6878] slg:mb-0 mb-2">

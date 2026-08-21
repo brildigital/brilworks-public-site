@@ -19,13 +19,9 @@ const HeaderV2 = () => {
   // const navbarRef = useRef(null);
   const [openNav, setOpenNav] = useState(false);
   const [menuItemSampleCopy, setMenuItemSampleCopy] = useState(menuItems);
-  const [hasBg, setHasBg] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    // Initial state setup based on current scroll position
-    setHasBg(window.scrollY > 50);
-
     // Optimized scroll handler with throttling
     let lastY = window.scrollY;
     let ticking = false;
@@ -35,9 +31,6 @@ const HeaderV2 = () => {
         window.requestAnimationFrame(() => {
           const currentY = window.scrollY;
           const isScrollingDown = currentY > lastY;
-
-          // Update background state
-          setHasBg(currentY > 50);
 
           // Update header visibility based on scroll direction and position
           if (currentY > 150 && isScrollingDown) {
@@ -124,11 +117,9 @@ const HeaderV2 = () => {
       <header>
         <div className={`header ${isHidden ? "header-hide" : ""}`}>
           <Navbar
-            className={`sticky top-0 z-10 h-max rounded-none !px-0 shadow-none font-semibold transition-all duration-300 ${
-              hasBg
-                ? "bg-[rgba(247,249,252,0.92)] backdrop-blur-md border-b border-b-[#E4EAF1]"
-                : "bg-transparent backdrop-blur-none border-b border-transparent md:bg-[rgba(247,249,252,0.92)] md:backdrop-blur-md md:border-b md:border-b-[#E4EAF1]"
-            } ${openNav ? "!fixed" : ""}`}
+            className={`sticky top-0 z-10 h-max rounded-none !px-0 shadow-none font-semibold transition-all duration-300 bg-[#f7f9fceb] backdrop-blur-md border-b border-b-[#E4EAF1] ${
+              openNav ? "!fixed" : ""
+            }`}
           >
             <div
               className="flex justify-between text-[#0B1E33] container max-w-[1280px] md:px-10 px-5 mx-auto"

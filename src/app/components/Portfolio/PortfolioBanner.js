@@ -31,8 +31,8 @@ const PortfolioBanner = ({ caseStudyCount }) => {
   };
 
   return (
-    <section className="relative overflow-hidden svc-hero-bg">
-      <div className="container max-w-[1280px] main-section-padding mx-auto flex items-center justify-center pt-[140px] lg:pt-[160px] pb-14 lg:pb-20">
+    <section className="relative overflow-hidden svc-hero-bg pt-20 pb-14 md:pb-[80px]">
+      <div className="container max-w-[1280px] main-section-padding mx-auto flex items-center justify-center">
         <div className="w-full">
           <h1
             className="font-semibold leading-[1.08] tracking-tight text-[32px] md:text-[44px] lg:text-[56px] max-w-[920px] !mb-5"
@@ -46,8 +46,8 @@ const PortfolioBanner = ({ caseStudyCount }) => {
             className="md:text-lg text-base md:max-w-[640px] !mb-8 leading-relaxed"
             style={{ color: "#566678" }}
           >
-            Production-ready MVPs in weeks, not quarters — for founders,
-            product teams, and scaleups.
+            Production-ready MVPs in weeks, not quarters — for founders, product
+            teams, and scaleups.
           </p>
 
           <div className="flex flex-wrap gap-3 md:gap-4 !mb-12">
