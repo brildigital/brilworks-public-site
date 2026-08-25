@@ -985,6 +985,113 @@
   margin-top: 6px;
 }
 
+/* ===== CERTIFICATION ===== */
+.bw-home .cert-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b1e33 0%, #13315c 55%, #1e4fd6 145%);
+}
+.bw-home .cert-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(760px 440px at 88% 8%, rgba(125, 177, 255, 0.32), transparent 60%),
+    radial-gradient(620px 380px at 4% 96%, rgba(47, 107, 255, 0.22), transparent 55%);
+  pointer-events: none;
+}
+.bw-home .cert-section .wrap {
+  position: relative;
+  z-index: 1;
+}
+.bw-home .cert-section .eyebrow {
+  color: #9dc2ff;
+}
+.bw-home .cert-section .sec {
+  color: #fff;
+}
+.bw-home .cert-section .sub {
+  color: rgba(255, 255, 255, 0.72);
+}
+.bw-home .cert-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 52px;
+  align-items: center;
+}
+.bw-home .cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+.bw-home .cert-mark-img {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  filter: drop-shadow(0 16px 34px rgba(0, 0, 0, 0.35));
+}
+.bw-home .cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fm);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 9px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.18s ease;
+}
+.bw-home .cert-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+.bw-home .cert-clouds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.bw-home .cert-clouds span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+}
+.bw-home .cert-list {
+  list-style: none;
+  margin: 24px 0 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px 22px;
+}
+.bw-home .cert-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+.bw-home .cert-list li svg {
+  flex: 0 0 18px;
+  margin-top: 1px;
+}
+.bw-home .cert-section .btn-primary:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 10px 30px rgba(47, 107, 255, 0.35);
+}
+
 /* ===== INDUSTRIES ===== */
 .bw-home .inds {
   display: grid;
@@ -1433,6 +1540,12 @@
   .bw-home .final {
     padding: 40px 24px;
   }
+  .bw-home .cert-grid {
+    grid-template-columns: 1fr;
+  }
+  .bw-home .cert-list {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 560px) {
   .bw-home .steps,
@@ -1543,6 +1656,10 @@
 
   .bw-home .ind {
     padding: 20px;
+  }
+
+  .bw-home .cert-mark-img {
+    max-width: 160px;
   }
 
   .bw-home .wrap {
