@@ -6,6 +6,7 @@ import EnterprisePartners from "../components/Homepage/Enterprise/EnterprisePart
 import EnterpriseApproach from "../components/Homepage/Enterprise/EnterpriseApproach";
 import EnterpriseTwoWays from "../components/Homepage/Enterprise/EnterpriseTwoWays";
 import EnterpriseWork from "../components/Homepage/Enterprise/EnterpriseWork";
+import EnterpriseCertification from "../components/Homepage/Enterprise/EnterpriseCertification";
 import EnterpriseSolutions from "../components/Homepage/Enterprise/EnterpriseSolutions";
 import EnterpriseProof from "../components/Homepage/Enterprise/EnterpriseProof";
 import EnterpriseStack from "../components/Homepage/Enterprise/EnterpriseStack";
@@ -81,6 +82,7 @@ const page = () => {
       <EnterpriseApproach />
       <EnterpriseTwoWays />
       <EnterpriseWork />
+      <EnterpriseCertification />
       <EnterpriseSolutions />
       <EnterpriseProof />
       <EnterpriseStack />

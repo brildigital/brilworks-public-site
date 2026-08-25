@@ -114,7 +114,8 @@ export default async function Page(props) {
               data?.story?.content?.mobile_banner?.filename ||
                 data?.story?.content?.image?.filename,
             ),
-            datePublished: data?.story?.content?.Published || data?.story?.created_at,
+            datePublished:
+              data?.story?.content?.Published || data?.story?.created_at,
             dateModified: data?.story?.published_at,
             authorName: author?.name,
             authorUrl: author?.authorLinkedIn,
@@ -144,7 +145,9 @@ export default async function Page(props) {
               url: author.authorPageUrl || author.authorLinkedIn,
               jobTitle: author.jobTitle,
               image: author.authorImage,
-              sameAs: [author.authorLinkedIn, author.authorPageUrl].filter(Boolean),
+              sameAs: [author.authorLinkedIn, author.authorPageUrl].filter(
+                Boolean,
+              ),
             }),
           }}
         />
@@ -154,7 +157,7 @@ export default async function Page(props) {
           <div className="container max-w-[1280px] main-section-padding !pt-24 mx-auto">
             <div className="text-white flex flex-col items-start justify-between h-full min-h-[500px] md:max-h-[700px] max-h-full">
               <div></div>
-              <div>
+              <div className="flex flex-col gap-1.5">
                 <div
                   className="w-full inline-flex flex-wrap items-center mb-3 min-h-[36px]"
                   aria-label="Breadcrumb"
@@ -222,7 +225,7 @@ export default async function Page(props) {
                 <Heading
                   type="h1"
                   text={data?.story?.content?.title}
-                  className="!text-3xl"
+                  className=""
                 />
               </div>
               <div className="w-full md:w-[60%] flex slg:items-center items-start slg:flex-row flex-col">
