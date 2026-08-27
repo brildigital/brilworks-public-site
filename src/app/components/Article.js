@@ -16,7 +16,9 @@ import {
   isExternalLink,
   suggestSimilarBlogPosts,
 } from "./lib/commonFunction";
-const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"), { ssr: false });
+const BlogContactForm = dynamic(() => import("./Blog/BlogContactForm"), {
+  ssr: false,
+});
 import BlogFAQ from "./Blog/BlogFAQ";
 import dynamic from "next/dynamic";
 import { TableOfContentSkeleton } from "./Blog/ArticleSkeleton";
@@ -26,6 +28,71 @@ import Heading from "./HTMLComponents/Heading";
 
 const Tooltip = dynamic(() => import("./Blog/Tooltip"));
 const EbookPopup = dynamic(() => import("./Blog/EbookPopup"), { ssr: false });
+
+// Manually reproduces `position: sticky` behavior via scroll-driven fixed/absolute
+// toggling. Needed here because `body` has `overflow-x: hidden`, which forces the
+// browser to treat body as a scroll container and breaks native `position: sticky`
+// for everything nested inside it.
+function useManualSticky(offsetTop) {
+  const elRef = useRef(null);
+
+  useEffect(() => {
+    const el = elRef.current;
+    const container = el?.parentElement;
+    if (!el || !container) return;
+
+    let frame = null;
+
+    const update = () => {
+      frame = null;
+
+      // Clear any override first so the measurement below reflects the
+      // element's natural in-flow box, not its own previous fixed/absolute rect.
+      el.style.position = "";
+      el.style.top = "";
+      el.style.left = "";
+      el.style.width = "";
+      el.style.bottom = "";
+
+      const naturalRect = el.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      if (containerRect.top > offsetTop) {
+        // Natural flow already restored above.
+      } else if (containerRect.bottom - naturalRect.height > offsetTop) {
+        el.style.position = "fixed";
+        el.style.top = `${offsetTop}px`;
+        el.style.left = `${naturalRect.left}px`;
+        el.style.width = `${naturalRect.width}px`;
+      } else {
+        // Anchor to the container's own box, not the viewport — left/width must
+        // stay relative to where this element naturally sits within its column,
+        // not the full width of the (possibly wider) positioned ancestor.
+        el.style.position = "absolute";
+        el.style.left = `${naturalRect.left - containerRect.left}px`;
+        el.style.width = `${naturalRect.width}px`;
+        el.style.bottom = "0";
+      }
+    };
+
+    const onScrollOrResize = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [offsetTop]);
+
+  return elRef;
+}
 
 const Article = ({ blok }) => {
   const pathname = usePathname();
@@ -39,6 +106,9 @@ const Article = ({ blok }) => {
   const [dismissed, setDismissed] = useState(false);
 
   const [activeLink, setActiveLink] = useState(null);
+
+  const tocStickyRef = useManualSticky(110);
+  const contactFormStickyRef = useManualSticky(110);
 
   const blogTableOfContent =
     blok?.content +
@@ -298,8 +368,8 @@ const Article = ({ blok }) => {
       <div className="blog-main ">
         <div className="container max-w-[1280px] main-section-padding !py-0 min-h-[400px] mx-auto">
           <div className="flex flex-wrap -mx-4">
-            <div className="slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
-              <div className="sticky top-[110px] !pb-5">
+            <div className="relative slg:basis-[22%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[22%] !px-3 min-h-[1px] w-full slg:block hidden">
+              <div ref={tocStickyRef} className="!pb-5">
                 {isLoading ? (
                   <TableOfContentSkeleton />
                 ) : (
@@ -389,7 +459,7 @@ const Article = ({ blok }) => {
             </div>
             <div className="slg:basis-[78%] slg:flex-shrink-0 slg:flex-grow-0 slg:max-w-[78%] !px-4 min-h-[1px] w-full">
               <div className="blog-inner items-center">
-                <div className="flex -mx-4 md:flex-row flex-col">
+                <div className="relative flex -mx-4 md:flex-row flex-col">
                   <div className="md:w-[72%] w-full !float-left">
                     <div className="h-full w-full box-border !px-3">
                       <div className="h-full flex flex-col">
@@ -513,7 +583,10 @@ const Article = ({ blok }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="md:w-1/4 w-full !float-left hidden lg:block">
+                  <div
+                    ref={contactFormStickyRef}
+                    className="md:w-1/4 w-full !float-left lg:block lg:self-start overflow-x-auto"
+                  >
                     <div className="h-full w-full box-border !pr-4 md:!pl-3 !pl-4">
                       <div className="h-full flex flex-col">
                         <BlogContactForm />
