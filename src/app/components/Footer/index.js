@@ -184,8 +184,8 @@ const Footer = () => {
       ),
       links: [
         {
-          link: "tel:919313644148",
-          text: "+ 91 9313644148",
+          link: "tel:919558288364",
+          text: "+ 91 9558288364",
         },
         {
           link: "mailto:sales@brilworks.com",
@@ -217,8 +217,8 @@ const Footer = () => {
       title: "Contact Sales",
       links: [
         {
-          link: "tel:919313644148",
-          text: "+ 91 9313644148",
+          link: "tel:919558288364",
+          text: "+ 91 9558288364",
           icon: Phone,
         },
         {
