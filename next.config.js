@@ -51,6 +51,15 @@ const nextConfig = {
 
     return config;
   },
+  // Keep non-production hosts out of search indexes without running middleware on every request.
+  headers: async () =>
+    ["dev\\..*", ".*\\.vercel\\.app", "localhost(:\\d+)?", "127\\..*"].map(
+      (host) => ({
+        source: "/:path*",
+        has: [{ type: "host", value: host }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      }),
+    ),
   rewrites: async () => {
     return [
       {
