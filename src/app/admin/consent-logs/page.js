@@ -35,7 +35,8 @@ async function fetchLogs({ days, action }) {
   return { entries, byAction, totalAll };
 }
 
-export default async function ConsentLogsPage({ searchParams }) {
+export default async function ConsentLogsPage(props) {
+  const searchParams = await props.searchParams;
   const session = await getServerSession(authOptions);
   if (!session) redirect("/login");
   if (session.user?.role !== "ADMIN") {

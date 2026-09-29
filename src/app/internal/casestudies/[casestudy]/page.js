@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 export default async function Page(props) {
-  const { params } = props || {};
+  const params = await (props?.params || {});
   const { props: data } = await fetchData(params);
 
   if (!data) {

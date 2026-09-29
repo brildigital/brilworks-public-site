@@ -4,7 +4,7 @@ import ResourceData from '@/app/components/Dashboard/ResourceData';
 import { notFound } from "next/navigation";
 
 export default async function Page(props) {
-  const { params } = props || {};
+  const params = await (props?.params || {});
   const { props: data } = await fetchData(params);
 
   if (!data) {

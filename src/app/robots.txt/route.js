@@ -49,8 +49,8 @@ Sitemap: https://www.brilworks.com/sitemap.xml
 Sitemap: https://www.brilworks.com/video-sitemap.xml
 `;
 
-export function GET() {
-  const host = headers().get("host");
+export async function GET() {
+  const host = (await headers()).get("host");
   const body = shouldBlockCrawling(host) ? BLOCK_ALL : ALLOW_PRODUCTION;
   return new Response(body, {
     headers: { "Content-Type": "text/plain; charset=utf-8" },

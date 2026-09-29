@@ -4,21 +4,16 @@ const { NormalModuleReplacementPlugin } = require("webpack");
 
 const nextConfig = {
   trailingSlash: true,
-  swcMinify: true,
-  experimental: {
-    appDir: true,
-    legacyBrowsers: false,
-    serverComponentsExternalPackages: ["@prisma/client", "bcrypt"],
-  },
+  serverExternalPackages: ["@prisma/client", "bcrypt"],
   images: {
     unoptimized: true,
-    domains: [
-      "a.storyblok.com",
-      "lh3.googleusercontent.com",
-      "cdn-icons-png.flaticon.com",
-      "brilworks-website-asset.s3.ap-south-1.amazonaws.com",
-      "brilworks-site-assets.s3.eu-central-1.amazonaws.com",
-      "d14lhgoyljo1xt.cloudfront.net",
+    remotePatterns: [
+      { protocol: "https", hostname: "a.storyblok.com" },
+      { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "cdn-icons-png.flaticon.com" },
+      { protocol: "https", hostname: "brilworks-website-asset.s3.ap-south-1.amazonaws.com" },
+      { protocol: "https", hostname: "brilworks-site-assets.s3.eu-central-1.amazonaws.com" },
+      { protocol: "https", hostname: "d14lhgoyljo1xt.cloudfront.net" },
     ],
   },
   webpack: (config, { isServer }) => {

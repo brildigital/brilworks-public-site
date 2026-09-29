@@ -37,7 +37,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# lock 
+# lock
 yarn.lock
 package-lock.json
 .gstack/
+
+# Next.js 16 auto-generated agent guidance files (regenerated on every `next dev`)
+/CLAUDE.md
+/AGENTS.md
