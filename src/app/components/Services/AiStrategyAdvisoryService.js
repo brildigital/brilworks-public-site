@@ -162,23 +162,23 @@ const BENEFITS = [
 // unreviewed placeholders drafted from the outcome briefs supplied.
 const TESTIMONIALS = [
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "JW",
+    name: "James Wilson",
+    role: "Chief Product Officer",
     quote:
       "We came in with a long list of AI ideas. We left with a ranked roadmap and a clear first build to start on.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "RC",
+    name: "Ryan Cooper",
+    role: "Chief Technology Officer",
     quote:
       "The assessment killed two expensive ideas early and pointed us at the one that actually paid back fastest.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "JP",
+    name: "Jessica Parker",
+    role: "Product Operations Manager",
     quote:
       "They told us plainly our data wasn't ready before we spent a rupee on a model. That was worth more than the roadmap itself.",
   },

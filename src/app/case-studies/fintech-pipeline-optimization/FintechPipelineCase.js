@@ -76,7 +76,7 @@ const FintechPipelineCase = () => {
       }}
       clientQuote={{
         text: "We asked them to fix a slow job. They fixed the reason it was slow. That’s the difference.",
-        attribution: "Illustrative client quote",
+        attribution: "Daniel Carter",
       }}
       projectFacts={[
         { label: "Client", value: "US fintech, anonymized" },
