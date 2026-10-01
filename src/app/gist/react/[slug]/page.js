@@ -3,7 +3,7 @@ import TechQandAContent from "@/app/components/Gist/TechQandAContent";
 import { getStoryblokApi } from "@storyblok/react";
 
 export default async function Page(props) {
-  const { params } = props || {};
+  const params = await (props?.params || {});
   const { props: data } = await fetchData(params);
 
   if (!data) {

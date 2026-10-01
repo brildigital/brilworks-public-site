@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Star } from "lucide-react";
+import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { useMediaQuery } from "react-responsive";
 

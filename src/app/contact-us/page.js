@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ContactUs from "../components/Contact-us/ContactUs";
 
 export const metadata = {
@@ -51,7 +52,9 @@ const page = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadCrumbList) }}
       />
-      <ContactUs />
+      <Suspense fallback={null}>
+        <ContactUs />
+      </Suspense>
     </>
   );
 };

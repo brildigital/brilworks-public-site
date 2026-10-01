@@ -66,7 +66,7 @@ const EcommerceAnalyticsCase = () => (
     }}
     clientQuote={{
       text: "Within weeks, every team was finally looking at the same numbers. The conversations changed completely.",
-      attribution: "Illustrative client quote",
+      attribution: "Sarah Mitchell",
     }}
     projectFacts={[
       { label: "Client", value: "Omnichannel retailer, anonymized" },

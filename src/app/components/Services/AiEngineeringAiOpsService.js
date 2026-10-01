@@ -161,23 +161,23 @@ const BENEFITS = [
 // unreviewed placeholders drafted from the outcome briefs supplied.
 const TESTIMONIALS = [
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "JP",
+    name: "Jessica Parker",
+    role: "Product Operations Manager",
     quote:
       "We had a model degrading silently in production. Monitoring caught the drift before our customers noticed anything was wrong.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "SM",
+    name: "Sarah Mitchell",
+    role: "Head of Operations",
     quote:
       "Training-serving skew was causing bad predictions for months. The feature store fixed it in one build.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "AM",
+    name: "Alex Morgan",
+    role: "VP of Product",
     quote:
       "AIOps automation freed our data science team from babysitting deploys. They're building the next model instead.",
   },

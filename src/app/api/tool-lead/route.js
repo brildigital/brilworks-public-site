@@ -3,7 +3,7 @@ import { sendDataToGoogleSpace, createHubSpotContact } from "..";
 import { cookies } from "next/headers";
 
 export async function POST(req) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const userDataCookie = cookieStore.get("user-data");
   const userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;
 

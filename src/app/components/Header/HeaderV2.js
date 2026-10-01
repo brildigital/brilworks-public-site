@@ -193,6 +193,8 @@ const HeaderV2 = () => {
                   variant="text"
                   className="ml-auto h-6 w-6 !rounded-[9px] border border-[#E4EAF1] bg-white p-5 text-[#0B1E33] hover:border-[#2F6BFF] hover:text-[#2F6BFF] hover:bg-transparent focus:bg-transparent active:bg-transparent"
                   ripple={false}
+                  aria-label={openNav ? "Close menu" : "Open menu"}
+                  aria-expanded={openNav}
                   onClick={() => setOpenNav(!openNav)}
                 >
                   <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">

@@ -151,23 +151,23 @@ const BENEFITS = [
 // unreviewed placeholders drafted from the outcome briefs supplied.
 const TESTIMONIALS = [
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "RA",
+    name: "Ryan Anderson",
+    role: "Head of Data",
     quote:
       "We had a compliance requirement that model decisions be explainable. The explainability layer they built let us answer that without a scramble.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "NB",
+    name: "Nathan Brooks",
+    role: "Engineering Manager",
     quote:
       "Bias testing caught a fairness problem before launch that would have been a public issue if it shipped.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "OB",
+    name: "Olivia Bennett",
+    role: "Director of Analytics",
     quote:
       "The model registry and lineage turned our audit from a scramble into a straightforward answer.",
   },

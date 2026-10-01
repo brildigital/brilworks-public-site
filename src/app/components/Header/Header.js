@@ -132,6 +132,8 @@ const NewHeader = () => {
                 variant="text"
                 className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent"
                 ripple={false}
+                aria-label={openNav ? "Close menu" : "Open menu"}
+                aria-expanded={openNav}
                 onClick={() => setOpenNav(!openNav)}
               >
                 <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">

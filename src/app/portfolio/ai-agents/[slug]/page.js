@@ -6,7 +6,8 @@ export async function generateStaticParams() {
   return Object.keys(aiAgentCaseStudies).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const data = aiAgentCaseStudies[params.slug];
   if (!data) return {};
   return {
@@ -136,7 +137,8 @@ const pageCss = `
   .aiac .cta-band .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
 `;
 
-export default function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const data = aiAgentCaseStudies[params.slug];
   if (!data) return notFound();
 

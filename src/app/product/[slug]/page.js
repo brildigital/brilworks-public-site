@@ -53,7 +53,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   try {
     const storyData = await getProductsPageData(params.slug);
     const { title, description, og_image, twitter_image } =
@@ -105,7 +106,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const storyData = await getProductsPageData(params.slug);
   const { title_section, FAQ_section, content } = storyData.story.content;
 

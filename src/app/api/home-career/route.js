@@ -11,7 +11,7 @@ import { saveLead } from "@/app/lib/supabase-leads";
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export async function POST(req, res) {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const userDataCookie = cookieStore.get("user-data");
 
   const userData = userDataCookie ? JSON.parse(userDataCookie.value) : null;

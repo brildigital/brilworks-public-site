@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Heading from "../HTMLComponents/Heading";
+import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

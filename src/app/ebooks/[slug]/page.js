@@ -60,7 +60,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   try {
     const storyData = await getEbookData(params.slug);
     const { title, description } = storyData?.story?.content?.SEO;
@@ -92,7 +93,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const storyData = await getEbookData(params?.slug);
   const {
     title,

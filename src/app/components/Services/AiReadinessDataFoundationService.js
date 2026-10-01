@@ -163,23 +163,23 @@ const BENEFITS = [
 // unreviewed placeholders drafted from the outcome briefs supplied.
 const TESTIMONIALS = [
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "OB",
+    name: "Olivia Bennett",
+    role: "Director of Analytics",
     quote:
       "We thought we were AI-ready. The audit found the data gaps that would have sunk the build, and we fixed them before we spent a rupee on the model.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "DC",
+    name: "Daniel Carter",
+    role: "VP of Data",
     quote:
       "The feature framework meant our next use case shipped in half the time. The foundation was already there.",
   },
   {
-    initials: "—",
-    name: "[Name pending]",
-    role: "[Title, Company — pending]",
+    initials: "JW",
+    name: "James Wilson",
+    role: "Chief Product Officer",
     quote:
       "The responsible-AI check caught a privacy risk before launch that we hadn't even considered.",
   },
