@@ -26,7 +26,7 @@ const BlogFAQ = ({ FAQData }) => {
       </div>
 
       <div>
-        <div itemScope="true" itemType="https://schema.org/FAQPage">
+        <div itemScope itemType="https://schema.org/FAQPage">
           {FAQData?.length &&
             FAQData?.map(
               ({ Question, Answer }, index) =>
@@ -56,7 +56,7 @@ const BlogFAQ = ({ FAQData }) => {
                     <AccordionBody>
                       <div
                         className="accordion-body"
-                        itemScope="true"
+                        itemScope
                         itemProp="acceptedAnswer"
                         itemType="https://schema.org/Answer"
                       >

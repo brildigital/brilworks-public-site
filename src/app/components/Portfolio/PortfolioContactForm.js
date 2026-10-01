@@ -86,7 +86,7 @@ const PortfolioContactForm = ({
     try {
       const downloadURL = formatSrcUrl(downloadFileUrl);
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}api/home-career`,
+        "/api/home-career/",
         {
           method: "POST",
           headers: {

@@ -13,6 +13,38 @@ const TawkMessengerReact = dynamic(
   { ssr: false },
 );
 
+// tawk-messenger-react relies on function-component defaultProps, which React 19 ignores.
+const noop = () => {};
+const TAWK_DEFAULT_PROPS = {
+  customStyle: null,
+  embedId: "",
+  basePath: "tawk.to",
+  ...Object.fromEntries(
+    [
+      "onLoad",
+      "onStatusChange",
+      "onBeforeLoad",
+      "onChatMaximized",
+      "onChatMinimized",
+      "onChatHidden",
+      "onChatStarted",
+      "onChatEnded",
+      "onPrechatSubmit",
+      "onOfflineSubmit",
+      "onChatMessageVisitor",
+      "onChatMessageAgent",
+      "onChatMessageSystem",
+      "onAgentJoinChat",
+      "onAgentLeaveChat",
+      "onChatSatisfaction",
+      "onVisitorNameChanged",
+      "onFileUpload",
+      "onTagsUpdated",
+      "onUnreadCountChanged",
+    ].map((name) => [name, noop]),
+  ),
+};
+
 const Footer = () => {
   const pathname = usePathname();
   const [showTawk, setShowTawk] = useState(false);
@@ -430,6 +462,7 @@ const Footer = () => {
         </Link> */}
             {showTawk && (
               <TawkMessengerReact
+                {...TAWK_DEFAULT_PROPS}
                 propertyId={`${process.env.NEXT_PUBLIC_TAWKPROPERTY_ID}`}
                 widgetId={`${process.env.NEXT_PUBLIC_TAWKWIDGET_ID}`}
               />

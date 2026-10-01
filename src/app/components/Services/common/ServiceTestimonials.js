@@ -53,9 +53,9 @@ const ServiceTestimonials = ({
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           }}
         >
-          {items.map((t) => (
+          {items.map((t, i) => (
             <div
-              key={t.role}
+              key={`${t.role}-${i}`}
               className="rounded-2xl"
               style={{
                 background: "#ffffff",

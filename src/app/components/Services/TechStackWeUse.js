@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Heading from "../HTMLComponents/Heading";
+import "@splidejs/react-splide/css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import { techStacksByPathname } from "@/data/techStacks";

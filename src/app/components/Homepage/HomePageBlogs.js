@@ -8,9 +8,6 @@ import FetchDataSpinner from "./FetchDataSpinner";
 import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import { ArrowRight } from "lucide-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { formatSrcUrl } from "../lib/commonFunction";
 import "../../styles/EnterpriseHome.css";
 

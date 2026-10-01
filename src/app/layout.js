@@ -2,7 +2,6 @@ import "./globals.css";
 import "./styles/Homepage.scss";
 import "./styles/button.scss";
 import "./styles/tab-sticky-style.scss";
-import "@splidejs/splide/dist/css/splide.min.css";
 import CurrentHeader from "./components/Header/CurrentHeader";
 import { storyblokInit, apiPlugin } from "@storyblok/react/rsc";
 import StoryblokProvider from "./components/StoryblokProvider";

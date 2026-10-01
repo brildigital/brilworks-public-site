@@ -414,7 +414,6 @@ const Article = ({ blok }) => {
                             loading="lazy"
                             src="/images/fb-share.svg"
                             width="43"
-                            unoptimized
                             height="43"
                             alt="Facebook blog share"
                           />
@@ -432,7 +431,6 @@ const Article = ({ blok }) => {
                             loading="lazy"
                             src="/images/twitter-share.svg"
                             width="43"
-                            unoptimized
                             height="43"
                             alt="Twitter blog share"
                           />
@@ -446,7 +444,6 @@ const Article = ({ blok }) => {
                             loading="lazy"
                             src="/images/linkedin-share.svg"
                             width="43"
-                            unoptimized
                             height="43"
                             alt="LinkedIn blog share"
                           />
@@ -602,9 +599,9 @@ const Article = ({ blok }) => {
         <div className="container mx-auto md:!px-3 !px-4">
           <div className="flex flex-wrap flex-col xl:pb-20 md:pb-14 pb-8">
             <div className="service_sec3">
-              <p className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
+              <div className="home_sec2_txt3 !pb-0 md:!pt-8 !pt-0">
                 <p className="!ml-0 extra_bold !w-full">You might also like</p>
-              </p>
+              </div>
             </div>
             <div
               className={`grid  h-full
