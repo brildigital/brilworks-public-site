@@ -17,7 +17,9 @@ export default function Countdown48h({
   children,
   storageKey = "countdown_48h_end",
 }) {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [mounted, setMounted] = useState(false);
+  // matchMedia is client-only; wait for mount so the first render matches the server HTML
+  const isMobile = useMediaQuery({ maxWidth: 767 }) && mounted;
   const DURATION_MS = 48 * 60 * 60 * 1000; // 48 hours
   const [remainingMs, setRemainingMs] = useState(DURATION_MS);
   const intervalRef = useRef(null);
@@ -78,6 +80,8 @@ export default function Countdown48h({
     localStorage.setItem(storageKey, String(newEnd));
     startInterval(newEnd);
   }
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     let end = null;
