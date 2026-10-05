@@ -8,6 +8,9 @@ const DatabricksHero = dynamic(
 const DatabricksStatement = dynamic(
   () => import("../components/DatabricksPartner/DatabricksStatement"),
 );
+const DatabricksBadges = dynamic(
+  () => import("../components/DatabricksPartner/DatabricksBadges"),
+);
 const DatabricksWhyChoose = dynamic(
   () => import("../components/DatabricksPartner/DatabricksWhyChoose"),
 );
@@ -130,6 +133,7 @@ const DatabricksPartnerPage = () => {
       <SnowflakeRevealInit />
       <DatabricksHero />
       <DatabricksStatement />
+      <DatabricksBadges />
       <DatabricksWhyChoose />
       <DatabricksMidCTA />
       <DatabricksServices />
