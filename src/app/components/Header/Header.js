@@ -11,6 +11,7 @@ import MenuItem from "./MenuItem";
 import MegaMenu from "./MegaMenu";
 import { usePathname } from "next/navigation";
 import ButtonV2 from "../Common/ButtonV2";
+import { afterFirstPaint } from "../lib/afterFirstPaint";
 const Svgs = dynamic(() => import("../Svgs"));
 // const SideMenu = dynamic(() => import("./SideMenu"));
 // const MenuItem = dynamic(() => import("./MenuItem"));
@@ -68,7 +69,8 @@ const NewHeader = () => {
       setMenuItemSampleCopy([...menuItemSampleCopy]);
     };
 
-    fetchSlugs();
+    // Menu-only data: keep it off the critical path for the page content.
+    afterFirstPaint(fetchSlugs);
   }, []);
 
   return (

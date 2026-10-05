@@ -9,12 +9,18 @@ const MenuItem = ({
   className,
   theme,
   activeColor = "#2F6BFF",
+  prefetch,
 }) => {
   const pathname = usePathname();
   const isEnterprise = theme === "enterprise";
 
   return (
-    <Link href={path} onClick={onClick} className={className}>
+    <Link
+      href={path}
+      onClick={onClick}
+      className={className}
+      prefetch={prefetch}
+    >
       <p
         className={`!mb-0 w-full whitespace-normal font-normal ${
           pathname === path

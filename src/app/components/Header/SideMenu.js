@@ -23,6 +23,9 @@ const SideMenu = ({ open, close }) => {
 
   const sideMenuItems = menuItems.filter((item) => !item.hideInSideMenu);
 
+  // The drawer stays mounted while closed, so viewport prefetching would fetch
+  // ~20 routes (RSC payload + JS) on every page load. Its links use
+  // prefetch={false} and still prefetch on hover/touch.
   const megaMenuNavList = (
     <ul className="pt-4 flex flex-col md:mb-0 md:mt-0 items-left">
       {sideMenuItems.map((menuItem, index) => (
@@ -37,6 +40,7 @@ const SideMenu = ({ open, close }) => {
                 name={menuItem?.name}
                 path={menuItem?.path}
                 onClick={close}
+                prefetch={false}
               />
             </div>
           ) : (
@@ -76,6 +80,7 @@ const SideMenu = ({ open, close }) => {
                           name={subMenuItem?.name}
                           path={subMenuItem?.path}
                           onClick={close}
+                          prefetch={false}
                           className="!text-[18px] !font-normal leading-8"
                         />
                       ))}
@@ -86,6 +91,7 @@ const SideMenu = ({ open, close }) => {
                   <Link
                     href={menuItem.footerLink.path}
                     onClick={close}
+                    prefetch={false}
                     className="text-[18px] font-medium text-themeColor hover:underline"
                   >
                     {menuItem.footerLink.name}
@@ -131,6 +137,7 @@ const SideMenu = ({ open, close }) => {
             className="w-full justify-center hover:text-themeColor"
             redirect="/contact-us/"
             onClick={close}
+            prefetch={false}
           />
         </div>
 
@@ -143,6 +150,7 @@ const SideMenu = ({ open, close }) => {
           <Link
             href="/our-process/"
             onClick={close}
+            prefetch={false}
             className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
           >
             Our Process
@@ -157,6 +165,7 @@ const SideMenu = ({ open, close }) => {
           <Link
             href="/contact-us/"
             onClick={close}
+            prefetch={false}
             className="text-sm text-[#6b7280] hover:text-themeColor transition-colors"
           >
             Contact Us

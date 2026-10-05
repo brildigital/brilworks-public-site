@@ -1,16 +1,14 @@
 "use client";
 
 import { useEffect } from "react";
-import posthog from "posthog-js";
+import { getPostHogClient } from "./components/lib/posthogClient";
 
 const STALE_CHUNK_PATTERN = /Loading (chunk|CSS chunk) \d+ failed|ChunkLoadError|Failed to fetch dynamically imported module/i;
 
 export default function GlobalError({ error, reset }) {
   useEffect(() => {
     console.error("GlobalError boundary caught:", error);
-    if (posthog.__loaded) {
-      posthog.captureException(error);
-    }
+    getPostHogClient()?.captureException(error);
 
     // A deploy can swap the build out from under an already-loaded page, so the
     // client asks for a JS chunk that no longer exists under the old build hash.

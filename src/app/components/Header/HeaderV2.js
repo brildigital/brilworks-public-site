@@ -8,6 +8,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { menuItems } from "../lib/constants";
 import Countdown48h from "./Countdown48h";
+import { afterFirstPaint } from "../lib/afterFirstPaint";
 
 const Svgs = dynamic(() => import("../Svgs"));
 const SideMenu = dynamic(() => import("./SideMenu"));
@@ -107,7 +108,8 @@ const HeaderV2 = () => {
       }
     };
 
-    fetchSlugs();
+    // Menu-only data: keep it off the critical path for the page content.
+    afterFirstPaint(fetchSlugs);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);

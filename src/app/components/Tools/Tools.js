@@ -4,7 +4,7 @@ import Heading from "../HTMLComponents/Heading";
 import ButtonV2 from "../Common/ButtonV2";
 import Link from "next/link";
 import { ArrowRight, Search, CheckCircle, Star } from "lucide-react";
-import { usePostHog } from "posthog-js/react";
+import { usePostHogClient } from "../PostHogProvider";
 import Cookies from "js-cookie";
 import "../../styles/ServiceLightTheme.css";
 
@@ -392,7 +392,7 @@ const Tools = () => {
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
 
-  const posthog = usePostHog();
+  const posthog = usePostHogClient();
 
   useEffect(() => {
     if (posthog) {

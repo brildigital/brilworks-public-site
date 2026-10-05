@@ -32,9 +32,13 @@ const EnterprisePartners = () => {
                 className="flex items-center justify-center shrink-0 mx-8"
                 // style={{ width: 190, height: 90 }}
               >
+                {/* Low priority: below the hero, and keeps React from emitting
+                    high-priority preloads that compete with CSS/fonts. */}
                 <img
                   src={p.logo}
                   alt={p.name}
+                  fetchPriority="low"
+                  decoding="async"
                   className="max-h-[50px] md:max-h-[70px] max-w-[140px]  md:max-w-[170px] object-contain opacity-90 transition-opacity duration-300 hover:grayscale-0 hover:opacity-100"
                 />
               </div>
