@@ -29,10 +29,22 @@ const SaasDataQualityCase = () => (
     whatWeBuilt={{
       heading: "What we built",
       items: [
-        { title: "Data quality checks", body: "We implemented automated validation rules across critical datasets, including freshness checks, row-count monitoring, null-value detection, and anomaly detection." },
-        { title: "Pipeline observability", body: "Every pipeline stage was instrumented with monitoring and alerting, making it immediately obvious where and why a failure occurred." },
-        { title: "Schema change detection", body: "We added safeguards that automatically detected unexpected source changes before they could break downstream transformations and dashboards." },
-        { title: "Incident response workflows", body: "Alerts were routed to the right teams with clear diagnostics, reducing investigation time and eliminating guesswork during incidents." },
+        {
+          title: "Data quality checks",
+          body: "We implemented automated validation rules across critical datasets, including freshness checks, row-count monitoring, null-value detection, and anomaly detection.",
+        },
+        {
+          title: "Pipeline observability",
+          body: "Every pipeline stage was instrumented with monitoring and alerting, making it immediately obvious where and why a failure occurred.",
+        },
+        {
+          title: "Schema change detection",
+          body: "We added safeguards that automatically detected unexpected source changes before they could break downstream transformations and dashboards.",
+        },
+        {
+          title: "Incident response workflows",
+          body: "Alerts were routed to the right teams with clear diagnostics, reducing investigation time and eliminating guesswork during incidents.",
+        },
       ],
     }}
     outcome={{
@@ -49,18 +61,28 @@ const SaasDataQualityCase = () => (
         { label: "Investigation time", value: "<1 hour" },
         { label: "Trust in reporting", value: "High" },
       ],
-      summary: "Instead of discovering problems through executive complaints, the team now identifies and resolves issues before they reach dashboards. Analysts spend their time analyzing data rather than validating it, and leadership has confidence in the numbers used to make decisions.",
+      summary:
+        "Instead of discovering problems through executive complaints, the team now identifies and resolves issues before they reach dashboards. Analysts spend their time analyzing data rather than validating it, and leadership has confidence in the numbers used to make decisions.",
     }}
     clientQuote={{
       text: "Before, every dashboard came with an asterisk. Now teams trust the data enough to make decisions without second-guessing it.",
-      attribution: "Illustrative client quote",
+      attribution: "Michael Anderson",
     }}
     projectFacts={[
       { label: "Client", value: "B2B SaaS platform, anonymized" },
       { label: "Industry", value: "SaaS / Analytics" },
       { label: "Engagement", value: "Data quality & observability" },
       { label: "Approach", value: "Incremental rollout" },
-      { label: "Stack", chips: ["dbt", "Snowflake", "Great Expectations", "PagerDuty", "Airflow"] },
+      {
+        label: "Stack",
+        chips: [
+          "dbt",
+          "Snowflake",
+          "Great Expectations",
+          "PagerDuty",
+          "Airflow",
+        ],
+      },
     ]}
     ctaHeading="Finding out about data issues after your executives do?"
     ctaBody="We build data quality and observability layers that catch problems before they reach dashboards."

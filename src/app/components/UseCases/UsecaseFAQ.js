@@ -42,7 +42,7 @@ const UsecaseFAQ = () => {
       </div>
 
       <div>
-        <div itemScope="true" itemType="https://schema.org/FAQPage">
+        <div itemScope itemType="https://schema.org/FAQPage">
           {StaffAugmentationFAQData?.map(({ question, answer }, index) => (
             <Accordion
               key={index + 1}
@@ -69,7 +69,7 @@ const UsecaseFAQ = () => {
               <AccordionBody>
                 <div
                   className="accordion-body"
-                  itemScope="true"
+                  itemScope
                   itemProp="acceptedAnswer"
                   itemType="https://schema.org/Answer"
                 >

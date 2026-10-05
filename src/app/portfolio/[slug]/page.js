@@ -68,7 +68,8 @@ export async function generateStaticParams() {
 
 export const dynamicParams = true;
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   try {
     const storyData = await getPortfolioData(params.slug);
     const story = storyData?.story;
@@ -152,7 +153,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const storyData = await getPortfolioData(params?.slug);
   const story = storyData?.story;
 

@@ -21,8 +21,9 @@ import Heading from "@/app/components/HTMLComponents/Heading";
 import { Calendar, Clock } from "lucide-react";
 import SummarizeWithAI from "@/app/components/Blog/SummarizeWithAI";
 
-export async function generateMetadata({ params }) {
-  const { props: data } = await fetchData(params?.slug);
+export async function generateMetadata(props) {
+  const params = await props.params;
+  const data = (await fetchData(params?.slug))?.props;
   const story = data?.story;
 
   if (!story) return {};
@@ -80,8 +81,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page(props) {
-  const { params } = props || {};
-  const { props: data } = await fetchData(params?.slug);
+  const params = await (props?.params || {});
+  const data = (await fetchData(params?.slug))?.props;
   if (!data?.story) {
     return notFound();
   }

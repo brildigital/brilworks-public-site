@@ -23,7 +23,7 @@ const ServicesFAQ = () => {
         />
 
         <div className="slg:pt-10 md:pt-7.5 pt-5 reveal">
-          <div itemScope="true" itemType="https://schema.org/FAQPage">
+          <div itemScope itemType="https://schema.org/FAQPage">
             {servicesFAQData?.map(({ question, answer }, index) => (
               <GradientFAQAccordion
                 key={index + 1}

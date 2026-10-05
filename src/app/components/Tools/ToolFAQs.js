@@ -1634,7 +1634,7 @@ const ToolFAQs = () => {
           </p>
         </div>
 
-        <div itemScope="true" itemType="https://schema.org/FAQPage">
+        <div itemScope itemType="https://schema.org/FAQPage">
           {toolsFAQData?.queAns?.map((faq, index) => (
             <GradientFAQAccordion
               key={index + 1}

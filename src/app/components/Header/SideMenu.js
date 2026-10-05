@@ -117,6 +117,7 @@ const SideMenu = ({ open, close }) => {
         variant="text"
         className="absolute right-2 md:right-8 lg:right-10 top-4 md:top-6 lg:top-4"
         ripple={false}
+        aria-label="Close menu"
         onClick={close}
       >
         <X className="h-8 w-8" />

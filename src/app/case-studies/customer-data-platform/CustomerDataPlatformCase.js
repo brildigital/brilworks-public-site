@@ -58,7 +58,10 @@ const CustomerDataPlatformCase = () => (
       after: [
         { label: "Customer systems", value: "1 unified platform" },
         { label: "Customer lookup", value: "Single customer view" },
-        { label: "Reporting consistency", value: "Shared business definitions" },
+        {
+          label: "Reporting consistency",
+          value: "Shared business definitions",
+        },
         { label: "Report preparation", value: "Minutes" },
       ],
       summary:
@@ -66,7 +69,7 @@ const CustomerDataPlatformCase = () => (
     }}
     clientQuote={{
       text: "We finally stopped arguing about whose numbers were correct. Everyone is looking at the same customer, the same metrics, and the same reality.",
-      attribution: "Illustrative client quote",
+      attribution: "Daniel Carter",
     }}
     projectFacts={[
       { label: "Client", value: "B2B SaaS company, anonymized" },
@@ -75,14 +78,7 @@ const CustomerDataPlatformCase = () => (
       { label: "Approach", value: "Phased unification" },
       {
         label: "Stack",
-        chips: [
-          "Snowflake",
-          "dbt",
-          "Fivetran",
-          "Looker",
-          "Python",
-          "Airflow",
-        ],
+        chips: ["Snowflake", "dbt", "Fivetran", "Looker", "Python", "Airflow"],
       },
     ]}
     ctaHeading="Customer data scattered across too many systems?"

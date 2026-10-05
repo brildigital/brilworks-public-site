@@ -47,7 +47,7 @@ const Faq = () => {
           Frequently Asked Questions
         </h2>
         <div className="slg:pt-10 md:pt-7.5 pt-5">
-          <div itemScope="true" itemType="https://schema.org/FAQPage">
+          <div itemScope itemType="https://schema.org/FAQPage">
             {faqs?.map(({ question, answer }, index) => (
               <GradientFAQAccordion
                 key={index + 1}
