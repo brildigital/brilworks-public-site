@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import TabVerticalSticky from "../Common/TabVerticalSticky";
 import TabAccordionDark from "../Common/TabAccordionDark";
@@ -8,8 +8,12 @@ import { useMediaQuery } from "react-responsive";
 
 const UseCases = () => {
   const pathname = usePathname();
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const [mounted, setMounted] = useState(false);
+  // matchMedia is client-only; wait for mount so the first render matches the server HTML
+  const isMobile = useMediaQuery({ maxWidth: 767 }) && mounted;
   const [open, setOpen] = useState(1);
+
+  useEffect(() => setMounted(true), []);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
