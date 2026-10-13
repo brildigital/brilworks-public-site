@@ -15,7 +15,10 @@ export const metadata = {
     siteName: "Data & AI Engineering Company | Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/hero-pg-main.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/og-home.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Brilworks x Databricks",
       },
     ],
     locale: "en-US",
