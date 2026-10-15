@@ -9,15 +9,17 @@ const Tooltip = ({ blogAuthor, targetRef }) => {
   const pathname = usePathname();
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedText, setSelectedText] = useState("");
 
   useEffect(() => {
     const handleSelection = () => {
       const selection = window.getSelection();
       const isTabletScreen = window.innerWidth;
       if (
+        selection &&
         selection.rangeCount > 0 &&
         selection.type === "Range" &&
-        targetRef.current.contains(selection.anchorNode) &&
+        targetRef.current?.contains(selection.anchorNode) &&
         isTabletScreen > 979
       ) {
         const range = selection.getRangeAt(0);
@@ -26,6 +28,7 @@ const Tooltip = ({ blogAuthor, targetRef }) => {
           top: rect.top + window.pageYOffset,
           left: rect.left + window.pageXOffset + rect.width / 2,
         });
+        setSelectedText(selection.toString());
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -88,12 +91,9 @@ const Tooltip = ({ blogAuthor, targetRef }) => {
           target="_blank"
           className="!mx-2"
           title="Share on Twitter"
-          href={`https://twitter.com/share?url=https://www.brilworks.com${pathname
-            .split("")
-            .splice(0, pathname.length - 1)
-            .join("")}&text="${window
-            .getSelection()
-            .toString()}"-${blogAuthor}`}
+          href={`https://twitter.com/share?url=https://www.brilworks.com${pathname}&text=${encodeURIComponent(
+            `"${selectedText}"-${blogAuthor}`,
+          )}`}
         >
           <img
             decoding="async"
