@@ -54,6 +54,10 @@ function useManualSticky(offsetTop) {
       el.style.width = "";
       el.style.bottom = "";
 
+      // Below md the sidebar is stacked under the article (md:flex-row), so it
+      // must stay in normal flow instead of floating over the content.
+      if (window.innerWidth < 768) return;
+
       const naturalRect = el.getBoundingClientRect();
       const containerRect = container.getBoundingClientRect();
 
