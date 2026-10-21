@@ -1,26 +1,48 @@
 import React from "react";
 import DataEngineeringTools from "./DataEngineeringTools";
 
+const TITLE =
+  "Free data engineering tools — cost calculator, AI readiness score & more | Brilworks";
+const DESCRIPTION =
+  "Free tools for Snowflake and Databricks teams. Estimate cloud data spend, compare warehouse platforms, score AI readiness and plan migrations in minutes.";
+const BASE = "https://www.brilworks.com/data-engineering-tools/";
+
+const TOOL_LIST = [
+  ["Snowflake Cost Calculator", "snowflake-cost-calculator/"],
+  ["Databricks Cost Calculator", "databricks-cost-calculator/"],
+  ["AI Readiness Audit", "ai-readiness-audit/"],
+  ["Data Migration Cost Calculator", "data-migration-cost-calculator/"],
+  ["Data Quality Assessment", "data-quality-assessment/"],
+  ["Snowflake vs Databricks Advisor", "snowflake-vs-databricks-advisor/"],
+  ["Warehouse Platform Picker", "warehouse-platform-picker/"],
+];
+
 export const metadata = {
-  title:
-    "Free data engineering tools — cost calculator, AI readiness score & more | Brilworks",
-  description:
-    "Free tools for Snowflake and Databricks teams. Calculate your cloud data spend, score your AI readiness, and estimate migration complexity in minutes.",
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "data engineering tools",
+    "free data engineering tools",
+    "snowflake cost calculator",
+    "databricks cost calculator",
+    "data warehouse comparison",
+    "data warehouse platform picker",
+    "snowflake vs databricks",
+    "AI readiness assessment",
+    "data migration cost calculator",
+    "data quality assessment",
+  ],
   openGraph: {
-    title:
-      "Free data engineering tools — cost calculator, AI readiness score & more | Brilworks",
-    description:
-      "Free tools for Snowflake and Databricks teams. Calculate your cloud data spend, score your AI readiness, and estimate migration complexity in minutes.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/`,
     siteName: "Mobile App & Software Development Company | Brilworks",
     locale: "en-US",
     type: "website",
   },
   twitter: {
-    title:
-      "Free data engineering tools — cost calculator, AI readiness score & more | Brilworks",
-    description:
-      "Free tools for Snowflake and Databricks teams. Calculate your cloud data spend, score your AI readiness, and estimate migration complexity in minutes.",
+    title: TITLE,
+    description: DESCRIPTION,
     card: "summary_large_image",
     site: "@_Brilworks",
   },
@@ -33,9 +55,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Free Data Engineering Tools",
-  description:
-    "Free tools for Snowflake and Databricks teams. Calculate your cloud data spend, score your AI readiness, and estimate migration complexity in minutes.",
-  url: "https://www.brilworks.com/data-engineering-tools/",
+  description: DESCRIPTION,
+  url: BASE,
   publisher: {
     "@type": "Organization",
     name: "Brilworks",
@@ -43,39 +64,13 @@ const jsonLd = {
   },
   mainEntity: {
     "@type": "ItemList",
-    numberOfItems: 6,
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Snowflake Cost Estimator",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Databricks Cost Estimator",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "AI Readiness Score",
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "Migration Complexity Calculator",
-      },
-      {
-        "@type": "ListItem",
-        position: 5,
-        name: "Data Pipeline Health Checker",
-      },
-      {
-        "@type": "ListItem",
-        position: 6,
-        name: "Snowflake vs Databricks Picker",
-      },
-    ],
+    numberOfItems: TOOL_LIST.length,
+    itemListElement: TOOL_LIST.map(([name, path], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      url: `${BASE}${path}`,
+    })),
   },
 };
 

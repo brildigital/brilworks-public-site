@@ -14,6 +14,7 @@ import {
   GitCompare,
   CheckCircle,
   Star,
+  Warehouse,
 } from "lucide-react";
 
 const tools = [
@@ -77,10 +78,20 @@ const tools = [
     keyword: "snowflake vs databricks comparison",
     tags: ["SNOWFLAKE", "DATABRICKS"],
   },
+  {
+    title: "Warehouse Platform Picker",
+    description:
+      "Compare 8 platforms (Snowflake, BigQuery, Redshift, Databricks, Fabric, ClickHouse and more) on your data size, skills and compliance. Get a ranked pick, architecture and monthly cost.",
+    icon: Warehouse,
+    color: "from-sky-500 to-indigo-500",
+    link: "/data-engineering-tools/warehouse-platform-picker/",
+    keyword: "data warehouse comparison",
+    tags: ["WAREHOUSE", "COMPARISON"],
+  },
 ];
 
 const stats = [
-  { value: "6", label: "Free Tools" },
+  { value: "7", label: "Free Tools" },
   { value: "2 min", label: "Average Completion" },
   { value: "100%", label: "Free Forever" },
 ];
@@ -114,9 +125,9 @@ const DataEngineeringTools = () => {
             className="lg:text-lg md:text-base text-base !mt-6 max-w-[600px] leading-relaxed"
             style={{ color: "#566678" }}
           >
-            Calculate your cloud data spend, score your AI readiness, and
-            estimate migration complexity &mdash; all in minutes, with zero
-            friction.
+            Calculate your cloud data spend, compare data warehouse platforms,
+            score your AI readiness, and estimate migration complexity &mdash;
+            all in minutes, with zero friction.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
@@ -351,7 +362,7 @@ const DataEngineeringTools = () => {
               },
               {
                 q: "Which tools are available?",
-                a: "Our collection includes a Snowflake Cost Calculator, Databricks Cost Calculator, AI Readiness Audit, Data Migration Cost Estimator, Data Quality Assessment, and a Snowflake vs Databricks Advisor. We regularly add new tools to help engineering teams make better technology decisions.",
+                a: "Our collection includes a Snowflake Cost Calculator, Databricks Cost Calculator, AI Readiness Audit, Data Migration Cost Estimator, Data Quality Assessment, Snowflake vs Databricks Advisor, and a Warehouse Platform Picker that compares eight data warehouse and analytics platforms. We regularly add new tools to help engineering teams make better technology decisions.",
               },
               {
                 q: "Can these tools help me choose the right data platform?",

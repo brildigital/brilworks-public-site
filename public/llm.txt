@@ -149,6 +149,9 @@ https://www.brilworks.com/data-engineering-tools/data-quality-assessment/
 Snowflake vs Databricks Advisor:
 https://www.brilworks.com/data-engineering-tools/snowflake-vs-databricks-advisor/
 
+Warehouse Platform Picker:
+https://www.brilworks.com/data-engineering-tools/warehouse-platform-picker/
+
 ######################################################
 # CASE STUDIES
 ######################################################
