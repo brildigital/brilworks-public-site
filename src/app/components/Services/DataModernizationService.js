@@ -22,6 +22,7 @@ import {
   BarChart3,
   Calculator,
   ArrowRightLeft,
+  Warehouse,
 } from "lucide-react";
 import ServiceHero from "./common/ServiceHero";
 import ServiceTrustBar from "./common/ServiceTrustBar";
@@ -226,6 +227,11 @@ const TOOLS = [
     icon: GitCompare,
     name: "Snowflake vs Databricks Advisor",
     href: "/data-engineering-tools/snowflake-vs-databricks-advisor/",
+  },
+  {
+    icon: Warehouse,
+    name: "Warehouse Platform Picker",
+    href: "/data-engineering-tools/warehouse-platform-picker/",
   },
   {
     icon: ShieldCheck,
