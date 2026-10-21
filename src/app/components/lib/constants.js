@@ -1098,7 +1098,7 @@ export const sitemapData = [
   },
   {
     loc: "https://www.brilworks.com/data-engineering-tools/",
-    lastmod: "2026-06-17T00:00:00.000Z",
+    lastmod: "2026-10-21T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/data-engineering-tools/snowflake-cost-calculator/",
@@ -1123,6 +1123,10 @@ export const sitemapData = [
   {
     loc: "https://www.brilworks.com/data-engineering-tools/snowflake-vs-databricks-advisor/",
     lastmod: "2026-06-18T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-engineering-tools/warehouse-platform-picker/",
+    lastmod: "2026-10-21T00:00:00.000Z",
   },
   {
     loc: "https://www.brilworks.com/case-studies/fintech-pipeline-optimization/",
