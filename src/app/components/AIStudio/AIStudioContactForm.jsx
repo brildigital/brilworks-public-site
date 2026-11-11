@@ -18,7 +18,7 @@ const AIStudioContactForm = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 border border-sky-700/40 p-3 rounded-lg">
                 <Phone className="text-sky-400" />
-                <span>+91 9313644148</span>
+                <span>+91 9558288364</span>
               </div>
 
               <div className="flex items-center gap-3 border border-sky-700/40 p-3 rounded-lg">
