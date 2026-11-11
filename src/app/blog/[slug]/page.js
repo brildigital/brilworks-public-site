@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
 import { notFound } from "next/navigation";
+import { getBlogForSitemap } from "@/app/components/lib/getblog";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 import {
@@ -400,8 +401,18 @@ export async function fetchData(slug) {
   };
 }
 
-// Posts are rendered on first request and then served from the cache, so the
-// build does not depend on Storyblok being reachable for 500+ posts.
+// Every published post is built at deploy time, so no reader waits for a
+// first render. If the post list cannot be fetched, the build still succeeds
+// and posts fall back to rendering on first request (dynamicParams).
 export async function generateStaticParams() {
-  return [];
+  try {
+    const posts = await getBlogForSitemap();
+    return posts
+      .map((post) => post?.loc?.split("/blog/")[1]?.replace(/\/$/, ""))
+      .filter(Boolean)
+      .map((slug) => ({ slug }));
+  } catch (error) {
+    console.error("Blog: could not list posts for static generation", error);
+    return [];
+  }
 }

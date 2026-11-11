@@ -27,6 +27,19 @@ export async function POST(req) {
       revalidatePath("/blog/page/[page]", "page");
     }
 
+    // Rebuild the post now, so the next reader gets the cached page instead
+    // of waiting for the first render (this also covers brand-new posts).
+    if (fullSlug?.startsWith("blog/") && process.env.NEXT_PUBLIC_BASE_URL) {
+      try {
+        await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${fullSlug}/`, {
+          cache: "no-store",
+          signal: AbortSignal.timeout(8000),
+        });
+      } catch {
+        // Warming is best-effort; the post still renders on first request.
+      }
+    }
+
     return NextResponse.json({
       revalidated: true,
       slug: fullSlug || null,
