@@ -100,7 +100,7 @@ const ContactUs = () => {
     {
       question: "How quickly will I hear back after submitting the form?",
       answer:
-        "Our team responds within 24 business hours with a review of your project and next steps. For urgent inquiries, email sales@brilworks.com or call +91 9313644148.",
+        "Our team responds within 24 business hours with a review of your project and next steps. For urgent inquiries, email sales@brilworks.com or call +91 9558288364.",
     },
     {
       question: "Do you sign NDAs before discussing the project?",
