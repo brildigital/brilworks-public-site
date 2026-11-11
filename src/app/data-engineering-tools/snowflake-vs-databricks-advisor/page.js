@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Compare Snowflake and Databricks based on your workload, team, and business goals. Get a personalized recommendation.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/snowflake-vs-databricks-advisor/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

@@ -14,8 +14,7 @@ export const metadata = {
     description:
       "Our experienced team has delivered a wide range of projects. Check out our portfolio of web & mobile development projects from diverse sectors.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

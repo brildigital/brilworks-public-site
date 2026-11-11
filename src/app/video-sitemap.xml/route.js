@@ -24,28 +24,28 @@ export async function GET() {
     },
     // Prebuilt Solutions (hardcoded from PreBuildSolutions.js for simplicity or can be mapped)
     {
-      loc: `${BASE_URL}pre-built-solutions/`, // Assuming this is the path
+      loc: `${BASE_URL}ai-tools/pre-build-solutions/`,
       title: "Dating & Matchmaking App",
       description: "Match users with AI-powered compatibility algorithms.",
       thumbnail_loc: getYouTubeThumbnail("https://www.youtube.com/shorts/lXJ-9EghV2c"),
       player_loc: "https://www.youtube.com/shorts/lXJ-9EghV2c",
     },
     {
-      loc: `${BASE_URL}pre-built-solutions/`,
+      loc: `${BASE_URL}ai-tools/pre-build-solutions/`,
       title: "Fitness & Wellness App",
       description: "Personalized fitness plans, habit tracking, and progress dashboards.",
       thumbnail_loc: getYouTubeThumbnail("https://youtube.com/shorts/6OsaGiDJPx0"),
       player_loc: "https://youtube.com/shorts/6OsaGiDJPx0",
     },
     {
-      loc: `${BASE_URL}pre-built-solutions/`,
+      loc: `${BASE_URL}ai-tools/pre-build-solutions/`,
       title: "Post-Surgery Care App",
       description: "Monitor recovery and connect patients with healthcare professionals.",
       thumbnail_loc: getYouTubeThumbnail("https://www.youtube.com/shorts/OzHKM4tj43s"),
       player_loc: "https://www.youtube.com/shorts/OzHKM4tj43s",
     },
     {
-      loc: `${BASE_URL}pre-built-solutions/`,
+      loc: `${BASE_URL}ai-tools/pre-build-solutions/`,
       title: "Society Management App",
       description: "Simplify communication, billing, and security for communities.",
       thumbnail_loc: getYouTubeThumbnail("https://youtu.be/g5gnqXlJ7Hs"),

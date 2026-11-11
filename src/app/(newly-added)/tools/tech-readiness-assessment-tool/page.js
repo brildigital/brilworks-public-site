@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Free startup technology readiness assessment tool. Evaluate your tech stack maturity, TRL score & infrastructure. Get actionable recommendations in minutes.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/tech-readiness-assessment-tool/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

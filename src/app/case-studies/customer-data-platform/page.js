@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "11 systems unified into one platform. 95% less manual reconciliation, 80% faster customer insights.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/customer-data-platform/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

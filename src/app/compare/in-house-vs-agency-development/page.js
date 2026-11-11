@@ -100,7 +100,7 @@ export const metadata = {
     title: "In-House vs Agency Development: What's Best for Your Team?",
     description: "Should you hire in-house developers or partner with a development agency? Compare costs, speed, scalability, and team dynamics.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}compare/in-house-vs-agency-development/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

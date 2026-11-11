@@ -13,7 +13,7 @@ export const metadata = {
       "Discover which app best fits your business goals. Answer a few quick questions to get personalized recommendations—whether it’s a web, mobile, or AI-powered app, find the perfect solution to build next.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-feature-selector-quiz/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },
@@ -22,7 +22,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-feature-selector-quiz/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/which-app-should-you-build/`,
   },
 };
 const page = () => {

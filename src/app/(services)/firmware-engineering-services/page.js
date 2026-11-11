@@ -1,4 +1,5 @@
 import FirmwareEngineering from "@/app/components/ServicePage/FirmwareEngineering";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Embedded Firmware Development Services | Brilworks",
@@ -14,8 +15,21 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}firmware-engineering-services/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}firmware-engineering-services/`,
+  },
 };
 
-const Page = () => <FirmwareEngineering />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <FirmwareEngineering />
+  </>
+);
 
 export default Page;

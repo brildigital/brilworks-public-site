@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "PetSchool is the smart pet training app for dogs and cats. Structured lessons, daily streaks, badges, and a community of pet parents. Free on iOS.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/pet-school/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

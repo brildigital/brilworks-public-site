@@ -1,6 +1,7 @@
 import GenerativeAIDevService from "@/app/components/Services/GenerativeAIDevService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +14,7 @@ export const metadata = {
     description:
       "Generative AI Development Services. We build production-grade LLM, RAG, and agent systems that ship in weeks, run with guardrails, and scale reliably.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}generative-ai-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/generative-ai-banner.webp`,
@@ -38,6 +38,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

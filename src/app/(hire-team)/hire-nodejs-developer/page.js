@@ -1,5 +1,6 @@
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import NodejsTechnology from "@/app/components/Technologies/NodejsTechnology";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title:
@@ -12,8 +13,7 @@ export const metadata = {
     description:
       "Looking to hire node developers? Brilworks's node.js programmers provide Consulting, API Development & Integration, Plugin Development, and Migration services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-nodejs-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/nodejs-banner.webp`,
@@ -38,6 +38,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

@@ -1,4 +1,5 @@
 import DataEngineeringFintech from "@/app/components/IndustryPage/DataEngineeringFintech";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Fintech Data Engineering Services | Brilworks",
@@ -14,7 +15,20 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-fintech/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-fintech/`,
+  },
 };
 
-const Page = () => <DataEngineeringFintech />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <DataEngineeringFintech />
+  </>
+);
 export default Page;

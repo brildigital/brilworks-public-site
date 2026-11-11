@@ -126,9 +126,9 @@ const StartupTechReadinessQuiz = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-themeColor mb-4">
+            <h2 className="text-4xl font-bold text-themeColor mb-4">
               Tech Readiness Assessment
-            </h1>
+            </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Answer the questions below to get a comprehensive assessment of
               your startup's technology readiness and receive personalized

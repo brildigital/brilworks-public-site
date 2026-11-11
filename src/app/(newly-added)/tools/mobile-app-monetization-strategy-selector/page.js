@@ -13,7 +13,7 @@ export const metadata = {
     description:
       "Find the most profitable monetization model for your mobile app. Compare ads, subscriptions, freemium, and hybrid strategies based on your target users and growth goals.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-rebuild-vs-refactor-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },
@@ -22,7 +22,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-rebuild-vs-refactor-calculator/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mobile-app-monetization-strategy-selector/`,
   },
 };
 const page = () => {

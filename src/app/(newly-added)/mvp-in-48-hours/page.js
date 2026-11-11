@@ -16,8 +16,7 @@ export const metadata = {
     description:
       "Need to validate your idea fast? Let Brilworks help you launch your MVP in just 48 hours with a free one-on-one walkthrough. Prototype, scope, cost estimate & roadmap included.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}mvp-in-48-hours/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

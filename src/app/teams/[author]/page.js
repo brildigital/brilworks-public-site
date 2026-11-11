@@ -6,8 +6,7 @@ import TeamAuthor from "@/app/components/Teams/TeamAuthor";
 
 export const metadata = {
   openGraph: {
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

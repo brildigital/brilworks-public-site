@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Make informed food choices instantly! Scaneat helps you understand what's really in your food with instant health analysis, ingredient insights, and smarter recommendations. Scan barcodes, get health scores, and discover healthier alternatives.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/scaneat/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Explore behavior patterns, emotional models, motivations, and psychological insights with AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/psych/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

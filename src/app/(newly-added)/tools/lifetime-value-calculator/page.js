@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Calculate customer lifetime value (LTV) with our advanced SaaS LTV calculator. Estimate LTV to CAC ratio, app LTV, and retention metrics to optimize your growth strategy.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/lifetime-value-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Use our app maintenance cost calculator to estimate annual update costs for mobile and web apps. Get accurate pricing for bug fixes, feature updates, and support.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-maintenance-cost-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

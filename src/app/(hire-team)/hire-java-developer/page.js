@@ -1,5 +1,6 @@
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import JavaTechnology from "@/app/components/Technologies/JavaTechnology";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire Java Developers | Brilworks",
@@ -10,8 +11,7 @@ export const metadata = {
     description:
       "Hire Java developers for seamless software development, and including expert consulting, web and app development, and Spring Core and Spring Boot expertise.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-java-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/java-banner.webp`,
@@ -35,6 +35,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

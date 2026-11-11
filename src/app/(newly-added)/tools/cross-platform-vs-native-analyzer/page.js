@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Get data-driven insights for your mobile app development. Compare native, cross-platform, and hybrid approaches with personalized recommendations based on project requirements, budget, timeline, and performance needs.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/cross-platform-vs-native-analyzer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

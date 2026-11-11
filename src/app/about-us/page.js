@@ -13,8 +13,7 @@ export const metadata = {
     description:
       "Software development services and end-to-end solutions at Brilworks. Explore further on our About page for more information.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}about-us/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/down-arrow.png`,

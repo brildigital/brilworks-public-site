@@ -11,7 +11,7 @@ export const metadata = {
       "Complete the assessment below to evaluate your organization's readiness for digital transformation. Get personalized recommendations and actionable insights through our digital maturity assessment and digital transformation scorecard.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/digital-transformation-readiness-checker/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Analyze viral patterns, social media movements, and cultural trends with predictive AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/trends/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

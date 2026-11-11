@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Use our App Development Cost Breakdown Calculator to estimate your mobile or web app budget. Get a detailed cost analysis based on features, platform, design, and development time.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-development-cost-breakdown-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

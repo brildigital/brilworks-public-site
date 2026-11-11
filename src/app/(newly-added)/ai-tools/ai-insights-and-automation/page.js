@@ -11,7 +11,7 @@ export const metadata = {
       "Discover how AI insights and automation can transform business processes. Learn to optimize workflows, boost productivity, and make smarter, data-driven decisions with AI-powered solutions.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/ai-insights-and-automation/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

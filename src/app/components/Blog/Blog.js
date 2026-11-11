@@ -25,17 +25,23 @@ const BLOG_CATEGORIES = [
   { value: "News & Insights", label: "News & Insights" },
 ];
 
-const Blog = () => {
+const Blog = ({ initialData = null }) => {
   const ITEMS_PER_PAGE = 10;
-  const [blogDataPerPage, setBlogDataPerPage] = useState([]);
-  const [totalBlog, setTotalBlog] = useState(0);
+  // `initialData` is rendered on the server so the first page of posts is in
+  // the HTML; everything after that is fetched in the browser as before.
+  const [blogDataPerPage, setBlogDataPerPage] = useState(
+    initialData?.posts || [],
+  );
+  const [totalBlog, setTotalBlog] = useState(initialData?.total || 0);
   const [currentPage, setCurrentPage] = useState(1);
   const [blogCategory, setBlogCategory] = useState("");
   const [blogSubCategory, setBlogSubCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recentBlogs, setRecentBlogs] = useState([]);
-  const [categoryCounts, setCategoryCounts] = useState({});
+  const [recentBlogs, setRecentBlogs] = useState(initialData?.recent || []);
+  const [categoryCounts, setCategoryCounts] = useState(
+    initialData?.categoryCounts || {},
+  );
   const searchParams = usePathname();
   const router = useRouter();
   const isFirstRun = useRef(true);
@@ -74,7 +80,19 @@ const Blog = () => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(
       () => {
-        fetchData();
+        // The server already rendered page 1 with no filters; skip refetching
+        // it on mount so the list does not flash a spinner.
+        const isUnfilteredFirstPage =
+          currentPage === 1 && !blogCategory && !blogSubCategory && !searchQuery;
+        if (
+          !(
+            isFirstRun.current &&
+            isUnfilteredFirstPage &&
+            initialData?.posts?.length
+          )
+        ) {
+          fetchData();
+        }
         // fetchAllBlogData();
         if (isFirstRun.current) {
           isFirstRun.current = false;
@@ -95,13 +113,17 @@ const Blog = () => {
   }, [blogCategory, blogSubCategory]);
 
   useEffect(() => {
-    getLatestBlogs(3)
-      .then(setRecentBlogs)
-      .catch((error) => console.error(error));
+    if (!initialData?.recent?.length) {
+      getLatestBlogs(3)
+        .then(setRecentBlogs)
+        .catch((error) => console.error(error));
+    }
 
-    getBlogCategoryCounts(BLOG_CATEGORIES.map((c) => c.value))
-      .then(setCategoryCounts)
-      .catch((error) => console.error(error));
+    if (!Object.keys(initialData?.categoryCounts || {}).length) {
+      getBlogCategoryCounts(BLOG_CATEGORIES.map((c) => c.value))
+        .then(setCategoryCounts)
+        .catch((error) => console.error(error));
+    }
   }, []);
 
   const getPaginationNumbers = (currentPage, totalItems, itemsPerPage) => {

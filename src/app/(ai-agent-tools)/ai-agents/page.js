@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Explore live AI agent demos — fitness, finance, career, travel & more. Built by Brilworks.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

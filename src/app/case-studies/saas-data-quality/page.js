@@ -8,7 +8,7 @@ export const metadata = {
     title: "Reducing Bad Data Incidents by 90% | Brilworks",
     description: "90% fewer bad data incidents, issues detected in under 15 minutes.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/saas-data-quality/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

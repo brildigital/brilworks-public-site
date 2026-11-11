@@ -21,6 +21,12 @@ export async function POST(req) {
 
     revalidatePath("/sitemap.xml");
 
+    // Keep the server-rendered blog listing and archive in step with posts.
+    if (fullSlug?.startsWith("blog/")) {
+      revalidatePath("/blog");
+      revalidatePath("/blog/page/[page]", "page");
+    }
+
     return NextResponse.json({
       revalidated: true,
       slug: fullSlug || null,

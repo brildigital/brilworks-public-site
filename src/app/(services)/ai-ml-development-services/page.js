@@ -2,6 +2,7 @@ import React from "react";
 import AIMLService from "@/app/components/Services/AIMLService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,8 +15,7 @@ export const metadata = {
     description:
       "We build ML systems, generative AI, and computer vision that ship to production, drive measurable ROI, and scale with your data.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-ml-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `/images/v2/ai-ml-service-banner.webp`,
@@ -39,6 +39,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

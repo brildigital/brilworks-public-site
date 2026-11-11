@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Generate accurate Kundli, astrological insights, planetary analysis, and personalized cosmic reports powered by AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/astrology/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -12,7 +12,7 @@ export const metadata = {
       "Plan smarter with our free App Development Timeline Calculator. Estimate how long your mobile or web app will take to build based on complexity, features, and resources.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-development-timeline-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

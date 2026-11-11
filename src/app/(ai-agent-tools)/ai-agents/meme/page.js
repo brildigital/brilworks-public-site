@@ -23,8 +23,7 @@ export const metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: PAGE_URL,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: OG_IMAGE,

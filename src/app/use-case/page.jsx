@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Explore Brilworks use cases across Generative AI, AWS, IoT, and more — real architectures, tradeoffs, and outcomes.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

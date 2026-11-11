@@ -1,6 +1,7 @@
 import FrappeDevelopmentService from "@/app/components/Services/FrappeDevelopmentService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +14,7 @@ export const metadata = {
     description:
       "Accelerate your business processes with Brilworks' Frappe development services. Create customized, scalable ERP solutions that streamline operations and boost productivity.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}frappe-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/frappe-banner.webp`,
@@ -38,6 +38,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

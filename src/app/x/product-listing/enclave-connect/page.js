@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "A unified digital platform that simplifies daily society tasks and keeps every resident connected in real time.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/enclave-connect/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [
@@ -34,7 +33,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/encalve-connect/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/enclave-connect/`,
   },
 };
 

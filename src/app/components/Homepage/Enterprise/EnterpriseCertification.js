@@ -97,8 +97,11 @@ const EnterpriseCertification = () => {
               Certified Databricks Partner for Lakehouse &amp; AI Engineering
             </h2>
             <p className="sub rv d2">
-              Brilworks is an officially certified Databricks partner,
-              delivering lakehouse architecture, Spark and Delta Lake pipelines,
+              Brilworks is an officially{" "}
+              <Link href="/databricks-partner/" className="underline">
+                certified Databricks partner
+              </Link>
+              , delivering lakehouse architecture, Spark and Delta Lake pipelines,
               and production-grade MLOps for enterprise data teams across AWS,
               Azure, and GCP.
             </p>

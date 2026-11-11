@@ -170,6 +170,14 @@ export const servicesMenuItems = [
         name: "Business Intelligence Development",
         path: "/business-intelligence-development/",
       },
+      {
+        name: "Databricks Partner",
+        path: "/databricks-partner/",
+      },
+      {
+        name: "Snowflake Partner",
+        path: "/snowflake-partner/",
+      },
       // {
       //   name: "MLOps (New)",
       //   path: "/contact-us/",
@@ -780,10 +788,6 @@ export const sitemapData = [
     lastmod: "2025-07-28T09:52:49.528Z",
   },
   {
-    loc: "https://www.brilworks.com/ebooks/saas-founders-guide-2024/",
-    lastmod: "2025-07-16T06:12:32.228Z",
-  },
-  {
     loc: "https://www.brilworks.com/ebooks/mvp-development-idea-to-development/",
     lastmod: "2025-03-18T09:12:22.328Z",
   },
@@ -1241,7 +1245,7 @@ export const sitemapData = [
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
-    loc: "https://www.brilworks.com/x/product-listing/service-squard/",
+    loc: "https://www.brilworks.com/x/product-listing/service-squad/",
     lastmod: "2025-12-12T12:08:23.211Z",
   },
   {
@@ -1426,12 +1430,144 @@ export const sitemapData = [
     lastmod: "2026-07-01T00:00:00.000Z",
   },
   {
-    loc: "https://www.brilworks.com/privacy-policy/",
-    lastmod: "2025-05-15T12:04:49.528Z",
+    loc: "https://www.brilworks.com/ai-strategy-advisory-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
   },
   {
-    loc: "https://www.brilworks.com/terms-and-conditions/",
-    lastmod: "2025-05-15T12:04:49.528Z",
+    loc: "https://www.brilworks.com/ai-readiness-data-foundation-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-engineering-aiops-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-governance-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/enterprise-data-strategy/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/cloud-data-engineering/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-pipeline-development/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-modernization/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/data-governance-consulting/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/business-intelligence-development/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/business-intelligence-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/iot-embedded-development-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-tools-audit/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/erp-next-development-services/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-engineers/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/hire-white-label-developer/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/case-studies/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/use-case/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/portfolio/ai-agents/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/ai-tools/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/compare/brilworks-vs-toptal/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/compare/brilworks-vs-upwork-agencies/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/compare/build-vs-buy-software/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/compare/in-house-vs-agency-development/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/browsex/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/course-sphere/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/kind-circle/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/life-pilot/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/mr-brush/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/order-nest/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/page-miner/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/pet-school/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/scaneat/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/spine-recovery-pro/",
+    lastmod: "2026-11-11T00:00:00.000Z",
+  },
+  {
+    loc: "https://www.brilworks.com/x/product-listing/vector-trace/",
+    lastmod: "2026-11-11T00:00:00.000Z",
   },
 ];
 

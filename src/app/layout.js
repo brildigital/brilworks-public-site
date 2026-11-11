@@ -17,6 +17,7 @@ import {
   organization,
   website,
   localBusiness,
+  siteGraph,
 } from "./components/lib/schemaCode";
 
 // FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
@@ -74,15 +75,7 @@ export default function RootLayout({ children }) {
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }}
           />
           <Script
             id="gtm-config"
