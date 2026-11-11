@@ -1,5 +1,6 @@
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import BlockchainTechnology from "@/app/components/Technologies/BlockchainTechnology";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire Blockchain Developers | Brilworks",
@@ -10,8 +11,7 @@ export const metadata = {
     description:
       "Brilworks blockchain developers create secure and scalable software for your business. Hire blockchain developers.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-blockchain-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/blockchain-banner.webp`,
@@ -35,6 +35,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

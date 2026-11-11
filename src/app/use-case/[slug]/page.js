@@ -66,8 +66,7 @@ export async function generateMetadata(props) {
         title: title,
         description: description,
         url: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/${params.slug}/`,
-        siteName:
-          "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+        siteName: "Brilworks",
         locale: "en-US",
         type: "website",
         images: [
@@ -95,6 +94,9 @@ export async function generateMetadata(props) {
           },
         ],
         site: "@_Brilworks",
+      },
+      alternates: {
+        canonical: `${process.env.NEXT_PUBLIC_BASE_URL}use-case/${params.slug}/`,
       },
     };
   } catch (error) {

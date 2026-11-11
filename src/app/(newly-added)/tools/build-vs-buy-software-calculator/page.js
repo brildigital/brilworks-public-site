@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Make smarter tech decisions. Estimate development, licensing, and maintenance costs with our build vs buy calculator.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/build-vs-buy-software-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

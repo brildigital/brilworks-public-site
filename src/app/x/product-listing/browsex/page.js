@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "BrowseX uses advanced AI to understand websites, extract data, fill forms, and complete complex workflows—all through simple natural language commands. No coding required.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/browsex/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

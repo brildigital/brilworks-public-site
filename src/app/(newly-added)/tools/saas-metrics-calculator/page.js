@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Measure your SaaS growth with a powerful metrics calculator covering revenue, churn, customer acquisition cost, and lifetime value.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-metrics-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -131,9 +131,9 @@ const WhichAppShouldYouBuild = () => {
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-themeColor mb-4">
+            <h2 className="text-4xl font-bold text-themeColor mb-4">
               Which App Should You Build?
-            </h1>
+            </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Answer a few questions about your app idea to get personalized
               recommendations

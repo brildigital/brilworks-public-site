@@ -1,6 +1,7 @@
 import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
 import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
 import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +14,7 @@ export const metadata = {
     description:
       "Need custom fleet management software? Brilworks provides specialised fleet management software development services and operations and improves efficiency.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fleet-management-software-development/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
@@ -38,6 +38,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

@@ -18,8 +18,7 @@ export const metadata = {
     description:
       "Have an app idea? Get free, professional clickable mockups in 24-48 hours. No designer needed. No cost. No catch. Make your vision shareable with Brilworks.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}free-mockups/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

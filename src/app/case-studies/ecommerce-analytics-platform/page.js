@@ -8,7 +8,7 @@ export const metadata = {
     title: "Reducing Reporting Delays From Days to Minutes | Brilworks",
     description: "How Brilworks unified 12 data sources into one analytics platform. 85% less reporting time, 5x faster dashboards.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}case-studies/ecommerce-analytics-platform/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

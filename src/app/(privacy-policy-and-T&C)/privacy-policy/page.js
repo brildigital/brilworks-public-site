@@ -18,8 +18,7 @@ export const metadata = {
     description:
       "Brilworks' Privacy Policy: Learn how we protect your data and respect your privacy. Transparent information on our data collection, usage, and security practices to ensure your trust and confidence.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}privacy-policy/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Brilworks builds AI-powered chatbots, workflow automation, and MVPs for businesses. AWS Partner. Deploy in 48 hours. Book a free consultation.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/`,
-    siteName: "Brilworks — Software Development & AI Solutions",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

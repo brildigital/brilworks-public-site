@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Personalized outfit recommendations, wardrobe curation, and trend analysis powered by AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/fashion/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

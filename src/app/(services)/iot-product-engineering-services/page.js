@@ -1,4 +1,5 @@
 import IoTProductEngineering from "@/app/components/ServicePage/IoTProductEngineering";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "IoT Product Engineering Services | Brilworks",
@@ -14,8 +15,21 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}iot-product-engineering-services/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}iot-product-engineering-services/`,
+  },
 };
 
-const Page = () => <IoTProductEngineering />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <IoTProductEngineering />
+  </>
+);
 
 export default Page;

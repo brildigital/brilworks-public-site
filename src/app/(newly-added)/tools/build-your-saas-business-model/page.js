@@ -13,7 +13,7 @@ export const metadata = {
       "Use our free SaaS business model generator to turn your app idea into a complete business plan. Get AI-powered insights on pricing, target audience, and growth strategy in minutes.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/build-your-saas-business-model/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

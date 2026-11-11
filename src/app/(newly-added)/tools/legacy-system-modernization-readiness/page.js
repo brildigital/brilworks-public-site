@@ -13,7 +13,7 @@ export const metadata = {
       "Evaluate your legacy infrastructure with our modernization readiness tool. Identify technical debt, assess risks, compare modernization strategies, and plan a digital transformation with clear ROI projections.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/legacy-system-modernization-readiness/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

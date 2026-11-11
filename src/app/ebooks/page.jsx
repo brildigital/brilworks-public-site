@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const Ebooks = dynamic(() => import("../components/Ebook/Ebooks"));
+const Ebooks = dynamic(() => import("@/app/components/Ebook/Ebooks"));
 
 export const metadata = {
   title: "Our E-books - Brilworks Software",
@@ -11,8 +11,7 @@ export const metadata = {
     description:
       "Unlock actionable knowledge to streamline software development and stay ahead of tech trends with our expert-crafted ebooks.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ebooks/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

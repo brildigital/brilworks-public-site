@@ -1,6 +1,7 @@
 import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
 import Fintech from "@/app/components/Solution/Fintech";
 import LastUpdated from "@/app/components/Common/LastUpdated";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,7 +15,7 @@ export const metadata = {
       "Brilworks, a fintech software development company offers services for custom fintech apps, banking, insurance, wallet development, and personal finance.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/fintech-software-development/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
@@ -38,6 +39,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

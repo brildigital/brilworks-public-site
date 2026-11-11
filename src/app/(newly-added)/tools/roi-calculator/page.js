@@ -11,7 +11,7 @@ export const metadata = {
       "Easily calculate return on investment with our free ROI calculator. Enter costs and gains to measure profitability, evaluate business success, and make smarter financial decisions.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/roi-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

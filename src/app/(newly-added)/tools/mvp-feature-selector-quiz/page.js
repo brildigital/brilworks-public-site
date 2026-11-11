@@ -13,7 +13,7 @@ export const metadata = {
       "Take this quick quiz to identify the must-have features for your Minimum Viable Product. Get a tailored feature list to launch faster and save development costs.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-feature-selector-quiz/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

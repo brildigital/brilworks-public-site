@@ -1,5 +1,6 @@
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import UIUXTechnology from "@/app/components/Technologies/UIUXTechnology";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire UI UX Designers | Brilworks",
@@ -10,11 +11,10 @@ export const metadata = {
     description:
       "Transform your user experience with Brilworks skilled UI/UX designers specializing in Consulting, Strategy, Mockups, and Prototyping services.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ui-ux-designer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/v2/ui-ux-banner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/ui-ux-banner.webp`,
       },
     ],
     locale: "en-US",
@@ -35,6 +35,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

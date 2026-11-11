@@ -1,4 +1,5 @@
 import DataEngineeringSaaS from "@/app/components/IndustryPage/DataEngineeringSaaS";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "SaaS Data Engineering Services | Brilworks",
@@ -14,7 +15,20 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-saas/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-saas/`,
+  },
 };
 
-const Page = () => <DataEngineeringSaaS />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <DataEngineeringSaaS />
+  </>
+);
 export default Page;

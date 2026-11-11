@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Estimate your monthly Databricks costs based on compute usage, DBUs, and cloud provider pricing.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/databricks-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

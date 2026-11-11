@@ -2,6 +2,7 @@ import React from "react";
 import SaaSApplicationDevelopmentService from "@/app/components/Services/SaaSApplicationDevelopmentService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,8 +15,7 @@ export const metadata = {
     description:
       "Launch powerful SaaS solutions with Brilworks' expert development services. Create scalable, user-centric applications that drive recurring revenue and customer satisfaction.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}saas-application-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/product-engineering-banner.webp`,
@@ -39,6 +39,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

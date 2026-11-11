@@ -2,6 +2,7 @@ import HRSoftwareDevelopment from "@/app/components/Solution/HRSoftwareDevelopme
 import React from "react";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,8 +15,7 @@ export const metadata = {
     description:
       "HR software development for people teams with applicant tracking onboarding performance management attendance benefits and analytics systems engineered for real operations.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/hr-software-development/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/hr-software-development.webp`,
@@ -39,6 +39,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

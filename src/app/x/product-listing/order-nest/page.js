@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "OrderNest is the one place where restaurant teams run day-to-day service. Managers design menus, configure tables, invite staff, and track real-time sales. Complete restaurant management solution.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/order-nest/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

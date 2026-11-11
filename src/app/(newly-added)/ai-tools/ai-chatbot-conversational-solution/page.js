@@ -12,7 +12,7 @@ export const metadata = {
       "Enhance customer support and sales with AI-powered chatbots. Deliver natural, 24/7 conversational experiences that boost engagement, reduce costs, and improve customer satisfaction.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/ai-chatbot-conversational-solution/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

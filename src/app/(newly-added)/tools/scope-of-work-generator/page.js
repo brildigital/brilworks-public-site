@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Generate detailed Scope of Work documents with AI precision. Save time, reduce errors, and maintain consistency with real-time performance benchmarking, automated recommendations, and export-ready professional templates.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/scope-of-work-generator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

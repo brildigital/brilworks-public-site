@@ -74,6 +74,8 @@ const HireTeamHeroSection = ({
                       width={620}
                       height={400}
                       className="object-cover"
+                      priority
+                      fetchPriority="high"
                     />
                   </div>
                 )}

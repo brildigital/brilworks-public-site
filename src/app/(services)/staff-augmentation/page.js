@@ -2,6 +2,7 @@ import React from "react";
 import StaffAugmentation from "@/app/components/Services/StaffAugmentation";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,8 +15,7 @@ export const metadata = {
     description:
       "Boost your team's capabilities with Brilworks' staff augmentation services. Access top-tier talent to drive innovation and accelerate your project success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}staff-augmentation/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },
@@ -34,6 +34,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

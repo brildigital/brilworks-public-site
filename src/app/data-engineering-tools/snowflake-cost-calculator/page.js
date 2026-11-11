@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Estimate your monthly Snowflake spend in seconds, then see where it can be cut.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/snowflake-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

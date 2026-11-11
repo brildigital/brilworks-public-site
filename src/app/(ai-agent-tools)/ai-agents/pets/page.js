@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Get tips for pet training, diet, behavior, medical concerns, and daily care routines.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/pets/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

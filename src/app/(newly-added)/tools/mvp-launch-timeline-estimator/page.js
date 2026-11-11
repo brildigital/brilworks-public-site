@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Estimate your MVP timeline with precision. Use our AI-powered MVP timeline estimator to plan your minimum viable product development phases, cost, and launch strategy.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-launch-timeline-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

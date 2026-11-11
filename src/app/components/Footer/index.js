@@ -195,7 +195,7 @@ const Footer = () => {
           text: "AWS Development",
         },
         {
-          link: "/hire-ui-ux-designer//",
+          link: "/hire-ui-ux-designer/",
           text: "UI/UX Development",
         },
         {

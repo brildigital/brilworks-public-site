@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Get accurate cost estimates for your MVP development project. Make informed decisions with our intelligent calculator powered by industry data.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/mvp-development-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

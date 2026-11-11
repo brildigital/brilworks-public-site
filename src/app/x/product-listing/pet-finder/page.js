@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Pet Finder is your go-to app for discovering adoptable pets near you or helping reunite lost animals with their families. Browse thousands of listings, filter by breed, age, and location, and connect directly with shelters or pet owners. Whether you're looking to adopt, foster, or report a missing pet, Pet Finder makes it simple and compassionate.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/pet-finder/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [
@@ -37,7 +36,7 @@ export const metadata = {
     site: "@_Brilworks",
   },
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/`,
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/pet-finder/`,
   },
 };
 

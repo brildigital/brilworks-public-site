@@ -1,5 +1,6 @@
 import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
 import ReactJSTechnology from "@/app/components/Technologies/ReactJSTechnology";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title:
@@ -11,11 +12,10 @@ export const metadata = {
     description:
       "Hire ReactJS developers within 72 hours for web, SaaS, and startup projects. Brilworks offers certified, project-ready experts with flexible models, transparent pricing, and global client experience. Book your free consultation today!",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-reactjs-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/v2/reactjs-banner.webp`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/reactjs-banner.webp`,
       },
     ],
     locale: "en-US",
@@ -37,6 +37,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"
