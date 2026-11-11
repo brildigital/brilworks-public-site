@@ -983,7 +983,8 @@ Two-thirds of the blog supports services the company now calls "legacy". The dat
 | dotCMS, Storyblok partner pages | Yes | "India's leading digital transformation partner" | Off-strategy |
 | Wikidata | Not found | — | No knowledge-graph anchor |
 | GitHub organisation | Not found | — | No engineering footprint for an engineering firm |
-| Databricks / Snowflake / AWS partner directories | Not found in search | Only Brilworks' own pages assert the partnership | The central claim has no independent corroboration that a model could retrieve. Verify manually |
+| Databricks partner directory | Yes | Official listing on partners.databricks.com, linked from the homepage badge | Not surfaced by web search and absent from `sameAs` |
+| Snowflake / AWS partner directories | Not found in search | Only Brilworks' own pages assert these partnerships | No independent corroboration a model could retrieve. Verify manually |
 
 Legal-name variants in circulation: *Brilworks*, *Brilworks Software*, *Brilworks Software LLP*, *Brilworks Technology*, *Brilworks Solutions FZCO*.
 
@@ -997,7 +998,7 @@ Brilworks' `llms.txt` tells models not to call it a "mobile app development comp
 |---|---|
 | Consistent one-line description | Use the `llms.txt` "preferred short summary" verbatim on Clutch, GoodFirms, Crunchbase, LinkedIn, G2, Upwork, partner pages, About page, schema, `og:site_name` |
 | One founding year, one headcount range, one phone number | Decide the facts once; correct every profile |
-| Official partner listings | Obtain the public directory URLs on Databricks, Snowflake and AWS Partner Finder; link them from the partner pages and `sameAs` |
+| Official partner listings | The Databricks listing exists: add it to `sameAs` and link it from `/databricks-partner/`. Obtain the public Snowflake and AWS Partner Finder URLs and do the same |
 | Wikidata item | Create once two or three independent, reliable sources exist (press coverage, partner directory, registry entry). Do not create it with only self-published references |
 | GitHub organisation | Publish 3–5 small, useful repos: dbt macros, a Snowflake cost-query pack, an Airflow DAG template, the logic behind the public calculators |
 | Founder entities | Full author pages with bio, credentials, talks, LinkedIn; 488 of 521 posts are attributed to two people whose author pages have 150 words and no schema |
