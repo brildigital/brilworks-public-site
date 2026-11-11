@@ -1,6 +1,8 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import HireAnalyticsEngineers from "@/app/components/HireTeam/HireAnalyticsEngineers";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire Analytics Engineers | dbt & Snowflake Partner | Brilworks",

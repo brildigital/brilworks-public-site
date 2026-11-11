@@ -1,6 +1,8 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import BubbleIoTechnology from "@/app/components/Technologies/BubbleIoTechnology";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire Bubble Developers | Brilworks",

@@ -1,6 +1,8 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import HireMLOpsEngineers from "@/app/components/HireTeam/HireMLOpsEngineers";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Hire MLOps Engineers | ML Platform Engineering | Brilworks",

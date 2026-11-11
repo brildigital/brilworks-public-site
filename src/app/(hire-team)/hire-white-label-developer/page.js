@@ -1,6 +1,8 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import WhiteLabelTechnology from "@/app/components/Technologies/WhiteLabelTechnology";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "White Label Mobile App Development | Brilworks",

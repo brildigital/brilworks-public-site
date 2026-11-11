@@ -1,5 +1,5 @@
 import { revalidatePath } from "next/cache";
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 
 export async function POST(req) {
   try {
@@ -27,17 +27,23 @@ export async function POST(req) {
       revalidatePath("/blog/page/[page]", "page");
     }
 
-    // Rebuild the post now, so the next reader gets the cached page instead
-    // of waiting for the first render (this also covers brand-new posts).
+    // Rebuild the post once the webhook has been answered, so the next reader
+    // gets the cached page instead of waiting for the first render (this also
+    // covers brand-new posts). Runs after the response so Storyblok is never
+    // kept waiting, and is best-effort: on failure the post simply renders on
+    // first request.
     if (fullSlug?.startsWith("blog/") && process.env.NEXT_PUBLIC_BASE_URL) {
-      try {
-        await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}${fullSlug}/`, {
-          cache: "no-store",
-          signal: AbortSignal.timeout(8000),
-        });
-      } catch {
-        // Warming is best-effort; the post still renders on first request.
-      }
+      const postUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${fullSlug}/`;
+      after(async () => {
+        try {
+          await fetch(postUrl, {
+            cache: "no-store",
+            signal: AbortSignal.timeout(10000),
+          });
+        } catch (error) {
+          console.warn(`Could not warm ${postUrl}:`, error?.message);
+        }
+      });
     }
 
     return NextResponse.json({

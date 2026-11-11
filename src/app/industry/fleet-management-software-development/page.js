@@ -1,7 +1,10 @@
 import FleetManagementNGPS from "@/app/components/Solution/FleetManagementNGPS";
-import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 

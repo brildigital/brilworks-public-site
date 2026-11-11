@@ -1,8 +1,10 @@
 import React from "react";
 import DedicatedTeam from "@/app/components/Services/DedicatedTeam";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
-import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
