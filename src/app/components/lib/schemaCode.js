@@ -102,17 +102,6 @@ export const siteGraph = {
   "@graph": [organizationNode, websiteNode],
 };
 
-// Kept for existing imports. Prefer `siteGraph` / `organizationRef`.
-export const organization = {
-  "@context": "https://schema.org",
-  ...organizationNode,
-};
-export const localBusiness = organization;
-export const website = {
-  "@context": "https://schema.org",
-  "@graph": [websiteNode],
-};
-
 export function generateBreadcrumb(secondPositionName) {
   const breadCrumbList = {
     "@context": "https://schema.org/",

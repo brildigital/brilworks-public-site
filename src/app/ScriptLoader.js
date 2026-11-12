@@ -1,11 +1,10 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { generateBreadcrumb } from "./components/lib/schemaCode";
 import { installMailtoListener } from "./components/lib/leadSource";
 import Cookies from "js-cookie";
 
-const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
+const LoadScripts = ({ gtm, clr }) => {
   const pathname = usePathname();
   useEffect(() => {
     installMailtoListener();
@@ -69,7 +68,7 @@ const LoadScripts = ({ organization, website, localBusiness, gtm, clr }) => {
       window.addEventListener("load", loadScripts);
       return () => window.removeEventListener("load", loadScripts);
     }
-  }, [organization, website, gtm, clr]);
+  }, [gtm, clr]);
 
   useEffect(() => {
     const fetchWithIP = async () => {

@@ -98,7 +98,14 @@ const EnterpriseCertification = () => {
             </h2>
             <p className="sub rv d2">
               Brilworks is an officially{" "}
-              <Link href="/databricks-partner/" className="underline">
+              <Link
+                href="/databricks-partner/"
+                style={{
+                  color: "#fff",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "3px",
+                }}
+              >
                 certified Databricks partner
               </Link>
               , delivering lakehouse architecture, Spark and Delta Lake pipelines,
