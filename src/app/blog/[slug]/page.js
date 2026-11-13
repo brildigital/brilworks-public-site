@@ -23,10 +23,13 @@ import { Calendar, Clock } from "lucide-react";
 import SummarizeWithAI from "@/app/components/Blog/SummarizeWithAI";
 
 // Posts are statically generated and cached (ISR). Storyblok publishes hit
-// /api/revalidate, which revalidates the post path on demand; the daily
-// revalidate below is only a safety net. Keeping this route static is what
-// lets notFound() return a real 404 instead of a streamed 200.
-export const revalidate = 86400;
+// /api/revalidate, which refreshes a post immediately. The interval below is
+// the fallback: if that webhook is missing or fails, an edit still appears
+// within ten minutes. Readers never wait for a refresh; the cached page is
+// served while the new one is built in the background. Keeping this route
+// static is what lets notFound() return a real 404 instead of a streamed 200.
+const POST_REFRESH_SECONDS = 600;
+export const revalidate = 600; // must be a literal; keep equal to POST_REFRESH_SECONDS
 export const dynamicParams = true;
 
 export async function generateMetadata(props) {
@@ -379,7 +382,7 @@ export async function fetchData(slug) {
   );
 
   const storyRes = await fetch(storyUrl.toString(), {
-    next: { revalidate: 86400, tags: [`blog:${slug}`] },
+    next: { revalidate: POST_REFRESH_SECONDS, tags: [`blog:${slug}`] },
     headers: { "Accept-Encoding": "gzip" }, // Enable compression
   });
 
