@@ -43,7 +43,7 @@ const NUMS = [
   },
   {
     v: "Certified",
-    l: "Databricks, and AWS Advanced Tier partners.",
+    l: "Databricks, Snowflake, dbt Labs and AWS partners.",
   },
   {
     v: "Start small",

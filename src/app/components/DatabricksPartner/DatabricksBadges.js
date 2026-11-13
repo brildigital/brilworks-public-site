@@ -1,3 +1,5 @@
+import { DATABRICKS_PARTNER_LISTING_URL } from "../lib/partners";
+
 const BADGES = [
   { name: "Data Engineer Professional", file: "data_engineer_professional" },
   { name: "Data Engineer Associate", file: "data_engineer_associate" },
@@ -47,6 +49,14 @@ const DatabricksBadges = () => {
         >
           Certified by Databricks
         </h2>
+        <a
+          href={DATABRICKS_PARTNER_LISTING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-3 text-[15px] font-semibold text-[#017eeb] hover:underline"
+        >
+          View our listing in the Databricks partner directory →
+        </a>
       </div>
       <div
         className="relative w-full"

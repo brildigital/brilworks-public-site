@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import AnswerSummary from "../components/Common/AnswerSummary";
+import { DATABRICKS_SUMMARY } from "../components/lib/answerSummaries";
 import Script from "next/script";
 import SnowflakeRevealInit from "../components/SnowflakePartner/SnowflakeRevealInit";
 
@@ -132,6 +134,7 @@ const DatabricksPartnerPage = () => {
       />
       <SnowflakeRevealInit />
       <DatabricksHero />
+      <AnswerSummary {...DATABRICKS_SUMMARY} />
       <DatabricksStatement />
       <DatabricksBadges />
       <DatabricksWhyChoose />

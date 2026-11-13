@@ -32,7 +32,7 @@ const SolutionContactForm = dynamic(() =>
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <Shield size={18} color="#2f6bff" />, label: "AWS Advanced Tier Partner" },
+  { icon: <Shield size={18} color="#2f6bff" />, label: "AWS Partner" },
   { icon: <Layers size={18} color="#2f6bff" />, label: "30+ SaaS Products Live" },
   { icon: <Network size={18} color="#2f6bff" />, label: "Multi-Tenant Architecture" },
   { icon: <BadgeCheck size={18} color="#2f6bff" />, label: "99.9% Uptime SLA" },
@@ -109,7 +109,7 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Partner · Advanced Tier", icon: <Shield size={20} color="#2f6bff" /> },
+  { label: "AWS Partner", icon: <Shield size={20} color="#2f6bff" /> },
   { label: "Clutch Global Spring 2025", icon: <Star size={20} color="#2f6bff" /> },
   { label: "Clutch Global Fall 2024", icon: <Star size={20} color="#2f6bff" /> },
   { label: "GoodFirms Top 2025–26", icon: <Award size={20} color="#2f6bff" /> },

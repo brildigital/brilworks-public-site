@@ -108,7 +108,7 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Partner — Advanced Tier", icon: <Shield size={20} color="#2f6bff" /> },
+  { label: "AWS Partner", icon: <Shield size={20} color="#2f6bff" /> },
   { label: "Clutch Global Award Spring 2025", icon: <Star size={20} color="#2f6bff" /> },
   { label: "Clutch Global Award Fall 2024", icon: <Star size={20} color="#2f6bff" /> },
   { label: "GoodFirms Top Software 2025-26", icon: <Award size={20} color="#2f6bff" /> },

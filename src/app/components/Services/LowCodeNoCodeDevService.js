@@ -77,7 +77,7 @@ const statValueStyle = { color: "#2f6bff" };
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Advanced Tier Partner" },
+  { icon: <IconShield />, label: "AWS Partner" },
   { icon: <IconCertified />, label: "Adalo Expert Certified" },
   { icon: <IconBuild />, label: "40+ Apps Shipped" },
   { icon: <IconBoltSolid />, label: "5x Faster MVPs" },
@@ -186,7 +186,7 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Advanced Tier Partner", icon: <IconShield /> },
+  { label: "AWS Partner", icon: <IconShield /> },
   {
     label: "Clutch Global Award 2025",
     icon: (

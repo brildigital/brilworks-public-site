@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import AnswerSummary from "../components/Common/AnswerSummary";
+import { SNOWFLAKE_SUMMARY } from "../components/lib/answerSummaries";
 import Script from "next/script";
 import SnowflakeRevealInit from "../components/SnowflakePartner/SnowflakeRevealInit";
 
@@ -129,6 +131,7 @@ const SnowflakePartnerPage = () => {
       />
       <SnowflakeRevealInit />
       <SnowflakeHero />
+      <AnswerSummary {...SNOWFLAKE_SUMMARY} />
       <SnowflakeStatement />
       <SnowflakeWhyChoose />
       <SnowflakeMidCTA />

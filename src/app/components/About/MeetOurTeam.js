@@ -6,36 +6,11 @@ import { useMediaQuery } from "react-responsive";
 import Heading from "../HTMLComponents/Heading";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
+import { Linkedin } from "lucide-react";
+import { TEAM_MEMBERS } from "./teamData";
 
 const MeetOurTeam = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const ourTeamData = [
-    {
-      name: "Vikas Singh",
-      role: "Chief Technology Officer",
-      imageSrc: "/images/v2/team-member1.webp",
-    },
-    {
-      name: "Hitesh Umaletiya",
-      role: "Co-Founder",
-      imageSrc: "/images/v2/team-member2.webp",
-    },
-    {
-      name: "Dhaval Trivedi",
-      role: "Project Manager",
-      imageSrc: "/images/v2/team-member5.webp",
-    },
-    {
-      name: "Colin Shah",
-      role: "Technical Project Manager",
-      imageSrc: "/images/v2/team-member3.webp",
-    },
-    {
-      name: "Dinesh Kachhot",
-      role: "Team Lead",
-      imageSrc: "/images/v2/team-member4.webp",
-    },
-  ];
   return (
     <div style={{ background: "#f1f5fb" }}>
       <div className="container max-w-[1280px] main-section-padding mx-auto">
@@ -55,7 +30,7 @@ const MeetOurTeam = () => {
             perMove: isMobile ? 1 : 3,
           }}
         >
-          {ourTeamData.map(({ name, role, imageSrc }, index) => {
+          {TEAM_MEMBERS.map(({ name, role, imageSrc, linkedin }) => {
             return (
               <SplideSlide key={name}>
                 <div className="overflow-hidden max-w-[580px]">
@@ -64,7 +39,7 @@ const MeetOurTeam = () => {
                     src={imageSrc}
                     width="302"
                     height="400"
-                    alt={`team-${index}`}
+                    alt={`${name}, ${role} at Brilworks`}
                   />
                   <div className="w-full flex items-center flex-col justify-center md:pt-7.5 pt-5">
                     <h3
@@ -79,6 +54,18 @@ const MeetOurTeam = () => {
                     >
                       {role}
                     </p>
+                    {linkedin && (
+                      <a
+                        href={linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 mt-2 text-sm font-medium text-[#2f6bff] hover:underline"
+                        aria-label={`${name} on LinkedIn`}
+                      >
+                        <Linkedin size={16} aria-hidden="true" />
+                        LinkedIn
+                      </a>
+                    )}
                   </div>
                 </div>
               </SplideSlide>
