@@ -11,7 +11,7 @@ export const metadata = {
       "Build a smart AI chatbot that answers questions from your knowledge base instantly. Reduce support load and deliver accurate, 24/7 responses powered by AI.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/ai-chatbot-knowledge-base/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

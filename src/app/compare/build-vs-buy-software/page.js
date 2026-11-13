@@ -100,7 +100,7 @@ export const metadata = {
     title: "Build vs Buy Software: Making the Right Decision",
     description: "Should you build custom software or buy off-the-shelf? Compare costs, timelines, customization, and risk.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}compare/build-vs-buy-software/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

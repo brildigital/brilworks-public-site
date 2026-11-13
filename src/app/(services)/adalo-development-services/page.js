@@ -1,6 +1,9 @@
 import AdaloDevelopmentService from "@/app/components/Services/AdaloDevelopmentService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +16,7 @@ export const metadata = {
     description:
       "Transform your ideas into reality with Brilworks' Adalo development services. Create powerful no-code apps that drive growth and user engagement.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}adalo-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/adalo-banner.webp`,
@@ -38,6 +40,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

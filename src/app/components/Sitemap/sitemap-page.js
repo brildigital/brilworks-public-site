@@ -12,8 +12,7 @@ export const metadata = {
       "Explore our site map page to find information about who we are and who we work with, and details about our software development services.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}site-map/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/Prototype.jpg`,

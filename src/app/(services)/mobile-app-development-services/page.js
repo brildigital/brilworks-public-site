@@ -1,6 +1,9 @@
 import MobileAppDevelopmentService from "@/app/components/Services/MobileAppDevelopmentService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +16,7 @@ export const metadata = {
     description:
       "Brilworks builds end to end mobile apps for mhealth, fintech, logistics and AI driven products, trusted by companies in the USA and across global markets.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}web-app-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/mobile-app-dev-banner.webp`,
@@ -38,6 +40,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

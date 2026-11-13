@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import IoTEmbeddedServices from "@/app/components/Services/IoTEmbeddedServices";
 
 export const metadata = {
@@ -29,6 +32,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

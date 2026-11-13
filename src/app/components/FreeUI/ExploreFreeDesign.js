@@ -344,7 +344,7 @@ const ExploreFreeDesign = () => {
                     {
                       icon: <Phone size={32} color="#fff" strokeWidth={1.5} />,
                       title: "Call Us",
-                      value: "+91 9313644148",
+                      value: "+91 9558288364",
                     },
                     {
                       icon: <Globe size={32} color="#fff" strokeWidth={1.5} />,

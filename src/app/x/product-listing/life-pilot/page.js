@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "LifePilot AI is a personal assistant application providing AI-based guidance across multiple domains. Get intelligent assistance for productivity, fitness, wellness, home maintenance, and more.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/life-pilot/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Estimate the cost of your data migration based on data volume, source systems, complexity, and project requirements.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/data-migration-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

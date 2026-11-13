@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Get AI-powered guidance for home repairs, troubleshooting, tools, and step-by-step DIY solutions.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/diy/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

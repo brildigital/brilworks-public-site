@@ -11,7 +11,7 @@ export const metadata = {
       "Find the best tech stack for your web, mobile, or SaaS project. Get AI-powered recommendations based on your team, timeline, and goals.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/tech-stack-recommender/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

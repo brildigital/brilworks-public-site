@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Analyze investments, track portfolios, and receive long-term wealth planning advice powered by AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/wealth/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

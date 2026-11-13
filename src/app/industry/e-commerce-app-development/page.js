@@ -1,4 +1,8 @@
-import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import ECommerceSolution from "@/app/components/Solution/ECommerceSolution";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 
@@ -14,7 +18,7 @@ export const metadata = {
       "Build scalable, user-friendly E-commerce apps tailored to your business goals. Our expert E-commerce app development services cover everything from custom UI to secure payments and seamless integrations.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/e-commerce-app-development/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/e-commerce-industry-banner.webp`,
@@ -38,6 +42,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

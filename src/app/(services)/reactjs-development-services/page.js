@@ -1,7 +1,10 @@
 import React from "react";
 import ReactJSDevelopmentService from "@/app/components/Services/ReactJSDevelopmentService";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -14,8 +17,7 @@ export const metadata = {
     description:
       "Boost your web app with expert React.js development services. Scalable, high-performance solutions tailored to your business needs. Hire an expert today.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}reactjs-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/reactjs-development-service-banner.webp`,
@@ -39,6 +41,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

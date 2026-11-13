@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "SpineRecovery Pro is a B2B SaaS platform that helps hospitals standardize post-op spine care protocols, enforce compliance, and reduce medico-legal risk through objective patient monitoring and automated workflows.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/spine-recovery-pro/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

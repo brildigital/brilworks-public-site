@@ -14,7 +14,7 @@ export const metadata = {
       "Compare rebuild vs refactor costs, technical debt impact, scalability, and ROI. Get instant insights to decide the best modernization strategy for your app.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-rebuild-vs-refactor-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

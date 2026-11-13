@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Generate professional software project proposals instantly with our AI-powered proposal builder. Automate your proposal creation, customize with project scope keywords, and download client-ready SOW documents in multiple formats.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/software-proposal-generator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

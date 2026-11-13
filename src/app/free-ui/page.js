@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Get 5 UI/UX screens tailored to your project at no cost. Explore premium design quality with zero risk or commitment. Fast, clean, and conversion-focused.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}free-ui/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/ui-ux-banner.webp`,

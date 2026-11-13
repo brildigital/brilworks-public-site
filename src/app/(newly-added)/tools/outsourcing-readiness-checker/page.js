@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Evaluate if your business is ready to outsource. Take our free Outsourcing Readiness Checker and get instant insights to scale smarter and reduce costs.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/outsourcing-readiness-checker/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

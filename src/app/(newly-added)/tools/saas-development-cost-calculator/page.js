@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Use our free SaaS calculator to estimate the cost to build a SaaS product. Get accurate app development cost calculations for web, mobile, and hybrid platforms.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-development-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

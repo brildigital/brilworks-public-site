@@ -14,8 +14,7 @@ export const metadata = {
     description:
       "Brilworks' Terms and Conditions: Clear guidelines for engaging our services. Understand our commitments, your rights, and the framework for our business relationship to ensure mutual success.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}terms-and-conditions/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

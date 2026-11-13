@@ -1,7 +1,10 @@
 import React from "react";
 import AiAgentServicePage from "@/app/components/AiAgents/AiAgentServicePage";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-05-01";
 
@@ -14,8 +17,7 @@ export const metadata = {
     description:
       "AI Agent Development Services. We deploy working AI agents that qualify leads, process documents, and automate support without long build cycles.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agent-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `/images/v2/ai-model-fine-tuning.webp`,
@@ -39,6 +41,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

@@ -100,7 +100,7 @@ export const metadata = {
     title: "Brilworks vs Toptal: Which Is Right for Your Project?",
     description: "Compare Brilworks and Toptal across pricing, team structure, AI expertise, and project delivery.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}compare/brilworks-vs-toptal/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

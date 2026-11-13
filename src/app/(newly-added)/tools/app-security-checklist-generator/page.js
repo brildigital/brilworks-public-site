@@ -13,7 +13,7 @@ export const metadata = {
       "Generate a customized application security checklist with our automated tool. Assess vulnerabilities, ensure compliance (GDPR, HIPAA, PCI DSS, ISO), and apply best practices for secure app development across web, mobile, and cloud environments.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-security-checklist-generator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -1,78 +1,105 @@
-export const organization = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Brilworks",
-  url: "https://www.brilworks.com",
-  logo: "https://www.brilworks.com/images/logo-black.svg",
-  sameAs: [
-    "https://www.facebook.com/brilwork",
-    "https://www.linkedin.com/company/brilworks",
-    "https://www.instagram.com/brilworkssoftware",
-    "https://www.youtube.com/@brilworks",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "sales",
-    email: "<sales@brilworks.com>",
-  },
+const SITE_URL = "https://www.brilworks.com/";
+export const ORGANIZATION_ID = `${SITE_URL}#organization`;
+export const WEBSITE_ID = `${SITE_URL}#website`;
+
+// Reference to the single Organization node emitted in the root layout.
+// Use this for publisher / provider / author on page-level schema so every
+// page resolves to one entity instead of redeclaring a partial copy.
+export const organizationRef = { "@id": ORGANIZATION_ID };
+
+const ORGANIZATION_DESCRIPTION =
+  "Brilworks is a data and AI engineering firm. It builds data pipelines, warehouses, and governance on Snowflake and Databricks, then the AI agents and analytics that run on that foundation.";
+
+const SAME_AS = [
+  "https://www.linkedin.com/company/brilworks",
+  "https://clutch.co/profile/brilworks-software/",
+  "https://x.com/_Brilworks",
+  "https://www.youtube.com/@brilworks",
+  "https://www.facebook.com/brilwork",
+  "https://www.instagram.com/brilworkssoftware",
+  "https://www.upwork.com/ag/brilworks/",
+  "https://www.behance.net/hellobrilworks",
+  "https://dribbble.com/Brilworks",
+  "https://partners.databricks.com/s/directory/listing?recordId=001Vp00000dsH62IAE",
+];
+
+const POSTAL_ADDRESS = {
+  "@type": "PostalAddress",
+  streetAddress: "503, Fortune Business Hub, Science City Road, Sola",
+  addressLocality: "Ahmedabad",
+  addressRegion: "Gujarat",
+  postalCode: "380060",
+  addressCountry: "IN",
 };
 
-export const localBusiness = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+const organizationNode = {
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": ORGANIZATION_ID,
   name: "Brilworks",
-  image: "https://www.brilworks.com/images/logo-black.svg",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "503, Fortune Business Hub, Science City Road, Sola",
-    addressLocality: "Ahmedabad",
-    addressRegion: "Gujarat",
-    addressCountry: "IN",
-    postalCode: "380060",
+  alternateName: "Brilworks Software",
+  url: SITE_URL,
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SITE_URL}#logo`,
+    url: `${SITE_URL}images/brilworks-logo.png`,
   },
-  url: "https://www.brilworks.com",
-  telephone: "+91 9313644148",
-  email: "sales@brilworks.com",
-  openingHours: "Mo-Fr 10:00-19:00",
-  priceRange: "$$",
+  image: `${SITE_URL}images/v2/og-home.jpg`,
+  description: ORGANIZATION_DESCRIPTION,
+  address: POSTAL_ADDRESS,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 23.071,
     longitude: 72.5158,
-    plusCode: "3GH2+JH Ahmedabad, Gujarat, India",
   },
-  sameAs: [
-    "https://facebook.com/brilwork",
-    "https://x.com/_Brilworks",
-    "https://instagram.com/brilworkssoftware",
-    "https://linkedin.com/company/brilworks",
-    "https://youtube.com/channel/UCKmt-auuz7g8Nc6uUxReRwA",
-  ],
-};
-
-export const website = {
-  "@context": "https://schema.org",
-  "@graph": [
+  // Matches the sales number shown in the site footer.
+  telephone: "+91 9558288364",
+  email: "sales@brilworks.com",
+  openingHours: "Mo-Fr 10:00-19:00",
+  priceRange: "$$",
+  contactPoint: [
     {
-      "@type": "WebSite",
-      "@id": "https://www.brilworks.com/#website",
-      url: "https://www.brilworks.com/",
-      name: "Brilworks",
-      description:
-        "Brilworks is a trusted mobile app and software development company that is deeply dedicated to the long-term growth and success of clients and people.We excel in delivering Gen AI solutions, white label app development, AWS cost optimization, and product engineering with expertise in Next.js, Java, and low-code/no-code platforms.",
-      potentialAction: [
-        {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: "https://www.brilworks.com/?s={search_term_string}",
-          },
-          "query-input": "required name=search_term_string",
-        },
-      ],
-      inLanguage: "en-US",
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: "sales@brilworks.com",
+      telephone: "+91 9558288364",
+      areaServed: "Worldwide",
+      availableLanguage: "en",
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "human resources",
+      email: "hr@brilworks.com",
     },
   ],
+  knowsAbout: [
+    "Data engineering",
+    "Snowflake",
+    "Databricks",
+    "Data governance",
+    "AI agent development",
+    "Generative AI",
+    "MLOps",
+    "Embedded software",
+    "Firmware engineering",
+    "Edge AI",
+  ],
+  sameAs: SAME_AS,
+};
+
+const websiteNode = {
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  url: SITE_URL,
+  name: "Brilworks",
+  description: ORGANIZATION_DESCRIPTION,
+  publisher: organizationRef,
+  inLanguage: "en-US",
+};
+
+// One connected graph for the whole site, rendered once in the root layout.
+export const siteGraph = {
+  "@context": "https://schema.org",
+  "@graph": [organizationNode, websiteNode],
 };
 
 export function generateBreadcrumb(secondPositionName) {
@@ -138,11 +165,7 @@ export function generateBlogPostingSchema({
     name: authorName,
     url: authorPageUrl || authorUrl,
     ...(authorJobTitle ? { jobTitle: authorJobTitle } : {}),
-    worksFor: {
-      "@type": "Organization",
-      name: "Brilworks",
-      url: "https://www.brilworks.com/",
-    },
+    worksFor: organizationRef,
     ...(sameAs.length ? { sameAs } : {}),
   };
 
@@ -157,14 +180,7 @@ export function generateBlogPostingSchema({
     dateModified: dateModified || datePublished,
     wordCount: readingTime ? readingTime * 250 : undefined,
     author,
-    publisher: {
-      "@type": "Organization",
-      name: "Brilworks",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.brilworks.com/images/logo-black.svg",
-      },
-    },
+    publisher: organizationRef,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
@@ -180,12 +196,7 @@ export function generateServiceSchema({
   url,
   serviceType,
   areaServed = "Worldwide",
-  provider = {
-    "@type": "Organization",
-    name: "Brilworks",
-    url: "https://www.brilworks.com/",
-    logo: "https://www.brilworks.com/images/logo-black.svg",
-  },
+  provider = organizationRef,
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -198,6 +209,29 @@ export function generateServiceSchema({
     provider,
   };
   return JSON.stringify(schema);
+}
+
+// Builds Service schema from a page's own `metadata` export so the schema can
+// never drift from the title, description and canonical the page declares.
+export function generateServiceSchemaFromMetadata(metadata, options = {}) {
+  // "Service Name | Tagline | Brilworks" -> "Service Name"
+  const name =
+    String(metadata?.title || "")
+      .split("|")
+      .map((part) => part.trim())
+      .find((part) => part && !/^brilworks$/i.test(part)) || "";
+  const url = metadata?.alternates?.canonical;
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    ...(url ? { "@id": `${url}#service` } : {}),
+    name,
+    description: metadata?.description,
+    url,
+    serviceType: options.serviceType || name,
+    areaServed: options.areaServed || "Worldwide",
+    provider: organizationRef,
+  });
 }
 
 export function generateFaqPageSchema(faqs) {
@@ -252,15 +286,7 @@ export function generateWebApplicationSchema({
     ...(imageUrl ? { image: imageUrl } : {}),
     ...(dateModified ? { dateModified } : {}),
     offers,
-    publisher: {
-      "@type": "Organization",
-      name: "Brilworks",
-      url: "https://www.brilworks.com/",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.brilworks.com/images/logo-black.svg",
-      },
-    },
+    publisher: organizationRef,
   };
   return JSON.stringify(schema);
 }
@@ -270,11 +296,7 @@ export function generateImageObjectSchema({
   caption,
   width,
   height,
-  creator = {
-    "@type": "Organization",
-    name: "Brilworks",
-    url: "https://www.brilworks.com/",
-  },
+  creator = organizationRef,
 }) {
   const schema = {
     "@context": "https://schema.org",
@@ -310,14 +332,7 @@ export function generateWebPageSchema({ title, description, url, dateModified })
     description: description,
     url: url,
     dateModified: dateModified,
-    publisher: {
-      "@type": "Organization",
-      name: "Brilworks",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.brilworks.com/images/logo-black.svg",
-      },
-    },
+    publisher: organizationRef,
   };
   return JSON.stringify(schema);
 }
@@ -332,14 +347,7 @@ export function generateComparisonSchemas({ title, description, url, faqs, dateM
     description: description,
     url: url,
     dateModified: dateModified,
-    publisher: {
-      "@type": "Organization",
-      name: "Brilworks",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.brilworks.com/images/logo-black.svg",
-      },
-    },
+    publisher: organizationRef,
   });
 
   if (faqs && faqs.length > 0) {

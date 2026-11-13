@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Production-grade AI agent patterns Brilworks builds and ships — planning, content ops, research, social, finance, engineering, education, and more.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}portfolio/ai-agents/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import HireMLAIEngineers from "@/app/components/HireTeam/HireMLAIEngineers";
 
 export const metadata = {
@@ -10,8 +13,7 @@ export const metadata = {
     description:
       "Hire senior ML and AI engineers who build production models, GenAI applications, RAG pipelines, and agentic systems. Models running in production — not demos.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-ml-ai-engineer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/og/hire-ml-ai-engineer.webp`,
@@ -35,6 +37,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

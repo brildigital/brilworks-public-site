@@ -13,7 +13,7 @@ export const metadata = {
       "Run instant code analysis with our Code Quality Analyzer. Detect bugs, security issues, code smells, and performance inefficiencies. Get actionable insights and detailed code quality reports in seconds.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/code-quality-analyzer/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

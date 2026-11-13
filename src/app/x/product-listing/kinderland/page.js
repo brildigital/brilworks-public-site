@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Unlock a world of fun and learning with Kinderland! Designed for curious young minds, Kinderland combines education and entertainment to make every moment a learning adventure. Whether it's phonics, numbers, alphabets, or shapes, Kinderland turns everyday lessons into exciting games that your child will love!",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/kinder-land/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Discover recipes, meal ideas, ingredient substitutions, and step-by-step cooking guidance using AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/cooking/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

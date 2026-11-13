@@ -96,7 +96,7 @@ export const metadata = {
     title: "Brilworks vs Upwork Agencies: Direct Hire vs Marketplace",
     description: "Compare Brilworks and Upwork agencies on pricing, quality, communication, and delivery.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}compare/brilworks-vs-upwork-agencies/`,
-    siteName: "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

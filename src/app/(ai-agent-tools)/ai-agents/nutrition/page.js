@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "AI-driven meal plans, nutrition breakdowns, macros, allergies, and personalized dietary insights.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/nutrition/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

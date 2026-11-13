@@ -14,7 +14,7 @@ export const metadata = {
       "Use our database selector tool to find the best database for startups, SaaS platforms, mobile apps, and web applications. Fast, accurate, and tailored to your project needs.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/database-selector-tool/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

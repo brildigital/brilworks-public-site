@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Calculate your SaaS pricing strategy and revenue instantly. Compare subscription, tiered, usage-based, and freemium models.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-pricing-model-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

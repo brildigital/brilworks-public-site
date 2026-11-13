@@ -11,7 +11,7 @@ export const metadata = {
       "Explore ready-to-use AI and automation solutions designed to save time and accelerate growth. Deploy faster with proven pre-build tools for businesses.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/pre-build-solutions/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

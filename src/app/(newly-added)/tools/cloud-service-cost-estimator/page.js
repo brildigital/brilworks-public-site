@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Use our AI-powered cloud cost analysis tool to get real-time cost estimates, compare providers, and optimize cloud spending. Access detailed cloud pricing comparison and actionable recommendations with our cloud cost estimator.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/cloud-service-cost-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Transform your imagination into stunning visual art using advanced AI. Mr. Brush offers text-to-image and image-to-image generation with 8+ artistic styles. Create unique, high-quality images with just a few taps.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/mr-brush/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

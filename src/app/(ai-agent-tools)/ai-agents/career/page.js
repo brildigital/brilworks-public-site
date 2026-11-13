@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Plan your career path, discover roles, optimize resumes, and receive AI-driven job guidance.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/career/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

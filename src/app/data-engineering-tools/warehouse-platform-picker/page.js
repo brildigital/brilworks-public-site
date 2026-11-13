@@ -39,7 +39,7 @@ export const metadata = {
     description:
       "Compare 8 data warehouse and analytics platforms on cost, scale, team skills and compliance. Get a ranked recommendation with architecture and monthly cost.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/warehouse-platform-picker/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

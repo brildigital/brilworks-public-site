@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Free app development cost calculators, ROI estimators, MVP planners & SaaS tools. Get instant estimates for your next software project. No signup required.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Evaluate your data quality across accuracy, completeness, consistency, and reliability. Get your score in under 2 minutes.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/data-quality-assessment/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

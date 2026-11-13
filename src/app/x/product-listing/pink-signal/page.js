@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "PinkSignal empowers women with instant SOS alerts, real-time location sharing, and peace of mind for families. Stay safe, stay connected with our trusted women safety app.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/pink-signal/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [
