@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import AnswerSummary from "../Common/AnswerSummary";
+import { AI_AGENT_SUMMARY } from "../lib/answerSummaries";
 import {
   ArrowRight,
   UserCheck,
@@ -627,6 +629,8 @@ const AiAgentServicePage = () => {
           </div>
         </div>
       </section>
+
+      <AnswerSummary {...AI_AGENT_SUMMARY} />
 
       {/* ==================== WHAT WE BUILD ==================== */}
       <section className="py-20" style={{ background: "#ffffff" }}>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "../../../styles/EnterpriseHome.css";
+import { DATABRICKS_PARTNER_LISTING_URL } from "../../lib/partners";
 import { ArrowBigRightDash, ArrowRightIcon, MoveUpRight } from "lucide-react";
 
 const CAPABILITIES = [
@@ -73,7 +74,7 @@ const EnterpriseCertification = () => {
               className="cert-mark-img"
             />
             <a
-              href="https://partners.databricks.com/s/directory/listing?recordId=001Vp00000dsH62IAE"
+              href={DATABRICKS_PARTNER_LISTING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="cert-link"

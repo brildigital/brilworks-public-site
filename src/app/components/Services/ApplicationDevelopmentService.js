@@ -41,7 +41,7 @@ const statValueStyle = { color: "#2f6bff" };
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Advanced Tier Partner" },
+  { icon: <IconShield />, label: "AWS Partner" },
   { icon: <IconMobile />, label: "300+ Apps Shipped" },
   { icon: <IconStack />, label: "Cross-Platform Expertise" },
   { icon: <IconBadge />, label: "99.9% Uptime SLA" },
@@ -124,7 +124,7 @@ const TESTIMONIALS = [
 ];
 
 const HONORS = [
-  { label: "AWS Advanced Tier Partner", icon: <IconShield /> },
+  { label: "AWS Partner", icon: <IconShield /> },
   {
     label: "Top Software Companies · GoodFirms 2025-26",
     icon: <Star size={20} color="#017eeb" strokeWidth={1.8} aria-hidden="true" />,

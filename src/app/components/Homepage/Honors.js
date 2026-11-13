@@ -24,7 +24,7 @@ const honors = [
   },
   {
     icon: <Cloud size={28} color="#1A5CCC" strokeWidth={1.75} className="shrink-0" />,
-    title: "AWS Partner", org: "Advanced Tier",
+    title: "AWS Partner", org: "Amazon Web Services",
   },
 ];
 

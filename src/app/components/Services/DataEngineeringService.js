@@ -25,6 +25,8 @@ import {
   Warehouse,
 } from "lucide-react";
 import ServiceHero from "./common/ServiceHero";
+import AnswerSummary from "../Common/AnswerSummary";
+import { DATA_ENGINEERING_SUMMARY } from "../lib/answerSummaries";
 import ServiceTrustBar from "./common/ServiceTrustBar";
 import ServiceCoreOfferings from "./common/ServiceCoreOfferings";
 import ServiceMidCta from "./common/ServiceMidCta";
@@ -291,6 +293,8 @@ const DataEngineeringService = () => {
       />
 
       <ServiceTrustBar items={TRUST} />
+
+      <AnswerSummary {...DATA_ENGINEERING_SUMMARY} />
 
       <ServiceCoreOfferings
         id="services"

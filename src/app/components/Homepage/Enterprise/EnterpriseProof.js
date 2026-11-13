@@ -36,7 +36,7 @@ const AWARDS = [
   "Clutch Global · 2025",
   "Clutch Global · 2024",
   "SelectedFirms · Top 10 2026",
-  "AWS Partner · Advanced Tier",
+  "AWS Partner",
 ];
 
 const CARD_WIDTH = 338; // 320px card + 18px gap
