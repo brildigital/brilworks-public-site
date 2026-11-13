@@ -99,7 +99,7 @@ const page = async () => {
         className="container max-w-[1280px] mx-auto main-section-padding !pt-0 text-center"
       >
         <Link
-          href="/blog/page/1/"
+          href="/blog/archive/1/"
           className="inline-block text-themeColor font-medium underline"
         >
           Browse all articles

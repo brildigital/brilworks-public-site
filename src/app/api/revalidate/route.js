@@ -24,7 +24,7 @@ export async function POST(req) {
     // Keep the server-rendered blog listing and archive in step with posts.
     if (fullSlug?.startsWith("blog/")) {
       revalidatePath("/blog");
-      revalidatePath("/blog/page/[page]", "page");
+      revalidatePath("/blog/archive/[page]", "page");
     }
 
     // Rebuild the post once the webhook has been answered, so the next reader

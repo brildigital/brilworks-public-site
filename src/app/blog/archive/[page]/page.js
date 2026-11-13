@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { getBlogForSitemap } from "@/app/components/lib/getblog";
 import { formattedDate } from "@/app/components/lib/commonFunction";
 
-// Plain, server-rendered archive of every post. Its job is to give crawlers a
+// Plain, server-rendered archive of every post. It lives under /blog/archive/
+// because /blog/page/2-4/ are legacy pagination URLs that redirect to /blog/. Its job is to give crawlers a
 // link path to all articles; it is kept out of the index so it never competes
 // with the posts themselves.
 export const dynamic = "force-static";
@@ -38,7 +39,7 @@ export async function generateMetadata(props) {
       "Complete archive of Brilworks engineering articles on data engineering, AI, cloud, and product development.",
     robots: { index: false, follow: true },
     alternates: {
-      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/page/${pageNumber}/`,
+      canonical: `${process.env.NEXT_PUBLIC_BASE_URL}blog/archive/${pageNumber}/`,
     },
   };
 }
@@ -103,7 +104,7 @@ export default async function BlogArchivePage(props) {
           ) : (
             <Link
               key={n}
-              href={`/blog/page/${n}/`}
+              href={`/blog/archive/${n}/`}
               prefetch={false}
               className="px-3 py-1 rounded border border-borderGray"
             >
