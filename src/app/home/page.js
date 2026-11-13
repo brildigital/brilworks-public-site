@@ -26,7 +26,7 @@ export async function generateMetadata() {
       description:
         "Brilworks is a Data & AI engineering company. We provide data engineering services and AI agent development — from pipelines to agents in production.",
       url: process.env.NEXT_PUBLIC_BASE_URL,
-      siteName: "Data & AI Engineering Company | Brilworks",
+      siteName: "Brilworks",
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/hero-pg-main.webp`,

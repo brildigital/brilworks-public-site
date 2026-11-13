@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Diagnose plant issues, schedule watering, identify species, and optimize plant health with AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/gardening/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

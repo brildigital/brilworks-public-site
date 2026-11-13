@@ -13,11 +13,7 @@ import LoadScripts from "./ScriptLoader";
 import ScrollRevealInit from "./components/Common/ScrollRevealInit";
 import Script from "next/script";
 import PostHogProvider from "./components/PostHogProvider";
-import {
-  organization,
-  website,
-  localBusiness,
-} from "./components/lib/schemaCode";
+import { siteGraph } from "./components/lib/schemaCode";
 
 // FONT SWAP: To revert to Figtree, change plusJakartaSans variable back to "--font-heading"
 //            and figtree variable back to "--global-font"
@@ -74,15 +70,7 @@ export default function RootLayout({ children }) {
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph) }}
           />
           <Script
             id="gtm-config"
@@ -119,9 +107,6 @@ export default function RootLayout({ children }) {
           </PostHogProvider>
           <ScrollRevealInit />
           <LoadScripts
-            organization={organization}
-            website={website}
-            localBusiness={localBusiness}
             gtm={process.env.googleTagManagerID}
             clr={process.env.clearbitScript_URL}
           />

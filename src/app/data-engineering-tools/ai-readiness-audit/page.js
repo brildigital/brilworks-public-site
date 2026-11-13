@@ -11,7 +11,7 @@ export const metadata = {
     description:
       "Assess how prepared your business is for AI adoption. Get your AI readiness score in under 2 minutes.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-tools/ai-readiness-audit/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
   },

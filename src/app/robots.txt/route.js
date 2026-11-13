@@ -16,31 +16,34 @@ const BLOCK_ALL = `User-agent: *
 Disallow: /
 `;
 
+// /login/ and /forget-password/ are deliberately NOT disallowed: they carry a
+// noindex tag, and crawlers must be able to fetch a page to see that tag.
 const ALLOW_PRODUCTION = `User-agent: *
-Disallow: /?s=
-Disallow: /search/
-Disallow: /testimonial/
-Disallow: /category/*
-Disallow: /email-sms/*
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /internal/
+Disallow: /verifyemail/
 Disallow: /cdn-cgi/
+Disallow: /*?s=
 
 User-agent: GPTBot
-Allow: /
-
+User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: anthropic-ai
-Allow: /
-
+User-agent: PerplexityBot
+User-agent: Perplexity-User
 User-agent: Google-Extended
+User-agent: Applebot-Extended
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /internal/
 
 User-agent: CCBot
 Disallow: /

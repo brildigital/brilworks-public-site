@@ -1,5 +1,9 @@
 import MediaAndEntertainment from "@/app/components/Solution/MediaAndEntertainment";
-import { generateBreadcrumb, generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import LastUpdated from "@/app/components/Common/LastUpdated";
 
 const LAST_UPDATED = "2026-04-23";
@@ -13,8 +17,7 @@ export const metadata = {
     description:
       "Brilworks Software provides media and entertainment software development services including OTT streaming, ticket booking, and gaming.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}industry/media-entertainment-software-development/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/explore-arrow-01.png`,
@@ -38,6 +41,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

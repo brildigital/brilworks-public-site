@@ -11,7 +11,7 @@ export const metadata = {
       "Calculate software development costs in minutes. Choose platform, complexity, and features to get accurate budget and timeline estimates for your custom software project.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/app-development-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

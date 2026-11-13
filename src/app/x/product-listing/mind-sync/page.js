@@ -11,8 +11,7 @@ export const metadata = {
     description:
       "Blend technology with empathy. Our solution helps individuals and teams stay emotionally aligned, think together, and build stronger relationships.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/mind-sync/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

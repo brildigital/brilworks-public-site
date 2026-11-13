@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Estimate your AI app development cost instantly. Get a detailed breakdown based on features, AI models, integrations, and deployment.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/ai-app-development-cost-calculator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import FlutterflowTechnology from "@/app/components/Technologies/FlutterflowTechnology";
 
 export const metadata = {
@@ -10,8 +13,7 @@ export const metadata = {
     description:
       "Need a Flutterflow expert to build your app? Our developers specialize in creating stunning, cross-platform apps. Hire now!",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/flutterflow-banner.webp`,
@@ -34,6 +36,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

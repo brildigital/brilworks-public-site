@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Solve tech issues, debug systems, get code help, and fix hardware/software problems with AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/tech/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

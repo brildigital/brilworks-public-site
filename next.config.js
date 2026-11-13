@@ -1035,6 +1035,21 @@ const nextConfig = {
         statusCode: 301,
       },
       {
+        source: `/x/product-listing/service-squard/`,
+        destination: `/x/product-listing/service-squad/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/overcomming-common-generative-ai-challenges/`,
+        destination: `/blog/challenges-of-generative-ai/`,
+        statusCode: 301,
+      },
+      {
+        source: `/blog/what-is-databricks-a-complete-guide-for-modern-data-teams/`,
+        destination: `/blog/what-is-databricks/`,
+        statusCode: 301,
+      },
+      {
         source: `/snapgen-privacy-policy/`,
         destination: `/mr-brush-privacy-policy/`,
         statusCode: 301,

@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Use Brilworks’ customer acquisition cost calculator to estimate CAC with 95% accuracy. Optimize your marketing spend and boost ROI across all channels.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/customer-acquisition-cost-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

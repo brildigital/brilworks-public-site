@@ -10,7 +10,7 @@ export const metadata = {
     description:
       "Plan your product launch with precision using our Go-to-Market Timeline Planner. Generate optimized timelines, track milestones, and avoid delays with AI-powered insights.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/go-to-market-timeline-planner/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

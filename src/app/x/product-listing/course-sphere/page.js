@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Discover thousands of courses from expert instructors. Build real projects, gain certifications, and grow your career with guided learning paths. Join 50K+ learners on CourseSphere.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/course-sphere/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

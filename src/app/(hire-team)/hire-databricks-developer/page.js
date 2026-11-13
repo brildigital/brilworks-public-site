@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import HireDatabricksDevelopers from "@/app/components/HireTeam/HireDatabricksDevelopers";
 
 export const metadata = {
@@ -10,8 +13,7 @@ export const metadata = {
     description:
       "Hire certified Databricks engineers from a company-wide Databricks Partner. Lakehouse architecture, Delta Lake pipelines, MLflow ML platforms, Unity Catalog governance — certified engineers on every project.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-databricks-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/og/hire-databricks-developer.webp`,
@@ -35,6 +37,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

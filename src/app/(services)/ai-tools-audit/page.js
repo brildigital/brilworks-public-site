@@ -18,8 +18,7 @@ export const metadata = {
     title: "AI Tools Audit — Brilworks ($999)",
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/generative-ai-banner.webp`,

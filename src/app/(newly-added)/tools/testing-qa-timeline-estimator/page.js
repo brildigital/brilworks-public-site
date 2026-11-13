@@ -12,7 +12,7 @@ export const metadata = {
     description:
       "Estimate your software testing timeline with our intelligent QA planning calculator. Get fast, accurate testing duration forecasts for agile and traditional projects.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/testing-qa-timeline-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Get interior design ideas, room layouts, furniture pairing, and color palette suggestions using AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/interior/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

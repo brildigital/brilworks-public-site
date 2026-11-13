@@ -10,8 +10,7 @@ export const metadata = {
     description:
       "Analyze dream symbols, patterns, and subconscious signals using advanced dream interpretation AI.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-agents/dreams/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -13,7 +13,7 @@ export const metadata = {
       "Run a complete performance benchmarking test for your web, mobile, or SaaS app. Analyze load time, API performance, throughput, and resource utilization to optimize speed, reduce bottlenecks, and deliver faster user experiences.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/performance-benchmarking-tool/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

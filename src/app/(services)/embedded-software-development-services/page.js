@@ -1,4 +1,5 @@
 import EmbeddedSoftwareDevelopment from "@/app/components/ServicePage/EmbeddedSoftwareDevelopment";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Embedded Software Development Services | Brilworks",
@@ -14,8 +15,21 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}embedded-software-development-services/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}embedded-software-development-services/`,
+  },
 };
 
-const Page = () => <EmbeddedSoftwareDevelopment />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <EmbeddedSoftwareDevelopment />
+  </>
+);
 
 export default Page;

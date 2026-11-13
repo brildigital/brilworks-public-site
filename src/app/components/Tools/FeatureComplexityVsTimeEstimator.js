@@ -94,9 +94,9 @@ const FeatureComplexityVsTimeEstimator = () => {
                 <Calculator className="h-8 w-8 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-themeColor bg-clip-text text-transparent mb-4">
               Feature Complexity Calculator
-            </h1>
+            </h2>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
               Enter your project details and get instant time estimates
             </p>

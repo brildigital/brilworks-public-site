@@ -13,7 +13,7 @@ export const metadata = {
       "Estimate software development time with our AI-powered feature complexity calculator. Analyze UI, logic, integrations, and get accurate project timelines instantly.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/feature-complexity-vs-time-estimator/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "VectorTrace is the all-in-one management solution for manufacturers, service providers, vendors, and customers. Streamline workflow from order placement to final delivery with real-time tracking.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/vector-trace/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

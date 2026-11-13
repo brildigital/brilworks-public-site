@@ -1,6 +1,9 @@
 import FitnessAppDevelopmentServices from "@/app/components/Services/FitnessAppDevelopmentServices";
 import LastUpdated from "@/app/components/Common/LastUpdated";
-import { generateWebPageSchema } from "@/app/components/lib/schemaCode";
+import {
+  generateWebPageSchema,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -13,8 +16,7 @@ export const metadata = {
     description:
       "Expert fitness development services, including gym workout, nutrition, fitness trackers, yoga apps, user-friendly, AI-powered apps for startups and SMEs.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}web-app-development-services/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/fitness-app-development.webp`,
@@ -38,6 +40,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

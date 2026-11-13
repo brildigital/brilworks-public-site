@@ -13,7 +13,7 @@ export const metadata = {
       "Run a complete SaaS scalability assessment with our automated readiness checker tool. Evaluate SaaS infrastructure, performance, load capacity, and cloud scalability benchmarks to prepare for growth.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}tools/saas-scalability-readiness-checker/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

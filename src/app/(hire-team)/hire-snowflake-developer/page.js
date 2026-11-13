@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import HireSnowflakeDevelopers from "@/app/components/HireTeam/HireSnowflakeDevelopers";
 
 export const metadata = {
@@ -10,8 +13,7 @@ export const metadata = {
     description:
       "Hire certified Snowflake developers from a company-wide Snowflake Partner. Data warehouse design, dbt analytics engineering, migration, performance tuning, and governance — certified engineers on every engagement.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-snowflake-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/og/hire-snowflake-developer.webp`,
@@ -35,6 +37,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

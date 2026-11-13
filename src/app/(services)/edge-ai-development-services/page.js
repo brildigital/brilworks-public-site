@@ -1,4 +1,5 @@
 import EdgeAIDevelopment from "@/app/components/ServicePage/EdgeAIDevelopment";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Edge AI Development Services | Brilworks",
@@ -14,8 +15,21 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}edge-ai-development-services/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}edge-ai-development-services/`,
+  },
 };
 
-const Page = () => <EdgeAIDevelopment />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <EdgeAIDevelopment />
+  </>
+);
 
 export default Page;

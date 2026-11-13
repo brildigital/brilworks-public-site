@@ -11,7 +11,7 @@ export const metadata = {
       "Boost engagement and automate conversations with an AI-powered WhatsApp chatbot. Handle FAQs, generate leads, and offer 24/7 support — all inside WhatsApp.",
 
     url: `${process.env.NEXT_PUBLIC_BASE_URL}ai-tools/ai-whatsapp-agent/`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

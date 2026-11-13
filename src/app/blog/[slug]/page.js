@@ -7,26 +7,34 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import StoryblokStory from "@storyblok/react/story";
-import { getblog } from "@/app/components/lib/getblog";
 import { notFound } from "next/navigation";
+import { getBlogForSitemap } from "@/app/components/lib/getblog";
 import FetchDataSpinner from "@/app/components/Homepage/FetchDataSpinner";
 import { Suspense } from "react";
 import {
   generateBlogPostingSchema,
   generateFaqPageSchema,
   generatePersonSchema,
+  generateBreadcrumbList,
 } from "@/app/components/lib/schemaCode";
 import { getBlogSeoConfig } from "@/app/components/lib/blogSeoConfig";
 import Heading from "@/app/components/HTMLComponents/Heading";
 import { Calendar, Clock } from "lucide-react";
 import SummarizeWithAI from "@/app/components/Blog/SummarizeWithAI";
 
+// Posts are statically generated and cached (ISR). Storyblok publishes hit
+// /api/revalidate, which revalidates the post path on demand; the daily
+// revalidate below is only a safety net. Keeping this route static is what
+// lets notFound() return a real 404 instead of a streamed 200.
+export const revalidate = 86400;
+export const dynamicParams = true;
+
 export async function generateMetadata(props) {
   const params = await props.params;
   const data = (await fetchData(params?.slug))?.props;
   const story = data?.story;
 
-  if (!story) return {};
+  if (!story) notFound();
 
   const totalDataWord =
     story.content.content +
@@ -44,6 +52,13 @@ export async function generateMetadata(props) {
         story.content.metatags?.og_description ||
         story.content.metatags?.description,
       url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/${story.slug}/`,
+      siteName: "Brilworks",
+      locale: "en-US",
+      type: "article",
+      publishedTime: story.content.Published || story.created_at,
+      modifiedTime: story.published_at || undefined,
+      authors: [story.content.BlogAuthor].filter(Boolean),
+      section: story.content.Category || undefined,
       images: [
         {
           url: formatSrcUrl(
@@ -127,6 +142,17 @@ export default async function Page(props) {
           }),
         }}
       />
+      <script
+        defer
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateBreadcrumbList([
+            { name: "Home", url: process.env.NEXT_PUBLIC_BASE_URL },
+            { name: "Blog", url: `${process.env.NEXT_PUBLIC_BASE_URL}blog/` },
+            { name: data?.story?.content?.title },
+          ]),
+        }}
+      />
       {seoConfig.faqSchema && faqEntries.length > 0 && (
         <script
           defer
@@ -186,7 +212,7 @@ export default async function Page(props) {
                       />
                     </span>
                     <span className="sxl:text-2xl md:text-xl text-lg text-white hover:text-themeColor duration-500 font-medium">
-                      <Link title="Go to Blog." href="/blog">
+                      <Link title="Go to Blog." href="/blog/">
                         Blog
                       </Link>
                     </span>
@@ -343,39 +369,50 @@ export default async function Page(props) {
   );
 }
 export async function fetchData(slug) {
-  try {
-    const storyUrl = new URL(
-      `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
-    );
-    storyUrl.searchParams.append(
-      "token",
-      process.env.NEXT_PUBLIC_ACCESS_TOKEN || "",
-    );
-    storyUrl.searchParams.append(
-      "version",
-      process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
-    );
+  const storyUrl = new URL(
+    `https://api.storyblok.com/v2/cdn/stories/blog/${slug}`,
+  );
+  storyUrl.searchParams.append("token", process.env.NEXT_PUBLIC_ACCESS_TOKEN || "");
+  storyUrl.searchParams.append(
+    "version",
+    process.env.NEXT_PUBLIC_STORYBLOK_VERSION,
+  );
 
-    storyUrl.pathname += ``;
+  const storyRes = await fetch(storyUrl.toString(), {
+    next: { revalidate: 86400, tags: [`blog:${slug}`] },
+    headers: { "Accept-Encoding": "gzip" }, // Enable compression
+  });
 
-    const storyRes = await fetch(storyUrl.toString(), {
-      next: { revalidate: 0 },
-      headers: { "Accept-Encoding": "gzip" }, // Enable compression
-    });
-
-    const storyData = await storyRes.json();
-    return {
-      props: {
-        story: storyData?.story || false,
-        key: storyData?.story?.id || false,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
+  // A missing story is a definitive "not found". Anything else (rate limit,
+  // CMS outage) throws, so a transient error is never cached as a 404.
+  if (storyRes.status === 404) {
+    return { props: { story: false, key: false } };
   }
+  if (!storyRes.ok) {
+    throw new Error(`Storyblok responded ${storyRes.status} for blog/${slug}`);
+  }
+
+  const storyData = await storyRes.json();
+  return {
+    props: {
+      story: storyData?.story || false,
+      key: storyData?.story?.id || false,
+    },
+  };
 }
+
+// Every published post is built at deploy time, so no reader waits for a
+// first render. If the post list cannot be fetched, the build still succeeds
+// and posts fall back to rendering on first request (dynamicParams).
 export async function generateStaticParams() {
-  const posts = await getblog();
-  return posts.map((post) => ({ slug: post.slug }));
+  try {
+    const posts = await getBlogForSitemap();
+    return posts
+      .map((post) => post?.loc?.split("/blog/")[1]?.replace(/\/$/, ""))
+      .filter(Boolean)
+      .map((slug) => ({ slug }));
+  } catch (error) {
+    console.error("Blog: could not list posts for static generation", error);
+    return [];
+  }
 }

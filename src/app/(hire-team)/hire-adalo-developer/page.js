@@ -1,4 +1,7 @@
-import { generateBreadcrumb } from "@/app/components/lib/schemaCode";
+import {
+  generateBreadcrumb,
+  generateServiceSchemaFromMetadata,
+} from "@/app/components/lib/schemaCode";
 import AdaloTechnology from "@/app/components/Technologies/AdaloTechnology";
 
 export const metadata = {
@@ -10,8 +13,7 @@ export const metadata = {
     description:
       "Need an expert Adalo developer to build your app? Hire a skilled professional with 5 years of experience. Get a free quote today and turn your app idea into reality.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}hire-aws-developer/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}images/v2/adalo-banner.webp`,
@@ -34,6 +36,12 @@ export const metadata = {
 const page = () => {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: generateServiceSchemaFromMetadata(metadata),
+        }}
+      />
       <script
         defer
         type="application/ld+json"

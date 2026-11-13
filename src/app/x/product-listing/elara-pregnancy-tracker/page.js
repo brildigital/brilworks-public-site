@@ -12,8 +12,7 @@ export const metadata = {
     description:
       "Elara is your personalized maternal wellness companion. Expert-curated prenatal yoga, pregnancy tracking, meditation, and wellness journaling. Free, privacy-first, and designed for every stage of motherhood.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}x/product-listing/elara-pregnancy-tracker/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "website",
     images: [

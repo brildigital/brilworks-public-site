@@ -11,8 +11,7 @@ export const metadata = {
     description:
       "Explore the current open positions at Brilworks. Join the team of brilliant minds by sending your application today! Connect at hello@brilworks.com for any query.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}career/`,
-    siteName:
-      "AWS Consulting Partner | Gen AI | Product Engineering | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

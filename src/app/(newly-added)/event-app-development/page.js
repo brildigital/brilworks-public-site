@@ -33,7 +33,7 @@ export const metadata = {
     description:
       "Build a custom event app that boosts registrations, engagement, and sponsor ROI. Brilworks is an event app development company helping enterprises and global brands design and develop secure, scalable event and conference apps with real-time analytics and integrations.",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}event-app-development`,
-    siteName: "Mobile App & Software Development Company | Brilworks",
+    siteName: "Brilworks",
     locale: "en-US",
     type: "article",
   },

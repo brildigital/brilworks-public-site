@@ -1,4 +1,5 @@
 import DataEngineeringHealthtech from "@/app/components/IndustryPage/DataEngineeringHealthtech";
+import { generateServiceSchemaFromMetadata } from "@/app/components/lib/schemaCode";
 
 export const metadata = {
   title: "Healthtech Data Engineering Services | Brilworks",
@@ -14,7 +15,20 @@ export const metadata = {
     url: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-healthtech/`,
     siteName: "Brilworks",
   },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}data-engineering-for-healthtech/`,
+  },
 };
 
-const Page = () => <DataEngineeringHealthtech />;
+const Page = () => (
+  <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: generateServiceSchemaFromMetadata(metadata),
+      }}
+    />
+    <DataEngineeringHealthtech />
+  </>
+);
 export default Page;
