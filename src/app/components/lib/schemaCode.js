@@ -1,3 +1,5 @@
+import { DATABRICKS_PARTNER_LISTING_URL } from "./partners";
+
 const SITE_URL = "https://www.brilworks.com/";
 export const ORGANIZATION_ID = `${SITE_URL}#organization`;
 export const WEBSITE_ID = `${SITE_URL}#website`;
@@ -20,7 +22,7 @@ const SAME_AS = [
   "https://www.upwork.com/ag/brilworks/",
   "https://www.behance.net/hellobrilworks",
   "https://dribbble.com/Brilworks",
-  "https://partners.databricks.com/s/directory/listing?recordId=001Vp00000dsH62IAE",
+  DATABRICKS_PARTNER_LISTING_URL,
 ];
 
 const POSTAL_ADDRESS = {
@@ -311,7 +313,14 @@ export function generateImageObjectSchema({
   return JSON.stringify(schema);
 }
 
-export function generatePersonSchema({ name, url, jobTitle, image, sameAs = [] }) {
+export function generatePersonSchema({
+  name,
+  url,
+  jobTitle,
+  image,
+  sameAs = [],
+  worksFor,
+}) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -321,6 +330,7 @@ export function generatePersonSchema({ name, url, jobTitle, image, sameAs = [] }
     sameAs: sameAs.filter(Boolean),
   };
   if (url) schema.url = url;
+  if (worksFor) schema.worksFor = worksFor;
   return JSON.stringify(schema);
 }
 

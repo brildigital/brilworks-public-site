@@ -24,7 +24,7 @@ const IconCheck = () => (
 
 // ── Data ──────────────────────────────────────────────────────────────────────
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Consulting Partner" },
+  { icon: <IconShield />, label: "Databricks, Snowflake, dbt Labs & AWS Partner" },
   { icon: <IconStar />, label: "120+ Projects Completed" },
   { icon: <IconTeam />, label: "60+ Expert Engineers" },
   { icon: <IconShield />, label: "98% Client Satisfaction" },

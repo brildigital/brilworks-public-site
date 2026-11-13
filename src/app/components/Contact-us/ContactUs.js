@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import dynamic from "next/dynamic";
-import { Check } from "lucide-react";
+import { Check, CalendarDays } from "lucide-react";
 import { scrollEffect } from "../lib/commonFunction";
 import ContactFormV2 from "../Homepage/ContactFormV2";
 import ButtonV2 from "../Common/ButtonV2";
+import CalPopupButton from "../ServicePage/CalPopupButton";
 import "../../styles/ServiceLightTheme.css";
 
 const SERVICE_CONTEXT = {
@@ -49,8 +49,13 @@ const GradientFAQAccordion = dynamic(
 
 const ContactUs = () => {
   const [openFaq, setOpenFaq] = useState(0);
-  const searchParams = useSearchParams();
-  const serviceParam = searchParams.get("service");
+  // Read ?service= after mount instead of with useSearchParams(), which would
+  // make Next.js skip server rendering of this whole page. The default copy is
+  // server-rendered; campaign links swap in their heading on load.
+  const [serviceParam, setServiceParam] = useState(null);
+  useEffect(() => {
+    setServiceParam(new URLSearchParams(window.location.search).get("service"));
+  }, []);
   const ctx = SERVICE_CONTEXT[serviceParam] || null;
 
   useEffect(() => {
@@ -127,7 +132,6 @@ const ContactUs = () => {
       <section className="relative overflow-hidden svc-hero-bg">
         <div className="container max-w-[1280px] md:px-10 px-5 mx-auto relative z-[2] pt-[120px] pb-16">
           <div className="flex flex-col md:flex-row items-stretch justify-start lg:gap-12 md:gap-10 gap-6">
-            <h1 className="sr-only">Contact Us</h1>
 
             {/* Left: Copy + Form */}
             <div className="md:w-[55%] w-full">
@@ -145,12 +149,12 @@ const ContactUs = () => {
                 {ctx?.badge || "FREE CONSULTATION"}
               </span>
 
-              <h2
+              <h1
                 className="font-extrabold tracking-[-1px] leading-[1.15] !mb-4"
                 style={{ fontSize: "clamp(28px, 3vw, 44px)", color: "#0b1e33" }}
               >
                 {ctx?.heading || "Get a Free Project Estimate in 24 Hours"}
-              </h2>
+              </h1>
               <p
                 className="text-[17px] leading-[1.6] !mb-6 max-w-[560px]"
                 style={{ color: "#566678" }}
@@ -226,6 +230,40 @@ const ContactUs = () => {
                   </div>
                 </div>
               ))}
+
+              {/* Alternative to the form: book a call directly */}
+              <div
+                className="rounded-xl p-4 flex flex-col gap-3"
+                style={{ background: "#f1f5fb", border: "1px solid #e4eaf1" }}
+              >
+                <div className="flex gap-3 items-start">
+                  <CalendarDays
+                    size={20}
+                    style={{ color: "#2f6bff" }}
+                    className="flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p
+                      className="text-[15px] font-semibold leading-tight"
+                      style={{ color: "#0b1e33" }}
+                    >
+                      Prefer to talk first?
+                    </p>
+                    <p
+                      className="text-[13px] mt-1 leading-[1.5] font-light"
+                      style={{ color: "#566678" }}
+                    >
+                      Pick a time for a 30-minute call with our engineering
+                      team. No form needed.
+                    </p>
+                  </div>
+                </div>
+                <CalPopupButton
+                  label="Book a 30-minute call"
+                  className="w-full rounded-[10px] px-[18px] py-[10px] text-[14.5px] font-semibold text-white bg-[#2F6BFF] hover:bg-[#1E4FD6] transition-colors"
+                />
+              </div>
             </div>
           </div>
         </div>

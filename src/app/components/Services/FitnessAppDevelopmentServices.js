@@ -78,7 +78,7 @@ const statValueStyle = { color: "#2f6bff" };
 
 // ---------- Data ----------
 const TRUST = [
-  { icon: <IconShield />, label: "AWS Advanced Tier Partner" },
+  { icon: <IconShield />, label: "AWS Partner" },
   { icon: <IconChart />, label: "30+ Fitness Apps Launched" },
   { icon: <IconWatch />, label: "Apple Health + Wearable Integrations" },
   { icon: <IconStar />, label: "4.8\u2605 App Store Average" },
@@ -181,7 +181,7 @@ const TESTIMONIALS = [
 
 const HONORS = [
   {
-    label: "AWS Advanced Tier Partner",
+    label: "AWS Partner",
     icon: (
       <ShieldCheck
         size={20}

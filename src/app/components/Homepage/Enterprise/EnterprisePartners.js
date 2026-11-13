@@ -4,7 +4,7 @@ const PARTNERS = [
   { name: "AWS", logo: "/images/v2/aws_partner.webp" },
   { name: "Databricks", logo: "/images/v2/databricks_partner.webp" },
   { name: "Snowflake", logo: "/images/v2/snowflake_partner.webp" },
-  // { name: "dbtLabs", logo: "/images/v2/dbtlabs_partner.png" },
+  { name: "dbt Labs", logo: "/images/v2/dbtlabs_partner.png" },
   { name: "adalo", logo: "/images/v2/adalo_partner.webp" },
   { name: "FlutterFlow", logo: "/images/v2/flutterflow_partner.webp" },
   { name: "Storyblok", logo: "/images/v2/storyblok_partner.webp" },

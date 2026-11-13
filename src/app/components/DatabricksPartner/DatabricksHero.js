@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ButtonV2 from "../Common/ButtonV2";
 import Link from "next/link";
+import { DATABRICKS_PARTNER_LISTING_URL } from "../lib/partners";
 
 const DatabricksHero = () => {
   return (
@@ -42,7 +43,16 @@ const DatabricksHero = () => {
                   className="text-white/70 hero-fade-up max-w-[48ch] leading-[1.55]"
                   style={{ fontSize: "clamp(16px, 1.9vw, 19px)" }}
                 >
-                  Brilworks is a certified Databricks partner. We build your
+                  Brilworks is a{" "}
+                  <a
+                    href={DATABRICKS_PARTNER_LISTING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white underline underline-offset-[3px] hover:text-[#3c7dde]"
+                  >
+                    certified Databricks partner
+                  </a>
+                  . We build your
                   lakehouse on one platform, run data engineering at scale, and
                   take ML and GenAI from notebook to production on data your
                   teams can trust.

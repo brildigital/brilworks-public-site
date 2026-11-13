@@ -111,7 +111,7 @@ const TESTIMONIALS = [
 
 const HONORS = [
   {
-    label: "AWS Partner · Advanced Tier",
+    label: "AWS Partner",
     icon: <Shield size={20} color="#2f6bff" />,
   },
   {

@@ -1,6 +1,11 @@
 import AboutUs from "../components/About/AboutUs";
 import LastUpdated from "../components/Common/LastUpdated";
+import {
+  generatePersonSchema,
+  organizationRef,
+} from "../components/lib/schemaCode";
 import { generateWebPageSchema } from "../components/lib/schemaCode";
+import { TEAM_MEMBERS } from "../components/About/teamData";
 
 const LAST_UPDATED = "2026-04-23";
 
@@ -56,6 +61,21 @@ const page = () => {
 
   return (
     <>
+      {TEAM_MEMBERS.filter((member) => member.linkedin).map((member) => (
+        <script
+          key={member.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: generatePersonSchema({
+              name: member.name,
+              jobTitle: member.role,
+              image: `${process.env.NEXT_PUBLIC_BASE_URL}${member.imageSrc.replace(/^\//, "")}`,
+              sameAs: [member.linkedin],
+              worksFor: organizationRef,
+            }),
+          }}
+        />
+      ))}
       <script
         defer
         type="application/ld+json"
